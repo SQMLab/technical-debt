@@ -1,4 +1,5 @@
-from sqlalchemy import create_engine, Column, BigInteger, String, Integer, Boolean, TIMESTAMP, Text, ARRAY
+from sqlalchemy import create_engine, Column, BigInteger, String, Integer, Boolean, TIMESTAMP, Text, ARRAY, func, \
+    Sequence
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from db_config import SessionLocal, Base
@@ -8,7 +9,9 @@ from db_config import SessionLocal, Base
 class RepositoryBase(Base):
     __tablename__ = "repository"
 
-    id = Column(BigInteger, primary_key=True)  # Unique GitHub Repository ID
+    id = Column(BigInteger, Sequence('repository_id_seq', start=1, increment=1),
+                primary_key=True)  # Auto-incrementing ID
+    repository_id = Column(BigInteger, unique=True)  # Unique GitHub Repository ID
     name = Column(String(255), nullable=False)  # Repository Name
     full_name = Column(String(255), nullable=False)  # Full name (owner/repo)
     is_fork = Column(Boolean, nullable=False, default=False)  # Fork status
@@ -24,12 +27,17 @@ class RepositoryBase(Base):
     license_name = Column(String(255))  # License Type
     topics = Column(ARRAY(Text))  # Array of Topics/Tags
     default_branch = Column(String(50))  # Default Branch (main/master)
+    commit_hash = Column(String(255))  # Latest Commit Hash
     pushed_at = Column(TIMESTAMP)  # Last Commit Push Timestamp
-    created_at = Column(TIMESTAMP)  # Repository Creation Date
-    updated_at = Column(TIMESTAMP)  # Last Update Timestamp
+    repository_created_at = Column(TIMESTAMP)  # Repository Creation Date
+    repository_updated_at = Column(TIMESTAMP)  # Last Update Timestamp
+    created_at = Column(TIMESTAMP, server_default=func.now())
+    updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
+
 
 # Create table if not exists
 Base.metadata.create_all(SessionLocal().bind)
+
 
 # Repository CRUD Operations
 class Repository:
