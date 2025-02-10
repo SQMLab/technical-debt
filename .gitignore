@@ -38,3 +38,5 @@ build/
 ### Mac OS ###
 .DS_Store
 satd-core/__pycache__/
+/cache
+comment-scanner-java/cache
