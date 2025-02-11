@@ -38,11 +38,12 @@ public class CommentScannerServiceImpl implements CommentScannerService {
             Files.walkFileTree(Path.of(rootDirectory), new SimpleFileVisitor<Path>() {
                 @Override
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
-                    boolean insideStandardTestDirectory = file.toString().contains("src/test/java");
+                    String fileUrl = file.toString();
+                    boolean insideStandardTestDirectory = fileUrl.contains("src/test/java");
                     CompilationUnit compilationUnit = null;
                     try {
                         compilationUnit = StaticJavaParser.parse(file);
-                        if (insideStandardTestDirectory || hasTestAnnotation(compilationUnit)) {
+                        if (fileUrl.endsWith(".java") && (insideStandardTestDirectory || hasTestAnnotation(compilationUnit))) {
                             List<Comment> commentList = compilationUnit.getAllComments();
                             for (int commentIndex = 0; commentIndex < commentList.size(); commentIndex++) {
                                 Comment comment = commentList.get(commentIndex);
