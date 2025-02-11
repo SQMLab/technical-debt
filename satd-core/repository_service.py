@@ -21,7 +21,7 @@ def clone_and_checkout_commit(repo_url, repository_directory, commit_hash):
 
         # Checkout specific commit hash
         print(f"🔀 Checking out commit {commit_hash}...")
-        repo.remotes.origin.fetch()
+        #repo.remotes.origin.fetch()
         repo.git.checkout(commit_hash)
 
         # Verify checkout success

@@ -5,6 +5,7 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.comments.Comment;
 import com.github.javaparser.ast.expr.AnnotationExpr;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 
 import java.io.BufferedWriter;
@@ -18,8 +19,8 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicIntegerArray;
 
+@Slf4j
 public class CommentScannerServiceImpl implements CommentScannerService {
     TestFileFilter testFileFilter = new HuristicTestFileFilter();
 
@@ -62,15 +63,15 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                                 commentCount.getAndIncrement();
                             }
                         }
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+                    } catch (Exception e) {
+                        log.error("{}", file, e);
                     }
 
                     return FileVisitResult.CONTINUE;
                 }
             });
-        } catch (IOException e) {
-            System.err.println("Error traversing project: " + e.getMessage());
+        } catch (Exception e) {
+            log.error("", e);
         }
         return commentCount.get();
     }

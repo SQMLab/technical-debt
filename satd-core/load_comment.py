@@ -1,7 +1,7 @@
 import csv
 from db_config import SessionLocal
 from sqlalchemy.exc import IntegrityError
-from comment_model import Comment, CommentRepository
+from comment import Comment, CommentRepository
 from util import sha1
 
 
