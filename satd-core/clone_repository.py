@@ -13,7 +13,8 @@ repositories = session.query(RepositoryBase).all()
 
 print(os.getenv('REPOSITORY_DIRECTORY') )
 for repo in repositories:
+    directory = repo.full_name.replace('/', '--')
     if repo.commit_hash:
-        clone_and_checkout_commit(repo.repo_url, os.getenv('REPOSITORY_DIRECTORY') + '/' + repo.name, repo.commit_hash)
+        clone_and_checkout_commit(repo.repo_url, os.getenv('REPOSITORY_DIRECTORY') + '/' + directory, repo.commit_hash)
 
 session.close()
