@@ -5,16 +5,7 @@ from dotenv import load_dotenv
 
 from db_config import SessionLocal
 from repository import RepositoryBase
-load_dotenv()
-# GitHub API URL (Sorted by stars, limited to 100 results per page)
-BASE_URL = "https://api.github.com/search/repositories"
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
-
-# Headers with authentication (replace with your personal GitHub token for higher limits)
-HEADERS = {
-    "Accept": "application/vnd.github.v3+json",
-    "Authorization": f'token {GITHUB_TOKEN}'
-}
+from github_config import BASE_URL, HEADERS
 
 # Fetch repositories
 def fetch_trending_java_repos():
