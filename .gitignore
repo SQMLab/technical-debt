@@ -40,3 +40,4 @@ build/
 satd-core/__pycache__/
 /cache
 comment-scanner-java/cache
+.venv/

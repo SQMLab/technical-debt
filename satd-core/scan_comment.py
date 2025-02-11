@@ -4,6 +4,7 @@ import jpype
 import jpype.imports
 from jpype import JClass
 
+load_dotenv()
 # Start JVM
 jpype.startJVM(classpath=[os.getenv('COMMENT_SCANNER_JAR')])
 
