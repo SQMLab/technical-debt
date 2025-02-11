@@ -11,7 +11,7 @@ public interface CommentScannerService {
             // Mockito
             "Mock", "InjectMocks", "Spy", "Captor",
             // TestNG
-            "Test", "BeforeMethod", "AfterMethod", "BeforeClass", "AfterClass"
+            /*"Test",*/ "BeforeMethod", "AfterMethod"/*, "BeforeClass", "AfterClass"*/
     );
 
     int scanComment(String directory, Boolean isTestCode, String outputFile);

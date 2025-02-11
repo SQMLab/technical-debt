@@ -14,13 +14,14 @@ def clone_and_checkout_commit(repo_url, repository_directory, commit_hash):
             if repo.bare:
                 raise Exception(f"❌ Error: The repository at {repository_directory} is corrupted or incomplete.")
 
-            repo.remotes.origin.pull()
+            #repo.remotes.origin.pull()
         else:
             print(f"🚀 Cloning repository {repo_url} into {repository_directory}...")
             repo = Repo.clone_from(repo_url, repository_directory)
 
         # Checkout specific commit hash
         print(f"🔀 Checking out commit {commit_hash}...")
+        repo.remotes.origin.fetch()
         repo.git.checkout(commit_hash)
 
         # Verify checkout success
@@ -31,6 +32,6 @@ def clone_and_checkout_commit(repo_url, repository_directory, commit_hash):
         print(f"✅ Successfully checked out commit: {commit_hash}")
 
     except GitCommandError as e:
-        raise Exception(f"❌ Git command failed: {str(e)}")
+        raise Exception(f"❌ Git command failed: {repository_directory} {str(e)}")
     except Exception as e:
         raise Exception(f"❌ Error: {str(e)}")

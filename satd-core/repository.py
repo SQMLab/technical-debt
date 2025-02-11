@@ -76,7 +76,7 @@ class Repository:
         else:
             print("Repository not found.")
 
-    def list_top_repositories(self, limit=10):
+    def list_top_repositories(self, limit=1000):
         """Fetch top repositories by stars"""
         return self.session.query(RepositoryBase).order_by(RepositoryBase.stars.desc()).limit(limit).all()
 
