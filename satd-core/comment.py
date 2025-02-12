@@ -79,6 +79,14 @@ class CommentRepository:
         """Fetch all comments labeled as SATD"""
         return self.session.query(Comment).filter_by(is_satd=True).limit(limit).all()
 
+    def get_random_comment(self):
+        """Fetch a single comment randomly with uniform probability"""
+        return self.session.query(Comment).order_by(func.random()).first()
+
+    def get_random_comments(self, limit=10):
+        """Fetch a list of randomly selected comments with uniform probability"""
+        return self.session.query(Comment).order_by(func.random()).limit(limit).all()
+
     def close_session(self):
         """Close the database session"""
         self.session.close()
