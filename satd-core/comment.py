@@ -1,7 +1,6 @@
 from sqlalchemy import create_engine, Column, BigInteger, String, Integer, Boolean, TIMESTAMP, Text, func
 from sqlalchemy.ext.declarative import declarative_base
-from db_config import Base  # Assuming Base is defined in db_config
-
+from db_config import SessionLocal, Base
 # Define the Comment ORM Model
 class Comment(Base):
     __tablename__ = "comment"
@@ -14,7 +13,6 @@ class Comment(Base):
     end_line = Column(Integer, nullable=False)  # End Line
     file = Column(String(255))  # File Path and Name
     comment_hash = Column(String(255))  # Comment Hash
-    file_hash = Column(String(255))  # File Hash
     commit_hash = Column(String(255))  # Commit Hash
     is_satd = Column(Boolean)  # Whether the comment is SATD
     is_random = Column(Boolean)  # Whether the comment is Randomly Picked for Manual Review
