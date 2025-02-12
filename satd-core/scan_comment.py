@@ -22,16 +22,16 @@ def scan_all_comment():
     repositories = session.query(RepositoryBase).all()
 
     for repo in repositories:
-        repository_name = repo.full_name.replace("/", "--")
-        output_file = f"cache/{repository_name}.csv"
+        repository_directory = repo.full_name.replace("/", "--")
+        output_file = f"cache/{repository_directory}.csv"
         if not os.path.exists(output_file):
-            print(f'scanning repository {repository_name}')
+            print(f'scanning repository {repository_directory}')
             comment_scanner.scanComment(
-                os.getenv('REPOSITORY_DIRECTORY') + '/' + repository_name,
+                os.getenv('REPOSITORY_DIRECTORY') + '/' + repository_directory,
                 True,
                 output_file
             )
-            read_from_csv(output_file, repository_name, repo.commit_hash)
+            read_from_csv(output_file, repo.id, repository_directory, repo.commit_hash)
     session.close()
 scan_all_comment()
 jpype.shutdownJVM()
