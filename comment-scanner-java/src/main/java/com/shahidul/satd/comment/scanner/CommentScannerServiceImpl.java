@@ -85,7 +85,7 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                                         } else {
                                             String middleText = Util.getLinesInRange(fileContent, endLine + 1, commentLineNo).trim();
                                             if (middleText.isEmpty()) {
-                                                commentBuilder.append("\n".repeat(Math.max(0, commentLineNo - endLine + 1)));
+                                                commentBuilder.append("\n".repeat(Math.max(0, commentLineNo - endLine)));
                                                 commentBuilder.append(lineCommentText);
                                                 endLine = commentLineNo;
                                             } else {
@@ -116,7 +116,8 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                                     commentBuilder.setLength(0);
 
                                     //Flush this comment
-                                    writeToCsv(comment.getBegin().get().line, comment.getEnd().get().line, comment.getContent(), file, rootDirectory, writer, commentCount);
+                                    String commentContext = (comment.isJavadocComment() ? "/**" : "/*") + comment.getContent() + "*/";
+                                    writeToCsv(comment.getBegin().get().line, comment.getEnd().get().line, commentContext, file, rootDirectory, writer, commentCount);
                                 }
 
                             }
