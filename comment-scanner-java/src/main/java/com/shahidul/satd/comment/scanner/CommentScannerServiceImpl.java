@@ -7,6 +7,7 @@ import com.github.javaparser.ast.comments.Comment;
 import com.github.javaparser.ast.expr.AnnotationExpr;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.text.StringEscapeUtils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -34,7 +35,7 @@ public class CommentScannerServiceImpl implements CommentScannerService {
         }
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
             // Write CSV header
-            writer.write("comment, start, end, file");
+            writer.write("comment,start,end,file");
             writer.newLine();
             Files.walkFileTree(Path.of(rootDirectory), new SimpleFileVisitor<Path>() {
                 @Override
@@ -50,13 +51,13 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                                 Comment comment = commentList.get(commentIndex);
                                 int startLine = comment.getBegin().get().line;
                                 int endLine = comment.getEnd().get().line;
-                                String commentText = comment.getContent();
+                                String commentText = StringEscapeUtils.escapeCsv(comment.getContent());
                                 StringBuilder csvLine = new StringBuilder();
 
-                                csvLine.append("\"").append(commentText).append("\",")
+                                csvLine.append(commentText).append(",")
                                         .append(startLine).append(",")
                                         .append(endLine).append(",")
-                                        .append("\"").append(file.toAbsolutePath().toString().substring(rootDirectory.length())).append("\"")
+                                        .append(StringEscapeUtils.escapeCsv(file.toAbsolutePath().toString().substring(rootDirectory.length())))
                                 ;
                                 writer.write(csvLine.toString());
                                 writer.newLine();

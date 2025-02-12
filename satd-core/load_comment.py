@@ -17,9 +17,9 @@ def read_from_csv(file_path, repository_name, commit_hash):
             for row in reader:
 
                 comment_text = row['comment']
-                file = row['file']
-                start_line = int(row['start'])
-                end_line = int(row['end'])
+                start_line = int(row['start'].strip())
+                end_line = int(row['end'].strip())
+                file= row['file'].strip()
                 uid = sha1(repository_name + commit_hash + file + str(start_line) + str(end_line))
                 comment = repo.get_comment_by_uid(uid)
 
@@ -40,8 +40,8 @@ def read_from_csv(file_path, repository_name, commit_hash):
 
     except IntegrityError as e:
         session.rollback()
-        raise Exception("❌ Integrity error:", str(e))
+        raise Exception(f"Integrity error: {str(e)}")
     except Exception as e:
-        raise Exception("❌ Error:", str(e))
+        raise Exception(f"Error: {repository_name} {str(e)}")
     finally:
         session.close()

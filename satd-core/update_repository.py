@@ -23,7 +23,7 @@ def update_all_commit_hashes():
     session = SessionLocal()
 
     # Fetch all repositories from the database
-    repositories = session.query(RepositoryBase).all()
+    repositories = session.query(RepositoryBase).list_top_repositories()
 
     for repo in repositories:
         if repo.commit_hash is None:
