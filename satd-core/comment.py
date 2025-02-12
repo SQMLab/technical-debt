@@ -83,7 +83,7 @@ class CommentRepository:
         """Fetch a single comment randomly with uniform probability"""
         return self.session.query(Comment).order_by(func.random()).first()
 
-    def get_random_comments(self, limit=10):
+    def get_random_comments(self, limit=100):
         """Fetch a list of randomly selected comments with uniform probability"""
         return self.session.query(Comment).order_by(func.random()).limit(limit).all()
 

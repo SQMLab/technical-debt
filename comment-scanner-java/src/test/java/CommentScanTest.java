@@ -29,5 +29,11 @@ public class CommentScanTest {
                 true,
                 "cache/common.csv");
 
+    }    @Test
+    public void testMySqlAlterTableTest13() {
+        commentScanner.scanComment("/home/cs/grad/islams32/dev/rnd/satd/repository/alibaba--druid/core/src/test/java/com/alibaba/druid/bvt/sql/mysql/alterTable/MySqlAlterTableTest13.java",
+                true,
+                "cache/MySqlAlterTableTest13.csv");
+
     }
 }

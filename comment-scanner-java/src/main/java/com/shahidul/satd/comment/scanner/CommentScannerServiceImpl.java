@@ -18,12 +18,24 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
 public class CommentScannerServiceImpl implements CommentScannerService {
     TestFileFilter testFileFilter = new HuristicTestFileFilter();
+    Set<String> TEST_FRAMEWORK_ANNOTATIONS = Set.of(
+            // JUnit 4
+            "Test", "Before", "After", "BeforeClass", "AfterClass",
+            // JUnit 5
+            "BeforeEach", "AfterEach", "BeforeAll", "AfterAll", "DisplayName",
+            // Mockito
+            "Mock", "InjectMocks", "Spy", "Captor",
+            // TestNG
+            /*"Test",*/ "BeforeMethod", "AfterMethod"/*, "BeforeClass", "AfterClass"*/
+    );
 
     @Override
     public int scanComment(String rootDirectory, Boolean isTestCode, String outputFile) {
@@ -46,23 +58,72 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                     try {
                         compilationUnit = StaticJavaParser.parse(file);
                         if (fileUrl.endsWith(".java") && (insideStandardTestDirectory || hasTestAnnotation(compilationUnit))) {
+                            String fileContent = Files.readString(file);
                             List<Comment> commentList = compilationUnit.getAllComments();
+                            commentList.sort(Comparator.comparing(c -> c.getBegin()
+                                    .map(pos -> pos.line)
+                                    .orElse(Integer.MAX_VALUE)));
+
+                            int startLine = -1;
+                            int endLine = -1;
+                            StringBuilder commentBuilder = new StringBuilder();
+
                             for (int commentIndex = 0; commentIndex < commentList.size(); commentIndex++) {
                                 Comment comment = commentList.get(commentIndex);
-                                int startLine = comment.getBegin().get().line;
-                                int endLine = comment.getEnd().get().line;
-                                String commentText = StringEscapeUtils.escapeCsv(comment.getContent());
-                                StringBuilder csvLine = new StringBuilder();
+                                if (comment.isLineComment()) {
+                                    int commentLineNo = comment.getBegin().get().line;
 
-                                csvLine.append(commentText).append(",")
-                                        .append(startLine).append(",")
-                                        .append(endLine).append(",")
-                                        .append(StringEscapeUtils.escapeCsv(file.toAbsolutePath().toString().substring(rootDirectory.length() + 1)))
-                                ;
-                                writer.write(csvLine.toString());
-                                writer.newLine();
-                                commentCount.getAndIncrement();
+                                    String lineCommentText = "//" + comment.getContent();
+                                    String commentLineSourceText = Util.getLinesInRange(fileContent, commentLineNo, commentLineNo + 1).trim();
+
+                                    //Total line is comment
+                                    if (commentLineSourceText.equals(lineCommentText.trim())) {
+                                        if (commentBuilder.isEmpty()) {
+                                            startLine = commentLineNo;
+                                            endLine = commentLineNo;
+                                            commentBuilder.append(lineCommentText);
+                                        } else {
+                                            String middleText = Util.getLinesInRange(fileContent, endLine + 1, commentLineNo).trim();
+                                            if (middleText.isEmpty()) {
+                                                commentBuilder.append("\n".repeat(Math.max(0, commentLineNo - endLine + 1)));
+                                                commentBuilder.append(lineCommentText);
+                                                endLine = commentLineNo;
+                                            } else {
+                                                //Flush previous
+                                                writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
+                                                commentBuilder.setLength(0);
+
+                                                //Add this
+                                                startLine = commentLineNo;
+                                                endLine = commentLineNo;
+                                                commentBuilder.append(lineCommentText);
+                                            }
+
+                                        }
+
+                                    } else {
+                                        //Flush previous
+                                        writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
+                                        commentBuilder.setLength(0);
+
+                                        //Flush this comment
+                                        writeToCsv(commentLineNo, commentLineNo, lineCommentText, file, rootDirectory, writer, commentCount);
+
+                                    }
+                                } else {
+                                    //Flush previous
+                                    writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
+                                    commentBuilder.setLength(0);
+
+                                    //Flush this comment
+                                    writeToCsv(comment.getBegin().get().line, comment.getEnd().get().line, comment.getContent(), file, rootDirectory, writer, commentCount);
+                                }
+
                             }
+
+                            //Flush remaining at the end of the loop
+                            writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
+                            commentBuilder.setLength(0);
                         }
                     } catch (Exception e) {
                         log.error("{}", file, e);
@@ -75,6 +136,23 @@ public class CommentScannerServiceImpl implements CommentScannerService {
             log.error("", e);
         }
         return commentCount.get();
+    }
+
+    private void writeToCsv(int startLine, int endLine, String comment, Path file, String rootDirectory, BufferedWriter writer, AtomicInteger commentCount) throws IOException {
+        if (!comment.isEmpty()) {
+            String commentText = StringEscapeUtils.escapeCsv(comment);
+            StringBuilder csvLine = new StringBuilder();
+
+            String absoluteFile = file.toAbsolutePath().toString();
+            csvLine.append(commentText).append(",")
+                    .append(startLine).append(",")
+                    .append(endLine).append(",")
+                    .append(StringEscapeUtils.escapeCsv(absoluteFile.substring(rootDirectory.length() != absoluteFile.length() ? rootDirectory.length() + 1 : 0)))
+            ;
+            writer.write(csvLine.toString());
+            writer.newLine();
+            commentCount.getAndIncrement();
+        }
     }
 
     private boolean hasTestAnnotation(CompilationUnit compilationUnit) {
