@@ -57,7 +57,7 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                                 csvLine.append(commentText).append(",")
                                         .append(startLine).append(",")
                                         .append(endLine).append(",")
-                                        .append(StringEscapeUtils.escapeCsv(file.toAbsolutePath().toString().substring(rootDirectory.length())))
+                                        .append(StringEscapeUtils.escapeCsv(file.toAbsolutePath().toString().substring(rootDirectory.length() + 1)))
                                 ;
                                 writer.write(csvLine.toString());
                                 writer.newLine();

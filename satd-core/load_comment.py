@@ -5,7 +5,7 @@ from comment import Comment, CommentRepository
 from util import sha1
 
 
-def read_from_csv(file_path, repository_name, commit_hash):
+def read_from_csv(file_path, repository_id, repository_directory, commit_hash):
     """Read a CSV file and update or insert comments into the database."""
 
     session = SessionLocal()
@@ -20,13 +20,14 @@ def read_from_csv(file_path, repository_name, commit_hash):
                 start_line = int(row['start'].strip())
                 end_line = int(row['end'].strip())
                 file= row['file'].strip()
-                uid = sha1(repository_name + commit_hash + file + str(start_line) + str(end_line))
+                uid = sha1(repository_directory + commit_hash + file + str(start_line) + str(end_line))
                 comment = repo.get_comment_by_uid(uid)
 
                 if not comment:
                     new_comment = Comment(
                         uid=uid,
-                        repository_name=repository_name,
+                        repository_id=repository_id,
+                        repository_directory=repository_directory,
                         commit_hash=commit_hash,
                         text=comment_text,
                         start_line=start_line,
@@ -42,6 +43,6 @@ def read_from_csv(file_path, repository_name, commit_hash):
         session.rollback()
         raise Exception(f"Integrity error: {str(e)}")
     except Exception as e:
-        raise Exception(f"Error: {repository_name} {str(e)}")
+        raise Exception(f"Error: {repository_directory} {str(e)}")
     finally:
         session.close()

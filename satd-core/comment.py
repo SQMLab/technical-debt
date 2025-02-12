@@ -7,7 +7,8 @@ class Comment(Base):
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)  # BIGSERIAL PRIMARY KEY
     uid = Column(String(255), unique=True, nullable=False)  # Unique Comment Context ID
-    repository_name = Column(String(255), nullable=False)  # Repository Name
+    repository_id = Column(BigInteger)
+    repository_directory = Column(String(255), nullable=False)  # Repository Name
     text = Column(Text)  # Comment Text
     start_line = Column(Integer, nullable=False)  # Start Line
     end_line = Column(Integer, nullable=False)  # End Line

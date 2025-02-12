@@ -30,20 +30,21 @@ CREATE TABLE repository
 DROP TABLE IF EXISTS comment;
 CREATE TABLE comment
 (
-    id              BIGSERIAL PRIMARY KEY,
-    uid             VARCHAR(255) UNIQUE NOT NULL, -- Unique Comment Context ID
-    repository_name VARCHAR(255)        NOT NULL, -- Repository Name
-    commit_hash     VARCHAR(255),                 -- Commit Hash
-    text            TEXT,                         -- Comment Text
-    start_line      INT                 NOT NULL, -- Start Line
-    end_line        INT                 NOT NULL, -- End Line
-    file            VARCHAR(255),                 -- File Path and Name
-    comment_hash    VARCHAR(255),                 -- Comment Hash
-    is_satd         BOOLEAN,                      -- Whether the comment is SATD
-    is_random       BOOLEAN,                      -- Whether the comment is Randomly Picked for Manual Review
-    satd_type       VARCHAR(255),                 -- SATD Type
-    note            TEXT,                         -- Notes can be anything from dveloper's perspective
-    language        VARCHAR(50),                  -- Main Language of the File
-    created_at      TIMESTAMP default now(),
-    updated_at      TIMESTAMP
+    id                   BIGSERIAL PRIMARY KEY,
+    uid                  VARCHAR(255) UNIQUE NOT NULL, -- Unique Comment Context ID
+    repository_id        BIGINT              NOT NULL, -- Generated Repository ID
+    repository_directory VARCHAR(255)        NOT NULL, -- Repository Directory
+    commit_hash          VARCHAR(255),                 -- Commit Hash
+    text                 TEXT,                         -- Comment Text
+    start_line           INT                 NOT NULL, -- Start Line
+    end_line             INT                 NOT NULL, -- End Line
+    file                 VARCHAR(255),                 -- File Path and Name
+    comment_hash         VARCHAR(255),                 -- Comment Hash
+    is_satd              BOOLEAN,                      -- Whether the comment is SATD
+    is_random            BOOLEAN,                      -- Whether the comment is Randomly Picked for Manual Review
+    satd_type            VARCHAR(255),                 -- SATD Type
+    note                 TEXT,                         -- Notes can be anything from dveloper's perspective
+    language             VARCHAR(50),                  -- Main Language of the File
+    created_at           TIMESTAMP default now(),
+    updated_at           TIMESTAMP
 );
