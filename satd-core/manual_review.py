@@ -14,13 +14,13 @@ while True:
             location = os.getenv('REPOSITORY_DIRECTORY') + '/' + comment.repository_directory + '/'+ comment.file + ':' + str(comment.start_line)
             print(f'########################## {comment.id} #########################')
             print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nComment:\n{comment.text}')
-            yn = input('SATD : ')
+            yn = input('SATD : ').strip().lower()
             note = input('Note : ')
-            if yn.lower() == 'yes' or yn.lower() == 'y':
+            if yn == 'yes' or yn == 'y':
                 comment.is_satd = True
-            elif yn.lower() == 'no' or yn.lower() == 'n':
+            elif yn == 'no' or yn == 'n':
                 comment.is_satd = False
             comment.is_random = True
             comment.note = None if not note else note
-            session.add(comment)
-    session.commit()
+            session.merge(comment)
+            session.commit()
