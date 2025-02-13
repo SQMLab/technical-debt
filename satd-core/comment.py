@@ -64,12 +64,12 @@ class CommentRepository:
             print("❌ Comment not found.")
 
     def list_all_comments(self):
-        """Fetch all comments ordered by ID descending"""
-        return self.session.query(Comment).order_by(Comment.id.desc()).all()
+        """Fetch all comments ordered by ID asscending"""
+        return self.session.query(Comment).order_by(Comment.id.asc()).all()
 
     def list_comments_by_repository(self, repository_name):
         """Fetch all comments for a specific repository"""
-        return self.session.query(Comment).filter_by(repository_name=repository_name).order_by(Comment.id.desc()).all()
+        return self.session.query(Comment).filter_by(repository_name=repository_name).order_by(Comment.id.asc()).all()
 
     def list_random_comments(self, limit=10):
         """Fetch a limited number of randomly picked comments for review"""

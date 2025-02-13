@@ -11,8 +11,9 @@ while True:
     for comment in comments:
         if comment.is_satd is None:
             
-            location = os.getenv('REPOSITORY_DIRECTORY') + '/' + comment.repository_directory + '/'+ comment.file + ':' + str(comment.start_line) + ':2'
-            print(f'##########################{comment.id}#########################\nRepository: {comment.repository_directory}\nFile:{location}\nComment: {comment.text}')
+            location = os.getenv('REPOSITORY_DIRECTORY') + '/' + comment.repository_directory + '/'+ comment.file + ':' + str(comment.start_line)
+            print(f'########################## {comment.id} #########################')
+            print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nComment:\n{comment.text}')
             yn = input('SATD : ')
             note = input('Note : ')
             if yn.lower() == 'yes' or yn.lower() == 'y':
@@ -21,5 +22,5 @@ while True:
                 comment.is_satd = False
             comment.is_random = True
             comment.note = None if not note else note
-            #session.add(comment)
+            session.add(comment)
     session.commit()

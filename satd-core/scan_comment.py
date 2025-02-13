@@ -5,7 +5,7 @@ import jpype.imports
 from jpype import JClass
 from load_comment import read_from_csv
 from db_config import SessionLocal
-from repository import RepositoryBase
+from repository import Repository
 load_dotenv()
 # Start JVM
 jpype.startJVM(classpath=[os.getenv('COMMENT_SCANNER_JAR')])
@@ -19,7 +19,7 @@ def scan_all_comment():
     """Iterate over all repositories and update the commit_hash field"""
     session = SessionLocal()
 
-    repositories = session.query(RepositoryBase).all()
+    repositories =Repository().list_top_repositories()
 
     for repo in repositories:
         repository_directory = repo.full_name.replace("/", "--")

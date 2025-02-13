@@ -50,7 +50,7 @@ def save_repositories_to_db(repos_data):
 
     for repo in repos_data:
         repo_entry = RepositoryBase(
-            repository_id=repo["id"],
+            project_id=repo["id"],
             name=repo["name"],
             full_name=repo["full_name"],
             is_fork=repo["fork"],

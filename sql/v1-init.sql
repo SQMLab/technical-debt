@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS repository;
 CREATE TABLE repository
 (
     id                    BIGSERIAL PRIMARY KEY,
-    repository_id         BIGINT UNIQUE NOT NULL,               -- Unique GitHub Repository ID
+    project_id         BIGINT UNIQUE NOT NULL,               -- Unique GitHub Repository ID
     name                  VARCHAR(255)  NOT NULL,               -- Repository Name
     full_name             VARCHAR(255)  NOT NULL,               -- Full name (owner/repo)
     is_fork               BOOLEAN       NOT NULL DEFAULT FALSE, -- Whether the repo is a fork or not
@@ -26,6 +26,8 @@ CREATE TABLE repository
     updated_at            TIMESTAMP
 
 );
+
+-- ALTER TABLE repository RENAME COLUMN repository_id TO project_id;
 
 DROP TABLE IF EXISTS comment;
 CREATE TABLE comment

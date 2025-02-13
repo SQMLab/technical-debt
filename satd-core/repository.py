@@ -11,7 +11,7 @@ class RepositoryBase(Base):
 
     id = Column(BigInteger, Sequence('repository_id_seq', start=1, increment=1),
                 primary_key=True)  # Auto-incrementing ID
-    repository_id = Column(BigInteger, unique=True)  # Unique GitHub Repository ID
+    project_id = Column(BigInteger, unique=True)  # Unique GitHub Repository ID
     name = Column(String(255), nullable=False)  # Repository Name
     full_name = Column(String(255), nullable=False)  # Full name (owner/repo)
     is_fork = Column(Boolean, nullable=False, default=False)  # Fork status
@@ -78,7 +78,7 @@ class Repository:
 
     def list_top_repositories(self, limit=1000):
         """Fetch top repositories by stars"""
-        return self.session.query(RepositoryBase).order_by(RepositoryBase.stars.desc()).limit(limit).all()
+        return self.session.query(RepositoryBase).order_by(RepositoryBase.stars.asc()).limit(limit).all()
 
     def close_session(self):
         """Close the database session"""

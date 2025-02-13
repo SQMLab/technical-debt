@@ -1,5 +1,6 @@
 package com.shahidul.satd.comment.scanner;
 
+import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
@@ -54,78 +55,80 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
                     String fileUrl = file.toString();
                     boolean insideStandardTestDirectory = fileUrl.contains("src/test/java");
-                    CompilationUnit compilationUnit = null;
                     try {
-                        compilationUnit = StaticJavaParser.parse(file);
-                        if (fileUrl.endsWith(".java") && (insideStandardTestDirectory || hasTestAnnotation(compilationUnit))) {
-                            String fileContent = Files.readString(file);
-                            List<Comment> commentList = compilationUnit.getAllComments();
-                            commentList.sort(Comparator.comparing(c -> c.getBegin()
-                                    .map(pos -> pos.line)
-                                    .orElse(Integer.MAX_VALUE)));
+                        if (fileUrl.endsWith(".java")) {
+                            StaticJavaParser.getConfiguration().setLanguageLevel(ParserConfiguration.LanguageLevel.BLEEDING_EDGE);
+                            CompilationUnit compilationUnit = StaticJavaParser.parse(file);
+                            if (insideStandardTestDirectory || hasTestAnnotation(compilationUnit)) {
+                                String fileContent = Files.readString(file);
+                                List<Comment> commentList = compilationUnit.getAllComments();
+                                commentList.sort(Comparator.comparing(c -> c.getBegin()
+                                        .map(pos -> pos.line)
+                                        .orElse(Integer.MAX_VALUE)));
 
-                            int startLine = -1;
-                            int endLine = -1;
-                            StringBuilder commentBuilder = new StringBuilder();
+                                int startLine = -1;
+                                int endLine = -1;
+                                StringBuilder commentBuilder = new StringBuilder();
 
-                            for (int commentIndex = 0; commentIndex < commentList.size(); commentIndex++) {
-                                Comment comment = commentList.get(commentIndex);
-                                if (comment.isLineComment()) {
-                                    int commentLineNo = comment.getBegin().get().line;
+                                for (int commentIndex = 0; commentIndex < commentList.size(); commentIndex++) {
+                                    Comment comment = commentList.get(commentIndex);
+                                    if (comment.isLineComment()) {
+                                        int commentLineNo = comment.getBegin().get().line;
 
-                                    String lineCommentText = comment.toString();
-                                    String commentLineSourceText = Util.getLinesInRange(fileContent, commentLineNo, commentLineNo + 1).trim();
+                                        String lineCommentText = comment.toString();
+                                        String commentLineSourceText = Util.getLinesInRange(fileContent, commentLineNo, commentLineNo + 1).trim();
 
-                                    //Total line is comment
-                                    if (commentLineSourceText.equals(lineCommentText.trim())) {
-                                        if (commentBuilder.isEmpty()) {
-                                            startLine = commentLineNo;
-                                            endLine = commentLineNo;
-                                            commentBuilder.append(lineCommentText);
-                                        } else {
-                                            String middleText = Util.getLinesInRange(fileContent, endLine + 1, commentLineNo).trim();
-                                            if (middleText.isEmpty()) {
-                                                commentBuilder.append("\n".repeat(Math.max(0, commentLineNo - endLine - 1)));
-                                                commentBuilder.append(lineCommentText);
-                                                endLine = commentLineNo;
-                                            } else {
-                                                //Flush previous
-                                                writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
-                                                commentBuilder.setLength(0);
-
-                                                //Add this
+                                        //Total line is comment
+                                        if (commentLineSourceText.equals(lineCommentText.trim())) {
+                                            if (commentBuilder.isEmpty()) {
                                                 startLine = commentLineNo;
                                                 endLine = commentLineNo;
                                                 commentBuilder.append(lineCommentText);
+                                            } else {
+                                                String middleText = Util.getLinesInRange(fileContent, endLine + 1, commentLineNo).trim();
+                                                if (middleText.isEmpty()) {
+                                                    commentBuilder.append("\n".repeat(Math.max(0, commentLineNo - endLine - 1)));
+                                                    commentBuilder.append(lineCommentText);
+                                                    endLine = commentLineNo;
+                                                } else {
+                                                    //Flush previous
+                                                    writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
+                                                    commentBuilder.setLength(0);
+
+                                                    //Add this
+                                                    startLine = commentLineNo;
+                                                    endLine = commentLineNo;
+                                                    commentBuilder.append(lineCommentText);
+                                                }
+
                                             }
 
-                                        }
+                                        } else {
+                                            //Flush previous
+                                            writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
+                                            commentBuilder.setLength(0);
 
+                                            //Flush this comment
+                                            writeToCsv(commentLineNo, commentLineNo, lineCommentText, file, rootDirectory, writer, commentCount);
+
+                                        }
                                     } else {
                                         //Flush previous
                                         writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
                                         commentBuilder.setLength(0);
 
+                                        String leadingWhiteSpaces = extractLeadingChars(comment.getContent());
                                         //Flush this comment
-                                        writeToCsv(commentLineNo, commentLineNo, lineCommentText, file, rootDirectory, writer, commentCount);
-
+                                        String commentContext = comment.toString();
+                                        writeToCsv(comment.getBegin().get().line, comment.getEnd().get().line, commentContext, file, rootDirectory, writer, commentCount);
                                     }
-                                } else {
-                                    //Flush previous
-                                    writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
-                                    commentBuilder.setLength(0);
 
-                                    String leadingWhiteSpaces = extractLeadingChars(comment.getContent());
-                                    //Flush this comment
-                                    String commentContext = comment.toString();
-                                    writeToCsv(comment.getBegin().get().line, comment.getEnd().get().line, commentContext, file, rootDirectory, writer, commentCount);
                                 }
 
+                                //Flush remaining at the end of the loop
+                                writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
+                                commentBuilder.setLength(0);
                             }
-
-                            //Flush remaining at the end of the loop
-                            writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
-                            commentBuilder.setLength(0);
                         }
                     } catch (Exception e) {
                         log.error("{}", file, e);
@@ -152,9 +155,11 @@ public class CommentScannerServiceImpl implements CommentScannerService {
 
         return leadingChars.toString();
     }
+
     private void writeToCsv(int startLine, int endLine, String comment, Path file, String rootDirectory, BufferedWriter writer, AtomicInteger commentCount) throws IOException {
         if (!comment.isEmpty()) {
-            String commentText = StringEscapeUtils.escapeCsv(comment);
+            int lastIndexSubtract = comment.charAt(comment.length() - 1) == '\n' ? 1 : 0;
+            String commentText = StringEscapeUtils.escapeCsv(comment.substring(0, comment.length() - lastIndexSubtract));
             StringBuilder csvLine = new StringBuilder();
 
             String absoluteFile = file.toAbsolutePath().toString();
