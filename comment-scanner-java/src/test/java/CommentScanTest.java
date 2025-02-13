@@ -36,4 +36,11 @@ public class CommentScanTest {
                 "cache/MySqlAlterTableTest13.csv");
 
     }
+    @Test
+    public void testCommentExample() {
+        commentScanner.scanComment("/home/shahidul/dev/project/academic/satd/comment-scanner-java/src/test/resources/CommentExample.java",
+                true,
+                "cache/CommentExample.csv");
+
+    }
 }

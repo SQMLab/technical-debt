@@ -73,7 +73,7 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                                 if (comment.isLineComment()) {
                                     int commentLineNo = comment.getBegin().get().line;
 
-                                    String lineCommentText = "//" + comment.getContent();
+                                    String lineCommentText = comment.toString();
                                     String commentLineSourceText = Util.getLinesInRange(fileContent, commentLineNo, commentLineNo + 1).trim();
 
                                     //Total line is comment
@@ -85,7 +85,7 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                                         } else {
                                             String middleText = Util.getLinesInRange(fileContent, endLine + 1, commentLineNo).trim();
                                             if (middleText.isEmpty()) {
-                                                commentBuilder.append("\n".repeat(Math.max(0, commentLineNo - endLine)));
+                                                commentBuilder.append("\n".repeat(Math.max(0, commentLineNo - endLine - 1)));
                                                 commentBuilder.append(lineCommentText);
                                                 endLine = commentLineNo;
                                             } else {
@@ -115,8 +115,9 @@ public class CommentScannerServiceImpl implements CommentScannerService {
                                     writeToCsv(startLine, endLine, commentBuilder.toString(), file, rootDirectory, writer, commentCount);
                                     commentBuilder.setLength(0);
 
+                                    String leadingWhiteSpaces = extractLeadingChars(comment.getContent());
                                     //Flush this comment
-                                    String commentContext = (comment.isJavadocComment() ? "/**" : "/*") + comment.getContent() + "*/";
+                                    String commentContext = comment.toString();
                                     writeToCsv(comment.getBegin().get().line, comment.getEnd().get().line, commentContext, file, rootDirectory, writer, commentCount);
                                 }
 
@@ -139,6 +140,18 @@ public class CommentScannerServiceImpl implements CommentScannerService {
         return commentCount.get();
     }
 
+    public static String extractLeadingChars(String input) {
+        StringBuilder leadingChars = new StringBuilder();
+        int index = 0;
+
+        // Collect leading characters (spaces, tabs, etc.)
+        while (index < input.length() && Character.isWhitespace(input.charAt(index))) {
+            leadingChars.append(input.charAt(index));
+            index++;
+        }
+
+        return leadingChars.toString();
+    }
     private void writeToCsv(int startLine, int endLine, String comment, Path file, String rootDirectory, BufferedWriter writer, AtomicInteger commentCount) throws IOException {
         if (!comment.isEmpty()) {
             String commentText = StringEscapeUtils.escapeCsv(comment);
