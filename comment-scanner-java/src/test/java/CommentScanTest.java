@@ -43,4 +43,11 @@ public class CommentScanTest {
                 "cache/CommentExample.csv");
 
     }
+    @Test
+    public void test3Sum() {
+        commentScanner.scanComment("/home/shahidul/dev/rnd/satd/repository/kdn251--interviews/leetcode/two-pointers/3Sum.java",
+                true,
+                "cache/3Sum.csv");
+
+    }
 }

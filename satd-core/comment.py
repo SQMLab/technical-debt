@@ -64,7 +64,7 @@ class CommentRepository:
             print("❌ Comment not found.")
 
     def list_all_comments(self):
-        """Fetch all comments ordered by ID asscending"""
+        """Fetch all comments ordered by ID ascending"""
         return self.session.query(Comment).order_by(Comment.id.asc()).all()
 
     def list_comments_by_repository(self, repository_name):
