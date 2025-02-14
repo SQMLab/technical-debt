@@ -78,7 +78,7 @@ class Repository:
 
     def list_top_repositories(self, limit=1000):
         """Fetch top repositories by stars"""
-        return self.session.query(RepositoryBase).order_by(RepositoryBase.stars.asc()).limit(limit).all()
+        return self.session.query(RepositoryBase).order_by(RepositoryBase.id.asc()).limit(limit).all()
 
     def close_session(self):
         """Close the database session"""
