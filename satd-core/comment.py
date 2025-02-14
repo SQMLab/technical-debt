@@ -12,12 +12,12 @@ class Comment(Base):
     text = Column(Text)  # Comment Text
     start_line = Column(Integer, nullable=False)  # Start Line
     end_line = Column(Integer, nullable=False)  # End Line
-    file = Column(String(255))  # File Path and Name
+    file = Column(String(500))  # File Path and Name
     comment_hash = Column(String(255))  # Comment Hash
     commit_hash = Column(String(255))  # Commit Hash
-    is_satd = Column(Boolean)  # Whether the comment is SATD
+    is_td = Column(Boolean)  # Whether the comment is SATD
     is_random = Column(Boolean)  # Whether the comment is Randomly Picked for Manual Review
-    satd_type = Column(String(255))  # SATD Type
+    td_type = Column(String(255))  # SATD Type
     note = Column(Text)  # Notes can be anything from developer's perspective
     language = Column(String(50))  # Main Language of the File
     created_at = Column(TIMESTAMP, server_default=func.now())  # Auto-set creation timestamp

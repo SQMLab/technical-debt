@@ -27,7 +27,6 @@ CREATE TABLE repository
 
 );
 
--- ALTER TABLE repository RENAME COLUMN repository_id TO project_id;
 
 DROP TABLE IF EXISTS comment;
 CREATE TABLE comment
@@ -40,11 +39,11 @@ CREATE TABLE comment
     text                 TEXT,                         -- Comment Text
     start_line           INT                 NOT NULL, -- Start Line
     end_line             INT                 NOT NULL, -- End Line
-    file                 VARCHAR(255),                 -- File Path and Name
+    file                 VARCHAR(500),                 -- File Path and Name
     comment_hash         VARCHAR(255),                 -- Comment Hash
-    is_satd              BOOLEAN,                      -- Whether the comment is SATD
+    is_td              BOOLEAN,                      -- Whether the comment is SATD
     is_random            BOOLEAN,                      -- Whether the comment is Randomly Picked for Manual Review
-    satd_type            VARCHAR(255),                 -- SATD Type
+    td_type            VARCHAR(255),                 -- SATD Type
     note                 TEXT,                         -- Notes can be anything from dveloper's perspective
     language             VARCHAR(50),                  -- Main Language of the File
     created_at           TIMESTAMP default now(),

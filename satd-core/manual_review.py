@@ -9,17 +9,17 @@ repo = CommentRepository()
 while True:
     comments = repo.get_random_comments()
     for comment in comments:
-        if comment.is_satd is None:
+        if comment.is_td is None:
             
             location = os.getenv('REPOSITORY_DIRECTORY') + '/' + comment.repository_directory + '/'+ comment.file + ':' + str(comment.start_line)
             print(f'########################## {comment.id} #########################')
             print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nComment:\n{comment.text}')
-            yn = input('SATD : ').strip().lower()
+            yn = input('TD : ').strip().lower()
             note = input('Note : ')
             if yn == 'yes' or yn == 'y':
-                comment.is_satd = True
+                comment.is_td = True
             elif yn == 'no' or yn == 'n':
-                comment.is_satd = False
+                comment.is_td = False
             comment.is_random = True
             comment.note = None if not note else note
             session.merge(comment)

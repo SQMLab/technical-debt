@@ -3,6 +3,10 @@ from db_config import SessionLocal
 from sqlalchemy.exc import IntegrityError
 from comment import Comment, CommentRepository
 from util import sha1
+import sys
+csv.field_size_limit(sys.maxsize)  # Set the maximum field size limit
+
+NUL_PLACEHOLDER = "SATD::<<__NUL__>>"
 
 
 def read_from_csv(file_path, repository_id, repository_directory, commit_hash):
@@ -14,9 +18,12 @@ def read_from_csv(file_path, repository_id, repository_directory, commit_hash):
     try:
         with open(file_path, mode='r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
+            #reader = csv.DictReader((line.replace("\x00", NUL_PLACEHOLDER) for line in file))
+
             for row in reader:
 
                 comment_text = row['comment']
+                # comment_text = row['comment'].replace(NUL_PLACEHOLDER, " \ 000")
                 start_line = int(row['start'].strip())
                 end_line = int(row['end'].strip())
                 file= row['file'].strip()
