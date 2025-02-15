@@ -7,13 +7,13 @@ load_dotenv()
 session = SessionLocal()
 repo = CommentRepository()
 while True:
-    comments = repo.get_random_comments()
+    comments = repo.get_random_comments(limit=100)
     for comment in comments:
         if comment.is_td is None:
             
             location = os.getenv('REPOSITORY_DIRECTORY') + '/' + comment.repository_directory + '/'+ comment.file + ':' + str(comment.start_line)
-            print(f'########################## {comment.id} #########################')
-            print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nComment:\n{comment.text}')
+            print(f'\n\n\n\n########################## {comment.id} #########################')
+            print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nComment:\n\n{comment.text}\n')
             yn = input('TD : ').strip().lower()
             note = input('Note : ')
             if yn == 'yes' or yn == 'y':
