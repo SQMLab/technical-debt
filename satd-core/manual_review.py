@@ -15,11 +15,14 @@ while True:
             print(f'\n\n\n\n########################## {comment.id} #########################')
             print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nComment:\n\n{comment.text}\n')
             yn = input('TD : ').strip().lower()
-            note = input('Note : ')
+            
             if yn == 'yes' or yn == 'y':
                 comment.is_td = True
-            elif yn == 'no' or yn == 'n':
+            else:
                 comment.is_td = False
+            note = None
+            if yn == 'yes' or yn == 'no':
+                note = input('Note : ')
             comment.is_random = True
             comment.note = None if not note else note
             session.merge(comment)
