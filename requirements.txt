@@ -1,0 +1,12 @@
+transformers>=4.20,<5.0
+torch>=1.9,<2.2
+numpy>=1.21,<1.26
+pandas>=1.3,<2.0
+scikit-learn>=1.0,<1.4
+ipykernel==5.5.5
+ipython==8.12.0
+ipython_genutils==0.2.0
+seaborn>=0.11,<0.14
+matplotlib>=3.4,<3.9
+datasets
+accelerate>=0.26.0

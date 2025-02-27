@@ -1,0 +1,420 @@
+"text"
+//TODO: HIVE-28044: Replication tests to run on Tez
+"// TODO assertTrue(!set.isEmpty());
+// TODO assertTrue(set.isFull());"
+// TODO: test capitalCamel
+"/**
+ * Note that {@link java.net.Socket#setSendBufferSize(int)} is only a hint.
+ * If this test is flaky it should be ignored.  See HADOOP-13351.
+ */"
+//TODO: upsert() with IDENTITY not working on SQL Server
+//TODO: Fix https://github.com/trinodb/trino/issues/23941
+"/**
+ * Just a dummy exception for testing IPCUtil.isFatalConnectionException.
+ */"
+// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag
+// Short circuit signature validation to be always successful since this test class does not test it
+"//Seems like a pattern where they truncate the symbol and append a 32-character (128-bit) hash code on the end instead.  Not sure what/how we
+// should deal with this (and potentially others--this came from Windows 7): give partial results?  By running with parse info output, we can
+// see that it is a series of nested templates to start, which cuts off during a deep nesting."
+"/**
+ * The tests are touchy about anything being printed on stderr, because that's usually where
+ * Python stack traces go that otherwise are ignored. Unfortunately, GDB also emits some
+ * warnings there, and these are more common in containers where permissions and resources are
+ * more restricted. Thus, we add some commands here to disable the features that commonly cause
+ * these warnings: Leave ASLR alone, and don't try to display source code.
+ */"
+"//	public void testDisassemblerMidBlockOverlapWithProgramAndConflictPreservation()
+//			throws Exception {
+//		// TODO: having difficult time coming up with valid test case
+//	}
+
+//	public void testDisassemblerMidBlockOverlapWithProgramAndConflictDetection() throws Exception {
+//		// TODO: having difficult time coming up with valid test case
+//	}
+
+//
+// TEST BAD PARSE CASES
+//"
+"// TODO: update dependencies?
+// assertThat(aCls.getDependencies()).contains(cCls);
+// assertThat(cCls.getUsedIn()).contains(aCls);"
+// TODO assert error log
+// TODO Auto-generated method stub
+"// The following check is not valid anymore since file store does have the same ID, and is redundant due to the previous line
+// Assert.assertNotEquals(""test-user@localhost"", refreshedToken.getSubject());"
+"/**
+ * This test only fails eventually.
+ */"
+// TODO: test name
+// TODO: test AdditionalPropertiesInteger
+// TODO - assign values to the input arguments.
+// TODO: test ClassModel
+// TODO: test SpecialModelName
+// TODO: test name
+"//
+//String orderId = null;
+//
+//api.deleteOrder(orderId);
+
+// TODO: test validations"
+// TODO: test status
+// TODO: test value
+// TODO: test OuterComposite
+// TODO: test prefixInteger
+// TODO: test status
+// TODO: test firstName
+// TODO: test outcomes
+// TODO: test OuterEnumDefaultValue
+"/*
+                             * Nothing concrete to check here, since FP80 potentially doesn't fit in
+                             * any numeric interop type.
+                             */"
+"// Ignore the following tests because taking a lease requires a real
+// (not mock) file system store. These tests don't work on the mock."
+"// This is disabled since OverlordResource.getTaskStatus() is annotated with TaskResourceFilter which is supposed to
+// set authorization token properly, but isn't called in this test.
+// This should be fixed in https://github.com/apache/druid/issues/6685.
+// expectAuthorizationTokenCheck();"
+"//TODO: бек, бег, ага, паша, хан
+//    TestTools.myAssert(""Каладжі-ага"", """", tokenizer, tagger);"
+// this is old test where the flag needs to be disabled
+// TODO(https://github.com/apache/beam/issues/20447)
+// todo add some test case to test NaN
+"// todo (6.0) : fix for Oracle see HHH-13432
+//		integrationSettings.put( AvailableSettings.HQL_BULK_ID_STRATEGY, new MultiTableBulkIdStrategyStub() );"
+"/**
+ * TODO : javadoc
+ *
+ * @author Steve Ebersole
+ */"
+"//      This is not interesting anymore as the data is already built
+//      beforehand
+
+//        check build
+//        UnicodeSet ss = CanonicalIterator.getSafeStart();
+//        logln(""Safe Start: "" + ss.toPattern(true));
+//        ss = CanonicalIterator.getStarts('a');
+//        expectEqual(""Characters with 'a' at the start of their decomposition: "", """", CanonicalIterator.getStarts('a'),
+//            new UnicodeSet(""[\u00E0-\u00E5\u0101\u0103\u0105\u01CE\u01DF\u01E1\u01FB""
+//            + ""\u0201\u0203\u0227\u1E01\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7]"")
+//                );
+
+// check permute
+// NOTE: we use a TreeSet below to sort the output, which is not guaranteed to be sorted!"
+"//TODO(b/265202484): fix JavaLangClassCastException: Cannot cast object of
+// type OrgApacheHarmonyXmlDomEntityReferenceImpl to OrgW3cDomText
+// public void testSetEntityResolver() {
+//     // Ordinary case
+//     InputStream source = new ByteArrayInputStream(""<a>&foo;</a>"".getBytes());
+//     InputStream entity = new ByteArrayInputStream(""bar"".getBytes());
+
+//     MockResolver resolver = new MockResolver();
+//     resolver.addEntity(""foo"", ""foo"", new InputSource(entity));
+
+//     Document d;
+
+//     try {
+//         db = dbf.newDocumentBuilder();
+//         db.setEntityResolver(resolver);
+//         d = db.parse(source);
+//     } catch (Exception e) {
+//         throw new RuntimeException(""Unexpected exception"", e);
+//     }
+
+//     Element root = (Element)d.getElementsByTagName(""a"").item(0);
+//     assertEquals(""bar"", ((Text)root.getFirstChild()).getData());
+
+//     // null case
+//     source = new ByteArrayInputStream(""<a>&foo;</a>"".getBytes());
+
+//     try {
+//         db = dbf.newDocumentBuilder();
+//         db.setEntityResolver(null);
+//         d = db.parse(source);
+//     } catch (Exception e) {
+//         throw new RuntimeException(""Unexpected exception"", e);
+//     }
+
+//     root = (Element)d.getElementsByTagName(""a"").item(0);
+//     assertEquals(""foo"", ((EntityReference)root.getFirstChild()).getNodeName());
+// }"
+"// this is a bit of a hack, since we don't implement generations."
+// TODO: use sft.load() api here
+"// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]"
+"// TODO: Unlike PPGs with 0xBB compression the timestamps are not linear
+// The data also looks different, hmmm...."
+// Probably incorrect - comparing Object[] arrays with Arrays.equals
+"// This only tests for calendar ordering, ignoring the other criteria"
+// we only read the first line for keeping the test simple
+// TODO: test indirectMap
+// TODO(adriancole): Find a home for this generic conversion between Call and Java 8.
+//needs https://community.box.com/t5/custom/page/page-id/BoxViewTicketDetail?ticket_id=1895413 to be solved
+// TODO: test password
+// TODO: test username
+"// TODO Check CI log
+// logger.debug(""spanChunk dump \noriginal spanChunkBo:{} \ndecode spanChunkBo:{} "", spanChunkBo, decode);"
+// TODO(b/133450410): This should be a visibility violation.
+// TODO: remove this after PR #7987 is landed
+// TODO: test someId
+// TODO: Make this work for GLES
+// TODO Add StepStatusList
+"/*
+			 * Loading NodeClass as a hidden class fails due to
+			 *   java.lang.ClassNotFoundException: j9vm.test.invoker.NodeClass.0x0000000000000000
+			 * skip this test for now.
+			 * See https://github.com/eclipse-openj9/openj9/issues/13529
+			 */"
+"/* J2ObjC removed: not supported by Junit 4.11 (https://github.com/google/j2objc/issues/1318).
+import libcore.junit.junit3.TestCaseWithRules;
+import libcore.junit.util.ResourceLeakageDetector.DisableResourceLeakageDetection;
+import libcore.junit.util.ResourceLeakageDetector; */"
+//writer.putAlign(2); // TODO: Not sure
+"// Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
+// which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
+// successfully, but in order to shorten the test time, we chose one million numbers."
+// TODO: test FormatTest
+"// Design limitation - typeless u extension keyword 00 below is interpreted as a boolean value true/yes.
+// With the legacy keyword syntax, ""yes"" is used for such boolean value instead of ""true"".
+// However, once the legacy keyword is translated back to BCP 47 u extension, key ""00"" is unknown,
+// so ""yes"" is preserved - not mapped to ""true"". We could change the code to automatically transform
+// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes""."
+"// TODO: verify ribbon stats match
+// assertEquals(target.lb().getLoadBalancerStats().getSingleServerStat())"
+// FIXME
+// TODO: test baz
+"/**
+ * The @Override annotation is intentionally removed for this method to align with the
+ * production codes' assumption that this interface may not be available for the given hadoop
+ * version.
+ */"
+"/**
+ * Looks at contents of a text file and sees whether or not it has windows-style newlines, or unix style.
+ * Used in tests to make annotation processors generate files matching signature files to verify contents with.
+ * Why not do it the other way around, you ask (i.e. convert the the signature files when reading them)?
+ * The assertions framework used in these annotation tests makes that very hard and fragile with the google assertions.
+ *
+ * @param fullyQualifiedName the resource name to look at.
+ * @return either {@link AnnotationConstants#DEFAULT_NEW_LINE} or {@link AnnotationConstants#WINDOWS_NEW_LINE}.
+ * @throws IOException on I/O error.
+ */"
+// TODO: should this check *any* reference to http://download.oracle.com/
+// TODO: test className
+// TODO: test deprecatedRef
+// TODO Auto-generated method stub
+// TODO: test smallCamel
+// TODO: test datetimeProp
+"// Second time will update some tables. This is only for testing purpose and
+// obviously we wouldn't set things up this way."
+// TODO Auto-generated method stub
+"// mechanism for class level annotations does not differ from method level (where we do extensive testing),
+// therefore what we really do want to test is annotation detection and smoke test"
+"// it has enough size to print 3 warnings, but it will only print 2,
+// because it needs to accommodate the suffix too in the max size."
+// TODO: test validations
+//TODO:
+// TODO: handle exception
+// TODO: test Cat
+// We set up a fake ADB server because the real one won't work on Forge.
+// TODO remove
+"// TODO(b/292141694): build out Ravenwood support for Context
+// Ravenwood doesn't yet provide a Context, but many SysUI tests assume one exists;
+// so here we construct just enough of a Context to be useful; this will be replaced
+// as more of the Ravenwood environment is built out"
+// TODO(b/207848601): Switch to using proper tooling for testing against golden data.
+// TODO: test dateTime
+// choose My Bar // TODO: I see no reason for a conflict !
+// TODO Auto-generated method stub
+// TODO Auto-generated method stub
+// TODO b/300201845 - encapsulate parents and childs private attributes
+// TODO Auto-generated catch block
+// TODO - assign values to the input arguments.
+// TODO: test username
+// TODO: test quadrilateralType
+// TODO: test prefixNumber
+// TODO: test OuterEnum
+// TODO: test myString
+// TODO: test className
+// TODO: test ModelApiResponse
+"//
+//File body = null;
+//
+//api.testBodyWithBinary(body);
+
+// TODO: test validations"
+// TODO: test capitalSnake
+// TODO: test category
+// TODO: test arrayArrayOfInteger
+// TODO: test MapTest
+// TODO: test color
+// TODO: test type
+// TODO: test mapWithUndeclaredPropertiesAnytype2
+// TODO: test int64
+// TODO: test code
+// TODO: test FakeBigDecimalMap200Response
+// TODO: test validations
+// TODO: test StringEnumRef
+// TODO: test int64
+// TODO: test EnumClass
+"// TODO this should fail, or represent TIME '01:39:07'"
+// TODO: multi-column partitions cannot prune partitions.
+"// TODO(lharker): stop ignoring USE_OF_GOOG_PROVIDE after migrating rules_closure
+// code to suppress useOfGoogProvide instead of lintChecks."
+// TODO(b/139319709): Remove this. static method removal is disabled.
+//TODO: fast results still can get lost
+// todo (6.0) : should we define the rule with the integer as optional and then give a better exception?
+"// TODO: it is necessary to produce two values here, the operator only throws on second
+// (see the comment in Aggregate operator)"
+"// TODO: Should be checked on server side. On Embedded metastore it throws MetaException,
+// on Remote metastore it throws TProtocolException"
+"// TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
+//assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());"
+"// This class is technically not needed for the test to fail without the fix
+// (AsDeductionTypeDeserializer will crash in #buildFingerprints), but was
+// added to have more assertions on the subtypes values"
+"/**
+ * TODO Comment of PersonInfoModel
+ *
+ * @author tony.chenl
+ */"
+"// TODO: this still passes, but setLenientParseMode should have no effect now.
+// Did it ever test what it was supposed to?"
+// Retry.
+"// FIXME last cause value is not saved
+//        assertTrue(ts.errors().get(0).getCause().getMessage().contains(""abc""));"
+"// An example address taken from https://www.ripplecharts.com/#/active_accounts
+// that was actively trading at the time this was last updated."
+// TODO: test validations
+// TODO: test name
+"/**
+ * Invalid assertion usage: somewhere down the call graph a method is used in an assertion that
+ * does not return true on all paths and thus may lead to assertion errors without a message in
+ * the caller. Specifically assertSth has a return false path that would fire the error in the
+ * caller run without a message.
+ */"
+// TODO: test phone
+"/**
+ * This should be part of integration test suite.
+ * The test starts the server and then connects to the WebSocket. Then verifies if the messages are received from the
+ * WebSocket.
+ * This test is inspired from: https://github.com/spring-guides/gs-messaging-stomp-websocket/blob/main/complete/src/test/java/com/example/messagingstompwebsocket/GreetingIntegrationTests.java
+ */"
+// TODO: test capitalCamel
+"// Send the message only to the current connection
+// This does not make much sense but it's good enough to test the filter"
+"// Should only require FLAG_STORAGE_DE here because we have a pending backup that we
+// didn't manage to execute."
+"/**
+ * An implementation of {@code OutputStream} that should serve as the
+ * underlying stream for classes to be tested.
+ * In particular this implementation allows to have IOExecptions thrown on demand.
+ * For simplicity of use and understanding all fields are public.
+ */"
+// TODO: test id
+"// inline function cannot be recursive
+// note: mutual recursion is not supported either, but it is not tested due to the forward declaration limitation above"
+"/**
+ * Should be removed along {@link SupportsCommitter}.
+ */"
+"// TODO: streets
+//    assertEmptyMatch(""бачити на Різницький представника донецького регіону"");"
+// This connector does not support modifying table rows
+// 这里可以添加更多的验证，例如检查 ONLINE_USER_SESSIONS 的状态等
+// cannot test...
+"// Add some constructors for testing maxRowsPerFrame > 1. Later on, we'll add some for maxRowsPerFrame = 1."
+//        abstract void abstractMethod(); todo
+// TODO: test OuterComposite
+// TODO: test dateTime
+// TODO: test breed
+"// TODO: test that sendApplicationHiddenForUser() actually fills in
+// broadcastUsers"
+"/**
+ * Base class for tests related to unaligned checkpoints.
+ *
+ * <p>This test base relies on restarting the subtasks within the scheduler to trigger a reset of
+ * the operators. The operator reset is counted in the LongSource. The job will terminate if the
+ * number of expected restarts is reached. The AdaptiveScheduler won't trigger the operator reset
+ * resulting in the test running forever. This is why this test suite is disabled for the {@link
+ * org.apache.flink.runtime.scheduler.adaptive.AdaptiveScheduler}.
+ */"
+// TODO: test firstName
+// TODO: test int64
+// TODO: test userStatus
+"// Create a list of patient sub-tables to work with TODO(lwhite): Build the copy-on-write to
+// ViewGroups to avoid"
+// Need to manually enable streaming engine for legacy dataflow runner
+// success only implies that it responded; it also needs to be available and enabled
+// add your own wechat webhook url and secret
+"/*
+    To test:
+    tile
+    reshape
+    permute
+    expandDims
+    repeat
+    rollAxis
+    doRepeat
+     */"
+// TODO: test FileSchemaTestClass
+"// The next test also verifies replace functionality. Now, they are together to save on test execution time
+// due to Travis CI 10 minute default running time (with no output) -- having it separate made it
+// last longer. At some point we should really simplify this file, so it runs faster (splitting, etc.)"
+// Avoid failure
+"// uncomment below to test the function
+//List<String> pipe = null;
+//List<String> ioutil = null;
+//List<String> http = null;
+//List<String> url = null;
+//List<String> context = null;
+//String allowEmpty = null;
+//Map<String, String> language = null;
+//api.testQueryParameterCollectionFormat(pipe, ioutil, http, url, context, allowEmpty, language).block();
+
+// TODO: test validations"
+// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved
+// TODO: test justNumber
+// TODO(b/264974805): Make export output deterministic and check it against dump file.
+// TODO: Maven and Gradle give different return codes
+// Not yet implemented
+// TODO Auto-generated method stub
+// TODO test that remove(obj) with duplicates removes the right element
+// TODO: test validations
+"/**
+ * Minimal implementation that provides the bare essentials require for the
+ * unit tests.
+ */"
+"// TODO review the generated test code and remove the default call to
+// fail.
+// fail(""The test case is a prototype."");"
+"// Try to ensure the path to the Java launcher is reasonably short,
+// to work around the mostly undocumented limit of 120 characters
+// for a shebang line.
+// The value of 120 is the typical kernel compile-time buffer limit.
+// The following limit of 80 allows room for arguments to be placed
+// after the path to the launcher on the shebang line."
+// TODO: test validations
+"// TODO (https://github.com/trinodb/trino/issues/6242) ResultSet.getObject sometimes fails
+//  assertThat(rs.getObject(""bound"")).as(""bound value should round trip the same way as literal "" + expectedValueLiteral)
+//        .isEqualTo(rs.getObject(""literal""));"
+// TODO: test attributeString
+// TODO: test categoryTag
+// TODO: test OuterEnum
+// TODO: implement tests
+// TODO: test TestInlineFreeformAdditionalPropertiesRequest
+// Using deprecated constructor for verification of backwards compatibility
+// TODO Auto-generated method stub
+// TODO: test quantity
+"//TODO this could be implemented with @BeforeAll, if we move to Junit 5.5 or higher. The way to intercept exceptions in this method, inside
+// the @NotImplementedYet extension would be by harnessing LifecycleMethodExecutionExceptionHandler, or InvocationInterceptor,
+// and both are Junit 5.5 (and experimental)"
+"// TODO Second, modify the sql, so Flink engineConn can run it successfully."
+// TODO: test validations
+// TODO: test number
+// TODO: we have no CannedAnalyzer?
+// TODO: Remove once Distributions has shipped.
+// TODO(https://github.com/apache/beam/issues/20447)
+// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead
+// TODO(johnlenz): fix this.
+"////////////////
+////////////////   INTERNAL DEVELOPER TESTS follow
+////////////////   (these are NOT necessary for unit test but source is kept here for reference and info)"
