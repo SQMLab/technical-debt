@@ -1,19 +1,5 @@
 "text"
 //TODO: HIVE-28044: Replication tests to run on Tez
-"// TODO assertTrue(!set.isEmpty());
-// TODO assertTrue(set.isFull());"
-// TODO: test capitalCamel
-"/**
- * Note that {@link java.net.Socket#setSendBufferSize(int)} is only a hint.
- * If this test is flaky it should be ignored.  See HADOOP-13351.
- */"
-//TODO: upsert() with IDENTITY not working on SQL Server
-//TODO: Fix https://github.com/trinodb/trino/issues/23941
-"/**
- * Just a dummy exception for testing IPCUtil.isFatalConnectionException.
- */"
-// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag
-// Short circuit signature validation to be always successful since this test class does not test it
 "//Seems like a pattern where they truncate the symbol and append a 32-character (128-bit) hash code on the end instead.  Not sure what/how we
 // should deal with this (and potentially others--this came from Windows 7): give partial results?  By running with parse info output, we can
 // see that it is a series of nested templates to start, which cuts off during a deep nesting."
@@ -24,48 +10,6 @@
  * more restricted. Thus, we add some commands here to disable the features that commonly cause
  * these warnings: Leave ASLR alone, and don't try to display source code.
  */"
-"//	public void testDisassemblerMidBlockOverlapWithProgramAndConflictPreservation()
-//			throws Exception {
-//		// TODO: having difficult time coming up with valid test case
-//	}
-
-//	public void testDisassemblerMidBlockOverlapWithProgramAndConflictDetection() throws Exception {
-//		// TODO: having difficult time coming up with valid test case
-//	}
-
-//
-// TEST BAD PARSE CASES
-//"
-"// TODO: update dependencies?
-// assertThat(aCls.getDependencies()).contains(cCls);
-// assertThat(cCls.getUsedIn()).contains(aCls);"
-// TODO assert error log
-// TODO Auto-generated method stub
-"// The following check is not valid anymore since file store does have the same ID, and is redundant due to the previous line
-// Assert.assertNotEquals(""test-user@localhost"", refreshedToken.getSubject());"
-"/**
- * This test only fails eventually.
- */"
-// TODO: test name
-// TODO: test AdditionalPropertiesInteger
-// TODO - assign values to the input arguments.
-// TODO: test ClassModel
-// TODO: test SpecialModelName
-// TODO: test name
-"//
-//String orderId = null;
-//
-//api.deleteOrder(orderId);
-
-// TODO: test validations"
-// TODO: test status
-// TODO: test value
-// TODO: test OuterComposite
-// TODO: test prefixInteger
-// TODO: test status
-// TODO: test firstName
-// TODO: test outcomes
-// TODO: test OuterEnumDefaultValue
 "/*
                              * Nothing concrete to check here, since FP80 potentially doesn't fit in
                              * any numeric interop type.
@@ -76,69 +20,7 @@
 // set authorization token properly, but isn't called in this test.
 // This should be fixed in https://github.com/apache/druid/issues/6685.
 // expectAuthorizationTokenCheck();"
-"//TODO: бек, бег, ага, паша, хан
-//    TestTools.myAssert(""Каладжі-ага"", """", tokenizer, tagger);"
 // this is old test where the flag needs to be disabled
-// TODO(https://github.com/apache/beam/issues/20447)
-// todo add some test case to test NaN
-"// todo (6.0) : fix for Oracle see HHH-13432
-//		integrationSettings.put( AvailableSettings.HQL_BULK_ID_STRATEGY, new MultiTableBulkIdStrategyStub() );"
-"/**
- * TODO : javadoc
- *
- * @author Steve Ebersole
- */"
-"//      This is not interesting anymore as the data is already built
-//      beforehand
-
-//        check build
-//        UnicodeSet ss = CanonicalIterator.getSafeStart();
-//        logln(""Safe Start: "" + ss.toPattern(true));
-//        ss = CanonicalIterator.getStarts('a');
-//        expectEqual(""Characters with 'a' at the start of their decomposition: "", """", CanonicalIterator.getStarts('a'),
-//            new UnicodeSet(""[\u00E0-\u00E5\u0101\u0103\u0105\u01CE\u01DF\u01E1\u01FB""
-//            + ""\u0201\u0203\u0227\u1E01\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7]"")
-//                );
-
-// check permute
-// NOTE: we use a TreeSet below to sort the output, which is not guaranteed to be sorted!"
-"//TODO(b/265202484): fix JavaLangClassCastException: Cannot cast object of
-// type OrgApacheHarmonyXmlDomEntityReferenceImpl to OrgW3cDomText
-// public void testSetEntityResolver() {
-//     // Ordinary case
-//     InputStream source = new ByteArrayInputStream(""<a>&foo;</a>"".getBytes());
-//     InputStream entity = new ByteArrayInputStream(""bar"".getBytes());
-
-//     MockResolver resolver = new MockResolver();
-//     resolver.addEntity(""foo"", ""foo"", new InputSource(entity));
-
-//     Document d;
-
-//     try {
-//         db = dbf.newDocumentBuilder();
-//         db.setEntityResolver(resolver);
-//         d = db.parse(source);
-//     } catch (Exception e) {
-//         throw new RuntimeException(""Unexpected exception"", e);
-//     }
-
-//     Element root = (Element)d.getElementsByTagName(""a"").item(0);
-//     assertEquals(""bar"", ((Text)root.getFirstChild()).getData());
-
-//     // null case
-//     source = new ByteArrayInputStream(""<a>&foo;</a>"".getBytes());
-
-//     try {
-//         db = dbf.newDocumentBuilder();
-//         db.setEntityResolver(null);
-//         d = db.parse(source);
-//     } catch (Exception e) {
-//         throw new RuntimeException(""Unexpected exception"", e);
-//     }
-
-//     root = (Element)d.getElementsByTagName(""a"").item(0);
-//     assertEquals(""foo"", ((EntityReference)root.getFirstChild()).getNodeName());
-// }"
 "// this is a bit of a hack, since we don't implement generations."
 // TODO: use sft.load() api here
 "// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]"
