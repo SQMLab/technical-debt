@@ -1,5 +1,14 @@
 "text"
 //TODO: HIVE-28044: Replication tests to run on Tez
+"// this is a bit of a hack, since we don't implement generations."
+// we only read the first line for keeping the test simple
+"// FIXME last cause value is not saved
+//        assertTrue(ts.errors().get(0).getCause().getMessage().contains(""abc""));"
+"// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]"
+"/**
+ * Minimal implementation that provides the bare essentials require for the
+ * unit tests.
+ */"
 "//Seems like a pattern where they truncate the symbol and append a 32-character (128-bit) hash code on the end instead.  Not sure what/how we
 // should deal with this (and potentially others--this came from Windows 7): give partial results?  By running with parse info output, we can
 // see that it is a series of nested templates to start, which cuts off during a deep nesting."
@@ -10,25 +19,15 @@
  * more restricted. Thus, we add some commands here to disable the features that commonly cause
  * these warnings: Leave ASLR alone, and don't try to display source code.
  */"
-"/*
-                             * Nothing concrete to check here, since FP80 potentially doesn't fit in
-                             * any numeric interop type.
-                             */"
-"// Ignore the following tests because taking a lease requires a real
-// (not mock) file system store. These tests don't work on the mock."
 "// This is disabled since OverlordResource.getTaskStatus() is annotated with TaskResourceFilter which is supposed to
 // set authorization token properly, but isn't called in this test.
 // This should be fixed in https://github.com/apache/druid/issues/6685.
 // expectAuthorizationTokenCheck();"
-// this is old test where the flag needs to be disabled
-"// this is a bit of a hack, since we don't implement generations."
 // TODO: use sft.load() api here
-"// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]"
 "// TODO: Unlike PPGs with 0xBB compression the timestamps are not linear
 // The data also looks different, hmmm...."
 // Probably incorrect - comparing Object[] arrays with Arrays.equals
 "// This only tests for calendar ordering, ignoring the other criteria"
-// we only read the first line for keeping the test simple
 // TODO: test indirectMap
 // TODO(adriancole): Find a home for this generic conversion between Call and Java 8.
 //needs https://community.box.com/t5/custom/page/page-id/BoxViewTicketDetail?ticket_id=1895413 to be solved
@@ -162,8 +161,6 @@ import libcore.junit.util.ResourceLeakageDetector; */"
 "// TODO: this still passes, but setLenientParseMode should have no effect now.
 // Did it ever test what it was supposed to?"
 // Retry.
-"// FIXME last cause value is not saved
-//        assertTrue(ts.errors().get(0).getCause().getMessage().contains(""abc""));"
 "// An example address taken from https://www.ripplecharts.com/#/active_accounts
 // that was actively trading at the time this was last updated."
 // TODO: test validations
@@ -261,10 +258,6 @@ import libcore.junit.util.ResourceLeakageDetector; */"
 // TODO Auto-generated method stub
 // TODO test that remove(obj) with duplicates removes the right element
 // TODO: test validations
-"/**
- * Minimal implementation that provides the bare essentials require for the
- * unit tests.
- */"
 "// TODO review the generated test code and remove the default call to
 // fail.
 // fail(""The test case is a prototype."");"
