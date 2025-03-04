@@ -15,3 +15,5 @@ sentence_transformers
 google-generativeai
 dotenv
 tenacity
+sqlalchemy
+psycopg2
