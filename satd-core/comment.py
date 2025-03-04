@@ -1,6 +1,8 @@
-from sqlalchemy import create_engine, Column, BigInteger, String, Integer, Boolean, TIMESTAMP, Text, func
+from sqlalchemy import create_engine, Column, BigInteger, String, Integer, Boolean, TIMESTAMP, Text, func, select
 from sqlalchemy.ext.declarative import declarative_base
 from db_config import SessionLocal, Base
+
+
 # Define the Comment ORM Model
 class Comment(Base):
     __tablename__ = "comment"
@@ -16,12 +18,14 @@ class Comment(Base):
     comment_hash = Column(String(255))  # Comment Hash
     commit_hash = Column(String(255))  # Commit Hash
     is_td = Column(Boolean)  # Whether the comment is SATD
+    pred_td = Column(Boolean)
     is_random = Column(Boolean)  # Whether the comment is Randomly Picked for Manual Review
     td_type = Column(String(255))  # SATD Type
     note = Column(Text)  # Notes can be anything from developer's perspective
     language = Column(String(50))  # Main Language of the File
     created_at = Column(TIMESTAMP, server_default=func.now())  # Auto-set creation timestamp
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())  # Auto-update timestamp
+
 
 class CommentRepository:
     def __init__(self):
@@ -85,7 +89,25 @@ class CommentRepository:
 
     def get_random_comments(self, limit=100):
         """Fetch a list of randomly selected comments with uniform probability"""
-        return self.session.query(Comment).filter_by(is_random = None).order_by(func.random()).limit(limit).all()
+        return self.session.query(Comment).filter_by(is_random=None).order_by(func.random()).limit(limit).all()
+
+    def get_satd_comments_without_todo(self, limit=100):
+        return (self.session.query(Comment)
+                .filter(Comment.is_td == True,
+                        ~Comment.text.ilike("%TODO%"))  # Use .ilike() for case-insensitive search
+                .order_by(Comment.id.asc())  # Order by ID (ascending)
+                .limit(limit)  # Limit results
+                .all())
+
+    def get_comments_having_notes(self, limit=100):
+        return (self.session.query(Comment)
+                .filter(Comment.is_random == True, Comment.note != None)  # Use correct filter syntax
+                .order_by(Comment.id.asc())  # Order by ID (ascending)
+                .limit(limit)  # Limit results
+                .all())
+
+    def get_comments_with_no_prediction(self, limit=100):
+        return self.session.query(Comment).filter_by(pred_td=None).order_by(func.random()).limit(limit).all()
 
     def close_session(self):
         """Close the database session"""
