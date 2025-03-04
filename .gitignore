@@ -43,3 +43,4 @@ comment-scanner-java/cache
 
 satd-core/cache
 .venv/
+./satd-core/playground.ipynb
