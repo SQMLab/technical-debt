@@ -109,6 +109,9 @@ class CommentRepository:
     def get_comments_with_no_prediction(self, limit=100):
         return self.session.query(Comment).filter_by(pred_td=None).order_by(func.random()).limit(limit).all()
 
+    def get_comments_with_no_classification(self, limit=100):
+        return self.session.query(Comment).filter_by(pred_td=True, td_type = None).order_by(func.random()).limit(limit).all()
+
     def close_session(self):
         """Close the database session"""
         self.session.close()
