@@ -1,20 +1,18 @@
-from db_config import SessionLocal
-from comment import CommentRepository
-from db_config import SessionLocal
-from dotenv import load_dotenv
-import os
+import pandas as pd
 from technical_debt_type import TechnicalDebtType, find_debt_type
-load_dotenv()
-session = SessionLocal()
-repo = CommentRepository()
+import os
+target_model = 'gemini'
 while True:
-    comments = repo.get_comments_with_no_classification(limit=100)
-    for comment in comments:
-        if comment.td_type is None:
+    comment_df = pd.read_csv('../data/comments.csv')
+    target_df = comment_df[comment_df[target_model] == True and comment_df['td_type'] is None].sample(frac=1, random_state=42).head(10)
+
+    for index, row in target_df.iterrows():
+        if row['td_type'] is None:
             
-            location = os.getenv('REPOSITORY_DIRECTORY') + '/' + comment.repository_directory + '/'+ comment.file + ':' + str(comment.start_line)
-            print(f'\n\n\n\n########################## {comment.id} #########################')
-            print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nComment:\n\n{comment.text}\n')
+            location = os.getenv('REPOSITORY_DIRECTORY') + '/' + row['repository_directory'] + '/'+ row['file'] + ':' + str(row['start_line'])
+            comment_id = row['id']
+            print(f'\n\n\n\n########################## {comment_id} #########################')
+            print(f'Repository: {row['repository_directory']}\nFile:\n{location}\nComment:\n\n{row['text']}\n')
             print(f"""
                 1  Ar: Architecture        8  Pe: People
                 2  Bu: Build               9  Pr: Process
@@ -28,12 +26,6 @@ while True:
             debt_code = input('Select Type : ').strip().lower()
             debt_type = find_debt_type(debt_code)
             if debt_type is not None:
-                comment.td_type = debt_type
-            #
-            # note = None
-            # if yn == 'yes' or yn == 'no':
-            #     note = input('Note : ')
-            # comment.note = None if not note else note
-            session.merge(comment)
-            session.commit()
+                comment_df.loc[comment_df[comment_df['id'] == comment_id], 'td_type'] = debt_type
+            comment_df.tocsv('../data/comments.csv', index=False)
 
