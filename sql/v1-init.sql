@@ -49,3 +49,8 @@ CREATE TABLE comment
     created_at           TIMESTAMP default now(),
     updated_at           TIMESTAMP
 );
+
+ALTER TABLE comment
+ADD CONSTRAINT fk_comment_repository_id
+FOREIGN KEY (repository_id)
+REFERENCES repository (id)
