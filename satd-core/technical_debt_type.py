@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class TechnicalDebtType(Enum):
+    NA = 'Na'
     ARCHITECTURE = 'Architecture'
     BUILD = 'Build'
     CODE = 'Code'
@@ -19,39 +20,38 @@ class TechnicalDebtType(Enum):
 
 
 DEBT_MAP = {
-    '1': 'ARCHITECTURE',
-    '2': 'BUILD',
-    '3': 'CODE',
-    '4': 'DEFECT',
+    '0': 'Na',
+    '1': 'Architecture',
+    '2': 'Build',
+    '3': 'Code',
+    '4': 'Defect',
     '5': 'DESIGN',
-    '6': 'DOCUMENTATION',
-    '7': 'INFRASTRUCTURE',
-    '8': 'PEOPLE',
-    '9': 'PROCESS',
-    '10': 'REQUIREMENT',
-    '11': 'SERVICE',
-    '12': 'AUTOMATION',
-    '13': 'TEST',
-    '14': 'UNKNOWN',
-    'Ar': 'ARCHITECTURE',
-    'Bu': 'BUILD',
-    'Co': 'CODE',
-    'Def': 'DEFECT',
-    'Des': 'DESIGN',
-    'Do': 'DOCUMENTATION',
-    'In': 'INFRASTRUCTURE',
-    'Pe': 'PEOPLE',
-    'Pr': 'PROCESS',
-    'Re': 'REQUIREMENT',
-    'Se': 'SERVICE',
-    'Au': 'AUTOMATION',
-    'Te': 'TEST',
-    'Un': 'UNKNOWN'
+    '6': 'Documentation',
+    '7': 'Infrastructure',
+    '8': 'People',
+    '9': 'Process',
+    '10': 'Requirement',
+    '11': 'Service',
+    '12': 'Automation',
+    '13': 'Test',
+    '14': 'Unknown',
+    'na': 'Na',
+    'ar': 'Architecture',
+    'bu': 'Build',
+    'co': 'Code',
+    'def': 'Defect',
+    'des': 'Design',
+    'do': 'Documentation',
+    'in': 'Infrastructure',
+    'pe': 'People',
+    'pr': 'Process',
+    're': 'Requirement',
+    'se': 'Service',
+    'au': 'Automation',
+    'te': 'Test',
+    'un': 'Unknown'
 }
 
-
 def find_debt_type(key):
-    if key in DEBT_MAP:
-        return DEBT_MAP[key]
-    else:
-        return None
+    key = key.lower()
+    return DEBT_MAP.get(key, None)

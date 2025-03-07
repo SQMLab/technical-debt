@@ -13,4 +13,4 @@ engine = create_engine(DATABASE_URL)
 Base = declarative_base()
 
 # Create a session factory
-SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
+SessionLocal = sessionmaker(bind=engine)

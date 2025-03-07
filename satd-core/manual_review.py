@@ -1,19 +1,24 @@
+
 from db_config import SessionLocal
 from comment import CommentRepository
+from repository import Repository
 from db_config import SessionLocal
 from dotenv import load_dotenv
 import os
 load_dotenv()
 session = SessionLocal()
-repo = CommentRepository()
+commentDao = CommentRepository()
+repositoryDao = Repository()
+
 while True:
-    comments = repo.get_random_comments(limit=100)
+    comments = commentDao.get_random_comments(limit=100)
     for comment in comments:
         if comment.is_td is None:
-            
+            repositoryEntity = repositoryDao.get_repository(comment.repository_id)
             location = os.getenv('REPOSITORY_DIRECTORY') + '/' + comment.repository_directory + '/'+ comment.file + ':' + str(comment.start_line)
+            url = f'{repositoryEntity.repo_url}/blob/{repositoryEntity.commit_hash}/{comment.file}/#L{comment.start_line}'
             print(f'\n\n\n\n########################## {comment.id} #########################')
-            print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nComment:\n\n{comment.text}\n')
+            print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nURL: {url}\nComment:\n\n{comment.text}\n')
             yn = input('TD : ').strip().lower()
             
             if yn == 'yes' or yn == 'y':
@@ -23,7 +28,7 @@ while True:
             note = None
             if yn == 'yes' or yn == 'no':
                 note = input('Note : ')
-            comment.is_random = True
             comment.note = None if not note else note
-            session.merge(comment)
-            session.commit()
+        comment.is_random = True
+        session.merge(comment)
+        session.commit()
