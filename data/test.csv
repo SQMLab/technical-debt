@@ -328,7 +328,7 @@ id,text,label
 1244485,"//TODO: Rewrite with dynamic cache creation, and GRID start in #beforeTest after resolve of
 //TODO: IGNITE-1094",yes
 368941,// TODO zhangcheng make sure the test cases should not empty,yes
-82244,// not implemented yet,no
+82244,// not implemented yet,yes
 800515,/* inputPathsToSplit */,no
 348444,// value reference class,no
 1435798,"// PA3 deploys a duplicate version of the process. The duplicate deployment needs to be found
