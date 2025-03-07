@@ -384,7 +384,7 @@ id,text,label
 // \r\n sequence. Stops at the first \n, doesn't complain
 // if it wasn't preceded by '\r'.
 //",yes
-1459789,// add your own wechat webhook url and secret,yes
+1459789,// add your own wechat webhook url and secret,no
 571347,"// Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
 // which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
 // successfully, but in order to shorten the test time, we chose one million numbers.",yes
@@ -559,7 +559,7 @@ id,text,label
  * The test starts the server and then connects to the WebSocket. Then verifies if the messages are received from the
  * WebSocket.
  * This test is inspired from: https://github.com/spring-guides/gs-messaging-stomp-websocket/blob/main/complete/src/test/java/com/example/messagingstompwebsocket/GreetingIntegrationTests.java
- */",yes
+ */",no
 1341088,"// Regardless of whether sort-by-ordinals is enabled, negative ordinals
 // are treated like ordinary numbers.",no
 1025272,"/* J2ObjC removed: Only ""gregorian"" and ""julian"" calendars are supported.
