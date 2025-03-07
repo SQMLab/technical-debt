@@ -1,5 +1,7 @@
 text,label
 // Currently we can only Snapshot only out of the Spark Session Catalog,yes
+// Check results as part of computation.,no
+// nested doesn't work yet in Geode. Need custom PDX serializer,yes
 // Ensure data shows up,no
 // not sure what the margin of error is,yes
 // Check results as part of computation.,no
@@ -10,7 +12,6 @@ text,label
 "// special value ""delete"" is interpreted as a delete() call from
 // VersionedStoreContentCheckerProcessor but we do not support it here",yes
 // Alpha does not support DML yet,yes
-// nested doesn't work yet in Geode. Need custom PDX serializer,yes
 // only secretkeyspec supported for now,yes
 // probably not needed,yes
 // TODO change in exhaustive,yes
