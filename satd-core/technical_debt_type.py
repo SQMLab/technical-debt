@@ -19,16 +19,6 @@ class TechnicalDebtType(Enum):
     UNKNOWN = "Unknown"
 
 
-print(f"""
-            0: Na: Na
-            1  Des: Design              8   Pe: People
-            2  Def: Defect              9   Pr: Process
-            3  Te: Test                 10  Se: Service
-            4  Re: Requirement          11  Au: Automation
-            5  Ar: Architecture         12  Do: Documentation        
-            6  Bu: Build                13  In: Infrastructure               
-            7  Co: Code                 14  Un: Unknown                
-        """)
 
 DEBT_MAP = {
     '0': 'Na',
