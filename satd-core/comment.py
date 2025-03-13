@@ -113,7 +113,7 @@ class CommentRepository:
         return self.session.query(Comment).filter_by(pred_td=True, td_type = None).order_by(func.random()).limit(limit).all()
 
     def get_satd_comments_with_no_classification(self, limit=100):
-        return self.session.query(Comment).filter_by(is_td=True, td_type = None).order_by(func.random()).limit(limit).all()
+        return self.session.query(Comment).filter(Comment.is_td==True, Comment.td_type.is_(None)).order_by(func.random()).limit(limit).all()
 
     def close_session(self):
         """Close the database session"""

@@ -24,20 +24,21 @@ for comment in comments:
 
         print(f'Repository: {comment.repository_directory}\nFile:\n{location}\nURL: {url}\nComment:\n\n{comment.text}\n')
 
-        print(f"""
-            0: Na: Na
-            1  Des: Design              8   Pe: People
-            2  Co: Code                 9   Pr: Process
-            3  Te: Test                 10  Se: Service
-            4  Re: Requirement          11  Au: Automation
-            5  Ar: Architecture         12  Do: Documentation        
-            6  Bu: Build                13  In: Infrastructure               
-            7  Def: Defect              14  Un: Unknown                
-        """)
-
-        debt_code = input('Select Type : ').strip().lower()
-        debt_type = find_debt_type(debt_code)
-        if debt_type is not None:
+        # print(f"""
+        #     0: Na: Na
+        #     1  Des: Design              8   Pe: People
+        #     2  Co: Code                 9   Pr: Process
+        #     3  Te: Test                 10  Se: Service
+        #     4  Re: Requirement          11  Au: Automation
+        #     5  Ar: Architecture         12  Do: Documentation
+        #     6  Bu: Build                13  In: Infrastructure
+        #     7  Def: Defect              14  Un: Unknown
+        # """)
+        #
+        # debt_code = input('Select Type : ').strip().lower()
+        # debt_type = find_debt_type(debt_code)
+        debt_type = input('Enter Type : ').strip().lower()
+        if debt_type:
             comment.td_type = debt_type
         #
         # note = None
