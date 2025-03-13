@@ -11,7 +11,8 @@ session = SessionLocal()
 commentDao = CommentRepository()
 repositoryDao = Repository()
 
-comments = commentDao.get_comments_with_no_classification(limit=20)
+# comments = commentDao.get_predicted_satd_comments_with_no_classification(limit=20)
+comments = commentDao.get_satd_comments_with_no_classification(limit=100)
 for comment in comments:
     if comment.td_type is None:
         repositoryEntity = repositoryDao.get_repository(comment.repository_id)
@@ -25,13 +26,13 @@ for comment in comments:
 
         print(f"""
             0: Na: Na
-            1  Ar: Architecture        8  Pe: People
-            2  Bu: Build               9  Pr: Process
-            3  Co: Code                10  Re: Requirement
-            4  Def: Defect             11  Se: Service
-            5  Des: Design             12  Au: Automation
-            6  Do: Documentation       13  Te: Test
-            7  In: Infrastructure      14  Un: Unknown
+            1  Des: Design              8   Pe: People
+            2  Co: Code                 9   Pr: Process
+            3  Te: Test                 10  Se: Service
+            4  Re: Requirement          11  Au: Automation
+            5  Ar: Architecture         12  Do: Documentation        
+            6  Bu: Build                13  In: Infrastructure               
+            7  Def: Defect              14  Un: Unknown                
         """)
 
         debt_code = input('Select Type : ').strip().lower()
