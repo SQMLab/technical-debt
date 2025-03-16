@@ -1,8 +1,9 @@
-text,label
-// Currently we can only Snapshot only out of the Spark Session Catalog,yes
+comment,satd
+// TODO change in exhaustive,yes
 // Check results as part of computation.,no
 // nested doesn't work yet in Geode. Need custom PDX serializer,yes
 // Ensure data shows up,no
+// Currently we can only Snapshot only out of the Spark Session Catalog,yes
 // not sure what the margin of error is,yes
 // Check results as part of computation.,no
 // This test could be broken if multiple tests are running in parallel.,yes
@@ -14,4 +15,3 @@ text,label
 // Alpha does not support DML yet,yes
 // only secretkeyspec supported for now,yes
 // probably not needed,yes
-// TODO change in exhaustive,yes
