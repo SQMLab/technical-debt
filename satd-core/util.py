@@ -25,3 +25,11 @@ def to_text_without_leading_common_whitespace(lines):
         return code_block[:-1]
     else:
         return code_block
+
+def get_first_n_line(text, n):
+    lines = text.split('\n')
+    return '\n'.join(lines[:min(len(lines),n)])
+
+def get_last_n_line(text, n):
+    lines = text.split('\n')
+    return '\n'.join(lines[max(0,len(lines) - n):])
