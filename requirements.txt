@@ -18,3 +18,4 @@ tenacity
 sqlalchemy
 psycopg2
 openai
+jpype1
