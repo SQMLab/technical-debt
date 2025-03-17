@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS repository;
 CREATE TABLE repository
 (
     id                    BIGSERIAL PRIMARY KEY,
-    project_id         BIGINT UNIQUE NOT NULL,               -- Unique GitHub Repository ID
+    project_id            BIGINT UNIQUE NOT NULL,               -- Unique GitHub Repository ID
     name                  VARCHAR(255)  NOT NULL,               -- Repository Name
     full_name             VARCHAR(255)  NOT NULL,               -- Full name (owner/repo)
     is_fork               BOOLEAN       NOT NULL DEFAULT FALSE, -- Whether the repo is a fork or not
@@ -41,16 +41,22 @@ CREATE TABLE comment
     end_line             INT                 NOT NULL, -- End Line
     file                 VARCHAR(500),                 -- File Path and Name
     comment_hash         VARCHAR(255),                 -- Comment Hash
-    is_td              BOOLEAN,                      -- Whether the comment is SATD
+    is_td                BOOLEAN,                      -- Whether the comment is SATD
     is_random            BOOLEAN,                      -- Whether the comment is Randomly Picked for Manual Review
-    td_type            VARCHAR(255),                 -- SATD Type
+    td_type              VARCHAR(255),                 -- SATD Type
     note                 TEXT,                         -- Notes can be anything from dveloper's perspective
     language             VARCHAR(50),                  -- Main Language of the File
+    code_before          TEXT,
+    code_after           TEXT,
     created_at           TIMESTAMP default now(),
     updated_at           TIMESTAMP
 );
 
 ALTER TABLE comment
-ADD CONSTRAINT fk_comment_repository_id
-FOREIGN KEY (repository_id)
-REFERENCES repository (id)
+    ADD CONSTRAINT fk_comment_repository_id
+        FOREIGN KEY (repository_id)
+            REFERENCES repository (id);
+
+ALTER TABLE comment
+    ADD COLUMN code_before TEXT,
+    ADD COLUMN code_after  TEXT;
