@@ -23,6 +23,8 @@ class Comment(Base):
     td_type = Column(String(255))  # SATD Type
     note = Column(Text)  # Notes can be anything from developer's perspective
     language = Column(String(50))  # Main Language of the File
+    code_before = Column(Text)
+    code_after = Column(Text)
     created_at = Column(TIMESTAMP, server_default=func.now())  # Auto-set creation timestamp
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())  # Auto-update timestamp
 
@@ -114,6 +116,9 @@ class CommentRepository:
 
     def get_satd_comments_with_no_classification(self, limit=100):
         return self.session.query(Comment).filter(Comment.is_td==True, Comment.td_type.is_(None)).order_by(func.random()).limit(limit).all()
+
+    def get_comments_having_null_code(self, limit=100):
+        return self.session.query(Comment).filter(Comment.code_before.is_(None) or Comment.code_after.is_(None)).limit(limit).all()
 
     def close_session(self):
         """Close the database session"""
