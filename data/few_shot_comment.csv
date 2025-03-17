@@ -1,17 +1,115 @@
-comment,satd
-// TODO change in exhaustive,yes
-// Check results as part of computation.,no
-// nested doesn't work yet in Geode. Need custom PDX serializer,yes
-// Ensure data shows up,no
-// Currently we can only Snapshot only out of the Spark Session Catalog,yes
-// not sure what the margin of error is,yes
-// Check results as part of computation.,no
-// This test could be broken if multiple tests are running in parallel.,yes
-// cannot test...,yes
-"// unfortunately there is no way to know why revisions would mismatch during manual trigger.
-// We already let all manual triggers to bypass revision match check",yes
-"// special value ""delete"" is interpreted as a delete() call from
-// VersionedStoreContentCheckerProcessor but we do not support it here",yes
-// Alpha does not support DML yet,yes
-// only secretkeyspec supported for now,yes
-// probably not needed,yes
+id,repository,comment,satd,type,code_before,code_after
+499770,137,//hacky workaround using the toString method to avoid mocking the Ruby runtime,yes,temporary fix,"@RunWith(MockitoJUnitRunner.class)
+public class RubyHashGaugeTest {
+
+    @Mock
+    RubyHash rubyHash;
+
+    private static final String RUBY_HASH_AS_STRING = ""{}"";
+
+    @Before
+    public void _setup() {","    //hacky workaround using the toString method to avoid mocking the Ruby runtime
+    when(rubyHash.toString()).thenReturn(RUBY_HASH_AS_STRING);
+}
+
+@Test
+public void getValue() {
+    RubyHashGauge gauge = new RubyHashGauge(""bar"", rubyHash);
+    assertThat(gauge.getValue().toString()).isEqualTo(RUBY_HASH_AS_STRING);
+    assertThat(gauge.getType()).isEqualTo(MetricType.GAUGE_RUBYHASH);
+"
+176603,56,// Add some role mappings directly in LDAP,no,,"    UserModel johnRoleMapper = session.users().getUserByUsername(appRealm, ""johnrolemapper"");
+    Assert.assertNotNull(johnRoleMapper);
+    Assert.assertEquals(0, johnRoleMapper.getRealmRoleMappingsStream().count());
+
+});
+
+testingClient.server().run(session -> {
+    LDAPTestContext ctx = LDAPTestContext.init(session);
+    RealmModel appRealm = ctx.getRealm();
+","// Add some role mappings directly in LDAP
+LDAPStorageProvider ldapProvider = LDAPTestUtils.getLdapProvider(session, ctx.getLdapModel());
+ComponentModel roleMapperModel = LDAPTestUtils.getSubcomponentByName(appRealm, ctx.getLdapModel(), ""realmRolesMapper"");
+RoleLDAPStorageMapper roleMapper = LDAPTestUtils.getRoleMapper(roleMapperModel, ldapProvider, appRealm);
+
+LDAPObject johnLdap = ldapProvider.loadLDAPUserByUsername(appRealm, ""johnrolemapper"");
+roleMapper.addRoleMappingInLDAP(""realmRole1"", johnLdap);
+roleMapper.addRoleMappingInLDAP(""realmRole2"", johnLdap);
+
+// Get user and check that he has requested roles from LDAP"
+398677,119,// Alpha does not support DML yet,yes,requirement,"    assertUpdate(""CREATE TABLE test_alpha_ddl_partitioned_table (col1 bigint, ds VARCHAR) WITH (format = 'ALPHA', partitioned_by = ARRAY['ds'])"");
+    assertUpdate(""ALTER TABLE test_alpha_ddl_partitioned_table ADD COLUMN col2 bigint"");
+    assertUpdate(""ALTER TABLE test_alpha_ddl_partitioned_table DROP COLUMN col2"");
+    assertUpdate(""DROP TABLE test_alpha_ddl_partitioned_table"");
+}
+
+@Test
+public void testAlphaFormatDml()
+{
+    assertUpdate(""CREATE TABLE test_alpha_dml_partitioned_table (col1 bigint, ds VARCHAR) WITH (format = 'ALPHA', partitioned_by = ARRAY['ds'])"");","    // Alpha does not support DML yet
+    assertQueryFails(""INSERT INTO test_alpha_dml_partitioned_table VALUES (1, '2022-01-01')"", ""Serializer does not exist: com.facebook.alpha.AlphaSerde"");
+    assertUpdate(""DROP TABLE test_alpha_dml_partitioned_table"");
+}
+
+@Test
+public void testInvokedFunctionNamesLog()
+{
+    QueryRunner queryRunner = getQueryRunner();
+    Session logFunctionNamesEnabledSession = Session.builder(getSession())"
+1230753,615,// A different instance of the same overlay should not be equal by default,no,,"}
+
+@Test
+public void testEquality()
+{
+	Overlay a1 = new OverlayA();
+	Overlay a2 = new OverlayA();
+	Overlay b = new OverlayB();
+	// The same instance of the same overlay should be equal
+	assertTrue(a1.equals(a1));","	// A different instance of the same overlay should not be equal by default
+	assertFalse(a1.equals(a2));
+	// A different instance of a different overlay should not be equal
+	assertFalse(a1.equals(b));
+}
+
+@Test
+public void testSort()
+{
+	// High priorities overlays render first"
+1512588,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,yes,how to,"
+@Override
+public boolean equals(Object o) {
+    if (this == o)
+        return true;
+    if (o == null || getClass() != o.getClass())
+        return false;
+
+    ComplexBean that = (ComplexBean) o;
+","// Probably incorrect - comparing Object[] arrays with Arrays.equals
+if (!Arrays.equals(strs, that.strs))
+    return false;
+// Probably incorrect - comparing Object[] arrays with Arrays.equals
+if (!Arrays.equals(jobs, that.jobs))
+    return false;
+if (list != null ? !list.equals(that.list) : that.list != null)
+    return false;
+if (map != null ? !map.equals(that.map) : that.map != null)
+    return false;"
+344151,81,// Incorrect arity,no,,"});
+checkWMTE(() -> { // expected reference class
+    boolean r = vh.weakCompareAndSet(recv, Void.class, 0x01234567);
+});
+checkWMTE(() -> { // actual reference class
+    boolean r = vh.weakCompareAndSet(recv, 0x01234567, Void.class);
+});
+checkWMTE(() -> { // receiver primitive class
+    boolean r = vh.weakCompareAndSet(0, 0x01234567, 0x01234567);
+});","// Incorrect arity
+checkWMTE(() -> { // 0
+    boolean r = vh.weakCompareAndSet();
+});
+checkWMTE(() -> { // >
+    boolean r = vh.weakCompareAndSet(recv, 0x01234567, 0x01234567, Void.class);
+});
+
+
+// WeakCompareAndSetAcquire"
