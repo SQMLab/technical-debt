@@ -1733,7 +1733,7 @@
  * your election, the ""Elastic License 2.0"", the ""GNU Affero General Public
  * License v3.0 only"", or the ""Server Side Public License, v 1"".
  */",no,
-19522,8,// TODO Auto-generated method stub,yes,incomplete/requirement
+19522,8,// TODO Auto-generated method stub,yes,requirement
 19594,8,"// QueryPhaseCollector does not propagate Weight#count when min_score is provided, hence it forces collection despite
 // the inner TotalHitCountCollector can shortcut",no,
 19603,8,"// track total hits is lower than terminate_after, hit count collection early terminates, terminate_after is not honored
@@ -2197,7 +2197,7 @@
  * 2.0; you may not use this file except in compliance with the Elastic License
  * 2.0.
  */",no,
-29973,8,// TODO multivalue fields,yes,incomplete/requirement
+29973,8,// TODO multivalue fields,yes,requirement
 29976,8,// from doubles within long's range,no,
 30031,8,"/*
  * Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
@@ -2552,7 +2552,7 @@
 37978,8,// terms aggs,no,
 38005,8,"// Whether the node has been seen doesn't matter, restart-type shutdowns should always say COMPLETE here.",no,
 38018,8,// we should stall the node if we find an unassigned shard with lastAllocatedNodeId matching the shutting down node,no,
-38040,8,// TODO: implement tests,yes,incomplete/requirement
+38040,8,// TODO: implement tests,yes,requirement
 38063,8,"/*
  * Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
  * or more contributor license agreements. Licensed under the Elastic License
@@ -2623,7 +2623,7 @@
  * 2.0.
  */",no,
 39834,8,// This call should not be allowed because the clock doesn't think it's pasted the wait period,no,
-39964,8,// unimplemented,yes,incomplete/requirement
+39964,8,// unimplemented,yes,requirement
 39980,8,// WHEN,no,
 40045,8,// Return a fake task id for the run,no,
 40127,8,// Pre-load the queue to be at capacity and spoof the coordinator state to seem like max requests in flight.,no,
@@ -2639,7 +2639,7 @@
 // and that xpack.ml.use_auto_machine_memory_percent is false.
 // It also assumes that 30% of RAM on the test machine is sufficient
 // to run a 200MB job but not a 50000MB job. (If we move to 256GB CI
-// workers then it will need to be adjusted.)",yes,temporary fix/flaky/design/load
+// workers then it will need to be adjusted.)",yes,temporary fix
 40572,8,// Index enough documents to have more classes than the allowed limit,no,
 40677,8,"// Model state should be persisted at the end of lookback
 // test a model snapshot is present",no,
@@ -2656,7 +2656,7 @@
 41163,8,// Pick a license that does not allow machine learning,no,
 41228,8,// account for the extra processor from the dummy entity,no,
 41308,8,"// TODO PersistentTasksCustomMetadata is required for jobs other than TrainedModels
-// .customs(Map.of(PersistentTasksCustomMetadata.TYPE, PersistentTasksCustomMetadata.builder().build()))",yes,incomplete/requirement
+// .customs(Map.of(PersistentTasksCustomMetadata.TYPE, PersistentTasksCustomMetadata.builder().build()))",yes,requirement
 41378,8,// Generic settings,no,
 41445,8,"// auto is true with unknown jvm size, memory requirement above single node size, 2 AZs (this is a realistic case for Cloud)",no,
 41452,8,// tiny memory,no,
@@ -2769,7 +2769,7 @@
  * 2.0; you may not use this file except in compliance with the Elastic License
  * 2.0.
  */",no,
-45505,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,yes,incomplete/requirement
+45505,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,yes,requirement
 45515,8,"/*
  * Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
  * or more contributor license agreements. Licensed under the Elastic License
@@ -2790,14 +2790,14 @@
  * 2.0; you may not use this file except in compliance with the Elastic License
  * 2.0.
  */",no,
-46061,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,yes,incomplete/requirement
+46061,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,yes,requirement
 46120,8,"/*
  * Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
  * or more contributor license agreements. Licensed under the Elastic License
  * 2.0; you may not use this file except in compliance with the Elastic License
  * 2.0.
  */",no,
-46142,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,yes,incomplete/requirement
+46142,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,yes,requirement
 46143,8,"/*
  * Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
  * or more contributor license agreements. Licensed under the Elastic License
@@ -2838,7 +2838,7 @@
 46895,8,"/*
          * The following two lines assert current behavior that might not be desirable -- we continue to delete expired databases every
          * time that runDownloader runs. This seems unnecessary.
-         */",yes,unsure
+         */",yes,how to
 46924,8,"/*
  * Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
  * or more contributor license agreements. Licensed under the ""Elastic License
@@ -2858,7 +2858,7 @@
  */",no,
 47266,8,// V_5_0_0 (final) => current,no,
 47314,8,// Use assert busy because the update happens on another thread,no,
-47430,8,// TODO: we have no CannedAnalyzer?,yes,incomplete/requirement
+47430,8,// TODO: we have no CannedAnalyzer?,yes,requirement
 47691,8,"/*
  * This test is meant to make sure that we can handle ingesting a document with a reasonably large number of nested pipeline processors.
  */",no,
@@ -3514,7 +3514,7 @@
  */",no,
 60400,11,// SPR-10820: p2 should 'win' as it was registered last,no,
 60410,11,//2,no,
-60512,11,// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead,yes,unknown
+60512,11,// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead,yes,other
 60741,11,// decorated Future cannot be cancelled on shutdown with SimpleAsyncTaskScheduler,no,
 60786,11,"/*
  * Copyright 2002-2024 the original author or authors.
@@ -4267,7 +4267,7 @@
  * getPredecessors() returns an empty HashSet whenever it is called with a larger index than
  * the amount of vertices contained in the GraphPath.
  */",no,
-68121,12,// not sure what the margin of error is,yes,unsure
+68121,12,// not sure what the margin of error is,yes,how to
 68193,12,"//
 // Test that removing a vertex from the graph will update any vertex that has been
 // filtered.
@@ -4567,7 +4567,7 @@
  * limitations under the License.
  */",no,
 73105,12,// NB. Bytes were not copied. Dynamic omitted.,no,
-73111,12,"// NB. I don't know what uniques, if any, are involved",yes,unsure
+73111,12,"// NB. I don't know what uniques, if any, are involved",yes,how to
 73308,12,// Tree uses a task queue for selection requests,no,
 73464,12,// <,no,
 73540,12,//,no,
@@ -4726,7 +4726,7 @@
 75559,12,"// If not zero, is type index of derived-from list",no,
 75608,12,// Number of parameters.,no,
 75615,12,// Parent type index.,no,
-75617,12,//writer.putAlign(2); // TODO: Not sure,yes,unsure
+75617,12,//writer.putAlign(2); // TODO: Not sure,yes,how to
 75781,12,// type index of MethodListMsType,no,
 75822,12,// Made up,no,
 75863,12,// Offset of field.,no,
@@ -4989,7 +4989,7 @@
 		              [more]
 		*/",no,
 82174,12,"// incompatible field datatypes when compared to previous def (int f1, float f2 vs float f1, int f2)",no,
-82244,12,// not implemented yet,yes,incomplete/requirement
+82244,12,// not implemented yet,yes,requirement
 82250,12,"// func ptrs
 // unamed, with typedefs pointing to",no,
 82278,12,"/**
@@ -5107,7 +5107,7 @@
 84451,12,"// move /Category1/Category2/Category5 to
 // /Category1/Category2/Category3",no,
 84505,12,// My Bar,no,
-84508,12,// choose My Bar // TODO: I see no reason for a conflict !,yes,unsure
+84508,12,// choose My Bar // TODO: I see no reason for a conflict !,yes,how to
 84538,12,// Structure_1 should contain MY Foo,no,
 84557,12,// MY CoolUnion,no,
 84652,12,// FavoriteColors * * * *,no,
@@ -5404,7 +5404,7 @@
 92240,12,"//manufactured symbol: $G Simple zero, zero, and zero parameters",no,
 92347,12,//real symbol,no,
 92379,12,//manufactured symbol,no,
-92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",yes,incomplete/requirement
+92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",yes,requirement
 92401,12,//manufactured. //This is a DataType $$T Modifier,no,
 92473,12,"//mod of above (same as $$C, but no modifier)",no,
 92599,12,"// Manufactured --KEEP, Need to add tests for isC and referredToType",no,
@@ -5414,7 +5414,7 @@
 // see that it is a series of nested templates to start, which cuts off during a deep nesting.",yes,how to
 92731,12,//was testFromLongTest_4(),no,
 92732,12,//was testFromLongTest_5(),no,
-92846,12,//TODO: Create MDMangVS2015 Specialization,yes,incomplete/requirement
+92846,12,//TODO: Create MDMangVS2015 Specialization,yes,requirement
 92847,12,// Begins with same pattern as ThreadSafeStaticGuard,no,
 92860,12,"//llTruth = """"; // fail",no,
 92940,12,"//System.err.println(""INIT: ""+browserService.getCurrentLocation());",no,
@@ -6372,7 +6372,7 @@
  * limitations under the License.
  */",no,
 104562,19,// Configured with mock,no,
-104603,19,// TODO assert error log,yes,incomplete/requirement
+104603,19,// TODO assert error log,yes,requirement
 104731,19,"/**
  * <code>optional int32 age = 3;</code>
  */",no,
@@ -6586,10 +6586,10 @@
 107031,22,// When,no,
 107034,22,// Given,no,
 107039,22,// Then,no,
-107075,22,// TODO Auto-generated method stub,yes,incomplete/requirement
-107142,22,// TODO Auto-generated method stub,yes,incomplete/requirement
-107154,22,// TODO Auto-generated method stub,yes,incomplete/requirement
-107169,22,// TODO Auto-generated method stub,yes,incomplete/requirement
+107075,22,// TODO Auto-generated method stub,yes,requirement
+107142,22,// TODO Auto-generated method stub,yes,requirement
+107154,22,// TODO Auto-generated method stub,yes,requirement
+107169,22,// TODO Auto-generated method stub,yes,requirement
 107177,22,"/**
  * Unit test for {@link JaxpTransformer}.
  */",no,
@@ -6954,7 +6954,7 @@
  * perform two way native TCP socket send/recv
  */",no,
 118189,28,// Expected,no,
-118369,28,"// This test doesn't work on midnight, January 1, 1970 UTC",yes,flaky test
+118369,28,"// This test doesn't work on midnight, January 1, 1970 UTC",yes,defect
 118391,28,// This will throw an ReplayingError,no,
 118423,28,"/*
  * Copyright 2012 The Netty Project
@@ -7195,7 +7195,7 @@
  * @author Sean Owen
  */",no,
 122610,32,// Then run through again and assert if any failed,no,
-122818,34,"// I tried using Mockito, but it didn't work for some reason",yes,unsure
+122818,34,"// I tried using Mockito, but it didn't work for some reason",yes,how to
 122861,34,// the resolution level of the images is more important than the actual resolution,no,
 122927,35,"/**
  * This is because multiple areas within the grid may all try and remove a session.
@@ -7488,7 +7488,7 @@
  * @author stone-98
  * @date 2024-03-11 17:11
  */",no,
-126659,36,// todo remove this,yes,clean up
+126659,36,// todo remove this,yes,refactor
 126680,36,"/*
  * Copyright 1999-2023 Alibaba Group Holding Ltd.
  *
@@ -7934,7 +7934,7 @@
 // in one single batch.",no,
 136997,40,"// We want to randomize the order of data to test not completely predictable processing order
 // However, values are also use as a timestamp of the record. (TODO: separate data and timestamp)
-// We keep some correlation of time and order. Thus, the shuffling is done with a sliding window",yes,incomplete/requirement
+// We keep some correlation of time and order. Thus, the shuffling is done with a sliding window",yes,requirement
 137050,40,// Root state store exists,no,
 137052,40,"/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -8030,7 +8030,7 @@
 137973,40,// max,no,
 137981,40,"// We want to randomize the order of data to test not completely predictable processing order
 // However, values are also use as a timestamp of the record. (TODO: separate data and timestamp)
-// We keep some correlation of time and order. Thus, the shuffling is done with a sliding window",yes,incomplete/requirement
+// We keep some correlation of time and order. Thus, the shuffling is done with a sliding window",yes,requirement
 138130,40,// KeyB should be ignored and KeyA should be included even in storage,no,
 138205,40,// infinite keyTo fetch case,no,
 138210,40,// infinite keyTo fetch case,no,
@@ -8574,7 +8574,7 @@
 146841,40,// 1000B / 1.4s,no,
 146845,40,// 2000B / 2.5s,no,
 146929,40,"// note, we get a buffer underflow exception instead of an OOME, even though the encoded size
-// would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap",yes,unsure
+// would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap",yes,how to
 147030,40,// negative len,no,
 147096,40,"/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -9720,14 +9720,14 @@
 165905,47,// MysqlType.TIME,no,
 165981,47,// 2.指定引擎，数据模型，PARTITION 分区为 LESS THAN，properties参数的建表语句,no,
 165982,47,// 3.LESS THAN分区含有 MAXVALUE| 值的建表语句,no,
-166118,47,// TODO Auto-generated method stub,yes,incomplete/requirement
-166208,47,// TODO Auto-generated method stub,yes,incomplete/requirement
-166232,47,// TODO Auto-generated method stub,yes,incomplete/requirement
-166241,47,// TODO Auto-generated method stub,yes,incomplete/requirement
-166270,47,// TODO Auto-generated method stub,yes,incomplete/requirement
-166311,47,// TODO Auto-generated method stub,yes,incomplete/requirement
-166327,47,// TODO Auto-generated method stub,yes,incomplete/requirement
-166421,47,// TODO Auto-generated method stub,yes,incomplete/requirement
+166118,47,// TODO Auto-generated method stub,yes,requirement
+166208,47,// TODO Auto-generated method stub,yes,requirement
+166232,47,// TODO Auto-generated method stub,yes,requirement
+166241,47,// TODO Auto-generated method stub,yes,requirement
+166270,47,// TODO Auto-generated method stub,yes,requirement
+166311,47,// TODO Auto-generated method stub,yes,requirement
+166327,47,// TODO Auto-generated method stub,yes,requirement
+166421,47,// TODO Auto-generated method stub,yes,requirement
 166564,49,//创建二叉树,no,
 166568,49,"/**
  * 有环
@@ -9787,7 +9787,7 @@
 167705,51,"/**
  * Created by wenshao on 09/04/2017.
  */",no,
-167799,51,// TODO Auto-generated method stub,yes,incomplete/requirement
+167799,51,// TODO Auto-generated method stub,yes,requirement
 167803,51,//,no,
 167814,51,// 负无穷大,no,
 167878,51,"/**
@@ -10309,7 +10309,7 @@
 177054,56,// the flow now changed and the user should be automatically redirected to the origin broker,no,
 177107,56,// the member should be able to log in using the credentials,no,
 177244,56,// Fails on ADMIN context - User REST API,no,
-177539,56,// TODO Test should fail if there are leftover events,yes,incomplete/requirement
+177539,56,// TODO Test should fail if there are leftover events,yes,requirement
 177546,56,"/*
  * Copyright 2016 Red Hat, Inc. and/or its affiliates
  * and other contributors as indicated by the @author tags.
@@ -11307,7 +11307,7 @@
 196309,60,// Abort error,no,
 196421,60,"/**
  * This test only fails eventually.
- */",yes,flaky test
+ */",yes,defect
 196448,60,// trigger the checkpoint. this should succeed,no,
 196498,60,// trigger the first checkpoint. this should succeed,no,
 196529,60,"// send some messages that do not belong to either the job or the any
@@ -12742,7 +12742,7 @@
 // enabled(refer to FLINK-26882 for more details).",no,
 216327,60,"/**
  * Should be removed along {@link SupportsCommitter}.
- */",yes,clean up
+ */",yes,refactor
 216382,60,// attempt id ++,no,
 216390,60,"/**
  * A special sink function which can control the task's execution.
@@ -13404,7 +13404,7 @@
 229725,64,"// Check that the output of 'hello' was affected by adding the request
 // options:",no,
 229758,64,"// TODO(mschaller): This will ignore any attempt by Blaze modules to provide a filesystem;
-// consider something better.",yes,optimization
+// consider something better.",yes,code
 229838,64,"// This only does something interesting for tests that create their own
 // BlazeCommandDispatcher. :-(",no,
 229852,64,/* invocationPolicyFlagListBuilder= */,no,
@@ -13414,10 +13414,10 @@
 230175,64,"/**
  * Test that if any of the futures in the list fails, we cancel all the futures immediately.
  */",no,
-230221,64,// TODO: b/359688989 - clean this up,yes,clean up
+230221,64,// TODO: b/359688989 - clean this up,yes,refactor
 230255,64,/* parallelism= */,no,
 230302,64,"// And then when we serially acquire permits for 3 unique values,",no,
-230424,64,// TODO: b/386384684 - remove Unsafe usage,yes,clean up
+230424,64,// TODO: b/386384684 - remove Unsafe usage,yes,refactor
 230463,64,"// Copyright 2017 The Bazel Authors. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the ""License"");
@@ -13972,7 +13972,7 @@
         property = User.get(""User"").getProperty(property.getClass());
         assertEquals(""Property should have primary view "" + view.name + "" instead of "" + property.getPrimaryViewName(), view.name, property.getPrimaryViewName());
     }
-    */",yes,unsure
+    */",yes,how to
 242467,65,// We can get the same user back.,no,
 242502,65,"// Give the project an ""unknown-slave"" label, forcing it to
 // stay in the queue after we schedule it, allowing us to query it.",no,
@@ -14177,14 +14177,14 @@
  */",no,
 245401,66,//THEN,no,
 245565,66,// skip,no,
-245580,66,// TODO Auto-generated catch block,yes,incomplete/requirement
+245580,66,// TODO Auto-generated catch block,yes,requirement
 245586,66,//given,no,
 245769,66,"/**
  * <code>string stringType = 14;</code>
  * @return The bytes for stringType.
  */",no,
 245875,66,//replace default blacklistCodec with Kryo5Codec,no,
-245893,66,// TODO Auto-generated catch block,yes,incomplete/requirement
+245893,66,// TODO Auto-generated catch block,yes,requirement
 245902,66,"//        assertThat(redisson.getBuckets().get(""test1"", ""test2"")).isEqualTo(bbs2);",no,
 246009,66,// Entry [a:1],no,
 246107,66,"//        addConfigOption(REDIS_OPTIONS.SAVE, ""''"");",no,
@@ -14259,7 +14259,7 @@
 247057,67,//,no,
 247085,67,"// Since the class is versioned to be after 1.0, we expect null
 // This is the new behavior in Gson 2.0",no,
-247402,69,"// Tests are not final, methods currently just generate documentation as MD tables.",yes,incomplete/requirement
+247402,69,"// Tests are not final, methods currently just generate documentation as MD tables.",yes,requirement
 247458,69,"/**
  * Utility class to assert variable values in mustache.
  *
@@ -14273,7 +14273,7 @@
 // additionalProperties:
 //   type: string",no,
 247692,69,// the mapping in b is in C,no,
-247780,69,"// TODO: hasRequired should be true, fix this",yes,expectation mismatch
+247780,69,"// TODO: hasRequired should be true, fix this",yes,defect
 247857,69,"/*
  * Copyright 2018 OpenAPI-Generator Contributors (https://openapi-generator.tech)
  * Copyright 2018 SmartBear Software
@@ -14292,7 +14292,7 @@
  */",no,
 247896,69,"// Check expected generated files
 // api sanity check",no,
-247907,69,"// TODO: additional properties should be of type Dictionary<string, List<Children>>",yes,expectation mismatch
+247907,69,"// TODO: additional properties should be of type Dictionary<string, List<Children>>",yes,defect
 247996,69,// test are currently disabled in Superclass,no,
 248003,69,"/*
  * Copyright 2018 OpenAPI-Generator Contributors (https://openapi-generator.tech)
@@ -14333,23 +14333,23 @@
  */",no,
 248749,69,// pattern_dont_escape_backslash '/^pattern\d{3}$/',no,
 248907,69,// WHEN,no,
-249037,69,// TODO: test indirectMap,yes,incomplete/requirement
-249063,69,// TODO: test EnumArrays,yes,incomplete/requirement
+249037,69,// TODO: test indirectMap,yes,requirement
+249063,69,// TODO: test EnumArrays,yes,requirement
 249079,69,"/**
  * Model tests for ModelApiResponse
  */",no,
-249245,69,// TODO: test smallCamel,yes,incomplete/requirement
-249335,69,// TODO: test Dog,yes,incomplete/requirement
+249245,69,// TODO: test smallCamel,yes,requirement
+249335,69,// TODO: test Dog,yes,requirement
 249392,69,"/**
  * Test the property 'enumStringRequired'
  */",no,
-249411,69,// TODO: test className,yes,incomplete/requirement
-249451,69,// TODO - assign values to the input arguments.,yes,incomplete/requirement
+249411,69,// TODO: test className,yes,requirement
+249451,69,// TODO - assign values to the input arguments.,yes,requirement
 249453,69,"/**
  * Logs user into the system
  */",no,
-249542,69,// TODO - assign values to the input arguments.,yes,incomplete/requirement
-249566,69,// TODO - assign values to the input arguments.,yes,incomplete/requirement
+249542,69,// TODO - assign values to the input arguments.,yes,requirement
+249566,69,// TODO - assign values to the input arguments.,yes,requirement
 249599,69,"/**
  * Finds Pets by tags
  * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
@@ -14366,8 +14366,8 @@
 249740,69,"/**
  * Model tests for ModelApiResponse
  */",no,
-249857,69,// TODO: test username,yes,incomplete/requirement
-249947,69,// TODO: test Pet,yes,incomplete/requirement
+249857,69,// TODO: test username,yes,requirement
+249947,69,// TODO: test Pet,yes,requirement
 249984,69,"/**
  * Test the property 'quantity'
  */",no,
@@ -14402,12 +14402,12 @@
 250262,69,"/**
  * Model tests for MapTest
  */",no,
-250301,69,// TODO: test arrayEnum,yes,incomplete/requirement
+250301,69,// TODO: test arrayEnum,yes,requirement
 250354,69,"/**
  * Test the property 'id'
  */",no,
-250429,69,// TODO: test id,yes,incomplete/requirement
-250455,69,// TODO: test ReadOnlyFirst,yes,incomplete/requirement
+250429,69,// TODO: test id,yes,requirement
+250455,69,// TODO: test ReadOnlyFirst,yes,requirement
 250474,69,"/**
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -14471,14 +14471,14 @@
  */",no,
 251397,69,"//void response = client.testInlineAdditionalProperties(requestBody);
 //assertNotNull(response);",no,
-251553,69,// TODO: test name,yes,incomplete/requirement
+251553,69,// TODO: test name,yes,requirement
 251560,69,"/**
  * Test the property 'username'
  */",no,
-251651,69,// TODO: test validations,yes,incomplete/requirement
-251685,69,// TODO: test username,yes,incomplete/requirement
-251739,69,// TODO: test validations,yes,incomplete/requirement
-251791,69,// TODO: test type,yes,incomplete/requirement
+251651,69,// TODO: test validations,yes,requirement
+251685,69,// TODO: test username,yes,requirement
+251739,69,// TODO: test validations,yes,requirement
+251791,69,// TODO: test type,yes,requirement
 251951,69,"/**
  * Test the property 'date'
  */",no,
@@ -14488,29 +14488,29 @@
 252049,69,"/**
  * Model tests for ModelApiResponse
  */",no,
-252198,69,// TODO: test prefixString,yes,incomplete/requirement
+252198,69,// TODO: test prefixString,yes,requirement
 252397,69,"/**
  * Test the property 'outerEnum'
  */",no,
-252402,69,// TODO: test Animal,yes,incomplete/requirement
-252410,69,// TODO: test Cat,yes,incomplete/requirement
+252402,69,// TODO: test Animal,yes,requirement
+252410,69,// TODO: test Cat,yes,requirement
 252413,69,"/**
  * Test the property 'color'
  */",no,
-252452,69,// TODO: test validations,yes,incomplete/requirement
-252484,69,// TODO: test validations,yes,incomplete/requirement
+252452,69,// TODO: test validations,yes,requirement
+252484,69,// TODO: test validations,yes,requirement
 252491,69,"/**
  * Update an existing pet
  *
  * @param context Vertx test context for doing assertions
  */",no,
-252506,69,// TODO: test Category,yes,incomplete/requirement
-252522,69,// TODO: test number,yes,incomplete/requirement
-252582,69,// TODO: test mapProperty,yes,incomplete/requirement
-252688,69,// TODO: test name,yes,incomplete/requirement
-252716,69,// TODO: test _return,yes,incomplete/requirement
-252752,69,// TODO: test files,yes,incomplete/requirement
-252818,69,// TODO: test objectItemsNullable,yes,incomplete/requirement
+252506,69,// TODO: test Category,yes,requirement
+252522,69,// TODO: test number,yes,requirement
+252582,69,// TODO: test mapProperty,yes,requirement
+252688,69,// TODO: test name,yes,requirement
+252716,69,// TODO: test _return,yes,requirement
+252752,69,// TODO: test files,yes,requirement
+252818,69,// TODO: test objectItemsNullable,yes,requirement
 252821,69,"/**
  * Model tests for Pet
  */",no,
@@ -14534,7 +14534,7 @@
 252918,69,"/**
  * Model tests for OuterEnumInteger
  */",no,
-253072,69,// TODO: test validations,yes,incomplete/requirement
+253072,69,// TODO: test validations,yes,requirement
 253118,69,"/**
  * Model tests for HasOnlyReadOnly
  */",no,
@@ -14552,7 +14552,7 @@
 253221,69,"/**
  * Model tests for BigCat
  */",no,
-253230,69,// TODO: test kind,yes,incomplete/requirement
+253230,69,// TODO: test kind,yes,requirement
 253335,69,"/**
  * Test the property 'attributeInteger'
  */",no,
@@ -14566,22 +14566,22 @@
  * Test the property 'prefixBoolean'
  */",no,
 253440,69,// TODO: test Pet,yes,temporary fix
-253538,69,// TODO: test AdditionalPropertiesInteger,yes,incomplete/requirement
-253646,69,// TODO: test validations,yes,incomplete/requirement
-253652,69,// TODO: test validations,yes,incomplete/requirement
-253676,69,// TODO: test validations,yes,incomplete/requirement
-253682,69,// TODO: test validations,yes,incomplete/requirement
-253738,69,// TODO: test password,yes,incomplete/requirement
+253538,69,// TODO: test AdditionalPropertiesInteger,yes,requirement
+253646,69,// TODO: test validations,yes,requirement
+253652,69,// TODO: test validations,yes,requirement
+253676,69,// TODO: test validations,yes,requirement
+253682,69,// TODO: test validations,yes,requirement
+253738,69,// TODO: test password,yes,requirement
 253851,69,"/**
  * Model tests for DeprecatedObject
  */",no,
-253880,69,// TODO: test message,yes,incomplete/requirement
-254020,69,// TODO: test ModelReturn,yes,incomplete/requirement
+253880,69,// TODO: test message,yes,requirement
+254020,69,// TODO: test ModelReturn,yes,requirement
 254103,69,"/**
  * Test the property 'ATT_NAME'
  */",no,
-254312,69,// TODO: test quadrilateralType,yes,incomplete/requirement
-254326,69,// TODO: test triangleType,yes,incomplete/requirement
+254312,69,// TODO: test quadrilateralType,yes,requirement
+254326,69,// TODO: test triangleType,yes,requirement
 254367,69,"/**
  * Test the property 'enumInteger'
  */",no,
@@ -14596,7 +14596,7 @@
 254559,69,"/**
  * Test the property 'bigDecimal'
  */",no,
-254560,69,// TODO: test bigDecimal,yes,incomplete/requirement
+254560,69,// TODO: test bigDecimal,yes,requirement
 254597,69,"/**
  * Test the property 'mapNumber'
  */",no,
@@ -14611,23 +14611,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-254678,69,// TODO: test File,yes,incomplete/requirement
+254678,69,// TODO: test File,yes,requirement
 254717,69,"/**
  * Test the property 'justNumber'
  */",no,
 254731,69,"/**
  * Test the property 'arrayItem'
  */",no,
-254802,69,// TODO: test nameWrappedArray,yes,incomplete/requirement
-254812,69,// TODO: test prefixArray,yes,incomplete/requirement
-254962,69,// TODO: test arrayArrayOfModel,yes,incomplete/requirement
-255018,69,// TODO: test className,yes,incomplete/requirement
+254802,69,// TODO: test nameWrappedArray,yes,requirement
+254812,69,// TODO: test prefixArray,yes,requirement
+254962,69,// TODO: test arrayArrayOfModel,yes,requirement
+255018,69,// TODO: test className,yes,requirement
 255019,69,"/**
  * Test the property 'color'
  */",no,
 255027,69,"// api.createUsersWithArrayInput(body);
 
-// TODO: test validations",yes,incomplete/requirement
+// TODO: test validations",yes,requirement
 255043,69,"/**
  * To test special tags
  *
@@ -14636,33 +14636,33 @@
 255233,69,"/**
  * Test the property 'justSymbol'
  */",no,
-255396,69,// TODO: test prefixNumber,yes,incomplete/requirement
-255418,69,// TODO: test prefixNsString,yes,incomplete/requirement
+255396,69,// TODO: test prefixNumber,yes,requirement
+255418,69,// TODO: test prefixNsString,yes,requirement
 255427,69,"/**
  * Test the property 'prefixNsWrappedArray'
  */",no,
-255452,69,// TODO: test dateTime,yes,incomplete/requirement
+255452,69,// TODO: test dateTime,yes,requirement
 255483,69,"/**
  * Test the property 'category'
  */",no,
 255485,69,"/**
  * Test the property 'name'
  */",no,
-255518,69,// TODO: test status,yes,incomplete/requirement
-255520,69,// TODO: test complete,yes,incomplete/requirement
+255518,69,// TODO: test status,yes,requirement
+255520,69,// TODO: test complete,yes,requirement
 255647,69,"/**
  * Test serialization of object with outer number type
  */",no,
 255660,69,"// api.testEndpointParameters(number, _double, patternWithoutDelimiter, _byte, integer, int32, int64, _float, string, binary, date, dateTime, password, paramCallback);
 
-// TODO: test validations",yes,incomplete/requirement
+// TODO: test validations",yes,requirement
 255713,69,"/**
  * Test the property '_float'
  */",no,
 255721,69,"/**
  * Test the property '_byte'
  */",no,
-255832,69,// TODO: test singleRefType,yes,incomplete/requirement
+255832,69,// TODO: test singleRefType,yes,requirement
 255865,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -14680,11 +14680,11 @@
 256010,69,"/**
  * Model tests for Pet
  */",no,
-256014,69,// TODO: test id,yes,incomplete/requirement
+256014,69,// TODO: test id,yes,requirement
 256032,69,"/**
  * Model tests for ChildWithNullable
  */",no,
-256066,69,// TODO: test breed,yes,incomplete/requirement
+256066,69,// TODO: test breed,yes,requirement
 256145,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -14702,36 +14702,36 @@
 256273,69,"/**
  * Test the property 'name'
  */",no,
-256290,69,// TODO: test _double,yes,incomplete/requirement
+256290,69,// TODO: test _double,yes,requirement
 256293,69,"/**
  * Test the property '_byte'
  */",no,
-256336,69,// TODO: test OuterEnum,yes,incomplete/requirement
+256336,69,// TODO: test OuterEnum,yes,requirement
 256434,69,"/**
  * Model tests for Model200Response
  */",no,
-256476,69,// TODO: test OuterComposite,yes,incomplete/requirement
-256480,69,// TODO: test myString,yes,incomplete/requirement
+256476,69,// TODO: test OuterComposite,yes,requirement
+256480,69,// TODO: test myString,yes,requirement
 256539,69,"/**
  * Test the property 'nameArray'
  */",no,
-256604,69,// TODO: test map,yes,incomplete/requirement
+256604,69,// TODO: test map,yes,requirement
 256657,69,"/**
  * Model tests for Order
  */",no,
 256755,69,"/**
  * Model tests for Cat
  */",no,
-256794,69,// TODO: test validations,yes,incomplete/requirement
-256848,69,// TODO: test validations,yes,incomplete/requirement
+256794,69,// TODO: test validations,yes,requirement
+256848,69,// TODO: test validations,yes,requirement
 256891,69,"/**
  * Test the property 'dateTime'
  */",no,
 256977,69,"/**
  * Test the property 'name'
  */",no,
-257012,69,// TODO: test arrayEnum,yes,incomplete/requirement
-257124,69,// TODO: test deprecatedRef,yes,incomplete/requirement
+257012,69,// TODO: test arrayEnum,yes,requirement
+257124,69,// TODO: test deprecatedRef,yes,requirement
 257125,69,"/**
  * Test the property 'bars'
  */",no,
@@ -14767,8 +14767,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-257540,69,// TODO: test Animal,yes,incomplete/requirement
-257556,69,// TODO: test className,yes,incomplete/requirement
+257540,69,// TODO: test Animal,yes,requirement
+257556,69,// TODO: test className,yes,requirement
 257593,69,"/* comment out while unboxing nested oneOf/anyOf is still in discussion
             // Deserialization test with indirections of 'oneOf' child schemas.
             // Mammal is oneOf whale, zebra and pig, and pig is itself one of BasquePig, DanishPig.
@@ -14795,46 +14795,46 @@
  * @throws ApiException
  *          if the Api call fails
  */",no,
-257939,69,// TODO: test id,yes,incomplete/requirement
+257939,69,// TODO: test id,yes,requirement
 258030,69,"/**
  * Test the property 'password'
  */",no,
 258032,69,"/**
  * Test the property 'patternWithDigits'
  */",no,
-258033,69,// TODO: test patternWithDigits,yes,incomplete/requirement
+258033,69,// TODO: test patternWithDigits,yes,requirement
 258097,69,"/**
  * Model tests for DeprecatedObject
  */",no,
-258135,69,// TODO: test ClassModel,yes,incomplete/requirement
+258135,69,// TODO: test ClassModel,yes,requirement
 258157,69,"/**
  * Model tests for ParentWithNullable
  */",no,
 258229,69,// TODO: test password,no,
-258237,69,// TODO: test FileSchemaTestClass,yes,incomplete/requirement
+258237,69,// TODO: test FileSchemaTestClass,yes,requirement
 258248,69,"/**
  * Test the property 'baz'
  */",no,
-258375,69,// TODO: test SpecialModelName,yes,incomplete/requirement
-258449,69,// TODO: test className,yes,incomplete/requirement
+258375,69,// TODO: test SpecialModelName,yes,requirement
+258449,69,// TODO: test className,yes,requirement
 258507,69,"// uncomment below to test the function
 //String body = null;
 //String response = api.fakeOuterStringSerialize(body).block();
 
-// TODO: test validations",yes,incomplete/requirement
+// TODO: test validations",yes,requirement
 258638,69,"/**
  * Model tests for MapTest
  */",no,
-258707,69,// TODO: test name,yes,incomplete/requirement
-258711,69,// TODO: test ModelApiResponse,yes,incomplete/requirement
+258707,69,// TODO: test name,yes,requirement
+258711,69,// TODO: test ModelApiResponse,yes,requirement
 258782,69,"/**
  * Test the property 'integerItem'
  */",no,
 258842,69,"/**
  * Test the property 'attributeBoolean'
  */",no,
-259171,69,// TODO: test validations,yes,incomplete/requirement
-259255,69,// TODO: test ArrayOfArrayOfNumberOnly,yes,incomplete/requirement
+259171,69,// TODO: test validations,yes,requirement
+259255,69,// TODO: test ArrayOfArrayOfNumberOnly,yes,requirement
 259368,69,"/**
  * Test the property 'name'
  */",no,
@@ -14850,7 +14850,7 @@
  */",no,
 259729,69,"//Long orderId = null;
 //Order response = api.getOrderById(orderId);
-// TODO: test validations",yes,incomplete/requirement
+// TODO: test validations",yes,requirement
 259756,69,"/**
  * test inline additionalProperties
  *
@@ -14873,7 +14873,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-260253,69,// TODO: test string,yes,incomplete/requirement
+260253,69,// TODO: test string,yes,requirement
 260258,69,"/**
  * Creates list of users with given input array
  *
@@ -14885,35 +14885,35 @@
 //
 //api.deleteOrder(orderId);
 
-// TODO: test validations",yes,incomplete/requirement
+// TODO: test validations",yes,requirement
 260307,69,"//
 //File body = null;
 //
 //api.testBodyWithBinary(body);
 
-// TODO: test validations",yes,incomplete/requirement
+// TODO: test validations",yes,requirement
 260313,69,"//
 //Client client = null;
 //
 //Client response = api.testClientModel(client);
 
-// TODO: test validations",yes,incomplete/requirement
+// TODO: test validations",yes,requirement
 260541,69,"/**
  * Test the property 'property'
  */",no,
 260659,69,"/**
  * Test the property 'prefixNsString'
  */",no,
-260706,69,// TODO: test Capitalization,yes,incomplete/requirement
-260714,69,// TODO: test capitalSnake,yes,incomplete/requirement
+260706,69,// TODO: test Capitalization,yes,requirement
+260714,69,// TODO: test capitalSnake,yes,requirement
 260715,69,"/**
  * Test the property 'scAETHFlowPoints'
  */",no,
 260761,69,"/**
  * Test the property 'complete'
  */",no,
-260966,69,// TODO: test binary,yes,incomplete/requirement
-261008,69,// TODO: test OuterEnum,yes,incomplete/requirement
+260966,69,// TODO: test binary,yes,requirement
+261008,69,// TODO: test OuterEnum,yes,requirement
 261035,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -14928,8 +14928,8 @@
 261191,69,"/**
  * Test the property 'baz'
  */",no,
-261218,69,// TODO: test capitalSnake,yes,incomplete/requirement
-261296,69,// TODO: test status,yes,incomplete/requirement
+261218,69,// TODO: test capitalSnake,yes,requirement
+261296,69,// TODO: test status,yes,requirement
 261315,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -14941,7 +14941,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-261384,69,// TODO: test TestInlineFreeformAdditionalPropertiesRequest,yes,incomplete/requirement
+261384,69,// TODO: test TestInlineFreeformAdditionalPropertiesRequest,yes,requirement
 261409,69,"/**
  * Creates list of users with given input array
  */",no,
@@ -14950,24 +14950,24 @@
  *
  * To test special tags and operation ID starting with number
  */",no,
-261484,69,// TODO: test validations,yes,incomplete/requirement
+261484,69,// TODO: test validations,yes,requirement
 261565,69,"/**
  * Test the property 'arrayArrayNumber'
  */",no,
 261668,69,"/**
  * Model tests for OuterObjectWithEnumProperty
  */",no,
-261824,69,// TODO: test objectItemsNullable,yes,incomplete/requirement
+261824,69,// TODO: test objectItemsNullable,yes,requirement
 261827,69,"/**
  * Model tests for Pet
  */",no,
-261878,69,// TODO: test className,yes,incomplete/requirement
-261930,69,// TODO: test EnumTest,yes,incomplete/requirement
+261878,69,// TODO: test className,yes,requirement
+261930,69,// TODO: test EnumTest,yes,requirement
 261980,69,"// uncomment below to test the function
 //User user = null;
 //api.createUser(user).block();
 
-// TODO: test validations",yes,incomplete/requirement
+// TODO: test validations",yes,requirement
 261991,69,"/**
  * Logs out current logged in user session
  */",no,
@@ -15003,9 +15003,9 @@
  * @throws ApiException
  *          if the Api call fails
  */",no,
-262217,69,// TODO: test validations,yes,incomplete/requirement
-262374,69,// TODO: test int64,yes,incomplete/requirement
-262394,69,// TODO: test password,yes,incomplete/requirement
+262217,69,// TODO: test validations,yes,requirement
+262374,69,// TODO: test int64,yes,requirement
+262394,69,// TODO: test password,yes,requirement
 262484,69,"/**
  * Model tests for ModelApiResponse
  */",no,
@@ -15029,11 +15029,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-262802,69,// TODO: test TypeHolderExample,yes,incomplete/requirement
+262802,69,// TODO: test TypeHolderExample,yes,requirement
 262841,69,"/**
  * Test the property 'color'
  */",no,
-262848,69,// TODO: test className,yes,incomplete/requirement
+262848,69,// TODO: test className,yes,requirement
 262853,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15045,7 +15045,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-262998,69,// TODO: test tags,yes,incomplete/requirement
+262998,69,// TODO: test tags,yes,requirement
 263077,69,"/*
  * Minimal Example 
  * byte Array error in equal method
@@ -15057,15 +15057,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-263132,69,// TODO: test ArrayOfArrayOfNumberOnly,yes,incomplete/requirement
+263132,69,// TODO: test ArrayOfArrayOfNumberOnly,yes,requirement
 263312,69,"/**
  * Model tests for User
  */",no,
 263353,69,"/**
  * Test the property 'nameArray'
  */",no,
-263428,69,// TODO: test Capitalization,yes,incomplete/requirement
-263448,69,// TODO: test category,yes,incomplete/requirement
+263428,69,// TODO: test Capitalization,yes,requirement
+263448,69,// TODO: test category,yes,requirement
 263582,69,"/**
  * Creates list of users with given input array
  */",no,
@@ -15075,15 +15075,15 @@
 263697,69,"/**
  * Test the property 'patternWithDigits'
  */",no,
-263792,69,// TODO: test FakeBigDecimalMap200Response,yes,incomplete/requirement
+263792,69,// TODO: test FakeBigDecimalMap200Response,yes,requirement
 263841,69,"/**
  * Model tests for ParentWithNullable
  */",no,
-263970,69,// TODO: test prefixBoolean,yes,incomplete/requirement
+263970,69,// TODO: test prefixBoolean,yes,requirement
 264059,69,"/**
  * Test the property 'booleanProp'
  */",no,
-264140,69,// TODO: test color,yes,incomplete/requirement
+264140,69,// TODO: test color,yes,requirement
 264163,69,"/**
  * Test the property 'arrayArrayOfModel'
  */",no,
@@ -15096,11 +15096,11 @@
 264369,69,"/**
  * Test the property 'id'
  */",no,
-264456,69,// TODO: test validations,yes,incomplete/requirement
+264456,69,// TODO: test validations,yes,requirement
 264497,69,"/**
  * Test the property 'nullableString'
  */",no,
-264556,69,// TODO: test bar,yes,incomplete/requirement
+264556,69,// TODO: test bar,yes,requirement
 264727,69,"/**
  * Test the property 'name'
  */",no,
@@ -15110,13 +15110,13 @@
 264877,69,"/**
  * Test the property 'color'
  */",no,
-264900,69,// TODO: test arrayArrayOfInteger,yes,incomplete/requirement
+264900,69,// TODO: test arrayArrayOfInteger,yes,requirement
 264973,69,"/**
  * Test the property 'string'
  */",no,
 265030,69,"//api.fakeHttpSignatureTest(pet, query1, header1);
 //Assertions.assertNotNull(response);",no,
-265041,69,// TODO: test validations,yes,incomplete/requirement
+265041,69,// TODO: test validations,yes,requirement
 265122,69,"//ModelApiResponse response = api.uploadFileWithRequiredFile(petId, requiredFile, additionalMetadata);
 //Assertions.assertNotNull(response);",no,
 265123,69,"/**
@@ -15140,35 +15140,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-265168,69,// TODO: test password,yes,incomplete/requirement
+265168,69,// TODO: test password,yes,requirement
 265169,69,"/**
  * Test the property 'patternWithDigits'
  */",no,
-265190,69,// TODO: test MapTest,yes,incomplete/requirement
-265254,69,// TODO: test someId,yes,incomplete/requirement
-265292,69,// TODO: test value,yes,incomplete/requirement
-265330,69,// TODO: test OuterComposite,yes,incomplete/requirement
+265190,69,// TODO: test MapTest,yes,requirement
+265254,69,// TODO: test someId,yes,requirement
+265292,69,// TODO: test value,yes,requirement
+265330,69,// TODO: test OuterComposite,yes,requirement
 265333,69,"/**
  * Test the property 'myString'
  */",no,
-265368,69,// TODO: test phone,yes,incomplete/requirement
-265370,69,// TODO: test userStatus,yes,incomplete/requirement
-265408,69,// TODO: test capitalCamel,yes,incomplete/requirement
+265368,69,// TODO: test phone,yes,requirement
+265370,69,// TODO: test userStatus,yes,requirement
+265408,69,// TODO: test capitalCamel,yes,requirement
 265441,69,"/**
  * Test the property 'objectAndItemsNullableProp'
  */",no,
 265569,69,"/**
  * Model tests for Animal
  */",no,
-265622,69,// TODO: test validations,yes,incomplete/requirement
+265622,69,// TODO: test validations,yes,requirement
 265633,69,"/**
  * Health check endpoint
  */",no,
-265799,69,// TODO: test mapArrayInteger,yes,incomplete/requirement
+265799,69,// TODO: test mapArrayInteger,yes,requirement
 265848,69,"/**
  * Test the property 'type'
  */",no,
-265925,69,// TODO: test OuterComposite,yes,incomplete/requirement
+265925,69,// TODO: test OuterComposite,yes,requirement
 265932,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15183,27 +15183,27 @@
 266010,69,"/**
  * Test the property 'namespaceBoolean'
  */",no,
-266043,69,// TODO: test baz,yes,incomplete/requirement
-266073,69,// TODO: test scAETHFlowPoints,yes,incomplete/requirement
+266043,69,// TODO: test baz,yes,requirement
+266073,69,// TODO: test scAETHFlowPoints,yes,requirement
 266121,69,"/**
  * Model tests for Dog
  */",no,
 266203,69,"/**
  * Model tests for Cat
  */",no,
-266209,69,// TODO: test color,yes,incomplete/requirement
+266209,69,// TODO: test color,yes,requirement
 266241,69,"/**
  * API tests for UserApi
  */",no,
-266299,69,// TODO: test validations,yes,incomplete/requirement
+266299,69,// TODO: test validations,yes,requirement
 266393,69,"/**
  * Test the property '_double'
  */",no,
-266410,69,// TODO: test bigDecimal,yes,incomplete/requirement
+266410,69,// TODO: test bigDecimal,yes,requirement
 266465,69,"/**
  * Test the property 'anytype3'
  */",no,
-266599,69,// TODO: test Tag,yes,incomplete/requirement
+266599,69,// TODO: test Tag,yes,requirement
 266686,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15229,20 +15229,20 @@
 266980,69,"/**
  * Test the property 'name'
  */",no,
-266985,69,// TODO: test RefRefToPathLevelParameterOneofRefToOneofParameter,yes,incomplete/requirement
-267085,69,// TODO: test id,yes,incomplete/requirement
+266985,69,// TODO: test RefRefToPathLevelParameterOneofRefToOneofParameter,yes,requirement
+267085,69,// TODO: test id,yes,requirement
 267134,69,"/**
  * Model tests for RefToRefParameterAnyofRefToAnyofParameter
  */",no,
-267141,69,// TODO: test className,yes,incomplete/requirement
-267221,69,// TODO: test validations,yes,incomplete/requirement
-267276,69,// TODO: test FormatTest,yes,incomplete/requirement
-267300,69,// TODO: test dateTime,yes,incomplete/requirement
+267141,69,// TODO: test className,yes,requirement
+267221,69,// TODO: test validations,yes,requirement
+267276,69,// TODO: test FormatTest,yes,requirement
+267300,69,// TODO: test dateTime,yes,requirement
 267399,69,"/**
  * Model tests for AllOfWithSingleRef
  */",no,
-267426,69,// TODO: test OuterObjectWithEnumProperty,yes,incomplete/requirement
-267434,69,// TODO: test type,yes,incomplete/requirement
+267426,69,// TODO: test OuterObjectWithEnumProperty,yes,requirement
+267434,69,// TODO: test type,yes,requirement
 267685,69,"/**
  * Model tests for EnumTest
  */",no,
@@ -15263,8 +15263,8 @@
  * @throws ApiException
  *          if the Api call fails
  */",no,
-267858,69,// TODO: test validations,yes,incomplete/requirement
-267945,69,// TODO: test Pet,yes,incomplete/requirement
+267858,69,// TODO: test validations,yes,requirement
+267945,69,// TODO: test Pet,yes,requirement
 268098,69,"/**
  * OpenAPI Petstore
  * This is a sample server Petstore server. For this sample, you can use the api key `special-key` to test the authorization filters.
@@ -15275,24 +15275,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-268262,69,// TODO: test mapBoolean,yes,incomplete/requirement
-268338,69,// TODO: test ClassModel,yes,incomplete/requirement
+268262,69,// TODO: test mapBoolean,yes,requirement
+268338,69,// TODO: test ClassModel,yes,requirement
 268389,69,"/**
  * Model tests for OuterComposite
  */",no,
-268402,69,// TODO: test _return,yes,incomplete/requirement
+268402,69,// TODO: test _return,yes,requirement
 268429,69,"/**
  * Test the property 'userStatus'
  */",no,
-268436,69,// TODO: test attributeString,yes,incomplete/requirement
-268462,69,// TODO: test prefixInteger,yes,incomplete/requirement
+268436,69,// TODO: test attributeString,yes,requirement
+268462,69,// TODO: test prefixInteger,yes,requirement
 268510,69,"/**
  * Model tests for MixedPropertiesAndAdditionalPropertiesClass
  */",no,
 268675,69,"/**
  * Test the property 'declawed'
  */",no,
-268778,69,// TODO: test _float,yes,incomplete/requirement
+268778,69,// TODO: test _float,yes,requirement
 268813,69,"/**
  * Test the property 'arrayArrayNumber'
  */",no,
@@ -15308,7 +15308,7 @@
 269033,69,"/**
  * Test the property 'smallCamel'
  */",no,
-269034,69,// TODO: test smallCamel,yes,incomplete/requirement
+269034,69,// TODO: test smallCamel,yes,requirement
 269132,69,"/**
  * Model tests for Client
  */",no,
@@ -15344,8 +15344,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-269447,69,// TODO: test mapWithUndeclaredPropertiesAnytype2,yes,incomplete/requirement
-269529,69,// TODO: test hasBaleen,yes,incomplete/requirement
+269447,69,// TODO: test mapWithUndeclaredPropertiesAnytype2,yes,requirement
+269529,69,// TODO: test hasBaleen,yes,requirement
 269570,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15357,12 +15357,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-269597,69,// TODO: test categoryTag,yes,incomplete/requirement
+269597,69,// TODO: test categoryTag,yes,requirement
 269619,69,"/**
  * Model tests for ObjectWithDeprecatedFields
  */",no,
-269671,69,// TODO: test justNumber,yes,incomplete/requirement
-269803,69,// TODO: test status,yes,incomplete/requirement
+269671,69,// TODO: test justNumber,yes,requirement
+269803,69,// TODO: test status,yes,requirement
 269826,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15377,7 +15377,7 @@
 269858,69,"/**
  * Test the property 'arrayNullableProp'
  */",no,
-269887,69,// TODO: test ArrayAnyOf,yes,incomplete/requirement
+269887,69,// TODO: test ArrayAnyOf,yes,requirement
 269898,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15392,11 +15392,11 @@
 269944,69,"/**
  * Test the property 'quantity'
  */",no,
-269981,69,// TODO: test photoUrls,yes,incomplete/requirement
+269981,69,// TODO: test photoUrls,yes,requirement
 270339,69,"// the string below is base64-encoded result of ""my-username:"" with the ""Basic "" prefix",no,
 270347,69,// custom date format: without day,no,
 270352,69,// OK,no,
-270456,69,// TODO: test validations,yes,incomplete/requirement
+270456,69,// TODO: test validations,yes,requirement
 270483,69,"/**
  * To test the collection format in query parameters
  *
@@ -15405,8 +15405,8 @@
 270548,69,"/**
  * Test the property 'number'
  */",no,
-270639,69,// TODO: test mapWithUndeclaredPropertiesAnytype2,yes,incomplete/requirement
-270663,69,// TODO: test Mammal,yes,incomplete/requirement
+270639,69,// TODO: test mapWithUndeclaredPropertiesAnytype2,yes,requirement
+270663,69,// TODO: test Mammal,yes,requirement
 270688,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15430,15 +15430,15 @@
 270958,69,"/**
  * Test the property 'datetimeProp'
  */",no,
-270969,69,// TODO: test objectAndItemsNullableProp,yes,incomplete/requirement
-271063,69,// TODO: test quadrilateralType,yes,incomplete/requirement
+270969,69,// TODO: test objectAndItemsNullableProp,yes,requirement
+271063,69,// TODO: test quadrilateralType,yes,requirement
 271202,69,"/**
  * Test the property 'enumString'
  */",no,
-271269,69,// TODO: test validations,yes,incomplete/requirement
-271339,69,// TODO: test validations,yes,incomplete/requirement
-271473,69,// TODO: test int64,yes,incomplete/requirement
-271491,69,// TODO: test dateTime,yes,incomplete/requirement
+271269,69,// TODO: test validations,yes,requirement
+271339,69,// TODO: test validations,yes,requirement
+271473,69,// TODO: test int64,yes,requirement
+271491,69,// TODO: test dateTime,yes,requirement
 271538,69,"/**
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15459,14 +15459,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-271611,69,// TODO: test deprecatedRef,yes,incomplete/requirement
+271611,69,// TODO: test deprecatedRef,yes,requirement
 271690,69,"/**
  * Test the property 'email'
  */",no,
 271730,69,"/**
  * Model tests for Capitalization
  */",no,
-271759,69,// TODO: test datetimeProp,yes,incomplete/requirement
+271759,69,// TODO: test datetimeProp,yes,requirement
 271892,69,"/**
  * Test the property 'outerEnumIntegerDefaultValue'
  */",no,
@@ -15486,15 +15486,15 @@
  * @throws ApiException
  *          if the Api call fails
  */",no,
-271993,69,// TODO: test validations,yes,incomplete/requirement
-272089,69,// TODO: test ModelApiResponse,yes,incomplete/requirement
-272317,69,// TODO: test code,yes,incomplete/requirement
+271993,69,// TODO: test validations,yes,requirement
+272089,69,// TODO: test ModelApiResponse,yes,requirement
+272317,69,// TODO: test code,yes,requirement
 272331,69,"/**
  * Model tests for SingleRefType
  */",no,
-272339,69,// TODO: test username,yes,incomplete/requirement
-272433,69,// TODO: test firstName,yes,incomplete/requirement
-272501,69,// TODO: test stringProp,yes,incomplete/requirement
+272339,69,// TODO: test username,yes,requirement
+272433,69,// TODO: test firstName,yes,requirement
+272501,69,// TODO: test stringProp,yes,requirement
 272514,69,"/**
  * Test the property 'objectAndItemsNullableProp'
  */",no,
@@ -15511,7 +15511,7 @@
 //Map<String, String> language = null;
 //api.testQueryParameterCollectionFormat(pipe, ioutil, http, url, context, allowEmpty, language).block();
 
-// TODO: test validations",yes,incomplete/requirement
+// TODO: test validations",yes,requirement
 272750,69,"/**
  */",no,
 272798,69,"/**
@@ -15551,7 +15551,7 @@
 272996,69,"/**
  * Test the property 'name'
  */",no,
-273007,69,// TODO: test firstName,yes,incomplete/requirement
+273007,69,// TODO: test firstName,yes,requirement
 273024,69,"/**
  * Test the property 'files'
  */",no,
@@ -15564,12 +15564,12 @@
 273364,69,"/**
  * Test the property 'int32'
  */",no,
-273379,69,// TODO: test _byte,yes,incomplete/requirement
+273379,69,// TODO: test _byte,yes,requirement
 273412,69,"/**
  * Test the property 'mapMapOfString'
  */",no,
-273453,69,// TODO: test name,yes,incomplete/requirement
-273467,69,// TODO: test FakeBigDecimalMap200Response,yes,incomplete/requirement
+273453,69,// TODO: test name,yes,requirement
+273467,69,// TODO: test FakeBigDecimalMap200Response,yes,requirement
 273515,69,"/**
  * Model tests for ParentWithNullable
  */",no,
@@ -15582,7 +15582,7 @@
 273586,69,"/**
  * Test the property 'password'
  */",no,
-273629,69,// TODO: test capitalCamel,yes,incomplete/requirement
+273629,69,// TODO: test capitalCamel,yes,requirement
 273725,69,"/**
  * Model tests for Client
  */",no,
@@ -15592,7 +15592,7 @@
 273989,69,"/**
  * Test the property 'arrayArrayNumber'
  */",no,
-274102,69,// TODO: test type,yes,incomplete/requirement
+274102,69,// TODO: test type,yes,requirement
 274103,69,"/**
  * Test the property 'nullableProperty'
  */",no,
@@ -15605,14 +15605,14 @@
 274285,69,"/**
  * Test the property 'id'
  */",no,
-274302,69,// TODO: test className,yes,incomplete/requirement
+274302,69,// TODO: test className,yes,requirement
 274352,69,"/**
  * Model tests for EnumTest
  */",no,
 274445,69,"/**
  * Test serialization of outer number types
  */",no,
-274572,69,// TODO: test number,yes,incomplete/requirement
+274572,69,// TODO: test number,yes,requirement
 274573,69,"/**
  * Test the property '_float'
  */",no,
@@ -15655,7 +15655,7 @@
  * @throws RestClientException
  *          if the Api call fails
  */",no,
-274926,69,// TODO: test id,yes,incomplete/requirement
+274926,69,// TODO: test id,yes,requirement
 275064,69,"/*
  * Echo Server API
  * Echo Server API
@@ -15681,7 +15681,7 @@
 275141,69,"/**
  * Test the property 'color'
  */",no,
-275154,69,// TODO: test outcomes,yes,incomplete/requirement
+275154,69,// TODO: test outcomes,yes,requirement
 275163,69,"/**
  * Test the property 'number'
  */",no,
@@ -15692,7 +15692,7 @@
  * Model tests for BirdAndCategory
  */",no,
 275198,69,// TODO: test size,no,
-275265,69,// TODO: test validations,yes,incomplete/requirement
+275265,69,// TODO: test validations,yes,requirement
 275268,69,"/**
  * Test query parameter(s)
  *
@@ -15704,17 +15704,17 @@
 275295,69,"/**
  * API tests for BodyApi
  */",no,
-275345,69,// TODO: test User,yes,incomplete/requirement
+275345,69,// TODO: test User,yes,requirement
 275520,69,"/**
  * Test the property 'photoUrls'
  */",no,
-275539,69,// TODO: test color,yes,incomplete/requirement
+275539,69,// TODO: test color,yes,requirement
 275583,69,"// skip blank line, non key-value pair",no,
-275674,69,// TODO: test values,yes,incomplete/requirement
+275674,69,// TODO: test values,yes,requirement
 275718,69,"/**
  * Model tests for StringEnumRef
  */",no,
-275720,69,// TODO: test StringEnumRef,yes,incomplete/requirement
+275720,69,// TODO: test StringEnumRef,yes,requirement
 275753,69,"/**
  * Test the property 'color'
  */",no,
@@ -15728,7 +15728,7 @@
 275912,69,"/**
  * Test the property 'text'
  */",no,
-275929,69,// TODO: test size,yes,incomplete/requirement
+275929,69,// TODO: test size,yes,requirement
 276028,69,"/**
  * Test query parameter(s)
  *
@@ -15789,7 +15789,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-276538,69,// TODO: test Order,yes,incomplete/requirement
+276538,69,// TODO: test Order,yes,requirement
 276600,69,"/**
  * Finds Pets by tags
  *
@@ -15798,10 +15798,10 @@
  * @throws ApiException
  *          if the Api call fails
  */",no,
-276632,69,// TODO: test int64,yes,incomplete/requirement
-276688,69,// TODO: test OuterEnum,yes,incomplete/requirement
-276706,69,// TODO: test EnumClass,yes,incomplete/requirement
-276734,69,// TODO: test message,yes,incomplete/requirement
+276632,69,// TODO: test int64,yes,requirement
+276688,69,// TODO: test OuterEnum,yes,requirement
+276706,69,// TODO: test EnumClass,yes,requirement
+276734,69,// TODO: test message,yes,requirement
 276873,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15813,8 +15813,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-276892,69,// TODO: test smallCamel,yes,incomplete/requirement
-276958,69,// TODO: test type,yes,incomplete/requirement
+276892,69,// TODO: test smallCamel,yes,requirement
+276958,69,// TODO: test type,yes,requirement
 277107,69,"/**
  * Test the property 'decimal'
  */",no,
@@ -15829,16 +15829,16 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-277226,69,// TODO: test ClassModel,yes,incomplete/requirement
+277226,69,// TODO: test ClassModel,yes,requirement
 277261,69,"/**
  * Test the property 'propertyClass'
  */",no,
-277272,69,// TODO: test property,yes,incomplete/requirement
-277362,69,// TODO: test capitalCamel,yes,incomplete/requirement
+277272,69,// TODO: test property,yes,requirement
+277362,69,// TODO: test capitalCamel,yes,requirement
 277369,69,"/**
  * Test the property 'ATT_NAME'
  */",no,
-277412,69,// TODO: test tags,yes,incomplete/requirement
+277412,69,// TODO: test tags,yes,requirement
 277505,69,"/**
  * Test the property 'enumString'
  */",no,
@@ -15851,23 +15851,23 @@
 277684,69,"/**
  * Model tests for AllOfWithSingleRef
  */",no,
-277736,69,// TODO: test name,yes,incomplete/requirement
-277816,69,// TODO: test dateTime,yes,incomplete/requirement
-277818,69,// TODO: test map,yes,incomplete/requirement
+277736,69,// TODO: test name,yes,requirement
+277816,69,// TODO: test dateTime,yes,requirement
+277818,69,// TODO: test map,yes,requirement
 277833,69,"/**
  * Test the property 'capitalSnake'
  */",no,
-277908,69,// TODO: test quantity,yes,incomplete/requirement
+277908,69,// TODO: test quantity,yes,requirement
 277913,69,"/**
  * Test the property 'complete'
  */",no,
-277958,69,// TODO: test arrayNumber,yes,incomplete/requirement
+277958,69,// TODO: test arrayNumber,yes,requirement
 277961,69,"/**
  * Model tests for HealthCheckResult
  */",no,
-278100,69,// TODO: test mapOfMapProperty,yes,incomplete/requirement
-278176,69,// TODO: test bars,yes,incomplete/requirement
-278238,69,// TODO: test id,yes,incomplete/requirement
+278100,69,// TODO: test mapOfMapProperty,yes,requirement
+278176,69,// TODO: test bars,yes,requirement
+278238,69,// TODO: test id,yes,requirement
 278262,69,"/**
  * Model tests for FileSchemaTestClass
  */",no,
@@ -15891,29 +15891,29 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-278462,69,// TODO: test className,yes,incomplete/requirement
-278522,69,// TODO: test dateTime,yes,incomplete/requirement
+278462,69,// TODO: test className,yes,requirement
+278522,69,// TODO: test dateTime,yes,requirement
 278617,69,"/**
  * Model tests for SingleRefType
  */",no,
-278630,69,// TODO: test ClassModel,yes,incomplete/requirement
+278630,69,// TODO: test ClassModel,yes,requirement
 278649,69,"/**
  * Test the property 'value'
  */",no,
-278650,69,// TODO: test value,yes,incomplete/requirement
+278650,69,// TODO: test value,yes,requirement
 278689,69,"/**
  * Test the property 'myNumber'
  */",no,
-278700,69,// TODO: test _return,yes,incomplete/requirement
+278700,69,// TODO: test _return,yes,requirement
 278743,69,"/**
  * Test the property 'baz'
  */",no,
-278758,69,// TODO: test OuterEnumDefaultValue,yes,incomplete/requirement
+278758,69,// TODO: test OuterEnumDefaultValue,yes,requirement
 278845,69,"/**
  * Test the property 'shipDate'
  */",no,
-278892,69,// TODO: test ArrayOfNumberOnly,yes,incomplete/requirement
-278912,69,// TODO: test enumStringRequired,yes,incomplete/requirement
+278892,69,// TODO: test ArrayOfNumberOnly,yes,requirement
+278912,69,// TODO: test enumStringRequired,yes,requirement
 278925,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15934,17 +15934,17 @@
 279015,69,"/**
  * Model tests for MapTest
  */",no,
-279070,69,// TODO: test code,yes,incomplete/requirement
-279160,69,// TODO: test myString,yes,incomplete/requirement
-279188,69,// TODO: test lastName,yes,incomplete/requirement
-279248,69,// TODO: test integerProp,yes,incomplete/requirement
+279070,69,// TODO: test code,yes,requirement
+279160,69,// TODO: test myString,yes,requirement
+279188,69,// TODO: test lastName,yes,requirement
+279248,69,// TODO: test integerProp,yes,requirement
 279283,69,"/**
  * Test the property 'tags'
  */",no,
 279394,69,"/**
  * Model tests for Animal
  */",no,
-279400,69,// TODO: test color,yes,incomplete/requirement
+279400,69,// TODO: test color,yes,requirement
 279401,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -15956,18 +15956,18 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */",no,
-279505,69,// TODO: test string,yes,incomplete/requirement
+279505,69,// TODO: test string,yes,requirement
 279666,69,"/**
  * Test the property 'hasTeeth'
  */",no,
 279820,69,"/**
  * Test the property 'email'
  */",no,
-280049,69,// TODO: test bar,yes,incomplete/requirement
-280073,69,// TODO: test Whale,yes,incomplete/requirement
-280075,69,// TODO: test hasBaleen,yes,incomplete/requirement
-280153,69,// TODO: test outerEnumInteger,yes,incomplete/requirement
-280169,69,// TODO: test TestInlineFreeformAdditionalPropertiesRequest,yes,incomplete/requirement
+280049,69,// TODO: test bar,yes,requirement
+280073,69,// TODO: test Whale,yes,requirement
+280075,69,// TODO: test hasBaleen,yes,requirement
+280153,69,// TODO: test outerEnumInteger,yes,requirement
+280169,69,// TODO: test TestInlineFreeformAdditionalPropertiesRequest,yes,requirement
 280319,69,"/*
  * OpenAPI Petstore
  * This spec is mainly for testing Petstore server and contains fake endpoints, models. Please do not use this for any other purpose. Special characters: \"" \\
@@ -16137,7 +16137,7 @@
  * Transformer}.
  */",no,
 285255,73,/* enableFallback= */,no,
-285299,73,// TODO(b/264974805): Make export output deterministic and check it against dump file.,yes,incomplete/requirement
+285299,73,// TODO(b/264974805): Make export output deterministic and check it against dump file.,yes,requirement
 285335,73,/* localeIndicator= */,no,
 285376,73,/* initialCapacity= */,no,
 285396,73,/* sequenceNumber= */,no,
@@ -16197,7 +16197,7 @@
 286931,73,/* useHdr= */,no,
 286932,73,/* presentationTimeUs= */,no,
 286945,73,/* presentationTimeUs= */,no,
-287013,73,// TODO(b/207848601): Switch to using proper tooling for testing against golden data.,yes,unknown
+287013,73,// TODO(b/207848601): Switch to using proper tooling for testing against golden data.,yes,other
 287109,73,/* aspectRatio= */,no,
 287115,73,/* useHdr= */,no,
 287123,73,/* useHdr= */,no,
@@ -18300,7 +18300,7 @@
  * does not return true on all paths and thus may lead to assertion errors without a message in
  * the caller. Specifically assertSth has a return false path that would fire the error in the
  * caller run without a message.
- */",yes,unsure
+ */",yes,how to
 317510,78,// do nothing,no,
 317568,78,// tooFewExits is caught by the FrameStateBuilder,no,
 317578,78,"/**
@@ -19156,7 +19156,7 @@
  * @build javadoc.tester.*
  * @run main AuthorDD
  */",no,
-327554,81,// TODO: should this check *any* reference to http://download.oracle.com/,yes,unsure
+327554,81,// TODO: should this check *any* reference to http://download.oracle.com/,yes,how to
 327569,81,"/*
  * @test
  * @bug 8272853
@@ -19499,7 +19499,7 @@
 333503,81,"// delete cal;
 // delete cal2;",no,
 333565,81,/* 15 */,no,
-333625,81,// TODO test that remove(obj) with duplicates removes the right element,yes,incomplete/requirement
+333625,81,// TODO test that remove(obj) with duplicates removes the right element,yes,requirement
 333707,81,"/**
  * Test fork is confined to threads in the scope ""tree"".
  */",no,
@@ -21474,7 +21474,7 @@
 368844,85,"/**
  * MySQL set read only transaction integration test.
  */",no,
-368941,85,// TODO zhangcheng make sure the test cases should not empty,yes,code debt/temporary fix
+368941,85,// TODO zhangcheng make sure the test cases should not empty,yes,code
 369026,85,"/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -21917,7 +21917,7 @@
 371621,89,// 读取 /resources/lua/compareAndSet.lua 脚本 。注意，需要引入下 commons-io 依赖。,no,
 371670,89,// 阻塞等待，保证消费,no,
 371715,89,// 阻塞等待结果,no,
-371766,89,// TODO 全局写死,yes,incomplete/requirement
+371766,89,// TODO 全局写死,yes,requirement
 371811,93,// The current project address is the chat2db-server-start address.,no,
 371858,93,"//        userLoginIdentity(false, 12L);",no,
 371896,93,"//        userLoginIdentity(false,3L);",no,
@@ -22512,7 +22512,7 @@
  *
  * @author click33
  */",no,
-383072,106,// TO-DO 和时间相关的测试,yes,incomplete/requirement
+383072,106,// TO-DO 和时间相关的测试,yes,requirement
 383126,106,// 空数组,no,
 383178,106,// 默认类型,no,
 383191,106,// 就又不存在了,no,
@@ -22707,7 +22707,7 @@
  *
  * @author ben.manes@gmail.com (Ben Manes)
  */",no,
-390222,117,// TODO: many more removal methods,yes,incomplete/requirement
+390222,117,// TODO: many more removal methods,yes,requirement
 390238,117,"// A careful reading of the spec does not support:
 // for (i++; i < a.length; i++) assertSame(three, a[i]);",no,
 390240,117,"/**
@@ -23298,7 +23298,7 @@
  */",no,
 398430,119,// Simple field by name.,no,
 398605,119,// bucketed table as probe side,no,
-398677,119,// Alpha does not support DML yet,yes,incomplete/requirement
+398677,119,// Alpha does not support DML yet,yes,requirement
 398718,119,// null was converted to empty string!,no,
 398739,119,// make sure INT64 (declared in Hive schema) stored as INT32 in file is still readable,no,
 398845,119,// File names are random,no,
@@ -24266,7 +24266,7 @@
    * */",no,
 423324,128,// generate a valid URL,no,
 423343,128,// Insert a plugin that returns null.,no,
-423347,128,// TODO Auto-generated catch block,yes,incomplete/requirement
+423347,128,// TODO Auto-generated catch block,yes,requirement
 423419,128,// heartbeat with invalid attributes,no,
 423459,128,// check whether the new container record is discarded,no,
 423488,128,// store a master key and verify recovered,no,
@@ -24282,7 +24282,7 @@
  * this case.
  */",no,
 423792,128,"// c2 process has not started, hence no cgroup.procs file yet",no,
-423851,128,// Ignored in automated tests due to flakiness by design,yes,flaky test
+423851,128,// Ignored in automated tests due to flakiness by design,yes,defect
 423856,128,"//""echo while [ -f /tmp/"" + cgroup + "".pid ]; do sleep 1; done;"" +",no,
 423968,128,// Prevent gid threshold failures for these tests,no,
 424004,128,// Invalid: digest is too short.,no,
@@ -25421,7 +25421,7 @@
 443779,128,"/**
  * Note that {@link java.net.Socket#setSendBufferSize(int)} is only a hint.
  * If this test is flaky it should be ignored.  See HADOOP-13351.
- */",yes,unsure
+ */",yes,how to
 443839,128,// Ensure the recovered file can now be written,no,
 443940,128,// Wait for decommissioning,no,
 444010,128,"//
@@ -26892,7 +26892,7 @@
 // TODO: find a solution, Net.peek() always return a byte when the incoming buffer not read fully
 // when executing 'E' (execute) postgres protocol command",yes,how to
 475313,129,"// we don't support DELETE yet. this test exists as a reminder to check read-only security context is honoured
-// when/if DELETE is implemented.",yes,incomplete/requirement
+// when/if DELETE is implemented.",yes,requirement
 475427,129,// expected message: Could not flush buffer: https://localhost:<ephemeral_port>/write?precision=n Connection Failed,no,
 475460,129,// flush manually...,no,
 475461,129,// this should be no-op,no,
@@ -27082,7 +27082,7 @@
 479713,129,// for consistency with the test's name,no,
 479831,129,// order by is ignored and grouped by - vectorized,no,
 479852,129,// do not push down predicate to the 'right' table of left join but apply it after join,no,
-479880,129,// TODO: should return count on first table instead,yes,expectation mismatch
+479880,129,// TODO: should return count on first table instead,yes,defect
 479944,129,// lock table and wait until main thread uses it,no,
 479959,129,// if the column wasn't converted,no,
 480065,129,//end value of last interval,no,
@@ -27757,8 +27757,8 @@
 490552,135,// request  Transfer-Encoding is chunked,no,
 490623,135,// test onConnectionCreated,no,
 490647,135,"// ""application/json"" should be intercepted",no,
-490732,135,"// TODO: for non-persistent topics, deleteSubscription won't fail",yes,unknown
-490738,135,"// TODO: for non-persistent topics, the subscription doesn't exist",yes,incomplete/requirement
+490732,135,"// TODO: for non-persistent topics, deleteSubscription won't fail",yes,other
+490738,135,"// TODO: for non-persistent topics, the subscription doesn't exist",yes,requirement
 490821,135,// Create producer,no,
 490952,135,// ---- test tenant manager ---,no,
 490973,135,// testing list versions api,no,
@@ -28483,7 +28483,7 @@
 509405,140,//,no,
 509428,140,// Parent not readable,no,
 509431,140,//Test changes File permissions,no,
-509486,140,// TODO: Maven and Gradle give different return codes,yes,incomplete/requirement
+509486,140,// TODO: Maven and Gradle give different return codes,yes,requirement
 509507,140,// add amazon-lambda-http and jackson extensions,no,
 509522,140,// 3 --no-suspend --debug-host=0.0.0.0 --debug-port=8008 --debug-mode=connect -- arg1 arg2,no,
 509582,140,//given,no,
@@ -29636,7 +29636,7 @@
 530815,144,// When,no,
 530822,144,// when,no,
 530829,144,// then,no,
-530844,144,// todo work out why the actual args fails,yes,troubleshoot
+530844,144,// todo work out why the actual args fails,yes,defect
 530864,144,// when,no,
 531049,144,// Given,no,
 531053,144,"/*
@@ -30162,7 +30162,7 @@
  * @param fullyQualifiedName the resource name to look at.
  * @return either {@link AnnotationConstants#DEFAULT_NEW_LINE} or {@link AnnotationConstants#WINDOWS_NEW_LINE}.
  * @throws IOException on I/O error.
- */",yes,unsure
+ */",yes,how to
 538280,145,// Create the table.,no,
 538282,145,// Insert row #1.,no,
 538375,145,// from org.bytedeco.javacpp.opencv_imgproc,no,
@@ -31250,7 +31250,7 @@
 553886,149,// no offset,no,
 553949,149,"// Can still get a reference after frameFile1 is closed, just because others are still open. Strange but true.",no,
 554038,149,"// index = 17; KeyColumns = STRING DESC, STRING ASC, STRING DESC",no,
-554185,149,"// Add some constructors for testing maxRowsPerFrame > 1. Later on, we'll add some for maxRowsPerFrame = 1.",yes,incomplete/requirement
+554185,149,"// Add some constructors for testing maxRowsPerFrame > 1. Later on, we'll add some for maxRowsPerFrame = 1.",yes,requirement
 554242,149,// 10/16 + 2/8 + 3/4 + 1/2 + 0 (ultimate mergers shouldn't be taken into account if not set explicitly),no,
 554298,149,"/*
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -31980,7 +31980,7 @@
  * limitations under the License.
  */",no,
 565463,154,"// TODO Check CI log
-// logger.debug(""spanChunk dump \noriginal spanChunkBo:{} \ndecode spanChunkBo:{} "", spanChunkBo, decode);",yes,incomplete/requirement
+// logger.debug(""spanChunk dump \noriginal spanChunkBo:{} \ndecode spanChunkBo:{} "", spanChunkBo, decode);",yes,requirement
 565536,154,// given,no,
 565650,154,"/**
  * @author minwoo.jung
@@ -33319,10 +33319,10 @@
 586178,167,// correct sentences:,no,
 586200,167,"//    testList = w.tokenize(""«Тен»103."");
 //    assertEquals(Arrays.asList(""«"", ""Тен"", ""»"", ""103"", "".""), testList);",no,
-586318,167,//TODO:,yes,incomplete/requirement
+586318,167,//TODO:,yes,requirement
 586356,167,// mix alphabets,no,
 586467,167,"// TODO: streets
-//    assertEmptyMatch(""бачити на Різницький представника донецького регіону"");",yes,incomplete/requirement
+//    assertEmptyMatch(""бачити на Різницький представника донецького регіону"");",yes,requirement
 586511,167,// multiple adj + noun:.*:p,no,
 586523,167,// correct sentences:,no,
 586587,167,// latin i,no,
@@ -33332,7 +33332,7 @@
 //    assertEquals(""Вжито кириличні літери замість латинських"", matches[0].getMessage());
 //    assertEquals(Arrays.asList(""ХІ–ХХ"", ""XI–XX""), matches[0].getSuggestedReplacements());",no,
 586649,167,"//TODO: бек, бег, ага, паша, хан
-//    TestTools.myAssert(""Каладжі-ага"", """", tokenizer, tagger);",yes,unknown
+//    TestTools.myAssert(""Каладжі-ага"", """", tokenizer, tagger);",yes,other
 586665,167,// adv-adj,no,
 586762,167,"//test for ""LanguageTool"":",no,
 586775,167,"/* LanguageTool, a natural language style checker 
@@ -33820,7 +33820,7 @@
 597425,185,//新增,no,
 597427,185,// 返回请求正常,no,
 597482,185,//空数据下，检查模块树,no,
-597642,185,// 这里可以添加更多的验证，例如检查 ONLINE_USER_SESSIONS 的状态等,yes,incomplete/requirement
+597642,185,// 这里可以添加更多的验证，例如检查 ONLINE_USER_SESSIONS 的状态等,yes,requirement
 597650,185,// 添加插件的环境配置，供后续测试使用,no,
 597935,185,// @@校验权限,no,
 597996,185,"// 顺便查找一下通过率
@@ -33858,7 +33858,7 @@
 599710,185,"/**
  * 返回 null
  */",no,
-599726,185,// todo 做缓存优化,yes,optimization
+599726,185,// todo 做缓存优化,yes,code
 599771,185,"/**
  * 校验权限
  * 实现步骤
@@ -34422,8 +34422,8 @@
 610795,198,"/**
  * Used for parameterized testing for both SeparatorParser and TsvCsvParser.
  */",no,
-610921,198,// TODO: I'm not sure what record.cells is supposed to return. Returning single valued lists seems weird,yes,unsure
-611078,198,"// TODO: This is current behavior, but is it what we want?",yes,unsure
+610921,198,// TODO: I'm not sure what record.cells is supposed to return. Returning single valued lists seems weird,yes,how to
+611078,198,"// TODO: This is current behavior, but is it what we want?",yes,how to
 611150,198,"// TODO refactor getEngine to use dependency injection, so a mock Engine
 // object can be used.",yes,refactor
 611213,198,"// After prepend revert, cell values equals original values",no,
@@ -34495,7 +34495,7 @@
 612432,204,//,no,
 612444,204,//,no,
 612491,204,"// assertThat(activity.consumerIrManager).isNotNull(); // TODO API 19
-// assertThat(activity.countryDetector).isNotNull(); // hidden API",yes,incomplete/requirement
+// assertThat(activity.countryDetector).isNotNull(); // hidden API",yes,requirement
 612578,204,//,no,
 612602,204,//,no,
 612743,204,"/**
@@ -35275,7 +35275,7 @@ DNS is Idle
 623421,210,// don't look at the generated code...,no,
 623506,211,"// TODO (https://github.com/trinodb/trino/issues/6242) ResultSet.getObject sometimes fails
 //  assertThat(rs.getObject(""bound"")).as(""bound value should round trip the same way as literal "" + expectedValueLiteral)
-//        .isEqualTo(rs.getObject(""literal""));",yes,flaky test
+//        .isEqualTo(rs.getObject(""literal""));",yes,defect
 623514,211,"/*
  * Licensed under the Apache License, Version 2.0 (the ""License"");
  * you may not use this file except in compliance with the License.
@@ -35303,7 +35303,7 @@ DNS is Idle
  * limitations under the License.
  */",no,
 623527,211,// the Gregorian calendar start,no,
-623548,211,"// TODO this should fail, or represent TIME '01:39:07'",yes,expectation mismatch
+623548,211,"// TODO this should fail, or represent TIME '01:39:07'",yes,defect
 623577,211,// TODO (https://github.com/trinodb/trino/issues/5315) SQLException,no,
 623627,211,// LIKE predicate on schema name - lists matching schemas in the connection catalog,no,
 623635,211,// empty catalog name (means null filter),no,
@@ -36050,7 +36050,7 @@ DNS is Idle
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */",no,
-638752,211,// TODO (https://github.com/trinodb/trino/issues/18916) should be checked once per query,yes,optimization
+638752,211,// TODO (https://github.com/trinodb/trino/issues/18916) should be checked once per query,yes,code
 638843,211,"// asserting on the string representations, since they're more readable",no,
 638935,211,"/*
  * Licensed under the Apache License, Version 2.0 (the ""License"");
@@ -36097,13 +36097,13 @@ DNS is Idle
 639312,211,// load again,no,
 639337,211,// Stats come from the cache,no,
 639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",yes,skip test
-639477,211,// TODO throw new UnsupportedOperationException();,yes,exception debt
+639477,211,// TODO throw new UnsupportedOperationException();,yes,code
 639498,211,// case-sensitive functions prevent pushdown,no,
 639535,211,// empty table,no,
 639592,211,// Join over a varchar inequality predicate,no,
 639619,211,// number of rows = n * batch size,no,
 639634,211,// TODO https://github.com/trinodb/trino/issues/18499,yes,defect
-639651,211,// TODO: Difficult to determine whether the exception is concurrent issue or not from the error message,yes,unsure
+639651,211,// TODO: Difficult to determine whether the exception is concurrent issue or not from the error message,yes,how to
 639679,211,// geometries spanning multiple partitions,no,
 639710,211,// Linestring has same length as its reverse,no,
 639801,211,"/*
@@ -36125,7 +36125,7 @@ DNS is Idle
 640103,211,"/**
  * This test helps to tune TupleDomain simplification threshold.
  */",no,
-640124,211,// TODO: Empty tables should have NDV as 0 and nulls fraction as 1,yes,expectation mismatch
+640124,211,// TODO: Empty tables should have NDV as 0 and nulls fraction as 1,yes,defect
 640160,211,"// With case-insensitive-name-matching enabled colliding schema/table names are considered as errors.
 // Some tests here create colliding names which can cause any other concurrent test to fail.",no,
 640189,211,// non-text,no,
@@ -36191,7 +36191,7 @@ DNS is Idle
  */",no,
 641304,211,//TODO: Fix https://github.com/trinodb/trino/issues/23941,yes,defect
 641340,211,// select from $files,no,
-641416,211,// TODO remove,yes,clean up
+641416,211,// TODO remove,yes,refactor
 641433,211,// closed range,no,
 641439,211,// show stats with predicate,no,
 641522,211,// these may vary between types,no,
@@ -36271,7 +36271,7 @@ DNS is Idle
 643239,211,"// minutes offset change since 1970-01-01, no DST",no,
 643240,211,// INT3 is a synonym for MEDIUMINT,no,
 643243,211,// INT8 is a synonym for BIGINT,no,
-643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,yes,clean up
+643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,yes,refactor
 643441,211,// Kudu versions < 1.15.0 ignore a table comment,no,
 643455,211,// mon value in Kudu,no,
 643459,211,// before epoch,no,
@@ -36373,7 +36373,7 @@ DNS is Idle
 // unpause the thread and verify that the collapsed calls are forwarded.",no,
 647212,213,"// First 5 ordered by least recently used first, then last processes position unchanged.",no,
 647554,213,"// When battery stops plugged in, force app standby is enabled",no,
-647576,213,// this is old test where the flag needs to be disabled,yes,incomplete/requirement
+647576,213,// this is old test where the flag needs to be disabled,yes,requirement
 647638,213,// Scheduled by ALTERNATE_UID:ALTERNATE_SOURCE_PACKAGE for itself.,no,
 647721,213,// Called in StateController constructor.,no,
 647785,213,// Lost metered network,no,
@@ -36884,7 +36884,7 @@ DNS is Idle
 668138,213,/*originalPkg*/,no,
 668184,213,/*usesStaticLibrariesVersions*/,no,
 668271,213,"// TODO: test that sendApplicationHiddenForUser() actually fills in
-// broadcastUsers",yes,incomplete/requirement
+// broadcastUsers",yes,requirement
 668273,213,"// Return a string that identifies a Method.  This is not very efficient but it is not
 // called very often.",yes,temporary fix
 668355,213,// assert the property's type is set correctly,no,
@@ -37001,7 +37001,7 @@ DNS is Idle
      * openssl req -new -x509 -days 3650 -extensions v3_ca -keyout cakey.pem -out cacert.pem
      */",no,
 670509,213,"// TODO Test the ""load from the file"" case where DA will still be loaded even without
-// BIND_DEVICE_ADMIN and target API is N.",yes,incomplete/requirement
+// BIND_DEVICE_ADMIN and target API is N.",yes,requirement
 670520,213,/* replace =*/,no,
 670601,213,/* flags=*/,no,
 670608,213,// PO should be set on calling user.,no,
@@ -37027,7 +37027,7 @@ DNS is Idle
 671285,213,// Give the message some time to show up in the log,no,
 671387,213,// no exception,no,
 671397,213,"// Modify the magic / type marker. In the current implementation, getting the FRP data block
-// size does not check digest.",yes,incomplete/requirement
+// size does not check digest.",yes,requirement
 671420,213,// unexpected uid,no,
 671498,213,/*clientId*/,no,
 671527,213,/*maxSessionNum*/,no,
@@ -37074,7 +37074,7 @@ DNS is Idle
 673606,213,"/**
  * Tests for FingerprintGestureController.
  * TODO: These tests aren't really for server code, so this isn't their ideal home.
- */",yes,unknown
+ */",yes,other
 673647,213,"// The second request is put in the queue in the RootFrameLayout's onInitializeA11yNodeInfo,
 // meaning prefetching is does not occur for first request.",no,
 673812,213,// One more move event with no change.,no,
@@ -37705,7 +37705,7 @@ DNS is Idle
 690682,213,"// TODO(b/292141694): build out Ravenwood support for Context
 // Ravenwood doesn't yet provide a Context, but many SysUI tests assume one exists;
 // so here we construct just enough of a Context to be useful; this will be replaced
-// as more of the Ravenwood environment is built out",yes,incomplete/requirement
+// as more of the Ravenwood environment is built out",yes,requirement
 690732,213,// Make sure UI was updated properly.,no,
 690776,213,"// 2 accounts, same domain",no,
 690853,213,"// value, not a setting",no,
@@ -37749,7 +37749,7 @@ DNS is Idle
 691976,213,// Wait for reboot to complete and device to become available,no,
 692038,213,"// We should not have received any rollback requests yet.
 // TODO: Possibly flaky if, by chance, some other app on device
-// happens to be rolled back at the same time?",yes,unsure
+// happens to be rolled back at the same time?",yes,how to
 692042,213,"/**
  * Test rollback when app is updated to its same version.
  */",no,
@@ -38570,7 +38570,7 @@ DNS is Idle
  * Eclipse, and should therefore not be included in {@link CompileWithEclipseTest}. (The latter is
  * not currently present in the open-source build.)
  */",no,
-707839,224,// TODO(emcmanus): remove the no-op `& 0xfff_ffff`,yes,incomplete/requirement
+707839,224,// TODO(emcmanus): remove the no-op `& 0xfff_ffff`,yes,requirement
 707858,224,"/*
  * Copyright 2014 Google LLC
  *
@@ -38620,7 +38620,7 @@ DNS is Idle
 709662,226,// For debugging,no,
 709680,226,// Execute,no,
 709984,226,// Previous / actual,no,
-710096,226,// TODO same data accessed as Hive Table or Path URI ??,yes,unsure
+710096,226,// TODO same data accessed as Hive Table or Path URI ??,yes,how to
 710193,226,// Case 1: Without nullable fields,no,
 710317,226,// Create resolver,no,
 710604,226,// Execute resolver,no,
@@ -39087,7 +39087,7 @@ DNS is Idle
  */",no,
 720624,230,// checking tasks,no,
 720631,230,"// Just testing DerivedField definition from SearchSourceBuilder derivedField()
-// We are not testing the full functionality here",yes,incomplete/requirement
+// We are not testing the full functionality here",yes,requirement
 720871,230,"/*
  * Licensed to Elasticsearch under one or more contributor
  * license agreements. See the NOTICE file distributed with
@@ -39181,7 +39181,7 @@ DNS is Idle
  * this file be licensed under the Apache-2.0 license or a
  * compatible open source license.
  */",no,
-721847,230,// some of the windows test VMs are slow as hell,yes,optimization
+721847,230,// some of the windows test VMs are slow as hell,yes,code
 721928,230,"// each field is about 10 bytes, assuming compression in place",no,
 721997,230,"// since there is just one zone present in the cluster, and on initiating decommission for that zone,
 // although all the nodes would be added to voting config exclusion list, but those nodes won't be able to
@@ -40769,7 +40769,7 @@ DNS is Idle
  */",no,
 749636,241,//--Argument Length,no,
 749645,241,//--Use native types,no,
-749692,241,// TODO: is this right (Sunday is a weird day...),yes,test validation
+749692,241,// TODO: is this right (Sunday is a weird day...),yes,how to
 749816,241,// check a simple case of relabeling,no,
 749842,241,// Test the chain cut at the bottom,no,
 749916,241,"/**
@@ -40834,7 +40834,7 @@ DNS is Idle
  * limitations under the License.
  */",no,
 750498,250,"// TODO: verify ribbon stats match
-// assertEquals(target.lb().getLoadBalancerStats().getSingleServerStat())",yes,incomplete/requirement
+// assertEquals(target.lb().getLoadBalancerStats().getSingleServerStat())",yes,requirement
 750592,250,"/*
  * Copyright © 2012 The Feign Authors (feign@commonhaus.dev)
  *
@@ -41070,7 +41070,7 @@ DNS is Idle
 //    \       ^
 //     \      |
 //      \-> role3",no,
-754153,255,// TODO: vacuum,yes,incomplete/requirement
+754153,255,// TODO: vacuum,yes,requirement
 754197,255,// Test case with both different health and staleness values,no,
 754331,255,// test sql,no,
 754397,255,// enable,no,
@@ -41121,7 +41121,7 @@ DNS is Idle
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.",no,
-755174,255,// TODO: fill expire txn ids,yes,incomplete/requirement
+755174,255,// TODO: fill expire txn ids,yes,requirement
 755313,255,// 4.2 replay update user property,no,
 755373,255,"// Licensed to the Apache Software Foundation (ASF) under one
 // or more contributor license agreements.  See the NOTICE file
@@ -41315,7 +41315,7 @@ DNS is Idle
 759595,255,// missing key of columns from path,no,
 759621,255,"// mv need refresh with base table partition p2, p2 replace with tp2 after collect and before insert overwrite",no,
 759650,255,// just refresh to avoid dirty data,no,
-759729,255,// TODO: multi-column partitions cannot prune partitions.,yes,incomplete/requirement
+759729,255,// TODO: multi-column partitions cannot prune partitions.,yes,requirement
 759737,255,// run 1,no,
 759739,255,// run 3,no,
 759742,255,// run 3,no,
@@ -42368,7 +42368,7 @@ DNS is Idle
 // which contains SELECT statements.",no,
 768929,269,// Inbound handler to perform the handshake & modify the pipeline on receipt of a READY,no,
 769033,269,// ignore interuption and barrier exceptions,no,
-769130,269,"//""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/snapshots/snapshots/nb-3g1m_0nuf_3vj5m2k1125165rxa7-big-Index.db"", #not supported (CASSANDRA-14013)",yes,incomplete/requirement
+769130,269,"//""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/snapshots/snapshots/nb-3g1m_0nuf_3vj5m2k1125165rxa7-big-Index.db"", #not supported (CASSANDRA-14013)",yes,requirement
 769258,269,// check if opening and querying works,no,
 769369,269,// disable compaction while flushing,no,
 769421,269,// This write should be the one found at the end because it has a higher timestamp,no,
@@ -42792,7 +42792,7 @@ DNS is Idle
  * because this test depends on local ranges being null and has done since its
  * introduction.
  * TODO investigate whether this is correct.
- */",yes,incomplete/requirement
+ */",yes,requirement
 778241,269,"// Making sure the 'lower bound' optimization also work in reverse queries (in which it's more of a 'upper
 // bound' optimization).",no,
 778334,269,// delete a second-level range (one-sided limit),no,
@@ -44056,7 +44056,7 @@ DNS is Idle
 802799,285,// Write out a stale manifest to the disk.,no,
 802800,285,// Run the build.,no,
 802838,285,"// This is done to ensure that every success type is covered by a test.
-// TODO(cjhopman): add test for failed case.",yes,incomplete/requirement
+// TODO(cjhopman): add test for failed case.",yes,requirement
 802841,285,// write to cache,no,
 802905,285,"/*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -44684,7 +44684,7 @@ DNS is Idle
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ///////////////////////////////////////////////////////////////////////////////////////////////",no,
-807968,292,// for some reason Travis CI failed sometimes (unstable) on reading the file,yes,flaky test
+807968,292,// for some reason Travis CI failed sometimes (unstable) on reading the file,yes,defect
 808029,292,"/**
  * This test method is not using the regular {@code verify} methods
  * because it is testing the behavior of {@code TreeWalker} when it should
@@ -45986,7 +45986,7 @@ DNS is Idle
 833775,308,"/**
  * Test for {@code BeamMinusRel}.
  */",no,
-833852,308,// I don't think doing this will be safe in parallel,yes,test validation
+833852,308,// I don't think doing this will be safe in parallel,yes,how to
 833935,308,// Poll the signaling topic for success message,no,
 833949,308,// Start publishing the messages when main pipeline is started and signaling topics are ready,no,
 833950,308,"// invalid message, will go to DLQ",no,
@@ -46094,7 +46094,7 @@ DNS is Idle
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */",no,
-835585,308,// TODO(pabloem): Add other data types,yes,incomplete/requirement
+835585,308,// TODO(pabloem): Add other data types,yes,requirement
 835612,308,"/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46424,7 +46424,7 @@ DNS is Idle
 // window (flush because batchSize reached and for end of window reached)",no,
 842179,308,"// there is only one element left in the window so batch size should be 1
 // (flush because of end of window reached)",no,
-842237,308,// TODO(https://github.com/apache/beam/issues/20447),yes,incomplete/requirement
+842237,308,// TODO(https://github.com/apache/beam/issues/20447),yes,requirement
 842240,308,"// exception is not necessarily thrown on every instance. But we expect at least
 // one during tests",no,
 842372,308,"/*
@@ -46475,7 +46475,7 @@ DNS is Idle
 843218,308,"/**
  * Unit Tests for {@link TriggerExample}. The results generated by triggers are by definition
  * non-deterministic and hence hard to test. The unit test does not test all aspects of the example.
- */",yes,incomplete/requirement
+ */",yes,requirement
 843283,308,// PValue for to Impulse.output,no,
 843295,308,// A reasonable time to wait to get all messages from the source assuming no blocking.,no,
 843337,308,// TODO: remove after SAMZA-2761 fix,yes,temporary fix
@@ -46489,7 +46489,7 @@ DNS is Idle
 843586,308,"/**
  * Tests for {@link NeverStateMachine}.
  */",no,
-843598,308,// TODO: Should test timer firings: see https://github.com/apache/beam/issues/18084,yes,incomplete/requirement
+843598,308,// TODO: Should test timer firings: see https://github.com/apache/beam/issues/18084,yes,requirement
 843609,308,// Fire due to mock trigger; early trigger is required to be a OnceTrigger,no,
 843660,308,// Now fire once,no,
 843865,308,// single element test,no,
@@ -46693,7 +46693,7 @@ DNS is Idle
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */",no,
-847457,308,// TODO(https://github.com/apache/beam/issues/20447),yes,incomplete/requirement
+847457,308,// TODO(https://github.com/apache/beam/issues/20447),yes,requirement
 847524,308,/* max parallelism */,no,
 847661,308,/* sideInputTagMapping */,no,
 847750,308,/* side inputs */,no,
@@ -46735,7 +46735,7 @@ DNS is Idle
  * Change Date: 2029-07-20
  ******************************************************************************/",no,
 849141,315,//SETUP,no,
-849284,315,// TODO: Is it correct?,yes,unsure
+849284,315,// TODO: Is it correct?,yes,how to
 849321,315,"/**
  * Create source table.
  */",no,
@@ -46872,7 +46872,7 @@ DNS is Idle
  ******************************************************************************/",no,
 851345,315,// roleBindingDao = null;,no,
 851373,315,// expected to be thrown,no,
-851431,315,// TODO Auto-generated method stub,yes,incomplete/requirement
+851431,315,// TODO Auto-generated method stub,yes,requirement
 851611,315,"/**
  * @author Andrey Khayrutdinov
  */",no,
@@ -46886,7 +46886,7 @@ DNS is Idle
 // assertEquals(""1.0"", versions.get(0).getLabel());
 // assertEquals(""1.1"", versions.get(1).getLabel());
 
-// TODO mlowery finish me",yes,incomplete/requirement
+// TODO mlowery finish me",yes,requirement
 851851,315,// Known valid values,no,
 851870,315,"/**
  * Create, execute, and return the row listener attached to the output step with complete results from the execution.
@@ -46995,9 +46995,9 @@ DNS is Idle
  *
  * Change Date: 2029-07-20
  ******************************************************************************/",no,
-852681,315,// TODO Auto-generated method stub,yes,incomplete/requirement
-852700,315,// TODO Auto-generated method stub,yes,incomplete/requirement
-852702,315,// TODO Auto-generated method stub,yes,incomplete/requirement
+852681,315,// TODO Auto-generated method stub,yes,requirement
+852700,315,// TODO Auto-generated method stub,yes,requirement
+852702,315,// TODO Auto-generated method stub,yes,requirement
 852801,315,"/*! ******************************************************************************
  *
  * Pentaho
@@ -47077,7 +47077,7 @@ DNS is Idle
 //",no,
 853750,315,// Create Mock Objects,no,
 853755,315,"// for i18n purposes, needed by Translator2!!",no,
-853787,315,// TODO Add StepStatusList,yes,incomplete/requirement
+853787,315,// TODO Add StepStatusList,yes,requirement
 853851,315,// mock actions from PanCommandExecutor,no,
 853870,315,"/*! ******************************************************************************
  *
@@ -47171,7 +47171,7 @@ DNS is Idle
 854737,315,"// ""jp"", ""JP""",no,
 854864,315,// region Construction and Singleton,no,
 854908,315,"// TODO assertTrue(!set.isEmpty());
-// TODO assertTrue(set.isFull());",yes,incomplete/requirement
+// TODO assertTrue(set.isFull());",yes,requirement
 854970,315,"/*! ******************************************************************************
  *
  * Pentaho
@@ -47260,11 +47260,11 @@ DNS is Idle
 856473,322,//noinspection ResourceType,no,
 856501,322,// We get an error from the function for this lifecycle event,no,
 856515,322,"// Since Single is not backpressure aware, use this to simulate it taking time",no,
-856708,323,// TODO Auto-generated method stub,yes,incomplete/requirement
-856742,323,// TODO Auto-generated method stub,yes,incomplete/requirement
-856789,323,// TODO Auto-generated method stub,yes,incomplete/requirement
-856829,323,// TODO Auto-generated method stub,yes,incomplete/requirement
-857022,323,// TODO Auto-generated method stub,yes,incomplete/requirement
+856708,323,// TODO Auto-generated method stub,yes,requirement
+856742,323,// TODO Auto-generated method stub,yes,requirement
+856789,323,// TODO Auto-generated method stub,yes,requirement
+856829,323,// TODO Auto-generated method stub,yes,requirement
+857022,323,// TODO Auto-generated method stub,yes,requirement
 857284,323,"/**
  * Only interested in the request headers from a GET request
  */",no,
@@ -48039,7 +48039,7 @@ DNS is Idle
 869588,337,// `x`,no,
 869612,337,//,no,
 869760,337,//,no,
-869877,337,// TODO(b/139192655): The function template should shadow the class template type and not error,yes,incomplete/requirement
+869877,337,// TODO(b/139192655): The function template should shadow the class template type and not error,yes,requirement
 869910,337,//,no,
 869924,337,//,no,
 869957,337,// IFoo is a NamedType here.,no,
@@ -48116,11 +48116,11 @@ DNS is Idle
 872163,337,// explicit super() call,no,
 872270,337,// Returns ? because foo is not defined,no,
 872345,337,"// TODO(b/115853720); Should remove getter for onlySetProp, because
-// there is only an assignment to it",yes,incomplete/requirement
+// there is only an assignment to it",yes,requirement
 872399,337,// prop with getter not inlined,no,
 872483,337,// `use(a())` CALL expression,no,
 872625,337,/* compiled= */,no,
-872644,337,// TODO(b/189993301): this should be logging '1' instead,yes,expectation mismatch
+872644,337,// TODO(b/189993301): this should be logging '1' instead,yes,defect
 872677,337,// input_2,no,
 872746,337,"// Only set the suffix instead of both prefix and suffix, because J2CL pass
 // looks for that exact suffix, and IntegrationTestCase adds an input
@@ -48172,7 +48172,7 @@ DNS is Idle
 874245,337,//,no,
 874300,337,// Removal.,no,
 874358,337,// access in computed member function,no,
-874375,337,// TODO(b/133450410): This should be a visibility violation.,yes,expectation mismatch
+874375,337,// TODO(b/133450410): This should be a visibility violation.,yes,defect
 874447,337,// Not marked because the definition cannot be found so unknown side effects.,no,
 874469,337,// preserve newline,no,
 874479,337,//,no,
@@ -48212,8 +48212,8 @@ DNS is Idle
 876416,337,"// A different @suppress annotation containing a non-repeated warning, we store both annotations.",no,
 876463,337,//,no,
 876534,337,//,no,
-876542,337,// TODO(b/73762053): Avoid generating unreachable statements.,yes,incomplete/requirement
-876550,337,// TODO(skill): The generator transpilation should not produce any unreachable code,yes,incomplete/requirement
+876542,337,// TODO(b/73762053): Avoid generating unreachable statements.,yes,requirement
+876550,337,// TODO(skill): The generator transpilation should not produce any unreachable code,yes,requirement
 876571,337,// TODO(b/142881197): we can't give a more accurate type right now.,yes,temporary fix
 876631,337,// String,no,
 876741,337,// These can't be objects but they aren't handled yet.,no,
@@ -48231,11 +48231,11 @@ DNS is Idle
 877359,337,// Test destructuring rhs is evaluated before the lhs,no,
 877361,337,// default value inside array pattern,no,
 877522,337,// Using an alias should keep it,no,
-877559,337,// TODO(b/139319709): Remove this. static method removal is disabled.,yes,optimization
+877559,337,// TODO(b/139319709): Remove this. static method removal is disabled.,yes,code
 877599,337,// TODO(johnlenz): support this. Unused return can be removed.,yes,temporary fix
 877605,337,// Iteration 2.,no,
 877652,337,// Anything inside a function is fine.,no,
-877654,337,// TODO(user): These should be inlinable.,yes,expectation mismatch
+877654,337,// TODO(user): These should be inlinable.,yes,defect
 877665,337,"// Think noSFX() as a function that reads y.foo and return it
 // and SFX() write some new value of y.foo. If that's the case,
 // inlining across hasSFX() is not valid.
@@ -48248,12 +48248,12 @@ DNS is Idle
 878211,337,//,no,
 878268,337,//,no,
 878369,337,"// TODO(lharker): forbid this annotation, since it is impossible for a Promise to resolve to a
-// Promise.",yes,unknown
+// Promise.",yes,other
 878423,337,//,no,
 878424,337,//,no,
 878579,337,"/* , lines( ""var a;"", // ""({a} = obj);"", ""return a;"") */",no,
 878614,337,// Don't replace a reference to known constant property defined in an arrow function.,no,
-878705,337,// TODO(nickreid): Add rewriting support for this.,yes,incomplete/requirement
+878705,337,// TODO(nickreid): Add rewriting support for this.,yes,requirement
 878730,337,//,no,
 878736,337,// Don't use `super.bar()` because that might effect the test.,no,
 878868,337,//,no,
@@ -48266,7 +48266,7 @@ DNS is Idle
 879228,337,"/**
  */",no,
 879257,337,// This will be further optimized by PeepholeFoldConstants.,no,
-879389,337,// TODO(b/130682799): C.p_ should not be collapsed,yes,incomplete/requirement
+879389,337,// TODO(b/130682799): C.p_ should not be collapsed,yes,requirement
 879650,337,//,no,
 879695,337,//,no,
 879846,337,//,no,
@@ -48375,7 +48375,7 @@ DNS is Idle
 881138,337,"// The type of the constructor of ""Foo"".",no,
 881147,337,// Given,no,
 881205,337,//,no,
-881269,337,// TODO(tjgq): Consider rewriting to const even when already sorted.,yes,incomplete/requirement
+881269,337,// TODO(tjgq): Consider rewriting to const even when already sorted.,yes,requirement
 881287,337,"/**
  * Here, if the short name weren't provided the suggested fix would use 'Table' for both,
  * but since there is a short name provided for each one, it uses those names.
@@ -49686,7 +49686,7 @@ public class ObjModelTest {
  */",no,
 902798,371,// TODO(b/189535612): this is a bug!,yes,defect
 902858,371,"// TODO(cpovirk): This doesn't look ""positive"" to me.
-// TODO(cpovirk): Also, I *think* the lack of braces on the while() loop is intentional?",yes,unsure
+// TODO(cpovirk): Also, I *think* the lack of braces on the while() loop is intentional?",yes,how to
 902875,371,// fine: target type is safe,no,
 902979,371,//,no,
 903030,371,/* toAdd= */,no,
@@ -50250,7 +50250,7 @@ public class ObjModelTest {
 911757,374,"// this test can only be run with Hive tables as it requires a reliable lock
 // also, the table cache must be enabled so that the same table instance can be reused",no,
 911802,374,// Metadata Delete,no,
-911842,374,// Currently we can only Snapshot only out of the Spark Session Catalog,yes,incomplete/requirement
+911842,374,// Currently we can only Snapshot only out of the Spark Session Catalog,yes,requirement
 911909,374,"/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -50358,7 +50358,7 @@ public class ObjModelTest {
  * under the License.
  */",no,
 912741,374,// assert first record,no,
-912794,374,// todo add some test case to test NaN,yes,incomplete/requirement
+912794,374,// todo add some test case to test NaN,yes,requirement
 912807,374,"// 2 splits, infer parallelism is disabled, the parallelism is flink default parallelism 1",no,
 912810,374,// Check data files table,no,
 912811,374,// check all files table,no,
@@ -51006,7 +51006,7 @@ public class ObjModelTest {
  */",no,
 924087,401,//,no,
 924218,401,//,no,
-924232,401,// TODO Test other adapter methods.,yes,incomplete/requirement
+924232,401,// TODO Test other adapter methods.,yes,requirement
 924236,401,"/**
  * @since 1.0
  */",no,
@@ -53152,7 +53152,7 @@ public class ObjModelTest {
 954802,427,"// This should work but is currently not implemented
 // the reason is that when @FunctionBean is defined on a factory
 // we do not go through and visit public Executable methods unless
-// it is an AOP proxy",yes,incomplete/requirement
+// it is an AOP proxy",yes,requirement
 954820,427,// <1>,no,
 955072,427,// tag::class[],no,
 955197,427,// <1>,no,
@@ -54207,7 +54207,7 @@ public class ObjModelTest {
 975271,435,"/**
  * @author Hardy Ferentschik
  */",no,
-975274,435,// TODO - seems this explicit case is necessary with JDK 5 (at least on Mac). With Java 6 there is no problem,yes,incomplete/requirement
+975274,435,// TODO - seems this explicit case is necessary with JDK 5 (at least on Mac). With Java 6 there is no problem,yes,requirement
 975398,435,"/*
  * SPDX-License-Identifier: LGPL-2.1-or-later
  * Copyright Red Hat Inc. and Hibernate Authors
@@ -54547,7 +54547,7 @@ public class ObjModelTest {
 982573,435,"/**
  * @author Christian Beikov
  */",no,
-982711,435,// todo (6.0) : should we define the rule with the integer as optional and then give a better exception?,yes,unsure
+982711,435,// todo (6.0) : should we define the rule with the integer as optional and then give a better exception?,yes,how to
 982747,435,"/*
  * SPDX-License-Identifier: LGPL-2.1-or-later
  * Copyright Red Hat Inc. and Hibernate Authors
@@ -54706,7 +54706,7 @@ public class ObjModelTest {
 984906,435,// wait for background thread to finish before deleting entity,no,
 985094,435,"//TODO this could be implemented with @BeforeAll, if we move to Junit 5.5 or higher. The way to intercept exceptions in this method, inside
 // the @NotImplementedYet extension would be by harnessing LifecycleMethodExecutionExceptionHandler, or InvocationInterceptor,
-// and both are Junit 5.5 (and experimental)",yes,unknown
+// and both are Junit 5.5 (and experimental)",yes,other
 985209,435,"// This should return only 1 element
 // EmbeddableType(CompositeIdId) - CompositeIdAnnotatedEntity's EmbeddedId identifier
 // The dynamic-map entity type's composite-id embeddable types should be excluded.",no,
@@ -54896,7 +54896,7 @@ public class ObjModelTest {
     }
 }
 */",no,
-989114,441,// TODO change in exhaustive,yes,incomplete/requirement
+989114,441,// TODO change in exhaustive,yes,requirement
 989195,441,//  30,no,
 989250,441,/*4*/,no,
 989255,441,"/* 
@@ -54985,7 +54985,7 @@ public class ObjModelTest {
 // With the legacy keyword syntax, ""yes"" is used for such boolean value instead of ""true"".
 // However, once the legacy keyword is translated back to BCP 47 u extension, key ""00"" is unknown,
 // so ""yes"" is preserved - not mapped to ""true"". We could change the code to automatically transform
-// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes"".",yes,unknown
+// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes"".",yes,other
 991468,441,"/**
  * ******************************************************************************
  *  Copyright (C) 2001-2013, International Business Machines Corporation and    *
@@ -55038,7 +55038,7 @@ public class ObjModelTest {
 // but only if we have expectLimits[] from the uncomplemented set.",no,
 992832,441,// trailing '-' is literal,no,
 992922,441,// build long string for testing,no,
-993158,441,"// TODO: Tests when ""while((c=iter.nextCaseMapCP())>=0)"" is false",yes,incomplete/requirement
+993158,441,"// TODO: Tests when ""while((c=iter.nextCaseMapCP())>=0)"" is false",yes,requirement
 993172,441,//CJK_IDEOGRAPH_COMPLEX_FOUR_,no,
 993180,441,//CJK_IDEOGRAPH_COMPLEX_EIGHT_,no,
 993207,441,"// Testing when ""if (index < text.length)"" is false",no,
@@ -55146,7 +55146,7 @@ public class ObjModelTest {
 996911,441,// following could be normalized,no,
 996956,441,// Save. This is the correct answer,no,
 996987,441,"// TODO: this still passes, but setLenientParseMode should have no effect now.
-// Did it ever test what it was supposed to?",yes,unsure
+// Did it ever test what it was supposed to?",yes,how to
 997043,441,"// use %%hr to format values greater than 3,600 seconds
 // (the "">>>"" below causes us to see the number of minutes
 // when when there are zero minutes)",no,
@@ -55549,7 +55549,7 @@ public class ObjModelTest {
             FinalizationTester.induceFinalization();
         }
     }
-    */",yes,unknown
+    */",yes,other
 1003015,441,// Expected.,no,
 1003037,441,// The '\r' we read() didn't count.,no,
 1003199,441,// Expected.,no,
@@ -55597,7 +55597,7 @@ public class ObjModelTest {
 1003680,441,// Expected.,no,
 1003691,441,// another harmony regression test,no,
 1003713,441,"// This might cause us trouble if Europe/Helsinki changes its rules. See the bug for
-// details of the intent of this test.",yes,unsure
+// details of the intent of this test.",yes,how to
 1003806,441,"/**
  * java.util.jar.Manifest#hashCode()
  */",no,
@@ -55644,7 +55644,7 @@ public class ObjModelTest {
  */",no,
 1004573,441,"// read() and closeEntry() must throw IOExceptions to indicate that
 // the stream is corrupt. The bug above reported that they would loop
-// forever.",yes,exception debt
+// forever.",yes,code
 1004755,441,"/**
  * Exercise Inflater's ability to refill the zlib's input buffer. As of this
  * writing, this buffer's max size is 64KiB compressed bytes. We'll write a
@@ -55980,7 +55980,7 @@ public class ObjModelTest {
 1010191,441,// notBefore: UTCTime,no,
 1010206,441,// OID = 2.5.29.35,no,
 1010313,441,"// TODO use generics to detect comparator
-// instead of 'instanceof' for the first element",yes,optimization
+// instead of 'instanceof' for the first element",yes,code
 1010314,441,"/**
  * Verifies that object deserialized from golden file correctly.
  *
@@ -56809,7 +56809,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1028506,445,"/**
  * @author Simon Thoresen Hult
  */",no,
-1028704,445,// probably not needed,yes,unsure
+1028704,445,// probably not needed,yes,how to
 1028735,445,// Exceed grace period.,no,
 1028755,445,"// retried is allowed to dispatch, and will be retried async.",no,
 1028787,445,// Not allocated,no,
@@ -57782,7 +57782,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1045538,449,//files.add( file );,no,
 1045548,449,"// Now check the file was written and re-attempt if it was not
 // Need to do this for testing, to ensure the texts are read the same way, otherwise sometimes you get tail \n sometimes you don't",no,
-1045570,449,// TODO Auto-generated method stub,yes,incomplete/requirement
+1045570,449,// TODO Auto-generated method stub,yes,requirement
 1045605,449,"/**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58337,7 +58337,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  */",no,
 1056181,455,/////////////////////////////,no,
 1056184,455,// Side effect: original method has been made private.,no,
-1056188,455,//        abstract void abstractMethod(); todo,yes,incomplete/requirement
+1056188,455,//        abstract void abstractMethod(); todo,yes,requirement
 1056197,455,// Actual invocation is a no-op.,no,
 1056226,455,//////////////////////,no,
 1056244,455,// Given an injected user resolvable error flag,no,
@@ -59965,7 +59965,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */",no,
-1075606,478,// TODO Auto-generated method stub,yes,incomplete/requirement
+1075606,478,// TODO Auto-generated method stub,yes,requirement
 1075636,478,"// setting empty collections to null to support hasSuccessful which
 // perform null check rather than isEmpty checks",no,
 1075678,478,// then,no,
@@ -62495,7 +62495,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * under the License.
  */",no,
 1101159,482,// Relational privileges,no,
-1101206,482,// TODO (https://github.com/trinodb/trino/issues/17) change to equals(),yes,incomplete/requirement
+1101206,482,// TODO (https://github.com/trinodb/trino/issues/17) change to equals(),yes,requirement
 1101275,482,"/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -63602,7 +63602,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1118181,488,// NOTE: H2 does not support ordinal in GROUP BY,no,
 1118201,488,"// TODO: Add test to delete broker instance. Currently, stopBroker() does not work correctly.
 
-// Check if '/INSTANCES/<serverName>' has been erased correctly",yes,incomplete/requirement
+// Check if '/INSTANCES/<serverName>' has been erased correctly",yes,requirement
 1118239,488,// Filter in query: not answered by NonScanBasedAggregationOperator,no,
 1118253,488,"// disallow use of inverted index on DivActualElapsedTime, range should be unaffected",no,
 1118316,488,// There should be one element in the array,no,
@@ -63738,12 +63738,12 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1122110,488,// Then:,no,
 1122117,488,// Create an aggregation call with sum for first column and group by second column.,no,
 1122121,488,"// TODO: it is necessary to produce two values here, the operator only throws on second
-// (see the comment in Aggregate operator)",yes,expectation mismatch
+// (see the comment in Aggregate operator)",yes,defect
 1122170,488,// Then:,no,
 1122183,488,// Then:,no,
 1122312,488,// Given:,no,
 1122457,488,// When:,no,
-1122526,488,"// This test only supports local resource loading (e.g. must be a file), not support JAR test loading.",yes,incomplete/requirement
+1122526,488,"// This test only supports local resource loading (e.g. must be a file), not support JAR test loading.",yes,requirement
 1122539,488,// Use compare to handle different scale,no,
 1122604,488,"// this particular test set requires the request to have a single QueryServerInstance to dispatch to
 // as it is not testing the multi-tenancy dispatch (which is in the QueryDispatcherTest)",no,
@@ -64335,7 +64335,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1133064,489,// update files and generate new log file but don't commit,no,
 1133067,489,// create a RecordReader to be used by HoodieRealtimeRecordReader,no,
 1133284,489,// child node2,no,
-1133322,489,// TODO(HUDI-3668): Fix this test,yes,incomplete/requirement
+1133322,489,// TODO(HUDI-3668): Fix this test,yes,requirement
 1133328,489,"/**
  * Method helps to create avro files and save it to file.
  *
@@ -64427,7 +64427,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * Testing listPartitionsWithAuthInfoRequest(GetPartitionsPsWithAuthRequest) ->
  *         get_partitions_ps_with_auth_req(GetPartitionsPsWithAuthRequest).
  */",no,
-1134559,491,// Ignore exceptions,yes,exception debt
+1134559,491,// Ignore exceptions,yes,code
 1134684,491,//Ordering should be descending,no,
 1134687,491,//Ordering should be descending,no,
 1134815,491,"/*
@@ -64762,7 +64762,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
   Can't test complete replication as mini ranger is not supported
   Testing just the configs and no impact on existing replication
    */",no,
-1138685,491,//TODO: HIVE-28044: Replication tests to run on Tez,yes,incomplete/requirement
+1138685,491,//TODO: HIVE-28044: Replication tests to run on Tez,yes,requirement
 1138688,491,"// re set the WAREHOUSE property to the test dir, as the previous command added a random port to it",no,
 1138702,491,"// Partition droppped after ""repl dump""",no,
 1138777,491,// Skip all the events belong to other DBs/tables.,no,
@@ -65535,7 +65535,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * Tests if Ollama can be used via OpenAI API (langchain4j-open-ai module)
  * See https://github.com/ollama/ollama/blob/main/docs/openai.md
  */",no,
-1155491,501,// TODO https://github.com/langchain4j/langchain4j/issues/2219,yes,incomplete/requirement
+1155491,501,// TODO https://github.com/langchain4j/langchain4j/issues/2219,yes,requirement
 1155563,501,// Verify interactions with the CREATE INDEX command,no,
 1155765,501,// given,no,
 1155772,501,// nudging it to say something additionally to json,no,
@@ -65564,7 +65564,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1157738,501,// then,no,
 1157813,501,// Given,no,
 1157923,501,// given,no,
-1158021,501,// TODO implement,yes,incomplete/requirement
+1158021,501,// TODO implement,yes,requirement
 1158101,501,// given,no,
 1158122,501,// given,no,
 1158373,501,// then,no,
@@ -66083,7 +66083,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 // start completely. However, this test's premise is that a partially started master should
 // still respond to a shutdown RPC. So instead, we manage each component lifecycle
 // independently.
-// I think it's not worth refactoring HTU's helper methods just for this class.",yes,optimization
+// I think it's not worth refactoring HTU's helper methods just for this class.",yes,code
 1169668,541,// throw on the second exists check (within HRegionfileSystem),no,
 1169789,541,"/**
  * Reflect into the {@link HMaster} instance and find by field name a specified instance of
@@ -66800,7 +66800,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  */",no,
 1186013,541,// Check the expected content is present in the http response,no,
 1186062,541,"// Bigger than ""zz""",no,
-1186079,541,// TODO: use sft.load() api here,yes,incomplete/requirement
+1186079,541,// TODO: use sft.load() api here,yes,requirement
 1186082,541,// Do not retrieve the mob data when scanning,no,
 1186108,541,"// Since scanner.next() can return 'false' but still be delivering data,
 // we have to use a do/while loop.",no,
@@ -67028,7 +67028,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * Used to confirm that it is OK to overwrite a file which is being written currently.
  */",no,
 1188151,541,// we don't need HBaseConfiguration for this,no,
-1188159,541,// only secretkeyspec supported for now,yes,incomplete/requirement/temporary fix
+1188159,541,// only secretkeyspec supported for now,yes,requirement
 1188183,541,"// Run the WPE tool with three threads writing 3000 edits each concurrently.
 // When done, verify that all edits were written.",no,
 1188276,541,"// do multiple of each operation (setData, delete, create)",no,
@@ -67877,7 +67877,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 // and the ""<Maximum Number of Records> property cannot be negative or zero"" rules",no,
 1206334,570,"// Counter incremented, but not enough",no,
 1206360,570,// (6 / 3) * 2 = 4,no,
-1206419,570,"// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]",yes,unsure
+1206419,570,"// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]",yes,how to
 1206479,570,// Should be one record,no,
 1206492,570,// Initial Max Value for second table,no,
 1206510,570,// Verify second flow file's contents,no,
@@ -68346,7 +68346,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1215467,574,"//first subscriber, ignore errors",no,
 1215478,574,//already cancelled but need to get to verification,no,
 1215514,574,"//to be even more sure, we try an onNext AFTER the cancel",no,
-1215583,574,"//FIXME test with just, empty, callable, interval",yes,incomplete/requirement
+1215583,574,"//FIXME test with just, empty, callable, interval",yes,requirement
 1215599,574,//decorators are cleared after test,no,
 1215886,576,"/**
  * Helper Deferred Errback handler just to make sure the dummy plugin (and
@@ -68418,13 +68418,13 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 // of the GNU Lesser General Public License along with this program.  If not,
 // see <http://www.gnu.org/licenses/>.",no,
 1217195,576,"// Maybe this one should throw an exception. Usually this will be used before
-// a UID lookup so it will toss an exception then.",yes,unsure
+// a UID lookup so it will toss an exception then.",yes,how to
 1217230,576,"// this should only compact the rows for the time series that we fetched and
 // leave the others alone",no,
 1217278,576,"// For this test, a span in the middle was zero'd out",no,
 1217314,576,// end while,no,
 1217455,576,// add metrics and tags to the UIDs list for other functions to share,no,
-1217684,577,// todo: investigate last packet loss,yes,troubleshoot
+1217684,577,// todo: investigate last packet loss,yes,defect
 1217707,577,// no USB read -> receive buffer full -> XOFF -> USB read -> XON,no,
 1217833,580,// adjusted 1 -> 2,no,
 1217948,580,"// allows tests to set any kind of properties they like, without having to individually roll them back",no,
@@ -68727,7 +68727,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  */",no,
 1225703,593,"// TODO review the generated test code and remove the default call to
 // fail.
-// fail(""The test case is a prototype."");",yes,incomplete/requirement
+// fail(""The test case is a prototype."");",yes,requirement
 1225745,593,"/**
  * BSD-style license; for more info see http://pmd.sourceforge.net/license.html
  */",no,
@@ -68938,7 +68938,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  */",no,
 1228990,605,// Expected.,no,
 1229056,605,// Optional.,no,
-1229100,605,// Not yet implemented,yes,incomplete/requirement
+1229100,605,// Not yet implemented,yes,requirement
 1229260,605,"/**
  * @tests java.util.LinkedList#addFirst(java.lang.Object)
  */",no,
@@ -68966,7 +68966,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * License terms: https://www.lwjgl.org/license
  */",no,
 1230345,607,/* draw back face */,no,
-1230417,607,// TODO: Make this work for GLES,yes,incomplete/requirement
+1230417,607,// TODO: Make this work for GLES,yes,requirement
 1230430,607,"/*
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
@@ -72745,7 +72745,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * TODO: IGNITE-592.
  *
  * @throws Exception If failed.
- */",yes,incomplete/requirement
+ */",yes,requirement
 1297135,620,"/**
  * @throws Exception If test failed.
  */",no,
@@ -73717,7 +73717,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * under the License.
  */",no,
 1314662,623,// Resolved InetSocketAddress,no,
-1314723,623,// This test could be broken if multiple tests are running in parallel.,yes,flaky test
+1314723,623,// This test could be broken if multiple tests are running in parallel.,yes,defect
 1314809,623,// Read a GOAWAY frame.,no,
 1314823,623,// There should be at least one request with at least numConnections * pendingAcquisitionsDuration,no,
 1314922,623,"/*
@@ -74984,7 +74984,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1336503,651,"// Careful of the excluded middle!
 // We cannot simplify ""b <> 1 or b = 1"" to ""true"" because if b is null, the
 // result is unknown.
-// TODO: ""b = b"" would be the best simplification.",yes,incomplete/requirement
+// TODO: ""b = b"" would be the best simplification.",yes,requirement
 1336595,651,"// ""(A IS NOT NULL AND B) OR A IS NULL"" when A is deterministic
 // ==>
 // ""A IS NULL OR B""",no,
@@ -75231,7 +75231,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 //   WHERE empOther.deptno <> 10 AND NOT EXISTS
 //     (SELECT 1 FROM emps empSales
 //      WHERE empSales.deptno = 10 AND empSales.commission = empOther.commission)",no,
-1340910,651,// TODO,yes,incomplete/requirement
+1340910,651,// TODO,yes,requirement
 1340967,651,"/**
  * Test case for
  * <a href=""https://issues.apache.org/jira/browse/CALCITE-657"">[CALCITE-657]
@@ -75308,9 +75308,9 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1342051,655,"/**
  * @author JPEXS
  */",no,
-1342094,655,//TODO: try tu run it in debug flashplayer (?),yes,unsure
+1342094,655,//TODO: try tu run it in debug flashplayer (?),yes,how to
 1342137,655,"//TODO:
-//+ ""a = 59;""",yes,incomplete/requirement
+//+ ""a = 59;""",yes,requirement
 1342160,656,"/*
  *    Copyright 2009-2012 the original author or authors.
  *
@@ -77130,10 +77130,10 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 // so we need to ensure that they are in the correct order",no,
 1371620,733,// input with cyrillic and diacritic letters,no,
 1371658,733,"// TODO: Unlike PPGs with 0xBB compression the timestamps are not linear
-// The data also looks different, hmmm....",yes,unknown
-1371704,733,// TODO,yes,incomplete/requirement
-1371721,733,// TODO,yes,incomplete/requirement
-1371742,733,// TODO,yes,incomplete/requirement
+// The data also looks different, hmmm....",yes,other
+1371704,733,// TODO,yes,requirement
+1371721,733,// TODO,yes,requirement
+1371742,733,// TODO,yes,requirement
 1371816,733,// act,no,
 1371859,733,// It generates a sample for every 60 seconds that is requested,no,
 1371910,734,// static variables cannot not be initialized properly if directly use new HfModelZoo(),no,
@@ -81786,7 +81786,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1463135,805,// build xpath engine,no,
 1463156,805,// create measurements feature type,no,
 1463257,805,"// FIXME: this feature type is not yet complete
-// validateGet(path);",yes,incomplete/requirement
+// validateGet(path);",yes,requirement
 1463276,805,"/* (c) 2019 Open Source Geospatial Foundation - all rights reserved
  * This code is licensed under the GPL 2.0 license, available at the root
  * application directory.
@@ -82159,7 +82159,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1474931,805,// clean up if the store is there,no,
 1475006,805,// check one well known collection is there,no,
 1475023,805,// check collection links,no,
-1475168,805,// TODO: add ids in the elemnets and check contents using jSoup,yes,incomplete/requirement
+1475168,805,// TODO: add ids in the elemnets and check contents using jSoup,yes,requirement
 1475262,805,// check the style got modified,no,
 1475384,805,// check same size and contents,no,
 1475440,805,// only output is the zoneId,no,
@@ -82229,7 +82229,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * Simple test service interface.
  */",no,
 1477588,805,// find the property we want,no,
-1477629,805,// TODO pass properties file,yes,incomplete/requirement
+1477629,805,// TODO pass properties file,yes,requirement
 1477632,805,// verify the producer is created only if not set (setup has set it already),no,
 1477728,805,// only id,no,
 1477762,805,"// Check that the method is called by accept when the proxy is mimicking the
@@ -82266,7 +82266,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 //
 // (IIOMetadataNode)reader.getImageMetadata(0).getAsTree(TIFFImageMetadata.nativeMetadataFormatName));
 //        System.out.println(IIOMetadataDumper.getMetadata());",no,
-1479015,805,// TODO: handle exception,yes,exception debt
+1479015,805,// TODO: handle exception,yes,code
 1479029,805,// 1 dimensional slice along latitude,no,
 1479033,805,// System.out.println(getDataDirectory().root());,no,
 1479102,805,"/**
@@ -82285,7 +82285,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1479271,805,// checks,no,
 1479317,805,// check the tiff structure is the one requested,no,
 1479328,805,// got back a GML coverage,no,
-1479367,805,// TODO: check the tiff structure is the one requested,yes,incomplete/requirement
+1479367,805,// TODO: check the tiff structure is the one requested,yes,requirement
 1479642,805,"// the last page is same as the mid one, as the code does not have enough context to know
 // it's hitting
 // the last one squarely",no,
@@ -82844,7 +82844,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * An HTTPS Socket Impl
  */",no,
 1493992,822,"// The good keystore is removed, having no keystore causes an exception.",no,
-1494026,822,/*TODO alpn.getProtocol()*/,yes,incomplete/requirement
+1494026,822,/*TODO alpn.getProtocol()*/,yes,requirement
 1494157,822,// Wait for the server to become idle after the request.,no,
 1494195,822,//apply context xml file,no,
 1494197,822,"//
@@ -83098,7 +83098,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 // SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
 // ========================================================================
 //",no,
-1499131,822,// TODO,yes,incomplete/requirement
+1499131,822,// TODO,yes,requirement
 1499142,822,"//
 // ========================================================================
 // Copyright (c) 1995 Mort Bay Consulting Pty Ltd and others.
@@ -83253,7 +83253,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1501979,822,// proxy V2 Preamble,no,
 1502004,822,// proxy V2 Preamble,no,
 1502060,822,"// TODO this test is flakey
-// The failure appears associated with the 431 BadMessageException being thrown",yes,flaky test
+// The failure appears associated with the 431 BadMessageException being thrown",yes,defect
 1502142,822,"// Completion listeners are invoked in reverse order
 // because they are based on HttpStream wrapping.",no,
 1502146,822,// Get the callback as promised by the error listener.,no,
@@ -83644,7 +83644,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
 1508060,822,"//add a programmatic one, isMatchAfter=true",no,
 1508170,822,//should have unpacked WEB-INF,no,
 1508198,822,"// TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
-//assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());",yes,expectation mismatch
+//assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());",yes,defect
 1508338,822,"//B,A,C other jars with no fragments",no,
 1508351,822,//No fragment jar C,no,
 1508353,822,//plain jar,no,
@@ -83893,8 +83893,8 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  * @date 2023/1/3 12:17 AM
  */",no,
 1512577,829,// callback出现异常,no,
-1512588,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,yes,unsure
-1512589,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,yes,unsure
+1512588,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,yes,how to
+1512589,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,yes,how to
 1512603,829,"/**
  * @author xuanbei
  * @since 2016/07/28
@@ -85026,7 +85026,7 @@ import java.time.chrono.ThaiBuddhistChronology; */",no,
  */",no,
 1529166,874,"// drop data flow, and check suicide",no,
 1529183,874,"// btw, we should also check the ""skip xxx"" log,
-// but the /path/to/job_tmp/job_id/01/meta/execute_output.json.xxx.log not exists in ut env.",yes,incomplete/requirement
+// but the /path/to/job_tmp/job_id/01/meta/execute_output.json.xxx.log not exists in ut env.",yes,requirement
 1529194,874,// mock two file layout,no,
 1529263,874,"// Make sure what appears in the resource file is consistent with
 // what is in the Java. It helps to have a redundant copy in the
@@ -85896,7 +85896,7 @@ limitations under the License.
  * limitations under the License.
  */",no,
 1547822,896,"// Create a list of patient sub-tables to work with TODO(lwhite): Build the copy-on-write to
-// ViewGroups to avoid",yes,incomplete/requirement
+// ViewGroups to avoid",yes,requirement
 1547855,896,"/**
  * Usage example using a Tornado data set
  */",no,
@@ -87629,7 +87629,7 @@ limitations under the License.
  */",no,
 1573389,945,// when,no,
 1573413,945,// assert Demo process version 2,no,
-1573591,945,// TODO extend for new properties,yes,incomplete/requirement
+1573591,945,// TODO extend for new properties,yes,requirement
 1573611,945,// COMPLETED,no,
 1573647,945,// assume,no,
 1573711,945,"/*
@@ -88597,7 +88597,7 @@ limitations under the License.
 1607830,946,"/**
  * Test of {@link ProcessorRule}
  */",no,
-1608102,946,// nested doesn't work yet in Geode. Need custom PDX serializer,yes,incomplete/requirement
+1608102,946,// nested doesn't work yet in Geode. Need custom PDX serializer,yes,requirement
 1608122,946,// need in-memory backend because of projections. FakeBackend does not support projections.,no,
 1608142,946,"/**
  * Set scroll sizes like {@code 1, 2, 3 ...} and validates number of returned records
@@ -88708,7 +88708,7 @@ limitations under the License.
 1610684,947,// Then,no,
 1610708,947,// Given,no,
 1610861,947,// Given,no,
-1610889,947,// todo: check that we can load and instantiate class from the returned class name,yes,incomplete/requirement
+1610889,947,// todo: check that we can load and instantiate class from the returned class name,yes,requirement
 1610952,947,"/*
  * Copyright (C) 2015 Red Hat, Inc.
  *
@@ -89776,7 +89776,7 @@ limitations under the License.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */",no,
-1624648,972,//  this test is probably running with bytecode manipulation. We ignore synthetic methods.,yes,unsure
+1624648,972,//  this test is probably running with bytecode manipulation. We ignore synthetic methods.,yes,how to
 1624684,972,"/*
  * Copyright (c) 2010-2020. Axon Framework
  *
@@ -92649,7 +92649,7 @@ limitations under the License.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */",no,
-1652572,984,"// TODO Second, modify the sql, so Flink engineConn can run it successfully.",yes,incomplete/requirement
+1652572,984,"// TODO Second, modify the sql, so Flink engineConn can run it successfully.",yes,requirement
 1652574,984,"/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
