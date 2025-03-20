@@ -1,4 +1,4 @@
-id,repository,comment,satd,type,code_before,code_after
+id,repository,comment,satd,type,code_before,code_after,cot
 499770,137,//hacky workaround using the toString method to avoid mocking the Ruby runtime,yes,temporary fix,"@RunWith(MockitoJUnitRunner.class)
 public class RubyHashGaugeTest {
 
@@ -17,7 +17,7 @@ public void getValue() {
     RubyHashGauge gauge = new RubyHashGauge(""bar"", rubyHash);
     assertThat(gauge.getValue().toString()).isEqualTo(RUBY_HASH_AS_STRING);
     assertThat(gauge.getType()).isEqualTo(MetricType.GAUGE_RUBYHASH);
-"
+","The comment contains the phrase **""hacky workaround,""** which strongly suggests a suboptimal implementation. It acknowledges that the current solution is not ideal and involves an intentional trade-off."
 176603,56,// Add some role mappings directly in LDAP,no,,"    UserModel johnRoleMapper = session.users().getUserByUsername(appRealm, ""johnrolemapper"");
     Assert.assertNotNull(johnRoleMapper);
     Assert.assertEquals(0, johnRoleMapper.getRealmRoleMappingsStream().count());
@@ -36,7 +36,7 @@ LDAPObject johnLdap = ldapProvider.loadLDAPUserByUsername(appRealm, ""johnrolema
 roleMapper.addRoleMappingInLDAP(""realmRole1"", johnLdap);
 roleMapper.addRoleMappingInLDAP(""realmRole2"", johnLdap);
 
-// Get user and check that he has requested roles from LDAP"
+// Get user and check that he has requested roles from LDAP","The comment **describes an action being performed** but does not indicate any issue, suboptimal design, or future work requirement."
 398677,119,// Alpha does not support DML yet,yes,requirement,"    assertUpdate(""CREATE TABLE test_alpha_ddl_partitioned_table (col1 bigint, ds VARCHAR) WITH (format = 'ALPHA', partitioned_by = ARRAY['ds'])"");
     assertUpdate(""ALTER TABLE test_alpha_ddl_partitioned_table ADD COLUMN col2 bigint"");
     assertUpdate(""ALTER TABLE test_alpha_ddl_partitioned_table DROP COLUMN col2"");
@@ -55,7 +55,7 @@ public void testAlphaFormatDml()
 public void testInvokedFunctionNamesLog()
 {
     QueryRunner queryRunner = getQueryRunner();
-    Session logFunctionNamesEnabledSession = Session.builder(getSession())"
+    Session logFunctionNamesEnabledSession = Session.builder(getSession())","The comment states a **technical limitation (""does not support DML yet"")**, which suggests that a feature is missing and planned for future improvement. This is an admission of **technical debt** since it acknowledges a known issue."
 1230753,615,// A different instance of the same overlay should not be equal by default,no,,"}
 
 @Test
@@ -74,7 +74,7 @@ public void testEquality()
 @Test
 public void testSort()
 {
-	// High priorities overlays render first"
+	// High priorities overlays render first",The comment is describing **expected behavior** in the test case rather than indicating a technical compromise or improvement need. There are no markers suggesting SATD.
 1512588,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,yes,how to,"
 @Override
 public boolean equals(Object o) {
@@ -93,7 +93,7 @@ if (!Arrays.equals(jobs, that.jobs))
 if (list != null ? !list.equals(that.list) : that.list != null)
     return false;
 if (map != null ? !map.equals(that.map) : that.map != null)
-    return false;"
+    return false;","The phrase ""Probably incorrect"" explicitly indicates uncertainty about correctness, which suggests a potential technical debt or suboptimal implementation."
 344151,81,// Incorrect arity,no,,"});
 checkWMTE(() -> { // expected reference class
     boolean r = vh.weakCompareAndSet(recv, Void.class, 0x01234567);
@@ -112,4 +112,4 @@ checkWMTE(() -> { // >
 });
 
 
-// WeakCompareAndSetAcquire"
+// WeakCompareAndSetAcquire","The phrase ""Incorrect arity"" is a factual statement about a function/method’s argument count, not an explicit admission of technical debt."
