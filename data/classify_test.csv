@@ -1,0 +1,5606 @@
+id,repository,text,label,code_before,code_after
+668271,213,"// TODO: test that sendApplicationHiddenForUser() actually fills in
+// broadcastUsers",requirement,"setting.setInstantApp(true, EXCLUDED_USER_ID);
+pri.mRemovedUsers = new int[]{
+        1, 2, 3, EXCLUDED_USER_ID, 5
+};
+pri.populateBroadcastUsers(setting);
+Assert.assertNotNull(pri.mBroadcastUsers);
+Assert.assertEquals(4, pri.mBroadcastUsers.length);
+Assert.assertNotNull(pri.mInstantUserIds);
+Assert.assertEquals(1, pri.mInstantUserIds.length);
+","}
+
+@Test
+public void testPartitions() {
+    String[] partitions = {""system"", ""vendor"", ""odm"", ""oem"", ""product"", ""system_ext""};
+    String[] appdir = {""app"", ""priv-app""};
+    for (int i = 0; i < partitions.length; i++) {
+        final ScanPartition scanPartition =
+                PackageManagerService.SYSTEM_PARTITIONS.get(i);
+        for (int j = 0; j < appdir.length; j++) {"
+277908,69,// TODO: test quantity,requirement,"@Test
+public void petIdTest() {
+    // TODO: test petId
+}
+
+/**
+ * Test the property 'quantity'
+ */
+@Test
+public void quantityTest() {","    // TODO: test quantity
+}
+
+/**
+ * Test the property 'shipDate'
+ */
+@Test
+public void shipDateTest() {
+    // TODO: test shipDate
+}"
+874375,337,// TODO(b/133450410): This should be a visibility violation.,defect,"                  ""/** @package */"", //
+                  ""var name = 'foo';"")),
+          SourceFile.fromCode(
+              Compiler.joinPathParts(""baz"", ""quux.js""), //
+              lines(""name;""))),
+      error(BAD_PACKAGE_PROPERTY_ACCESS));
+}
+
+@Test
+public void testPackagePrivateAccessForNames_googModule() {","// TODO(b/133450410): This should be a visibility violation.
+disableRewriteClosureCode();
+testNoWarning(
+    srcs(
+        SourceFile.fromCode(
+            Compiler.joinPathParts(""foo"", ""bar.js""),
+            lines(
+                ""goog.module('Foo');"",
+                ""/** @package */"",
+                ""var name = 'foo';"","
+269671,69,// TODO: test justNumber,requirement,"@Test
+public void testNumberOnly() {
+    // TODO: test NumberOnly
+}
+
+/**
+ * Test the property 'justNumber'
+ */
+@Test
+public void justNumberTest() {","        // TODO: test justNumber
+    }
+
+}"
+277226,69,// TODO: test ClassModel,requirement," * Model tests for ClassModel
+ */
+public class ClassModelTest {
+    private final ClassModel model = new ClassModel();
+
+    /**
+     * Model tests for ClassModel
+     */
+    @Test
+    public void testClassModel() {","    // TODO: test ClassModel
+}
+
+/**
+ * Test the property 'propertyClass'
+ */
+@Test
+public void propertyClassTest() {
+    // TODO: test propertyClass
+}"
+690682,213,"// TODO(b/292141694): build out Ravenwood support for Context
+// Ravenwood doesn't yet provide a Context, but many SysUI tests assume one exists;
+// so here we construct just enough of a Context to be useful; this will be replaced
+// as more of the Ravenwood environment is built out",requirement,"        // Manually associate a Display to context for Robolectric test. Similar to b/214297409
+        return context.createDefaultDisplayContext();
+    } else {
+        return context;
+    }
+}
+
+@NonNull
+private Context getTestableContextBase() {
+    if (isRavenwoodTest()) {","return new MockContext() {
+    @Override
+    public void setTheme(int resid) {
+        // TODO(b/318393625): build out Ravenwood support for Resources
+        // until then, ignored as no-op
+    }
+
+    @Override
+    public Resources getResources() {
+        // TODO(b/318393625): build out Ravenwood support for Resources"
+692038,213,"// We should not have received any rollback requests yet.
+// TODO: Possibly flaky if, by chance, some other app on device
+// happens to be rolled back at the same time?",how to,"assertThat(InstallUtils.getInstalledVersion(TestApp.A)).isEqualTo(2);
+
+// The app should now be available for rollback.
+RollbackInfo available = waitForAvailableRollback(TestApp.A);
+assertThat(available).isNotStaged();
+assertThat(available).packagesContainsExactly(
+        Rollback.from(TestApp.A2).to(TestApp.A1));
+assertThat(available.getRollbackImpactLevel()).isEqualTo(
+        PackageManager.ROLLBACK_USER_IMPACT_HIGH);
+","assertThat(broadcastReceiver.poll(0, TimeUnit.SECONDS)).isNull();
+
+// Roll back the app.
+RollbackUtils.rollback(available.getRollbackId());
+assertThat(InstallUtils.getInstalledVersion(TestApp.A)).isEqualTo(1);
+
+UserManager um = (UserManager) context.getSystemService(context.USER_SERVICE);
+List<Integer> userIds = um.getAliveUsers()
+        .stream().map(user -> user.id).collect(Collectors.toList());
+assertThat(InstallUtils.isOnlyInstalledForUser(TestApp.A,"
+327554,81,// TODO: should this check *any* reference to http://download.oracle.com/,how to,"""""""
+    <a href=""../../technotes/guides/index.html"">
+                Test document 1</a>"""""",
+""""""
+    <a href=""../pkg2/C2.html"">
+                Another Test document 1</a>"""""",
+""""""
+    <a href=""../technotes/guides/index.html"">
+                Another Test document 2.</a>"""""");
+","// TODO: should this check *any* reference to http://download.oracle.com/
+checkOutput(""pkg1/C1.html"", false,
+    """"""
+        <a href=""http://download.oracle.com/javase/7/docs/technotes/guides/index.html"">"""""",
+    """"""
+        <a href=""http://download.oracle.com/javase/7/docs/pkg2/C2.html"">"""""");
+
+checkOutput(""pkg1/package-summary.html"", false,
+    """"""
+        <a href=""http://download.oracle.com/javase/7/docs/technotes/guides/index.html"">"""""","
+275539,69,// TODO: test color,requirement,"@Test
+public void sizeTest() {
+
+}
+
+/**
+ * Test the property 'color'
+ */
+@Test
+public void colorTest() {","    // TODO: test color
+}
+
+/**
+ * Test the property 'id'
+ */
+@Test
+public void idTest() {
+    // TODO: test id
+}"
+1018374,441,"/* J2ObjC removed: not supported by Junit 4.11 (https://github.com/google/j2objc/issues/1318).
+import libcore.junit.junit3.TestCaseWithRules;
+import libcore.junit.util.ResourceLeakageDetector.DisableResourceLeakageDetection;
+import libcore.junit.util.ResourceLeakageDetector; */",dependency,"import java.lang.reflect.Field;
+import java.nio.file.attribute.FileTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.zip.CRC32;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipException;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
+","import org.junit.Rule;
+import org.junit.rules.TestRule;
+
+public class ZipOutputStreamTest extends junit.framework.TestCase /* J2ObjC removed: TestCaseWithRules */ {
+    /* J2ObjC removed: not supported by Junit 4.11 (https://github.com/google/j2objc/issues/1318).
+    @Rule
+    public TestRule guardRule = ResourceLeakageDetector.getRule(); */
+
+    ZipOutputStream zos;
+"
+1231461,618,"// TODO: This test currently makes the whole VM exit with exit code -1, but does not generate a dump file
+// (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",skip test,"    if (getDatabase() == null) {
+        return;
+    }
+
+    runCompleteChangeLog();
+
+    DiffResult diffResult = DiffGeneratorFactory.getInstance().compare(getDatabase(), null, new CompareControl());
+    new DiffToReport(diffResult, System.out).print();
+}
+","@Test
+public void diffToChangeLog() throws Exception{
+    if (getDatabase() == null) {
+        return;
+    }
+
+    runCompleteChangeLog();
+
+    DiffResult diffResult = DiffGeneratorFactory.getInstance().compare(getDatabase(), null, new CompareControl());
+    File outputFile = new File(""diffToChangeLog_"" + getDatabase().getShortName() + "".log"");"
+265408,69,// TODO: test capitalCamel,requirement,"@Test
+void smallCamelTest() {
+    // TODO: test smallCamel
+}
+
+/**
+ * Test the property 'capitalCamel'
+ */
+@Test
+void capitalCamelTest() {","    // TODO: test capitalCamel
+}
+
+/**
+ * Test the property 'smallSnake'
+ */
+@Test
+void smallSnakeTest() {
+    // TODO: test smallSnake
+}"
+249063,69,// TODO: test EnumArrays,requirement," * Model tests for EnumArrays
+ */
+public class EnumArraysTest {
+    private final EnumArrays model = new EnumArrays();
+
+    /**
+     * Model tests for EnumArrays
+     */
+    @Test
+    public void testEnumArrays() {","    // TODO: test EnumArrays
+}
+
+/**
+ * Test the property 'justSymbol'
+ */
+@Test
+public void justSymbolTest() {
+    // TODO: test justSymbol
+}"
+794729,281,"// Testcase is disabled, as kernel32 ordinal values are not stable.
+// a library with a stable function <-> ordinal value is needed.
+//
+//    /**
+//     * Test that a named function on win32 can be equally resolved by its ordinal
+//     * value.
+//     *
+//     * From link.exe /dump /exports c:\\Windows\\System32\\kernel32.dll
+//     *
+//     *  746  2E9 0004FA20 GetTapeStatus
+//     *  747  2EA 0002DB20 GetTempFileNameA
+//     *  748  2EB 0002DB30 GetTempFileNameW
+//     *  749  2EC 0002DB40 GetTempPathA
+//     *  750  2ED 0002DB50 GetTempPathW
+//     *  751  2EE 00026780 GetThreadContext
+//     *
+//     * The tested function is GetTempPathW which is mapped to the ordinal 750.
+//     */
+//    public void testGetProcAddress() {
+//        NativeLibrary kernel32Library = NativeLibrary.getInstance(""kernel32"");
+//        // get module handle needed to resolve function pointer via GetProcAddress
+//        HMODULE kernel32Module = Kernel32.INSTANCE.GetModuleHandle(""kernel32"");
+//
+//        Function namedFunction = kernel32Library.getFunction(""GetTempPathW"");
+//        long namedFunctionPointerValue = Pointer.nativeValue(namedFunction);
+//
+//        Pointer ordinalFunction = Kernel32.INSTANCE.GetProcAddress(kernel32Module, 750);
+//        long ordinalFunctionPointerValue = Pointer.nativeValue(ordinalFunction);
+//
+//        assertEquals(namedFunctionPointerValue, ordinalFunctionPointerValue);
+//    }",skip test,"}
+
+public void testSetErrorMode() {
+    // Set bit flags to 0x0001
+    int previousMode = Kernel32.INSTANCE.SetErrorMode(0x0001);
+    // Restore to previous state; 0x0001 is now ""previous""
+    // Since 0x0004 bit is sticky previous may be 0x0005
+    assertEquals(0x0001, Kernel32.INSTANCE.SetErrorMode(previousMode) & ~0x0004);
+}
+","
+public void testSetThreadExecutionState() {
+    int originalExecutionState = Kernel32.INSTANCE.SetThreadExecutionState(
+            WinBase.ES_CONTINUOUS | WinBase.ES_SYSTEM_REQUIRED | WinBase.ES_AWAYMODE_REQUIRED
+    );
+
+    assert originalExecutionState > 0;
+
+    int intermediateExecutionState = Kernel32.INSTANCE.SetThreadExecutionState(
+            WinBase.ES_CONTINUOUS"
+542274,145,"// The test .equals fails on a comparison of row  vs column vector.
+//TODO: possibly figure out what's going on here at some point?
+// - Adam",defect,"                    log.error(""Error with view"",t);
+                }
+            }
+        }
+    }
+}
+
+
+@Test
+@Disabled //added recently: For some reason this is passing.","public void testTensorGet(Nd4jBackend backend) {
+    INDArray threeTwoTwo = Nd4j.linspace(1, 12, 12).reshape(3, 2, 2);
+    /*
+    * [[[  1.,   7.],
+    [  4.,  10.]],
+
+    [[  2.,   8.],
+    [  5.,  11.]],
+
+    [[  3.,   9.],"
+254312,69,// TODO: test quadrilateralType,requirement,"@Test
+void triangleTypeTest() {
+    // TODO: test triangleType
+}
+
+/**
+ * Test the property 'quadrilateralType'
+ */
+@Test
+void quadrilateralTypeTest() {","        // TODO: test quadrilateralType
+    }
+
+}"
+107075,22,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public AsyncContext startAsync() throws IllegalStateException {
+    // TODO Auto-generated method stub
+    return null;
+}
+
+@Override
+public void setCharacterEncoding(String env) {","    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void setAttribute(String name, Object o) {
+    // TODO Auto-generated method stub
+
+}
+"
+1100734,482,"/**
+ * [ BUG ] We didn't save the old password in the statement. If userA has logged in with
+ * session_A. Session_B's alter password operation cannot block session A's alter password
+ * operation because we only check the user's password before they log in.
+ */",defect,"assertEquals(StatementType.CREATE_USER, userDcl.getType());
+
+userDcl = createAuthDclStmt(""drop user `user1`;"");
+assertEquals(""user1"", userDcl.getUserName());
+assertEquals(Collections.emptyList(), userDcl.getPaths());
+assertEquals(StatementType.DELETE_USER, userDcl.getType());
+
+// 2.update user's password
+userDcl = createAuthDclStmt(""alter user `user1` set password 'password2';"");
+assertEquals(""user1"", userDcl.getUserName());","  // assertEquals(""password1"", userDcl.getPassWord());
+  assertEquals(""password2"", userDcl.getNewPassword());
+  assertEquals(StatementType.MODIFY_PASSWORD, userDcl.getType());
+}
+
+@Test
+public void testDCLROLEOperation() {
+  // 1. create role and drop role.
+  AuthorStatement roleDcl = createAuthDclStmt(""create role role1;"");
+  assertEquals(""role1"", roleDcl.getRoleName());"
+1026898,445,"/**
+ * Sort of a dummy test, as the conditions are perfect. In a more realistic scenario, below, the algorithm needs luck to climb this high.
+ */",superficial,"        Summary summary = run(operations, workPerSuccess, numberOfWorkers, maximumTasksPerWorker, workerParallelism, timer, policy);
+
+        double minMaxPending = numberOfWorkers * workerParallelism;
+        assertInRange(0.3 * minMaxPending, summary.averagePending, 0.5 * minMaxPending);
+        assertInRange(0.3 * minMaxPending, summary.averageWindows[0], 0.5 * minMaxPending);
+        assertInRange(2, summary.inefficiency, 4);
+        assertInRange(0, summary.waste, 0);
+    }
+}
+","@Test
+void singlePolicySingleWorkerWithIncreasingParallelism() {
+    for (int exponent = 0; exponent < 4; exponent++) {
+        ManualTimer timer = new ManualTimer();
+        DynamicThrottlePolicy policy = new DynamicThrottlePolicy(timer);
+        int scaleFactor = (int) Math.pow(10, exponent);
+        long operations = 3_000L * scaleFactor;
+        int workPerSuccess = 6;
+        int numberOfWorkers = 1;
+        int maximumTasksPerWorker = 100000;"
+911842,374,// Currently we can only Snapshot only out of the Spark Session Catalog,requirement,"import org.apache.iceberg.relocated.com.google.common.collect.ImmutableList;
+import org.apache.spark.sql.AnalysisException;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(ParameterizedTestExtension.class)
+public class TestSnapshotTableProcedure extends ExtensionsTestBase {
+  private static final String SOURCE_NAME = ""spark_catalog.default.source"";
+","// Currently we can only Snapshot only out of the Spark Session Catalog
+
+@AfterEach
+public void removeTables() {
+  sql(""DROP TABLE IF EXISTS %s"", tableName);
+  sql(""DROP TABLE IF EXISTS %s PURGE"", SOURCE_NAME);
+}
+
+@TestTemplate
+public void testSnapshot() throws IOException {"
+842237,308,// TODO(https://github.com/apache/beam/issues/20447),requirement,"import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+/** Tests that {@link ParDo} exercises {@link DoFn} methods in the appropriate sequence. */
+@RunWith(JUnit4.class)
+@SuppressWarnings({","  ""rawtypes"", // TODO(https://github.com/apache/beam/issues/20447)
+  // TODO(https://github.com/apache/beam/issues/21230): Remove when new version of
+  // errorprone is released (2.11.0)
+  ""unused""
+})
+public class ParDoLifecycleTest implements Serializable {
+
+  @Rule public final transient TestPipeline p = TestPipeline.create();
+
+  @Test"
+1473843,805,// This is an utter hack but is the only way I could,temporary fix,"FormTester formTester = tester.newFormTester(""form"");
+formTester.setValue(""panel:tileLayerEditor:createTileLayer"", false);
+
+tester.executeAjaxEvent(""form:panel:tileLayerEditor:createTileLayer"", ""change"");
+
+tester.isInvisible(""form:panel:tileLayerEditor:container:configs"");
+
+LayerCacheOptionsTabPanel panel =
+        (LayerCacheOptionsTabPanel) tester.getComponentFromLastRenderedPage(""form:panel"");
+","formTester.getForm().onFormSubmitted(null); // This is an utter hack but is the only way I could
+// figure out to exercise the validators the same
+// way that happens in a live GeoServer
+
+panel.save();
+
+// Ensure the GeoServerTileLayerInfoModel is updated
+assertNotNull(tileLayerModel.getEnabled());
+assertFalse(tileLayerModel.getEnabled().booleanValue());
+assertNull(mediator.getTileLayer(layerModel.getObject()));"
+268338,69,// TODO: test ClassModel,requirement," * Model tests for ClassModel
+ */
+class ClassModelTest {
+    private final ClassModel model = new ClassModel();
+
+    /**
+     * Model tests for ClassModel
+     */
+    @Test
+    void testClassModel() {","    // TODO: test ClassModel
+}
+
+/**
+ * Test the property 'propertyClass'
+ */
+@Test
+void propertyClassTest() {
+    // TODO: test propertyClass
+}"
+107169,22,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public void addDateHeader(String name, long date) {
+    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void addCookie(Cookie cookie) {","                // TODO Auto-generated method stub
+            }
+        };
+
+    }
+}"
+1342137,655,"//TODO:
+//+ ""a = 59;""",requirement,"}
+
+@Test
+public void testRemoveKnownVariables2() throws Exception {
+    String res = recompile(""var a = true; var b = false;""
+            + ""if(a){""
+            + ""trace(\""OK1\"");""
+            + ""}else{""
+            + ""trace(\""FAIL1\"");""
+            + ""}""","        + ""if(b){""
+        + ""trace(\""FAIL2\"");""
+        + ""}else{""
+        + ""trace(\""OK2\"");""
+        + ""}"");
+if (!res.contains(""\""OK1\"""")) {
+    fail(""!OK1:"" + res);
+}
+if (res.contains(""\""FAIL1\"""")) {
+    fail(""FAIL1"");"
+262998,69,// TODO: test tags,requirement,"@Test
+void photoUrlsTest() {
+    // TODO: test photoUrls
+}
+
+/**
+ * Test the property 'tags'
+ */
+@Test
+void tagsTest() {","    // TODO: test tags
+}
+
+/**
+ * Test the property 'status'
+ */
+@Test
+void statusTest() {
+    // TODO: test status
+}"
+107142,22,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public void setContentLength(int len) {
+    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void setCharacterEncoding(String charset) {","    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void setCharacterEncoding(Charset encoding) {
+    HttpServletResponse.super.setCharacterEncoding(encoding);
+}
+
+@Override"
+229758,64,"// TODO(mschaller): This will ignore any attempt by Blaze modules to provide a filesystem;
+// consider something better.",code," */
+@ForOverride
+protected Set<EventKind> additionalEventsToCollect() {
+  return ImmutableSet.of();
+}
+
+@Before
+public final void createFilesAndMocks() throws Exception {
+  runPriorToBeforeMethods();
+  events.setFailFast(false);","FileSystem nativeFileSystem = createFileSystem();
+this.fileSystem = createFileSystemForBuildArtifacts(nativeFileSystem);
+this.testRoot = createTestRoot(fileSystem);
+
+outputBase = fileSystem.getPath(testRoot.getRelative(outputBaseName).asFragment());
+outputBase.createDirectoryAndParents();
+workspace =
+    nativeFileSystem.getPath(testRoot.getRelative(getDesiredWorkspaceRelative()).asFragment());
+beforeCreatingWorkspace(workspace);
+workspace.createDirectoryAndParents();"
+1544848,889,//this is pretty yuck,temporary fix,"    if (r <= 0) break;
+    if (r > 0) {
+        read += r;
+        sb.append(new String(buf, 0, r));
+    }
+}
+String actual = sb.toString();
+actual = actual.replaceAll(""\r\nDate:.*"","""");
+actual = actual.replaceAll(""content-length"",""Content-Length"");
+try {","    //this is pretty yuck
+    Assert.assertEquals(response1, actual);
+} catch (AssertionError e) {
+    Assert.assertEquals(response2, actual);
+}
+
+s.getOutputStream().write(request.getBytes());
+
+sb = new StringBuilder();
+read = 0;"
+769130,269,"//""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/snapshots/snapshots/nb-3g1m_0nuf_3vj5m2k1125165rxa7-big-Index.db"", #not supported (CASSANDRA-14013)",requirement,"testKeyspaceTableParsing(filePathsWithBackupsKeyspaceAndTable, ""backups"", ""backups"");
+
+// what if legacy keyspace and table is called backups?
+
+String[] legacyFilePathsWithBackupsKeyspaceAndTable = new String[]{
+""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/na-1-big-Index.db"",
+""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/nb-1-big-TOC.txt"",
+//""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/snapshots/snapshots/na-1-big-Index.db"", #not supported (CASSANDRA-14013)
+""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/backups/na-1-big-Index.db"",
+""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/nb-3g1m_0nuf_3vj5m2k1125165rxa7-big-Index.db"",","//""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/snapshots/snapshots/nb-3g1m_0nuf_3vj5m2k1125165rxa7-big-Index.db"", #not supported (CASSANDRA-14013)
+""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/backups/nb-3g1m_0nuf_3vj5m2k1125165rxa7-big-Index.db"",
+};
+
+testKeyspaceTableParsing(legacyFilePathsWithBackupsKeyspaceAndTable, ""backups"", ""backups"");
+
+// what if even a snapshot of a keyspace and table called backups is called snapshots?
+
+String[] filePathsWithBackupsKeyspaceAndTableWithIndices = new String[]{
+""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups-74273842738947874273842738947878/.index/na-1-big-Index.db"","
+265330,69,// TODO: test OuterComposite,requirement," * Model tests for OuterComposite
+ */
+class OuterCompositeTest {
+    private final OuterComposite model = new OuterComposite();
+
+    /**
+     * Model tests for OuterComposite
+     */
+    @Test
+    void testOuterComposite() {","    // TODO: test OuterComposite
+}
+
+/**
+ * Test the property 'myNumber'
+ */
+@Test
+void myNumberTest() {
+    // TODO: test myNumber
+}"
+68121,12,// not sure what the margin of error is,how to,"	Set<TestEdge> edges = getAllEdges();
+	edges.forEach(e -> assertAlphaEquals(1, e.getAlpha()));
+}
+
+private void assertAllVerticesVisible() {
+	Set<AbstractTestVertex> vertices = getAllVertices();
+	vertices.forEach(v -> assertAlphaEquals(1, v.getAlpha()));
+}
+
+private void assertAlphaEquals(double expected, double actual) {","	double delta = .0001; // not sure what the margin of error is
+	assertEquals(expected, actual, delta);
+}
+
+private void filter(String filterText, boolean remove) {
+	filter(filterText, remove, 100 /* speed-up for testing */);
+}
+
+private void filter(String filterText, boolean remove, int filterDuration) {
+	Predicate<AbstractTestVertex> filter = v -> StringUtils.containsIgnoreCase(v.getName(), filterText);"
+21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dependency,"    int numPromotableReplicas,
+    int numSearchReplicas
+) {
+    return getReplicaRolesWithRandomStates(numPromotableReplicas, numSearchReplicas, ShardRoutingState.values());
+}
+
+private static ShardRoutingState getValidStateForRole(ShardRouting.Role role, ShardRoutingState... possibleStates) {
+    ShardRoutingState state;
+    do {
+        state = randomFrom(possibleStates);","        // relocation is not possible for unserchable shards until ES-4677 is implemented
+    } while (role.isSearchable() == false && state == ShardRoutingState.RELOCATING);
+    return state;
+}
+
+private static List<Tuple<ShardRoutingState, ShardRouting.Role>> getReplicaRolesWithState(
+    int numPromotableReplicas,
+    int numSearchReplicas,
+    ShardRoutingState state
+) {"
+1652572,984,"// TODO Second, modify the sql, so Flink engineConn can run it successfully.",requirement,"import org.apache.linkis.computation.client.once.simple.SubmittableSimpleOnceJob;
+import org.apache.linkis.computation.client.operator.impl.EngineConnLogOperator;
+import org.apache.linkis.computation.client.operator.impl.EngineConnLogs;
+import org.apache.linkis.computation.client.operator.impl.EngineConnMetricsOperator;
+import org.apache.linkis.computation.client.utils.LabelKeyUtils;
+
+public class FlinkOnceJobTest {
+  public static void main(String[] args) {
+    // TODO First, set the right gateway url.
+    LinkisJobClient.config().setDefaultServerUrl(""http://127.0.0.1:9002"");","// TODO Second, modify the sql, so Flink engineConn can run it successfully.
+String sql =
+    ""CREATE TABLE mysql_binlog (\n""
+        + "" id INT NOT NULL,\n""
+        + "" name STRING,\n""
+        + "" age INT\n""
+        + "") WITH (\n""
+        + "" 'connector' = 'mysql-cdc',\n""
+        + "" 'hostname' = 'ip',\n""
+        + "" 'port' = 'port',\n"""
+640124,211,// TODO: Empty tables should have NDV as 0 and nulls fraction as 1,defect,"                        ""(null, null, null, null, 15000, null, null)"");
+    }
+    finally {
+        assertUpdate(""DROP TABLE "" + tableName);
+    }
+}
+
+@Override
+protected void checkEmptyTableStats(String tableName)
+{","    // TODO: Empty tables should have NDV as 0 and nulls fraction as 1
+    assertQuery(
+            ""SHOW STATS FOR "" + tableName,
+            ""VALUES "" +
+                    ""('orderkey', null, null, null, null, null, null),"" +
+                    ""('custkey', null, null, null, null, null, null),"" +
+                    ""('orderpriority', null, null, null, null, null, null),"" +
+                    ""('comment', null, null, null, null, null, null),"" +
+                    ""(null, null, null, null, null, null, null)"");
+}"
+1371658,733,"// TODO: Unlike PPGs with 0xBB compression the timestamps are not linear
+// The data also looks different, hmmm....",other,"    HuaweiTruSleepParser.TruSleepStatus[] result = HuaweiTruSleepParser.parseState(test);
+
+    Assert.assertArrayEquals(expected, result);
+}
+@Test
+public void testParseDataPpg() {
+    byte[] test1 = GB.hexStringToByteArray(""02B000403B0B672AAADA13C109A915E707BE130C06E3112104F80F84182F0888109900390805121004850E4317EC07C911D4037610C701580E2A02310F6B022B100E0448119B075B154F099916390A07191A0E9B00D10E2D02A7105405AAE8FDE8FDBDDA92B767943B71104EE52AB907EE06AC08BD06BE067C07DB06CC05E2079B06C206E906920639063807E0056406D905E2067807870660074D03720A8406AA0624064005CA07DF062D088706D2084B0A00"");
+    byte[] test2 = GB.hexStringToByteArray(""027500F61E0B6724BB0C016968685756585753545050535354565B595B5B5B5F5C5A5E5B61635D5E5B5756585656AADD401138452F7826FC1D61221F27DD2BFC1A7B248B11260A7A221E1C9128FE185025C827D41C1B206223E31B73126210EC22B620D212B232DC0A93115A322E279B116717F30E2E1500"");
+    byte[] test3 = GB.hexStringToByteArray(""025A00B2180B671BBB410174706A726F6D6D747B757B776E6E6D6E6F777D77777670757570AA543D0E52276956406837B63C103EB22C6929C7265326EA2FCC2F743CC9380239673B9739EA2FC92CC526BB2E652D6433DD3506397E2F00"");
+","ArrayList<HuaweiTruSleepParser.TruSleepDataPpg> expected = new ArrayList<>();
+expected.add(new HuaweiTruSleepParser.TruSleepDataPpg (1728789362820L, (short)0xfde8));
+expected.add(new HuaweiTruSleepParser.TruSleepDataPpg (1728789336970L, (short)0xfde8));
+expected.add(new HuaweiTruSleepParser.TruSleepDataPpg (1728789367450L, (short)0xdabd));
+expected.add(new HuaweiTruSleepParser.TruSleepDataPpg (1728789332230L, (short)0xb792));
+expected.add(new HuaweiTruSleepParser.TruSleepDataPpg (1728789362540L, (short)0x9467));
+expected.add(new HuaweiTruSleepParser.TruSleepDataPpg (1728789327480L, (short)0x713b));
+expected.add(new HuaweiTruSleepParser.TruSleepDataPpg (1728789357790L, (short)0x4e10));
+expected.add(new HuaweiTruSleepParser.TruSleepDataPpg (1728789322570L, (short)0x2ae5));
+expected.add(new HuaweiTruSleepParser.TruSleepDataPpg (1728789352880L, (short)0x07b9));"
+261824,69,// TODO: test objectItemsNullable,requirement,"@Test
+void objectAndItemsNullablePropTest() {
+    // TODO: test objectAndItemsNullableProp
+}
+
+/**
+ * Test the property 'objectItemsNullable'
+ */
+@Test
+void objectItemsNullableTest() {","        // TODO: test objectItemsNullable
+    }
+
+}"
+36354,8,"// This only tests for calendar ordering, ignoring the other criteria",superficial,"for (int i = 0; i < numCaps; i++) {
+    DateHistogramInterval interval = getRandomCalendarInterval();
+    GroupConfig group = new GroupConfig(new DateHistogramGroupConfig.CalendarInterval(""foo"", interval));
+    RollupJobConfig job = new RollupJobConfig(""foo"", ""index"", ""rollup"", ""*/5 * * * * ?"", 10, group, emptyList(), null);
+    RollupJobCaps cap = new RollupJobCaps(job);
+    caps.add(cap);
+}
+
+caps.sort(RollupJobIdentifierUtils.COMPARATOR);
+","// This only tests for calendar ordering, ignoring the other criteria
+for (int i = 1; i < numCaps; i++) {
+    RollupJobCaps a = caps.get(i - 1);
+    RollupJobCaps b = caps.get(i);
+    long aMillis = getMillis(a);
+    long bMillis = getMillis(b);
+
+    assertThat(aMillis, greaterThanOrEqualTo(bMillis));
+
+}"
+1045570,449,// TODO Auto-generated method stub,requirement,"
+public PropagationContext getPropagationContext() {
+    return null;
+}
+
+public RuleImpl getRule() {
+    return null;
+}
+
+public Consequence getConsequence() {","    // TODO Auto-generated method stub
+    return null;
+}
+
+public TupleImpl getTuple() {
+    return null;
+}
+
+public boolean isQueued() {
+    return false;"
+259171,69,// TODO: test validations,requirement,"
+/**
+ * Invalid pet value
+ */
+@Test
+public void shouldSee400AfterDeletePet() {
+    Long petId = null;
+    String apiKey = null;
+    api.deletePet()
+            .petIdPath(petId).execute(r -> r.prettyPeek());","    // TODO: test validations
+}
+
+
+/**
+ * successful operation
+ */
+@Test
+public void shouldSee200AfterFindPetsByStatus() {
+    List<String> status = null;"
+877599,337,// TODO(johnlenz): support this. Unused return can be removed.,temporary fix,"
+@Test
+public void testNoRewriteDestructuredObject4() {
+  String source =
+      lines(""class C { method() { return 1 }}"", ""({a:x.method = function() {}} = {})"", ""x()"");
+  testSame(source);
+}
+
+@Test
+public void testNoRewriteTagged1() {","  // TODO(johnlenz): support this. Unused return can be removed.
+  String source = lines(""var f = function() { return 1; };"", ""f`tagged`"");
+  testSame(source);
+}
+
+@Test
+public void testNoRewriteTagged2() {
+  // Tagged use prevents optimizations
+  String source = lines(""var f = function() { return 1; };"", ""var x = f`tagged`"");
+  testSame(source);"
+196421,60,"/**
+ * This test only fails eventually.
+ */",defect,"                .isPresent()
+                .map(CheckpointException::getCheckpointFailureReason)
+                .get()
+                .isEqualTo(CheckpointFailureReason.TRIGGER_CHECKPOINT_FAILURE);
+    }
+    // it doesn't really trigger task manager to do checkpoint
+    assertThat(gateway.getTriggeredCheckpoints(attemptID)).isEmpty();
+    assertThat(checkpointCoordinator.getTriggerRequestQueue()).isEmpty();
+}
+","@Test
+void discardingTriggeringCheckpointWillExecuteNextCheckpointRequest() throws Exception {
+    final ScheduledExecutorService scheduledExecutorService =
+            Executors.newSingleThreadScheduledExecutor();
+    final CheckpointCoordinator checkpointCoordinator =
+            new CheckpointCoordinatorTestingUtils.CheckpointCoordinatorBuilder()
+                    .setTimer(new ScheduledExecutorServiceAdapter(scheduledExecutorService))
+                    .setCheckpointCoordinatorConfiguration(
+                            CheckpointCoordinatorConfiguration.builder().build())
+                    // Since timer thread != main thread we should override the default main"
+981147,435,//TODO: upsert() with IDENTITY not working on SQL Server,defect,"public class StatelessSessionVersioningTest {
+	@Test void testIdentity(SessionFactoryScope scope) {
+		Dialect dialect = scope.getMetadataImplementor().getDatabase().getDialect();
+		scope.inStatelessTransaction(s -> {
+			IdentityVersioned v = new IdentityVersioned();
+			s.insert(v);
+			assertEquals(0, v.version);
+			s.update(v);
+			assertEquals(1, v.version);
+			if ( !(dialect instanceof SQLServerDialect) ) {","			//TODO: upsert() with IDENTITY not working on SQL Server
+			s.upsert(v);
+			assertEquals(2, v.version);
+		}
+		s.delete(v);
+	});
+}
+@Test void testUUID(SessionFactoryScope scope) {
+	Dialect dialect = scope.getMetadataImplementor().getDatabase().getDialect();
+	scope.inStatelessTransaction(s -> {"
+98262,15,"// FIXME last cause value is not saved
+//        assertTrue(ts.errors().get(0).getCause().getMessage().contains(""abc""));",defect,"    @Override
+    public boolean test(String t) {
+            throw e;
+    }
+});
+Observable.just(""abc"").takeUntil(predicate).subscribe(to);
+
+to.assertTerminated();
+to.assertNotComplete();
+to.assertError(TestException.class);","}
+
+@Test
+public void dispose() {
+    TestHelper.checkDisposed(PublishSubject.create().takeUntil(Functions.alwaysFalse()));
+}
+
+@Test
+public void doubleOnSubscribe() {
+    TestHelper.checkDoubleOnSubscribeObservable(new Function<Observable<Object>, ObservableSource<Object>>() {"
+249245,69,// TODO: test smallCamel,requirement,"@Test
+public void testCapitalization() {
+    // TODO: test Capitalization
+}
+
+/**
+ * Test the property 'smallCamel'
+ */
+@Test
+public void smallCamelTest() {","    // TODO: test smallCamel
+}
+
+/**
+ * Test the property 'capitalCamel'
+ */
+@Test
+public void capitalCamelTest() {
+    // TODO: test capitalCamel
+}"
+60512,11,// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead,other,"@Test
+@SuppressWarnings(""resource"")
+void testPayloadObjectWithPayloadTypeOnParentContext() {
+	final NumberHolder<Integer> payload = new NumberHolder<>(42);
+
+	ConfigurableApplicationContext parent = new AnnotationConfigApplicationContext(NumberHolderListener.class);
+	ConfigurableApplicationContext ac = new GenericApplicationContext(parent) {
+		@Override
+		protected void finishRefresh() throws BeansException {
+			super.finishRefresh();","			// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead
+			publishEvent(payload, ResolvableType.forClassWithGenerics(NumberHolder.class, Integer.class));
+		}
+	};
+	ac.refresh();
+
+	assertThat(parent.getBean(NumberHolderListener.class).events).contains(payload);
+	ac.close();
+	parent.close();
+}"
+267858,69,// TODO: test validations,requirement,"/**
+ * Finds Pets by tags
+ *
+ * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+ *
+ * @throws ApiException
+ *          if the Api call fails
+ */
+@Test
+public void findPetsByTagsTest() {","    // TODO: test validations
+    Set<String> tags = null;
+    //Set<Pet> response = api.findPetsByTags(tags);
+    //Assertions.assertNotNull(response);
+
+
+}
+
+/**
+ * Find pet by ID"
+674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,temporary fix,"    assertThat(
+            Settings.Secure.getInt(
+                    mTestableContext.getContentResolver(),
+                    Settings.Secure.ACCESSIBILITY_DISPLAY_MAGNIFICATION_ENABLED,
+                    AccessibilityUtils.State.OFF)
+    ).isEqualTo(AccessibilityUtils.State.ON);
+}
+
+@Test
+public void enableShortcutsForTargets_disableTripleTapShortcut_settingUpdated() {","// TODO(b/111889696): Remove the user 0 assumption once we support multi-user
+assumeTrue(""The test is setup to run as a user 0"",
+        isSameCurrentUser(mA11yms, mTestableContext));
+enableShortcutsForTargets_enableTripleTapShortcut_settingUpdated();
+
+mA11yms.enableShortcutsForTargets(
+        /* enable= */ false,
+        UserShortcutType.TRIPLETAP,
+        List.of(TARGET_MAGNIFICATION),
+        mA11yms.getCurrentUserIdLocked());"
+977079,435,"/**
+ * No Documentation
+ */",documentation,"/*
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ * Copyright Red Hat Inc. and Hibernate Authors
+ */
+package org.hibernate.orm.test.annotations.cascade.multicircle.jpa.identity;
+","@jakarta.persistence.Entity
+public class EntityB extends AbstractEntity {
+	private static final long serialVersionUID = 325417243L;
+
+	/**
+	 * No documentation
+	 */
+	@jakarta.persistence.OneToMany(cascade =  {
+		jakarta.persistence.CascadeType.MERGE, jakarta.persistence.CascadeType.PERSIST, jakarta.persistence.CascadeType.REFRESH}
+	, mappedBy = ""b"")"
+1297115,620,"/**
+ * TODO: IGNITE-592.
+ *
+ * @throws Exception If failed.
+ */",requirement," * @throws Exception If failed.
+ */
+@Test
+public void testPutxIfAbsentTxPessimistic() throws Exception {
+    testPutxIfAbsentTx(keyForNode(0), PESSIMISTIC);
+
+    if (gridCount() > 1)
+        testPutxIfAbsentTx(keyForNode(1), PESSIMISTIC);
+}
+","@Test
+public void testPutxIfAbsentTxOptimistic() throws Exception {
+    testPutxIfAbsentTx(keyForNode(0), OPTIMISTIC);
+
+    if (gridCount() > 1)
+        testPutxIfAbsentTx(keyForNode(1), OPTIMISTIC);
+}
+
+/**
+ * @param key Key."
+47430,8,// TODO: we have no CannedAnalyzer?,requirement,"Token t1 = new Token();      // Token without an increment
+t1.setPositionIncrement(0);
+Token t2 = new Token();
+t2.setPositionIncrement(1);  // Normal token with one increment
+Token t3 = new Token();
+t2.setPositionIncrement(2);  // Funny token with more than one increment
+int finalTokenIncrement = 4; // Final token increment
+Token[] tokens = new Token[] { t1, t2, t3 };
+Collections.shuffle(Arrays.asList(tokens), random());
+final TokenStream tokenStream = new CannedTokenStream(finalTokenIncrement, 0, tokens);","    // TODO: we have no CannedAnalyzer?
+    return new Analyzer() {
+        @Override
+        public TokenStreamComponents createComponents(String fieldName) {
+            return new TokenStreamComponents(new MockTokenizer(), tokenStream);
+        }
+    };
+}
+
+public void testParseNullValue() throws Exception {"
+261296,69,// TODO: test status,requirement,"@Test
+void shipDateTest() {
+    // TODO: test shipDate
+}
+
+/**
+ * Test the property 'status'
+ */
+@Test
+void statusTest() {","    // TODO: test status
+}
+
+/**
+ * Test the property 'complete'
+ */
+@Test
+void completeTest() {
+    // TODO: test complete
+}"
+278238,69,// TODO: test id,requirement,"@Test
+public void testTag() {
+    // TODO: test Tag
+}
+
+/**
+ * Test the property 'id'
+ */
+@Test
+public void idTest() {","    // TODO: test id
+}
+
+/**
+ * Test the property 'name'
+ */
+@Test
+public void nameTest() {
+    // TODO: test name
+}"
+1371704,733,// TODO,requirement,"    // TODO
+}
+
+@Test
+public void handleInitResponse() {
+    // TODO
+}
+
+@Test
+public void handleAmbientSoundControl() {","    // TODO
+}
+
+@Test
+public void handleNoiseCancellingOptimizerStatus() {
+    // TODO
+}
+
+@Test
+public void handleNoiseCancellingOptimizerState() {"
+710096,226,// TODO same data accessed as Hive Table or Path URI ??,how to,"
+df.write()
+    .mode(SaveMode.Overwrite)
+    .saveAsTable(tbl(""foo4"")); // CreateDataSourceTableAsSelectCommand
+df.write()
+    .mode(SaveMode.Append)
+    .saveAsTable(tbl(""foo4"")); // CreateDataSourceTableAsSelectCommand
+df.write().insertInto(tbl(""foo4"")); // InsertIntoHadoopFsRelationCommand
+
+Thread.sleep(5000);","  // TODO same data accessed as Hive Table or Path URI ??
+
+  DatasetLineage exp = dsl(catTblDs(""foo4""), hdfsDs(""in1.csv""), hdfsDs(""in2.csv""));
+  check(Collections.nCopies(3, exp), acc.getLineages());
+  if (VERIFY_EXPECTED) {
+    verify(3 * N);
+  }
+}
+
+@Test"
+252688,69,// TODO: test name,requirement,"@Test
+void testName() {
+    // TODO: test Name
+}
+
+/**
+ * Test the property 'name'
+ */
+@Test
+void nameTest() {","    // TODO: test name
+}
+
+/**
+ * Test the property 'snakeCase'
+ */
+@Test
+void snakeCaseTest() {
+    // TODO: test snakeCase
+}"
+252716,69,// TODO: test _return,requirement,"@Test
+void testModelReturn() {
+    // TODO: test ModelReturn
+}
+
+/**
+ * Test the property '_return'
+ */
+@Test
+void _returnTest() {","        // TODO: test _return
+    }
+
+}"
+252506,69,// TODO: test Category,requirement," * Model tests for Category
+ */
+class CategoryTest {
+    private final Category model = new Category();
+
+    /**
+     * Model tests for Category
+     */
+    @Test
+    void testCategory() {","    // TODO: test Category
+}
+
+/**
+ * Test the property 'id'
+ */
+@Test
+void idTest() {
+    // TODO: test id
+}"
+280075,69,// TODO: test hasBaleen,requirement,"@Test
+public void testWhale() {
+    // TODO: test Whale
+}
+
+/**
+ * Test the property 'hasBaleen'
+ */
+@Test
+public void hasBaleenTest() {","    // TODO: test hasBaleen
+}
+
+/**
+ * Test the property 'hasTeeth'
+ */
+@Test
+public void hasTeethTest() {
+    // TODO: test hasTeeth
+}"
+261218,69,// TODO: test capitalSnake,requirement,"@Test
+void smallSnakeTest() {
+    // TODO: test smallSnake
+}
+
+/**
+ * Test the property 'capitalSnake'
+ */
+@Test
+void capitalSnakeTest() {","    // TODO: test capitalSnake
+}
+
+/**
+ * Test the property 'scAETHFlowPoints'
+ */
+@Test
+void scAETHFlowPointsTest() {
+    // TODO: test scAETHFlowPoints
+}"
+1512589,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,how to,"if (this == o)
+    return true;
+if (o == null || getClass() != o.getClass())
+    return false;
+
+ComplexBean that = (ComplexBean) o;
+
+// Probably incorrect - comparing Object[] arrays with Arrays.equals
+if (!Arrays.equals(strs, that.strs))
+    return false;","    // Probably incorrect - comparing Object[] arrays with Arrays.equals
+    if (!Arrays.equals(jobs, that.jobs))
+        return false;
+    if (list != null ? !list.equals(that.list) : that.list != null)
+        return false;
+    if (map != null ? !map.equals(that.map) : that.map != null)
+        return false;
+    return clazz != null ? clazz.equals(that.clazz) : that.clazz == null;
+
+}"
+271491,69,// TODO: test dateTime,requirement,"@Test
+void dateTest() {
+    // TODO: test date
+}
+
+/**
+ * Test the property 'dateTime'
+ */
+@Test
+void dateTimeTest() {","    // TODO: test dateTime
+}
+
+/**
+ * Test the property 'uuid'
+ */
+@Test
+void uuidTest() {
+    // TODO: test uuid
+}"
+968911,435,//TODO: make this work:,defect,"					Root<Person> root = criteria.from( Person.class );
+					criteria.where( criteriaBuilder.gt( criteriaBuilder.treat( root, Employee.class ).get( ""salary"" ), new BigDecimal( 100 ) ) );
+
+					result = s.createQuery( criteria ).list();
+//					result = s.createCriteria( Person.class )
+//							.add( Property.forName( ""salary"" ).gt( new BigDecimal( 100 ) ) )
+//							.list();
+					assertThat( result.size(), is( 1 ) );
+					assertSame( result.get( 0 ), q );
+","				//TODO: make this work:
+	/*result = s.createQuery(""select salary from Person where salary > 100"").list();
+	assertEquals( result.size(), 1 );
+	assertEquals( result.get(0), new BigDecimal(1000) );*/
+
+				s.remove( p );
+				s.remove( q );
+			}
+	);
+}"
+1022634,441,"//TODO(b/265202484): fix JavaLangClassCastException: Cannot cast object of
+// type OrgApacheHarmonyXmlDomEntityReferenceImpl to OrgW3cDomText
+// public void testSetEntityResolver() {
+//     // Ordinary case
+//     InputStream source = new ByteArrayInputStream(""<a>&foo;</a>"".getBytes());
+//     InputStream entity = new ByteArrayInputStream(""bar"".getBytes());
+
+//     MockResolver resolver = new MockResolver();
+//     resolver.addEntity(""foo"", ""foo"", new InputSource(entity));
+
+//     Document d;
+
+//     try {
+//         db = dbf.newDocumentBuilder();
+//         db.setEntityResolver(resolver);
+//         d = db.parse(source);
+//     } catch (Exception e) {
+//         throw new RuntimeException(""Unexpected exception"", e);
+//     }
+
+//     Element root = (Element)d.getElementsByTagName(""a"").item(0);
+//     assertEquals(""bar"", ((Text)root.getFirstChild()).getData());
+
+//     // null case
+//     source = new ByteArrayInputStream(""<a>&foo;</a>"".getBytes());
+
+//     try {
+//         db = dbf.newDocumentBuilder();
+//         db.setEntityResolver(null);
+//         d = db.parse(source);
+//     } catch (Exception e) {
+//         throw new RuntimeException(""Unexpected exception"", e);
+//     }
+
+//     root = (Element)d.getElementsByTagName(""a"").item(0);
+//     assertEquals(""foo"", ((EntityReference)root.getFirstChild()).getNodeName());
+// }",defect,"        db = dbf.newDocumentBuilder();
+        db.setErrorHandler(null);
+        db.parse(source);
+    } catch (SAXParseException e) {
+        // Expected
+    } catch (Exception e) {
+        throw new RuntimeException(""Unexpected exception"", e);
+    }
+}
+","
+}"
+639651,211,// TODO: Difficult to determine whether the exception is concurrent issue or not from the error message,how to,"@Override
+protected void verifyAddNotNullColumnToNonEmptyTableFailurePermissible(Throwable e)
+{
+    assertThat(e).hasMessageContaining(""NULL not allowed for column"");
+}
+
+@Test
+@Override
+public void testAddColumnConcurrently()
+{","    // TODO: Difficult to determine whether the exception is concurrent issue or not from the error message
+    abort(""TODO: Enable this test after finding the failure cause"");
+}
+
+@Override
+protected void verifySetColumnTypeFailurePermissible(Throwable e)
+{
+    assertThat(e).hasMessageMatching(""(?s).*(Data conversion error converting|value out of range).*"");
+}
+"
+1118417,488,"/**
+ * Test for advanced push types.
+ * Currently only tests METADATA push type.
+ * todo: add test for URI push
+ */",superficial,"import org.apache.pinot.spi.utils.builder.TableNameBuilder;
+import org.apache.pinot.util.TestUtils;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+","public class SegmentUploadIntegrationTest extends BaseClusterIntegrationTest {
+  private static String _tableNameSuffix;
+
+  @Override
+  protected Map<String, String> getStreamConfigs() {
+    return null;
+  }
+
+  @Override
+  protected String getSortedColumn() {"
+267085,69,// TODO: test id,requirement,"@Test
+public void testPet() {
+    // TODO: test Pet
+}
+
+/**
+ * Test the property 'id'
+ */
+@Test
+public void idTest() {","    // TODO: test id
+}
+
+/**
+ * Test the property 'category'
+ */
+@Test
+public void categoryTest() {
+    // TODO: test category
+}"
+261930,69,// TODO: test EnumTest,requirement," * Model tests for EnumTest
+ */
+class EnumTestTest {
+    private final EnumTest model = new EnumTest();
+
+    /**
+     * Model tests for EnumTest
+     */
+    @Test
+    void testEnumTest() {","    // TODO: test EnumTest
+}
+
+/**
+ * Test the property 'enumString'
+ */
+@Test
+void enumStringTest() {
+    // TODO: test enumString
+}"
+249411,69,// TODO: test className,requirement,"@Test
+public void testAnimal() {
+    // TODO: test Animal
+}
+
+/**
+ * Test the property 'className'
+ */
+@Test
+public void classNameTest() {","    // TODO: test className
+}
+
+/**
+ * Test the property 'color'
+ */
+@Test
+public void colorTest() {
+    // TODO: test color
+}"
+807968,292,// for some reason Travis CI failed sometimes (unstable) on reading the file,defect,"final int attemptLimit = 5;
+int attemptCount = 0;
+
+while (attemptCount <= attemptLimit) {
+    try (InputStream stream = new URL(url).openStream()) {
+        // Attempt to read a byte in order to check whether file content is available
+        available = stream.read() != -1;
+        break;
+    }
+    catch (IOException ex) {","// for some reason Travis CI failed sometimes (unstable) on reading the file
+if (attemptCount < attemptLimit && ex.getMessage().contains(""Unable to read"")) {
+    attemptCount++;
+    available = false;
+    // wait for bad / disconnection time to pass
+    Thread.sleep(1000);
+}
+else {
+    throw ex;
+}"
+277412,69,// TODO: test tags,requirement,"@Test
+public void photoUrlsTest() {
+    // TODO: test photoUrls
+}
+
+/**
+ * Test the property 'tags'
+ */
+@Test
+public void tagsTest() {","    // TODO: test tags
+}
+
+/**
+ * Test the property 'status'
+ */
+@Test
+public void statusTest() {
+    // TODO: test status
+}"
+612491,204,"// assertThat(activity.consumerIrManager).isNotNull(); // TODO API 19
+// assertThat(activity.countryDetector).isNotNull(); // hidden API",requirement,"assertThat(activity.audioManager).isNotNull();
+// assertThat(activity.backupManager).isNotNull(); // hidden API
+// assertThat(activity.batteryManager).isNotNull(); // TODO API 21
+// assertThat(activity.bluetoothManager).isNotNull(); // TODO API 18
+// assertThat(activity.cameraManager).isNotNull(); // hidden API
+// assertThat(activity.captioningManager).isNotNull(); // TODO API 19
+// assertThat(activity.carrierConfigManager).isNotNull(); // TODO API 23
+assertThat(activity.contentClipboardManager).isNotNull();
+assertThat(activity.textClipboardManager).isNotNull();
+assertThat(activity.connectivityManager).isNotNull();","assertThat(activity.devicePolicyManager).isNotNull();
+// assertThat(activity.displayManager).isNotNull(); // TODO API 17
+assertThat(activity.downloadManager).isNotNull();
+assertThat(activity.dropBoxManager).isNotNull();
+// assertThat(activity.ethernetManager).isNotNull(); // hidden API
+// assertThat(activity.fingerprintManager).isNotNull(); // TODO API 23
+// assertThat(activity.hardwarePropertiesManager).isNotNull(); // TODO API 24
+// assertThat(activity.hdmiControlManager).isNotNull(); // hidden API
+// assertThat(activity.inputManager).isNotNull();
+assertThat(activity.inputMethodManager).isNotNull();"
+276688,69,// TODO: test OuterEnum,requirement,"
+/**
+ * Model tests for OuterEnum
+ */
+public class OuterEnumTest {
+    /**
+     * Model tests for OuterEnum
+     */
+    @Test
+    public void testOuterEnum() {","        // TODO: test OuterEnum
+    }
+
+}"
+259255,69,// TODO: test ArrayOfArrayOfNumberOnly,requirement," * Model tests for ArrayOfArrayOfNumberOnly
+ */
+public class ArrayOfArrayOfNumberOnlyTest {
+    private final ArrayOfArrayOfNumberOnly model = new ArrayOfArrayOfNumberOnly();
+
+    /**
+     * Model tests for ArrayOfArrayOfNumberOnly
+     */
+    @Test
+    public void testArrayOfArrayOfNumberOnly() {","    // TODO: test ArrayOfArrayOfNumberOnly
+}
+
+/**
+ * Test the property 'arrayArrayNumber'
+ */
+@Test
+public void arrayArrayNumberTest() {
+    // TODO: test arrayArrayNumber
+}"
+267300,69,// TODO: test dateTime,requirement,"@Test
+void dateTest() {
+    // TODO: test date
+}
+
+/**
+ * Test the property 'dateTime'
+ */
+@Test
+void dateTimeTest() {","    // TODO: test dateTime
+}
+
+/**
+ * Test the property 'uuid'
+ */
+@Test
+void uuidTest() {
+    // TODO: test uuid
+}"
+443779,128,"/**
+ * Note that {@link java.net.Socket#setSendBufferSize(int)} is only a hint.
+ * If this test is flaky it should be ignored.  See HADOOP-13351.
+ */",how to," */
+@Test
+public void testDefaultSendBufferSize() throws IOException {
+  final int sendBufferSize = getSendBufferSize(new Configuration());
+  LOG.info(""If not specified, the auto tuned send buffer size is: {}"",
+      sendBufferSize);
+  assertTrue(""Send buffer size should be non-negative value which is "" +
+      ""determined by system (kernel)."", sendBufferSize > 0);
+}
+","@Test
+public void testSpecifiedSendBufferSize() throws IOException {
+  final Configuration conf1 = new Configuration();
+  conf1.setInt(DFS_CLIENT_SOCKET_SEND_BUFFER_SIZE_KEY, 256 * 1024); // 256 KB
+  final int sendBufferSize1 = getSendBufferSize(conf1);
+
+  final Configuration conf2 = new Configuration();
+  conf2.setInt(DFS_CLIENT_SOCKET_SEND_BUFFER_SIZE_KEY, 1024);       // 1 KB
+  final int sendBufferSize2 = getSendBufferSize(conf2);
+"
+479880,129,// TODO: should return count on first table instead,defect,"                    ""        Lt Join Fast Scan\n"" +
+                    ""            PageFrame\n"" +
+                    ""                Row forward scan\n"" +
+                    ""                Frame forward scan on: a\n"" +
+                    ""            PageFrame\n"" +
+                    ""                Row forward scan\n"" +
+                    ""                Frame forward scan on: a\n""
+    );
+}
+","@Test // TODO: should return count on first table instead
+public void testSelectCount12() throws Exception {
+    assertPlan(
+            ""create table a ( i int, ts timestamp ) timestamp(ts)"",
+            ""select count(*) from (select * from a asof join a b) "",
+            ""Count\n"" +
+                    ""    SelectedRecord\n"" +
+                    ""        AsOf Join Fast Scan\n"" +
+                    ""            PageFrame\n"" +
+                    ""                Row forward scan\n"" +"
+1188159,541,// only secretkeyspec supported for now,requirement,"String algorithm = conf.get(HConstants.CRYPTO_KEY_ALGORITHM_CONF_KEY, HConstants.CIPHER_AES);
+Key key = new SecretKeySpec(keyBytes, algorithm);
+
+// wrap the test key
+byte[] wrappedKeyBytes = EncryptionUtil.wrapKey(conf, ""hbase"", key);
+assertNotNull(wrappedKeyBytes);
+
+// unwrap
+Key unwrappedKey = EncryptionUtil.unwrapKey(conf, ""hbase"", wrappedKeyBytes);
+assertNotNull(unwrappedKey);","// only secretkeyspec supported for now
+assertTrue(unwrappedKey instanceof SecretKeySpec);
+// did we get back what we wrapped?
+assertTrue(""Unwrapped key bytes do not match original"",
+  Bytes.equals(keyBytes, unwrappedKey.getEncoded()));
+
+// unwrap with an incorrect key
+try {
+  EncryptionUtil.unwrapKey(conf, ""other"", wrappedKeyBytes);
+  fail(""Unwrap with incorrect key did not throw KeyException"");"
+253230,69,// TODO: test kind,requirement,"@Test
+void declawedTest() {
+    // TODO: test declawed
+}
+
+/**
+ * Test the property 'kind'
+ */
+@Test
+void kindTest() {","        // TODO: test kind
+    }
+
+}"
+636045,211,// we do not check if the offset is in the middle of a code point,superficial,"// 2 bytes code points
+assertByteCount(""абв"", 0, 0, 1, """");
+assertByteCount(""абв"", 0, 1, 0, """");
+assertByteCount(""абв"", 0, 2, 1, ""а"");
+assertByteCount(""абв"", 0, 4, 1, ""а"");
+assertByteCount(""абв"", 0, 1, 1, utf8Slice(""а"").getBytes(0, 1));
+assertByteCount(""абв"", 2, 2, 2, ""б"");
+assertByteCount(""абв"", 2, 2, 0, """");
+assertByteCount(""абв"", 0, 3, 5, utf8Slice(""аб"").getBytes(0, 3));
+assertByteCountFailure(""абв"", 8, 5, 1);","// we do not check if the offset is in the middle of a code point
+assertByteCount(""абв"", 1, 1, 5, utf8Slice(""а"").getBytes(1, 1));
+assertByteCount(""абв"", 2, 1, 5, utf8Slice(""б"").getBytes(0, 1));
+
+// 3 bytes code points
+assertByteCount(""\u6000\u6001\u6002\u6003"", 0, 0, 2, """");
+assertByteCount(""\u6000\u6001\u6002\u6003"", 0, 1, 1, utf8Slice(""\u6000"").getBytes(0, 1));
+assertByteCount(""\u6000\u6001\u6002\u6003"", 0, 2, 1, utf8Slice(""\u6000"").getBytes(0, 2));
+assertByteCount(""\u6000\u6001\u6002\u6003"", 0, 3, 1, ""\u6000"");
+assertByteCount(""\u6000\u6001\u6002\u6003"", 0, 6, 1, ""\u6000"");"
+891181,360,"// this is a limitation, we identify config repos by material fingerprint later
+// so there cannot be one repository parsed by 2 plugins.
+// This also does not seem like practical use case anyway",impractical case,"    assertThat(repos.isEmpty()).isTrue();
+    assertThat(repos.contains(ConfigRepoConfig.createConfigRepoConfig(git(""http://git""), ""myplugin"", ""id""))).isFalse();
+}
+
+@Test
+public void shouldErrorWhenDuplicateReposExist() {
+    ConfigRepoConfig repo1 = ConfigRepoConfig.createConfigRepoConfig(git(""http://git""), ""myplugin"", ""id"");
+    ConfigRepoConfig repo2 = ConfigRepoConfig.createConfigRepoConfig(git(""http://git""), ""myotherplugin"", ""other-id"");
+    repos.add(repo1);
+    repos.add(repo2);","    repos.validate(null);
+    assertThat(repos.errors().on(""material"")).isEqualTo(""You have defined multiple configuration repositories with the same repository."");
+}
+
+@Test
+public void shouldErrorWhenDuplicateIdsExist() {
+    ConfigRepoConfig repo1 = ConfigRepoConfig.createConfigRepoConfig(git(""http://git1""), ""myplugin"", ""id"");
+    ConfigRepoConfig repo2 = ConfigRepoConfig.createConfigRepoConfig(git(""http://git2""), ""myotherplugin"", ""id"");
+    repos.add(repo1);
+    repos.add(repo2);"
+253440,69,// TODO: test Pet,temporary fix," * Model tests for Pet
+ */
+class PetTest {
+    private final Pet model = new Pet();
+
+    /**
+     * Model tests for Pet
+     */
+    @Test
+    void testPet() {","    // TODO: test Pet
+}
+
+/**
+ * Test the property 'id'
+ */
+@Test
+void idTest() {
+    // TODO: test id
+}"
+757427,255,"// Query with cube and arithmetic expr
+// TODO(kks): enable this later if we support cube",temporary fix,"// aggregation materialized view.
+@Test
+public void testGroupingSetQueryOnAggMV() throws Exception {
+    String createMVSQL = ""create materialized view "" + EMPS_MV_NAME + "" as select empid, deptno, sum(salary) "" +
+            ""from "" + EMPS_TABLE_NAME + "" group by empid, deptno;"";
+    String query = ""select sum(salary), empid, deptno from "" + EMPS_TABLE_NAME + "" group by rollup(empid,deptno);"";
+    starRocksAssert.withMaterializedView(createMVSQL);
+    starRocksAssert.query(query).explainContains(QUERY_USE_EMPS_MV);
+}
+","@Test
+public void testAggQueryOnAggMV9() throws Exception {
+    String createMVSQL = ""create materialized view "" + EMPS_MV_NAME + "" as select deptno, commission, sum(salary) ""
+            + ""from "" + EMPS_TABLE_NAME + "" group by deptno, commission;"";
+    String query = ""select deptno, commission, sum(salary) + 1 from "" + EMPS_TABLE_NAME
+            + "" group by cube(deptno,commission);"";
+    starRocksAssert.withMaterializedView(createMVSQL);
+    starRocksAssert.query(query).explainContains(QUERY_USE_EMPS_MV);
+}
+"
+1061072,476,"// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.",temporary fix,"    ""class Test {}"",
+  };
+  String[] expected = {
+    ""/** */"", ""class Test {}"",
+  };
+  doFormatTest(input, expected);
+}
+
+@Test
+public void commentMostlyUntouched() {","// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.
+String[] input = {
+  ""/**"",
+  "" * Foo."",
+  "" *"",
+  "" *  <!--"",
+  ""*abc"",
+  "" *   def   "",
+  "" * </tr>"",
+  "" *-->bar"","
+250301,69,// TODO: test arrayEnum,requirement,"@Test
+public void justSymbolTest() {
+    // TODO: test justSymbol
+}
+
+/**
+ * Test the property 'arrayEnum'
+ */
+@Test
+public void arrayEnumTest() {","        // TODO: test arrayEnum
+    }
+
+}"
+266599,69,// TODO: test Tag,requirement," * Model tests for Tag
+ */
+public class TagTest {
+    private final Tag model = new Tag();
+
+    /**
+     * Model tests for Tag
+     */
+    @Test
+    public void testTag() {","    // TODO: test Tag
+}
+
+/**
+ * Test the property 'id'
+ */
+@Test
+public void idTest() {
+    // TODO: test id
+}"
+267426,69,// TODO: test OuterObjectWithEnumProperty,requirement," * Model tests for OuterObjectWithEnumProperty
+ */
+class OuterObjectWithEnumPropertyTest {
+    private final OuterObjectWithEnumProperty model = new OuterObjectWithEnumProperty();
+
+    /**
+     * Model tests for OuterObjectWithEnumProperty
+     */
+    @Test
+    void testOuterObjectWithEnumProperty() {","    // TODO: test OuterObjectWithEnumProperty
+}
+
+/**
+ * Test the property 'value'
+ */
+@Test
+void valueTest() {
+    // TODO: test value
+}"
+253880,69,// TODO: test message,requirement,"@Test
+void typeTest() {
+    // TODO: test type
+}
+
+/**
+ * Test the property 'message'
+ */
+@Test
+void messageTest() {","        // TODO: test message
+    }
+
+}"
+269597,69,// TODO: test categoryTag,requirement,"@Test
+public void nameTest() {
+    // TODO: test name
+}
+
+/**
+ * Test the property 'categoryTag'
+ */
+@Test
+public void categoryTagTest() {","        // TODO: test categoryTag
+    }
+
+}"
+743842,230,"// TODO: Remove this line, and replace 'clusterManagerRole' with CLUSTER_MANAGER_ROLE, after MASTER_ROLE is removed.
+// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",temporary fix,"        public Path nodeConfigPath(int nodeOrdinal) {
+            return null;
+        }
+    },
+    0,
+    """",
+    mockPlugins(),
+    Function.identity()
+);
+cluster.beforeTest(random());","DiscoveryNodeRole clusterManagerRole = randomFrom(DiscoveryNodeRole.CLUSTER_MANAGER_ROLE, DiscoveryNodeRole.MASTER_ROLE);
+List<DiscoveryNodeRole> roles = new ArrayList<>();
+for (int i = 0; i < numNodes; i++) {
+    final DiscoveryNodeRole role = i == numNodes - 1 && roles.contains(clusterManagerRole) == false
+        ? clusterManagerRole  // last node and still no cluster-manager
+        : randomFrom(clusterManagerRole, DiscoveryNodeRole.DATA_ROLE, DiscoveryNodeRole.INGEST_ROLE);
+    roles.add(role);
+}
+
+cluster.setBootstrapClusterManagerNodeIndex("
+237511,64,// TODO b/300201845 - encapsulate parents and childs private attributes,design,"      .containsExactly(""dep"");
+  assertThat(
+          Sequence.cast(parentInfo.getValue(""tools""), ConfiguredTarget.class, ""tools"").stream()
+              .map(ConfiguredTarget::getLabel)
+              .map(Label::getName))
+      .containsExactly(""tool_child"");
+}
+
+@Test
+public void extendRule_attributeCollision() throws Exception {","// TODO b/300201845 - encapsulate parents and childs private attributes
+scratchParentRule(""parent_library"");
+scratch.file(
+    ""extend_rule_testing/child.bzl"",
+    """"""
+    load(""//extend_rule_testing/parent:parent.bzl"", ""parent_library"")
+
+    def _impl(ctx):
+        pass
+"
+29973,8,// TODO multivalue fields,requirement,"import java.util.function.Function;
+import java.util.function.Supplier;
+
+public class ToLongTests extends AbstractScalarFunctionTestCase {
+    public ToLongTests(@Name(""TestCase"") Supplier<TestCaseSupplier.TestCase> testCaseSupplier) {
+        this.testCase = testCaseSupplier.get();
+    }
+
+    @ParametersFactory
+    public static Iterable<Object[]> parameters() {","// TODO multivalue fields
+String read = ""Attribute[channel=0]"";
+Function<String, String> evaluatorName = s -> ""ToLongFrom"" + s + ""Evaluator[field="" + read + ""]"";
+List<TestCaseSupplier> suppliers = new ArrayList<>();
+
+TestCaseSupplier.forUnaryLong(suppliers, read, DataType.LONG, l -> l, Long.MIN_VALUE, Long.MAX_VALUE, List.of());
+
+TestCaseSupplier.forUnaryBoolean(suppliers, evaluatorName.apply(""Boolean""), DataType.LONG, b -> b ? 1L : 0L, List.of());
+
+// datetimes"
+845325,308,// TODO: Remove once Distributions has shipped.,temporary fix,"public class SimpleParDoFnTest {
+  @Rule public ExpectedException thrown = ExpectedException.none();
+
+  private PipelineOptions options;
+  private TestOperationContext operationContext;
+  private BatchModeExecutionContext.StepContext stepContext;
+
+  @Before
+  public void setUp() {
+    options = PipelineOptionsFactory.create();","// TODO: Remove once Distributions has shipped.
+options
+    .as(DataflowPipelineDebugOptions.class)
+    .setExperiments(Lists.newArrayList(SimpleParDoFn.OUTPUTS_PER_ELEMENT_EXPERIMENT));
+
+operationContext = TestOperationContext.create();
+stepContext =
+    BatchModeExecutionContext.forTesting(
+            options, operationContext.counterFactory(), ""testStage"")
+        .getStepContext(operationContext);"
+254326,69,// TODO: test triangleType,requirement,"@Test
+void shapeTypeTest() {
+    // TODO: test shapeType
+}
+
+/**
+ * Test the property 'triangleType'
+ */
+@Test
+void triangleTypeTest() {","        // TODO: test triangleType
+    }
+
+}"
+1573591,945,// TODO extend for new properties,requirement,"      CamundaSecurityProperties.class
+    },
+    webEnvironment = SpringBootTest.WebEnvironment.NONE)
+@ActiveProfiles({""test-properties"", ""operate"", ""standalone""})
+public class PropertiesIT {
+
+  @Autowired private OperateProperties operateProperties;
+  @Autowired private SecurityConfiguration securityConfiguration;
+
+  @Test","// TODO extend for new properties
+public void testProperties() {
+  assertThat(operateProperties.getImporter().isStartLoadingDataOnStartup()).isFalse();
+  assertThat(operateProperties.getBatchOperationMaxSize()).isEqualTo(500);
+  assertThat(operateProperties.getElasticsearch().getClusterName()).isEqualTo(""clusterName"");
+  assertThat(operateProperties.getElasticsearch().getHost()).isEqualTo(""someHost"");
+  assertThat(operateProperties.getElasticsearch().getPort()).isEqualTo(12345);
+  assertThat(operateProperties.getElasticsearch().getDateFormat()).isEqualTo(""yyyy-MM-dd"");
+  assertThat(operateProperties.getElasticsearch().getBatchSize()).isEqualTo(111);
+  assertThat(operateProperties.getZeebeElasticsearch().getClusterName())"
+1230417,607,// TODO: Make this work for GLES,requirement,"                }
+            }
+        }
+    }
+    return n;
+}
+
+static void saveScreenShotGL(int w, int h, boolean premult, String name) {
+    ByteBuffer image = memAlloc(w * h * 4);
+","// TODO: Make this work for GLES
+glReadPixels(0, 0, w, h, GL_RGBA, GL_UNSIGNED_BYTE, image);
+if (premult) {
+    unpremultiplyAlpha(image, w, h, w * 4);
+} else {
+    setAlpha(image, w, h, w * 4, (byte)255);
+}
+flipHorizontal(image, w, h, w * 4);
+stbi_write_png(name, w, h, 4, image, w * 4);
+memFree(image);"
+258237,69,// TODO: test FileSchemaTestClass,requirement," * Model tests for FileSchemaTestClass
+ */
+class FileSchemaTestClassTest {
+    private final FileSchemaTestClass model = new FileSchemaTestClass();
+
+    /**
+     * Model tests for FileSchemaTestClass
+     */
+    @Test
+    void testFileSchemaTestClass() {","    // TODO: test FileSchemaTestClass
+}
+
+/**
+ * Test the property '_file'
+ */
+@Test
+void _fileTest() {
+    // TODO: test _file
+}"
+989114,441,// TODO change in exhaustive,requirement,"
+String[] collationValues = Collator.getKeywordValues(""collation"");
+for (int j = 0; j < collationValues.length; ++j) {
+    keywords.add(""@collation="" + collationValues[j]);
+}
+
+for (int i = 0; i < list.length; ++i) {
+    for (Iterator it = keywords.iterator(); it.hasNext();) {
+        String collationValue = (String) it.next();
+        String localeString = list[i].toString();","if (!KEY_LOCALES.contains(localeString)) continue; // TODO change in exhaustive
+ULocale locale = new ULocale(localeString + collationValue);
+if (collationValue.length() > 0 && !Collator.getFunctionalEquivalent(""collation"", locale).equals(locale)) {
+    //logln(""Skipping "" + locale);
+    continue;
+}
+
+if (locale.getCountry().length() != 0) {
+    continue;
+}"
+380596,104,// TODO(adriancole): Find a home for this generic conversion between Call and Java 8.,how to,"  };
+
+  http.newCall(supplier, NULL, ""test"").execute();
+
+  AggregatedHttpRequest request = server.takeRequest().request();
+  assertThat(request.method()).isEqualTo(HttpMethod.POST);
+  assertThat(request.path()).isEqualTo(""/"");
+  assertThat(request.contentUtf8()).isEqualTo(""hello world"");
+}
+","// TODO(adriancole): Find a home for this generic conversion between Call and Java 8.
+static final class CompletableCallback<T> extends CompletableFuture<T> implements Callback<T> {
+
+  @Override public void onSuccess(T value) {
+    complete(value);
+  }
+
+  @Override public void onError(Throwable t) {
+    completeExceptionally(t);
+  }"
+1215583,574,"//FIXME test with just, empty, callable, interval",requirement,"	assertThat(onNextDropped).isEmpty();
+	assertThat(onErrorDropped).isEmpty();
+	assertThat(onSchedulerHandleError).isEmpty();
+	assertThat(onOperatorError)
+			.hasSize(2) //2 because base subscribe throws exception
+			.last().isInstanceOf(RejectedExecutionException.class);
+}
+
+@Test
+public void subscribeOnMono() throws Exception {","//FIXME test with just, empty, callable, interval
+scheduler.tasksRemaining.set(0); //1 subscribe then request
+Mono<Long> flux = Mono.just(1L)
+                      .hide()
+                      .subscribeOn(scheduler);
+
+CountDownLatch latch = new CountDownLatch(1);
+flux.subscribe(new TestSub(latch));
+
+latch.await(500, TimeUnit.MILLISECONDS);"
+251651,69,// TODO: test validations,requirement," *          if the Api call fails
+ */
+@Test
+void uploadFileTest() {
+    Long petId = null;
+    String additionalMetadata = null;
+    File _file = null;
+
+    ModelApiResponse response = api.uploadFile(petId, additionalMetadata, _file);
+","        // TODO: test validations
+    }
+    
+}"
+256290,69,// TODO: test _double,requirement,"@Test
+public void _floatTest() {
+    // TODO: test _float
+}
+
+/**
+ * Test the property '_double'
+ */
+@Test
+public void _doubleTest() {","    // TODO: test _double
+}
+
+/**
+ * Test the property 'string'
+ */
+@Test
+public void stringTest() {
+    // TODO: test string
+}"
+504352,140,"/**
+ * Tests that the workaround for https://github.com/quarkusio/quarkus/issues/43703 /
+ * https://github.com/quarkusio/quarkus/issues/42255
+ * is effective.
+ */",temporary fix,"import org.hibernate.SessionFactory;
+import org.hibernate.engine.spi.SessionFactoryImplementor;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
+
+import io.quarkus.hibernate.orm.MyEntity;
+import io.quarkus.hibernate.orm.SmokeTestUtils;
+import io.quarkus.hibernate.orm.runtime.config.DialectVersions;
+import io.quarkus.test.QuarkusUnitTest;
+","// TODO remove this test when change the default to ""always enabled"" when we solve version detection problems
+//   See https://github.com/quarkusio/quarkus/issues/43703
+//   See https://github.com/quarkusio/quarkus/issues/42255
+public class DbVersionCheckDisabledExplicitlyTest {
+
+    private static final String ACTUAL_H2_VERSION = DialectVersions.Defaults.H2;
+    // We will set the DB version to something higher than the actual version: this is invalid.
+    private static final String CONFIGURED_DB_VERSION = ""999.999.0"";
+    static {
+        assertThat(ACTUAL_H2_VERSION)"
+268436,69,// TODO: test attributeString,requirement,"@Test
+void testXmlItem() {
+    // TODO: test XmlItem
+}
+
+/**
+ * Test the property 'attributeString'
+ */
+@Test
+void attributeStringTest() {","    // TODO: test attributeString
+}
+
+/**
+ * Test the property 'attributeNumber'
+ */
+@Test
+void attributeNumberTest() {
+    // TODO: test attributeNumber
+}"
+273629,69,// TODO: test capitalCamel,requirement,"@Test
+void smallCamelTest() {
+    // TODO: test smallCamel
+}
+
+/**
+ * Test the property 'capitalCamel'
+ */
+@Test
+void capitalCamelTest() {","    // TODO: test capitalCamel
+}
+
+/**
+ * Test the property 'smallSnake'
+ */
+@Test
+void smallSnakeTest() {
+    // TODO: test smallSnake
+}"
+610921,198,// TODO: I'm not sure what record.cells is supposed to return. Returning single valued lists seems weird,how to,"public void crossFunctionRecordFieldLookup() throws Exception {
+    String tests[][] = {
+            { ""'john'.cross('My Address Book', 'friend').cells[0]['friend'].value"", ""john"" },
+            { ""'john'.cross('My Address Book', 'friend').index.toString()"", ""[0, 2]"" },
+            { ""'john'.cross('My Address Book', 'friend').columnNames[0].toString()"", ""[friend, address]"" },
+            // Make sure delegation from WrappedRow to Row works
+            { ""'john'.cross('My Address Book', 'friend').flagged.toString()"", ""[false, false]"" },
+            { ""'john'.cross('My Address Book', 'friend').starred.toString()"", ""[false, false]"" },
+            // Unknown field names return null value rather than an error
+            { ""'john'.cross('My Address Book', 'friend').foo.toString()"", ""[null, null]"" },","        // TODO: I'm not sure what record.cells is supposed to return. Returning single valued lists seems weird
+        { ""'john'.cross('My Address Book', 'friend').record.cells['friend'].value.toString()"", ""[[john], [john]]"" },
+        { ""'john'.cross('My Address Book', 'friend').record.index.toString()"", ""[0, 2]"" },
+        { ""'john'.cross('My Address Book', 'friend').record.fromRowIndex.toString()"", ""[0, 2]"" },
+        { ""'john'.cross('My Address Book', 'friend').record.toRowIndex.toString()"", ""[1, 3]"" },
+        { ""'john'.cross('My Address Book', 'friend').record.rowCount.toString()"", ""[1, 1]"" },
+        // Below returns null on error intentionally
+        { ""'john'.cross('My Address Book', 'friend').record.foo.toString()"", ""[null, null]"" },
+};
+for (String[] test : tests) {"
+673606,213,"/**
+ * Tests for FingerprintGestureController.
+ * TODO: These tests aren't really for server code, so this isn't their ideal home.
+ */",other,"import android.accessibilityservice.FingerprintGestureController.FingerprintGestureCallback;
+import android.accessibilityservice.IAccessibilityServiceConnection;
+
+import com.android.server.accessibility.test.MessageCapturingHandler;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+","public class FingerprintGestureControllerTest {
+    @Mock IAccessibilityServiceConnection mMockAccessibilityServiceConnection;
+    @Mock FingerprintGestureCallback mMockFingerprintGestureCallback;
+    FingerprintGestureController mFingerprintGestureController;
+
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+        mFingerprintGestureController =
+                new FingerprintGestureController(mMockAccessibilityServiceConnection);"
+333625,81,// TODO test that remove(obj) with duplicates removes the right element,requirement,"
+/*
+ * @test
+ * @bug     8266571
+ * @summary Basic tests for SequencedCollection
+ * @modules java.base/java.util:open
+ * @build   SimpleDeque SimpleList SimpleSortedSet
+ * @run     testng Basic
+ */
+","// TODO test that remove(obj) with duplicates removes the right element
+
+public class Basic {
+
+    // ========== Data Providers ==========
+
+    static final List<String> ORIGINAL = List.of(""a"", ""b"", ""c"", ""d"", ""e"", ""f"", ""g"");
+
+    static List<String> cklist(List<String> contents) {
+        return Collections.checkedList(contents, String.class);"
+253676,69,// TODO: test validations,requirement,"
+
+/**
+ * successful operation
+ */
+@Test
+public void shouldSee200AfterGetPetById() {
+    Long petId = null;
+    api.getPetById()
+            .petIdPath(petId).execute(r -> r.prettyPeek());","    // TODO: test validations
+}
+
+/**
+ * Invalid ID supplied
+ */
+@Test
+public void shouldSee400AfterGetPetById() {
+    Long petId = null;
+    api.getPetById()"
+639634,211,// TODO https://github.com/trinodb/trino/issues/18499,defect,"            .build();
+}
+
+/**
+ * This method relies on global state of QueryTracker. It may fail because of QueryTracker.pruneExpiredQueries()
+ * You must ensure that query was issued and this method invoked in isolation -
+ * which guarantees that there is less other queries between query creation and obtaining query info than `query.max-history`
+ */
+private long getPhysicalInputPositions(QueryId queryId)
+{","        // TODO https://github.com/trinodb/trino/issues/18499
+        return getDistributedQueryRunner().getCoordinator()
+                .getQueryManager()
+                .getFullQueryInfo(queryId)
+                .getQueryStats()
+                .getPhysicalInputPositions();
+    }
+}"
+1206419,570,"// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]",how to,"@Test
+public void testAddedRowsTimestampRightBounded() throws SQLException {
+
+    // load test data to database
+    final Connection con = ((DBCPService) runner.getControllerService(""dbcp"")).getConnection();
+    Statement stmt = con.createStatement();
+
+    try {
+        stmt.execute(""drop table TEST_QUERY_DB_TABLE"");
+    } catch (final SQLException ignored) {","    // Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]
+}
+
+stmt.execute(""create table TEST_QUERY_DB_TABLE (id integer not null, name varchar(100), scale float, created_on timestamp, bignum bigint default 0)"");
+stmt.execute(""insert into TEST_QUERY_DB_TABLE (id, name, scale, created_on) VALUES (0, 'Joe Smith', 1.0, '1962-09-23 03:23:34.234')"");
+stmt.execute(""insert into TEST_QUERY_DB_TABLE (id, name, scale, created_on) VALUES (1, 'Carrie Jones', 5.0, '2000-01-01 03:23:34.234')"");
+stmt.execute(""insert into TEST_QUERY_DB_TABLE (id, name, scale, created_on) VALUES (2, NULL, 2.0, '2010-01-01 00:00:00')"");
+
+runner.setProperty(GenerateTableFetch.TABLE_NAME, ""TEST_QUERY_DB_TABLE"");
+runner.setIncomingConnection(false);"
+322344,81,// I have put this as it was complaining about systemid,temporary fix,"public void testcase13() throws Exception {
+    String outputFile = USER_DIR + ""saxtf013.out"";
+    String goldFile = GOLDEN_DIR + ""saxtf013GF.out"";
+    try(FileInputStream fis = new FileInputStream(XML_FILE)) {
+        // The transformer will use a SAX parser as it's reader.
+        XMLReader reader = XMLReaderFactory.createXMLReader();
+
+        SAXTransformerFactory saxTFactory
+                = (SAXTransformerFactory) TransformerFactory.newInstance();
+        TemplatesHandler thandler = saxTFactory.newTemplatesHandler();","// I have put this as it was complaining about systemid
+thandler.setSystemId(""file:///"" + USER_DIR);
+
+reader.setContentHandler(thandler);
+reader.parse(XSLT_FILE);
+XMLFilter filter
+        = saxTFactory.newXMLFilter(thandler.getTemplates());
+filter.setParent(reader);
+
+filter.setContentHandler(new MyContentHandler(outputFile));"
+274102,69,// TODO: test type,requirement,"@Test
+void testParentWithNullable() {
+    // TODO: test ParentWithNullable
+}
+
+/**
+ * Test the property 'type'
+ */
+@Test
+void typeTest() {","    // TODO: test type
+}
+
+/**
+ * Test the property 'nullableProperty'
+ */
+@Test
+void nullablePropertyTest() {
+    // TODO: test nullableProperty
+}"
+558646,149,"// Doesn't work in MSQ, although it's not really MSQ's fault. In MSQ, the second field (foo2.dim3) is returned as
+// the string ""[a, b]"" because it gets run through DimensionHandlerUtils.convertObjectToString in
+// IndexedTableDimensionSelector. In native, this doesn't happen, because we don't have as much type information,
+// and we end up using IndexedTableColumnValueSelector instead. This is really a problem with
+// IndexedTableColumnSelectorFactory: it assumes strings are not multi-valued, even though they might be.",defect,"          new Object[]{""a"", 9L}
+      )
+  );
+}
+
+@DecoupledTestConfig(quidemReason = QuidemTestCaseReason.SLIGHTLY_WORSE_FILTER_PUSHED_TO_JOIN_OPERAND)
+@MethodSource(""provideQueryContexts"")
+@ParameterizedTest(name = ""{0}"")
+public void testVirtualColumnOnMVFilterJoinExpression(Map<String, Object> queryContext)
+{","msqIncompatible();
+
+testQuery(
+    ""SELECT foo1.dim3, foo2.dim3 FROM druid.numfoo as foo1 INNER JOIN druid.numfoo as foo2 ""
+    + ""ON MV_FILTER_ONLY(foo1.dim3, ARRAY['a']) = MV_FILTER_ONLY(foo2.dim3, ARRAY['a'])\n"",
+    queryContext,
+    ImmutableList.of(
+        newScanQueryBuilder()
+            .dataSource(
+                join("
+253538,69,// TODO: test AdditionalPropertiesInteger,requirement," * Model tests for AdditionalPropertiesInteger
+ */
+class AdditionalPropertiesIntegerTest {
+    private final AdditionalPropertiesInteger model = new AdditionalPropertiesInteger();
+
+    /**
+     * Model tests for AdditionalPropertiesInteger
+     */
+    @Test
+    void testAdditionalPropertiesInteger() {","    // TODO: test AdditionalPropertiesInteger
+}
+
+/**
+ * Test the property 'name'
+ */
+@Test
+void nameTest() {
+    // TODO: test name
+}"
+273379,69,// TODO: test _byte,requirement,"@Test
+void stringTest() {
+    // TODO: test string
+}
+
+/**
+ * Test the property '_byte'
+ */
+@Test
+void _byteTest() {","    // TODO: test _byte
+}
+
+/**
+ * Test the property 'binary'
+ */
+@Test
+void binaryTest() {
+    // TODO: test binary
+}"
+538272,144,"/**
+ * Looks at contents of a text file and sees whether or not it has windows-style newlines, or unix style.
+ * Used in tests to make annotation processors generate files matching signature files to verify contents with.
+ * Why not do it the other way around, you ask (i.e. convert the the signature files when reading them)?
+ * The assertions framework used in these annotation tests makes that very hard and fragile with the google assertions.
+ *
+ * @param fullyQualifiedName the resource name to look at.
+ * @return either {@link AnnotationConstants#DEFAULT_NEW_LINE} or {@link AnnotationConstants#WINDOWS_NEW_LINE}.
+ * @throws IOException on I/O error.
+ */",how to,"import static java.util.Arrays.copyOf;
+import static org.neo4j.annotations.AnnotationConstants.DEFAULT_NEW_LINE;
+import static org.neo4j.annotations.AnnotationConstants.WINDOWS_NEW_LINE;
+
+import com.google.common.primitives.Bytes;
+import java.io.IOException;
+import java.io.InputStream;
+import org.neo4j.annotations.api.PublicApiAnnotationProcessor;
+
+public class AnnotationTestHelper {","public static String detectNewLineSignature(String fullyQualifiedName) throws IOException {
+    try (InputStream inputStream =
+            PublicApiAnnotationProcessor.class.getClassLoader().getResourceAsStream(fullyQualifiedName)) {
+        byte[] buffer = new byte[1024];
+        int read = inputStream.read(buffer);
+        return hasWindowsNewLineSignature(copyOf(buffer, read)) ? WINDOWS_NEW_LINE : DEFAULT_NEW_LINE;
+    }
+}
+
+private static boolean hasWindowsNewLineSignature(byte[] buffer) {"
+251553,69,// TODO: test name,requirement,"@Test
+void idTest() {
+    // TODO: test id
+}
+
+/**
+ * Test the property 'name'
+ */
+@Test
+void nameTest() {","        // TODO: test name
+    }
+
+}"
+984495,435,"/**
+ * TODO : javadoc
+ *
+ * @author Steve Ebersole
+ */",documentation,"/*
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ * Copyright Red Hat Inc. and Hibernate Authors
+ */
+package org.hibernate.orm.test.jpa.cacheable.annotation;
+import jakarta.persistence.Cacheable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+","@Entity
+@Cacheable
+public class ExplicitlyCacheableEntity {
+	private Long id;
+	private String name;
+
+	@Id
+	public Long getId() {
+		return id;
+	}"
+258711,69,// TODO: test ModelApiResponse,requirement," * Model tests for ModelApiResponse
+ */
+class ModelApiResponseTest {
+    private final ModelApiResponse model = new ModelApiResponse();
+
+    /**
+     * Model tests for ModelApiResponse
+     */
+    @Test
+    void testModelApiResponse() {","    // TODO: test ModelApiResponse
+}
+
+/**
+ * Test the property 'code'
+ */
+@Test
+void codeTest() {
+    // TODO: test code
+}"
+269803,69,// TODO: test status,requirement,"@Test
+public void tagsTest() {
+    // TODO: test tags
+}
+
+/**
+ * Test the property 'status'
+ */
+@Test
+public void statusTest() {","        // TODO: test status
+    }
+
+}"
+276892,69,// TODO: test smallCamel,requirement,"@Test
+public void testCapitalization() {
+    // TODO: test Capitalization
+}
+
+/**
+ * Test the property 'smallCamel'
+ */
+@Test
+public void smallCamelTest() {","    // TODO: test smallCamel
+}
+
+/**
+ * Test the property 'capitalCamel'
+ */
+@Test
+public void capitalCamelTest() {
+    // TODO: test capitalCamel
+}"
+339027,81,"// This is a bit shaky. It doesn't handle continuation
+// lines, but our client shouldn't send any.
+// Read a line from the input stream, swallowing the final
+// \r\n sequence. Stops at the first \n, doesn't complain
+// if it wasn't preceded by '\r'.
+//",temporary fix,"final ServerSocket ss;
+final boolean secure;
+ConcurrentLinkedQueue<Socket> connections = new ConcurrentLinkedQueue<>();
+volatile boolean stopped;
+DummyServer(ServerSocket ss, boolean secure) {
+    super(""DummyServer["" + ss.getLocalPort()+""]"");
+    this.secure = secure;
+    this.ss = ss;
+}
+","String readLine(InputStream r) throws IOException {
+    StringBuilder b = new StringBuilder();
+    int c;
+    while ((c = r.read()) != -1) {
+        if (c == '\n') break;
+        b.appendCodePoint(c);
+    }
+    if (b.codePointAt(b.length() -1) == '\r') {
+        b.delete(b.length() -1, b.length());
+    }"
+38040,8,// TODO: implement tests,requirement," * 2.0; you may not use this file except in compliance with the Elastic License
+ * 2.0.
+ */
+
+package org.elasticsearch.xpack.shutdown;
+
+import org.elasticsearch.test.ESTestCase;
+
+public class ShutdownTests extends ESTestCase {
+    public void testIt() {","        // TODO: implement tests
+    }
+}"
+273453,69,// TODO: test name,requirement,"@Test
+void testDeprecatedObject() {
+    // TODO: test DeprecatedObject
+}
+
+/**
+ * Test the property 'name'
+ */
+@Test
+void nameTest() {","        // TODO: test name
+    }
+
+}"
+277818,69,// TODO: test map,requirement,"@Test
+public void dateTimeTest() {
+    // TODO: test dateTime
+}
+
+/**
+ * Test the property 'map'
+ */
+@Test
+public void mapTest() {","        // TODO: test map
+    }
+
+}"
+490738,135,"// TODO: for non-persistent topics, the subscription doesn't exist",requirement,"    producer.send(message.getBytes());
+}
+
+assertEquals(new HashSet<>(admin.topics().getList(namespace)),
+        Set.of(partitionedTopicName + ""-partition-0"", partitionedTopicName + ""-partition-1"",
+                partitionedTopicName + ""-partition-2"", partitionedTopicName + ""-partition-3""));
+
+// test cumulative stats for partitioned topic
+topicStats = admin.topics().getPartitionedStats(partitionedTopicName,false);
+if (isPersistent) {","    // TODO: for non-persistent topics, the subscription doesn't exist
+    assertEquals(topicStats.getSubscriptions().keySet(), Set.of(""my-sub""));
+    assertEquals(topicStats.getSubscriptions().get(""my-sub"").getConsumers().size(), 1);
+    assertEquals(topicStats.getSubscriptions().get(""my-sub"").getMsgBacklog(), 10);
+}
+assertEquals(topicStats.getPublishers().size(), 1);
+assertEquals(topicStats.getPartitions(), new HashMap<>());
+
+// test per partition stats for partitioned topic
+topicStats = admin.topics().getPartitionedStats(partitionedTopicName,true);"
+279505,69,// TODO: test string,requirement,"@Test
+public void decimalTest() {
+    // TODO: test decimal
+}
+
+/**
+ * Test the property 'string'
+ */
+@Test
+public void stringTest() {","    // TODO: test string
+}
+
+/**
+ * Test the property '_byte'
+ */
+@Test
+public void _byteTest() {
+    // TODO: test _byte
+}"
+1371742,733,// TODO,requirement,"    // TODO
+}
+
+@Test
+@Ignore(""Not implemented on V2"")
+public void handleJson() {
+}
+
+@Test
+public void handleAutomaticPowerOffButtonMode() {","    // TODO
+}
+
+@Test
+@Ignore(""Not implemented on V2"")
+public void handleVirtualSound() {
+}
+
+@Test
+@Ignore(""Not implemented on V2"")"
+991460,441,"// Design limitation - typeless u extension keyword 00 below is interpreted as a boolean value true/yes.
+// With the legacy keyword syntax, ""yes"" is used for such boolean value instead of ""true"".
+// However, once the legacy keyword is translated back to BCP 47 u extension, key ""00"" is unknown,
+// so ""yes"" is preserved - not mapped to ""true"". We could change the code to automatically transform
+// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes"".",other,"{""U"", ""ja_JP@calendar=japanese;currency=JPY"", ""E"", ""u"", ""attr1-ca-gregory"", ""T"", ""ja-JP-u-attr1-ca-gregory"", ""ja_JP@attribute=attr1;calendar=gregorian""},
+{""U"", ""en@colnumeric=yes"", ""K"", ""kn"", """", ""T"", ""en-u-kn-true"", ""en@colnumeric=yes""},
+{""L"", ""th"", ""R"", ""th"", ""K"", ""nu"", ""thai"", ""T"", ""th-TH-u-nu-thai"", ""th_TH@numbers=thai""},
+{""U"", ""zh_Hans"", ""R"", ""sg"", ""K"", ""ca"", ""badcalendar"", ""X""},
+{""U"", ""zh_Hans"", ""R"", ""sg"", ""K"", ""cal"", ""gregory"", ""X""},
+{""E"", ""z"", ""ExtZ"", ""L"", ""en"", ""T"", ""en-z-extz"", ""en@z=extz""},
+{""E"", ""z"", ""ExtZ"", ""L"", ""en"", ""E"", ""z"", """", ""T"", ""en"", ""en""},
+{""E"", ""z"", ""ExtZ"", ""L"", ""en"", ""E"", ""z"", null, ""T"", ""en"", ""en""},
+{""E"", ""a"", ""x"", ""X""},
+{""E"", ""a"", ""abc_def"", ""T"", ""und-a-abc-def"", ""@a=abc-def""},","{""L"", ""en"", ""E"", ""u"", ""bbb-aaa-00"", ""T"", ""en-u-aaa-bbb-00-yes"", ""en@00=yes;attribute=aaa-bbb""},
+{""L"", ""fr"", ""R"", ""FR"", ""P"", ""Yoshito-ICU"", ""T"", ""fr-FR-x-yoshito-icu"", ""fr_FR@x=yoshito-icu""},
+{""L"", ""ja"", ""R"", ""jp"", ""K"", ""ca"", ""japanese"", ""T"", ""ja-JP-u-ca-japanese"", ""ja_JP@calendar=japanese""},
+{""K"", ""co"", ""PHONEBK"", ""K"", ""ca"", ""gregory"", ""L"", ""De"", ""T"", ""de-u-ca-gregory-co-phonebk"", ""de@calendar=gregorian;collation=phonebook""},
+{""E"", ""o"", ""OPQR"", ""E"", ""a"", ""aBcD"", ""T"", ""und-a-abcd-o-opqr"", ""@a=abcd;o=opqr""},
+{""E"", ""u"", ""nu-thai-ca-gregory"", ""L"", ""TH"", ""T"", ""th-u-ca-gregory-nu-thai"", ""th@calendar=gregorian;numbers=thai""},
+{""L"", ""en"", ""K"", ""tz"", ""usnyc"", ""R"", ""US"", ""T"", ""en-US-u-tz-usnyc"", ""en_US@timezone=America/New_York""},
+{""L"", ""de"", ""K"", ""co"", ""phonebk"", ""K"", ""ks"", ""level1"", ""K"", ""kk"", ""true"", ""T"", ""de-u-co-phonebk-kk-true-ks-level1"", ""de@collation=phonebook;colnormalization=yes;colstrength=primary""},
+{""L"", ""en"", ""R"", ""US"", ""K"", ""ca"", ""gregory"", ""T"", ""en-US-u-ca-gregory"", ""en_US@calendar=gregorian""},
+{""L"", ""en"", ""R"", ""US"", ""K"", ""cal"", ""gregory"", ""X""},"
+1495929,822,"// TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
+//assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());",dependency,"assertThat(resourcePaths.size(), is(2));
+assertThat(resourcePaths, containsInAnyOrder(expected));
+
+String realPath = servletContext.getRealPath(""/"");
+assertThat(realPath, notNullValue());
+assertThat(servletContext.getRealPath(""/WEB-INF/""), endsWith(""/WEB-INF/""));
+// TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
+//assertThat(servletContext.getRealPath(resourcePaths.get(1)), endsWith(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""));
+
+assertThat(servletContext.getResource(""/WEB-INF/""), notNullValue());","
+HttpTester.Response response1 = HttpTester.parseResponse(connector.getResponse(""""""
+    GET /resource HTTP/1.1\r
+    Host: local\r
+    Connection: close\r
+    \r
+    """"""));
+
+assertThat(response1.getStatus(), is(HttpStatus.OK_200));
+assertThat(response1.getContent(), containsString(""/WEB-INF""));"
+278892,69,// TODO: test ArrayOfNumberOnly,requirement," * Model tests for ArrayOfNumberOnly
+ */
+public class ArrayOfNumberOnlyTest {
+    private final ArrayOfNumberOnly model = new ArrayOfNumberOnly();
+
+    /**
+     * Model tests for ArrayOfNumberOnly
+     */
+    @Test
+    public void testArrayOfNumberOnly() {","    // TODO: test ArrayOfNumberOnly
+}
+
+/**
+ * Test the property 'arrayNumber'
+ */
+@Test
+public void arrayNumberTest() {
+    // TODO: test arrayNumber
+}"
+260279,69,"//
+//String orderId = null;
+//
+//api.deleteOrder(orderId);
+
+// TODO: test validations",requirement,"/**
+ * Delete purchase order by ID
+ *
+ * For valid response try integer IDs with value &lt; 1000. Anything above 1000 or nonintegers will generate API errors
+ *
+ * @throws ApiException
+ *          if the Api call fails
+ */
+@Test
+void deleteOrderTest() throws ApiException {","}
+/**
+ * Returns pet inventories by status
+ *
+ * Returns a map of status codes to quantities
+ *
+ * @throws ApiException
+ *          if the Api call fails
+ */
+@Test"
+982711,435,// todo (6.0) : should we define the rule with the integer as optional and then give a better exception?,how to,"/**
+ * @author Steve Ebersole
+ * @author Andrea Boriero
+ * @author Chris Cranford
+ */
+@ExtendWith( ExpectedExceptionExtension.class )
+public class ParameterTests extends BaseSqmUnitTest {
+	@Test
+	@ExpectedException( SemanticException.class )
+	public void testInvalidLegacyPositionalParam() {","	// todo (6.0) : should we define the rule with the integer as optional and then give a better exception?
+	interpretSelect( ""select a.nickName from Person a where a.numberOfToes = ?"" );
+}
+
+@Test
+@ExpectedException( SemanticException.class )
+public void testZeroBasedPositionalParam() {
+	interpretSelect( ""select a.nickName from Person a where a.numberOfToes = ?0"" );
+}
+"
+278650,69,// TODO: test value,requirement,"@Test
+public void testOuterObjectWithEnumProperty() {
+    // TODO: test OuterObjectWithEnumProperty
+}
+
+/**
+ * Test the property 'value'
+ */
+@Test
+public void valueTest() {","        // TODO: test value
+    }
+
+}"
+249542,69,// TODO - assign values to the input arguments.,requirement,"/**
+ * To test enum parameters
+ * To test enum parameters
+ */
+ @Test
+ public void testEnumParametersTest() {
+     // TODO - assign values to the input arguments.
+     List<String> enumHeaderStringArray = null;
+     // TODO - assign values to the input arguments.
+     String enumHeaderString = null;","// TODO - assign values to the input arguments.
+List<String> enumQueryStringArray = null;
+// TODO - assign values to the input arguments.
+String enumQueryString = null;
+// TODO - assign values to the input arguments.
+Integer enumQueryInteger = null;
+// TODO - assign values to the input arguments.
+Double enumQueryDouble = null;
+// TODO - assign values to the input arguments.
+List<EnumClass> enumQueryModelArray = null;"
+964186,435,"// todo (6.0) : fix for Oracle see HHH-13432
+//		integrationSettings.put( AvailableSettings.HQL_BULK_ID_STRATEGY, new MultiTableBulkIdStrategyStub() );",defect,"	public DataSource getNonJtaDataSource() {
+		return dataSource;
+	}
+};
+
+
+// Now create ""integration Map"" that overrides the DataSource to use
+final DataSource override = new DataSourceStub( ""integrationDataSource"" );
+final Map<String,Object> integrationSettings = new HashMap<>();
+integrationSettings.put( AvailableSettings.JPA_NON_JTA_DATASOURCE, override );","
+final PersistenceProvider provider = new HibernatePersistenceProvider();
+
+final EntityManagerFactory emf = provider.createContainerEntityManagerFactory(
+		info,
+		integrationSettings
+);
+
+try {
+	final Map<String, Object> properties = emf.getProperties();"
+1045427,449,//FIX https://issues.redhat.com/browse/DROOLS-5681,defect,"import java.io.ObjectOutputStream;
+import java.nio.charset.StandardCharsets;
+
+import org.drools.io.ByteArrayResource;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class ByteArrayResourceSerializationTest {
+","//FIX https://issues.redhat.com/browse/DROOLS-5681
+@Test
+public void bytesAttributesIsStillSerializedDeserializedCorrectly() throws IOException, ClassNotFoundException {
+
+    final byte[] content = ""some content"".getBytes(StandardCharsets.UTF_8);
+
+    ByteArrayResource bar = new ByteArrayResource(content, StandardCharsets.UTF_8.toString());
+    byte[] serializedBar;
+    try(ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(baos)){"
+263792,69,// TODO: test FakeBigDecimalMap200Response,requirement," * Model tests for FakeBigDecimalMap200Response
+ */
+class FakeBigDecimalMap200ResponseTest {
+    private final FakeBigDecimalMap200Response model = new FakeBigDecimalMap200Response();
+
+    /**
+     * Model tests for FakeBigDecimalMap200Response
+     */
+    @Test
+    void testFakeBigDecimalMap200Response() {","    // TODO: test FakeBigDecimalMap200Response
+}
+
+/**
+ * Test the property 'someId'
+ */
+@Test
+void someIdTest() {
+    // TODO: test someId
+}"
+255518,69,// TODO: test status,requirement,"@Test
+void shipDateTest() {
+    // TODO: test shipDate
+}
+
+/**
+ * Test the property 'status'
+ */
+@Test
+void statusTest() {","    // TODO: test status
+}
+
+/**
+ * Test the property 'complete'
+ */
+@Test
+void completeTest() {
+    // TODO: test complete
+}"
+509486,140,// TODO: Maven and Gradle give different return codes,requirement,"CliDriver.invokeExtensionAddQute(project, buildGradle);
+CliDriver.invokeExtensionAddRedundantQute(project);
+CliDriver.invokeExtensionListInstallable(project);
+CliDriver.invokeExtensionAddMultiple(project, buildGradle);
+CliDriver.invokeExtensionRemoveQute(project, buildGradle);
+CliDriver.invokeExtensionRemoveMultiple(project, buildGradle);
+
+CliDriver.invokeExtensionListInstallableSearch(project);
+CliDriver.invokeExtensionListFormatting(project);
+","    // TODO: Maven and Gradle give different return codes
+    result = CliDriver.invokeExtensionRemoveNonexistent(project);
+    Assertions.assertEquals(CommandLine.ExitCode.OK, result.exitCode,
+            ""Expected OK return code. Result:\n"" + result);
+}
+
+@Test
+public void testBuildOptions() throws Exception {
+    CliDriver.Result result = CliDriver.execute(workspaceRoot, ""create"", ""app"", ""--gradle"", ""-e"", ""-B"", ""--verbose"");
+    Assertions.assertEquals(CommandLine.ExitCode.OK, result.exitCode, ""Expected OK return code."" + result);"
+1037082,445,// TODO replace explicit pre-mockito mock classes with proper mockito mocks wherever possible,temporary fix,"import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+","// TODO replace explicit pre-mockito mock classes with proper mockito mocks wherever possible
+public class MessageBusVisitorSessionTestCase {
+
+    private class MockSender implements MessageBusVisitorSession.Sender {
+        private int maxPending = 1000;
+        private int pendingCount = 0;
+        private ArrayList<Message> messages = new ArrayList<>();
+        private ReplyHandler replyHandler = null;
+        private boolean destroyed = false;
+        private RuntimeException exceptionOnSend = null;"
+380299,104,// mostly waiting for https://github.com/testcontainers/testcontainers-java/issues/3537,dependency,"}
+
+String host() {
+  return container.getHost();
+}
+
+int port() {
+  return container.getMappedPort(RABBIT_PORT);
+}
+","  // mostly waiting for https://github.com/testcontainers/testcontainers-java/issues/3537
+  static final class RabbitMQContainer extends GenericContainer<RabbitMQContainer> {
+    RabbitMQContainer() {
+      super(parse(""ghcr.io/openzipkin/zipkin-rabbitmq:3.4.3""));
+      withExposedPorts(RABBIT_PORT);
+      waitStrategy = Wait.forLogMessage("".*Server startup complete.*"", 1);
+      withStartupTimeout(Duration.ofSeconds(60));
+    }
+  }
+}"
+176427,56,// Ignoring this test on ActiveDirectory (same for rhds) as it's not allowed to have LDAP group referencing nonexistent member. KEYCLOAK-2682 was related to OpenLDAP TODO: Better solution than programmatic...,skip test,"    });
+}
+
+@Test
+public void test09_emptyMemberOnDeletionWorks() {
+    testingClient.server().run(session -> {
+        LDAPTestContext ctx = LDAPTestContext.init(session);
+        RealmModel appRealm = ctx.getRealm();
+        ComponentModel mapperModel = LDAPTestUtils.getSubcomponentByName(appRealm, ctx.getLdapModel(), ""groupsMapper"");
+","// Ignoring this test on ActiveDirectory (same for rhds) as it's not allowed to have LDAP group referencing nonexistent member. KEYCLOAK-2682 was related to OpenLDAP TODO: Better solution than programmatic...
+LDAPConfig ldapConfig = ctx.getLdapProvider().getLdapIdentityStore().getConfig();
+if (ldapConfig.isActiveDirectory() || LDAPConstants.VENDOR_RHDS.equals(ldapConfig.getVendor())) {
+    return;
+}
+
+// create a group with an existing user alone
+String descriptionAttrName = getGroupDescriptionLDAPAttrName(ctx.getLdapProvider());
+LDAPObject deleteGroup = LDAPTestUtils.createLDAPGroup(session, appRealm, ctx.getLdapModel(), ""deletegroup"", descriptionAttrName, ""deletegroup - description"");
+LDAPObject maryLdap = ctx.getLdapProvider().loadLDAPUserByUsername(appRealm, ""marykeycloak"");"
+278912,69,// TODO: test enumStringRequired,requirement,"@Test
+public void enumStringTest() {
+    // TODO: test enumString
+}
+
+/**
+ * Test the property 'enumStringRequired'
+ */
+@Test
+public void enumStringRequiredTest() {","    // TODO: test enumStringRequired
+}
+
+/**
+ * Test the property 'enumInteger'
+ */
+@Test
+public void enumIntegerTest() {
+    // TODO: test enumInteger
+}"
+251739,69,// TODO: test validations,requirement," * Delete user
+ *
+ * This can only be done by the logged in user.
+ *
+ * @throws ApiException if the Api call fails
+ */
+@Test
+public void deleteUserTest() throws ApiException {
+    String username = null;
+    api.deleteUser(username);","    // TODO: test validations
+}
+
+/**
+ * Get user by user name
+ *
+ * 
+ *
+ * @throws ApiException if the Api call fails
+ */"
+266043,69,// TODO: test baz,requirement,"@Test
+public void barTest() {
+    // TODO: test bar
+}
+
+/**
+ * Test the property 'baz'
+ */
+@Test
+public void bazTest() {","        // TODO: test baz
+    }
+
+}"
+997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",temporary fix,"
+for (int i = 0; i < locales.length; i++) {
+    ICUResourceBundle rb = (ICUResourceBundle)ICUResourceBundle.getBundleInstance(ICUData.ICU_BASE_NAME,locales[i]);
+
+    //
+    // Get the currency pattern for this locale.  We have to fish it
+    // out of the ResourceBundle directly, since DecimalFormat.toPattern
+    // will return the localized symbol, not \00a4
+    //
+    String pattern = rb.getStringWithFallback(""NumberElements/latn/patterns/currencyFormat"");","if (pattern.indexOf('\u00A4') == -1 ) { // 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1
+    errln(""Currency format for "" + locales[i] +
+            "" does not contain generic currency symbol:"" +
+            pattern );
+}
+
+// Create a DecimalFormat using the pattern we got and format a number
+DecimalFormatSymbols symbols = new DecimalFormatSymbols(locales[i]);
+DecimalFormat fmt1 = new DecimalFormat(pattern, symbols);
+"
+881269,337,// TODO(tjgq): Consider rewriting to const even when already sorted.,requirement,"public void testFixRequires_varAndLetBecomeConstIfUnsorted() {
+  assertChanges(
+      fileWithImports(
+          ""var b = goog.require('b');"", ""let a = goog.require('a');"", useInCode(""a"", ""b"")),
+      fileWithImports(
+          ""const a = goog.require('a');"", ""const b = goog.require('b');"", useInCode(""a"", ""b"")));
+}
+
+@Test
+public void testFixRequires_varAndLetDoNotBecomeConstIfAlreadySorted() {","  // TODO(tjgq): Consider rewriting to const even when already sorted.
+  assertNoChanges(
+      fileWithImports(
+          ""let a = goog.require('a');"", ""var b = goog.require('b');"", useInCode(""a"", ""b"")));
+}
+
+@Test
+public void testFixRequires_preserveJsDoc_whenSorting() {
+  assertChanges(
+      fileWithImports("
+363516,81,"// Try to ensure the path to the Java launcher is reasonably short,
+// to work around the mostly undocumented limit of 120 characters
+// for a shebang line.
+// The value of 120 is the typical kernel compile-time buffer limit.
+// The following limit of 80 allows room for arguments to be placed
+// after the path to the launcher on the shebang line.",temporary fix,"private static final String thisVersion = System.getProperty(""java.specification.version"");
+
+SourceMode() throws Exception {
+    log = System.err;
+
+    if (isWindows) {
+        // Skip shebang tests on Windows, because that requires Cygwin.
+        skipShebangTest = true;
+        shebangJavaCmd = null;
+    } else {","Path cmd = Paths.get(javaCmd);
+if (cmd.toString().length() < 80) {
+    shebangJavaCmd = cmd;
+} else {
+    // Create a small image in the current directory, such that
+    // the path for the launcher is just ""tmpJDK/bin/java"".
+    Path tmpJDK = Paths.get(""tmpJDK"");
+    ToolProvider jlink = ToolProvider.findFirst(""jlink"")
+        .orElseThrow(() -> new Exception(""cannot find jlink""));
+    jlink.run(System.out, System.err,"
+58280,11,// TODO: Reactor usually times out on Windows ...,code,"try {
+	StepVerifier.create(result)
+			.consumeNextWith(value -> assertThat(value.length()).isEqualTo((64 * 1024)))
+			.expectComplete()
+			.verify(Duration.ofSeconds(10L));
+}
+catch (AssertionError err) {
+	String os = System.getProperty(""os.name"").toLowerCase();
+	if (os.contains(""windows"") && err.getMessage() != null &&
+			err.getMessage().startsWith(""VerifySubscriber timed out"")) {","			// TODO: Reactor usually times out on Windows ...
+			err.printStackTrace();
+			return;
+		}
+		throw err;
+	}
+}
+
+@ParameterizedHttpServerTest  // SPR-14992
+void writeAndAutoFlushBeforeComplete(HttpServer httpServer) throws Exception {"
+274302,69,// TODO: test className,requirement,"@Test
+void testDog() {
+    // TODO: test Dog
+}
+
+/**
+ * Test the property 'className'
+ */
+@Test
+void classNameTest() {","    // TODO: test className
+}
+
+/**
+ * Test the property 'color'
+ */
+@Test
+void colorTest() {
+    // TODO: test color
+}"
+245893,66,// TODO Auto-generated catch block,requirement,"Thread t = new Thread() {
+    public void run() {
+         Assertions.assertFalse(writeLock.isHeldByCurrentThread());
+         Assertions.assertTrue(writeLock.isLocked());
+         Assertions.assertFalse(lock.readLock().tryLock());
+         Assertions.assertFalse(redisson.getReadWriteLock(""lock"").readLock().tryLock());
+
+         try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {","            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+         Assertions.assertTrue(lock.readLock().tryLock());
+         Assertions.assertTrue(redisson.getReadWriteLock(""lock"").readLock().tryLock());
+    };
+};
+
+t.start();"
+833325,308,"// Skip, zstd only supported for Avro 1.9+",skip test,"
+    SerializableAvroCodecFactory serdeC = SerializableUtils.clone(codecFactory);
+
+    assertEquals(CodecFactory.xzCodec(i).toString(), serdeC.getCodec().toString());
+  }
+}
+
+@Test
+public void testZstdCodecSerDeWithLevels() throws Exception {
+  if (VERSION_AVRO.startsWith(""1.8."")) {","  // Skip, zstd only supported for Avro 1.9+
+  return;
+}
+
+for (int i = -7; i <= 22; i++) {
+  SerializableAvroCodecFactory codecFactory = new SerializableAvroCodecFactory();
+
+  // Deserialize a ZStandardCodec instance from bytes; we can't reference the class directly
+  // since it won't compile for Avro 1.8
+  final ByteArrayOutputStream baos = new ByteArrayOutputStream();"
+1133322,489,// TODO(HUDI-3668): Fix this test,requirement,"  when(mockIterator.hasNext()).thenReturn(true, true, true, false);
+
+  dfsDeltaWriterAdapter.write(mockIterator);
+  Mockito.verify(mockFileSinkWriter, times(2)).canWrite();
+  Mockito.verify(mockFileSinkWriter, times(1)).getNewWriter();
+  Mockito.verify(mockFileSinkWriter, times(2)).close();
+}
+
+@Test
+@Disabled","// TODO(HUDI-3668): Fix this test
+public void testDFSWorkloadSinkWithMultipleFilesFunctional() throws IOException {
+  DeltaConfig dfsSinkConfig = new DFSDeltaConfig(DeltaOutputMode.DFS, DeltaInputType.AVRO,
+      HadoopFSUtils.getStorageConfWithCopy(jsc.hadoopConfiguration()), basePath, basePath,
+      schemaProvider.getSourceSchema().toString(), 10240L, jsc.defaultParallelism(), false, false);
+  DeltaWriterAdapter<GenericRecord> dfsDeltaWriterAdapter = DeltaWriterFactory
+      .getDeltaWriterAdapter(dfsSinkConfig, 1);
+  FlexibleSchemaRecordGenerationIterator itr = new FlexibleSchemaRecordGenerationIterator(1000,
+      schemaProvider.getSourceSchema().toString());
+  dfsDeltaWriterAdapter.write(itr);"
+249037,69,// TODO: test indirectMap,requirement,"@Test
+public void directMapTest() {
+    // TODO: test directMap
+}
+
+/**
+ * Test the property 'indirectMap'
+ */
+@Test
+public void indirectMapTest() {","        // TODO: test indirectMap
+    }
+
+}"
+278630,69,// TODO: test ClassModel,requirement," * Model tests for ClassModel
+ */
+public class ClassModelTest {
+    private final ClassModel model = new ClassModel();
+
+    /**
+     * Model tests for ClassModel
+     */
+    @Test
+    public void testClassModel() {","    // TODO: test ClassModel
+}
+
+/**
+ * Test the property 'propertyClass'
+ */
+@Test
+public void propertyClassTest() {
+    // TODO: test propertyClass
+}"
+274572,69,// TODO: test number,requirement,"@Test
+void testNumberPropertiesOnly() {
+    // TODO: test NumberPropertiesOnly
+}
+
+/**
+ * Test the property 'number'
+ */
+@Test
+void numberTest() {","    // TODO: test number
+}
+
+/**
+ * Test the property '_float'
+ */
+@Test
+void _floatTest() {
+    // TODO: test _float
+}"
+275154,69,// TODO: test outcomes,requirement,"@Test
+void idTest() {
+    // TODO: test id
+}
+
+/**
+ * Test the property 'outcomes'
+ */
+@Test
+void outcomesTest() {","        // TODO: test outcomes
+    }
+
+}"
+69363,12,// TODO: these tests are too simple since they only replace undefined components,superficial,"	DataTypeComponent dtc = s1.getComponentContaining(5);
+	DataType dt = dtc.getDataType();
+	assertEquals(-1, dt.getLength());
+	assertEquals(10, dtc.getLength());
+	assertEquals(""string"", dt.getDisplayName());
+}
+
+@Test
+public void testReplaceAtVarLengthDataTypes2() {
+","// TODO: these tests are too simple since they only replace undefined components
+
+Structure s1 = new StructureDataType(""Test1"", 0x60);
+s1.replaceAtOffset(0, new StringDataType(), 0xd, null, null);
+
+s1.replaceAtOffset(0xd, new StringDataType(), 0xd, null, null);
+s1.replaceAtOffset(0x19, new StringDataType(), 0xc, null, null);
+s1.replaceAtOffset(0x24, new StringDataType(), 0xb, null, null);
+s1.replaceAtOffset(0x31, new StringDataType(), 0xd, null, null);
+s1.replaceAtOffset(0x3e, new StringDataType(), 0xa, null, null);"
+876550,337,// TODO(skill): The generator transpilation should not produce any unreachable code,requirement,"          ""if(GEN_CONTEXT$0.yieldResult) {"",
+          ""  return GEN_CONTEXT$0.jumpTo(0);"",
+          ""} else {"",
+          ""  return GEN_CONTEXT$0.jumpTo(0);"",
+          ""}"",
+          ""GEN_CONTEXT$0.jumpToEnd();""));
+}
+
+@Test
+public void testUnreachable() {","// TODO(skill): The generator transpilation should not produce any unreachable code
+rewriteGeneratorBody(
+    ""while (true) {yield; break;}"",
+    lines(
+        ""if (GEN_CONTEXT$0.nextAddress == 1) {"",
+        ""  if (!true) {"",
+        ""    return GEN_CONTEXT$0.jumpTo(0);"",
+        ""  }"",
+        ""  return GEN_CONTEXT$0.yield(void 0, 5);"",
+        ""}"","
+96468,15,// no JavaDoc,documentation,"}
+
+// find JavaDoc of throws
+boolean found = false;
+for (int k = midx - 1; k >= 0; k--) {
+    String linek = lines.get(k).trim();
+    if (linek.startsWith(""/**"")) {
+        break;
+    }
+    if (linek.startsWith(""}"")) {","        found = true; // no JavaDoc
+        break;
+    }
+    if (linek.startsWith(validatorStr.javadoc)) {
+        found = true;
+    }
+}
+
+if (!found) {
+    errorCount++;"
+390222,117,// TODO: many more removal methods,requirement,"Iterator it = c.iterator();
+for (int i = rnd.nextInt(n + 1); --i >= 0; ) {
+    assertTrue(s.tryAdvance(spliterated::add));
+    if (rnd.nextBoolean()) {
+      assertTrue(it.hasNext());
+    }
+    iterated.add(it.next());
+}
+Consumer alwaysThrows = e -> { throw new AssertionError(); };
+if (s.hasCharacteristics(Spliterator.CONCURRENT)) {","c.clear();          // TODO: many more removal methods
+if (testImplementationDetails
+    && !(c instanceof ArrayBlockingQueue)) {
+    if (rnd.nextBoolean()) {
+      assertFalse(s.tryAdvance(alwaysThrows));
+    } else {
+      s.forEachRemaining(alwaysThrows);
+    }
+}
+if (it.hasNext()) {"
+554185,149,"// Add some constructors for testing maxRowsPerFrame > 1. Later on, we'll add some for maxRowsPerFrame = 1.",requirement,"           + ""maxChannelsPerProcessor= {4}, ""
+           + ""numThreads = {5}, ""
+           + ""isComposedStorage = {6}, ""
+           + ""partitionsDeferred = {7}, ""
+           + ""limitHint = {8}""
+)
+public static Iterable<Object[]> constructorFeeder()
+{
+  final List<Object[]> constructors = new ArrayList<>();
+","// Add some constructors for testing maxRowsPerFrame > 1. Later on, we'll add some for maxRowsPerFrame = 1.
+for (int maxRowsPerFrame : new int[]{Integer.MAX_VALUE, 50}) {
+  for (int maxBytesPerFrame : new int[]{20_000, 2_000_000}) {
+    for (int numChannels : new int[]{1, 3}) {
+      for (int maxActiveProcessors : new int[]{1, 3}) {
+        for (int maxChannelsPerProcessor : new int[]{2, 7}) {
+          for (int numThreads : new int[]{1, 3}) {
+            for (boolean isComposedStorage : new boolean[]{true, false}) {
+              for (boolean partitionsDeferred : new boolean[]{true, false}) {
+                for (long limitHint : new long[]{SuperSorter.UNLIMITED, 3, 1_000}) {"
+849284,315,// TODO: Is it correct?,how to,"FieldAccessorUtl.ensureEmptyStringIsNotNull( false );
+
+final String fIsText = ""ISNONTEXT(["" + KEY_ARG + ""])"";
+
+assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaString( KEY_ARG ) ), new Object[] { ""1"" }, false );
+assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaString( KEY_ARG ) ), new Object[] { ""a"" }, false );
+assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaString( KEY_ARG ) ), new Object[] { null }, true );
+// assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaString( KEY_ARG ) ), new Object[] { """" }, true ); //
+// TODO: Is it correct?
+assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaString( KEY_ARG ) ), new Object[] { """" }, false ); //","  // TODO: Is it correct?
+  assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaString( KEY_ARG ) ), new Object[] { ""   "" }, false );
+  assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaNumber( KEY_ARG ) ), new Object[] { 1 }, true );
+  assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaNumber( KEY_ARG ) ), new Object[] { 0 }, true );
+  assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaNumber( KEY_ARG ) ), new Object[] { -1.0 }, true );
+  assertBooleanFormula( fIsText, buildRowMeta( new ValueMetaNumber( KEY_ARG ) ), new Object[] { null }, true );
+}
+
+@Test
+public void testConcat_EmptyStringIsNotNull() throws KettleException {"
+852681,315,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public void init( RepositoryMeta repositoryMeta ) {
+  // TODO Auto-generated method stub
+}
+
+@Override
+public boolean
+  exists( String name, RepositoryDirectoryInterface repositoryDirectory, RepositoryObjectType objectType ) throws KettleException {","  // TODO Auto-generated method stub
+  return false;
+}
+
+@Override
+public ObjectId getTransformationID( String name, RepositoryDirectoryInterface repositoryDirectory )
+  throws KettleException {
+  // TODO Auto-generated method stub
+  return null;
+}"
+269034,69,// TODO: test smallCamel,requirement,"@Test
+void testCapitalization() {
+    // TODO: test Capitalization
+}
+
+/**
+ * Test the property 'smallCamel'
+ */
+@Test
+void smallCamelTest() {","    // TODO: test smallCamel
+}
+
+/**
+ * Test the property 'capitalCamel'
+ */
+@Test
+void capitalCamelTest() {
+    // TODO: test capitalCamel
+}"
+1179971,541,"// Now a more precise check to see if the false positive rate is not
+// too high. The reason we use a relaxed restriction for the real-world
+// case as opposed to the ""fake lookup"" case is that our hash functions
+// are not completely independent.",superficial,"  }
+}
+double falsePosRate = numFalsePos * 1.0 / nTrials;
+LOG.debug(String.format(testIdMsg + "" False positives: %d out of %d (%f)"", numFalsePos,
+  nTrials, falsePosRate) + fakeLookupModeStr);
+
+// Check for obvious Bloom filter crashes.
+assertTrue(""False positive is too high: "" + falsePosRate + "" (greater "" + ""than ""
+  + TOO_HIGH_ERROR_RATE + "")"" + fakeLookupModeStr, falsePosRate < TOO_HIGH_ERROR_RATE);
+","
+double maxZValue = fakeLookupEnabled ? 1.96 : 2.5;
+validateFalsePosRate(falsePosRate, nTrials, maxZValue, cbf, fakeLookupModeStr);
+
+// For checking the lower bound we need to eliminate the last chunk,
+// because it is frequently smaller and the false positive rate in it
+// is too low. This does not help if there is only one under-sized
+// chunk, though.
+int nChunks = cbf.getNumChunks();
+if (nChunks > 1) {"
+280169,69,// TODO: test TestInlineFreeformAdditionalPropertiesRequest,requirement," * Model tests for TestInlineFreeformAdditionalPropertiesRequest
+ */
+public class TestInlineFreeformAdditionalPropertiesRequestTest {
+    private final TestInlineFreeformAdditionalPropertiesRequest model = new TestInlineFreeformAdditionalPropertiesRequest();
+
+    /**
+     * Model tests for TestInlineFreeformAdditionalPropertiesRequest
+     */
+    @Test
+    public void testTestInlineFreeformAdditionalPropertiesRequest() {","    // TODO: test TestInlineFreeformAdditionalPropertiesRequest
+}
+
+/**
+ * Test the property 'someProperty'
+ */
+@Test
+public void somePropertyTest() {
+    // TODO: test someProperty
+}"
+265368,69,// TODO: test phone,requirement,"@Test
+void passwordTest() {
+    // TODO: test password
+}
+
+/**
+ * Test the property 'phone'
+ */
+@Test
+void phoneTest() {","    // TODO: test phone
+}
+
+/**
+ * Test the property 'userStatus'
+ */
+@Test
+void userStatusTest() {
+    // TODO: test userStatus
+}"
+625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,temporary fix,"        assertThatThrownBy(() -> onTrino().executeQuery(""UPDATE delta.default."" + tableName + "" SET a = 3""))
+                .hasMessageContaining(""Check constraint violation"");
+        assertThat(onTrino().executeQuery(""SELECT * FROM delta.default."" + tableName))
+                .containsOnly(row(2));
+    }
+    finally {
+        dropDeltaTableWithRetry(""default."" + tableName);
+    }
+}
+","// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved
+@Test(groups = {DELTA_LAKE_OSS, PROFILE_SPECIFIC_TESTS})
+public void testCheckConstraintMergeCompatibility()
+{
+    String tableName1 = ""test_check_constraint_merge_"" + randomNameSuffix();
+    String tableName2 = ""test_check_constraint_merge_"" + randomNameSuffix();
+
+    onDelta().executeQuery(""CREATE TABLE default."" + tableName1 +
+            ""(a INT) "" +
+            ""USING DELTA "" +"
+54528,11,// doesn't make much sense in the context of a list...,impractical case,"void mergeEmptyChild() {
+	ManagedList parent = ManagedList.of(""one"", ""two"");
+	ManagedList child = new ManagedList();
+	child.setMergeEnabled(true);
+	List mergedList = child.merge(parent);
+	assertThat(mergedList).as(""merge() obviously did not work."").containsExactly(""one"", ""two"");
+}
+
+@Test
+void mergedChildValuesDoNotOverrideTheParents() {","		// doesn't make much sense in the context of a list...
+		ManagedList parent = ManagedList.of(""one"", ""two"");
+		ManagedList child = ManagedList.of(""one"");
+		child.setMergeEnabled(true);
+		List mergedList = child.merge(parent);
+		assertThat(mergedList).as(""merge() obviously did not work."").containsExactly(""one"", ""two"", ""one"");
+	}
+
+}"
+877559,337,// TODO(b/139319709): Remove this. static method removal is disabled.,code,"    ""    this.x = 1;"",
+    ""  }"",
+    ""  static foo() {}"",
+    ""}"",
+    ""new C;""),
+lines(
+    ""class C {"",
+    ""  constructor() {"", // constructor is not removable
+    ""    this.x = 1;"",
+    ""  }"",","        // TODO(b/139319709): Remove this. static method removal is disabled.
+        ""  static foo() {}"",
+        ""}"",
+        ""new C();""));
+
+test(
+    lines(
+        ""class C {"",
+        ""  constructor() {"",
+        ""    this.x = 1;"","
+1011747,441,// Continuous build environment doesn't support non-blocking IO.,build,"serverChannel.socket().bind(null);
+
+byte[] writeContent = new byte[CAPACITY_NORMAL];
+for (int i = 0; i < CAPACITY_NORMAL; i++) {
+    writeContent[i] = (byte) i;
+}
+clientChannel.connect(serverChannel.socket().getLocalSocketAddress());
+
+SocketChannel socketChannel = serverChannel.accept();
+if (socketChannel == null) {","      // Continuous build environment doesn't support non-blocking IO.
+      return;
+    }
+    Socket clientSocket = socketChannel.socket();
+    OutputStream out = clientSocket.getOutputStream();
+    out.write(writeContent);
+    clientSocket.close();
+    assertWriteResult(CAPACITY_NORMAL);
+}
+"
+831173,303,// Using deprecated constructor for verification of backwards compatibility,temporary fix,"        CassandraContainer<?> cassandraContainer = new CassandraContainer<>(
+            DockerImageName.parse(""cassandra:2.2.11"")
+        )
+            .withInitScript(""initial.cql"")
+    ) {
+        cassandraContainer.start();
+        testInitScript(cassandraContainer);
+    }
+}
+","@SuppressWarnings(""deprecation"") // Using deprecated constructor for verification of backwards compatibility
+@Test
+public void testCassandraQueryWaitStrategy() {
+    try (
+        CassandraContainer<?> cassandraContainer = new CassandraContainer<>()
+            .waitingFor(new CassandraQueryWaitStrategy())
+    ) {
+        cassandraContainer.start();
+        ResultSet resultSet = performQuery(cassandraContainer, BASIC_QUERY);
+        assertThat(resultSet.wasApplied()).as(""Query was applied"").isTrue();"
+252402,69,// TODO: test Animal,requirement," * Model tests for Animal
+ */
+class AnimalTest {
+    private final Animal model = new Animal();
+
+    /**
+     * Model tests for Animal
+     */
+    @Test
+    void testAnimal() {","    // TODO: test Animal
+}
+
+/**
+ * Test the property 'className'
+ */
+@Test
+void classNameTest() {
+    // TODO: test className
+}"
+255027,69,"// api.createUsersWithArrayInput(body);
+
+// TODO: test validations",requirement,"
+
+/**
+ * Creates list of users with given input array
+ *
+ * 
+ */
+@Test
+void createUsersWithArrayInputTest() {
+    List<User> body = null;","}
+
+
+/**
+ * Creates list of users with given input array
+ *
+ * 
+ */
+@Test
+void createUsersWithListInputTest() {"
+166311,47,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public void setArrayAtName(String arg0, Array arg1) throws SQLException {
+    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void setAsciiStreamAtName(String arg0, InputStream arg1, int arg2) throws SQLException {","    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void setBFILE(int arg0, BFILE arg1) throws SQLException {
+    // TODO Auto-generated method stub
+
+}
+"
+46061,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,requirement,"    return RobertaTokenizationUpdate::new;
+}
+
+@Override
+protected RobertaTokenizationUpdate createTestInstance() {
+    return randomInstance();
+}
+
+@Override
+protected RobertaTokenizationUpdate mutateInstance(RobertaTokenizationUpdate instance) {","    return null;// TODO implement https://github.com/elastic/elasticsearch/issues/25929
+}
+
+@Override
+protected RobertaTokenizationUpdate mutateInstanceForVersion(RobertaTokenizationUpdate instance, TransportVersion version) {
+    if (version.before(TransportVersions.V_8_2_0)) {
+        return new RobertaTokenizationUpdate(instance.getTruncate(), null);
+    }
+
+    return instance;"
+1002899,441,"// Don't test on iOS devices, because they often have less than 4G available,
+// especially with a big JRE tests app installed.",skip test,"public void testSetLengthTooLarge() throws Exception {
+    RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
+    try {
+        raf.setLength(Long.MAX_VALUE);
+        fail();
+    } catch (IOException expected) {
+    }
+}
+
+public void testSetLength64() throws Exception {","  if (!System.getProperty(""os.name"").equals(""iPhone"")) {
+    RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
+    raf.setLength(0);
+    assertEquals(0, file.length());
+    long moreThanFourGig = ((long) Integer.MAX_VALUE) + 1L;
+    raf.setLength(moreThanFourGig);
+    assertEquals(moreThanFourGig, file.length());
+  }
+}
+"
+215850,60,"/**
+ * Base class for tests related to unaligned checkpoints.
+ *
+ * <p>This test base relies on restarting the subtasks within the scheduler to trigger a reset of
+ * the operators. The operator reset is counted in the LongSource. The job will terminate if the
+ * number of expected restarts is reached. The AdaptiveScheduler won't trigger the operator reset
+ * resulting in the test running forever. This is why this test suite is disabled for the {@link
+ * org.apache.flink.runtime.scheduler.adaptive.AdaptiveScheduler}.
+ */",skip test,"import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import static org.apache.flink.shaded.guava32.com.google.common.collect.Iterables.getOnlyElement;
+import static org.apache.flink.util.Preconditions.checkState;
+","@Category(FailsWithAdaptiveScheduler.class)
+public abstract class UnalignedCheckpointTestBase extends TestLogger {
+    protected static final Logger LOG = LoggerFactory.getLogger(UnalignedCheckpointTestBase.class);
+    protected static final String NUM_INPUTS = ""inputs_"";
+    protected static final String NUM_OUTPUTS = ""outputs"";
+    protected static final String NUM_OUT_OF_ORDER = ""outOfOrder"";
+    protected static final String NUM_FAILURES = ""failures"";
+    protected static final String NUM_DUPLICATES = ""duplicates"";
+    protected static final String NUM_LOST = ""lost"";
+"
+856829,323,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public void setNull(int parameterIndex, int sqlType, String typeName) throws SQLException {
+    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void setObject(int parameterIndex, Object x) throws SQLException {","    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void setObject(int parameterIndex, Object x, int targetSqlType) throws SQLException {
+    // TODO Auto-generated method stub
+
+}
+"
+271759,69,// TODO: test datetimeProp,requirement,"@Test
+void datePropTest() {
+    // TODO: test dateProp
+}
+
+/**
+ * Test the property 'datetimeProp'
+ */
+@Test
+void datetimePropTest() {","    // TODO: test datetimeProp
+}
+
+/**
+ * Test the property 'arrayNullableProp'
+ */
+@Test
+void arrayNullablePropTest() {
+    // TODO: test arrayNullableProp
+}"
+247780,69,"// TODO: hasRequired should be true, fix this",defect,"""ComposedNoAllofPropsHasPropertiesNoRequired"",
+""ComposedNoAllofPropsNoPropertiesHasRequired"",  // TODO: hasRequired should be true, fix this
+""ComposedHasAllofOptPropNoPropertiesNoRequired"",
+""ComposedHasAllofOptPropHasPropertiesNoRequired"",
+""ComposedHasAllofOptPropNoPropertiesHasRequired"",  // TODO: hasRequired should be true, fix this
+""ObjectHasPropertiesHasRequired"", // False because this is extracted into another component and is a ref
+""ComposedNoAllofPropsHasPropertiesHasRequired"", // False because this is extracted into another component and is a ref
+""ComposedHasAllofOptPropHasPropertiesHasRequired"",  // TODO: hasRequired should be true, fix this
+""ComposedHasAllofReqPropNoPropertiesNoRequired"",
+""ComposedHasAllofReqPropHasPropertiesNoRequired"",","        ""ComposedHasAllofReqPropNoPropertiesHasRequired"",  // TODO: hasRequired should be true, fix this
+        ""ComposedHasAllofReqPropHasPropertiesHasRequired""  // TODO: hasRequired should be true, fix this
+));
+HashSet<String> modelNamesWithRequired = new HashSet(Arrays.asList(
+));
+for (CodegenResponse cr : co.responses) {
+    boolean hasRequired = cr.getHasRequired();
+    if (modelNamesWithoutRequired.contains(cr.message)) {
+        assertFalse(hasRequired);
+    } else if (modelNamesWithRequired.contains(cr.message)) {"
+1479367,805,// TODO: check the tiff structure is the one requested,requirement,"@Test
+public void interleaving() throws Exception {
+    MockHttpServletResponse response = getAsServletResponse(
+            ""wcs?request=GetCoverage&service=WCS&version=2.0.1"" + ""&coverageId=wcs__BlueMarble&interleave=pixel"");
+
+    assertEquals(""image/tiff"", response.getContentType());
+    byte[] tiffContents = getBinary(response);
+    File file = File.createTempFile(""bm_gtiff"", ""bm_gtiff.tiff"", new File(""./target""));
+    FileUtils.writeByteArrayToFile(file, tiffContents);
+","// TODO: check the tiff structure is the one requested
+final TIFFImageReader reader = (TIFFImageReader) new TIFFImageReaderSpi().createReaderInstance();
+reader.setInput(new FileImageInputStream(file));
+
+// compression
+final TIFFImageMetadata metadata = (TIFFImageMetadata) reader.getImageMetadata(0);
+assertNotNull(metadata);
+
+IIOMetadataNode node = metadata.getStandardDataNode();
+assertNotNull(node);"
+260714,69,// TODO: test capitalSnake,requirement,"@Test
+void smallSnakeTest() {
+    // TODO: test smallSnake
+}
+
+/**
+ * Test the property 'capitalSnake'
+ */
+@Test
+void capitalSnakeTest() {","    // TODO: test capitalSnake
+}
+
+/**
+ * Test the property 'scAETHFlowPoints'
+ */
+@Test
+void scAETHFlowPointsTest() {
+    // TODO: test scAETHFlowPoints
+}"
+643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,refactor,"    assertUpdate(""CREATE TABLE "" + tableName + "" (a bigint WITH (primary_key=true)) COMMENT 'test comment' "" +
+            ""WITH (partition_by_hash_columns = ARRAY['a'], partition_by_hash_buckets = 2)"");
+    assertThat(getTableComment(tableName)).isEqualTo(""test comment"");
+
+    assertUpdate(""DROP TABLE "" + tableName);
+}
+
+@Override
+protected void testCreateTableWithTableCommentSpecialCharacter(String comment)
+{","    // TODO Remove this overriding test once kudu connector can create tables with default partitions
+    try (TestTable table = newTrinoTable(
+            ""test_create_"",
+            ""(a bigint WITH (primary_key=true)) COMMENT "" + varcharLiteral(comment) +
+                    ""WITH (partition_by_hash_columns = ARRAY['a'], partition_by_hash_buckets = 2)"")) {
+        assertThat(getTableComment(table.getName())).isEqualTo(comment);
+    }
+}
+
+@Override"
+104603,19,// TODO assert error log,requirement,"    given(invoker.getUrl()).willReturn(url);
+    given(invoker.getInterface()).willReturn(DemoService.class);
+}
+
+private void resetInvokerToNoException() {
+    given(invoker.invoke(invocation)).willReturn(result);
+    given(invoker.getUrl()).willReturn(url);
+    given(invoker.getInterface()).willReturn(DemoService.class);
+}
+","// TODO assert error log
+@Test
+void testInvokeExceptoin() {
+    resetInvokerToException();
+    FailsafeClusterInvoker<DemoService> invoker = new FailsafeClusterInvoker<DemoService>(dic);
+    invoker.invoke(invocation);
+    Assertions.assertNull(RpcContext.getServiceContext().getInvoker());
+}
+
+@Test"
+271993,69,// TODO: test validations,requirement,"
+
+}
+
+/**
+ * @throws ApiException
+ *          if the Api call fails
+ */
+@Test
+public void fakePropertyEnumIntegerSerializeTest() {","    // TODO: test validations
+    OuterObjectWithEnumProperty outerObjectWithEnumProperty = null;
+    //OuterObjectWithEnumProperty response = api.fakePropertyEnumIntegerSerialize(outerObjectWithEnumProperty);
+    //Assertions.assertNotNull(response);
+
+
+}
+
+/**
+ * test referenced additionalProperties"
+251791,69,// TODO: test type,requirement,"@Test
+void codeTest() {
+    // TODO: test code
+}
+
+/**
+ * Test the property 'type'
+ */
+@Test
+void typeTest() {","    // TODO: test type
+}
+
+/**
+ * Test the property 'message'
+ */
+@Test
+void messageTest() {
+    // TODO: test message
+}"
+166118,47,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public void updateBfile(String arg0, BFILE arg1) throws SQLException {
+    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void updateCHAR(int arg0, CHAR arg1) throws SQLException {","    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void updateCHAR(String arg0, CHAR arg1) throws SQLException {
+    // TODO Auto-generated method stub
+
+}
+"
+265168,69,// TODO: test password,requirement,"@Test
+void uuidTest() {
+    // TODO: test uuid
+}
+
+/**
+ * Test the property 'password'
+ */
+@Test
+void passwordTest() {","    // TODO: test password
+}
+
+/**
+ * Test the property 'patternWithDigits'
+ */
+@Test
+void patternWithDigitsTest() {
+    // TODO: test patternWithDigits
+}"
+272745,69,"// uncomment below to test the function
+//List<String> pipe = null;
+//List<String> ioutil = null;
+//List<String> http = null;
+//List<String> url = null;
+//List<String> context = null;
+//String allowEmpty = null;
+//Map<String, String> language = null;
+//api.testQueryParameterCollectionFormat(pipe, ioutil, http, url, context, allowEmpty, language).block();
+
+// TODO: test validations",requirement,"    // TODO: test validations
+}
+
+/**
+ * 
+ *
+ * To test the collection format in query parameters
+ */
+@Test
+public void testQueryParameterCollectionFormatTest()  {","}
+
+/**
+ * test referenced string map
+ *
+ * 
+ */
+@Test
+public void testStringMapReferenceTest()  {
+    // uncomment below to test the function"
+235091,64,"// The exceedingly dumb approach: writing all the permutations down manually
+// is simply easier than any way of generating them.",temporary fix,"}
+
+@Test
+public void testTestCaseNamesOrdered() throws Exception {
+  TestCase[] details = {
+    newDetail(""apple"", TestCase.Status.FAILED, 1000L),
+    newDetail(""banana"", TestCase.Status.FAILED, 1000L),
+    newDetail(""cranberry"", TestCase.Status.FAILED, 1000L)
+  };
+","int[][] permutations = {
+    { 0, 1, 2 },
+    { 0, 2, 1 },
+    { 1, 0, 2 },
+    { 1, 2, 0 },
+    { 2, 0, 1 },
+    { 2, 1, 0 }
+};
+
+for (int[] permutation : permutations) {"
+976347,435,"/**
+ * TODO : javadoc
+ *
+ * @author Steve Ebersole
+ */",documentation,"package org.hibernate.orm.test.annotations.embedded.one2many;
+import java.util.HashSet;
+import java.util.Set;
+import jakarta.persistence.AccessType;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.OneToMany;
+
+import jakarta.persistence.Access;
+","@Embeddable
+@Access(AccessType.PROPERTY)
+public class PersonName extends Name {
+	private Set<Alias> aliases = new HashSet<Alias>();
+
+	public PersonName() {
+	}
+
+	public PersonName(String first, String last) {
+		super( first, last );"
+166327,47,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public void setBinaryFloatAtName(String arg0, BINARY_FLOAT arg1) throws SQLException {
+    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void setBinaryStreamAtName(String arg0, InputStream arg1, int arg2) throws SQLException {","    // TODO Auto-generated method stub
+
+}
+
+@Override
+public void setBlobAtName(String arg0, Blob arg1) throws SQLException {
+    // TODO Auto-generated method stub
+
+}
+"
+639477,211,// TODO throw new UnsupportedOperationException();,code,"        assertQuery(""SELECT one, three FROM "" + testTable.getName(), ""SELECT 123, 'test'"");
+    }
+}
+
+/**
+ * Creates a table with columns {@code one, two, three} where the middle one is of an unsupported (unmapped) type.
+ * The first column should be numeric, and third should be varchar.
+ */
+protected TestTable createTableWithUnsupportedColumn()
+{","    // TODO throw new UnsupportedOperationException();
+    return abort(""Not implemented"");
+}
+
+// TODO move common tests from connector-specific classes here
+
+@Test
+public void testCharTrailingSpace()
+{
+    String schema = getSession().getSchema().orElseThrow();"
+869877,337,// TODO(b/139192655): The function template should shadow the class template type and not error,requirement,"          ""function identity(x) {"",
+          ""  return x;"",
+          ""}"",
+          """",
+          ""var /** function(!Foo): !Foo */ y = identity;"")
+      .addDiagnostic(BOUNDED_GENERICS_USE_MSG)
+      .run();
+}
+
+@Test","// TODO(b/139192655): The function template should shadow the class template type and not error
+public void testFunctionTemplateShadowClassTemplate() {
+  newTest()
+      .addSource(
+          ""/**"",
+          "" * @template T"",
+          "" */"",
+          ""class Foo {"",
+          ""  /**"",
+          ""   * @param {T} x"","
+255520,69,// TODO: test complete,requirement,"@Test
+void statusTest() {
+    // TODO: test status
+}
+
+/**
+ * Test the property 'complete'
+ */
+@Test
+void completeTest() {","        // TODO: test complete
+    }
+
+}"
+1186079,541,// TODO: use sft.load() api here,requirement,"}
+
+private long countMobCellsInMetadata() throws IOException {
+  long mobCellsCount = 0;
+  Path mobDirPath = MobUtils.getMobFamilyPath(conf, tableDescriptor.getTableName(),
+    familyDescriptor.getNameAsString());
+  Configuration copyOfConf = new Configuration(conf);
+  copyOfConf.setFloat(HConstants.HFILE_BLOCK_CACHE_SIZE_KEY, 0f);
+  CacheConfig cacheConfig = new CacheConfig(copyOfConf);
+  if (fs.exists(mobDirPath)) {","// TODO: use sft.load() api here
+HRegionFileSystem regionFs = HRegionFileSystem.create(copyOfConf, fs,
+  MobUtils.getMobTableDir(copyOfConf, tableDescriptor.getTableName()),
+  region.getRegionInfo());
+StoreFileTracker sft = StoreFileTrackerFactory.create(copyOfConf, false,
+  StoreContext.getBuilder().withColumnFamilyDescriptor(familyDescriptor)
+    .withFamilyStoreDirectoryPath(mobDirPath).withCacheConfig(cacheConfig)
+    .withRegionFileSystem(regionFs).build());
+FileStatus[] files = UTIL.getTestFileSystem().listStatus(mobDirPath);
+for (FileStatus file : files) {"
+271063,69,// TODO: test quadrilateralType,requirement,"@Test
+void shapeTypeTest() {
+    // TODO: test shapeType
+}
+
+/**
+ * Test the property 'quadrilateralType'
+ */
+@Test
+void quadrilateralTypeTest() {","        // TODO: test quadrilateralType
+    }
+
+}"
+265925,69,// TODO: test OuterComposite,requirement," * Model tests for OuterComposite
+ */
+public class OuterCompositeTest {
+    private final OuterComposite model = new OuterComposite();
+
+    /**
+     * Model tests for OuterComposite
+     */
+    @Test
+    public void testOuterComposite() {","    // TODO: test OuterComposite
+}
+
+/**
+ * Test the property 'myNumber'
+ */
+@Test
+public void myNumberTest() {
+    // TODO: test myNumber
+}"
+249451,69,// TODO - assign values to the input arguments.,requirement,"
+     // TODO: test validations
+ }
+
+/**
+ * Get user by user name
+ * 
+ */
+ @Test
+ public void getUserByNameTest() {","// TODO - assign values to the input arguments.
+String username = null;
+
+// TODO - uncomment the following two lines to invoke the service with valid parameters.
+//ApiResponse<User> response = api.getUserByName(username);
+//response.webClientResponse().await();
+// TODO - check for appropriate return status
+// assertThat(""Return status"", response.get().status().code(), is(expectedStatus));
+
+// TODO: test validations"
+1506165,822,// TODO,skip test,"import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.not;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+","@Disabled // TODO
+public class DoSFilterJMXTest
+{
+    @Test
+    public void testDoSFilterJMX() throws Exception
+    {
+        Server server = new Server();
+        Connector connector = new ServerConnector(server);
+        server.addConnector(connector);
+"
+266985,69,// TODO: test RefRefToPathLevelParameterOneofRefToOneofParameter,requirement," * Model tests for RefRefToPathLevelParameterOneofRefToOneofParameter
+ */
+public class RefRefToPathLevelParameterOneofRefToOneofParameterTest {
+    private final RefRefToPathLevelParameterOneofRefToOneofParameter model = new RefRefToPathLevelParameterOneofRefToOneofParameter();
+
+    /**
+     * Model tests for RefRefToPathLevelParameterOneofRefToOneofParameter
+     */
+    @Test
+    public void testRefRefToPathLevelParameterOneofRefToOneofParameter() {","        // TODO: test RefRefToPathLevelParameterOneofRefToOneofParameter
+    }
+
+}"
+1244485,620,"//TODO: Rewrite with dynamic cache creation, and GRID start in #beforeTest after resolve of
+//TODO: IGNITE-1094",temporary fix,"}
+
+/**
+ * Test collision of table names in different caches, sharing a single SQL schema.
+ *
+ * @throws Exception If failed.
+ */
+@Ignore(""https://issues.apache.org/jira/browse/IGNITE-10723"")
+@Test
+public void testCustomSchemaMultipleCachesTablesCollision() throws Exception {","GridTestUtils.assertThrows(log, new Callable<Object>() {
+    @Override public Object call() throws Exception {
+        final CacheConfiguration cfg = cacheConfig(""cache1"", true, Integer.class, Fact.class)
+            .setSqlSchema(""TEST_SCHEMA"");
+
+        final CacheConfiguration collisionCfg = cacheConfig(""cache2"", true, Integer.class, Fact.class)
+            .setSqlSchema(""TEST_SCHEMA"");
+
+        IgniteConfiguration icfg = new IgniteConfiguration()
+            .setLocalHost(""127.0.0.1"")"
+255418,69,// TODO: test prefixNsString,requirement,"@Test
+void namespaceWrappedArrayTest() {
+    // TODO: test namespaceWrappedArray
+}
+
+/**
+ * Test the property 'prefixNsString'
+ */
+@Test
+void prefixNsStringTest() {","    // TODO: test prefixNsString
+}
+
+/**
+ * Test the property 'prefixNsNumber'
+ */
+@Test
+void prefixNsNumberTest() {
+    // TODO: test prefixNsNumber
+}"
+249335,69,// TODO: test Dog,requirement," * Model tests for Dog
+ */
+public class DogTest {
+    private final Dog model = new Dog();
+
+    /**
+     * Model tests for Dog
+     */
+    @Test
+    public void testDog() {","    // TODO: test Dog
+}
+
+/**
+ * Test the property 'className'
+ */
+@Test
+public void classNameTest() {
+    // TODO: test className
+}"
+924232,401,// TODO Test other adapter methods.,requirement,"import org.junit.platform.engine.TestDescriptor;
+import org.junit.platform.engine.UniqueId;
+import org.junit.platform.engine.reporting.ReportEntry;
+import org.junit.platform.engine.support.descriptor.DemoMethodTestDescriptor;
+import org.junit.platform.launcher.TestExecutionListener;
+import org.junit.platform.launcher.TestIdentifier;
+
+/**
+ * @since 1.0
+ */","// TODO Test other adapter methods.
+class ExecutionListenerAdapterTests {
+
+	@Test
+	void testReportingEntryPublished() {
+		var testDescriptor = getSampleMethodTestDescriptor();
+
+		var discoveryResult = new LauncherDiscoveryResult(Map.of(mock(), testDescriptor), mock(),
+			dummyOutputDirectoryProvider());
+		var testPlan = InternalTestPlan.from(discoveryResult);"
+256014,69,// TODO: test id,requirement,"@Test
+void testPet() {
+    // TODO: test Pet
+}
+
+/**
+ * Test the property 'id'
+ */
+@Test
+void idTest() {","    // TODO: test id
+}
+
+/**
+ * Test the property 'category'
+ */
+@Test
+void categoryTest() {
+    // TODO: test category
+}"
+975274,435,// TODO - seems this explicit case is necessary with JDK 5 (at least on Mac). With Java 6 there is no problem,requirement,"catch ( ConstraintViolationException e ) {
+	fail( ""invalid object should not be validated"" );
+}
+try {
+	s.remove( ch );
+	s.flush();
+	fail( ""invalid object should not be persisted"" );
+}
+catch ( ConstraintViolationException e ) {
+	assertEquals( 1, e.getConstraintViolations().size() );","// TODO - seems this explicit case is necessary with JDK 5 (at least on Mac). With Java 6 there is no problem
+Annotation annotation = e.getConstraintViolations()
+		.iterator()
+		.next()
+		.getConstraintDescriptor()
+		.getAnnotation();
+assertEquals(
+		NotNull.class,
+		annotation.annotationType()
+);"
+16740,8,// TODO: add support for non-existing docs,superficial,"        result = engine.index(indexWithVersion.apply(conflictingVersion, index));
+    }
+    assertThat(result.isCreated(), equalTo(false));
+    assertThat(result.getVersion(), equalTo(lastOpVersion));
+    assertThat(result.getResultType(), equalTo(Engine.Result.Type.FAILURE));
+    assertThat(result.getFailure(), instanceOf(VersionConflictEngineException.class));
+    assertThat(result.getFailure().getStackTrace(), emptyArray());
+} else {
+    final Engine.IndexResult result;
+    if (versionedOp) {","    // TODO: add support for non-existing docs
+    if (randomBoolean() && lastOpSeqNo != SequenceNumbers.UNASSIGNED_SEQ_NO && docDeleted == false) {
+        result = engine.index(indexWithSeq.apply(lastOpSeqNo, lastOpTerm, index));
+    } else {
+        result = engine.index(indexWithVersion.apply(correctVersion, index));
+    }
+} else {
+    result = engine.index(indexWithCurrentTerm.apply(index));
+}
+assertThat(result.isCreated(), equalTo(docDeleted));"
+272089,69,// TODO: test ModelApiResponse,requirement," * Model tests for ModelApiResponse
+ */
+class ModelApiResponseTest {
+    private final ModelApiResponse model = new ModelApiResponse();
+
+    /**
+     * Model tests for ModelApiResponse
+     */
+    @Test
+    void testModelApiResponse() {","    // TODO: test ModelApiResponse
+}
+
+/**
+ * Test the property 'code'
+ */
+@Test
+void codeTest() {
+    // TODO: test code
+}"
+983742,435,"/**
+ * todo: describe Parent
+ *
+ * @author Steve Ebersole
+ */",documentation,"/*
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ * Copyright Red Hat Inc. and Hibernate Authors
+ */
+package org.hibernate.orm.test.jpa.cascade2;
+
+","public class Parent {
+	private Long id;
+	private String name;
+	private ParentInfo info;
+
+	public Parent() {
+	}
+
+	public Parent(String name) {
+		this.name = name;"
+40473,8,"// This test assumes that xpack.ml.max_machine_memory_percent is 30
+// and that xpack.ml.use_auto_machine_memory_percent is false.
+// It also assumes that 30% of RAM on the test machine is sufficient
+// to run a 200MB job but not a 50000MB job. (If we move to 256GB CI
+// workers then it will need to be adjusted.)",temporary fix,"}
+
+@After
+public void removeSettings() {
+    updateClusterSettings(
+        Settings.builder().putNull(MachineLearningField.MAX_LAZY_ML_NODES.getKey()).putNull(""logger.org.elasticsearch.xpack.ml"")
+    );
+    cleanUp();
+}
+","public void testMLAutoscalingCapacity() throws Exception {
+    SortedMap<String, Settings> deciders = new TreeMap<>();
+    deciders.put(
+        MlAutoscalingDeciderService.NAME,
+        Settings.builder().put(MlAutoscalingDeciderService.DOWN_SCALE_DELAY.getKey(), TimeValue.ZERO).build()
+    );
+    final PutAutoscalingPolicyAction.Request request = new PutAutoscalingPolicyAction.Request(
+        TEST_REQUEST_TIMEOUT,
+        TEST_REQUEST_TIMEOUT,
+        ""ml_test"","
+84508,12,// choose My Bar // TODO: I see no reason for a conflict !,how to,"		Structure foo = (Structure) dtm.getDataType(new CategoryPath(""/MISC""), ""Foo"");
+		bar.add(new ByteDataType());
+		s1.delete(3);
+		// edit Foo
+		foo.add(new FloatDataType());
+	}
+});
+
+executeMerge();
+","chooseOption(DataTypeMergeManager.OPTION_MY);// choose My Bar // TODO: I see no reason for a conflict !
+
+setErrorsExpected(true);
+
+chooseOption(DataTypeMergeManager.OPTION_ORIGINAL); // choose Structure_1 from ORIGINAL
+
+setErrorsExpected(false);
+
+waitForCompletion();
+"
+271473,69,// TODO: test int64,requirement,"@Test
+void int32Test() {
+    // TODO: test int32
+}
+
+/**
+ * Test the property 'int64'
+ */
+@Test
+void int64Test() {","    // TODO: test int64
+}
+
+/**
+ * Test the property 'number'
+ */
+@Test
+void numberTest() {
+    // TODO: test number
+}"
+146929,40,"// note, we get a buffer underflow exception instead of an OOME, even though the encoded size
+// would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap",how to,"    byte[] input = {-1, -1, -1, -2};
+    final ByteBuffer buffer = ByteBuffer.wrap(input);
+    assertThrows(NegativeArraySizeException.class, () -> Utils.getNullableSizePrefixedArray(buffer));
+}
+
+@Test
+public void getNullableSizePrefixedArrayUnderflow() {
+    // Integer.MAX_VALUE
+    byte[] input = {127, -1, -1, -1};
+    final ByteBuffer buffer = ByteBuffer.wrap(input);","    assertThrows(BufferUnderflowException.class, () -> Utils.getNullableSizePrefixedArray(buffer));
+}
+
+@Test
+public void utf8ByteArraySerde() {
+    String utf8String = ""A\u00ea\u00f1\u00fcC"";
+    byte[] utf8Bytes = utf8String.getBytes(StandardCharsets.UTF_8);
+    assertArrayEquals(utf8Bytes, Utils.utf8(utf8String));
+    assertEquals(utf8Bytes.length, Utils.utf8Length(utf8String));
+    assertEquals(utf8String, Utils.utf8(utf8Bytes));"
+759729,255,// TODO: multi-column partitions cannot prune partitions.,requirement,"        taskRun.getProcessor();
+
+MvTaskRunContext mvContext = processor.getMvContext();
+ExecPlan execPlan = mvContext.getExecPlan();
+String plan = execPlan.getExplainString(TExplainLevel.NORMAL);
+// TODO: non-ref base table's update will refresh all the materialized views' partitions.
+PlanTestBase.assertContains(plan, ""TABLE: t1_par\n"" +
+        ""     PARTITION PREDICATES: 9: par_col IS NOT NULL, 10: par_date >= '2020-01-01', 10: par_date < "" +
+        ""'2020-01-06'\n"" +
+        ""     partitions=7/7"");","    // TODO: multi-column partitions cannot prune partitions.
+    PlanTestBase.assertContains(plan, ""TABLE: t2_par\n"" +
+            ""     PARTITION PREDICATES: 4: par_col IS NOT NULL\n"" +
+            ""     partitions=7/7"");
+}
+
+// run 4
+{
+    MockedHiveMetadata mockedHiveMetadata =
+            (MockedHiveMetadata) connectContext.getGlobalStateMgr().getMetadataMgr()."
+1154060,497,"// todo: make this test run also for edge-based CH or otherwise make sure time calculation is tested also for edge-based CH (at the moment it will fail!)
+// todo: make this test run also for ALT or otherwise make sure time calculation is tested also for ALT (at the moment it will fail?!)",superficial,"public class EdgeBasedRoutingAlgorithmTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(EdgeBasedRoutingAlgorithmTest.class);
+    private DecimalEncodedValue speedEnc;
+    private DecimalEncodedValue turnCostEnc;
+    private TurnCostStorage tcs;
+
+    private static class FixtureProvider implements ArgumentsProvider {
+        @Override
+        public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
+            return Stream.of(","                DIJKSTRA,
+                DIJKSTRA_BI,
+                ASTAR,
+                ASTAR_BI
+                // TODO { AlgorithmOptions.DIJKSTRA_ONE_TO_MANY }
+        ).map(Arguments::of);
+    }
+}
+
+// 0---1"
+892743,368,"// expected
+// TODO(czhu): with the current implementation of prefixes w/o delimiters, there is
+// never a FileDoesNotExistException because we just list the entire bucket recursively",impractical case,"new TestCase(mHostname, mPort, mBaseUri,
+    ""bucket"", parameters, HttpMethod.GET,
+    getDefaultOptionsWithAuth().setContentType(TestCaseOptions.XML_CONTENT_TYPE))
+    .runAndCheckResult(expected);
+
+//parameters with non-existent prefix=""dne_folder/file""
+try {
+  expected = new ListBucketResult(""bucket"", statuses,
+      ListBucketOptions.defaults().setPrefix(""dne_folder/file""));
+} catch (Exception e) {","  statuses = new ArrayList<>();
+  return;
+}
+assertEquals(0, expected.getContents().size());
+
+parameters.put(""prefix"", ""dne_folder/file"");
+new TestCase(mHostname, mPort, mBaseUri,
+    ""bucket"", parameters, HttpMethod.GET,
+    getDefaultOptionsWithAuth().setContentType(TestCaseOptions.XML_CONTENT_TYPE))
+    .runAndCheckResult(expected);"
+671397,213,"// Modify the magic / type marker. In the current implementation, getting the FRP data block
+// size does not check digest.",requirement,"
+@Test
+@Parameters({""false"", ""true""})
+public void getFrpDataBlockSizeGrantedByUid(boolean frpEnabled) throws Exception {
+    setUp(frpEnabled);
+    assertThat(mInterface.write(SMALL_DATA)).isEqualTo(SMALL_DATA.length);
+
+    mPdbService.setAllowedUid(Binder.getCallingUid());
+    assertThat(mInterface.getDataBlockSize()).isEqualTo(SMALL_DATA.length);
+","    tamperWithMagic();
+    assertThat(mInterface.getDataBlockSize()).isEqualTo(0);
+}
+
+@Test
+@Parameters({""false"", ""true""})
+public void getFrpDataBlockSizeGrantedByPermission(boolean frpEnabled) throws Exception {
+    setUp(frpEnabled);
+    assertThat(mInterface.write(SMALL_DATA)).isEqualTo(SMALL_DATA.length);
+"
+746072,238,"// Due to a mockito issue, only spy the object after setting the initial state",dependency,"
+@Before
+public void setup() {
+    MockitoAnnotations.initMocks(this);
+    Context mTargetContext = InstrumentationRegistry.getTargetContext();
+    final View view = new View(mTargetContext);
+    RotationButton rotationButton = mock(RotationButton.class);
+    mRotationButtonController = new RotationButtonController(mTargetContext, 0, 0, 0, 0, 0, 0,
+            () -> 0);
+    mRotationButtonController.setRotationButton(rotationButton, null);","    // Due to a mockito issue, only spy the object after setting the initial state
+    mRotationButtonController = spy(mRotationButtonController);
+    final AnimatedVectorDrawable kbd = mock(AnimatedVectorDrawable.class);
+    doReturn(view).when(rotationButton).getCurrentView();
+    doReturn(true).when(rotationButton).acceptRotationProposal();
+}
+
+@Test
+public void testOnInvalidRotationProposal() {
+    mRotationButtonController.onRotationProposal(DEFAULT_ROTATE + 1,"
+1608102,946,// nested doesn't work yet in Geode. Need custom PDX serializer,requirement,"}
+
+@Override
+protected Backend backend() {
+  return backend;
+}
+
+@Disabled
+@Override
+public void nested() {","  // nested doesn't work yet in Geode. Need custom PDX serializer
+}
+
+@Test
+void deleteByKey() {
+  PersonGenerator generator = new PersonGenerator();
+  repository().insert(generator.next().withId(""id1""));
+  repository().insert(generator.next().withId(""id2""));
+  repository().insert(generator.next().withId(""id3""));
+"
+253646,69,// TODO: test validations,requirement,"public void shouldSee400AfterTestEnumParameters() {
+    String enumHeaderStringArray = null;
+    String enumHeaderString = null;
+    List<String> enumQueryStringArray = null;
+    String enumQueryString = null;
+    Integer enumQueryInteger = null;
+    Double enumQueryDouble = null;
+    List<String> enumFormStringArray = null;
+    String enumFormString = null;
+    api.testEnumParameters().execute(r -> r.prettyPeek());","    // TODO: test validations
+}
+
+/**
+ * Not found
+ */
+@Test
+public void shouldSee404AfterTestEnumParameters() {
+    String enumHeaderStringArray = null;
+    String enumHeaderString = null;"
+263970,69,// TODO: test prefixBoolean,requirement,"@Test
+public void prefixIntegerTest() {
+    // TODO: test prefixInteger
+}
+
+/**
+ * Test the property 'prefixBoolean'
+ */
+@Test
+public void prefixBooleanTest() {","    // TODO: test prefixBoolean
+}
+
+/**
+ * Test the property 'prefixArray'
+ */
+@Test
+public void prefixArrayTest() {
+    // TODO: test prefixArray
+}"
+1063158,478,"/**
+ * There is a delay 5-10 mins between upload of file and being searchable (probably to update some search indexes,
+ * see https://community.box.com/t5/Platform-and-Development-Forum/Box-Search-Delay/td-p/40072). With this delay
+ * search for an actual item, created in the beginning of the test, doesn't make sense. Test only verifies, that
+ * search results works (and does not end with an exception).
+ *
+ * To test search of real data, change query string from '*' to real name of file.
+ */",impractical case," * Test class for {@link BoxSearchManager} APIs.
+ */
+@EnabledIf(value = ""org.apache.camel.component.box.AbstractBoxITSupport#hasCredentials"",
+           disabledReason = ""Box credentials were not provided"")
+public class BoxSearchManagerIT extends AbstractBoxITSupport {
+
+    private static final Logger LOG = LoggerFactory.getLogger(BoxSearchManagerIT.class);
+    private static final String PATH_PREFIX = BoxApiCollection.getCollection()
+            .getApiName(BoxSearchManagerApiMethod.class).getName();
+","@Test
+public void testSearchFolder() {
+    final Map<String, Object> headers = new HashMap<>();
+    // parameter type is String
+    headers.put(""CamelBox.folderId"", ""0"");
+    // parameter type is String
+    headers.put(""CamelBox.query"", ""*"");
+
+    @SuppressWarnings(""rawtypes"")
+    final java.util.Collection result = requestBodyAndHeaders(""direct://SEARCHFOLDER"", null, headers);"
+878369,337,"// TODO(lharker): forbid this annotation, since it is impossible for a Promise to resolve to a
+// Promise.",other,"      .addDiagnostic(
+          lines(
+              ""actual parameter 1 of takesNumber does not match formal parameter"",
+              ""found   : string"",
+              ""required: number""))
+      .run();
+}
+
+@Test
+public void testAwaitPromiseOfPromise() {","  newTest()
+      .addSource(
+          ""function takesNumber(/** number*/ num) {}"",
+          """",
+          ""async function f(/** !Promise<!Promise<number>> */ p) {"",
+          ""  takesNumber(await p);"",
+          ""}"")
+      .run();
+}
+"
+249947,69,// TODO: test Pet,requirement," * Model tests for Pet
+ */
+public class PetTest {
+    private final Pet model = new Pet();
+
+    /**
+     * Model tests for Pet
+     */
+    @Test
+    public void testPet() {","    // TODO: test Pet
+}
+
+/**
+ * Test the property 'id'
+ */
+@Test
+public void idTest() {
+    // TODO: test id
+}"
+546934,149,"// This is disabled since OverlordResource.getTaskStatus() is annotated with TaskResourceFilter which is supposed to
+// set authorization token properly, but isn't called in this test.
+// This should be fixed in https://github.com/apache/druid/issues/6685.
+// expectAuthorizationTokenCheck();",defect,"  final TaskPayloadResponse taskPayloadResponse2 = TestHelper.makeJsonMapper().readValue(
+      TestHelper.makeJsonMapper().writeValueAsString(response2.getEntity()),
+      TaskPayloadResponse.class
+  );
+  Assert.assertEquals(new TaskPayloadResponse(""othertask"", null), taskPayloadResponse2);
+}
+
+@Test
+public void testGetTaskStatus() throws Exception
+{","final Task task = NoopTask.create();
+final String taskId = task.getId();
+final TaskStatus status = TaskStatus.running(taskId);
+
+EasyMock.expect(taskQueryTool.getTaskInfo(taskId))
+        .andReturn(new TaskInfo(
+            task.getId(),
+            DateTimes.of(""2018-01-01""),
+            status,
+            task.getDataSource(),"
+1217195,576,"// Maybe this one should throw an exception. Usually this will be used before
+// a UID lookup so it will toss an exception then.",how to,"  Tags.parseWithMetric("""", tags);
+}
+
+@Test (expected = IllegalArgumentException.class)
+public void parseWithMetricListMissingClosingCurly() {
+  final List<Pair<String, String>> tags = 
+      new ArrayList<Pair<String, String>>(0);
+  Tags.parseWithMetric(""sys.cpu.user{host=web01"", tags);
+}
+","@Test
+public void parseWithMetricListMissingOpeningCurly() {
+  final List<Pair<String, String>> tags = 
+      new ArrayList<Pair<String, String>>(0);
+  assertEquals(""sys.cpu.user host=web01}"",
+      Tags.parseWithMetric(""sys.cpu.user host=web01}"", tags));
+}
+
+@Test (expected = IllegalArgumentException.class)
+public void parseWithMetricListMissingEquals() {"
+261384,69,// TODO: test TestInlineFreeformAdditionalPropertiesRequest,requirement," * Model tests for TestInlineFreeformAdditionalPropertiesRequest
+ */
+class TestInlineFreeformAdditionalPropertiesRequestTest {
+    private final TestInlineFreeformAdditionalPropertiesRequest model = new TestInlineFreeformAdditionalPropertiesRequest();
+
+    /**
+     * Model tests for TestInlineFreeformAdditionalPropertiesRequest
+     */
+    @Test
+    void testTestInlineFreeformAdditionalPropertiesRequest() {","    // TODO: test TestInlineFreeformAdditionalPropertiesRequest
+}
+
+/**
+ * Test the property 'someProperty'
+ */
+@Test
+void somePropertyTest() {
+    // TODO: test someProperty
+}"
+278462,69,// TODO: test className,requirement,"@Test
+public void testAnimal() {
+    // TODO: test Animal
+}
+
+/**
+ * Test the property 'className'
+ */
+@Test
+public void classNameTest() {","    // TODO: test className
+}
+
+/**
+ * Test the property 'color'
+ */
+@Test
+public void colorTest() {
+    // TODO: test color
+}"
+255452,69,// TODO: test dateTime,requirement,"@Test
+void uuidTest() {
+    // TODO: test uuid
+}
+
+/**
+ * Test the property 'dateTime'
+ */
+@Test
+void dateTimeTest() {","    // TODO: test dateTime
+}
+
+/**
+ * Test the property 'map'
+ */
+@Test
+void mapTest() {
+    // TODO: test map
+}"
+258449,69,// TODO: test className,requirement,"@Test
+void testCat() {
+    // TODO: test Cat
+}
+
+/**
+ * Test the property 'className'
+ */
+@Test
+void classNameTest() {","    // TODO: test className
+}
+
+/**
+ * Test the property 'color'
+ */
+@Test
+void colorTest() {
+    // TODO: test color
+}"
+1634981,979,// can't validate easily as it contains a Lookup object,how to,"	} catch (NoClassDefFoundError e) {
+		/* Expected behavior */
+	}
+}
+
+
+// test different BSM signatures
+@Test(groups = { ""level.extended"" })
+public void test_different_bsm_signatures() {
+	String s1 = com.ibm.j9.jsr292.indyn.GenIndyn.bsm_signature_obj_array();","	AssertJUnit.assertNotNull(s1);	// can't validate easily as it contains a Lookup object
+	String s2 = com.ibm.j9.jsr292.indyn.GenIndyn.bsm_signature_L_S_MT_obj_array();
+	AssertJUnit.assertEquals(Arrays.toString(new Object[] { ""hello"", ""world""}), s2);
+	String s3 = com.ibm.j9.jsr292.indyn.GenIndyn.bsm_signature_L_S_MT_obj_array_passing_primitives();
+	AssertJUnit.assertEquals(Arrays.toString(new Object[] { ""hello"", ""world"", 444, 555, 666, 777, 888}), s3);
+	String s4 = com.ibm.j9.jsr292.indyn.GenIndyn.bsm_signature_L_S_MT_byte_array();
+	AssertJUnit.assertEquals(Arrays.toString(new byte[] { 4,5,6,7,8 }), s4);
+	long longValue = com.ibm.j9.jsr292.indyn.GenIndyn.bsm_signature_L_S_MT_sss_long_array();
+	AssertJUnit.assertEquals(7 + 8, longValue);
+}"
+277362,69,// TODO: test capitalCamel,requirement,"@Test
+public void smallCamelTest() {
+    // TODO: test smallCamel
+}
+
+/**
+ * Test the property 'capitalCamel'
+ */
+@Test
+public void capitalCamelTest() {","    // TODO: test capitalCamel
+}
+
+/**
+ * Test the property 'smallSnake'
+ */
+@Test
+public void smallSnakeTest() {
+    // TODO: test smallSnake
+}"
+357955,81,"// Compact Pattern Data Provider provides test input for both DecimalFormat patterns
+// and the compact patterns. As there is no method to retrieve compact patterns,
+// thus test only against US English locale, and use a hard coded K - 1000",multi,"private static Stream<Arguments> currencyValidParseStrings() {
+    return validParseStrings().map(args -> Arguments.of(
+            cFmt.getPositivePrefix() + String.valueOf(args.get()[0])
+                    .replace(dfs.getGroupingSeparator(), dfs.getMonetaryGroupingSeparator())
+                    .replace(dfs.getDecimalSeparator(), dfs.getMonetaryDecimalSeparator())
+                    + cFmt.getPositiveSuffix(),
+            args.get()[1])
+    );
+}
+","private static Stream<Arguments> compactBadParseStrings() {
+    return Stream.concat(
+            badParseStrings().map(args -> Arguments.of(args.get()[0], args.get()[1])),
+            badParseStrings().map(args -> Arguments.of(args.get()[0] + ""K"", args.get()[1]))
+    );
+}
+
+private static Stream<Arguments> compactValidParseStrings() {
+    return Stream.concat(
+            validParseStrings().map(args -> Arguments.of("
+1634362,979,"// An unlikely exception - if this occurs, we can't proceed with the test.",impractical case,"} catch (InvalidAttributeValueException e) {
+	// An unlikely exception - if this occurs, we can't proceed with the test.
+	Assert.fail(""Unexpected InvalidAttributeValueException "" + e.getMessage());
+} catch (MBeanException e) {
+	// An unlikely exception - if this occurs, we can't proceed with the test.
+	Assert.fail(""Unexpected MBeanException "" + e.getCause().getMessage());
+} catch (ReflectionException e) {
+	// An unlikely exception - if this occurs, we can't proceed with the test.
+	Assert.fail(""Unexpected ReflectionException "" + e.getCause().getMessage());
+} catch (InstanceNotFoundException e) {","	// An unlikely exception - if this occurs, we can't proceed with the test.
+	Assert.fail(""Unexpected InstanceNotFoundException occurred: "" + e.getMessage());
+}
+
+// Let's try and set some non-writable attributes.
+attr = new Attribute(""LoadedClassCount"", Integer.valueOf(25));
+try {
+	mbs.setAttribute(objName, attr);
+	Assert.fail(""Unreacheable code: should have thrown an exception."");
+} catch (InstanceNotFoundException e) {"
+1010409,441,"/**
+ * An implementation of {@code OutputStream} that should serve as the
+ * underlying stream for classes to be tested.
+ * In particular this implementation allows to have IOExecptions thrown on demand.
+ * For simplicity of use and understanding all fields are public.
+ */",design,"package tests.support;
+
+import java.io.IOException;
+import java.io.Writer;
+","public class Support_ASimpleWriter extends Writer {
+
+    public static final int DEFAULT_BUFFER_SIZE = 32;
+
+    public char[] buf;
+
+    public int pos;
+
+    public int size;
+"
+852702,315,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public ObjectId[] getDatabaseIDs( boolean includeDeleted ) throws KettleException {
+  // TODO Auto-generated method stub
+  return null;
+}
+
+@Override
+public String[] getDatabaseNames( boolean includeDeleted ) throws KettleException {","  // TODO Auto-generated method stub
+  return null;
+}
+
+@Override
+public List<DatabaseMeta> readDatabases() throws KettleException {
+  // TODO Auto-generated method stub
+  return null;
+}
+"
+242450,65,"/* TODO unclear what exactly this is purporting to assert
+    @Test
+    public void testSave() throws IOException {
+        User user = User.get(""User"");
+        MyViewsProperty property = new MyViewsProperty(AllView.DEFAULT_VIEW_NAME);
+        property.readResolve();
+        property.setUser(user);
+        user.addProperty(property);
+        View view = new ListView(""foo"", property);
+        property.addView(view);
+        property.setPrimaryViewName(view.name);
+        User.reload();
+        property = User.get(""User"").getProperty(property.getClass());
+        assertNotSame(""Property should not have primary view "" + view.name, view.name, property.getPrimaryViewName());
+        property.setUser(user);
+        property.addView(view);
+        property.setPrimaryViewName(view.name);
+        property.save();
+        User.reload();
+        property = User.get(""User"").getProperty(property.getClass());
+        assertEquals(""Property should have primary view "" + view.name + "" instead of "" + property.getPrimaryViewName(), view.name, property.getPrimaryViewName());
+    }
+    */",how to,"@Test
+public void testReadResolve() throws IOException {
+    User user = User.getOrCreateByIdOrFullName(""User"");
+    MyViewsProperty property = new MyViewsProperty(AllView.DEFAULT_VIEW_NAME);
+    property.setUser(user);
+    user.addProperty(property);
+    property.readResolve();
+    assertNotNull(""Property should contain "" + AllView.DEFAULT_VIEW_NAME + "" by default."", property.getView(AllView.DEFAULT_VIEW_NAME));
+}
+","
+@Test
+public void testGetViews() throws IOException {
+    User user = User.getOrCreateByIdOrFullName(""User"");
+    MyViewsProperty property = new MyViewsProperty(AllView.DEFAULT_VIEW_NAME);
+    property.readResolve();
+    property.setUser(user);
+    assertTrue(""Property should contain "" + AllView.DEFAULT_VIEW_NAME, property.getViews().contains(property.getView(AllView.DEFAULT_VIEW_NAME)));
+    View view = new ListView(""foo"", property);
+    property.addView(view);"
+277736,69,// TODO: test name,requirement,"@Test
+public void testName() {
+    // TODO: test Name
+}
+
+/**
+ * Test the property 'name'
+ */
+@Test
+public void nameTest() {","    // TODO: test name
+}
+
+/**
+ * Test the property 'snakeCase'
+ */
+@Test
+public void snakeCaseTest() {
+    // TODO: test snakeCase
+}"
+1479015,805,// TODO: handle exception,code,"    assertEnvelopeEquals(expectedEnvelope, scale, (GeneralBounds) targetCoverage.getEnvelope(), scale);
+    assertTrue(CRS.equalsIgnoreMetadata(
+            targetCoverage.getCoordinateReferenceSystem(), expectedEnvelope.getCoordinateReferenceSystem()));
+    assertEquals(gridRange.getSpan(1), 1);
+    assertEquals(gridRange.getSpan(0), 120);
+
+} finally {
+    try {
+        readerTarget.dispose();
+    } catch (Exception e) {","            // TODO: handle exception
+        }
+        try {
+            scheduleForCleaning(targetCoverage);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+}
+"
+268262,69,// TODO: test mapBoolean,requirement,"@Test
+void mapIntegerTest() {
+    // TODO: test mapInteger
+}
+
+/**
+ * Test the property 'mapBoolean'
+ */
+@Test
+void mapBooleanTest() {","    // TODO: test mapBoolean
+}
+
+/**
+ * Test the property 'mapArrayInteger'
+ */
+@Test
+void mapArrayIntegerTest() {
+    // TODO: test mapArrayInteger
+}"
+256848,69,// TODO: test validations,requirement," * To test class name in snake case
+ *
+ * To test class name in snake case
+ *
+ * @throws ApiException if the Api call fails
+ */
+@Test
+public void testClassnameTest() throws ApiException {
+    Client body = null;
+    Client response = api.testClassname(body);","        // TODO: test validations
+    }
+
+}"
+247402,69,"// Tests are not final, methods currently just generate documentation as MD tables.",requirement,"
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
+import org.openapitools.codegen.languages.features.DocumentationProviderFeatures.AnnotationLibrary;
+import org.openapitools.codegen.languages.features.DocumentationProviderFeatures.DocumentationProvider;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+","// Tests are not final, methods currently just generate documentation as MD tables.
+public class DocumentationProviderFeaturesTest {
+
+  @Test(priority = 0)
+  void generateDocumentationProviderTable() {
+    List<DocumentationProvider> providers = Arrays.asList(DocumentationProvider.values());
+    StringBuilder sb = new StringBuilder();
+    sb.append(""### DocumentationProvider\n"");
+    sb.append(""|Cli Option|Description|Property Name|Preferred Annotation Library|Supported Annotation Libraries|\n"");
+    sb.append(""|----------|-----------|-------------|----------------------------|------------------------------|\n"");"
+993158,441,"// TODO: Tests when ""while((c=iter.nextCaseMapCP())>=0)"" is false",requirement,"public void testToTitleCase_String_BreakIterator_en() {
+    String titleCase = UCharacter.toTitleCase(new Locale(""en""), ""ijsland"", null);
+    assertEquals(""Wrong title casing"", ""Ijsland"", titleCase);
+}
+/*
+ * The following method tests
+ *      public static String toUpperCase(ULocale locale, String str)
+ */
+@Test
+public void TestToUpperCase(){","    // TODO: Tests when ""while((c=iter.nextCaseMapCP())>=0)"" is false
+}
+
+/*
+ * The following method tests
+ *      public static String toLowerCase(ULocale locale, String str)
+ */
+@Test
+public void TestToLowerCase(){
+    // Test when locale is null"
+41308,8,"// TODO PersistentTasksCustomMetadata is required for jobs other than TrainedModels
+// .customs(Map.of(PersistentTasksCustomMetadata.TYPE, PersistentTasksCustomMetadata.builder().build()))",requirement,"}
+
+static ClusterState createClusterStateWithoutNodes(TrainedModelAssignmentMetadata trainedModelAssignmentMetadata) {
+    return createClusterState(trainedModelAssignmentMetadata, null);
+}
+
+static ClusterState createClusterState(TrainedModelAssignmentMetadata trainedModelAssignmentMetadata, DiscoveryNodes nodes) {
+    ClusterState.Builder csBuilder = new ClusterState.Builder(ClusterState.EMPTY_STATE);
+
+    Metadata.Builder metadataBuilder = Metadata.builder();","if (trainedModelAssignmentMetadata != null) {
+    metadataBuilder.putCustom(TrainedModelAssignmentMetadata.NAME, trainedModelAssignmentMetadata);
+}
+
+Metadata metadata = metadataBuilder.build();
+csBuilder.metadata(metadata);
+
+if (nodes != null) {
+    csBuilder.nodes(nodes);
+}"
+82244,12,// not implemented yet,requirement,"	assertEquals(f1dtc.getDataType(), f2dtc.getDataType());
+	assertEquals(f1dtc.getDataType(), f3dtc.getDataType());
+	assertEquals(f1dtc.getDataType(), f4dtc.getDataType());
+}
+
+// not implemented yet
+public void testNamespace() {
+
+}
+","// not implemented yet
+public void testNamespaceAnonType() {
+	// anon struct
+}
+
+/*
+ * Test array defintions that use upper_bound attribute
+ */
+@Test
+public void testArray() throws CancelledException, IOException, DWARFException {"
+252452,69,// TODO: test validations,requirement," * creates an XmlItem
+ * this route creates an XmlItem
+ *
+ * @param context Vertx test context for doing assertions
+ */
+@Test
+public void createXmlItemTest(TestContext testContext) {
+    Async async = testContext.async();
+    XmlItem xmlItem = null;
+    api.createXmlItem(xmlItem, result -> {","        // TODO: test validations
+        async.complete();
+    });
+}
+/**
+ * 
+ * Test serialization of outer boolean types
+ *
+ * @param context Vertx test context for doing assertions
+ */"
+267434,69,// TODO: test type,requirement,"@Test
+void testParentWithNullable() {
+    // TODO: test ParentWithNullable
+}
+
+/**
+ * Test the property 'type'
+ */
+@Test
+void typeTest() {","    // TODO: test type
+}
+
+/**
+ * Test the property 'nullableProperty'
+ */
+@Test
+void nullablePropertyTest() {
+    // TODO: test nullableProperty
+}"
+252818,69,// TODO: test objectItemsNullable,requirement,"@Test
+void objectAndItemsNullablePropTest() {
+    // TODO: test objectAndItemsNullableProp
+}
+
+/**
+ * Test the property 'objectItemsNullable'
+ */
+@Test
+void objectItemsNullableTest() {","        // TODO: test objectItemsNullable
+    }
+
+}"
+39964,8,// unimplemented,requirement,"    return Collections.emptyList(); // unimplemented
+}
+
+@Override
+public void testIgnoreMalformedWithObject() {} // unimplemented
+
+@Override
+public void testAllowMultipleValuesField() {} // unimplemented
+
+@Override","public void testScriptableTypes() {} // unimplemented
+
+@Override
+protected Number missingValue() {
+    return 123L;
+}
+
+@Override
+protected Number randomNumber() {
+    if (randomBoolean()) {"
+252752,69,// TODO: test files,requirement,"@Test
+void _fileTest() {
+    // TODO: test _file
+}
+
+/**
+ * Test the property 'files'
+ */
+@Test
+void filesTest() {","        // TODO: test files
+    }
+
+}"
+977196,435,"/**
+ * TODO : javadoc
+ *
+ * @author Steve Ebersole
+ */",documentation,"import jakarta.persistence.ColumnResult;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityResult;
+import jakarta.persistence.FieldResult;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.SqlResultSetMapping;
+import jakarta.persistence.SqlResultSetMappings;
+import jakarta.persistence.Table;
+","@SqlResultSetMappings({
+		@SqlResultSetMapping(
+				name=""explicitScalarResultSetMapping"",
+				columns={ @ColumnResult(name=""QuotEd_nAMe"") }
+		)
+		,
+		@SqlResultSetMapping(
+				name=""basicEntityResultSetMapping"",
+				entities = @EntityResult( entityClass = MyEntity.class )
+		)"
+1101206,482,// TODO (https://github.com/trinodb/trino/issues/17) change to equals(),requirement,"public MatchResult detailMatches(
+    PlanNode node, SessionInfo session, Metadata metadata, SymbolAliases symbolAliases) {
+  checkState(
+      shapeMatches(node),
+      ""Plan testing framework error: shapeMatches returned false in detailMatches in %s"",
+      this.getClass().getName());
+  AggregationTableScanNode aggregationTableScanNode = (AggregationTableScanNode) node;
+
+  String actualTableName = aggregationTableScanNode.getQualifiedObjectName().toString();
+","// TODO (https://github.com/trinodb/trino/issues/17) change to equals()
+if (!expectedTableName.equalsIgnoreCase(actualTableName)) {
+  return NO_MATCH;
+}
+
+if (!outputSymbols.isEmpty()
+    && !ImmutableSet.copyOf(outputSymbols)
+        .equals(
+            aggregationTableScanNode.getOutputSymbols().stream()
+                .map(Symbol::getName)"
+279160,69,// TODO: test myString,requirement,"@Test
+public void myNumberTest() {
+    // TODO: test myNumber
+}
+
+/**
+ * Test the property 'myString'
+ */
+@Test
+public void myStringTest() {","    // TODO: test myString
+}
+
+/**
+ * Test the property 'myBoolean'
+ */
+@Test
+public void myBooleanTest() {
+    // TODO: test myBoolean
+}"
+46142,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,requirement,"    return RoutingInfoUpdate::new;
+}
+
+@Override
+protected RoutingInfoUpdate createTestInstance() {
+    return randomInstance();
+}
+
+@Override
+protected RoutingInfoUpdate mutateInstance(RoutingInfoUpdate instance) {","    return null;// TODO implement https://github.com/elastic/elasticsearch/issues/25929
+}
+
+public static RoutingInfoUpdate randomInstance() {
+    if (randomBoolean()) {
+        return RoutingInfoUpdate.updateNumberOfAllocations(randomIntBetween(1, Integer.MAX_VALUE));
+    } else {
+        return RoutingInfoUpdate.updateStateAndReason(RoutingStateAndReasonTests.randomInstance());
+    }
+}"
+258033,69,// TODO: test patternWithDigits,requirement,"@Test
+void passwordTest() {
+    // TODO: test password
+}
+
+/**
+ * Test the property 'patternWithDigits'
+ */
+@Test
+void patternWithDigitsTest() {","    // TODO: test patternWithDigits
+}
+
+/**
+ * Test the property 'patternWithDigitsAndDelimiter'
+ */
+@Test
+void patternWithDigitsAndDelimiterTest() {
+    // TODO: test patternWithDigitsAndDelimiter
+}"
+852700,315,// TODO Auto-generated method stub,requirement,"}
+
+@Override
+public DatabaseMeta loadDatabaseMeta( ObjectId id_database, String revision ) throws KettleException {
+  // TODO Auto-generated method stub
+  return null;
+}
+
+@Override
+public void deleteDatabaseMeta( String databaseName ) throws KettleException {","  // TODO Auto-generated method stub
+
+}
+
+@Override
+public ObjectId[] getDatabaseIDs( boolean includeDeleted ) throws KettleException {
+  // TODO Auto-generated method stub
+  return null;
+}
+"
+859671,323,"// Takes ~1s on markt's laptop. If this takes more than 5s something
+// probably needs looking at. If this fails repeatedly then we may need
+// to increase this limit.",temporary fix,"public void testPerformance() throws Exception {
+    String[] requestedHostNames = new String[] { ""xxxxxxxxxxx"", ""iowejoiejfoiew"", ""iowejoiejfoiex"", ""owefojiwefoi"",
+            ""owefojiwefoix"", ""qwerty.net"", ""foo.net"", ""zzz.com"", ""abc.com"" };
+
+    for (String requestedHostName : requestedHostNames) {
+        testPerformance(requestedHostName);
+    }
+}
+
+private void testPerformance(String requestedHostName) throws Exception {","final long maxTime = 5000;
+long time = testPerformanceImpl(requestedHostName);
+log.info(""Host ["" + requestedHostName + ""], Time ["" + time + ""]ms"");
+if (time >= maxTime) {
+    // Rerun to reject occasional failures, e.g. because of gc
+    log.warn(""testPerformance() test completed in "" + time + "" ms"");
+    time = testPerformanceImpl(requestedHostName);
+    log.warn(""testPerformance() test rerun completed in "" + time + "" ms"");
+}
+Assert.assertTrue(String.valueOf(time), time < maxTime);"
+265622,69,// TODO: test validations,requirement,"/**
+ * Delete purchase order by ID
+ *
+ * For valid response try integer IDs with value &lt; 1000. Anything above 1000 or nonintegers will generate API errors
+ */
+@Test
+public void deleteOrderTest()  {
+    String orderId = null;
+    api.deleteOrder(orderId);
+","    // TODO: test validations
+}
+
+/**
+ * Returns pet inventories by status
+ *
+ * Returns a map of status codes to quantities
+ */
+@Test
+public void getInventoryTest()  {"
+46895,8,"/*
+         * The following two lines assert current behavior that might not be desirable -- we continue to delete expired databases every
+         * time that runDownloader runs. This seems unnecessary.
+         */",how to,"}
+for (int i = 0; i < unexpiredDatabasesCount; i++) {
+    assertThat(
+        geoIpDownloader.state.getDatabases().get(""unexpiredDatabase"" + i).lastCheck(),
+        greaterThanOrEqualTo(Instant.now().minus(30, ChronoUnit.DAYS).toEpochMilli())
+    );
+}
+assertThat(deleteCount.get(), equalTo(expiredDatabasesCount));
+assertThat(updatePersistentTaskStateCount.get(), equalTo(expiredDatabasesCount));
+geoIpDownloader.runDownloader();","    assertThat(deleteCount.get(), equalTo(expiredDatabasesCount * 2));
+    assertThat(updatePersistentTaskStateCount.get(), equalTo(expiredDatabasesCount * 2));
+}
+
+private GeoIpTaskState.Metadata newGeoIpTaskStateMetadata(boolean expired) {
+    Instant lastChecked;
+    if (expired) {
+        lastChecked = Instant.now().minus(randomIntBetween(31, 100), ChronoUnit.DAYS);
+    } else {
+        lastChecked = Instant.now().minus(randomIntBetween(0, 29), ChronoUnit.DAYS);"
+1122121,488,"// TODO: it is necessary to produce two values here, the operator only throws on second
+// (see the comment in Aggregate operator)",defect,"}
+
+@Test
+public void shouldReturnErrorBlockOnUnexpectedInputType() {
+  // Given:
+  List<RexExpression.FunctionCall> aggCalls = List.of(getSum(new RexExpression.InputRef(1)));
+  List<Integer> filterArgs = List.of(-1);
+  List<Integer> groupKeys = List.of(0);
+  DataSchema inSchema = new DataSchema(new String[]{""group"", ""arg""}, new ColumnDataType[]{INT, STRING});
+  when(_input.nextBlock())","    .thenReturn(OperatorTestUtil.block(inSchema, new Object[]{2, ""foo""}, new Object[]{2, ""foo""}))
+    .thenReturn(TransferableBlockTestUtils.getEndOfStreamTransferableBlock(0));
+DataSchema resultSchema = new DataSchema(new String[]{""sum""}, new ColumnDataType[]{DOUBLE});
+AggregateOperator operator = getOperator(resultSchema, aggCalls, filterArgs, groupKeys);
+
+// When:
+TransferableBlock block = operator.nextBlock();
+
+// Then:
+assertTrue(block.isErrorBlock(), ""expected ERROR block from invalid computation"");"
+1624648,972,//  this test is probably running with bytecode manipulation. We ignore synthetic methods.,how to,"    }
+    assertTrue(t >= 1);
+}
+
+@Test
+void findMethodsInClass() {
+    Iterable<Method> actualMethods = ReflectionUtils.methodsOf(SomeSubType.class);
+    int t = 0;
+    for (Method actual : actualMethods) {
+        if (actual.isSynthetic()) {","    //  this test is probably running with bytecode manipulation. We ignore synthetic methods.
+    continue;
+}
+switch (t++) {
+    case 0:
+        assertEquals(""getField3"", actual.getName());
+        break;
+    case 1:
+        assertEquals(""getField3"", actual.getName());
+        assertEquals(""SomeSubInterface"", actual.getDeclaringClass().getSimpleName());"
+261980,69,"// uncomment below to test the function
+//User user = null;
+//api.createUser(user).block();
+
+// TODO: test validations",requirement,"private final UserApi api = new UserApi();
+
+
+/**
+ * Create user
+ *
+ * This can only be done by the logged in user.
+ */
+@Test
+public void createUserTest()  {","}
+
+/**
+ * Creates list of users with given input array
+ *
+ * 
+ */
+@Test
+public void createUsersWithArrayInputTest()  {
+    // uncomment below to test the function"
+260313,69,"//
+//Client client = null;
+//
+//Client response = api.testClientModel(client);
+
+// TODO: test validations",requirement,"/**
+ * To test \&quot;client\&quot; model
+ *
+ * To test \&quot;client\&quot; model
+ *
+ * @throws ApiException
+ *          if the Api call fails
+ */
+@Test
+void testClientModelTest() throws ApiException {","}
+/**
+ * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+ *
+ * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+ *
+ * @throws ApiException
+ *          if the Api call fails
+ */
+@Test"
+255396,69,// TODO: test prefixNumber,requirement,"@Test
+void prefixStringTest() {
+    // TODO: test prefixString
+}
+
+/**
+ * Test the property 'prefixNumber'
+ */
+@Test
+void prefixNumberTest() {","    // TODO: test prefixNumber
+}
+
+/**
+ * Test the property 'prefixInteger'
+ */
+@Test
+void prefixIntegerTest() {
+    // TODO: test prefixInteger
+}"
+269447,69,// TODO: test mapWithUndeclaredPropertiesAnytype2,requirement,"@Test
+public void mapWithUndeclaredPropertiesAnytype1Test() {
+    // TODO: test mapWithUndeclaredPropertiesAnytype1
+}
+
+/**
+ * Test the property 'mapWithUndeclaredPropertiesAnytype2'
+ */
+@Test
+public void mapWithUndeclaredPropertiesAnytype2Test() {","    // TODO: test mapWithUndeclaredPropertiesAnytype2
+}
+
+/**
+ * Test the property 'mapWithUndeclaredPropertiesAnytype3'
+ */
+@Test
+public void mapWithUndeclaredPropertiesAnytype3Test() {
+    // TODO: test mapWithUndeclaredPropertiesAnytype3
+}"
+275929,69,// TODO: test size,requirement,"@Test
+void testTestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter() {
+    // TODO: test TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObjectParameter
+}
+
+/**
+ * Test the property 'size'
+ */
+@Test
+void sizeTest() {","    // TODO: test size
+}
+
+/**
+ * Test the property 'color'
+ */
+@Test
+void colorTest() {
+    // TODO: test color
+}"
+264900,69,// TODO: test arrayArrayOfInteger,requirement,"@Test
+void arrayOfStringTest() {
+    // TODO: test arrayOfString
+}
+
+/**
+ * Test the property 'arrayArrayOfInteger'
+ */
+@Test
+void arrayArrayOfIntegerTest() {","    // TODO: test arrayArrayOfInteger
+}
+
+/**
+ * Test the property 'arrayArrayOfModel'
+ */
+@Test
+void arrayArrayOfModelTest() {
+    // TODO: test arrayArrayOfModel
+}"
+876571,337,// TODO(b/142881197): we can't give a more accurate type right now.,temporary fix,"
+@Test
+public void testYieldAll_withTypes() {
+  Node returnNode =
+      testAndReturnBodyForNumericGenerator(
+          ""yield * [1, 2];"", """", ""return GEN_CONTEXT$0.yieldAll([1, 2], 0);"");
+
+  checkState(returnNode.isReturn(), returnNode);
+  Node callNode = returnNode.getFirstChild();
+  checkState(callNode.isCall(), callNode);","// TODO(b/142881197): we can't give a more accurate type right now.
+assertNode(callNode).hasColorThat().isEqualTo(StandardColors.UNKNOWN);
+
+Node yieldAllFn = callNode.getFirstChild();
+checkState(yieldAllFn.isGetProp());
+
+// Check that the original types on ""[1, 2]"" are still present after transpilation
+Node yieldedValue = callNode.getSecondChild(); // [1, 2]
+
+checkState(yieldedValue.isArrayLit(), yieldedValue);"
+1340910,651,// TODO,requirement,"
+planner.addRule(
+    CoerceInputsRule.Config.DEFAULT
+        .withCoerceNames(false)
+        .withConsumerRelClass(LogicalUnion.class)
+        .toRule());
+planner.addRule(
+    CoerceInputsRule.Config.DEFAULT
+        .withCoerceNames(false)
+        .withConsumerRelClass(LogicalIntersect.class)","          .withDescription(""CoerceInputsRule:Intersection"") // TODO
+          .toRule());
+
+  final String sql = ""(select name from dept union select ename from emp)\n""
+      + ""intersect (select fname from customer.contact)"";
+  sql(sql).withPlanner(planner).checkUnchanged();
+}
+
+@Test void testRuleDescription() {
+  // Verify that a rule can be applied via its description."
+166232,47,// TODO Auto-generated method stub,requirement,"    // TODO Auto-generated method stub
+    return 0;
+}
+
+public PreparedStatement getStatementWithKey(String arg0) throws SQLException {
+    // TODO Auto-generated method stub
+    return null;
+}
+
+public int getStmtCacheSize() {","    // TODO Auto-generated method stub
+    return 0;
+}
+
+public short getStructAttrCsId() throws SQLException {
+    // TODO Auto-generated method stub
+    return 0;
+}
+
+public TypeDescriptor[] getTypeDescriptorsFromList(String[][] arg0) throws SQLException {"
+118369,28,"// This test doesn't work on midnight, January 1, 1970 UTC",defect,"assertTrue(headers.containsDouble(of(""double""), Double.MAX_VALUE));
+assertFalse(headers.containsDouble(of(""double""), Double.MIN_VALUE));
+
+headers.addFloat(of(""float""), Float.MAX_VALUE);
+assertTrue(headers.containsFloat(of(""float""), Float.MAX_VALUE));
+assertFalse(headers.containsFloat(of(""float""), Float.MIN_VALUE));
+
+long millis = System.currentTimeMillis();
+headers.addTimeMillis(of(""millis""), millis);
+assertTrue(headers.containsTimeMillis(of(""millis""), millis));","// This test doesn't work on midnight, January 1, 1970 UTC
+assertFalse(headers.containsTimeMillis(of(""millis""), 0));
+
+headers.addObject(of(""object""), ""Hello World"");
+assertTrue(headers.containsObject(of(""object""), ""Hello World""));
+assertFalse(headers.containsObject(of(""object""), """"));
+
+headers.add(of(""name""), of(""value""));
+assertTrue(headers.contains(of(""name""), of(""value"")));
+assertFalse(headers.contains(of(""name""), of(""value1"")));"
+268462,69,// TODO: test prefixInteger,requirement,"@Test
+void prefixNumberTest() {
+    // TODO: test prefixNumber
+}
+
+/**
+ * Test the property 'prefixInteger'
+ */
+@Test
+void prefixIntegerTest() {","    // TODO: test prefixInteger
+}
+
+/**
+ * Test the property 'prefixBoolean'
+ */
+@Test
+void prefixBooleanTest() {
+    // TODO: test prefixBoolean
+}"
+496095,135,"// TODO in theory there shouldn't be any ledgers left if we are using readers.
+//  However, trimming of ledgers are piggy packed onto ledger operations.
+//  So if there isn't new data coming in, trimming never occurs.
+//  We need to trigger trimming on a schedule to actually delete all remaining ledgers",impractical case,"try {
+    // try to send over backlog quota and make sure it fails
+    for (int i = 0; i < numMsgs; i++) {
+        content[0] = (byte) (content[0] + 1);
+        msgId = (MessageIdImpl) producer.send(content);
+    }
+} catch (PulsarClientException ce) {
+    fail(""Should not have gotten exception: "" + ce.getMessage());
+}
+","MessageIdImpl finalMsgId = msgId;
+Awaitility.await().untilAsserted(() -> {
+    // make sure ledgers are trimmed
+    PersistentTopicInternalStats internalStats =
+            admin.topics().getInternalStats(topic1, false);
+
+    // check there is only one ledger left
+    assertEquals(internalStats.ledgers.size(), 1);
+});
+"
+254678,69,// TODO: test File,requirement," * Model tests for File
+ */
+class FileTest {
+    private final File model = new File();
+
+    /**
+     * Model tests for File
+     */
+    @Test
+    void testFile() {","    // TODO: test File
+}
+
+/**
+ * Test the property 'sourceURI'
+ */
+@Test
+void sourceURITest() {
+    // TODO: test sourceURI
+}"
+263428,69,// TODO: test Capitalization,requirement," * Model tests for Capitalization
+ */
+class CapitalizationTest {
+    private final Capitalization model = new Capitalization();
+
+    /**
+     * Model tests for Capitalization
+     */
+    @Test
+    void testCapitalization() {","    // TODO: test Capitalization
+}
+
+/**
+ * Test the property 'smallCamel'
+ */
+@Test
+void smallCamelTest() {
+    // TODO: test smallCamel
+}"
+252198,69,// TODO: test prefixString,requirement,"@Test
+void nameWrappedArrayTest() {
+    // TODO: test nameWrappedArray
+}
+
+/**
+ * Test the property 'prefixString'
+ */
+@Test
+void prefixStringTest() {","    // TODO: test prefixString
+}
+
+/**
+ * Test the property 'prefixNumber'
+ */
+@Test
+void prefixNumberTest() {
+    // TODO: test prefixNumber
+}"
+1190123,541,"/**
+ * This file has been copied from the Apache ZooKeeper project.
+ * @see <a href=
+ *      ""https://github.com/apache/zookeeper/blob/master/zookeeper-server/src/test/java/org/apache/zookeeper/common/JKSFileLoaderTest.java"">Base
+ *      revision</a>
+ */",code,"import org.apache.hadoop.hbase.HBaseClassTestRule;
+import org.apache.hadoop.hbase.testclassification.SecurityTests;
+import org.apache.hadoop.hbase.testclassification.SmallTests;
+import org.junit.Assert;
+import org.junit.ClassRule;
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+","@RunWith(Parameterized.class)
+@Category({ SecurityTests.class, SmallTests.class })
+public class TestJKSFileLoader extends AbstractTestX509Parameterized {
+
+  @ClassRule
+  public static final HBaseClassTestRule CLASS_RULE =
+    HBaseClassTestRule.forClass(TestJKSFileLoader.class);
+
+  @Test
+  public void testLoadKeyStore() throws Exception {"
+707839,224,// TODO(emcmanus): remove the no-op `& 0xfff_ffff`,requirement,"    .isEqualTo(""(~set$0 & 1) != 0"");
+assertThat(builderRequiredPropertiesWithDefaults(1).getAnyMissing())
+    .isEqualTo(""(~set$0 & 3) != 0"");
+assertThat(builderRequiredPropertiesWithDefaults(15).getAnyMissing())
+    .isEqualTo(""(~set$0 & 0xffff) != 0"");
+assertThat(builderRequiredPropertiesWithDefaults(16).getAnyMissing())
+    .isEqualTo(""(~set$0 & 0x1_ffff) != 0"");
+assertThat(builderRequiredPropertiesWithDefaults(17).getAnyMissing())
+    .isEqualTo(""(~set$0 & 0x3_ffff) != 0"");
+","// TODO(emcmanus): remove the no-op `& 0xfff_ffff`
+assertThat(builderRequiredPropertiesWithDefaults(31).getAnyMissing())
+    .isEqualTo(""(~set$0 & 0xffff_ffff) != 0"");
+assertThat(builderRequiredPropertiesWithDefaults(32).getAnyMissing())
+    .isEqualTo(""(~set$0 & 0xffff_ffff) != 0\n|| (~set$1 & 1) != 0"");
+assertThat(builderRequiredPropertiesWithDefaults(33).getAnyMissing())
+    .isEqualTo(""(~set$0 & 0xffff_ffff) != 0\n|| (~set$1 & 3) != 0"");
+assertThat(builderRequiredPropertiesWithDefaults(63).getAnyMissing())
+    .isEqualTo(""(~set$0 & 0xffff_ffff) != 0\n|| (~set$1 & 0xffff_ffff) != 0"");
+assertThat(builderRequiredPropertiesWithDefaults(64).getAnyMissing())"
+872644,337,// TODO(b/189993301): this should be logging '1' instead,defect,"lines(
+    ""window.test = function() {"",
+    ""var x = 0;"",
+    ""/** @unrestricted */"",
+    ""class MyClass {"", //
+    ""  static f1 = x;"",
+    ""  static [(x = 1)] = 1;"", // (x = 1) executes before assigning 'static f1 = x'
+    ""}"",
+    ""console.log(MyClass.f1);"", // prints 1
+    ""};""),","      // TODO(b/189993301): this should be logging '1' instead
+      lines(""window.a = function() { console.log(0); };""));
+}
+
+@Test
+public void computedMethodExecutionOrderAndDeadAssignmentElimination() {
+  CompilerOptions options = fullyOptimizedCompilerOptions();
+
+  externs =
+      ImmutableList.of("
+253652,69,// TODO: test validations,requirement,"
+
+/**
+ * successful operation
+ */
+@Test
+public void shouldSee200AfterTestInlineAdditionalProperties() {
+    Map<String, String> param = null;
+    api.testInlineAdditionalProperties()
+            .body(param).execute(r -> r.prettyPeek());","    // TODO: test validations
+}
+
+
+/**
+ * successful operation
+ */
+@Test
+public void shouldSee200AfterTestJsonFormData() {
+    String param = null;"
+273467,69,// TODO: test FakeBigDecimalMap200Response,requirement," * Model tests for FakeBigDecimalMap200Response
+ */
+class FakeBigDecimalMap200ResponseTest {
+    private final FakeBigDecimalMap200Response model = new FakeBigDecimalMap200Response();
+
+    /**
+     * Model tests for FakeBigDecimalMap200Response
+     */
+    @Test
+    void testFakeBigDecimalMap200Response() {","    // TODO: test FakeBigDecimalMap200Response
+}
+
+/**
+ * Test the property 'someId'
+ */
+@Test
+void someIdTest() {
+    // TODO: test someId
+}"
+256794,69,// TODO: test validations,requirement,"
+/**
+ * Place an order for a pet
+ *
+ * @throws ApiException if the Api call fails
+ */
+@Test
+public void placeOrderTest() throws ApiException {
+    Order body = null;
+    Order response = api.placeOrder(body);","        // TODO: test validations
+    }
+
+}"
+276958,69,// TODO: test type,requirement,"@Test
+public void testChildWithNullable() {
+    // TODO: test ChildWithNullable
+}
+
+/**
+ * Test the property 'type'
+ */
+@Test
+public void typeTest() {","    // TODO: test type
+}
+
+/**
+ * Test the property 'nullableProperty'
+ */
+@Test
+public void nullablePropertyTest() {
+    // TODO: test nullableProperty
+}"
+280049,69,// TODO: test bar,requirement,"@Test
+public void testFoo() {
+    // TODO: test Foo
+}
+
+/**
+ * Test the property 'bar'
+ */
+@Test
+public void barTest() {","        // TODO: test bar
+    }
+
+}"
+1222088,587,"// skip test, as it needs historical time zone info",dependency,"assertSame(g, f);
+DateTime dt = new DateTime(2004, 6, 9, 10, 20, 30, 0);
+String expect = DateFormat.getTimeInstance(DateFormat.SHORT, UK).format(dt.toDate());
+assertEquals(expect, f.print(dt));
+expect = DateFormat.getTimeInstance(DateFormat.SHORT, US).format(dt.toDate());
+assertEquals(expect, f.withLocale(US).print(dt));
+expect = DateFormat.getTimeInstance(DateFormat.SHORT, FRANCE).format(dt.toDate());
+assertEquals(expect, f.withLocale(FRANCE).print(dt));
+
+if (TimeZone.getDefault() instanceof SimpleTimeZone) {","        // skip test, as it needs historical time zone info
+    } else {
+        DateTime date = new DateTime(
+            DateFormat.getTimeInstance(DateFormat.SHORT, FRANCE).parse(expect));
+        assertEquals(date, f.withLocale(FRANCE).parseDateTime(expect));
+    }
+}
+
+public void testForStyle_shortDateTime() throws Exception {
+    DateTimeFormatter f = DateTimeFormat.shortDateTime();"
+19522,8,// TODO Auto-generated method stub,requirement,"    return null;
+}
+
+@Override
+public InternalAggregation[] buildAggregations(LongArray owningBucketOrds) {
+    return new InternalAggregation[] { null };
+}
+
+@Override
+public InternalAggregation buildEmptyAggregation() {","            // TODO Auto-generated method stub
+            return null;
+        }
+    }
+}"
+277958,69,// TODO: test arrayNumber,requirement,"@Test
+public void testArrayOfNumberOnly() {
+    // TODO: test ArrayOfNumberOnly
+}
+
+/**
+ * Test the property 'arrayNumber'
+ */
+@Test
+public void arrayNumberTest() {","        // TODO: test arrayNumber
+    }
+
+}"
