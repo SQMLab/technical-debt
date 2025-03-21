@@ -1,0 +1,224 @@
+id,repository,text,label,code_before,code_after
+265041,69,// TODO: test validations,requirement,"
+
+}
+
+/**
+ * @throws ApiException
+ *          if the Api call fails
+ */
+@Test
+public void fakeOuterStringSerializeTest() {","    // TODO: test validations
+    String body = null;
+    //String response = api.fakeOuterStringSerialize(body);
+    //Assertions.assertNotNull(response);
+
+
+}
+
+/**
+ * @throws ApiException"
+ 122818,34,"// I tried using Mockito, but it didn't work for some reason",how to,"import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.spy;
+
+@SuppressWarnings(""checkstyle:HideUtilityClassConstructor"")
+public class PlayQueueTest {
+    static PlayQueue makePlayQueue(final int index, final List<PlayQueueItem> streams) {","// I tried using Mockito, but it didn't work for some reason
+return new PlayQueue(index, streams) {
+    @Override
+    public boolean isComplete() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void fetch() {
+        throw new UnsupportedOperationException();"
+435141,128,"// Ignore the following tests because taking a lease requires a real
+// (not mock) file system store. These tests don't work on the mock.",skip test," * skipping tests of unsupported features
+ */
+public class TestNativeAzureFileSystemMocked extends
+    NativeAzureFileSystemBaseTest {
+
+  @Override
+  protected AzureBlobStorageTestAccount createTestAccount() throws Exception {
+    return AzureBlobStorageTestAccount.createMock();
+  }
+","@Override
+@Ignore
+public void testLeaseAsDistributedLock() {
+}
+
+@Override
+@Ignore
+public void testSelfRenewingLease() {
+}
+"
+776547,269,"// TODO This fails with TCM as the constraints regarding concurrent overlapping range movements and
+//      replication factors have moved into the operations themselves. Previously, these were enforced
+//      at the StorageService level.",superficial,"    assertRangesAtEndpoint(RangesAtEndpoint.of(new Replica(node3, new Range<>(token3, newToken), true),
+                                               new Replica(node3, new Range<>(token4, token5), true)),
+                           pendingByEndpoint.get(node3));
+    assertRangesAtEndpoint(RangesAtEndpoint.empty(node4), pendingByEndpoint.get(node4));
+    assertRangesAtEndpoint(RangesAtEndpoint.empty(node5), pendingByEndpoint.get(node5));
+}
+
+@Test
+public void testConcurrentAdjacentLeavingNodes()
+{","ClusterMetadataTestHelper.createKeyspace(KEYSPACE, KeyspaceParams.simple(2));
+
+Token token1 = token(-9);
+Token token2 = token(-4);
+Token token3 = token(0);
+Token token4 = token(4);
+
+InetAddressAndPort node1 = peer(1);
+InetAddressAndPort node2 = peer(2);
+InetAddressAndPort node3 = peer(3);"
+1004573,441,"// read() and closeEntry() must throw IOExceptions to indicate that
+// the stream is corrupt. The bug above reported that they would loop
+// forever.",code,"private static final byte[] INCOMPLETE_ZIP = new byte[] {
+        0120, 0113, 0003, 0004, 0024, 0000, 0010, 0010, 0010, 0000, 0002, 0035, (byte) 0330,
+        0106, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0013,
+        0000, 0000, 0000, 0146, 0157, 0157, 0057, 0142, 0141, 0162, 0056, 0160, 0156, 0147 };
+
+// http://b//21846904
+public void testReadOnIncompleteStream() throws Exception {
+    ZipInputStream zi = new ZipInputStream(new ByteArrayInputStream(INCOMPLETE_ZIP));
+    ZipEntry ze = zi.getNextEntry();
+","try {
+    zi.read(new byte[1024], 0, 1024);
+    fail();
+} catch (IOException expected) {
+}
+
+try {
+    zi.closeEntry();
+    fail();
+} catch (IOException expected) {"
+230424,64,// TODO: b/386384684 - remove Unsafe usage,refactor,"
+  private StartingAddressParameter(int value) {
+    this.value = value;
+  }
+
+  private int value() {
+    return value;
+  }
+}
+","// TODO: b/386384684 - remove Unsafe usage
+@Test
+public void queue_handlesConcurrentTasks(@TestParameter StartingAddressParameter startingAddress)
+    throws InterruptedException {
+  UNSAFE.putInt(null, appendIndexAddress, startingAddress.value());
+  UNSAFE.putInt(null, takeIndexAddress, startingAddress.value());
+
+  // Count for the inner loop within each thread that performs queue operations. This is
+  // deliberately higher than the queue capacity to cover multiple epochs.
+  final int inner = CAPACITY + 1;"
+114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,dependency,"  Bitmap toRotate = Bitmap.createBitmap(200, 100, Bitmap.Config.ARGB_8888);
+  toRotate.setColorSpace(ColorSpace.get(ColorSpace.Named.DISPLAY_P3));
+
+  Bitmap rotated =
+      TransformationUtils.rotateImageExif(
+          bitmapPool, toRotate, ExifInterface.ORIENTATION_ROTATE_90);
+
+  assertEquals(ColorSpace.get(ColorSpace.Named.DISPLAY_P3), rotated.getColorSpace());
+}
+","// TODO: Add gainmap-based tests once Robolectric has sufficient support.
+
+@Test
+public void testInitializeMatrixSetsScaleIfFlipHorizontal() {
+  Matrix matrix = mock(Matrix.class);
+  TransformationUtils.initializeMatrixForRotation(
+      ExifInterface.ORIENTATION_FLIP_HORIZONTAL, matrix);
+  verify(matrix).setScale(-1, 1);
+}
+"
+584484,167,//Could fail if CI is to slow and will slow down the CI build; test local,build,"  long startTime = System.currentTimeMillis();
+  await().until(() -> myThreadPool.getActiveCount() == 0);
+  long endTime = System.currentTimeMillis();
+  //should be something between 9s and 10s
+  assertThat(endTime - startTime, allOf(greaterThan(6000l), lessThan(7000l)));
+  assertEquals(0, myThreadPool.getActiveCount());
+  assertTrue(myThreadPool.getQueue().isEmpty());
+}
+
+@Test","@Ignore //Could fail if CI is to slow and will slow down the CI build; test local
+public void overloadedMultiUsageThreadPoolTest() {
+  ThreadPoolExecutor myThreadPool = LtThreadPoolFactory.createFixedThreadPoolExecutor(
+    ""Test-Pool-omp"",
+    10,
+    20,
+    false,
+    (thread, throwable) -> {
+      System.out.println(throwable.getClass());
+    },"
+423851,128,// Ignored in automated tests due to flakiness by design,defect,"  cgroupMemory = ResourceHandlerModule.getCGroupsHandler()
+      .getPathForCGroup(CGroupsHandler.CGroupController.MEMORY, cgroup);
+}
+
+@After
+public void tearDown() throws YarnException {
+  stopTestProcess();
+}
+
+","// Ignored in automated tests due to flakiness by design
+@Ignore
+@Test
+public void testCompareResults()
+    throws YarnException, InterruptedException, IOException {
+
+  startTestProcess();
+
+  ProcfsBasedProcessTree legacyCalculator =
+      new ProcfsBasedProcessTree(Long.toString(getPid()));"
+547164,149,"// The next test also verifies replace functionality. Now, they are together to save on test execution time
+// due to Travis CI 10 minute default running time (with no output) -- having it separate made it
+// last longer. At some point we should really simplify this file, so it runs faster (splitting, etc.)",temporary fix,"    try (final Writer writer =
+             Files.newBufferedWriter(new File(inputDir, ""filtered_"" + i).toPath(), StandardCharsets.UTF_8)) {
+      writer.write(StringUtils.format(""2017-12-%d,%d,%d th test file\n"", i + 1, i + 10, i));
+    }
+  }
+  inputIntervals = new ArrayList<>(intervals);
+  inputIntervals.sort(Comparators.intervalsByStartThenEnd());
+}
+
+","@Test
+public void testRun() throws Exception
+{
+
+  // verify dropExisting false:
+  final Integer maxRowsPerSegment = numShards == null ? 10 : null;
+  final Set<DataSegment> publishedSegments = runTask(createTask(
+      new HashedPartitionsSpec(
+          maxRowsPerSegment,
+          numShards,"
+860613,323,"/*
+                     * As much as I dislike it, I don't see any easy way around
+                     * this hack. The thread is started as the Servlet exits but
+                     * we need to wait for the post processing to complete for
+                     * the test to work as intended. In real-world applications
+                     * this does mean that there is a real chance of an ISE. We
+                     * may need to increase this delay for some CI systems.
+                     */",multi,"    }
+}
+
+
+private final class NonContainerThread extends Thread {
+
+    @Override
+    public void run() {
+        if (endTiming == EndTiming.THREAD_COMPLETES_AFTER_SERVLET_EXIT) {
+            try {","        sleep(1000);
+    } catch (InterruptedException e) {
+        // Ignore
+    }
+}
+
+// Trigger the error if necessary
+if (asyncEnd.isError()) {
+    try {
+        clientDisconnectLatch.await();"
