@@ -19,3 +19,4 @@ sqlalchemy
 psycopg2
 openai
 jpype1
+sentencepiece

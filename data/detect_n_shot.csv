@@ -93,7 +93,7 @@ if (!Arrays.equals(jobs, that.jobs))
 if (list != null ? !list.equals(that.list) : that.list != null)
     return false;
 if (map != null ? !map.equals(that.map) : that.map != null)
-    return false;","The phrase ""Probably incorrect"" explicitly indicates uncertainty about correctness, which suggests a potential technical debt or suboptimal implementation."
+    return false;","The phrase Probably incorrect explicitly indicates uncertainty about correctness, which suggests a potential technical debt or suboptimal implementation."
 344151,81,// Incorrect arity,no,"});
 checkWMTE(() -> { // expected reference class
     boolean r = vh.weakCompareAndSet(recv, Void.class, 0x01234567);
@@ -112,4 +112,4 @@ checkWMTE(() -> { // >
 });
 
 
-// WeakCompareAndSetAcquire","The phrase ""Incorrect arity"" is a factual statement about a function/method’s argument count, not an explicit admission of technical debt."
+// WeakCompareAndSetAcquire","The phrase Incorrect arity is a factual statement about a function/method’s argument count, not an explicit admission of technical debt."
