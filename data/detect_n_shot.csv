@@ -17,7 +17,7 @@ public void getValue() {
     RubyHashGauge gauge = new RubyHashGauge(""bar"", rubyHash);
     assertThat(gauge.getValue().toString()).isEqualTo(RUBY_HASH_AS_STRING);
     assertThat(gauge.getType()).isEqualTo(MetricType.GAUGE_RUBYHASH);
-","The comment contains the phrase **""hacky workaround,""** which strongly suggests a suboptimal implementation. It acknowledges that the current solution is not ideal and involves an intentional trade-off."
+",Contains the phrase hacky workaround which matches frequently appeared typical keywords indicating SATD.
 176603,56,// Add some role mappings directly in LDAP,no,"    UserModel johnRoleMapper = session.users().getUserByUsername(appRealm, ""johnrolemapper"");
     Assert.assertNotNull(johnRoleMapper);
     Assert.assertEquals(0, johnRoleMapper.getRealmRoleMappingsStream().count());
@@ -36,7 +36,7 @@ LDAPObject johnLdap = ldapProvider.loadLDAPUserByUsername(appRealm, ""johnrolema
 roleMapper.addRoleMappingInLDAP(""realmRole1"", johnLdap);
 roleMapper.addRoleMappingInLDAP(""realmRole2"", johnLdap);
 
-// Get user and check that he has requested roles from LDAP","The comment **describes an action being performed** but does not indicate any issue, suboptimal design, or future work requirement."
+// Get user and check that he has requested roles from LDAP",Imperative structure statement describing the purpose of code that follows comment and does not indicate any future action is needed.
 398677,119,// Alpha does not support DML yet,yes,"    assertUpdate(""CREATE TABLE test_alpha_ddl_partitioned_table (col1 bigint, ds VARCHAR) WITH (format = 'ALPHA', partitioned_by = ARRAY['ds'])"");
     assertUpdate(""ALTER TABLE test_alpha_ddl_partitioned_table ADD COLUMN col2 bigint"");
     assertUpdate(""ALTER TABLE test_alpha_ddl_partitioned_table DROP COLUMN col2"");
@@ -55,7 +55,47 @@ public void testAlphaFormatDml()
 public void testInvokedFunctionNamesLog()
 {
     QueryRunner queryRunner = getQueryRunner();
-    Session logFunctionNamesEnabledSession = Session.builder(getSession())","The comment states a **technical limitation (""does not support DML yet"")**, which suggests that a feature is missing and planned for future improvement. This is an admission of **technical debt** since it acknowledges a known issue."
+    Session logFunctionNamesEnabledSession = Session.builder(getSession())","Suggest that application does not support DML feature at this point which implicitly suggest in future this feature support need to be added."
+1043183,449,// NPE Here,no,"assertThat(Arrays.asList(1, 2, 1)).isEqualTo(list);
+
+ksession.insert(new StockTick(seq++, ""DDD"", 13.0, 20L));
+ksession.fireAllRules();
+assertThat(Arrays.asList(1, 2, 1, 1)).isEqualTo(list);
+
+ksession.insert(new StockTick(seq, ""AAA"", 11.0, 20L));
+ksession.fireAllRules();
+assertThat(Arrays.asList(1, 2, 1, 1, 3)).isEqualTo(list);
+","           // NPE Here
+           ksession.fireAllRules();
+       } finally {
+           ksession.dispose();
+       }
+   }
+
+   @ParameterizedTest(name = ""KieBase type={0}"")
+@MethodSource(""parameters"")
+@Timeout(10000)",Mentions an occurrence of an exception but does not explain whether it requires any further action.
+1004573,441,"// read() and closeEntry() must throw IOExceptions to indicate that
+// the stream is corrupt. The bug above reported that they would loop
+// forever.",yes,"private static final byte[] INCOMPLETE_ZIP = new byte[] {
+        0120, 0113, 0003, 0004, 0024, 0000, 0010, 0010, 0010, 0000, 0002, 0035, (byte) 0330,
+        0106, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0013,
+        0000, 0000, 0000, 0146, 0157, 0157, 0057, 0142, 0141, 0162, 0056, 0160, 0156, 0147 };
+
+// http://b//21846904
+public void testReadOnIncompleteStream() throws Exception {
+    ZipInputStream zi = new ZipInputStream(new ByteArrayInputStream(INCOMPLETE_ZIP));
+    ZipEntry ze = zi.getNextEntry();
+","try {
+    zi.read(new byte[1024], 0, 1024);
+    fail();
+} catch (IOException expected) {
+}
+
+try {
+    zi.closeEntry();
+    fail();
+} catch (IOException expected) {",This is a know bug that is reported already and implicitly suggest that it need to be fixed.
 1230753,615,// A different instance of the same overlay should not be equal by default,no,"}
 
 @Test
@@ -74,7 +114,7 @@ public void testEquality()
 @Test
 public void testSort()
 {
-	// High priorities overlays render first",The comment is describing **expected behavior** in the test case rather than indicating a technical compromise or improvement need. There are no markers suggesting SATD.
+	// High priorities overlays render first",Describes expected behavior or output of test code that follows the comment.
 1512588,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,yes,"
 @Override
 public boolean equals(Object o) {
@@ -93,7 +133,7 @@ if (!Arrays.equals(jobs, that.jobs))
 if (list != null ? !list.equals(that.list) : that.list != null)
     return false;
 if (map != null ? !map.equals(that.map) : that.map != null)
-    return false;","The phrase Probably incorrect explicitly indicates uncertainty about correctness, which suggests a potential technical debt or suboptimal implementation."
+    return false;","Explicitly indicates the developer's uncertainty about the correctness, implicitly suggesting potential future work."
 344151,81,// Incorrect arity,no,"});
 checkWMTE(() -> { // expected reference class
     boolean r = vh.weakCompareAndSet(recv, Void.class, 0x01234567);
@@ -112,4 +152,140 @@ checkWMTE(() -> { // >
 });
 
 
-// WeakCompareAndSetAcquire","The phrase Incorrect arity is a factual statement about a function/method’s argument count, not an explicit admission of technical debt."
+// WeakCompareAndSetAcquire",Describes test code without suggesting any future work.
+1134559,491,// Ignore exceptions,yes,"  notificationLog = insertTxnWriteNotificationLog(TXN_ID, WRITE_ID, DB_NAME, TABLE_NAME);
+}
+
+@After
+public void tearDown() throws Exception {
+  try {
+    if (client != null) {
+      client.close();
+    }
+  } catch (Exception e) {","  // Ignore exceptions
+} finally {
+  client = null;
+}
+try {
+  if (notificationLog != null) {
+    objectStore.getPersistenceManager().deletePersistent(notificationLog);
+  }
+} catch (Exception e) {
+  // Ignore exceptions",This is bad because the exception is ignored without explanation that may lead to hidden failures so need to handle this.
+776498,269,// make host1 a little worse,no,"InetAddressAndPort host2 = InetAddressAndPort.getByName(""127.0.0.3"");
+InetAddressAndPort host3 = InetAddressAndPort.getByName(""127.0.0.4"");
+InetAddressAndPort host4 = InetAddressAndPort.getByName(""127.0.0.5"");
+List<InetAddressAndPort> hosts = Arrays.asList(host1, host2, host3);
+
+// first, make all hosts equal
+setScores(dsnitch, 1, hosts, 10, 10, 10);
+EndpointsForRange order = full(host1, host2, host3);
+Util.assertRCEquals(order, dsnitch.sortedByProximity(self, full(host1, host2, host3)));
+","// make host1 a little worse
+setScores(dsnitch, 1, hosts, 20, 10, 10);
+order = full(host2, host3, host1);
+Util.assertRCEquals(order, dsnitch.sortedByProximity(self, full(host1, host2, host3)));
+
+// make host2 as bad as host1
+setScores(dsnitch, 2, hosts, 15, 20, 10);
+order = full(host3, host1, host2);
+Util.assertRCEquals(order, dsnitch.sortedByProximity(self, full(host1, host2, host3)));
+",Describes a deliberate modification to the test setup for testing purpose.
+203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,yes,"import java.io.File;
+import java.io.IOException;
+import java.io.Writer;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+","// THIS FILE IS COPIED FROM APACHE CALCITE
+
+/**
+ * A collection of resources used by tests.
+ *
+ * <p>Loads files containing test input and output into memory. If there are differences, writes out
+ * a log file containing the actual output.
+ *
+ * <p>Typical usage is as follows. A test case class defines a method
+ *",It indicates a code duplication issue where a file has been copied rather than properly integrated as a dependency.
+149266,40,"// Should have 6 total fetches, 3 fetches for topic foo (though 4 partitions but 3 fetches) and 3
+// fetches for topic bar (though 3 partitions but 3 fetches).",no,");
+expectedMetrics.put(
+        metrics.metricName(SharePartitionManager.ShareGroupMetrics.PARTITION_LOAD_TIME_MAX, SharePartitionManager.ShareGroupMetrics.METRICS_GROUP_NAME),
+        val -> assertEquals(val, 100.0, SharePartitionManager.ShareGroupMetrics.PARTITION_LOAD_TIME_MAX)
+);
+expectedMetrics.forEach((metric, test) -> {
+    assertTrue(metrics.metrics().containsKey(metric));
+    test.accept((Double) metrics.metrics().get(metric).metricValue());
+});
+","    validateBrokerTopicStatsMetrics(
+        brokerTopicStats,
+        new TopicMetrics(6, 0, 0, 0),
+        Map.of(""foo"", new TopicMetrics(3, 0, 0, 0), ""bar"", new TopicMetrics(3, 0, 0, 0))
+    );
+}
+
+@Test
+public void testMultipleConcurrentShareFetches() throws InterruptedException {
+",Describes expected result of test code that follows this comments.
+148864,40,"// After records are acquired, the initialReadGapOffset should be updated",no,"assertEquals(SharePartitionState.ACTIVE, sharePartition.partitionState());
+assertFalse(sharePartition.cachedState().isEmpty());
+assertEquals(11, sharePartition.startOffset());
+assertEquals(40, sharePartition.endOffset());
+assertEquals(3, sharePartition.stateEpoch());
+assertEquals(16, sharePartition.nextFetchOffset());
+
+SharePartition.InitialReadGapOffset initialReadGapOffset = sharePartition.initialReadGapOffset();
+assertNotNull(initialReadGapOffset);
+","    // After records are acquired, the initialReadGapOffset should be updated
+    assertEquals(16, initialReadGapOffset.gapStartOffset());
+    assertEquals(40, initialReadGapOffset.endOffset());
+}
+
+@Test
+public void testAcquireGapAtBeginningAndFetchedRecordsOverlapInFlightBatches() {
+    Persister persister = Mockito.mock(Persister.class);
+    ReadShareGroupStateResult readShareGroupStateResult = Mockito.mock(ReadShareGroupStateResult.class);
+    Mockito.when(readShareGroupStateResult.topicsData()).thenReturn(List.of(",Describes expected result of test code that follows this comments.
+ 571347,159,"// Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
+// which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
+// successfully, but in order to shorten the test time, we chose one million numbers.",yes,"import org.junit.Assert;
+import org.junit.Test;
+
+// hive hll udf test
+public class HllUDFTest {
+
+    private BinaryObjectInspector inputOI0 = new JavaConstantBinaryObjectInspector(new byte[0]);
+
+    @Test
+    public void hllCardinalityTest() throws Exception {","HllCardinalityUDF hllCardinalityUDF = new HllCardinalityUDF();
+hllCardinalityUDF.initialize(new ObjectInspector[] { inputOI0 });
+Hll hll = new Hll();
+long largeInputSize = 1000000L;
+for (long i = 1; i <= largeInputSize; i++) {
+    hll.updateWithHash(i);
+}
+byte[] hllLargeBytes = HllUtil.serializeToBytes(hll);
+hllCardinalityUDF.initialize(new ObjectInspector[] { inputOI0 });
+Object evaluateLarge = hllCardinalityUDF",It acknowledges a trade-off between accuracy and test efficiency which could impact the reliability of the test.
+1197422,567,// Endless loop,no,"
+this.topicOperatorMetricsGatherer = new TopicOperatorMetricsCollectionScheduler(this.topicOperatorCollector, ""strimzi.io/cluster="" + this.testStorage.getClusterName());
+this.topicOperatorMetricsGatherer.startCollecting();
+
+// we will create incrementally topics
+final int batchSize = 100;
+final int topicPartitions = 12;
+final int topicReplicas = 3;
+final int minInSyncReplicas = 2;
+","while (true) { // Endless loop
+    int start = successfulCreations;
+    int end = successfulCreations + batchSize;
+
+    try {
+        // Create topics
+        KafkaTopicScalabilityUtils.createTopicsViaK8s(testStorage.getNamespaceName(), testStorage.getClusterName(),
+            testStorage.getTopicName(), start, end, topicPartitions, topicReplicas, minInSyncReplicas);
+        KafkaTopicScalabilityUtils.waitForTopicStatus(testStorage.getNamespaceName(), testStorage.getTopicName(),
+            start, end, CustomResourceStatus.Ready, ConditionStatus.True);",Describes code that the comment follows.
