@@ -4752,7 +4752,7 @@ try {
   }
 } catch (Exception e) {
   // Ignore exceptions"
-203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,code,"import java.io.File;
+203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,refactor,"import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.MalformedURLException;
