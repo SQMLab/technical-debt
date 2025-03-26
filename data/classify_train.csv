@@ -5454,7 +5454,7 @@ void should_respect_default_common_chat_parameters() {
 // start completely. However, this test's premise is that a partially started master should
 // still respond to a shutdown RPC. So instead, we manage each component lifecycle
 // independently.
-// I think it's not worth refactoring HTU's helper methods just for this class.",code,"LocalHBaseCluster hbaseCluster = null;
+// I think it's not worth refactoring HTU's helper methods just for this class.",refactor,"LocalHBaseCluster hbaseCluster = null;
 try {
   htu = new HBaseTestingUtil(createMasterShutdownBeforeStartingAnyRegionServerConfiguration());
 
