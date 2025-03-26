@@ -377,7 +377,7 @@ public void testDCLROLEOperation() {
   assertEquals(""role1"", roleDcl.getRoleName());"
 1026898,445,"/**
  * Sort of a dummy test, as the conditions are perfect. In a more realistic scenario, below, the algorithm needs luck to climb this high.
- */",superficial,"        Summary summary = run(operations, workPerSuccess, numberOfWorkers, maximumTasksPerWorker, workerParallelism, timer, policy);
+ */",superficial test,"        Summary summary = run(operations, workPerSuccess, numberOfWorkers, maximumTasksPerWorker, workerParallelism, timer, policy);
 
         double minMaxPending = numberOfWorkers * workerParallelism;
         assertInRange(0.3 * minMaxPending, summary.averagePending, 0.5 * minMaxPending);
@@ -699,7 +699,7 @@ protected void checkEmptyTableStats(String tableName)
                     ""(null, null, null, null, null, null, null)"");
 }"
 1371658,733,"// TODO: Unlike PPGs with 0xBB compression the timestamps are not linear
-// The data also looks different, hmmm....",other,"    HuaweiTruSleepParser.TruSleepStatus[] result = HuaweiTruSleepParser.parseState(test);
+// The data also looks different, hmmm....",how to,"    HuaweiTruSleepParser.TruSleepStatus[] result = HuaweiTruSleepParser.parseState(test);
 
     Assert.assertArrayEquals(expected, result);
 }
@@ -731,7 +731,7 @@ void objectItemsNullableTest() {","        // TODO: test objectItemsNullable
     }
 
 }"
-36354,8,"// This only tests for calendar ordering, ignoring the other criteria",superficial,"for (int i = 0; i < numCaps; i++) {
+36354,8,"// This only tests for calendar ordering, ignoring the other criteria",superficial test,"for (int i = 0; i < numCaps; i++) {
     DateHistogramInterval interval = getRandomCalendarInterval();
     GroupConfig group = new GroupConfig(new DateHistogramGroupConfig.CalendarInterval(""foo"", interval));
     RollupJobConfig job = new RollupJobConfig(""foo"", ""index"", ""rollup"", ""*/5 * * * * ?"", 10, group, emptyList(), null);
@@ -886,7 +886,7 @@ public void smallCamelTest() {","    // TODO: test smallCamel
 public void capitalCamelTest() {
     // TODO: test capitalCamel
 }"
-60512,11,// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead,other,"@Test
+60512,11,// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead,code,"@Test
 @SuppressWarnings(""resource"")
 void testPayloadObjectWithPayloadTypeOnParentContext() {
 	final NumberHolder<Integer> payload = new NumberHolder<>(42);
@@ -1294,7 +1294,7 @@ protected void verifySetColumnTypeFailurePermissible(Throwable e)
  * Test for advanced push types.
  * Currently only tests METADATA push type.
  * todo: add test for URI push
- */",superficial,"import org.apache.pinot.spi.utils.builder.TableNameBuilder;
+ */",superficial test,"import org.apache.pinot.spi.utils.builder.TableNameBuilder;
 import org.apache.pinot.util.TestUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -1552,7 +1552,7 @@ void kindTest() {","        // TODO: test kind
     }
 
 }"
-636045,211,// we do not check if the offset is in the middle of a code point,superficial,"// 2 bytes code points
+636045,211,// we do not check if the offset is in the middle of a code point,superficial test,"// 2 bytes code points
 assertByteCount(""абв"", 0, 0, 1, """");
 assertByteCount(""абв"", 0, 1, 0, """");
 assertByteCount(""абв"", 0, 2, 1, ""а"");
@@ -2046,7 +2046,7 @@ for (String[] test : tests) {"
 673606,213,"/**
  * Tests for FingerprintGestureController.
  * TODO: These tests aren't really for server code, so this isn't their ideal home.
- */",other,"import android.accessibilityservice.FingerprintGestureController.FingerprintGestureCallback;
+ */",impractical case,"import android.accessibilityservice.FingerprintGestureController.FingerprintGestureCallback;
 import android.accessibilityservice.IAccessibilityServiceConnection;
 
 import com.android.server.accessibility.test.MessageCapturingHandler;
@@ -2475,7 +2475,7 @@ public void handleVirtualSound() {
 // With the legacy keyword syntax, ""yes"" is used for such boolean value instead of ""true"".
 // However, once the legacy keyword is translated back to BCP 47 u extension, key ""00"" is unknown,
 // so ""yes"" is preserved - not mapped to ""true"". We could change the code to automatically transform
-// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes"".",other,"{""U"", ""ja_JP@calendar=japanese;currency=JPY"", ""E"", ""u"", ""attr1-ca-gregory"", ""T"", ""ja-JP-u-attr1-ca-gregory"", ""ja_JP@attribute=attr1;calendar=gregorian""},
+// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes"".",how to,"{""U"", ""ja_JP@calendar=japanese;currency=JPY"", ""E"", ""u"", ""attr1-ca-gregory"", ""T"", ""ja-JP-u-attr1-ca-gregory"", ""ja_JP@attribute=attr1;calendar=gregorian""},
 {""U"", ""en@colnumeric=yes"", ""K"", ""kn"", """", ""T"", ""en-u-kn-true"", ""en@colnumeric=yes""},
 {""L"", ""th"", ""R"", ""th"", ""K"", ""nu"", ""thai"", ""T"", ""th-TH-u-nu-thai"", ""th_TH@numbers=thai""},
 {""U"", ""zh_Hans"", ""R"", ""sg"", ""K"", ""ca"", ""badcalendar"", ""X""},
@@ -3033,7 +3033,7 @@ void outcomesTest() {","        // TODO: test outcomes
     }
 
 }"
-69363,12,// TODO: these tests are too simple since they only replace undefined components,superficial,"	DataTypeComponent dtc = s1.getComponentContaining(5);
+69363,12,// TODO: these tests are too simple since they only replace undefined components,superficial test,"	DataTypeComponent dtc = s1.getComponentContaining(5);
 	DataType dt = dtc.getDataType();
 	assertEquals(-1, dt.getLength());
 	assertEquals(10, dtc.getLength());
@@ -3188,7 +3188,7 @@ void capitalCamelTest() {
 1179971,541,"// Now a more precise check to see if the false positive rate is not
 // too high. The reason we use a relaxed restriction for the real-world
 // case as opposed to the ""fake lookup"" case is that our hash functions
-// are not completely independent.",superficial,"  }
+// are not completely independent.",superficial test,"  }
 }
 double falsePosRate = numFalsePos * 1.0 / nTrials;
 LOG.debug(String.format(testIdMsg + "" False positives: %d out of %d (%f)"", numFalsePos,
@@ -4032,7 +4032,7 @@ assertEquals(
 		NotNull.class,
 		annotation.annotationType()
 );"
-16740,8,// TODO: add support for non-existing docs,superficial,"        result = engine.index(indexWithVersion.apply(conflictingVersion, index));
+16740,8,// TODO: add support for non-existing docs,superficial test,"        result = engine.index(indexWithVersion.apply(conflictingVersion, index));
     }
     assertThat(result.isCreated(), equalTo(false));
     assertThat(result.getVersion(), equalTo(lastOpVersion));
@@ -4191,7 +4191,7 @@ PlanTestBase.assertContains(plan, ""TABLE: t1_par\n"" +
     MockedHiveMetadata mockedHiveMetadata =
             (MockedHiveMetadata) connectContext.getGlobalStateMgr().getMetadataMgr()."
 1154060,497,"// todo: make this test run also for edge-based CH or otherwise make sure time calculation is tested also for edge-based CH (at the moment it will fail!)
-// todo: make this test run also for ALT or otherwise make sure time calculation is tested also for ALT (at the moment it will fail?!)",superficial,"public class EdgeBasedRoutingAlgorithmTest {
+// todo: make this test run also for ALT or otherwise make sure time calculation is tested also for ALT (at the moment it will fail?!)",superficial test,"public class EdgeBasedRoutingAlgorithmTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(EdgeBasedRoutingAlgorithmTest.class);
     private DecimalEncodedValue speedEnc;
     private DecimalEncodedValue turnCostEnc;
@@ -4354,7 +4354,7 @@ public void testSearchFolder() {
     @SuppressWarnings(""rawtypes"")
     final java.util.Collection result = requestBodyAndHeaders(""direct://SEARCHFOLDER"", null, headers);"
 878369,337,"// TODO(lharker): forbid this annotation, since it is impossible for a Promise to resolve to a
-// Promise.",other,"      .addDiagnostic(
+// Promise.",requirement,"      .addDiagnostic(
           lines(
               ""actual parameter 1 of takesNumber does not match formal parameter"",
               ""found   : string"",

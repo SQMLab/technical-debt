@@ -354,7 +354,7 @@ public class HealthServiceImplTest {
 ",}
 776547,269,"// TODO This fails with TCM as the constraints regarding concurrent overlapping range movements and
 //      replication factors have moved into the operations themselves. Previously, these were enforced
-//      at the StorageService level.",superficial,"    assertRangesAtEndpoint(RangesAtEndpoint.of(new Replica(node3, new Range<>(token3, newToken), true),
+//      at the StorageService level.",superficial test,"    assertRangesAtEndpoint(RangesAtEndpoint.of(new Replica(node3, new Range<>(token3, newToken), true),
                                                new Replica(node3, new Range<>(token4, token5), true)),
                            pendingByEndpoint.get(node3));
     assertRangesAtEndpoint(RangesAtEndpoint.empty(node4), pendingByEndpoint.get(node4));
@@ -1059,7 +1059,7 @@ private void testFetchDisconnectReleasesReader(String query) throws Exception {
             FinalizationTester.induceFinalization();
         }
     }
-    */",other,"    RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
+    */",subset test,"    RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
     raf.setLength(0);
     assertEquals(0, file.length());
     long moreThanFourGig = ((long) Integer.MAX_VALUE) + 1L;
@@ -1195,7 +1195,7 @@ public void idTest() {","    // TODO: test id
 public void petIdTest() {
     // TODO: test petId
 }"
-845408,308,// TODO: This test needs to be adapted to work with streamingEngine=true.,superficial,"                DEFAULT_SHARDING_KEY + i,
+845408,308,// TODO: This test needs to be adapted to work with streamingEngine=true.,superficial test,"                DEFAULT_SHARDING_KEY + i,
                 keyStringForIndex(i) + ""_data"" + (i + 1000))
             .build(),
         removeDynamicFields(result.get((long) i + 1000)));
@@ -2132,7 +2132,7 @@ package org.hibernate.orm.test.jpa.cascade2;
 @Test
 public void trailingSemicolon() {
   refactoringTestHelper"
-490732,135,"// TODO: for non-persistent topics, deleteSubscription won't fail",other,"        .build();
+490732,135,"// TODO: for non-persistent topics, deleteSubscription won't fail",requirement,"        .build();
 Consumer<byte[]> consumer = client.newConsumer().topic(partitionedTopicName).subscriptionName(""my-sub"")
         .subscriptionType(SubscriptionType.Exclusive).subscribe();
 
@@ -3776,7 +3776,7 @@ static {
     if (isNullOrEmpty(OLLAMA_BASE_URL)) {"
 985094,435,"//TODO this could be implemented with @BeforeAll, if we move to Junit 5.5 or higher. The way to intercept exceptions in this method, inside
 // the @NotImplementedYet extension would be by harnessing LifecycleMethodExecutionExceptionHandler, or InvocationInterceptor,
-// and both are Junit 5.5 (and experimental)",other,"		settingProviders = @SettingProvider(
+// and both are Junit 5.5 (and experimental)",how to,"		settingProviders = @SettingProvider(
 				settingName = DEFAULT_LIST_SEMANTICS,
 				provider = ImplicitListAsBagProvider.class
 		)
@@ -4619,7 +4619,7 @@ protected static void addResourceToRegionServerConfiguration(final HBaseTestingU
  * Replace the hbase-site.xml file under this test's data directory with the content of the
  * override-hbase-site.xml file. Stashes the current existing file so that it can be restored
  * using {@link #restoreHBaseSiteXML()}."
-287013,73,// TODO(b/207848601): Switch to using proper tooling for testing against golden data.,other,"videoFrameProcessorTestRunner.release();
+287013,73,// TODO(b/207848601): Switch to using proper tooling for testing against golden data.,requirement,"videoFrameProcessorTestRunner.release();
 videoFrameProcessorTestRunner =
     getDefaultFrameProcessorTestRunnerBuilder(testId)
         .setOutputFileLabel(""full4StepRotationBrightnessIncreaseAndCenterCrop"")
@@ -4695,7 +4695,7 @@ for (int id = 0; id < numDocs; id++) {
     Function<Boolean, Geometry> geometryFunc = ESTestCase.randomFrom(
         ShapeTestUtils::randomLine,
         ShapeTestUtils::randomPoint,"
-873622,337,"// TODO(b/148169932): There should be another mismatch {found: string, required: number}.",superficial,"    ""  constructor() {"",
+873622,337,"// TODO(b/148169932): There should be another mismatch {found: string, required: number}.",superficial test,"    ""  constructor() {"",
     ""    /** @type {number} */ this.x;"",
     ""  }"",
     ""}"",
@@ -5084,7 +5084,7 @@ public void mapTest() {","        // TODO: test map
     }
 
 }"
-694612,213,// TODO b/64262688 Add Concurrency tests to compare WAL vs DELETE read/write,superficial,"import org.junit.runner.RunWith;
+694612,213,// TODO b/64262688 Add Concurrency tests to compare WAL vs DELETE read/write,superficial test,"import org.junit.runner.RunWith;
 
 /**
  * Performance tests for typical CRUD operations and loading rows into the Cursor
