@@ -56,7 +56,7 @@ public final class PaddedAddressesTest {
 
     long first = getAlignedAddress(address, /* offset= */ 0);
     assertThat(first & (ALIGNMENT - 1)).isEqualTo(0);"
-639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",skip-test,"{
+639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",superficial-test,"{
     // Distinct with limit (DistinctLimitNode), should be eligible for pushdown.
     String query = ""SELECT DISTINCT regionkey FROM nation LIMIT 3"";
 
