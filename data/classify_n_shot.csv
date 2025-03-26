@@ -18,7 +18,7 @@ public void fakeOuterStringSerializeTest() {","    // TODO: test validations
 
 /**
  * @throws ApiException"
- 122818,34,"// I tried using Mockito, but it didn't work for some reason",how to,"import static org.junit.Assert.assertFalse;
+122818,34,"// I tried using Mockito, but it didn't work for some reason",how-to,"import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
@@ -38,7 +38,7 @@ return new PlayQueue(index, streams) {
     public void fetch() {
         throw new UnsupportedOperationException();"
 435141,128,"// Ignore the following tests because taking a lease requires a real
-// (not mock) file system store. These tests don't work on the mock.",skip test," * skipping tests of unsupported features
+// (not mock) file system store. These tests don't work on the mock.",skip-test," * skipping tests of unsupported features
  */
 public class TestNativeAzureFileSystemMocked extends
     NativeAzureFileSystemBaseTest {
@@ -177,7 +177,7 @@ public void testCompareResults()
       new ProcfsBasedProcessTree(Long.toString(getPid()));"
 547164,149,"// The next test also verifies replace functionality. Now, they are together to save on test execution time
 // due to Travis CI 10 minute default running time (with no output) -- having it separate made it
-// last longer. At some point we should really simplify this file, so it runs faster (splitting, etc.)",temporary fix,"    try (final Writer writer =
+// last longer. At some point we should really simplify this file, so it runs faster (splitting, etc.)",temporary-fix,"    try (final Writer writer =
              Files.newBufferedWriter(new File(inputDir, ""filtered_"" + i).toPath(), StandardCharsets.UTF_8)) {
       writer.write(StringUtils.format(""2017-12-%d,%d,%d th test file\n"", i + 1, i + 10, i));
     }

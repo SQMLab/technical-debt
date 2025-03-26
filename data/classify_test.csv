@@ -113,7 +113,7 @@ private Context getTestableContextBase() {
         // TODO(b/318393625): build out Ravenwood support for Resources"
 692038,213,"// We should not have received any rollback requests yet.
 // TODO: Possibly flaky if, by chance, some other app on device
-// happens to be rolled back at the same time?",how to,"assertThat(InstallUtils.getInstalledVersion(TestApp.A)).isEqualTo(2);
+// happens to be rolled back at the same time?",how-to,"assertThat(InstallUtils.getInstalledVersion(TestApp.A)).isEqualTo(2);
 
 // The app should now be available for rollback.
 RollbackInfo available = waitForAvailableRollback(TestApp.A);
@@ -132,7 +132,7 @@ UserManager um = (UserManager) context.getSystemService(context.USER_SERVICE);
 List<Integer> userIds = um.getAliveUsers()
         .stream().map(user -> user.id).collect(Collectors.toList());
 assertThat(InstallUtils.isOnlyInstalledForUser(TestApp.A,"
-327554,81,// TODO: should this check *any* reference to http://download.oracle.com/,how to,"""""""
+327554,81,// TODO: should this check *any* reference to http://download.oracle.com/,how-to,"""""""
     <a href=""../../technotes/guides/index.html"">
                 Test document 1</a>"""""",
 """"""
@@ -193,7 +193,7 @@ public class ZipOutputStreamTest extends junit.framework.TestCase /* J2ObjC remo
     ZipOutputStream zos;
 "
 1231461,618,"// TODO: This test currently makes the whole VM exit with exit code -1, but does not generate a dump file
-// (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",skip test,"    if (getDatabase() == null) {
+// (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",skip-test,"    if (getDatabase() == null) {
         return;
     }
 
@@ -280,7 +280,7 @@ public void justSymbolTest() {
 //        long ordinalFunctionPointerValue = Pointer.nativeValue(ordinalFunction);
 //
 //        assertEquals(namedFunctionPointerValue, ordinalFunctionPointerValue);
-//    }",skip test,"}
+//    }",skip-test,"}
 
 public void testSetErrorMode() {
     // Set bit flags to 0x0001
@@ -377,7 +377,7 @@ public void testDCLROLEOperation() {
   assertEquals(""role1"", roleDcl.getRoleName());"
 1026898,445,"/**
  * Sort of a dummy test, as the conditions are perfect. In a more realistic scenario, below, the algorithm needs luck to climb this high.
- */",superficial test,"        Summary summary = run(operations, workPerSuccess, numberOfWorkers, maximumTasksPerWorker, workerParallelism, timer, policy);
+ */",superficial-test,"        Summary summary = run(operations, workPerSuccess, numberOfWorkers, maximumTasksPerWorker, workerParallelism, timer, policy);
 
         double minMaxPending = numberOfWorkers * workerParallelism;
         assertInRange(0.3 * minMaxPending, summary.averagePending, 0.5 * minMaxPending);
@@ -434,7 +434,7 @@ public class ParDoLifecycleTest implements Serializable {
   @Rule public final transient TestPipeline p = TestPipeline.create();
 
   @Test"
-1473843,805,// This is an utter hack but is the only way I could,temporary fix,"FormTester formTester = tester.newFormTester(""form"");
+1473843,805,// This is an utter hack but is the only way I could,temporary-fix,"FormTester formTester = tester.newFormTester(""form"");
 formTester.setValue(""panel:tileLayerEditor:createTileLayer"", false);
 
 tester.executeAjaxEvent(""form:panel:tileLayerEditor:createTileLayer"", ""change"");
@@ -565,7 +565,7 @@ workspace =
     nativeFileSystem.getPath(testRoot.getRelative(getDesiredWorkspaceRelative()).asFragment());
 beforeCreatingWorkspace(workspace);
 workspace.createDirectoryAndParents();"
-1544848,889,//this is pretty yuck,temporary fix,"    if (r <= 0) break;
+1544848,889,//this is pretty yuck,temporary-fix,"    if (r <= 0) break;
     if (r > 0) {
         read += r;
         sb.append(new String(buf, 0, r));
@@ -622,7 +622,7 @@ class OuterCompositeTest {
 void myNumberTest() {
     // TODO: test myNumber
 }"
-68121,12,// not sure what the margin of error is,how to,"	Set<TestEdge> edges = getAllEdges();
+68121,12,// not sure what the margin of error is,how-to,"	Set<TestEdge> edges = getAllEdges();
 	edges.forEach(e -> assertAlphaEquals(1, e.getAlpha()));
 }
 
@@ -699,7 +699,7 @@ protected void checkEmptyTableStats(String tableName)
                     ""(null, null, null, null, null, null, null)"");
 }"
 1371658,733,"// TODO: Unlike PPGs with 0xBB compression the timestamps are not linear
-// The data also looks different, hmmm....",how to,"    HuaweiTruSleepParser.TruSleepStatus[] result = HuaweiTruSleepParser.parseState(test);
+// The data also looks different, hmmm....",how-to,"    HuaweiTruSleepParser.TruSleepStatus[] result = HuaweiTruSleepParser.parseState(test);
 
     Assert.assertArrayEquals(expected, result);
 }
@@ -731,7 +731,7 @@ void objectItemsNullableTest() {","        // TODO: test objectItemsNullable
     }
 
 }"
-36354,8,"// This only tests for calendar ordering, ignoring the other criteria",superficial test,"for (int i = 0; i < numCaps; i++) {
+36354,8,"// This only tests for calendar ordering, ignoring the other criteria",superficial-test,"for (int i = 0; i < numCaps; i++) {
     DateHistogramInterval interval = getRandomCalendarInterval();
     GroupConfig group = new GroupConfig(new DateHistogramGroupConfig.CalendarInterval(""foo"", interval));
     RollupJobConfig job = new RollupJobConfig(""foo"", ""index"", ""rollup"", ""*/5 * * * * ?"", 10, group, emptyList(), null);
@@ -788,7 +788,7 @@ public void shouldSee400AfterDeletePet() {
 @Test
 public void shouldSee200AfterFindPetsByStatus() {
     List<String> status = null;"
-877599,337,// TODO(johnlenz): support this. Unused return can be removed.,temporary fix,"
+877599,337,// TODO(johnlenz): support this. Unused return can be removed.,temporary-fix,"
 @Test
 public void testNoRewriteDestructuredObject4() {
   String source =
@@ -924,7 +924,7 @@ public void findPetsByTagsTest() {","    // TODO: test validations
 
 /**
  * Find pet by ID"
-674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,temporary fix,"    assertThat(
+674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,temporary-fix,"    assertThat(
             Settings.Secure.getInt(
                     mTestableContext.getContentResolver(),
                     Settings.Secure.ACCESSIBILITY_DISPLAY_MAGNIFICATION_ENABLED,
@@ -1059,7 +1059,7 @@ public void handleNoiseCancellingOptimizerStatus() {
 
 @Test
 public void handleNoiseCancellingOptimizerState() {"
-710096,226,// TODO same data accessed as Hive Table or Path URI ??,how to,"
+710096,226,// TODO same data accessed as Hive Table or Path URI ??,how-to,"
 df.write()
     .mode(SaveMode.Overwrite)
     .saveAsTable(tbl(""foo4"")); // CreateDataSourceTableAsSelectCommand
@@ -1167,7 +1167,7 @@ void capitalSnakeTest() {","    // TODO: test capitalSnake
 void scAETHFlowPointsTest() {
     // TODO: test scAETHFlowPoints
 }"
-1512589,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,how to,"if (this == o)
+1512589,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,how-to,"if (this == o)
     return true;
 if (o == null || getClass() != o.getClass())
     return false;
@@ -1271,7 +1271,7 @@ void uuidTest() {
 }
 ","
 }"
-639651,211,// TODO: Difficult to determine whether the exception is concurrent issue or not from the error message,how to,"@Override
+639651,211,// TODO: Difficult to determine whether the exception is concurrent issue or not from the error message,how-to,"@Override
 protected void verifyAddNotNullColumnToNonEmptyTableFailurePermissible(Throwable e)
 {
     assertThat(e).hasMessageContaining(""NULL not allowed for column"");
@@ -1294,7 +1294,7 @@ protected void verifySetColumnTypeFailurePermissible(Throwable e)
  * Test for advanced push types.
  * Currently only tests METADATA push type.
  * todo: add test for URI push
- */",superficial test,"import org.apache.pinot.spi.utils.builder.TableNameBuilder;
+ */",superficial-test,"import org.apache.pinot.spi.utils.builder.TableNameBuilder;
 import org.apache.pinot.util.TestUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -1482,7 +1482,7 @@ void uuidTest() {
 443779,128,"/**
  * Note that {@link java.net.Socket#setSendBufferSize(int)} is only a hint.
  * If this test is flaky it should be ignored.  See HADOOP-13351.
- */",how to," */
+ */",how-to," */
 @Test
 public void testDefaultSendBufferSize() throws IOException {
   final int sendBufferSize = getSendBufferSize(new Configuration());
@@ -1552,7 +1552,7 @@ void kindTest() {","        // TODO: test kind
     }
 
 }"
-636045,211,// we do not check if the offset is in the middle of a code point,superficial test,"// 2 bytes code points
+636045,211,// we do not check if the offset is in the middle of a code point,superficial-test,"// 2 bytes code points
 assertByteCount(""абв"", 0, 0, 1, """");
 assertByteCount(""абв"", 0, 1, 0, """");
 assertByteCount(""абв"", 0, 2, 1, ""а"");
@@ -1573,7 +1573,7 @@ assertByteCount(""\u6000\u6001\u6002\u6003"", 0, 3, 1, ""\u6000"");
 assertByteCount(""\u6000\u6001\u6002\u6003"", 0, 6, 1, ""\u6000"");"
 891181,360,"// this is a limitation, we identify config repos by material fingerprint later
 // so there cannot be one repository parsed by 2 plugins.
-// This also does not seem like practical use case anyway",impractical case,"    assertThat(repos.isEmpty()).isTrue();
+// This also does not seem like practical use case anyway",impractical-case,"    assertThat(repos.isEmpty()).isTrue();
     assertThat(repos.contains(ConfigRepoConfig.createConfigRepoConfig(git(""http://git""), ""myplugin"", ""id""))).isFalse();
 }
 
@@ -1592,7 +1592,7 @@ public void shouldErrorWhenDuplicateIdsExist() {
     ConfigRepoConfig repo2 = ConfigRepoConfig.createConfigRepoConfig(git(""http://git2""), ""myotherplugin"", ""id"");
     repos.add(repo1);
     repos.add(repo2);"
-253440,69,// TODO: test Pet,temporary fix," * Model tests for Pet
+253440,69,// TODO: test Pet,temporary-fix," * Model tests for Pet
  */
 class PetTest {
     private final Pet model = new Pet();
@@ -1612,7 +1612,7 @@ void idTest() {
     // TODO: test id
 }"
 757427,255,"// Query with cube and arithmetic expr
-// TODO(kks): enable this later if we support cube",temporary fix,"// aggregation materialized view.
+// TODO(kks): enable this later if we support cube",temporary-fix,"// aggregation materialized view.
 @Test
 public void testGroupingSetQueryOnAggMV() throws Exception {
     String createMVSQL = ""create materialized view "" + EMPS_MV_NAME + "" as select empid, deptno, sum(salary) "" +
@@ -1631,7 +1631,7 @@ public void testAggQueryOnAggMV9() throws Exception {
     starRocksAssert.query(query).explainContains(QUERY_USE_EMPS_MV);
 }
 "
-1061072,476,"// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.",temporary fix,"    ""class Test {}"",
+1061072,476,"// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.",temporary-fix,"    ""class Test {}"",
   };
   String[] expected = {
     ""/** */"", ""class Test {}"",
@@ -1728,7 +1728,7 @@ public void categoryTagTest() {","        // TODO: test categoryTag
 
 }"
 743842,230,"// TODO: Remove this line, and replace 'clusterManagerRole' with CLUSTER_MANAGER_ROLE, after MASTER_ROLE is removed.
-// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",temporary fix,"        public Path nodeConfigPath(int nodeOrdinal) {
+// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",temporary-fix,"        public Path nodeConfigPath(int nodeOrdinal) {
             return null;
         }
     },
@@ -1785,7 +1785,7 @@ TestCaseSupplier.forUnaryLong(suppliers, read, DataType.LONG, l -> l, Long.MIN_V
 TestCaseSupplier.forUnaryBoolean(suppliers, evaluatorName.apply(""Boolean""), DataType.LONG, b -> b ? 1L : 0L, List.of());
 
 // datetimes"
-845325,308,// TODO: Remove once Distributions has shipped.,temporary fix,"public class SimpleParDoFnTest {
+845325,308,// TODO: Remove once Distributions has shipped.,temporary-fix,"public class SimpleParDoFnTest {
   @Rule public ExpectedException thrown = ExpectedException.none();
 
   private PipelineOptions options;
@@ -1893,7 +1893,7 @@ if (collationValue.length() > 0 && !Collator.getFunctionalEquivalent(""collation
 if (locale.getCountry().length() != 0) {
     continue;
 }"
-380596,104,// TODO(adriancole): Find a home for this generic conversion between Call and Java 8.,how to,"  };
+380596,104,// TODO(adriancole): Find a home for this generic conversion between Call and Java 8.,how-to,"  };
 
   http.newCall(supplier, NULL, ""test"").execute();
 
@@ -1967,7 +1967,7 @@ public void stringTest() {
  * Tests that the workaround for https://github.com/quarkusio/quarkus/issues/43703 /
  * https://github.com/quarkusio/quarkus/issues/42255
  * is effective.
- */",temporary fix,"import org.hibernate.SessionFactory;
+ */",temporary-fix,"import org.hibernate.SessionFactory;
 import org.hibernate.engine.spi.SessionFactoryImplementor;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
@@ -2024,7 +2024,7 @@ void capitalCamelTest() {","    // TODO: test capitalCamel
 void smallSnakeTest() {
     // TODO: test smallSnake
 }"
-610921,198,// TODO: I'm not sure what record.cells is supposed to return. Returning single valued lists seems weird,how to,"public void crossFunctionRecordFieldLookup() throws Exception {
+610921,198,// TODO: I'm not sure what record.cells is supposed to return. Returning single valued lists seems weird,how-to,"public void crossFunctionRecordFieldLookup() throws Exception {
     String tests[][] = {
             { ""'john'.cross('My Address Book', 'friend').cells[0]['friend'].value"", ""john"" },
             { ""'john'.cross('My Address Book', 'friend').index.toString()"", ""[0, 2]"" },
@@ -2046,7 +2046,7 @@ for (String[] test : tests) {"
 673606,213,"/**
  * Tests for FingerprintGestureController.
  * TODO: These tests aren't really for server code, so this isn't their ideal home.
- */",impractical case,"import android.accessibilityservice.FingerprintGestureController.FingerprintGestureCallback;
+ */",impractical-case,"import android.accessibilityservice.FingerprintGestureController.FingerprintGestureCallback;
 import android.accessibilityservice.IAccessibilityServiceConnection;
 
 import com.android.server.accessibility.test.MessageCapturingHandler;
@@ -2120,7 +2120,7 @@ private long getPhysicalInputPositions(QueryId queryId)
                 .getPhysicalInputPositions();
     }
 }"
-1206419,570,"// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]",how to,"@Test
+1206419,570,"// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]",how-to,"@Test
 public void testAddedRowsTimestampRightBounded() throws SQLException {
 
     // load test data to database
@@ -2139,7 +2139,7 @@ stmt.execute(""insert into TEST_QUERY_DB_TABLE (id, name, scale, created_on) VAL
 
 runner.setProperty(GenerateTableFetch.TABLE_NAME, ""TEST_QUERY_DB_TABLE"");
 runner.setIncomingConnection(false);"
-322344,81,// I have put this as it was complaining about systemid,temporary fix,"public void testcase13() throws Exception {
+322344,81,// I have put this as it was complaining about systemid,temporary-fix,"public void testcase13() throws Exception {
     String outputFile = USER_DIR + ""saxtf013.out"";
     String goldFile = GOLDEN_DIR + ""saxtf013GF.out"";
     try(FileInputStream fis = new FileInputStream(XML_FILE)) {
@@ -2247,7 +2247,7 @@ void binaryTest() {
  * @param fullyQualifiedName the resource name to look at.
  * @return either {@link AnnotationConstants#DEFAULT_NEW_LINE} or {@link AnnotationConstants#WINDOWS_NEW_LINE}.
  * @throws IOException on I/O error.
- */",how to,"import static java.util.Arrays.copyOf;
+ */",how-to,"import static java.util.Arrays.copyOf;
 import static org.neo4j.annotations.AnnotationConstants.DEFAULT_NEW_LINE;
 import static org.neo4j.annotations.AnnotationConstants.WINDOWS_NEW_LINE;
 
@@ -2357,7 +2357,7 @@ public void capitalCamelTest() {
 // Read a line from the input stream, swallowing the final
 // \r\n sequence. Stops at the first \n, doesn't complain
 // if it wasn't preceded by '\r'.
-//",temporary fix,"final ServerSocket ss;
+//",temporary-fix,"final ServerSocket ss;
 final boolean secure;
 ConcurrentLinkedQueue<Socket> connections = new ConcurrentLinkedQueue<>();
 volatile boolean stopped;
@@ -2475,7 +2475,7 @@ public void handleVirtualSound() {
 // With the legacy keyword syntax, ""yes"" is used for such boolean value instead of ""true"".
 // However, once the legacy keyword is translated back to BCP 47 u extension, key ""00"" is unknown,
 // so ""yes"" is preserved - not mapped to ""true"". We could change the code to automatically transform
-// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes"".",how to,"{""U"", ""ja_JP@calendar=japanese;currency=JPY"", ""E"", ""u"", ""attr1-ca-gregory"", ""T"", ""ja-JP-u-attr1-ca-gregory"", ""ja_JP@attribute=attr1;calendar=gregorian""},
+// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes"".",how-to,"{""U"", ""ja_JP@calendar=japanese;currency=JPY"", ""E"", ""u"", ""attr1-ca-gregory"", ""T"", ""ja-JP-u-attr1-ca-gregory"", ""ja_JP@attribute=attr1;calendar=gregorian""},
 {""U"", ""en@colnumeric=yes"", ""K"", ""kn"", """", ""T"", ""en-u-kn-true"", ""en@colnumeric=yes""},
 {""L"", ""th"", ""R"", ""th"", ""K"", ""nu"", ""thai"", ""T"", ""th-TH-u-nu-thai"", ""th_TH@numbers=thai""},
 {""U"", ""zh_Hans"", ""R"", ""sg"", ""K"", ""ca"", ""badcalendar"", ""X""},
@@ -2557,7 +2557,7 @@ void deleteOrderTest() throws ApiException {","}
  *          if the Api call fails
  */
 @Test"
-982711,435,// todo (6.0) : should we define the rule with the integer as optional and then give a better exception?,how to,"/**
+982711,435,// todo (6.0) : should we define the rule with the integer as optional and then give a better exception?,how-to,"/**
  * @author Steve Ebersole
  * @author Andrea Boriero
  * @author Chris Cranford
@@ -2704,7 +2704,7 @@ CliDriver.invokeExtensionListFormatting(project);
 public void testBuildOptions() throws Exception {
     CliDriver.Result result = CliDriver.execute(workspaceRoot, ""create"", ""app"", ""--gradle"", ""-e"", ""-B"", ""--verbose"");
     Assertions.assertEquals(CommandLine.ExitCode.OK, result.exitCode, ""Expected OK return code."" + result);"
-1037082,445,// TODO replace explicit pre-mockito mock classes with proper mockito mocks wherever possible,temporary fix,"import java.util.concurrent.CyclicBarrier;
+1037082,445,// TODO replace explicit pre-mockito mock classes with proper mockito mocks wherever possible,temporary-fix,"import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -2742,7 +2742,7 @@ int port() {
     }
   }
 }"
-176427,56,// Ignoring this test on ActiveDirectory (same for rhds) as it's not allowed to have LDAP group referencing nonexistent member. KEYCLOAK-2682 was related to OpenLDAP TODO: Better solution than programmatic...,skip test,"    });
+176427,56,// Ignoring this test on ActiveDirectory (same for rhds) as it's not allowed to have LDAP group referencing nonexistent member. KEYCLOAK-2682 was related to OpenLDAP TODO: Better solution than programmatic...,skip-test,"    });
 }
 
 @Test
@@ -2812,7 +2812,7 @@ public void bazTest() {","        // TODO: test baz
     }
 
 }"
-997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",temporary fix,"
+997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",temporary-fix,"
 for (int i = 0; i < locales.length; i++) {
     ICUResourceBundle rb = (ICUResourceBundle)ICUResourceBundle.getBundleInstance(ICUData.ICU_BASE_NAME,locales[i]);
 
@@ -2855,7 +2855,7 @@ public void testFixRequires_preserveJsDoc_whenSorting() {
 // for a shebang line.
 // The value of 120 is the typical kernel compile-time buffer limit.
 // The following limit of 80 allows room for arguments to be placed
-// after the path to the launcher on the shebang line.",temporary fix,"private static final String thisVersion = System.getProperty(""java.specification.version"");
+// after the path to the launcher on the shebang line.",temporary-fix,"private static final String thisVersion = System.getProperty(""java.specification.version"");
 
 SourceMode() throws Exception {
     log = System.err;
@@ -2931,7 +2931,7 @@ void colorTest() {
 };
 
 t.start();"
-833325,308,"// Skip, zstd only supported for Avro 1.9+",skip test,"
+833325,308,"// Skip, zstd only supported for Avro 1.9+",skip-test,"
     SerializableAvroCodecFactory serdeC = SerializableUtils.clone(codecFactory);
 
     assertEquals(CodecFactory.xzCodec(i).toString(), serdeC.getCodec().toString());
@@ -3033,7 +3033,7 @@ void outcomesTest() {","        // TODO: test outcomes
     }
 
 }"
-69363,12,// TODO: these tests are too simple since they only replace undefined components,superficial test,"	DataTypeComponent dtc = s1.getComponentContaining(5);
+69363,12,// TODO: these tests are too simple since they only replace undefined components,superficial-test,"	DataTypeComponent dtc = s1.getComponentContaining(5);
 	DataType dt = dtc.getDataType();
 	assertEquals(-1, dt.getLength());
 	assertEquals(10, dtc.getLength());
@@ -3128,7 +3128,7 @@ for (int maxRowsPerFrame : new int[]{Integer.MAX_VALUE, 50}) {
             for (boolean isComposedStorage : new boolean[]{true, false}) {
               for (boolean partitionsDeferred : new boolean[]{true, false}) {
                 for (long limitHint : new long[]{SuperSorter.UNLIMITED, 3, 1_000}) {"
-849284,315,// TODO: Is it correct?,how to,"FieldAccessorUtl.ensureEmptyStringIsNotNull( false );
+849284,315,// TODO: Is it correct?,how-to,"FieldAccessorUtl.ensureEmptyStringIsNotNull( false );
 
 final String fIsText = ""ISNONTEXT(["" + KEY_ARG + ""])"";
 
@@ -3188,7 +3188,7 @@ void capitalCamelTest() {
 1179971,541,"// Now a more precise check to see if the false positive rate is not
 // too high. The reason we use a relaxed restriction for the real-world
 // case as opposed to the ""fake lookup"" case is that our hash functions
-// are not completely independent.",superficial test,"  }
+// are not completely independent.",superficial-test,"  }
 }
 double falsePosRate = numFalsePos * 1.0 / nTrials;
 LOG.debug(String.format(testIdMsg + "" False positives: %d out of %d (%f)"", numFalsePos,
@@ -3245,7 +3245,7 @@ void phoneTest() {","    // TODO: test phone
 void userStatusTest() {
     // TODO: test userStatus
 }"
-625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,temporary fix,"        assertThatThrownBy(() -> onTrino().executeQuery(""UPDATE delta.default."" + tableName + "" SET a = 3""))
+625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,temporary-fix,"        assertThatThrownBy(() -> onTrino().executeQuery(""UPDATE delta.default."" + tableName + "" SET a = 3""))
                 .hasMessageContaining(""Check constraint violation"");
         assertThat(onTrino().executeQuery(""SELECT * FROM delta.default."" + tableName))
                 .containsOnly(row(2));
@@ -3264,7 +3264,7 @@ public void testCheckConstraintMergeCompatibility()
     onDelta().executeQuery(""CREATE TABLE default."" + tableName1 +
             ""(a INT) "" +
             ""USING DELTA "" +"
-54528,11,// doesn't make much sense in the context of a list...,impractical case,"void mergeEmptyChild() {
+54528,11,// doesn't make much sense in the context of a list...,impractical-case,"void mergeEmptyChild() {
 	ManagedList parent = ManagedList.of(""one"", ""two"");
 	ManagedList child = new ManagedList();
 	child.setMergeEnabled(true);
@@ -3320,7 +3320,7 @@ if (socketChannel == null) {","      // Continuous build environment doesn't sup
     assertWriteResult(CAPACITY_NORMAL);
 }
 "
-831173,303,// Using deprecated constructor for verification of backwards compatibility,temporary fix,"        CassandraContainer<?> cassandraContainer = new CassandraContainer<>(
+831173,303,// Using deprecated constructor for verification of backwards compatibility,temporary-fix,"        CassandraContainer<?> cassandraContainer = new CassandraContainer<>(
             DockerImageName.parse(""cassandra:2.2.11"")
         )
             .withInitScript(""initial.cql"")
@@ -3418,7 +3418,7 @@ protected RobertaTokenizationUpdate mutateInstanceForVersion(RobertaTokenization
 
     return instance;"
 1002899,441,"// Don't test on iOS devices, because they often have less than 4G available,
-// especially with a big JRE tests app installed.",skip test,"public void testSetLengthTooLarge() throws Exception {
+// especially with a big JRE tests app installed.",skip-test,"public void testSetLengthTooLarge() throws Exception {
     RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
     try {
         raf.setLength(Long.MAX_VALUE);
@@ -3445,7 +3445,7 @@ public void testSetLength64() throws Exception {","  if (!System.getProperty(""o
  * number of expected restarts is reached. The AdaptiveScheduler won't trigger the operator reset
  * resulting in the test running forever. This is why this test suite is disabled for the {@link
  * org.apache.flink.runtime.scheduler.adaptive.AdaptiveScheduler}.
- */",skip test,"import java.util.Map;
+ */",skip-test,"import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
@@ -3703,7 +3703,7 @@ public void testQueryParameterCollectionFormatTest()  {","}
 public void testStringMapReferenceTest()  {
     // uncomment below to test the function"
 235091,64,"// The exceedingly dumb approach: writing all the permutations down manually
-// is simply easier than any way of generating them.",temporary fix,"}
+// is simply easier than any way of generating them.",temporary-fix,"}
 
 @Test
 public void testTestCaseNamesOrdered() throws Exception {
@@ -3885,7 +3885,7 @@ String username = null;
 // assertThat(""Return status"", response.get().status().code(), is(expectedStatus));
 
 // TODO: test validations"
-1506165,822,// TODO,skip test,"import org.junit.jupiter.api.Disabled;
+1506165,822,// TODO,skip-test,"import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -3918,7 +3918,7 @@ public class RefRefToPathLevelParameterOneofRefToOneofParameterTest {
 
 }"
 1244485,620,"//TODO: Rewrite with dynamic cache creation, and GRID start in #beforeTest after resolve of
-//TODO: IGNITE-1094",temporary fix,"}
+//TODO: IGNITE-1094",temporary-fix,"}
 
 /**
  * Test collision of table names in different caches, sharing a single SQL schema.
@@ -4032,7 +4032,7 @@ assertEquals(
 		NotNull.class,
 		annotation.annotationType()
 );"
-16740,8,// TODO: add support for non-existing docs,superficial test,"        result = engine.index(indexWithVersion.apply(conflictingVersion, index));
+16740,8,// TODO: add support for non-existing docs,superficial-test,"        result = engine.index(indexWithVersion.apply(conflictingVersion, index));
     }
     assertThat(result.isCreated(), equalTo(false));
     assertThat(result.getVersion(), equalTo(lastOpVersion));
@@ -4094,7 +4094,7 @@ package org.hibernate.orm.test.jpa.cascade2;
 // and that xpack.ml.use_auto_machine_memory_percent is false.
 // It also assumes that 30% of RAM on the test machine is sufficient
 // to run a 200MB job but not a 50000MB job. (If we move to 256GB CI
-// workers then it will need to be adjusted.)",temporary fix,"}
+// workers then it will need to be adjusted.)",temporary-fix,"}
 
 @After
 public void removeSettings() {
@@ -4113,7 +4113,7 @@ public void removeSettings() {
         TEST_REQUEST_TIMEOUT,
         TEST_REQUEST_TIMEOUT,
         ""ml_test"","
-84508,12,// choose My Bar // TODO: I see no reason for a conflict !,how to,"		Structure foo = (Structure) dtm.getDataType(new CategoryPath(""/MISC""), ""Foo"");
+84508,12,// choose My Bar // TODO: I see no reason for a conflict !,how-to,"		Structure foo = (Structure) dtm.getDataType(new CategoryPath(""/MISC""), ""Foo"");
 		bar.add(new ByteDataType());
 		s1.delete(3);
 		// edit Foo
@@ -4152,7 +4152,7 @@ void numberTest() {
     // TODO: test number
 }"
 146929,40,"// note, we get a buffer underflow exception instead of an OOME, even though the encoded size
-// would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap",how to,"    byte[] input = {-1, -1, -1, -2};
+// would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap",how-to,"    byte[] input = {-1, -1, -1, -2};
     final ByteBuffer buffer = ByteBuffer.wrap(input);
     assertThrows(NegativeArraySizeException.class, () -> Utils.getNullableSizePrefixedArray(buffer));
 }
@@ -4191,7 +4191,7 @@ PlanTestBase.assertContains(plan, ""TABLE: t1_par\n"" +
     MockedHiveMetadata mockedHiveMetadata =
             (MockedHiveMetadata) connectContext.getGlobalStateMgr().getMetadataMgr()."
 1154060,497,"// todo: make this test run also for edge-based CH or otherwise make sure time calculation is tested also for edge-based CH (at the moment it will fail!)
-// todo: make this test run also for ALT or otherwise make sure time calculation is tested also for ALT (at the moment it will fail?!)",superficial test,"public class EdgeBasedRoutingAlgorithmTest {
+// todo: make this test run also for ALT or otherwise make sure time calculation is tested also for ALT (at the moment it will fail?!)",superficial-test,"public class EdgeBasedRoutingAlgorithmTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(EdgeBasedRoutingAlgorithmTest.class);
     private DecimalEncodedValue speedEnc;
     private DecimalEncodedValue turnCostEnc;
@@ -4212,7 +4212,7 @@ PlanTestBase.assertContains(plan, ""TABLE: t1_par\n"" +
 // 0---1"
 892743,368,"// expected
 // TODO(czhu): with the current implementation of prefixes w/o delimiters, there is
-// never a FileDoesNotExistException because we just list the entire bucket recursively",impractical case,"new TestCase(mHostname, mPort, mBaseUri,
+// never a FileDoesNotExistException because we just list the entire bucket recursively",impractical-case,"new TestCase(mHostname, mPort, mBaseUri,
     ""bucket"", parameters, HttpMethod.GET,
     getDefaultOptionsWithAuth().setContentType(TestCaseOptions.XML_CONTENT_TYPE))
     .runAndCheckResult(expected);
@@ -4334,7 +4334,7 @@ public void prefixArrayTest() {
  * search results works (and does not end with an exception).
  *
  * To test search of real data, change query string from '*' to real name of file.
- */",impractical case," * Test class for {@link BoxSearchManager} APIs.
+ */",impractical-case," * Test class for {@link BoxSearchManager} APIs.
  */
 @EnabledIf(value = ""org.apache.camel.component.box.AbstractBoxITSupport#hasCredentials"",
            disabledReason = ""Box credentials were not provided"")
@@ -4415,7 +4415,7 @@ EasyMock.expect(taskQueryTool.getTaskInfo(taskId))
             status,
             task.getDataSource(),"
 1217195,576,"// Maybe this one should throw an exception. Usually this will be used before
-// a UID lookup so it will toss an exception then.",how to,"  Tags.parseWithMetric("""", tags);
+// a UID lookup so it will toss an exception then.",how-to,"  Tags.parseWithMetric("""", tags);
 }
 
 @Test (expected = IllegalArgumentException.class)
@@ -4510,7 +4510,7 @@ void classNameTest() {","    // TODO: test className
 void colorTest() {
     // TODO: test color
 }"
-1634981,979,// can't validate easily as it contains a Lookup object,how to,"	} catch (NoClassDefFoundError e) {
+1634981,979,// can't validate easily as it contains a Lookup object,how-to,"	} catch (NoClassDefFoundError e) {
 		/* Expected behavior */
 	}
 }
@@ -4569,7 +4569,7 @@ public void smallSnakeTest() {
 private static Stream<Arguments> compactValidParseStrings() {
     return Stream.concat(
             validParseStrings().map(args -> Arguments.of("
-1634362,979,"// An unlikely exception - if this occurs, we can't proceed with the test.",impractical case,"} catch (InvalidAttributeValueException e) {
+1634362,979,"// An unlikely exception - if this occurs, we can't proceed with the test.",impractical-case,"} catch (InvalidAttributeValueException e) {
 	// An unlikely exception - if this occurs, we can't proceed with the test.
 	Assert.fail(""Unexpected InvalidAttributeValueException "" + e.getMessage());
 } catch (MBeanException e) {
@@ -4648,7 +4648,7 @@ public List<DatabaseMeta> readDatabases() throws KettleException {
         property = User.get(""User"").getProperty(property.getClass());
         assertEquals(""Property should have primary view "" + view.name + "" instead of "" + property.getPrimaryViewName(), view.name, property.getPrimaryViewName());
     }
-    */",how to,"@Test
+    */",how-to,"@Test
 public void testReadResolve() throws IOException {
     User user = User.getOrCreateByIdOrFullName(""User"");
     MyViewsProperty property = new MyViewsProperty(AllView.DEFAULT_VIEW_NAME);
@@ -5017,7 +5017,7 @@ public ObjectId[] getDatabaseIDs( boolean includeDeleted ) throws KettleExceptio
 "
 859671,323,"// Takes ~1s on markt's laptop. If this takes more than 5s something
 // probably needs looking at. If this fails repeatedly then we may need
-// to increase this limit.",temporary fix,"public void testPerformance() throws Exception {
+// to increase this limit.",temporary-fix,"public void testPerformance() throws Exception {
     String[] requestedHostNames = new String[] { ""xxxxxxxxxxx"", ""iowejoiejfoiew"", ""iowejoiejfoiex"", ""owefojiwefoi"",
             ""owefojiwefoix"", ""qwerty.net"", ""foo.net"", ""zzz.com"", ""abc.com"" };
 
@@ -5058,7 +5058,7 @@ public void getInventoryTest()  {"
 46895,8,"/*
          * The following two lines assert current behavior that might not be desirable -- we continue to delete expired databases every
          * time that runDownloader runs. This seems unnecessary.
-         */",how to,"}
+         */",how-to,"}
 for (int i = 0; i < unexpiredDatabasesCount; i++) {
     assertThat(
         geoIpDownloader.state.getDatabases().get(""unexpiredDatabase"" + i).lastCheck(),
@@ -5097,7 +5097,7 @@ TransferableBlock block = operator.nextBlock();
 
 // Then:
 assertTrue(block.isErrorBlock(), ""expected ERROR block from invalid computation"");"
-1624648,972,//  this test is probably running with bytecode manipulation. We ignore synthetic methods.,how to,"    }
+1624648,972,//  this test is probably running with bytecode manipulation. We ignore synthetic methods.,how-to,"    }
     assertTrue(t >= 1);
 }
 
@@ -5239,7 +5239,7 @@ void arrayArrayOfIntegerTest() {","    // TODO: test arrayArrayOfInteger
 void arrayArrayOfModelTest() {
     // TODO: test arrayArrayOfModel
 }"
-876571,337,// TODO(b/142881197): we can't give a more accurate type right now.,temporary fix,"
+876571,337,// TODO(b/142881197): we can't give a more accurate type right now.,temporary-fix,"
 @Test
 public void testYieldAll_withTypes() {
   Node returnNode =
@@ -5337,7 +5337,7 @@ void prefixBooleanTest() {
 496095,135,"// TODO in theory there shouldn't be any ledgers left if we are using readers.
 //  However, trimming of ledgers are piggy packed onto ledger operations.
 //  So if there isn't new data coming in, trimming never occurs.
-//  We need to trigger trimming on a schedule to actually delete all remaining ledgers",impractical case,"try {
+//  We need to trigger trimming on a schedule to actually delete all remaining ledgers",impractical-case,"try {
     // try to send over backlog quota and make sure it fails
     for (int i = 0; i < numMsgs; i++) {
         content[0] = (byte) (content[0] + 1);
