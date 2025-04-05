@@ -165,3 +165,23 @@ Test Result Excluding repository: 69
    macro avg      0.624     0.975     0.688      7598
 weighted avg      0.990     0.959     0.971      7598
 
+detect with gpt-4o
+Test Result:
+              precision    recall  f1-score   support
+
+          no      0.999     0.970     0.984      7592
+         yes      0.422     0.955     0.586       177
+
+    accuracy                          0.969      7769
+   macro avg      0.711     0.962     0.785      7769
+weighted avg      0.986     0.969     0.975      7769
+
+Test Result Excluding repository: 69
+              precision    recall  f1-score   support
+
+          no      0.999     0.969     0.984      7495
+         yes      0.292     0.922     0.444       103
+
+    accuracy                          0.969      7598
+   macro avg      0.646     0.946     0.714      7598
+weighted avg      0.989     0.969     0.977      7598
