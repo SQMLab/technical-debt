@@ -46,9 +46,6 @@ superficial-test      0.444     0.500     0.471         8
     weighted avg      0.633     0.560     0.573       168
 
 classify with gpt-4o-mini
-Unknown Labels:
-['**dependency**', '**documentation**', '**how-to**', '**requirement**', '**temporary-fix**', '**how-to**', '**multi**', '**code**', '**documentation**', '**documentation**', '**multi**']
-./cache/March 27, 2025, 18:01:56$classify_gpt-4o-mini.csv
 Test Result:
                   precision    recall  f1-score   support
 
@@ -96,9 +93,6 @@ superficial-test      1.000     0.125     0.222         8
     weighted avg      0.566     0.411     0.430       168
 
 classify with gpt-4o
-Unknown Labels:
-['**temporary-fix**', '**temporary-fix**', '**dependency**', '**dependency**']
-./cache/March 27, 2025, 18:07:16$classify_gpt-4o.csv
 Test Result:
                   precision    recall  f1-score   support
 
