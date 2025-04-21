@@ -2278,7 +2278,7 @@ public void testInitializeMatrixSetsScaleIfFlipHorizontal() {
   verify(matrix).setScale(-1, 1);
 }
 "
-1561930,918,"// kinda sorta wrong, but for testing's sake...",build,"static class IgnoredSubType extends IgnoredType { }
+1561930,918,"// kinda sorta wrong, but for testing's sake...",superficial-test,"static class IgnoredSubType extends IgnoredType { }
 
 // Test to ensure we can override enum settings
 static class LcEnumIntrospector extends JacksonAnnotationIntrospector
