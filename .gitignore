@@ -45,4 +45,3 @@ satd-core/cache
 .venv/
 ./satd-core/playground.ipynb
 satd-core/.ipynb_checkpoints/
-.env
