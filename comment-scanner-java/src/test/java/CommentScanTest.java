@@ -1,5 +1,5 @@
-import com.shahidul.satd.comment.scanner.CommentScannerService;
-import com.shahidul.satd.comment.scanner.CommentScannerServiceImpl;
+import ca.sqlmlab.comment.scanner.CommentScannerService;
+import ca.sqlmlab.comment.scanner.CommentScannerServiceImpl;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 

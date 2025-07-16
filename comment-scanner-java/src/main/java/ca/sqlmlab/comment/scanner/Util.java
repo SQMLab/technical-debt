@@ -1,4 +1,4 @@
-package com.shahidul.satd.comment.scanner;
+package ca.sqlmlab.comment.scanner;
 
 import org.apache.commons.lang3.StringUtils;
 
