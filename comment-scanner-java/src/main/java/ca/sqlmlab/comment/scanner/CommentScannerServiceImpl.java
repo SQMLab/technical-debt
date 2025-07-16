@@ -1,4 +1,4 @@
-package com.shahidul.satd.comment.scanner;
+package ca.sqlmlab.comment.scanner;
 
 import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.StaticJavaParser;
