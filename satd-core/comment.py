@@ -23,6 +23,7 @@ class Comment(Base):
     td_type = Column(String(255))  # SATD Type
     note = Column(Text)  # Notes can be anything from developer's perspective
     language = Column(String(50))  # Main Language of the File
+    code_method = Column(Text)
     code_before = Column(Text)
     code_after = Column(Text)
     created_at = Column(TIMESTAMP, server_default=func.now())  # Auto-set creation timestamp
@@ -120,7 +121,7 @@ class CommentRepository:
     def get_comments_having_null_code(self, limit=100):
         return (
             self.session.query(Comment)
-            .filter(or_(Comment.code_before.is_(None), Comment.code_after.is_(None)))
+            .filter(or_(Comment.code_method.is_(None), Comment.code_method.is_(None)))
             .limit(limit)
             .all()
         )

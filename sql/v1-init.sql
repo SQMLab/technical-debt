@@ -46,6 +46,7 @@ CREATE TABLE comment
     td_type              VARCHAR(255),                 -- SATD Type
     note                 TEXT,                         -- Notes can be anything from dveloper's perspective
     language             VARCHAR(50),                  -- Main Language of the File
+    code_method          TEXT,
     code_before          TEXT,
     code_after           TEXT,
     created_at           TIMESTAMP default now(),
