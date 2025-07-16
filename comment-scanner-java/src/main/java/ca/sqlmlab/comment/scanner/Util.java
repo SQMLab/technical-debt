@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Util {
     public static String getLinesInRange(String text, int beginLine, int endLine) {
-        if (beginLine >= endLine){
+        if (beginLine >= endLine) {
             return "";
-        }else {
+        } else {
             List<String> lines = getLines(text);
             List<String> fragmentLines = lines.subList(beginLine - 1, endLine - 1);
             return StringUtils.join(fragmentLines, "\n");
