@@ -3,9 +3,13 @@ SELECT id,
        repository_id                                   as repository,
        text                                            as comment,
        CASE WHEN is_td = TRUE THEN 'yes' ELSE 'no' END AS satd,
-       td_type                                         as type
+       td_type                                         as type,
+       code_before,
+       code_after,
+       code_method
 from comment
-where is_random = TRUE order by id;
+where is_random = TRUE
+order by id;
 
 -- Classified SATD Count
 select td_type, count(id)
