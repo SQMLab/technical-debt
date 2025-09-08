@@ -18,7 +18,6 @@ class Comment(Base):
     comment_hash = Column(String(255))  # Comment Hash
     commit_hash = Column(String(255))  # Commit Hash
     is_td = Column(Boolean)  # Whether the comment is SATD
-    pred_td = Column(Boolean)
     is_random = Column(Boolean)  # Whether the comment is Randomly Picked for Manual Review
     td_type = Column(String(255))  # SATD Type
     note = Column(Text)  # Notes can be anything from developer's perspective
