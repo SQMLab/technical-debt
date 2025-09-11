@@ -1,4 +1,6 @@
-import PromptTemplate, Model, TrainStrategy
+from PromptTemplate import PromptTemplate
+from Model import Model
+from TrainStrategy import TrainStrategy
 from util import *
 import google.generativeai as genai
 import os
@@ -9,7 +11,7 @@ from openai import OpenAI
 
 class ChatGpt4Model(Model):
     def __init__(self, task_type: str, model_uri: str, known_labels: set[str], unmatched_label: str):
-        super().__init__(task_type, model_uri, known_labels, unmatched_label, verbose)
+        super().__init__(task_type, model_uri, known_labels, unmatched_label)
         self.client = OpenAI(api_key=os.getenv("OPEN_AI_API_KEY"))
         self.train_dataset = None
         self.train_indexes = None
@@ -18,7 +20,7 @@ class ChatGpt4Model(Model):
     def fit(self, dataset: Dataset):
         self.train_dataset = dataset
 
-    def predict(self, dataset: Dataset, prompt_template: PromptTemplate, train_strategy: TrainStrategy, n_shot_size: int, verbose: bool = False):
+    def predict(self, dataset: Dataset, dataset_name: str, prompt_template: PromptTemplate, train_strategy: TrainStrategy, n_shot_size: int, verbose: bool = False):
         super().predict_start(dataset)
         label_predictions = []
         for index in range(dataset.num_rows):
@@ -32,4 +34,4 @@ class ChatGpt4Model(Model):
                 ])
             label_pred = completion.choices[0].message.content.strip().split()[-1].lower()
             label_predictions.append(self.format_label(label_pred))
-        return super().predict_end(dataset, label_predictions)
+        return super().predict_end(dataset, dataset_name, label_predictions)

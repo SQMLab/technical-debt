@@ -27,7 +27,7 @@ class TextMiningBasedSatdDetectorModel(Model):
             except Exception as e:
                 print("Error:", e)
 
-    def predict(self, dataset: Dataset, verbose: bool = False):
+    def predict(self, dataset: Dataset, dataset_name: str, verbose: bool = False):
         super().predict_start(dataset)
         label_predictions = []
         from satd_detector.core.utils import SATDDetector
@@ -36,5 +36,5 @@ class TextMiningBasedSatdDetectorModel(Model):
             label_pred = 'yes' if detector1.isSATD(dataset['text'][index]) else 'no'
             label_predictions.append(self.format_label(label_pred))
 
-        return super().predict_end(dataset, label_predictions)
+        return super().predict_end(dataset, dataset_name, label_predictions)
 
