@@ -54,6 +54,7 @@ class Model:
         report_dict = classification_report(dataset['label'], label_predictions, zero_division=0, digits=3, output_dict=True)
         rows = []
         total_support = int(report_dict['macro avg']['support'])
+        dataset_name = dataset.info.metadata['name']
         for metric, values in report_dict.items():
             if metric == "accuracy":
                 row = {
@@ -72,16 +73,19 @@ class Model:
                     "support": int(values.get("support", 0))
                 }
             row["model"] = self.model_uri
+            row["dataset"] = dataset_name
             rows.append(row)
 
         report_df = pd.DataFrame(rows)
-        report_df = report_df[["model", "metric", "precision", "recall", "f1-score", "support"]]
+        report_df = report_df[["model", "dataset","metric", "precision", "recall", "f1-score", "support"]]
         output_metrics_file = f'{cache_directory}/output/output_metrics.csv'
         os.makedirs(os.path.dirname(output_metrics_file), exist_ok=True)
         if os.path.exists(output_metrics_file):
             output_metric_df = pd.read_csv(output_metrics_file)
-            #Remove old result for this model
-            output_metric_df = output_metric_df[output_metric_df["model"] != self.model_uri]
+            output_metric_df = output_metric_df[
+                ~((output_metric_df["model"] == self.model_uri) &
+                  (output_metric_df["dataset"] == dataset_name))
+            ]
             pd.concat([output_metric_df, report_df], ignore_index=True).to_csv(output_metrics_file, index=False)
         else:
             report_df.to_csv(output_metrics_file, index=False)
