@@ -1,7 +1,7 @@
 import hashlib
 import random
 from sentence_transformers import SentenceTransformer, util
-import TrainStrategy
+from TrainStrategy import TrainStrategy
 import pandas as pd
 import numpy as np
 import os

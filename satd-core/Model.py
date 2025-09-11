@@ -39,8 +39,9 @@ class Model:
         print(f'{self.task_type} with {self.model_uri.split("/")[-1]}')
         self.unknown_labels.clear()
 
-    def predict_end(self, dataset: Dataset, label_predictions):
-        file_name = f'{self.task_type}_{self.model_uri.split("/")[-1]}'
+    def predict_end(self, dataset: Dataset, label_predictions, model_name_suffix: str = None):
+        full_model_name = self.model_uri + f'-{model_name_suffix}' if model_name_suffix else self.model_uri
+        file_name = f'{self.task_type}_{full_model_name.split("/")[-1]}'
         test_output = dataset.to_dict()
         test_output['label_pred'] = label_predictions
         if self.unknown_labels:
@@ -51,7 +52,8 @@ class Model:
         os.makedirs(os.path.dirname(file), exist_ok=True)
         print('Test Result:')
         print(classification_report(dataset['label'], label_predictions, zero_division=0, digits=3, output_dict=False))
-        report_dict = classification_report(dataset['label'], label_predictions, zero_division=0, digits=3, output_dict=True)
+        report_dict = classification_report(dataset['label'], label_predictions, zero_division=0, digits=3,
+                                            output_dict=True)
         rows = []
         total_support = int(report_dict['macro avg']['support'])
         dataset_name = dataset.info.metadata['name']
@@ -72,18 +74,18 @@ class Model:
                     "f1-score": round(values.get("f1-score", 0), 3),
                     "support": int(values.get("support", 0))
                 }
-            row["model"] = self.model_uri
+            row["model"] = full_model_name
             row["dataset"] = dataset_name
             rows.append(row)
 
         report_df = pd.DataFrame(rows)
-        report_df = report_df[["model", "dataset","metric", "precision", "recall", "f1-score", "support"]]
+        report_df = report_df[["model", "dataset", "metric", "precision", "recall", "f1-score", "support"]]
         output_metrics_file = f'{cache_directory}/output/output_metrics.csv'
         os.makedirs(os.path.dirname(output_metrics_file), exist_ok=True)
         if os.path.exists(output_metrics_file):
             output_metric_df = pd.read_csv(output_metrics_file)
             output_metric_df = output_metric_df[
-                ~((output_metric_df["model"] == self.model_uri) &
+                ~((output_metric_df["model"] == full_model_name) &
                   (output_metric_df["dataset"] == dataset_name))
             ]
             pd.concat([output_metric_df, report_df], ignore_index=True).to_csv(output_metrics_file, index=False)

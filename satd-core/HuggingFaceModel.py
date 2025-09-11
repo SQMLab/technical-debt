@@ -1,7 +1,10 @@
-from datasets import Dataset
-import Model, PromptTemplate, TrainStrategy
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+from Model import Model
+from PromptTemplate import PromptTemplate
 from util import *
+
+
 class HuggingFaceModel(Model):
     def __init__(self, task_type: str, model_uri: str, known_labels: set[str], unmatched_label: str):
         super().__init__(task_type, model_uri, known_labels, unmatched_label)
@@ -13,8 +16,9 @@ class HuggingFaceModel(Model):
     def fit(self, dataset: Dataset):
         self.train_dataset = dataset
 
-    def predict(self, dataset: Dataset, prompt_template: PromptTemplate, train_strategy: TrainStrategy, n_shot_size: int,
-                 verbose: bool = False):
+    def predict(self, dataset: Dataset, prompt_template: PromptTemplate, train_strategy: TrainStrategy,
+                n_shot_size: int,
+                verbose: bool = False):
         super().predict_start(dataset)
         label_predictions = []
         for index in range(dataset.num_rows):
@@ -28,5 +32,6 @@ class HuggingFaceModel(Model):
             # print(detokenized_text)
             output = self.model.generate(input_ids)
             # print(self.tokenizer.decode(outputs[0], skip_special_tokens=False))
-            label_predictions.append(self.format_label(self.tokenizer.decode(output[0], skip_special_tokens=True), verbose))
-        return super().predict_end(dataset, label_predictions)
+            label_predictions.append(
+                self.format_label(self.tokenizer.decode(output[0], skip_special_tokens=True), verbose))
+        return super().predict_end(dataset, label_predictions, f'{n_shot_size}-shot')
