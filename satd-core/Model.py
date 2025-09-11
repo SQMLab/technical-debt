@@ -39,7 +39,7 @@ class Model:
         print(f'{self.task_type} with {self.model_uri.split("/")[-1]}')
         self.unknown_labels.clear()
 
-    def predict_end(self, dataset: Dataset, label_predictions, model_name_suffix: str = None):
+    def predict_end(self, dataset: Dataset, dataset_name, label_predictions, model_name_suffix: str = None):
         full_model_name = self.model_uri + f'-{model_name_suffix}' if model_name_suffix else self.model_uri
         file_name = f'{self.task_type}_{full_model_name.split("/")[-1]}'
         test_output = dataset.to_dict()
@@ -56,7 +56,6 @@ class Model:
                                             output_dict=True)
         rows = []
         total_support = int(report_dict['macro avg']['support'])
-        dataset_name = dataset.info.metadata['name']
         for metric, values in report_dict.items():
             if metric == "accuracy":
                 row = {

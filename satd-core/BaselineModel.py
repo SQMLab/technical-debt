@@ -16,7 +16,7 @@ class BaselineModel(Model):
     def fit(self, dataset: Dataset):
         pass
 
-    def predict(self, dataset: Dataset, verbose: bool = False):
+    def predict(self, dataset: Dataset, dataset_name: str, verbose: bool = False):
         super().predict_start(dataset)
         print(jpype.isJVMStarted())
         if not jpype.isJVMStarted():
@@ -47,4 +47,4 @@ class BaselineModel(Model):
         predicted_label_df = pd.read_csv(os.path.join(f'{BASE_MAT_DIRECTORY}/{mode}/output', f'MTO_{algorithm}/result--test.txt'), header=None, names=['label'])
         assert len(predicted_label_df) == len(dataset)
         label_predictions = predicted_label_df['label'].map({0: 'no', 1: 'yes'}).tolist()
-        return super().predict_end(dataset, label_predictions)
+        return super().predict_end(dataset, dataset_name, label_predictions)

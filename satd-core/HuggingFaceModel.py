@@ -16,7 +16,7 @@ class HuggingFaceModel(Model):
     def fit(self, dataset: Dataset):
         self.train_dataset = dataset
 
-    def predict(self, dataset: Dataset, prompt_template: PromptTemplate, train_strategy: TrainStrategy,
+    def predict(self, dataset: Dataset,  dataset_name: str, prompt_template: PromptTemplate, train_strategy: TrainStrategy,
                 n_shot_size: int,
                 verbose: bool = False):
         super().predict_start(dataset)
@@ -34,4 +34,4 @@ class HuggingFaceModel(Model):
             # print(self.tokenizer.decode(outputs[0], skip_special_tokens=False))
             label_predictions.append(
                 self.format_label(self.tokenizer.decode(output[0], skip_special_tokens=True), verbose))
-        return super().predict_end(dataset, label_predictions, f'{n_shot_size}-shot')
+        return super().predict_end(dataset, dataset_name, label_predictions, f'{n_shot_size}-shot')
