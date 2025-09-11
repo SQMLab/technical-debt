@@ -3,7 +3,7 @@ import jpype.imports
 from jpype.types import JArray, JString
 import os
 from dotenv import load_dotenv
-import Model
+from Model import Model
 from datasets import Dataset
 import pandas as pd
 load_dotenv()
@@ -34,7 +34,7 @@ class BaselineModel(Model):
 
         Settings.projectNames = JArray(JString)(["train", "test"])
 
-        mode, algorithm = self.model_uri.split('-')
+        mode,*_, algorithm = self.model_uri.split('-')
         args = [
             "-p", os.path.join(f'{BASE_MAT_DIRECTORY}/{mode}/input', ''),
             "-o", os.path.join(f'{BASE_MAT_DIRECTORY}/{mode}/output', ''),

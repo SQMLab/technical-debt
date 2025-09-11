@@ -1,13 +1,14 @@
-import Model
+from Model import Model
 import jpype
 import jpype.imports
-from jpype.types import *
 from dotenv import load_dotenv
 import os
+from datasets import Dataset
 
 load_dotenv()
 
 BASE_SATD_DETECTOR_DIRECTORY = os.getenv('BASE_SATD_DETECTOR_DIRECTORY')
+
 class TextMiningBasedSatdDetectorModel(Model):
     def __init__(self, task_type: str, model_uri: str, known_labels: set[str], unmatched_label: str, retrain: bool = False):
         super().__init__(task_type, model_uri, known_labels, unmatched_label)

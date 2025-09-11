@@ -5,6 +5,7 @@ import os
 from datetime import datetime
 from util import report_mismatch
 import PromptTemplate
+import pandas as pd
 
 N_SHOT_PROPERTIES = ['text', 'label', 'code_before', 'code_after', 'cot']
 
@@ -45,10 +46,46 @@ class Model:
         if self.unknown_labels:
             print(f'Unknown Labels:\n{self.unknown_labels}')
         timestamp = datetime.now().strftime("%B %d, %Y, %H:%M:%S")
-        file = f'{os.getenv("CACHE_DIRECTORY")}/{timestamp}${file_name}.csv'
-        print(file)
+        cache_directory = os.getenv("CACHE_DIRECTORY")
+        file = f'{cache_directory}/output/tmp/{timestamp}${file_name}.csv'
+        os.makedirs(os.path.dirname(file), exist_ok=True)
         print('Test Result:')
-        print(classification_report(dataset['label'], label_predictions, zero_division=0, digits=3))
+        print(classification_report(dataset['label'], label_predictions, zero_division=0, digits=3, output_dict=False))
+        report_dict = classification_report(dataset['label'], label_predictions, zero_division=0, digits=3, output_dict=True)
+        rows = []
+        total_support = int(report_dict['macro avg']['support'])
+        for metric, values in report_dict.items():
+            if metric == "accuracy":
+                row = {
+                    "metric": metric,
+                    "precision": None,
+                    "recall": None,
+                    "f1-score": round(values, 3),
+                    "support": total_support
+                }
+            else:
+                row = {
+                    "metric": metric,
+                    "precision": round(values.get("precision", 0), 3),
+                    "recall": round(values.get("recall", 0), 3),
+                    "f1-score": round(values.get("f1-score", 0), 3),
+                    "support": int(values.get("support", 0))
+                }
+            row["model"] = self.model_uri
+            rows.append(row)
+
+        report_df = pd.DataFrame(rows)
+        report_df = report_df[["model", "metric", "precision", "recall", "f1-score", "support"]]
+        output_metrics_file = f'{cache_directory}/output/output_metrics.csv'
+        os.makedirs(os.path.dirname(output_metrics_file), exist_ok=True)
+        if os.path.exists(output_metrics_file):
+            output_metric_df = pd.read_csv(output_metrics_file)
+            #Remove old result for this model
+            output_metric_df = output_metric_df[output_metric_df["model"] != self.model_uri]
+            pd.concat([output_metric_df, report_df], ignore_index=True).to_csv(output_metrics_file, index=False)
+        else:
+            report_df.to_csv(output_metrics_file, index=False)
+
         Dataset.from_dict(test_output).to_pandas().to_csv(file, index=False)
         report_mismatch(file)
 

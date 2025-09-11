@@ -5,9 +5,11 @@ import TrainStrategy
 import pandas as pd
 import numpy as np
 import os
-from datasets import Dataset, DatasetDict
+from datasets import Dataset
 from sklearn.metrics import classification_report
-
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+import google.api_core.exceptions
+from google.generativeai import types
 sentence_transformer = SentenceTransformer('all-MiniLM-L6-v2')
 
 
@@ -63,8 +65,10 @@ def pick_n_shot(train_dataset: Dataset, test_dataset: Dataset, test_index: int, 
 
 def report_mismatch(file: str):
     _, name = os.path.basename(file).split('$', 1)
-    merged_file = f'{os.path.dirname(file)}/merged_{name}'
-    mismatched_file = f'{os.path.dirname(file)}/mismatched_{name}'
+    merged_file = f'{os.path.dirname(file)}/output/merged/merged_{name}'
+    os.makedirs(os.path.dirname(merged_file), exist_ok=True)
+    mismatched_file = f'{os.path.dirname(file)}/output/mismatched/mismatched_{name}'
+    os.makedirs(os.path.dirname(mismatched_file), exist_ok=True)
     last_df = pd.read_csv(file)
 
     for f in [merged_file, mismatched_file]:
