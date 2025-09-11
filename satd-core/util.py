@@ -1,4 +1,14 @@
 import hashlib
+import random
+from sentence_transformers import SentenceTransformer, util
+import TrainStrategy
+import pandas as pd
+import numpy as np
+import os
+from datasets import Dataset, DatasetDict
+from sklearn.metrics import classification_report
+
+sentence_transformer = SentenceTransformer('all-MiniLM-L6-v2')
 
 
 def sha1(text):
@@ -33,3 +43,58 @@ def get_first_n_line(text, n):
 def get_last_n_line(text, n):
     lines = text.split('\n') if text else []
     return '\n'.join(lines[max(0,len(lines) - n):])
+
+def pick_n_shot(train_dataset: Dataset, test_dataset: Dataset, test_index: int, n: int = 0,
+                strategy: TrainStrategy = None):
+    dataset_length = train_dataset.num_rows
+    if dataset_length < n:
+        raise Exception(f'Train dataset contains only {dataset_length} examples for {n} shots')
+    indexes = []
+    if strategy == TrainStrategy.N_SHOT_RANDOM:
+        indexes = random.sample(dataset_length, n)
+    elif strategy == TrainStrategy.N_SHOT_SIMILAR:
+        similarities = util.cos_sim(sentence_transformer.encode(test_dataset['text'][test_index]),
+                                    sentence_transformer.encode(train_dataset['text'])).squeeze(0).numpy()
+        top_n_indices = np.argpartition(similarities, -n)[-n:]
+        indexes = top_n_indices[np.argsort(similarities[top_n_indices])[::-1]].tolist()
+    elif strategy == TrainStrategy.N_SHOT_TOP:
+        indexes = [i for i in range(n)]
+    return indexes
+
+def report_mismatch(file: str):
+    _, name = os.path.basename(file).split('$', 1)
+    merged_file = f'{os.path.dirname(file)}/merged_{name}'
+    mismatched_file = f'{os.path.dirname(file)}/mismatched_{name}'
+    last_df = pd.read_csv(file)
+
+    for f in [merged_file, mismatched_file]:
+        if not os.path.exists(merged_file):
+            pd.DataFrame(columns=last_df.columns).to_csv(f, index=False)
+
+    merged_df = pd.read_csv(merged_file)
+    ids = merged_df['id'].values
+    for index, row in last_df.iterrows():
+        if row['id'] in ids:
+            merged_df.loc[merged_df['id'] == row['id'], 'label_pred'] = row['label_pred']
+        else:
+            merged_df.loc[len(merged_df)] = row
+    merged_df.sort_values(by=['id'], ascending=True, inplace=True)
+    merged_df.to_csv(merged_file, index=False)
+    merged_df[merged_df['label'] != merged_df['label_pred']].to_csv(mismatched_file, index=False)
+
+def print_classification_excluding_outlier_repository(input_file: str, repository_id: int = 69):
+    result_df = pd.read_csv(input_file)
+    filtered_result_df = result_df[result_df['repository'] != repository_id]
+    print(f'Test Result Excluding repository: {repository_id}')
+    print(classification_report(filtered_result_df['label'], filtered_result_df['label_pred'], zero_division=0, digits=3))
+
+@retry(
+    stop=stop_after_attempt(10),  # Stop after 5 retries
+    wait=wait_exponential(multiplier=2, min=60, max=2 * 60),
+    retry=retry_if_exception_type(google.api_core.exceptions.ResourceExhausted),  # Retry on rate limit errors
+)
+def predict_with_gemini(model, prompt):
+    generation_config = types.GenerationConfig(
+        temperature=0.0
+    )
+    return model.generate_content(contents=prompt, generation_config=generation_config).text.strip().lower()
