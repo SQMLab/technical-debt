@@ -14017,7 +14017,7 @@ try {
       // expected
     }
   }"
-992143,441,// deprecated,,"{""OK"", ""en-u-sd-uszzzz""},
+992143,441,// deprecated,code,"{""OK"", ""en-u-sd-uszzzz""},
 
 // really long case
 
@@ -28063,7 +28063,7 @@ try {
     }"
 977171,435,"/**
  * No documentation
- */",,"private static final long serialVersionUID = 325417243L;
+ */",documentation,"private static final long serialVersionUID = 325417243L;
 
 /**
  * No documentation

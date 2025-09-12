@@ -655,7 +655,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",dependency
 362060,81,// workaround,temporary-fix
 625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,multi
 1188159,541,// only secretkeyspec supported for now,requirement
-992143,441,// deprecated,
+992143,441,// deprecated,code
 1063139,478,//needs https://community.box.com/t5/custom/page/page-id/BoxViewTicketDetail?ticket_id=1895413 to be solved,dependency
 1409710,762,"/**
  * <p>Tests cluster scenario with two nodes trying to write the installation id property in parallel.</p>
@@ -1325,7 +1325,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",dependency
 // forever.",code
 977171,435,"/**
  * No documentation
- */",
+ */",documentation
 1081500,478,"// this is a bit of a hack, since we don't implement generations.",temporary-fix
 82244,12,// not implemented yet,requirement
 1061072,476,"// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.",temporary-fix
