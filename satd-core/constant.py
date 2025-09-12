@@ -1,6 +1,7 @@
 import pandas as pd
 from datasets import Dataset
 from PromptTemplate import PromptTemplate
+# Detection Dataset
 detect_train_df = pd.read_csv('../data/detect_train.csv')
 detect_train_dataset = Dataset.from_pandas(detect_train_df)
 
@@ -9,8 +10,17 @@ detect_test_dataset = Dataset.from_pandas(detect_test_df)
 
 detect_n_shot_df = pd.read_csv('../data/detect_n_shot.csv')
 detect_n_shot_dataset = Dataset.from_pandas(detect_n_shot_df)
+#Classification Dataset
+classify_train_df = pd.read_csv('../data/classify_train.csv')
+classify_train_dataset = Dataset.from_pandas(classify_train_df)
+
+classify_test_df = pd.read_csv('../data/classify_test.csv')
+classify_test_dataset = Dataset.from_pandas(classify_test_df)
+
+classify_n_shot_df = pd.read_csv('../data/classify_n_shot.csv')
+classify_n_shot_dataset = Dataset.from_pandas(classify_n_shot_df)
 DEFAULT_DETECTION_CLASS = 'no'
-DETECT_DATASET_NAME = 'deduplicated test'
+DETECT_DATASET_NAME = 'test'
 DETECTION_TEMPLATE = PromptTemplate(
     name="Manually Crafted",
     definition="You are Code Expert trained to detect Self-Admitted Technical Debt (SATD) in Java test code comments. SATD occurs when developers explicitly acknowledge that the current implementation is suboptimal, requires improvement, or contains technical compromises. These comments often include markers (e.g., TODO, FIXME), indicate unresolved issues, temporary fixes (e.g., workarounds, hacks), performance concerns, deprecated API usage, unsupported features, poor design, skipped tests, or unknown reasons. However, do not classify comments that merely describe expected behavior, actions, instructions or simply issue references, unless there is additional information indicating the need for future improvement. These comments often appear as imperative sentence structures (e.g., check argument, should not match), vague single-word description(e.g., clean up, retry, fail).",
