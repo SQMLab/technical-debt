@@ -25,13 +25,11 @@ class ChatGpt4Model(Model):
         label_predictions = []
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
-            prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index)
+            prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose=verbose)
             completion = self.client.chat.completions.create(
                 model=self.model_uri,
                 store=True,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ])
+                messages=prompt)
             label_pred = completion.choices[0].message.content.strip().split()[-1].lower()
             label_predictions.append(self.format_label(label_pred))
         return super().predict_end(dataset, dataset_name, label_predictions)

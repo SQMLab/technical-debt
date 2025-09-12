@@ -18,11 +18,12 @@ DETECTION_TEMPLATE = PromptTemplate(
     n_shot_template="""
     <EXAMPLE>
     Comment: {{ text }}
+    </EXAMPLE>""",
+    n_shot_answer_template="""
     {% if cot -%}
     Reason: {{ cot }}
     {% endif -%}
-    Label: {{ label }}
-    </EXAMPLE>""",
+    Label: {{ label }}""",
     line_m_before=3,
     line_n_after=3
 )

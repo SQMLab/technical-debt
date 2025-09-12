@@ -23,7 +23,7 @@ class HuggingFaceModel(Model):
         label_predictions = []
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
-            prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index)
+            prompt  = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
             tokens = self.tokenizer(prompt, return_tensors="pt")
             tokens['input_ids'] = tokens.input_ids.to(self.model.device)
             input_ids = tokens.input_ids

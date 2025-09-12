@@ -7,9 +7,6 @@ import numpy as np
 import os
 from datasets import Dataset
 from sklearn.metrics import classification_report
-from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
-import google.api_core.exceptions
-from google.generativeai import types
 sentence_transformer = SentenceTransformer('all-MiniLM-L6-v2')
 
 
@@ -91,14 +88,3 @@ def print_classification_excluding_outlier_repository(input_file: str, repositor
     filtered_result_df = result_df[result_df['repository'] != repository_id]
     print(f'Test Result Excluding repository: {repository_id}')
     print(classification_report(filtered_result_df['label'], filtered_result_df['label_pred'], zero_division=0, digits=3))
-
-@retry(
-    stop=stop_after_attempt(10),  # Stop after 5 retries
-    wait=wait_exponential(multiplier=2, min=60, max=2 * 60),
-    retry=retry_if_exception_type(google.api_core.exceptions.ResourceExhausted),  # Retry on rate limit errors
-)
-def predict_with_gemini(model, prompt):
-    generation_config = types.GenerationConfig(
-        temperature=0.0
-    )
-    return model.generate_content(contents=prompt, generation_config=generation_config).text.strip().lower()
