@@ -27,8 +27,12 @@ class Model:
         pass
 
     def format_label(self, label, verbose: bool = False):
-        if label.lower() in self.known_labels:
-            return label.lower()
+        formatted_label = label.lower()
+        for key in [':', '**', '.', 'answer', 'label']:
+            formatted_label = formatted_label.replace(key, '')
+        formatted_label = formatted_label.strip()
+        if formatted_label in self.known_labels:
+            return formatted_label
         else:
             if verbose:
                 print(f'Unknown Label: {label}')
@@ -106,15 +110,38 @@ class Model:
     def create_prompt(self, prompt_template: PromptTemplate, train_dataset: Dataset, train_indexes: [int],
                       test_dataset: Dataset,
                       test_index: int, verbose: bool = False):
-        examples = [prompt_template.create_example(self.project_properties(train_dataset, index)) for index in
-                    train_indexes]
+        message = []
+        isGpt = 'gpt' in self.model_uri
+        isGemini = 'gemini' in self.model_uri
+        if isGpt:
+            message.append({'role': 'developer', 'content': f'{prompt_template.definition} {prompt_template.instruction}'})
+
+        for index in train_indexes:
+            input_example = prompt_template.create_example(self.project_properties(train_dataset, index))
+            input_answer = prompt_template.create_answer(self.project_properties(train_dataset, index))
+
+            if isGpt:
+                message.append({'role': 'user', 'content': input_example})
+                message.append({'role': 'assistant', 'content': input_answer})
+            elif isGemini:
+                message.append(f'<EXAMPLE>\n{input_example}{input_answer}\n</EXAMPLE>')
+            else:
+                message.append(f'{input_example}{input_answer}')
+
 
         test_properties = self.project_properties(test_dataset, test_index)
         if 'label' in test_properties:
             test_properties['label'] = ''
-        examples.append(prompt_template.create_example(test_properties))
+        input_question = prompt_template.create_example(test_properties)
+        if isGpt:
+            message.append({'role': 'user', 'content': input_question})
+        else:
+            message.append(f'{input_question}')
 
-        prompt = prompt_template.create_prompt(examples)
+        if isGpt:
+            prompt = message
+        else:
+            prompt = f'{prompt_template.definition} {prompt_template.instruction}\n{"".join(message)}'
         if verbose:
             print(f'Prompt:\n {prompt}')
         return prompt

@@ -5,6 +5,20 @@ import google.generativeai as genai
 from Model import Model
 from PromptTemplate import PromptTemplate
 from util import *
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+import google.api_core.exceptions
+from google.generativeai import types
+@retry(
+    stop=stop_after_attempt(10),  # Stop after 5 retries
+    wait=wait_exponential(multiplier=2, min=60, max=2 * 60),
+    retry=retry_if_exception_type(google.api_core.exceptions.ResourceExhausted),  # Retry on rate limit errors
+)
+def predict_with_gemini(model, system_instruction, prompt):
+    generation_config = types.GenerationConfig(
+        # system_instruction= system_instruction,
+        temperature=0.0
+    )
+    return model.generate_content(contents=f'{system_instruction} {prompt}', generation_config=generation_config).text.strip().lower()
 
 
 class GeminiModel(Model):
@@ -25,5 +39,5 @@ class GeminiModel(Model):
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
             prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index)
-            label_predictions.append(self.format_label(predict_with_gemini(self.model, prompt), verbose))
+            label_predictions.append(self.format_label(predict_with_gemini(self.model, f'{prompt_template.definition} {prompt_template.instruction}', prompt), verbose))
         return super().predict_end(dataset, dataset_name, label_predictions)
