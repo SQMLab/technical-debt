@@ -6,16 +6,16 @@ from datetime import datetime
 from util import report_mismatch
 import PromptTemplate
 import pandas as pd
+from OutputLabelConverter import OutputLabelConverter
 
 N_SHOT_PROPERTIES = ['text', 'label', 'code_before', 'code_after', 'cot']
 
 
 class Model:
-    def __init__(self, task_type: str, model_uri: str, known_labels: set[str], unmatched_label: str):
+    def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter):
         self.task_type = task_type
         self.model_uri = model_uri
-        self.known_labels = set([label.lower() for label in known_labels])
-        self.unmatched_label = unmatched_label
+        self.output_label_converter = output_label_converter
         self.unknown_labels = []
 
     @abstractmethod
@@ -31,23 +31,24 @@ class Model:
         for key in [':', '**', '.', 'answer', 'label']:
             formatted_label = formatted_label.replace(key, '')
         formatted_label = formatted_label.strip()
-        if formatted_label in self.known_labels:
+        if formatted_label in self.output_label_converter.known_labels:
             return formatted_label
         else:
             if verbose:
                 print(f'Unknown Label: {label}')
             self.unknown_labels.append(label)
-            return self.unmatched_label
+            return self.output_label_converter.unmatched_label
 
     def predict_start(self, dataset: Dataset):
         print(f'{self.task_type} with {self.model_uri.split("/")[-1]}')
         self.unknown_labels.clear()
 
-    def predict_end(self, dataset: Dataset, dataset_name, label_predictions, model_name_suffix: str = None):
+    def predict_end(self, dataset: Dataset, dataset_name, label_predictions, raw_label_predictions, model_name_suffix: str = None):
         full_model_name = self.model_uri + f'-{model_name_suffix}' if model_name_suffix else self.model_uri
         file_name = f'{self.task_type}_{full_model_name.split("/")[-1]}'
         test_output = dataset.to_dict()
         test_output['label_pred'] = label_predictions
+        test_output['label_pred_raw'] = raw_label_predictions
         if self.unknown_labels:
             print(f'Unknown Labels:\n{self.unknown_labels}')
         timestamp = datetime.now().strftime("%B %d, %Y, %H:%M:%S")

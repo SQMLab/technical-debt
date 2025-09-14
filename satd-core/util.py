@@ -7,6 +7,8 @@ import numpy as np
 import os
 from datasets import Dataset
 from sklearn.metrics import classification_report
+import sys
+import jpype
 sentence_transformer = SentenceTransformer('all-MiniLM-L6-v2')
 
 
@@ -88,3 +90,14 @@ def print_classification_excluding_outlier_repository(input_file: str, repositor
     filtered_result_df = result_df[result_df['repository'] != repository_id]
     print(f'Test Result Excluding repository: {repository_id}')
     print(classification_report(filtered_result_df['label'], filtered_result_df['label_pred'], zero_division=0, digits=3))
+
+def get_default_JVM_path():
+    default_jvm_path = jpype.getDefaultJVMPath()
+    default_jvm_path_str = default_jvm_path.decode()
+    print(f"Default JVM path from JPype: {default_jvm_path}")
+    if sys.platform == "darwin":
+        if not default_jvm_path_str.endswith("libjvm.dylib"):
+            candidate = os.path.join(default_jvm_path_str, "lib", "server", "libjvm.dylib")
+            # if os.path.exists(candidate):
+            return candidate.encode()
+    return default_jvm_path

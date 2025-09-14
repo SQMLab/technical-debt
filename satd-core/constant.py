@@ -23,17 +23,12 @@ DEFAULT_DETECTION_CLASS = 'no'
 DETECT_DATASET_NAME = 'test'
 DETECTION_TEMPLATE = PromptTemplate(
     name="Manually Crafted",
-    definition="You are Code Expert trained to detect Self-Admitted Technical Debt (SATD) in Java test code comments. SATD occurs when developers explicitly acknowledge that the current implementation is suboptimal, requires improvement, or contains technical compromises. These comments often include markers (e.g., TODO, FIXME), indicate unresolved issues, temporary fixes (e.g., workarounds, hacks), performance concerns, deprecated API usage, unsupported features, poor design, skipped tests, or unknown reasons. However, do not classify comments that merely describe expected behavior, actions, instructions or simply issue references, unless there is additional information indicating the need for future improvement. These comments often appear as imperative sentence structures (e.g., check argument, should not match), vague single-word description(e.g., clean up, retry, fail).",
-    instruction="Classify by labelling it as 'yes' if the comment include a strong indication of Self-Admitted Technical Debt otherwise label it as 'no', do not return reason. Do not provide a reason for the classification.",
-    n_shot_template="""
-    <EXAMPLE>
-    Comment: {{ text }}
-    </EXAMPLE>""",
-    n_shot_answer_template="""
-    {% if cot -%}
-    Reason: {{ cot }}
-    {% endif -%}
-    Label: {{ label }}""",
+    definition="You are a Code Analysis Expert specialized in detecting Self-Admitted Technical Debt (SATD) in Java test code comments. SATD refers to comments where developers acknowledge that the current test implementation is incomplete, suboptimal, or relies on a compromise that should be addressed in the future. These admissions often appear as markers such as TODO or FIXME, or as notes about unresolved issues, temporary fixes, workarounds, hacks, performance limitations, use of deprecated APIs, unsupported features, poor design choices, skipped tests, or uncertain functionality. However, comments that only describe expected behavior, provide instructions, or reference external issues (e.g., JIRA ID) are not SATD unless there is additional information indicating the need for future improvement.",
+    instruction="Think step by step and assign the label of **SATD** or **Not-SATD** for each given test code comment.",
+    n_shot_template="Comment: {{ text }}",
+    n_shot_answer_template="""{% if cot -%}
+        Answer: {{ cot }} The answer is **{{ label }}**.
+        {% endif -%}""",
     line_m_before=3,
     line_n_after=3
 )

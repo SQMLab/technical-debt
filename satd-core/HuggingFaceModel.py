@@ -3,11 +3,11 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from Model import Model
 from PromptTemplate import PromptTemplate
 from util import *
-
+from OutputLabelConverter import OutputLabelConverter
 
 class HuggingFaceModel(Model):
-    def __init__(self, task_type: str, model_uri: str, known_labels: set[str], unmatched_label: str):
-        super().__init__(task_type, model_uri, known_labels, unmatched_label)
+    def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter):
+        super().__init__(task_type, model_uri, output_label_converter)
         self.tokenizer = AutoTokenizer.from_pretrained(model_uri)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_uri, device_map="auto")
         self.train_dataset = None
@@ -21,6 +21,8 @@ class HuggingFaceModel(Model):
                 verbose: bool = False):
         super().predict_start(dataset)
         label_predictions = []
+        raw_label_predictions = []
+
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
             prompt  = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
@@ -32,6 +34,7 @@ class HuggingFaceModel(Model):
             # print(detokenized_text)
             output = self.model.generate(input_ids)
             # print(self.tokenizer.decode(outputs[0], skip_special_tokens=False))
-            label_predictions.append(
-                self.format_label(self.tokenizer.decode(output[0], skip_special_tokens=True), verbose))
-        return super().predict_end(dataset, dataset_name, label_predictions, f'{n_shot_size}-shot')
+            raw_label = self.tokenizer.decode(output[0], skip_special_tokens=True)
+            label_predictions.append(self.output_label_converter.convert_label(raw_label))
+            raw_label_predictions.append(raw_label)
+        return super().predict_end(dataset, dataset_name, label_predictions, raw_label_predictions, f'{n_shot_size}-shot')
