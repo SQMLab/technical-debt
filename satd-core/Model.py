@@ -153,9 +153,10 @@ class Model:
             prompt = message
         elif isGemini:
             print('partial prompt', end='\n')
-            prompt = f'{"\n".join(message)}'
+            prompt = "\n".join(message)
         else:
-            prompt = f'{prompt_template.definition}\n{prompt_template.instruction}\n\n{"\n".join(message)}'
+            all_example_text = "\n".join(message)
+            prompt = f'{prompt_template.definition}\n{prompt_template.instruction}\n\n{all_example_text}'
         if verbose:
             print(f'{prompt}')
         return prompt
