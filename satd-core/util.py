@@ -62,14 +62,8 @@ def pick_n_shot(train_dataset: Dataset, test_dataset: Dataset, test_index: int, 
         indexes = [i for i in range(n)]
     return indexes
 
-def report_mismatch(file: str):
-    _, name = os.path.basename(file).split('$', 1)
-    merged_file = f'{os.path.dirname(file)}/output/merged/merged_{name}'
-    os.makedirs(os.path.dirname(merged_file), exist_ok=True)
-    mismatched_file = f'{os.path.dirname(file)}/output/mismatched/mismatched_{name}'
-    os.makedirs(os.path.dirname(mismatched_file), exist_ok=True)
-    last_df = pd.read_csv(file)
-
+def report_mismatch(input_file: str, merged_file: str, mismatched_file: str):
+    last_df = pd.read_csv(input_file)
     for f in [merged_file, mismatched_file]:
         if not os.path.exists(merged_file):
             pd.DataFrame(columns=last_df.columns).to_csv(f, index=False)
@@ -93,11 +87,15 @@ def print_classification_excluding_outlier_repository(input_file: str, repositor
 
 def get_default_JVM_path():
     default_jvm_path = jpype.getDefaultJVMPath()
-    default_jvm_path_str = default_jvm_path.decode()
-    print(f"Default JVM path from JPype: {default_jvm_path}")
-    if sys.platform == "darwin":
-        if not default_jvm_path_str.endswith("libjvm.dylib"):
-            candidate = os.path.join(default_jvm_path_str, "lib", "server", "libjvm.dylib")
-            # if os.path.exists(candidate):
-            return candidate.encode()
+    # default_jvm_path_str = default_jvm_path.decode()
+    # print(f"Default JVM path from JPype: {default_jvm_path}")
+    # if sys.platform == "darwin":
+    #     if not default_jvm_path_str.endswith("libjvm.dylib"):
+    #         candidate = os.path.join(default_jvm_path_str, "lib", "server", "libjvm.dylib")
+    #         # if os.path.exists(candidate):
+    #         return candidate.encode()
     return default_jvm_path
+
+def create_parent_directory(directories: list):
+    for directory in directories:
+        os.makedirs(os.path.dirname(directory), exist_ok=True)
