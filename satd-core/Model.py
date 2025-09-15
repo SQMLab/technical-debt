@@ -8,15 +8,17 @@ import PromptTemplate
 import pandas as pd
 from OutputLabelConverter import OutputLabelConverter
 import random
+from datasets.utils.logging import set_verbosity, disable_progress_bar, enable_progress_bar
 N_SHOT_PROPERTIES = ['text', 'label', 'code_before', 'code_after', 'cot']
 
 
 class Model:
-    def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter):
+    def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter, enable_cache: bool = False):
         self.task_type = task_type
         self.model_uri = model_uri
         self.output_label_converter = output_label_converter
         self.unknown_labels = []
+        self.enable_cache = enable_cache
 
     @abstractmethod
     def fit(self, dataset: Dataset):
@@ -39,8 +41,8 @@ class Model:
             self.unknown_labels.append(label)
             return self.output_label_converter.unmatched_label
 
-    def predict_start(self, dataset: Dataset):
-        print(f'{self.task_type} with {self.model_uri.split("/")[-1]}')
+    def predict_start(self, dataset: Dataset, model_name_suffix: str = None):
+        print(f'{self.get_full_model_name(model_name_suffix)}')
         self.unknown_labels.clear()
 
     def predict_end(self, dataset: Dataset, dataset_name, label_predictions, raw_label_predictions, model_name_suffix: str = None):
@@ -116,14 +118,14 @@ class Model:
 
         return properties
 
-    def create_prompt(self, prompt_template: PromptTemplate, train_dataset: Dataset, train_indexes: [int],
+    def create_prompt(self, prompt_template: PromptTemplate, train_dataset: Dataset, train_indexes,
                       test_dataset: Dataset,
                       test_index: int, verbose: bool = False):
         message = []
         isGpt = 'gpt' in self.model_uri
         isGemini = 'gemini' in self.model_uri
         if isGpt:
-            message.append({'role': 'developer', 'content': f'{prompt_template.definition} {prompt_template.instruction}'})
+            message.append({'role': 'developer', 'content': f'{prompt_template.definition}\n{prompt_template.instruction}'})
 
         for index in train_indexes:
             input_example = prompt_template.create_example(self.project_properties(train_dataset, index))
@@ -133,9 +135,9 @@ class Model:
                 message.append({'role': 'user', 'content': input_example})
                 message.append({'role': 'assistant', 'content': input_answer})
             elif isGemini:
-                message.append(f'<EXAMPLE>\n{input_example}{input_answer}\n</EXAMPLE>')
+                message.append(f'<EXAMPLE>\n{input_example}\n{input_answer}\n</EXAMPLE>')
             else:
-                message.append(f'{input_example}{input_answer}')
+                message.append(f'{input_example}\n{input_answer}')
 
 
         test_properties = self.project_properties(test_dataset, test_index)
@@ -149,10 +151,13 @@ class Model:
 
         if isGpt:
             prompt = message
+        elif isGemini:
+            print('partial prompt', end='\n')
+            prompt = f'{"\n".join(message)}'
         else:
-            prompt = f'{prompt_template.definition} {prompt_template.instruction}\n{"".join(message)}'
+            prompt = f'{prompt_template.definition}\n{prompt_template.instruction}\n\n{"\n".join(message)}'
         if verbose:
-            print(f'Prompt:\n {prompt}')
+            print(f'{prompt}')
         return prompt
 
     def get_full_model_name(self, model_name_suffix):
@@ -186,7 +191,9 @@ class Model:
         return Dataset.from_dict(test_output).to_pandas()
 
     def append_into_merged_file(self, model_name_suffix, dataset, text_id, predicted_label, raw_predicted_label):
+        disable_progress_bar()
         projected_dataset = dataset.filter(lambda row: row['id'] == text_id)
+        enable_progress_bar()
         new_result_df = self.panda_dataframe_result(projected_dataset, [predicted_label], [raw_predicted_label])
         merged_file = self.get_merged_file(model_name_suffix)
         if os.path.exists(merged_file):
