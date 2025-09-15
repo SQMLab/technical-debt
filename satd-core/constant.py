@@ -2,7 +2,7 @@ import pandas as pd
 from datasets import Dataset
 from PromptTemplate import PromptTemplate
 # Detection Dataset
-DETECT_DATASET_NAME = 'duplicate'
+DETECT_DATASET_NAME = 'unique'
 detect_train_df = pd.read_csv(f'../data/{DETECT_DATASET_NAME}_detect_train.csv')
 detect_train_dataset = Dataset.from_pandas(detect_train_df)
 

@@ -36,11 +36,19 @@ class GeminiModel(Model):
         super().predict_start(dataset)
         label_predictions = []
         raw_label_predictions = []
+        model_name_suffix  = f'{n_shot_size}-shot'
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
-            prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index)
-            raw_label = predict_with_gemini(self.model, self.model_uri, f'{prompt_template.definition} {prompt_template.instruction}', prompt)
+            prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
+            cached_output_label = self.read_from_merged_file(model_name_suffix, dataset['text'][index])
+            if cached_output_label is None:
+                raw_label = predict_with_gemini(self.model, self.model_uri,f'{prompt_template.definition} {prompt_template.instruction}', prompt)
+            else:
+                raw_label = cached_output_label
             raw_label_predictions.append(raw_label)
-            label_predictions.append(self.output_label_converter.convert_label(raw_label))
+            predicted_label = self.output_label_converter.convert_label(raw_label)
+            label_predictions.append(predicted_label)
+            if cached_output_label is None:
+                self.append_into_merged_file(model_name_suffix, dataset, dataset['id'][index], predicted_label, raw_label)
 
-        return super().predict_end(dataset, dataset_name, label_predictions, raw_label_predictions,f'{n_shot_size}-shot')
+        return super().predict_end(dataset, dataset_name, label_predictions, raw_label_predictions, model_name_suffix)

@@ -7,7 +7,7 @@ from util import report_mismatch
 import PromptTemplate
 import pandas as pd
 from OutputLabelConverter import OutputLabelConverter
-
+import random
 N_SHOT_PROPERTIES = ['text', 'label', 'code_before', 'code_after', 'cot']
 
 
@@ -44,17 +44,17 @@ class Model:
         self.unknown_labels.clear()
 
     def predict_end(self, dataset: Dataset, dataset_name, label_predictions, raw_label_predictions, model_name_suffix: str = None):
-        full_model_name = self.model_uri + f'-{model_name_suffix}' if model_name_suffix else self.model_uri
-        file_name = f'{self.task_type}_{full_model_name.split("/")[-1]}'
-        test_output = dataset.to_dict()
-        test_output['label_pred'] = label_predictions
-        test_output['label_pred_raw'] = raw_label_predictions
+        full_model_name = self.get_full_model_name(model_name_suffix)
+        output_file_name = self.get_output_file_name(full_model_name)
+        timestamp = datetime.now().strftime("%B %d, %Y, %H:%M:%S")
+        file = f'{self.get_base_output_directory()}/snapshot/{timestamp}${output_file_name}.csv'
+        os.makedirs(os.path.dirname(file), exist_ok=True)
+        merged_file = self.get_merged_file(model_name_suffix)
+        mismatched_file = f'{self.get_base_output_directory()}/mismatched/mismatched_{output_file_name}.csv'
+        os.makedirs(os.path.dirname(mismatched_file), exist_ok=True)
+
         if self.unknown_labels:
             print(f'Unknown Labels:\n{self.unknown_labels}')
-        timestamp = datetime.now().strftime("%B %d, %Y, %H:%M:%S")
-        cache_directory = os.getenv("CACHE_DIRECTORY")
-        file = f'{cache_directory}/output/tmp/{timestamp}${file_name}.csv'
-        os.makedirs(os.path.dirname(file), exist_ok=True)
         print('Test Result:')
         print(classification_report(dataset['label'], label_predictions, zero_division=0, digits=3, output_dict=False))
         report_dict = classification_report(dataset['label'], label_predictions, zero_division=0, digits=3,
@@ -84,7 +84,7 @@ class Model:
 
         report_df = pd.DataFrame(rows)
         report_df = report_df[["model", "dataset", "metric", "precision", "recall", "f1-score", "support"]]
-        output_metrics_file = f'{cache_directory}/output/output_metrics.csv'
+        output_metrics_file = f'{self.get_base_output_directory()}/{self.task_type}_output_metrics.csv'
         os.makedirs(os.path.dirname(output_metrics_file), exist_ok=True)
         if os.path.exists(output_metrics_file):
             output_metric_df = pd.read_csv(output_metrics_file)
@@ -96,8 +96,8 @@ class Model:
         else:
             report_df.to_csv(output_metrics_file, index=False)
 
-        Dataset.from_dict(test_output).to_pandas().to_csv(file, index=False)
-        report_mismatch(file)
+        self.panda_dataframe_result(dataset, label_predictions, raw_label_predictions).to_csv(file, index=False)
+        report_mismatch(file, merged_file, mismatched_file)
 
         return file
 
@@ -105,7 +105,15 @@ class Model:
         properties = {}
         for key in N_SHOT_PROPERTIES:
             if key in dataset.features.keys():
-                properties[key] = dataset[key][index]
+                value = dataset[key][index]
+                #todo move
+                if key == 'label':
+                    if value == 'yes':
+                        value = 'SATD'
+                    elif value == 'no':
+                        value = 'Not-SATD'
+                properties[key] = value
+
         return properties
 
     def create_prompt(self, prompt_template: PromptTemplate, train_dataset: Dataset, train_indexes: [int],
@@ -146,3 +154,46 @@ class Model:
         if verbose:
             print(f'Prompt:\n {prompt}')
         return prompt
+
+    def get_full_model_name(self, model_name_suffix):
+        return self.model_uri + f'-{model_name_suffix}' if model_name_suffix else self.model_uri
+
+    def get_output_file_name(self, model_name_suffix):
+        return f'{self.task_type}_{self.get_full_model_name(model_name_suffix).split("/")[-1]}'
+
+    def get_merged_file(self, model_name_suffix):
+        merged_file = f'{self.get_base_output_directory()}/merged/merged_{self.get_output_file_name(self.get_output_file_name(model_name_suffix))}.csv'
+        os.makedirs(os.path.dirname(merged_file), exist_ok=True)
+        return merged_file
+
+    def get_base_output_directory(self):
+        return f'{os.getenv("CACHE_DIRECTORY")}/output'
+
+    def read_from_merged_file(self, model_name_suffix, text):
+        merged_file = self.get_merged_file(model_name_suffix)
+        if os.path.exists(merged_file):
+            df = pd.read_csv(merged_file)
+            result_df = df[df['text'] == text]
+            if not result_df.empty:
+                return result_df.iloc[random.randrange(len(result_df))].to_dict()['label_pred_raw']
+        return None
+
+
+    def panda_dataframe_result(self, dataset: Dataset, label_predictions, raw_label_predictions ):
+        test_output = dataset.to_dict()
+        test_output['label_pred'] = label_predictions
+        test_output['label_pred_raw'] = raw_label_predictions
+        return Dataset.from_dict(test_output).to_pandas()
+
+    def append_into_merged_file(self, model_name_suffix, dataset, text_id, predicted_label, raw_predicted_label):
+        projected_dataset = dataset.filter(lambda row: row['id'] == text_id)
+        new_result_df = self.panda_dataframe_result(projected_dataset, [predicted_label], [raw_predicted_label])
+        merged_file = self.get_merged_file(model_name_suffix)
+        if os.path.exists(merged_file):
+            df = pd.read_csv(merged_file)
+            df = df[df['id'] != text_id]
+            pd.concat([df, new_result_df], ignore_index=True).to_csv(merged_file, index=False)
+        else:
+            new_result_df.to_csv(merged_file, index=False)
+        return None
+
