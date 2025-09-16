@@ -65,7 +65,7 @@ class GeminiModel(Model):
                      train_strategy: TrainStrategy, n_shot_size: int, verbose: bool = False):
         model_name_suffix = f'{n_shot_size}-shot'
         super().predict_start(dataset, model_name_suffix)
-        display_job_name = self.get_output_file_name(model_name_suffix)
+        display_job_name = self.get_output_file_name(model_name_suffix).replace('.csv', '')
         batch_items = []
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
