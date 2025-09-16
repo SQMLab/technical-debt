@@ -198,7 +198,7 @@ class Model:
         return batch_input_file
 
     def get_merged_file(self, model_name_suffix):
-        merged_file = f'{self.get_base_output_directory()}/merged/merged_{self.get_output_file_name(self.get_output_file_name(model_name_suffix))}.csv'
+        merged_file = f'{self.get_base_output_directory()}/merged/merged_{self.get_output_file_name(model_name_suffix)}'
         os.makedirs(os.path.dirname(merged_file), exist_ok=True)
         return merged_file
 
