@@ -67,15 +67,10 @@ def report_mismatch(input_file: str, merged_file: str, mismatched_file: str):
     for f in [merged_file, mismatched_file]:
         if not os.path.exists(merged_file):
             pd.DataFrame(columns=last_df.columns).to_csv(f, index=False)
-
+    new_ids_set = set(last_df['id'])
     merged_df = pd.read_csv(merged_file)
-    ids = merged_df['id'].values
-    for index, row in last_df.iterrows():
-        if row['id'] in ids:
-            merged_df.loc[merged_df['id'] == row['id'], 'label_pred'] = row['label_pred']
-        else:
-            merged_df.loc[len(merged_df)] = row
-    merged_df.sort_values(by=['id'], ascending=True, inplace=True)
+    merged_df = merged_df[~merged_df['id'].isin(new_ids_set)]
+    merged_df = pd.concat([merged_df, last_df])
     merged_df.to_csv(merged_file, index=False)
     merged_df[merged_df['label'] != merged_df['label_pred']].to_csv(mismatched_file, index=False)
 

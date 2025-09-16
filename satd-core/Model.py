@@ -97,7 +97,6 @@ class Model:
             pd.concat([output_metric_df, report_df], ignore_index=True).to_csv(output_metrics_file, index=False)
         else:
             report_df.to_csv(output_metrics_file, index=False)
-
         self.panda_dataframe_result(dataset, label_predictions, raw_label_predictions).to_csv(file, index=False)
         report_mismatch(file, merged_file, mismatched_file)
 
@@ -107,14 +106,7 @@ class Model:
         properties = {}
         for key in N_SHOT_PROPERTIES:
             if key in dataset.features.keys():
-                value = dataset[key][index]
-                #todo move
-                if key == 'label':
-                    if value == 'yes':
-                        value = 'SATD'
-                    elif value == 'no':
-                        value = 'Not-SATD'
-                properties[key] = value
+                properties[key] = dataset[key][index]
 
         return properties
 
