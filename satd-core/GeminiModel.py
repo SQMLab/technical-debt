@@ -72,7 +72,7 @@ class GeminiModel(Model):
             prompt_msg = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
 
             # TODO update
-            if not self.enable_cache or self.read_from_merged_file(model_name_suffix, dataset['text'][index]) == None:
+            if not self.enable_cache or self.read_from_merged_file(model_name_suffix, dataset['text'][index]) is None:
                 batch_items.append({'key': str(dataset['id'][index]),
                                     'request': {
                                         'contents': prompt_msg,
