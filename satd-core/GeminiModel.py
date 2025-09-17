@@ -94,7 +94,7 @@ class GeminiModel(Model):
                 src=uploaded_file.name,
                 config={'display_name': display_job_name})
 
-            self.add_into_batch_job(batch_input_file, file_batch_job.name, display_job_name, None)
+            self.add_into_batch_job(batch_input_file, file_batch_job.name, display_job_name, len(batch_items), None)
             print(f"Created batch job: {file_batch_job.name}")
         else:
             print('No item left for request')

@@ -173,7 +173,7 @@ class Model:
         return f'{self.task_type}_{self.get_full_model_name(model_name_suffix).split("/")[-1]}.csv'
 
 
-    def add_into_batch_job(self, input_file, job_id, job_name, status):
+    def add_into_batch_job(self, input_file, job_id, job_name, count, status):
         job_file = f'{os.getenv("CACHE_DIRECTORY")}/output/batch/job.csv'
         os.makedirs(os.path.dirname(job_file), exist_ok=True)
         job_df = pd.read_csv(job_file) if os.path.exists(job_file) else pd.DataFrame()
@@ -183,7 +183,10 @@ class Model:
             "input_file": input_file,
             "job_id": job_id,
             "job_name": job_name,
-            "status": status
+            "count": count,
+            "status": status,
+            "created_at": pd.Timestamp.now(),
+            "updated_at": pd.Timestamp.now()
         }])
         job_df = pd.concat([job_df, new_row], ignore_index=True)
         job_df.to_csv(job_file, index=False)
