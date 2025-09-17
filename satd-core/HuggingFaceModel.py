@@ -31,7 +31,7 @@ class HuggingFaceModel(Model):
                 tokens = self.tokenizer(prompt, return_tensors="pt")
                 tokens['input_ids'] = tokens.input_ids.to(self.model.device)
                 input_ids = tokens.input_ids
-                output = self.model.generate(input_ids)
+                output = self.model.generate(input_ids, max_new_tokens=128)
                 raw_label = self.tokenizer.decode(output[0], skip_special_tokens=True)
             predicted_label = self.output_label_converter.convert_label(raw_label)
             label_predictions.append(predicted_label)
