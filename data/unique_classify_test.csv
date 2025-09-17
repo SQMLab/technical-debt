@@ -1861,83 +1861,6 @@ public void testCastStream() {
     assertTrue(a.a[0] == 1);
     assertTrue(a.a[1] == 2);
     assertTrue(a.a[2] == 3);",
-1508198,822,"// TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
-//assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());",defect,"assertThat(resourcePaths.size(), is(expected.length));
-assertThat(resourcePaths, containsInAnyOrder(expected));
-
-String realPath = servletContext.getRealPath(""/"");
-assertThat(realPath, notNullValue());
-assertThat(servletContext.getRealPath(""/WEB-INF/""), endsWith(""/WEB-INF/""));
-// TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
-//assertThat(servletContext.getRealPath(resourcePaths.get(1)), endsWith(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""));
-
-assertThat(servletContext.getResource(""/WEB-INF/""), notNullValue());","
-HttpTester.Response response1 = HttpTester.parseResponse(connector.getResponse(""""""
-    GET /resources HTTP/1.1\r
-    Host: local\r
-    Connection: close\r
-    \r
-    """"""));
-
-assertThat(response1.getStatus(), is(HttpStatus.OK_200));
-assertThat(response1.getContent(), containsString(""/WEB-INF""));","    public void testGetResourcePaths() throws Exception
-    {
-        Server server = newServer();
-        LocalConnector connector = new LocalConnector(server);
-        server.addConnector(connector);
-
-        WebAppContext context = new WebAppContext(MavenTestingUtils.getBasePath().resolve(""src/test/webapp-with-resources"").toString(), ""/"");
-        server.setHandler(context);
-        server.start();
-
-        ServletContext servletContext = context.getServletContext();
-
-        Set<String> resourcePaths = servletContext.getResourcePaths(""/"");
-        String[] expected = {
-            ""/WEB-INF/"",
-            ""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt"",
-            ""/test.txt""
-        };
-        assertThat(resourcePaths.size(), is(expected.length));
-        assertThat(resourcePaths, containsInAnyOrder(expected));
-
-        String realPath = servletContext.getRealPath(""/"");
-        assertThat(realPath, notNullValue());
-        assertThat(servletContext.getRealPath(""/WEB-INF/""), endsWith(""/WEB-INF/""));
-        // TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
-        //assertThat(servletContext.getRealPath(resourcePaths.get(1)), endsWith(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""));
-
-        assertThat(servletContext.getResource(""/WEB-INF/""), notNullValue());
-        // TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
-        //assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());
-
-        HttpTester.Response response1 = HttpTester.parseResponse(connector.getResponse(""""""
-            GET /resources HTTP/1.1\r
-            Host: local\r
-            Connection: close\r
-            \r
-            """"""));
-
-        assertThat(response1.getStatus(), is(HttpStatus.OK_200));
-        assertThat(response1.getContent(), containsString(""/WEB-INF""));
-        assertThat(response1.getContent(), containsString(""/WEB-INF/lib""));
-        assertThat(response1.getContent(), containsString(""/WEB-INF/lib/odd-resource.jar""));
-        assertThat(response1.getContent(), containsString(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""));
-
-        HttpTester.Response response2 = HttpTester.parseResponse(connector.getResponse(""""""
-            GET /real HTTP/1.1\r
-            Host: local\r
-            Connection: close\r
-            \r
-            """"""));
-
-        assertThat(response2.getStatus(), is(HttpStatus.OK_200));
-        assertThat(response2.getContent(), containsString(""/WEB-INF""));
-        assertThat(response2.getContent(), containsString(""/WEB-INF/lib""));
-        assertThat(response2.getContent(), containsString(""/WEB-INF/lib/odd-resource.jar""));
-        // TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
-        //assertThat(response2.getContent(), containsString(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""));
-    }"
 878369,337,"// TODO(lharker): forbid this annotation, since it is impossible for a Promise to resolve to a
 // Promise.",requirement,"      .addDiagnostic(
           lines(
@@ -2455,28 +2378,6 @@ public static void setUpClass()
 
 @Test
 public void testFlushUnwriteableDie() throws Throwable",
-673606,213,"/**
- * Tests for FingerprintGestureController.
- * TODO: These tests aren't really for server code, so this isn't their ideal home.
- */",impractical-case,"import android.accessibilityservice.FingerprintGestureController.FingerprintGestureCallback;
-import android.accessibilityservice.IAccessibilityServiceConnection;
-
-import com.android.server.accessibility.test.MessageCapturingHandler;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-","public class FingerprintGestureControllerTest {
-    @Mock IAccessibilityServiceConnection mMockAccessibilityServiceConnection;
-    @Mock FingerprintGestureCallback mMockFingerprintGestureCallback;
-    FingerprintGestureController mFingerprintGestureController;
-
-    @Before
-    public void setUp() {
-        MockitoAnnotations.initMocks(this);
-        mFingerprintGestureController =
-                new FingerprintGestureController(mMockAccessibilityServiceConnection);",
 1191047,542,// FIXME: this test do not cover breaking remark into multiple lines,superficial-test,"      IllegalArgumentException.class,
       () -> LineBuffer.getBuffer().addRemarkBlock(remark, indent));
 }
@@ -2762,25 +2663,6 @@ public void testRuleTnNumr() throws IOException {
     assertEmptyMatch(""рішення балотуватися продиктоване"");
     assertEmptyMatch(""Вони обманюватись раді"");
   }"
-726817,230,// Todo: Move this test to SegmentReplicationIndexShardTests so that it runs for both node-node & remote store,refactor,"        for (IndexShard shard : shards) {
-            assertConsistentHistoryBetweenTranslogAndLucene(shard);
-        }
-        final List<DocIdSeqNoAndSource> docsAfterReplication = getDocIdAndSeqNos(shards.getPrimary());
-        for (IndexShard shard : shards.getReplicas()) {
-            assertThat(shard.routingEntry().toString(), getDocIdAndSeqNos(shard), equalTo(docsAfterReplication));
-        }
-    }
-}
-","// Todo: Move this test to SegmentReplicationIndexShardTests so that it runs for both node-node & remote store
-public void testSegmentReplication_Index_Update_Delete() throws Exception {
-    String mappings = ""{ \"""" + MapperService.SINGLE_MAPPING_NAME + ""\"": { \""properties\"": { \""foo\"": { \""type\"": \""keyword\""} }}}"";
-    try (ReplicationGroup shards = createGroup(2, getIndexSettings(), mappings, new NRTReplicationEngineFactory())) {
-        shards.startAll();
-        final IndexShard primaryShard = shards.getPrimary();
-
-        final int numDocs = randomIntBetween(100, 200);
-        for (int i = 0; i < numDocs; i++) {
-            shards.index(new IndexRequest(index.getName()).id(String.valueOf(i)).source(""{\""foo\"": \""bar\""}"", MediaTypeRegistry.JSON));",
 991643,441,// TODO replace once we have real API,dependency,"check(""Currencies"", locale, currencies, currencyFormats, new DisplayNameGetter() {
     public String get(ULocale loc, String code, Object context) {
         Currency s = Currency.getInstance(code);
@@ -3268,46 +3150,6 @@ Assert.assertTrue(String.valueOf(time), time < maxTime);","    private void test
         }
         Assert.assertTrue(String.valueOf(time), time < maxTime);
     }"
-571347,159,"// Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
-// which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
-// successfully, but in order to shorten the test time, we chose one million numbers.",subset-test,"import org.junit.Assert;
-import org.junit.Test;
-
-// hive hll udf test
-public class HllUDFTest {
-
-    private BinaryObjectInspector inputOI0 = new JavaConstantBinaryObjectInspector(new byte[0]);
-
-    @Test
-    public void hllCardinalityTest() throws Exception {","HllCardinalityUDF hllCardinalityUDF = new HllCardinalityUDF();
-hllCardinalityUDF.initialize(new ObjectInspector[] { inputOI0 });
-Hll hll = new Hll();
-long largeInputSize = 1000000L;
-for (long i = 1; i <= largeInputSize; i++) {
-    hll.updateWithHash(i);
-}
-byte[] hllLargeBytes = HllUtil.serializeToBytes(hll);
-hllCardinalityUDF.initialize(new ObjectInspector[] { inputOI0 });
-Object evaluateLarge = hllCardinalityUDF","    public void hllCardinalityTest() throws Exception {
-        // Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
-        // which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
-        // successfully, but in order to shorten the test time, we chose one million numbers.
-        HllCardinalityUDF hllCardinalityUDF = new HllCardinalityUDF();
-        hllCardinalityUDF.initialize(new ObjectInspector[] { inputOI0 });
-        Hll hll = new Hll();
-        long largeInputSize = 1000000L;
-        for (long i = 1; i <= largeInputSize; i++) {
-            hll.updateWithHash(i);
-        }
-        byte[] hllLargeBytes = HllUtil.serializeToBytes(hll);
-        hllCardinalityUDF.initialize(new ObjectInspector[] { inputOI0 });
-        Object evaluateLarge = hllCardinalityUDF
-                .evaluate(new GenericUDF.DeferredObject[] { new GenericUDF.DeferredJavaObject(hllLargeBytes) });
-        long actualCardinality = (long) evaluateLarge;
-
-        double relativeError = Math.abs(actualCardinality - largeInputSize) / (double) largeInputSize;
-        Assert.assertTrue(""Relative error rate should be less than 2%"", relativeError <= 0.02);
-    }"
 435141,128,"// Ignore the following tests because taking a lease requires a real
 // (not mock) file system store. These tests don't work on the mock.",skip-test," * skipping tests of unsupported features
  */
@@ -3363,71 +3205,6 @@ public void testCreateDisablePairs() {
         assertEquals(result.getTransitionType(), SubscriptionBaseTransitionType.END_BILLING_DISABLED);
         // TODO - ugly, fragile
         assertEquals(result.getTotalOrdering(), (Long) (BlockingCalculator.getGlobalTotalOrder().get() - 1));
-    }"
-1081500,478,"// this is a bit of a hack, since we don't implement generations.",temporary-fix,"String sourceKey = fullname(rewriteRequest.source);
-
-// a little hackish, just good enough for the tests to work.
-if (!contents.containsKey(sourceKey)) {
-    throw new StorageException(NOT_FOUND, ""File not found: "" + sourceKey);
-}
-
-// if non-null, then we check the file's at that generation.
-Long generationMatch = null;
-for (Option option : rewriteRequest.targetOptions.keySet()) {","    // this is a bit of a hack, since we don't implement generations.
-    if (option == Option.IF_GENERATION_MATCH) {
-        generationMatch = (Long) rewriteRequest.targetOptions.get(option);
-    }
-}
-
-String destKey = fullname(rewriteRequest.target);
-
-// if this is a new file, set generation to 1, else increment the existing generation
-long generation = 1;","    public RewriteResponse openRewrite(RewriteRequest rewriteRequest) throws StorageException {
-        String sourceKey = fullname(rewriteRequest.source);
-
-        // a little hackish, just good enough for the tests to work.
-        if (!contents.containsKey(sourceKey)) {
-            throw new StorageException(NOT_FOUND, ""File not found: "" + sourceKey);
-        }
-
-        // if non-null, then we check the file's at that generation.
-        Long generationMatch = null;
-        for (Option option : rewriteRequest.targetOptions.keySet()) {
-            // this is a bit of a hack, since we don't implement generations.
-            if (option == Option.IF_GENERATION_MATCH) {
-                generationMatch = (Long) rewriteRequest.targetOptions.get(option);
-            }
-        }
-
-        String destKey = fullname(rewriteRequest.target);
-
-        // if this is a new file, set generation to 1, else increment the existing generation
-        long generation = 1;
-        if (metadata.containsKey(destKey)) {
-            Long storedGeneration = metadata.get(destKey).getGeneration();
-            if (null != storedGeneration) {
-                generation = storedGeneration + 1;
-            }
-        }
-
-        checkGeneration(destKey, generationMatch);
-
-        byte[] data = contents.get(sourceKey);
-
-        rewriteRequest.target.setGeneration(generation);
-        rewriteRequest.target.setSize(BigInteger.valueOf(data.length));
-        rewriteRequest.target.setUpdated(metadata.get(sourceKey).getUpdated());
-
-        metadata.put(destKey, rewriteRequest.target);
-
-        contents.put(destKey, Arrays.copyOf(data, data.length));
-        return new RewriteResponse(
-                rewriteRequest,
-                rewriteRequest.target,
-                data.length,
-                true,
-                ""rewriteToken goes here"",
-                data.length);
     }"
 290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,multi,"    Assertions.checkState(0x00 <= bytes[i] && bytes[i] <= 0xFF);
     byteArray[i] = (byte) bytes[i];
@@ -4313,97 +4090,6 @@ public void testMedianBug61071() {
             statistics.addValue(l);
         }
         assertEquals((int) statistics.getPercentile(50), calc.getMedian().intValue());
-    }"
-1479085,805,"// TODO: check all the layers are here, the profiles, and so on
-
-// check that we have the crs extension",requirement,"    for (GridCoverage coverage : coverages) {
-        if (coverage != null) {
-            CoverageCleanerCallback.disposeCoverage(coverage);
-        }
-    }
-}
-
-protected void checkFullCapabilitiesDocument(Document dom) throws Exception {
-    checkValidationErrors(dom, getWcs20Schema());
-","assertXpathEvaluatesTo(
-        ""1"",
-        ""count(//ows:ServiceIdentification[ows:Profile='http://www.opengis.net/spec/WCS_service-extension_crs/1.0/conf/crs'])"",
-        dom);
-assertXpathEvaluatesTo(
-        ""1"",
-        ""count(//wcs:ServiceMetadata/wcs:Extension/crs:CrsMetadata[crs:crsSupported = 'http://www.opengis.net/def/crs/EPSG/0/4326'])"",
-        dom);
-
-// check the interpolation extension","    protected void checkFullCapabilitiesDocument(Document dom) throws Exception {
-        checkValidationErrors(dom, getWcs20Schema());
-
-        // TODO: check all the layers are here, the profiles, and so on
-
-        // check that we have the crs extension
-        assertXpathEvaluatesTo(
-                ""1"",
-                ""count(//ows:ServiceIdentification[ows:Profile='http://www.opengis.net/spec/WCS_service-extension_crs/1.0/conf/crs'])"",
-                dom);
-        assertXpathEvaluatesTo(
-                ""1"",
-                ""count(//wcs:ServiceMetadata/wcs:Extension/crs:CrsMetadata[crs:crsSupported = 'http://www.opengis.net/def/crs/EPSG/0/4326'])"",
-                dom);
-
-        // check the interpolation extension
-        assertXpathEvaluatesTo(
-                ""1"",
-                ""count(//ows:ServiceIdentification[ows:Profile='http://www.opengis.net/spec/WCS_service-extension_interpolation/1.0/conf/interpolation'])"",
-                dom);
-        assertXpathEvaluatesTo(
-                ""1"",
-                ""count(//wcs:ServiceMetadata/wcs:Extension[int:interpolationSupported='http://www.opengis.net/def/interpolation/OGC/1/nearest-neighbor'])"",
-                dom);
-        assertXpathEvaluatesTo(
-                ""1"",
-                ""count(//wcs:ServiceMetadata/wcs:Extension[int:interpolationSupported='http://www.opengis.net/def/interpolation/OGC/1/linear'])"",
-                dom);
-        assertXpathEvaluatesTo(
-                ""1"",
-                ""count(//wcs:ServiceMetadata/wcs:Extension[int:interpolationSupported='http://www.opengis.net/def/interpolation/OGC/1/cubic'])"",
-                dom);
-
-        // check that the bbox in the utm11 layer is reported as configured
-        String utm11Bbox = ""//wcs:Contents/wcs:CoverageSummary[wcs:CoverageId='wcs__utm11']/ows:BoundingBox"";
-
-        assertXpathCoordinate(new CoordinateXY(440562.0, 3720758.0), utm11Bbox + ""/ows:LowerCorner"", dom);
-        assertXpathCoordinate(new CoordinateXY(471794.0, 3750966.0), utm11Bbox + ""/ows:UpperCorner"", dom);
-
-        // check that the bbox in the cad layer is reported as configured
-        String cadPath = ""//wcs:Contents/wcs:CoverageSummary[wcs:CoverageId='wcs__RotatedCad']/ows:BoundingBox"";
-        assertXpathCoordinate(new CoordinateXY(1402800.0, 5000000.0), cadPath + ""/ows:LowerCorner"", dom);
-        assertXpathCoordinate(new CoordinateXY(1402900.0, 5000100.0), cadPath + ""/ows:UpperCorner"", dom);
-
-        // check that the bbox in the usa layer has been reprojected
-        String usaPath = ""//wcs:Contents/wcs:CoverageSummary[wcs:CoverageId='cdf__usa']/ows:BoundingBox"";
-        assertXpathCoordinate(
-                new CoordinateXY(-1.457024062347863E7, 6199732.713729635), usaPath + ""/ows:LowerCorner"", dom);
-        assertXpathCoordinate(
-                new CoordinateXY(-1.3790593336628266E7, 7197101.83024677), usaPath + ""/ows:UpperCorner"", dom);
-
-        // check the CRSs
-        assertCRSReference(dom, ""EPSG"", ""4326"");
-        assertCRSReference(dom, ""EPSG"", ""32632"");
-        // custom GeoServer extensions
-        assertCRSReference(dom, ""EPSG"", ""900913"");
-        assertCRSReference(dom, ""EPSG"", ""404000"");
-        // IAU codes (added in the classpath for tests only)
-        assertCRSReference(dom, ""IAU"", ""1000"");
-
-        // check the size of supported codes
-        final Set<String> supportedCodes = getCodes(""EPSG"");
-        supportedCodes.addAll(getCodes(""IAU""));
-        NodeList allCrsCodes = xpath.getMatchingNodes(""//crs:crsSupported"", dom);
-
-        assertEquals(supportedCodes.size(), allCrsCodes.getLength());
-
-        // check the viking raster is there with its CRS
-        String vikingPath = ""//wcs:Contents/wcs:CoverageSummary[wcs:CoverageId='iau__Viking']"";
-        assertXpathEvaluatesTo(""http://www.opengis.net/def/crs/IAU/0/49900"", vikingPath + ""/ows:BoundingBox/@crs"", dom);
     }"
 794729,281,"// Testcase is disabled, as kernel32 ordinal values are not stable.
 // a library with a stable function <-> ordinal value is needed.
@@ -13543,42 +13229,6 @@ void testInvokeExceptoin() {
 }
 
 @Test",
-639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",superficial-test,"{
-    // Distinct with limit (DistinctLimitNode), should be eligible for pushdown.
-    String query = ""SELECT DISTINCT regionkey FROM nation LIMIT 3"";
-
-    // Verify query can be pushed down, that's the situation we want to test for.
-    // it's important that we test with LIMIT value smaller than count(DISTINCT regionkey), hence need to skip results check
-    assertThat(query(query)).skipResultsCorrectnessCheckForPushdown().isFullyPushedDown();
-
-    assertThat(query(""SHOW STATS FOR ("" + query + "")""))
-            .result()","            // Not testing average length and min/max, as this would make the test less reusable and is not that important to test.
-            .exceptColumns(""data_size"", ""low_value"", ""high_value"")
-            .skippingTypesCheck()
-            .matches(""VALUES "" +
-                    ""('regionkey', 3e0, 0e0, null),"" +
-                    ""(null, null, null, 3e0)"");
-}
-
-@Test
-public void testStatsWithAggregationPushdown()","    public void testStatsWithDistinctLimitPushdown()
-    {
-        // Distinct with limit (DistinctLimitNode), should be eligible for pushdown.
-        String query = ""SELECT DISTINCT regionkey FROM nation LIMIT 3"";
-
-        // Verify query can be pushed down, that's the situation we want to test for.
-        // it's important that we test with LIMIT value smaller than count(DISTINCT regionkey), hence need to skip results check
-        assertThat(query(query)).skipResultsCorrectnessCheckForPushdown().isFullyPushedDown();
-
-        assertThat(query(""SHOW STATS FOR ("" + query + "")""))
-                .result()
-                // Not testing average length and min/max, as this would make the test less reusable and is not that important to test.
-                .exceptColumns(""data_size"", ""low_value"", ""high_value"")
-                .skippingTypesCheck()
-                .matches(""VALUES "" +
-                        ""('regionkey', 3e0, 0e0, null),"" +
-                        ""(null, null, null, 3e0)"");
-    }"
 639634,211,// TODO https://github.com/trinodb/trino/issues/18499,defect,"            .build();
 }
 
@@ -13721,47 +13371,6 @@ catch (KeeperException.NodeExistsException e) {","  try {
       throw new RuntimeException(e);
     }
   }"
-1004573,441,"// read() and closeEntry() must throw IOExceptions to indicate that
-// the stream is corrupt. The bug above reported that they would loop
-// forever.",code,"private static final byte[] INCOMPLETE_ZIP = new byte[] {
-        0120, 0113, 0003, 0004, 0024, 0000, 0010, 0010, 0010, 0000, 0002, 0035, (byte) 0330,
-        0106, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0013,
-        0000, 0000, 0000, 0146, 0157, 0157, 0057, 0142, 0141, 0162, 0056, 0160, 0156, 0147 };
-
-// http://b//21846904
-public void testReadOnIncompleteStream() throws Exception {
-    ZipInputStream zi = new ZipInputStream(new ByteArrayInputStream(INCOMPLETE_ZIP));
-    ZipEntry ze = zi.getNextEntry();
-","try {
-    zi.read(new byte[1024], 0, 1024);
-    fail();
-} catch (IOException expected) {
-}
-
-try {
-    zi.closeEntry();
-    fail();
-} catch (IOException expected) {","    public void testReadOnIncompleteStream() throws Exception {
-        ZipInputStream zi = new ZipInputStream(new ByteArrayInputStream(INCOMPLETE_ZIP));
-        ZipEntry ze = zi.getNextEntry();
-
-        // read() and closeEntry() must throw IOExceptions to indicate that
-        // the stream is corrupt. The bug above reported that they would loop
-        // forever.
-        try {
-            zi.read(new byte[1024], 0, 1024);
-            fail();
-        } catch (IOException expected) {
-        }
-
-        try {
-            zi.closeEntry();
-            fail();
-        } catch (IOException expected) {
-        }
-
-        zi.close();
-    }"
 879656,337,"// TODO(b/235871861): Compiler should throw warning as it doesn't make sense to deprecate a
 // static block",requirement,"              ""   static x = 1;"",
               ""   static {"",
@@ -14364,38 +13973,6 @@ public void testNoInlineConstructors() {
 @Test
 public void testNoInlineArrayLits() {
   noInline(""var x = []; print(x)"");",
-122818,34,"// I tried using Mockito, but it didn't work for some reason",how-to,"import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.spy;
-
-@SuppressWarnings(""checkstyle:HideUtilityClassConstructor"")
-public class PlayQueueTest {
-    static PlayQueue makePlayQueue(final int index, final List<PlayQueueItem> streams) {","// I tried using Mockito, but it didn't work for some reason
-return new PlayQueue(index, streams) {
-    @Override
-    public boolean isComplete() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void fetch() {
-        throw new UnsupportedOperationException();","    static PlayQueue makePlayQueue(final int index, final List<PlayQueueItem> streams) {
-        // I tried using Mockito, but it didn't work for some reason
-        return new PlayQueue(index, streams) {
-            @Override
-            public boolean isComplete() {
-                throw new UnsupportedOperationException();
-            }
-
-            @Override
-            public void fetch() {
-                throw new UnsupportedOperationException();
-            }
-        };
-    }"
 1118201,488,"// TODO: Add test to delete broker instance. Currently, stopBroker() does not work correctly.
 
 // Check if '/INSTANCES/<serverName>' has been erased correctly",requirement,"  deleteInstanceRequest = _controllerRequestURLBuilder.forInstance(brokerName);
@@ -16156,25 +15733,6 @@ private GeoIpTaskState.Metadata newGeoIpTaskStateMetadata(boolean expired) {
         assertThat(deleteCount.get(), equalTo(expiredDatabasesCount * 2));
         assertThat(updatePersistentTaskStateCount.get(), equalTo(expiredDatabasesCount * 2));
     }"
-114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,multi,"  Bitmap toRotate = Bitmap.createBitmap(200, 100, Bitmap.Config.ARGB_8888);
-  toRotate.setColorSpace(ColorSpace.get(ColorSpace.Named.DISPLAY_P3));
-
-  Bitmap rotated =
-      TransformationUtils.rotateImageExif(
-          bitmapPool, toRotate, ExifInterface.ORIENTATION_ROTATE_90);
-
-  assertEquals(ColorSpace.get(ColorSpace.Named.DISPLAY_P3), rotated.getColorSpace());
-}
-","// TODO: Add gainmap-based tests once Robolectric has sufficient support.
-
-@Test
-public void testInitializeMatrixSetsScaleIfFlipHorizontal() {
-  Matrix matrix = mock(Matrix.class);
-  TransformationUtils.initializeMatrixForRotation(
-      ExifInterface.ORIENTATION_FLIP_HORIZONTAL, matrix);
-  verify(matrix).setScale(-1, 1);
-}
-",
 963450,435,// No idea what Sybase is doing here exactly,how-to,"				.add( 2018, 3, 31, 14, 0, 0, 0, ZONE_AUCKLAND )
 )
 // => This has never worked correctly, unless the JDBC timezone was set to UTC
@@ -20728,37 +20286,6 @@ public void testGetTileMatrixSet() throws Exception {
         getAsJSoup(""ogc/features/v1/tileMatrixSets?f=html"");
         // TODO: add ids and actual checks in the generated HTML
     }"
-1002899,441,"// Don't test on iOS devices, because they often have less than 4G available,
-// especially with a big JRE tests app installed.",skip-test,"public void testSetLengthTooLarge() throws Exception {
-    RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
-    try {
-        raf.setLength(Long.MAX_VALUE);
-        fail();
-    } catch (IOException expected) {
-    }
-}
-
-public void testSetLength64() throws Exception {","  if (!System.getProperty(""os.name"").equals(""iPhone"")) {
-    RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
-    raf.setLength(0);
-    assertEquals(0, file.length());
-    long moreThanFourGig = ((long) Integer.MAX_VALUE) + 1L;
-    raf.setLength(moreThanFourGig);
-    assertEquals(moreThanFourGig, file.length());
-  }
-}
-","    public void testSetLength64() throws Exception {
-      // Don't test on iOS devices, because they often have less than 4G available,
-      // especially with a big JRE tests app installed.
-      if (!System.getProperty(""os.name"").equals(""iPhone"")) {
-        RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
-        raf.setLength(0);
-        assertEquals(0, file.length());
-        long moreThanFourGig = ((long) Integer.MAX_VALUE) + 1L;
-        raf.setLength(moreThanFourGig);
-        assertEquals(moreThanFourGig, file.length());
-      }
-    }"
 558646,149,"// Doesn't work in MSQ, although it's not really MSQ's fault. In MSQ, the second field (foo2.dim3) is returned as
 // the string ""[a, b]"" because it gets run through DimensionHandlerUtils.convertObjectToString in
 // IndexedTableDimensionSelector. In native, this doesn't happen, because we don't have as much type information,
@@ -22894,29 +22421,6 @@ public void testDrag() {
         // TODO: actually calculate the following parameters and do exact value checks.
         verify(mMockListener).onDragStart(anyBoolean(), anyFloat());
     }"
-977196,435,"/**
- * TODO : javadoc
- *
- * @author Steve Ebersole
- */",documentation,"import jakarta.persistence.ColumnResult;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityResult;
-import jakarta.persistence.FieldResult;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.SqlResultSetMapping;
-import jakarta.persistence.SqlResultSetMappings;
-import jakarta.persistence.Table;
-","@SqlResultSetMappings({
-		@SqlResultSetMapping(
-				name=""explicitScalarResultSetMapping"",
-				columns={ @ColumnResult(name=""QuotEd_nAMe"") }
-		)
-		,
-		@SqlResultSetMapping(
-				name=""basicEntityResultSetMapping"",
-				entities = @EntityResult( entityClass = MyEntity.class )
-		)",
 734064,230,"// TODO: Ensure that it is impossible to ever decrement the generation id stored in index.latest then assert that
 // it never decrements here. Same goes for the metadata, ensure that we never overwrite newer with older
 // metadata.",requirement,"final byte[] data = new byte[(int) blobSize];
@@ -23386,69 +22890,6 @@ public static void beforeTest() throws Exception {
         // See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)
         Locale.setDefault(Locale.ENGLISH);
     }"
-86103,12,"// Note: these addresses are *not* found, as we do not search the elements of the array.
-//       This is by design, as it saves a lot of work.
-// addr(""010054ec""), addr(""010054f0""));",design,"
-search();
-
-List<LocationReference> results = getResultLocations();
-
-// we searched on the mnemonic--the results should be the 3 direct refs and the
-// data type refs of each array element
-assertContainsAddrs(results, addr(""01005300""), addr(""01005301""), addr(""01005302""));
-assertContainsAddrs(results, addr(""010054e8""));
-","
-	assertNoOffcuts(results);
-}
-
-@Test
-public void testArrayReferences_MnemonicField_Offcuts() {
-	//
-	// Find all references to the array.  With all references pointing to the min address
-	// of array elements, some of the results should report being offcut.
-	//","	public void testArrayReferences_MnemonicField_NoOffcuts() {
-		//
-		// Find all references to the array.  With all references pointing to the min address
-		// of array elements, none of the results should report being offcut.
-		//
-
-		/*
-		 	Disassembly:
-		 	
-		 				DWORD_ARRAY_010054e8[1]   XREF[1,2]:   01005300(R), 01005301(R),
-		                DWORD_ARRAY_010054e8[2]                01005302(R)
-		                DWORD_ARRAY_010054e8
-		    010054e8 00 00 00        ddw[3]
-		             00 00 00
-		             00 00 00
-		       010054e8 00 00 00 00     ddw       0h  [0] XREF[1]:     01005300(R)
-		       010054ec 00 00 00 00     ddw       0h  [1] XREF[1]:     01005301(R)
-		       010054f0 00 00 00 00     ddw       0h  [2] XREF[1]:     01005302(R)
-		
-		 */
-
-		// go to an unused address
-		Address arrayAddr = addr(0x010054e8);
-
-		createArray_WithoutOffcuts(arrayAddr);
-
-		goToDataMnemonicField(arrayAddr);
-
-		search();
-
-		List<LocationReference> results = getResultLocations();
-
-		// we searched on the mnemonic--the results should be the 3 direct refs and the
-		// data type refs of each array element
-		assertContainsAddrs(results, addr(""01005300""), addr(""01005301""), addr(""01005302""));
-		assertContainsAddrs(results, addr(""010054e8""));
-
-		// Note: these addresses are *not* found, as we do not search the elements of the array.
-		//       This is by design, as it saves a lot of work.
-		// addr(""010054ec""), addr(""010054f0""));
-
-		assertNoOffcuts(results);
-	}"
 58280,11,// TODO: Reactor usually times out on Windows ...,refactor,"try {
 	StepVerifier.create(result)
 			.consumeNextWith(value -> assertThat(value.length()).isEqualTo((64 * 1024)))
@@ -23649,25 +23090,6 @@ package com.netflix.conductor.grpc.server.service;
 
 public class HealthServiceImplTest {
 ",},
-423851,128,// Ignored in automated tests due to flakiness by design,defect,"  cgroupMemory = ResourceHandlerModule.getCGroupsHandler()
-      .getPathForCGroup(CGroupsHandler.CGroupController.MEMORY, cgroup);
-}
-
-@After
-public void tearDown() throws YarnException {
-  stopTestProcess();
-}
-
-","// Ignored in automated tests due to flakiness by design
-@Ignore
-@Test
-public void testCompareResults()
-    throws YarnException, InterruptedException, IOException {
-
-  startTestProcess();
-
-  ProcfsBasedProcessTree legacyCalculator =
-      new ProcfsBasedProcessTree(Long.toString(getPid()));",
 1495785,822,"// Find the async-reset webapp based on common IDE working directories
 // TODO import webapp as maven artifact",build,"import java.nio.file.Path;
 
