@@ -172,14 +172,10 @@ class Model:
     def get_output_file_name(self, model_name_suffix):
         return f'{self.task_type}_{self.get_full_model_name(model_name_suffix).split("/")[-1]}.csv'
 
-    def get_batch_job_file_name(self):
-        job_file = f'{self.get_base_output_directory()}/batch/job.csv'
-        os.makedirs(os.path.dirname(job_file), exist_ok=True)
-        return job_file
-
 
     def add_into_batch_job(self, input_file, job_id, job_name, status):
-        job_file = self.get_batch_job_file_name()
+        job_file = f'{os.getenv("CACHE_DIRECTORY")}/output/batch/job.csv'
+        os.makedirs(os.path.dirname(job_file), exist_ok=True)
         job_df = pd.read_csv(job_file) if os.path.exists(job_file) else pd.DataFrame()
         new_row = pd.DataFrame([{
             "model_uri": self.model_uri,
