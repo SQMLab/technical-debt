@@ -28,11 +28,12 @@ def predict_with_gemini(client, model_name, system_instruction, prompt):
 
 class GeminiModel(Model):
     def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter,
-                 enable_cache: bool):
+                 enable_cache: bool, non_batch_cache_required: bool = True):
         super().__init__(task_type, model_uri, output_label_converter, enable_cache)
         self.model = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
         self.train_dataset = None
         self.train_indexes = None
+        self.non_batch_cache_required = non_batch_cache_required
 
     def fit(self, dataset: Dataset):
         self.train_dataset = dataset
@@ -49,6 +50,8 @@ class GeminiModel(Model):
             raw_label = self.read_from_merged_file(model_name_suffix,
                                                    dataset['text'][index]) if self.enable_cache else None
             if raw_label is None:
+                if self.non_batch_cache_required:
+                    raise Exception('Non-batch cache entry missing.')
                 print(f'sending client request for {dataset["id"][index]}')
                 raw_label = predict_with_gemini(self.model, self.model_uri,
                                                 f'{prompt_template.definition}\n{prompt_template.instruction}', prompt)
