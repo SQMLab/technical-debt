@@ -1,5 +1,5 @@
 from OutputLabelConverter import OutputLabelConverter
-class LlmSatdOutputLabelConverter(OutputLabelConverter):
+class LlmOutputLabelConverter(OutputLabelConverter):
     def __init__(self, known_labels: set[str], unmatched_label: str):
         super().__init__(known_labels, unmatched_label)
     def convert_label(self, label):
