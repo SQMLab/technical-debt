@@ -49,6 +49,7 @@ class GeminiModel(Model):
             raw_label = self.read_from_merged_file(model_name_suffix,
                                                    dataset['text'][index]) if self.enable_cache else None
             if raw_label is None:
+                print(f'sending client request for {dataset["id"][index]}')
                 raw_label = predict_with_gemini(self.model, self.model_uri,
                                                 f'{prompt_template.definition}\n{prompt_template.instruction}', prompt)
 

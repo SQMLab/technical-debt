@@ -28,6 +28,7 @@ class ChatGpt4Model(Model):
             prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index,verbose=verbose)
             raw_label = self.read_from_merged_file(model_name_suffix, dataset['text'][index]) if self.enable_cache else None
             if raw_label is None:
+                print(f'sending client request for {dataset["id"][index]}')
                 completion = self.client.chat.completions.create(
                     model=self.model_uri,
                     store=True,
