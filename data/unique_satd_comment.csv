@@ -1,31 +1,31 @@
-id,repository,text,label
+id,repository,text,hash,label
 558618,149,"// This query is expected to fail as we do not support join with constant in the on condition
 // (see issue https://github.com/apache/druid/issues/9942 for more information)
-// TODO: Remove expected Exception when https://github.com/apache/druid/issues/9942 is fixed",multi
-721847,230,// some of the windows test VMs are slow as hell,code
-100041,15,// FIXME custom built???,defect
-840235,308,// TODO(https://github.com/apache/beam/issues/20447),defect
+// TODO: Remove expected Exception when https://github.com/apache/druid/issues/9942 is fixed",1a94fa45ab29d34f036229651375b5177f479ffb,multi
+721847,230,// some of the windows test VMs are slow as hell,fbc4241aff06127c8042a312ec563937ac3df412,code
+100041,15,// FIXME custom built???,c1db9e2fe0d152ad0bfcaeecbda2f554bb816609,defect
+840235,308,// TODO(https://github.com/apache/beam/issues/20447),1056c54485d81d96bde80a16a3cc8bed6ffd6a96,defect
 1342137,655,"//TODO:
-//+ ""a = 59;""",requirement
+//+ ""a = 59;""",72e37146abb96d5365d7624a33e1196a59b1efa4,requirement
 334370,81,"// Size is assumed to be larger than the target size for no splitting
-// @@@ Need way to obtain the target size",how-to
-379136,101,// TODO: migrate to test framework,requirement
-490738,135,"// TODO: for non-persistent topics, the subscription doesn't exist",requirement
+// @@@ Need way to obtain the target size",47c779228052f3fe3bf5b8aeb51c7c1a647e207f,how-to
+379136,101,// TODO: migrate to test framework,8596375c0b2062eb740665623fffaa0b823eacde,requirement
+490738,135,"// TODO: for non-persistent topics, the subscription doesn't exist",6c2f1183587c42e9e141ddd6497dabdd1a1be5c5,requirement
 1244485,620,"//TODO: Rewrite with dynamic cache creation, and GRID start in #beforeTest after resolve of
-//TODO: IGNITE-1094",multi
-851672,315,// TODO mlowery other transLogTable fields could be set for testing here,requirement
+//TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,multi
+851672,315,// TODO mlowery other transLogTable fields could be set for testing here,14de2bf08a4e7b7b04dd35d568dfe50bfe816427,requirement
 1547822,896,"// Create a list of patient sub-tables to work with TODO(lwhite): Build the copy-on-write to
-// ViewGroups to avoid",requirement
-1614116,947,// TODO: could use withRequestConfig to use a shorter timeout,requirement
+// ViewGroups to avoid",a618f8938d9c88dc505c9e4acc3b8003aaea3feb,requirement
+1614116,947,// TODO: could use withRequestConfig to use a shorter timeout,ea26222a449fff2b5057d865e0a6f17409e8e3e6,requirement
 670509,213,"// TODO Test the ""load from the file"" case where DA will still be loaded even without
-// BIND_DEVICE_ADMIN and target API is N.",requirement
-710096,226,// TODO same data accessed as Hive Table or Path URI ??,how-to
+// BIND_DEVICE_ADMIN and target API is N.",7d2857eae77bc736fa869961b35837a3b98228a6,requirement
+710096,226,// TODO same data accessed as Hive Table or Path URI ??,509ea311848dd2d34a880ea5f4175698e8739dc3,how-to
 306665,78,"/**
  * Setting file last access time does not work on JDK-20 on macOS with the hfs file system,
  * issue JDK-8298187.
- */",dependency
-50150,8,// TODO this should be WRAP instead,requirement
-845408,308,// TODO: This test needs to be adapted to work with streamingEngine=true.,superficial-test
+ */",1a2e1d97c1fbbe3fdbd10468f336a7fbbf95e1ce,dependency
+50150,8,// TODO this should be WRAP instead,0f93501048e7fb894f992cc858af230058a7a6c9,requirement
+845408,308,// TODO: This test needs to be adapted to work with streamingEngine=true.,bbf1742b82d1138a677a2b118bd9e8faf9720ac1,superficial-test
 444648,128,"/**
  * Performance test of the new DFSNetworkTopology chooseRandom.
  *
@@ -34,121 +34,121 @@ id,repository,text,label
  * checks or timeout checks. Therefore, it is pointless to run these
  * tests without something reading the value. So disabled the tests to for now,
  * anyone interested in looking at the numbers can enable them.
- */",skip-test
+ */",8c7610604bbd99ee5dee70dababb5e5a64a8f06a,skip-test
 99249,15,"// FIXME fusion mode causes hangs
-//.assertFusionMode(QueueFuseable.ASYNC)",defect
+//.assertFusionMode(QueueFuseable.ASYNC)",50e563e9e39bacc9cb08b633ee296088994eb090,defect
 692038,213,"// We should not have received any rollback requests yet.
 // TODO: Possibly flaky if, by chance, some other app on device
-// happens to be rolled back at the same time?",how-to
-769130,269,"//""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/snapshots/snapshots/nb-3g1m_0nuf_3vj5m2k1125165rxa7-big-Index.db"", #not supported (CASSANDRA-14013)",requirement
-201031,60,// Skip this test on Windows as we can not control the Window Driver letters.,skip-test
-892121,368,// stop test and ignore if FuseFileSystem fails to create due to missing libfuse library,skip-test
-881269,337,// TODO(tjgq): Consider rewriting to const even when already sorted.,requirement
-607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,refactor
+// happens to be rolled back at the same time?",f3b224d622c078754c46a299869d32fa7ed1d930,how-to
+769130,269,"//""/path/to/cassandra/data/dir2/dir5/dir6/backups/backups/snapshots/snapshots/nb-3g1m_0nuf_3vj5m2k1125165rxa7-big-Index.db"", #not supported (CASSANDRA-14013)",a9e084639bdfbe17c3b60e94be6e70f0d0492180,requirement
+201031,60,// Skip this test on Windows as we can not control the Window Driver letters.,f41a40e844e885d9e39e1ea1a5ba89478f43b6c9,skip-test
+892121,368,// stop test and ignore if FuseFileSystem fails to create due to missing libfuse library,b1ef6f1d304a220bcd4e3777efbfb8a97ae01e3e,skip-test
+881269,337,// TODO(tjgq): Consider rewriting to const even when already sorted.,377f7dc9ef1648c18bd606694674e5f82aa9560f,requirement
+607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,refactor
 236089,64,"// TODO(b/68751876): Set --apple_crosstool_top and --crosstool_top using the
-// AppleCrosstoolTransition",requirement
+// AppleCrosstoolTransition",b30b9a55e31c07d66801c2396ab54e79c04c2c7c,requirement
 110532,22,"//@Test
-// run this manually as it's dependent on platform encoding, which has to be UTF-8",multi
-835585,308,// TODO(pabloem): Add other data types,requirement
+// run this manually as it's dependent on platform encoding, which has to be UTF-8",5fd8d00cd59003997bd82e0417b5f33c08bdf8f3,multi
+835585,308,// TODO(pabloem): Add other data types,50289aa18f7c46448d47192da841eddbf448fba7,requirement
 1179971,541,"// Now a more precise check to see if the false positive rate is not
 // too high. The reason we use a relaxed restriction for the real-world
 // case as opposed to the ""fake lookup"" case is that our hash functions
-// are not completely independent.",superficial-test
-749651,241,//	TODO(gabor) this would be kind of cool to implement,requirement
+// are not completely independent.",01bdb3d9b0255396344830d544b6ac7adb040b8c,superficial-test
+749651,241,//	TODO(gabor) this would be kind of cool to implement,d9f3b11fdf402ac585de090b618e1ad1a934a2db,requirement
 1508198,822,"// TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
-//assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());",defect
+//assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());",8df2a09263f3c451c0499684cca21c513b808252,defect
 878369,337,"// TODO(lharker): forbid this annotation, since it is impossible for a Promise to resolve to a
-// Promise.",requirement
-1505640,822,// TODO this test needs a lot of work,requirement
+// Promise.",234f65afe3eeb2ba45422a7c7dafa3ed3f6ceca5,requirement
+1505640,822,// TODO this test needs a lot of work,c90111c466c1114f85e65eedfef4d56cbbc4f1c2,requirement
 623506,211,"// TODO (https://github.com/trinodb/trino/issues/6242) ResultSet.getObject sometimes fails
 //  assertThat(rs.getObject(""bound"")).as(""bound value should round trip the same way as literal "" + expectedValueLiteral)
-//        .isEqualTo(rs.getObject(""literal""));",defect
-1218886,580,// TODO Mock this?,how-to
-380596,104,// TODO(adriancole): Find a home for this generic conversion between Call and Java 8.,how-to
-1157836,501,// TODO implement,requirement
-981147,435,//TODO: upsert() with IDENTITY not working on SQL Server,defect
-1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,multi
+//        .isEqualTo(rs.getObject(""literal""));",37d87c0c7ebb45b958c2cc0b5f01669753792023,defect
+1218886,580,// TODO Mock this?,504fb53b92336c527f35e736dda26b3f7bd9062b,how-to
+380596,104,// TODO(adriancole): Find a home for this generic conversion between Call and Java 8.,1356cb9f20c5ac1c01b5e696520b4a0ee2575f5a,how-to
+1157836,501,// TODO implement,972c9937225b691138532a1d4752866c6f5b5f43,requirement
+981147,435,//TODO: upsert() with IDENTITY not working on SQL Server,eb8a76a47e178bde290bd205085a52f3152925ff,defect
+1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,6452d041717d453a781fe70bf8fe405281564ee8,multi
 940066,422,"// Set Max Parallel Replications to max value, so that the initial partitions can sync as soon possible.
 // Due to a race condition in object destruction, it can happen that the sync operation takes place
 // while a map is being destroyed which can result in a memory leak. This will be overhauled as part of
 // object lifecycle revamp.
-// For more details, see: https://github.com/hazelcast/hazelcast/issues/7132",code
-559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,multi
+// For more details, see: https://github.com/hazelcast/hazelcast/issues/7132",77d253f3ffb24f9a9f45fbe25d4f3a30b00eeee1,code
+559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,8556fa3d9435dc708edc20c230c906e8cbea8575,multi
 976929,435,"//FIXME mke it work in unambigious cases
 //		assertNotNull(c.id.parent.id);
-//		assertEquals(p.id.getFirstName(), c.id.parent.id.getFirstName());",defect
+//		assertEquals(p.id.getFirstName(), c.id.parent.id.getFirstName());",6cad3db522e053232153d5691a0f27cf988f5f5b,defect
 92723,12,"//Seems like a pattern where they truncate the symbol and append a 32-character (128-bit) hash code on the end instead.  Not sure what/how we
 // should deal with this (and potentially others--this came from Windows 7): give partial results?  By running with parse info output, we can
-// see that it is a series of nested templates to start, which cuts off during a deep nesting.",how-to
-1028704,445,// probably not needed,how-to
+// see that it is a series of nested templates to start, which cuts off during a deep nesting.",6345f48f832e92e4c02badc3687a0f278a16c46b,how-to
+1028704,445,// probably not needed,30d8aa6e1ff85da56649b2b5ed1cc5cebefff261,how-to
 954802,427,"// This should work but is currently not implemented
 // the reason is that when @FunctionBean is defined on a factory
 // we do not go through and visit public Executable methods unless
-// it is an AOP proxy",requirement
+// it is an AOP proxy",fb2dfa747857d388c0c3c0b41ca50c94ef619c03,requirement
 778176,269,"/**
  * Shadows the same method on the superclass as we don't want to join the ring
  * because this test depends on local ranges being null and has done since its
  * introduction.
  * TODO investigate whether this is correct.
- */",requirement
+ */",756af32d971f488398cd44f55cf7f35df5ba9453,requirement
 673606,213,"/**
  * Tests for FingerprintGestureController.
  * TODO: These tests aren't really for server code, so this isn't their ideal home.
- */",impractical-case
-1191047,542,// FIXME: this test do not cover breaking remark into multiple lines,superficial-test
+ */",85c025c8f5d76056918250bd9e2c76c4d0750184,impractical-case
+1191047,542,// FIXME: this test do not cover breaking remark into multiple lines,bae1aa668434e24d1050933256e0163b2af6a2f9,superficial-test
 229758,64,"// TODO(mschaller): This will ignore any attempt by Blaze modules to provide a filesystem;
-// consider something better.",code
-853787,315,// TODO Add StepStatusList,requirement
-1082350,478,// Workaround bug resolving relative references with file URLs in swagger parser,temporary-fix
-118369,28,"// This test doesn't work on midnight, January 1, 1970 UTC",defect
-47430,8,// TODO: we have no CannedAnalyzer?,requirement
+// consider something better.",899ec0b739046998eec557ac74a54487bfa4b39b,code
+853787,315,// TODO Add StepStatusList,3a75073a7d29cbaaf4d9c4a6e03c745f3ac335ea,requirement
+1082350,478,// Workaround bug resolving relative references with file URLs in swagger parser,f578dfff451c66c6290c8724ff5bfd34108a3d4f,temporary-fix
+118369,28,"// This test doesn't work on midnight, January 1, 1970 UTC",59c6840c5346706d7ef540f4c7903e07039081f4,defect
+47430,8,// TODO: we have no CannedAnalyzer?,c341411ec227cb12228efec475f6eb5d4c90bdf9,requirement
 1529301,874,"/**
  * Other cases: in this case sql parsing is ok, but will lead to NPE, such as #6548, #7504
- */",defect
-586331,167,//TODO:,requirement
-726817,230,// Todo: Move this test to SegmentReplicationIndexShardTests so that it runs for both node-node & remote store,refactor
-991643,441,// TODO replace once we have real API,dependency
-1561777,918,"//  bit ugly, but can't think of cleaner simple way to check this...",temporary-fix
+ */",6c2a55a4e4a96610ac24ea10baf7b3298966c9da,defect
+586331,167,//TODO:,80a9e90ae4b488ec34d780f7b7b01c89d22d0db5,requirement
+726817,230,// Todo: Move this test to SegmentReplicationIndexShardTests so that it runs for both node-node & remote store,2ca4da5ab08081dd751e414cea3dfad8871fb5e7,refactor
+991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,dependency
+1561777,918,"//  bit ugly, but can't think of cleaner simple way to check this...",69e9aefcd805726269086e4e2f3a28a4b8380d1e,temporary-fix
 235091,64,"// The exceedingly dumb approach: writing all the permutations down manually
-// is simply easier than any way of generating them.",temporary-fix
-877559,337,// TODO(b/139319709): Remove this. static method removal is disabled.,refactor
-1229100,605,// Not yet implemented,requirement
-869877,337,// TODO(b/139192655): The function template should shadow the class template type and not error,requirement
+// is simply easier than any way of generating them.",df81aa21d20b4a6ac2055555d9e2001f176300a1,temporary-fix
+877559,337,// TODO(b/139319709): Remove this. static method removal is disabled.,78eeb53ba5a048354dcd2e4796c5493739330aab,refactor
+1229100,605,// Not yet implemented,5e6f0d19b471e2231bb8c1897195a76061175ab6,requirement
+869877,337,// TODO(b/139192655): The function template should shadow the class template type and not error,92423e2154ae9692904292580d221b3732c4163b,requirement
 855188,315,"// Simple hack to prevent duplication of code. Checking the case of supported boolean type
-// both supported and unsupported. Should return BOOLEAN if supported, or CHAR(1) if not.",temporary-fix
-849284,315,// TODO: Is it correct?,how-to
+// both supported and unsupported. Should return BOOLEAN if supported, or CHAR(1) if not.",4d74a9806ef875f521cc80701d63a17efb34e1d8,temporary-fix
+849284,315,// TODO: Is it correct?,195140d7a904f3fe2171fb3230ee823534bc752f,how-to
 859671,323,"// Takes ~1s on markt's laptop. If this takes more than 5s something
 // probably needs looking at. If this fails repeatedly then we may need
-// to increase this limit.",temporary-fix
+// to increase this limit.",4db70896e8225a5ed8bc406dbd2e91a3ce4a60c9,temporary-fix
 571347,159,"// Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
 // which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
-// successfully, but in order to shorten the test time, we chose one million numbers.",subset-test
+// successfully, but in order to shorten the test time, we chose one million numbers.",5baba5460e6f4c12a7feb225797a047fd7698dcb,subset-test
 435141,128,"// Ignore the following tests because taking a lease requires a real
-// (not mock) file system store. These tests don't work on the mock.",skip-test
-1332240,648,"// TODO - ugly, fragile",requirement
-1081500,478,"// this is a bit of a hack, since we don't implement generations.",temporary-fix
-290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,multi
-1573591,945,// TODO extend for new properties,requirement
+// (not mock) file system store. These tests don't work on the mock.",76719fe8b779167267e8a6392e541114c4e1dbf6,skip-test
+1332240,648,"// TODO - ugly, fragile",aafd6c4bd278cdfa673d56bb8f819990637a0e22,requirement
+1081500,478,"// this is a bit of a hack, since we don't implement generations.",0e014f065c9088a7fb5156ea690aa7c45e159814,temporary-fix
+290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,87a2822426287bdaae3698504721eb539165601e,multi
+1573591,945,// TODO extend for new properties,2a954da715ff56ff8f919a90b8baa448799781ef,requirement
 218853,60,"/**
  * The @Override annotation is intentionally removed for this method to align with the
  * production codes' assumption that this interface may not be available for the given hadoop
  * version.
- */",impractical-case
-369420,85,// TODO make sure test case can not be null,requirement
-1186079,541,// TODO: use sft.load() api here,requirement
-1063139,478,//needs https://community.box.com/t5/custom/page/page-id/BoxViewTicketDetail?ticket_id=1895413 to be solved,dependency
+ */",02978a0b72dc55776ade6fe10db6396b57ce0c0c,impractical-case
+369420,85,// TODO make sure test case can not be null,7eb22d439d8d999700f45106fc3ec10977f3a696,requirement
+1186079,541,// TODO: use sft.load() api here,22ae92f3863823ebb097600561fca7bee24c8781,requirement
+1063139,478,//needs https://community.box.com/t5/custom/page/page-id/BoxViewTicketDetail?ticket_id=1895413 to be solved,a59ce8267c11853fc270d7693545aa89ac067be3,dependency
 633638,211,"// inline function cannot be recursive
-// note: mutual recursion is not supported either, but it is not tested due to the forward declaration limitation above",skip-test
-876542,337,// TODO(b/73762053): Avoid generating unreachable statements.,requirement
-982711,435,// todo (6.0) : should we define the rule with the integer as optional and then give a better exception?,how-to
+// note: mutual recursion is not supported either, but it is not tested due to the forward declaration limitation above",53b3ba67a3e0fdd4ca3cbaf740d4b649f79424ca,skip-test
+876542,337,// TODO(b/73762053): Avoid generating unreachable statements.,bd58d2abf2501eec8f23cb94202154d95254c5c4,requirement
+982711,435,// todo (6.0) : should we define the rule with the integer as optional and then give a better exception?,26dd239475f568ea2f68353d401ad20c31b43bbd,how-to
 1493824,822,"//TODO this test is testing RFC9112 behaviour, an rfc2616 compatibility mode is not offered due to security concerns. Split this out to new RFC9112Test class.
-// HTTP/1.1 - Incomplete (empty) Host header",requirement
+// HTTP/1.1 - Incomplete (empty) Host header",faf52c91875b056b45c12cc11a76c926c4f27477,requirement
 991460,441,"// Design limitation - typeless u extension keyword 00 below is interpreted as a boolean value true/yes.
 // With the legacy keyword syntax, ""yes"" is used for such boolean value instead of ""true"".
 // However, once the legacy keyword is translated back to BCP 47 u extension, key ""00"" is unknown,
 // so ""yes"" is preserved - not mapped to ""true"". We could change the code to automatically transform
-// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes"".",how-to
-876990,337,// TODO(johnlenz): fix this.,defect
+// ""yes"" to ""true"", but it will break roundtrip conversion if BCP 47 u extension has ""00-yes"".",d22f28ff9daf1a169c9ed3d9796ad035c94d67c5,how-to
+876990,337,// TODO(johnlenz): fix this.,684756024e4fd52c74c1fd76da2dba5e0b382ab3,defect
 1231768,618,"//    @Test
 //    public void execute_defaultSchema() throws Exception {
 //        new DatabaseTestTemplate().testOnAvailableDatabases(
@@ -163,21 +163,21 @@ id,repository,text,label
 //                    }
 //
 //                });
-//    }",multi
-997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",multi
-203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,refactor
+//    }",3fd7b1e942e250572e7a43ad2a4f5492fd48dc01,multi
+997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",f1577e042eafab1081f241fcb736129bca6592d4,multi
+203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,d3b33fef2f8d09456a8486124d5086fa77105cf9,refactor
 216327,60,"/**
  * Should be removed along {@link SupportsCommitter}.
- */",refactor
+ */",f3d16d09ae5983bcc6574353b993dd71b7c1ae76,refactor
 327420,81,"/*
          * Controls the number of children packages, pkg0, pkg0.pkg, pkg0.pkg.pkg, .....
          * Note: having too long a depth (> 256 chars on Windows), will likely lead to
          * cause problems with automated build and test systems.
-         */",how-to
-795183,284,// Disabled due to in progress Bug 61071,multi
+         */",ba023c4f65ba4e80c08644f1307c092d9bc937dd,how-to
+795183,284,// Disabled due to in progress Bug 61071,9e4cdebf531dc8536fcdee2eeab1c6406c989336,multi
 1479085,805,"// TODO: check all the layers are here, the profiles, and so on
 
-// check that we have the crs extension",requirement
+// check that we have the crs extension",d29e12c3a6fa3eca9bcd935f1bf2a91f211c46ba,requirement
 794729,281,"// Testcase is disabled, as kernel32 ordinal values are not stable.
 // a library with a stable function <-> ordinal value is needed.
 //
@@ -208,39 +208,39 @@ id,repository,text,label
 //        long ordinalFunctionPointerValue = Pointer.nativeValue(ordinalFunction);
 //
 //        assertEquals(namedFunctionPointerValue, ordinalFunctionPointerValue);
-//    }",skip-test
-21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dependency
-1094239,479,// TODO Auto-generated catch block,requirement
+//    }",439506413dd464e884581e973b90c2450b543e24,skip-test
+21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dab5f51472984392d7758aa196ca6407592df619,dependency
+1094239,479,// TODO Auto-generated catch block,fef8aeaa6ec53ffaf9f0c96bd2c3eee8f42c6f60,requirement
 871388,337,"// `a[b]` could trigger a getter or setter, and have side effects. However, we always assume it
 // does not (even though it's unsound) because the code size cost of assuming all GETELEM nodes
-// have side effects is unacceptable.",impractical-case
-1506022,822,// TODO move to core,requirement
-602172,189,// FIXME,defect
-1122522,488,// TODO: cache this test case generator,requirement
-352694,81,// cannot test...,how-to
-1100761,482,// TODO: add more clause,requirement
-230221,64,// TODO: b/359688989 - clean this up,refactor
+// have side effects is unacceptable.",e63ffef7ee58f015514a790adcb0b846b47351e4,impractical-case
+1506022,822,// TODO move to core,a5171a9de131558e4c7c8f844664f3e3a74eb158,requirement
+602172,189,// FIXME,1e6b6fc3d650ec38cadf143891ff89648d4d33c5,defect
+1122522,488,// TODO: cache this test case generator,48084536d7059e6438301ccffe4d6765ef5a26e1,requirement
+352694,81,// cannot test...,72513d531ba5696f82e7c6b8082bb3cc64e0a958,how-to
+1100761,482,// TODO: add more clause,677172785a124aed41a8d5a77713af2432a3cfc4,requirement
+230221,64,// TODO: b/359688989 - clean this up,0f973679224271b2abcd21dce88e300f04586c2a,refactor
 143962,40,"// Old brokers may require CLUSTER permission to use the OffsetForLeaderEpoch API,
-// so we should skip offset validation and not send the request.",skip-test
-968911,435,//TODO: make this work:,defect
-610921,198,// TODO: I'm not sure what record.cells is supposed to return. Returning single valued lists seems weird,how-to
-639477,211,// TODO throw new UnsupportedOperationException();,code
+// so we should skip offset validation and not send the request.",f72686ef3a4320451168c57e1b5acca14a8ef8ef,skip-test
+968911,435,//TODO: make this work:,1144c6ebe7fc5d50e8246760ed100e0ae09ce4fc,defect
+610921,198,// TODO: I'm not sure what record.cells is supposed to return. Returning single valued lists seems weird,6df4d08255ed01bbc036cea8eaf0d550261ceec6,how-to
+639477,211,// TODO throw new UnsupportedOperationException();,ef974e7aa71d86968cd942af7434aba39a017f7d,code
 674838,213,"/**
  * Keeps an accessible copy of messages that were queued for us to query.
  *
  * WARNING: queued messages get added to this, but processed/removed messages to NOT
  * automatically get removed. This can lead to confusing bugs. Maybe one day someone will
  * fix this, but in the meantime, this is your warning.
- */",defect
+ */",b9fae7540a4e3033167dd7373f43e2ba8b50ab76,defect
 1360339,703,"// Second time will update some tables. This is only for testing purpose and
-// obviously we wouldn't set things up this way.",temporary-fix
+// obviously we wouldn't set things up this way.",1828b39021de5c5fd826e89109da18cc8ddd5e3e,temporary-fix
 947030,422,"// choose failing node
 
 // Due to these constraints this test cannot be executed 2 times out of NODE_COUNT times.
 // They are necessary for the test to be more deterministic but jobId is random.
-// The test is repeated a few times so the chance that it actually runs are increased.",superficial-test
+// The test is repeated a few times so the chance that it actually runs are increased.",eb2652ebfd698a6553e12df5146d9d2fe4d93aea,superficial-test
 405007,121,"// ExecutionController.ExecutionResponse cannot be deserialized because it didn't have any default constructor.
-// adding it would mean updating the Execution itself, which is too annoying, so for the test we just deserialize to a Map.",temporary-fix
+// adding it would mean updating the Execution itself, which is too annoying, so for the test we just deserialize to a Map.",12731d0f51030ced8aacf18ada22f39ac5d0226d,temporary-fix
 242450,65,"/* TODO unclear what exactly this is purporting to assert
     @Test
     public void testSave() throws IOException {
@@ -263,25 +263,25 @@ id,repository,text,label
         property = User.get(""User"").getProperty(property.getClass());
         assertEquals(""Property should have primary view "" + view.name + "" instead of "" + property.getPrimaryViewName(), view.name, property.getPrimaryViewName());
     }
-    */",how-to
+    */",9d844a78270b7e3b68af3498b4fa651e90ee3e8a,how-to
 750498,250,"// TODO: verify ribbon stats match
-// assertEquals(target.lb().getLoadBalancerStats().getSingleServerStat())",requirement
+// assertEquals(target.lb().getLoadBalancerStats().getSingleServerStat())",6cc2d849379be8773042401b0bbb73e750fc2255,requirement
 1452895,763,"// TODO: this test requires rebalance logic which is not yet implemented in the CONSUMER group protocol.
-//       Once it is implemented, this should use both group protocols.",multi
-204401,60,// TODO: tweak the tests when FLINK-13604 is fixed.,multi
-187456,60,// Not committed because incomplete,requirement
-96468,15,// no JavaDoc,documentation
-861450,323,"// Yes, a static variable is a hack.",temporary-fix
-868979,337,// TODO(sdh): Print a better name (https://github.com/google/closure-compiler/issues/2982),code
+//       Once it is implemented, this should use both group protocols.",ee47e597408a935b4ba48d79a840b34f4ece0d73,multi
+204401,60,// TODO: tweak the tests when FLINK-13604 is fixed.,ba047b7bf71fbe0d8b696ef62f7db95fc28aefc2,multi
+187456,60,// Not committed because incomplete,8d531b4126b79db4cc4347c0d470ccc0245b8512,requirement
+96468,15,// no JavaDoc,5e693d170e211daf3d64c9260c78d50a2e8df1ad,documentation
+861450,323,"// Yes, a static variable is a hack.",d21d9e33938348c50dee16ffb4f611a82923cd49,temporary-fix
+868979,337,// TODO(sdh): Print a better name (https://github.com/google/closure-compiler/issues/2982),b06c4c7f5f36a14177731527ceefed68f2fb09dc,code
 544418,145,"//OpValidationSuite.ignoreFailing();  //TODO TEMPORARY DUE TO CRASHES
-//Test reductions: final and only function",temporary-fix
-707839,224,// TODO(emcmanus): remove the no-op `& 0xfff_ffff`,requirement
+//Test reductions: final and only function",9a876b58be7db95a536738d270b22e09e93324b6,temporary-fix
+707839,224,// TODO(emcmanus): remove the no-op `& 0xfff_ffff`,63b586d9d4a74958affe8182f4716696823af680,requirement
 725433,230,"// Added in 2.0 temporarily, validate the MASTER_ROLE is in the list of known roles.
 // MASTER_ROLE was removed from BUILT_IN_ROLES and is imported by setDeprecatedMasterRole(),
 // as a workaround for making the new CLUSTER_MANAGER_ROLE has got the same abbreviation 'm'.
-// The test validate this behavior.",temporary-fix
-398677,119,// Alpha does not support DML yet,requirement
-912794,374,// todo add some test case to test NaN,requirement
+// The test validate this behavior.",e07176474f1a4cd03481d149b8f79afc2d82a99f,temporary-fix
+398677,119,// Alpha does not support DML yet,cf334a26e69e02dc55dae634ec3e31c4a52ebdf8,requirement
+912794,374,// todo add some test case to test NaN,116304168bde14de45dffea1f9d5f4585ddb2930,requirement
 368608,85,"/**
  * TODO On low-performance devices in Github Actions, `TRUNCATE TABLE` related SQLs may throw a `java.sql.SQLException: Table or view 't_address' does not exist.` error under nativeTest.
  *  So that we need to wait for a period of time after executing `CREATE TABLE` related SQLs before executing `TRUNCATE TABLE` related SQLs.
@@ -289,12 +289,12 @@ id,repository,text,label
  *
  * @see org.apache.shardingsphere.mode.repository.cluster.etcd.EtcdRepository
  * @throws SQLException SQL exception
- */",code
-950668,422,"// Currently, Windows can not launch some providers",dependency
-206621,60,// TODO align the behavior when receiving single -D within a window after fixing FLINK-33760,multi
+ */",a1c48a086b626da00276038ce1d2e32f6c9672c1,code
+950668,422,"// Currently, Windows can not launch some providers",d12c7ade5cd4a3cd903f07fdb2f61a97c4c81768,dependency
+206621,60,// TODO align the behavior when receiving single -D within a window after fixing FLINK-33760,2a54176e1a70f8659119c4e69a9798ef335e5525,multi
 26142,8,"// Uncomment next line after https://github.com/elastic/elasticsearch/issues/96705 is fixed
-// expectedILMSummary.put(""downsample"", 0);",multi
-214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,multi
+// expectedILMSummary.put(""downsample"", 0);",968d8f7e1fbd5422ad66d5a74aa2bfaeb5448d67,multi
+214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,21cbfd1c664d94fee05c8ba7f22c48ee7bac5c8a,multi
 697756,213,"/**
  * A rule to change strict mode vm policy temporarily till test method finished.
  *
@@ -306,18 +306,18 @@ id,repository,text,label
  * Also <code>DumpstateListener<code/> violate the policy when onScreenshotTaken is called.
  *
  * TODO(b/161201609) Remove this class once violations fixed.
- */",multi
+ */",0acc08edd9eda81ccb108eb83eca123058d71cc7,multi
 430481,128,"/**
  * Try and recreate the test bucket.
  * Third party stores may allow this, so skip test on them.
- */",skip-test
-731180,230,// should we also assert the lucene bugfix version?,how-to
+ */",cf7ee4c127b56c23a81826534089174b66ae5852,skip-test
+731180,230,// should we also assert the lucene bugfix version?,281a65f287febb9351bb51b60f75dd222e9c33d5,how-to
 339027,81,"// This is a bit shaky. It doesn't handle continuation
 // lines, but our client shouldn't send any.
 // Read a line from the input stream, swallowing the final
 // \r\n sequence. Stops at the first \n, doesn't complain
 // if it wasn't preceded by '\r'.
-//",temporary-fix
+//",b8d94a8eea24adeb3908d6f27360e871407e19c2,temporary-fix
 538272,144,"/**
  * Looks at contents of a text file and sees whether or not it has windows-style newlines, or unix style.
  * Used in tests to make annotation processors generate files matching signature files to verify contents with.
@@ -327,66 +327,66 @@ id,repository,text,label
  * @param fullyQualifiedName the resource name to look at.
  * @return either {@link AnnotationConstants#DEFAULT_NEW_LINE} or {@link AnnotationConstants#WINDOWS_NEW_LINE}.
  * @throws IOException on I/O error.
- */",how-to
-641416,211,// TODO remove,refactor
+ */",1d63d64d4ab6d292d4edc8f96389c53f78c579f8,how-to
+641416,211,// TODO remove,ff789c9def9bdcd532882daa6fac82bbe949b16a,refactor
 1529183,874,"// btw, we should also check the ""skip xxx"" log,
-// but the /path/to/job_tmp/job_id/01/meta/execute_output.json.xxx.log not exists in ut env.",requirement
+// but the /path/to/job_tmp/job_id/01/meta/execute_output.json.xxx.log not exists in ut env.",04849d33c3125713aa3c2390dd15f686100174dc,requirement
 843218,308,"/**
  * Unit Tests for {@link TriggerExample}. The results generated by triggers are by definition
  * non-deterministic and hence hard to test. The unit test does not test all aspects of the example.
- */",requirement
+ */",61ac4dbb79bc417e1e4f4c95dc326c8a4b8d750c,requirement
 93828,12,"/**
  * The tests are touchy about anything being printed on stderr, because that's usually where
  * Python stack traces go that otherwise are ignored. Unfortunately, GDB also emits some
  * warnings there, and these are more common in containers where permissions and resources are
  * more restricted. Thus, we add some commands here to disable the features that commonly cause
  * these warnings: Leave ASLR alone, and don't try to display source code.
- */",temporary-fix
-16740,8,// TODO: add support for non-existing docs,superficial-test
+ */",d40e26668f3167cdd13e6884d6f8040897c06e51,temporary-fix
+16740,8,// TODO: add support for non-existing docs,7563960189e3946d9bf78d196c51fbaa1f92ea7e,superficial-test
 1373200,738,"// public void testSetImageUrl_setsMaxSize() {
 // // TODO: Not sure how to make getWidth() return something from an
 // // instrumentation test. Write this test once it's figured out.
-// }",how-to
+// }",ab48da3a16d93824cb017711c0d057cf4ccf644b,how-to
 671397,213,"// Modify the magic / type marker. In the current implementation, getting the FRP data block
-// size does not check digest.",requirement
-1037354,445,// Not yet corrected,defect
-880414,337,// TODO(b/123102446): We really like to collapse some of these chained assignments.,requirement
-1512588,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,how-to
-795690,284,//TODO make this a parameter?,how-to
-490732,135,"// TODO: for non-persistent topics, deleteSubscription won't fail",requirement
+// size does not check digest.",430905760580db6fb0568616d7ab7f57c8803a7e,requirement
+1037354,445,// Not yet corrected,eac7c2b950f5cf817bac36603880896473c98f02,defect
+880414,337,// TODO(b/123102446): We really like to collapse some of these chained assignments.,5d5372b6cba0aa03e7d3a36fc84c1809f19bd5e5,requirement
+1512588,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,25f399a80a38c70853f9ee13c3297af9ca4c5126,how-to
+795690,284,//TODO make this a parameter?,de8935543405bb11d8ad180101b4e1e0727ff6c1,how-to
+490732,135,"// TODO: for non-persistent topics, deleteSubscription won't fail",8cb2f76375a3343b533563f3fefa75ada25e1189,requirement
 837047,308,"/**
  * TODO: Remove tests(getFailureCollector, getLogicalStartTime) if these methods weren't override
  * and were implemented own methods of BatchSourceContextImpl class.
- */",multi
-625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,multi
-1473843,805,// This is an utter hack but is the only way I could,temporary-fix
-623548,211,"// TODO this should fail, or represent TIME '01:39:07'",defect
+ */",ebb43218f70af27ae675697a65b38bacc320bd47,multi
+625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,1b1618dbf25641fb9a17a0f95b1f7d69c6566556,multi
+1473843,805,// This is an utter hack but is the only way I could,635f6d4ccff2d0ce1526b796bc59ba7103e9e200,temporary-fix
+623548,211,"// TODO this should fail, or represent TIME '01:39:07'",327d69578c19b2f16e38d8a9014aa9cc50a6d52e,defect
 1095050,482,"/**
  * Permission Test: Username currently only serves for connection, no permissions defined.
- */",multi
-638752,211,// TODO (https://github.com/trinodb/trino/issues/18916) should be checked once per query,code
-610841,198,// TODO: should likely not be there?,how-to
-1479015,805,// TODO: handle exception,code
-38040,8,// TODO: implement tests,requirement
+ */",4d50285a112ad810a865d1590d0cea9cfdd512bc,multi
+638752,211,// TODO (https://github.com/trinodb/trino/issues/18916) should be checked once per query,b010ae75b80031aaf1798b6adbe56eb726efbf0d,code
+610841,198,// TODO: should likely not be there?,3a2e5fa4a66e2cdfe7b00386d907a5e04d0a63fb,how-to
+1479015,805,// TODO: handle exception,6df3ab5c3506a2ddda10f09d919064f372bc6b7c,code
+38040,8,// TODO: implement tests,6b1c139b4471be944aecbdf9d20a36b01b18625b,requirement
 357465,81,"/**
  * A space as a group separator for localized pattern causes
  * wrong format.  WorkAround : use non-breaking space.
- */",temporary-fix
-641304,211,//TODO: Fix https://github.com/trinodb/trino/issues/23941,defect
-15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,multi
+ */",413ce4671b95ed8a3ba29e5cdce367bfb617c205,temporary-fix
+641304,211,//TODO: Fix https://github.com/trinodb/trino/issues/23941,86fa514aac684ccac2946116deb2b53156a2327f,defect
+15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,2f641082ccdc7d135a7cea17ab17c3a713dffe54,multi
 1026898,445,"/**
  * Sort of a dummy test, as the conditions are perfect. In a more realistic scenario, below, the algorithm needs luck to climb this high.
- */",superficial-test
+ */",e18286a9de4b49ec1f6aadae6693d193233b99e7,superficial-test
 1134218,491,"// TODO: Should be checked on server side. On Embedded metastore it throws MetaException,
-// on Remote metastore it throws TProtocolException",dependency
+// on Remote metastore it throws TProtocolException",e928a70ceb4f629ad8a3cb0fde62bae72b1d031b,dependency
 503764,140,"// Disabled as it's currently failing - needs investigation
-//                .body(""paths.'/collections/{id}'.get.security[0].SecurityScheme"", Matchers.hasItem(""user""))",multi
-876571,337,// TODO(b/142881197): we can't give a more accurate type right now.,temporary-fix
-947405,422,//TODO: fast results still can get lost,skip-test
+//                .body(""paths.'/collections/{id}'.get.security[0].SecurityScheme"", Matchers.hasItem(""user""))",982517233e5c5cc138ed0c6dea5b381a96027796,multi
+876571,337,// TODO(b/142881197): we can't give a more accurate type right now.,5ec609736d2af33870df300108823c76ff2c3a65,temporary-fix
+947405,422,//TODO: fast results still can get lost,85107bcf0ddef5a1206c30e47b477581d171df45,skip-test
 459448,128,"/**
  * A very basic ExecutorService for running submitted Callables serially.
  * Many bits of functionality are not implemented.
- */",requirement
+ */",7f0bc8ae3ca78001759d82260f89c6a046d3548c,requirement
 377440,99,"//IDEA-309792: Check the guess it is something with concurrent release of many buffers
 //             (issue seems to be specific for linux)
 //
@@ -394,54 +394,54 @@ id,repository,text,label
 //             of various sizes, but there is always a gap between allocated and released buffers
 //             so that each thread 'owns' keepBuffersOwnedPerThread buffers at every moment (except
 //             init and shutdown). It should put enough pressure on concurrent allocation/release
-//             paths for bugs to rise and shine.",how-to
+//             paths for bugs to rise and shine.",5286ed8a54379928525e7d3c717860be2b360a3d,how-to
 1118417,488,"/**
  * Test for advanced push types.
  * Currently only tests METADATA push type.
  * todo: add test for URI push
- */",superficial-test
+ */",46c08447b3bf9f7acdec5041f73928e6d90e50a1,superficial-test
 1039235,449,"/* Currently we don't support multiple indexable constraints in the ANC, so this test will pass because
         it disables the switch generation and the inlining. See DROOLS-5947
-     */",requirement
-1354969,679,// TODO: figure out why I need these,how-to
-877599,337,// TODO(johnlenz): support this. Unused return can be removed.,temporary-fix
+     */",6ae6560c6df57ea10403e2c26fae371a14492639,requirement
+1354969,679,// TODO: figure out why I need these,c3d6ebb63b09591f2b29e310413066c6e7a7ad2c,how-to
+877599,337,// TODO(johnlenz): support this. Unused return can be removed.,1418dde868e495dd28491560afcb17ca04a6b013,temporary-fix
 542274,145,"// The test .equals fails on a comparison of row  vs column vector.
 //TODO: possibly figure out what's going on here at some point?
-// - Adam",multi
-639651,211,// TODO: Difficult to determine whether the exception is concurrent issue or not from the error message,how-to
+// - Adam",bc6964441f03693a55ff62959fb77c6991542ba2,multi
+639651,211,// TODO: Difficult to determine whether the exception is concurrent issue or not from the error message,72adc9734c8abffa7fbef6b69795de343a76a293,how-to
 720631,230,"// Just testing DerivedField definition from SearchSourceBuilder derivedField()
-// We are not testing the full functionality here",requirement
+// We are not testing the full functionality here",04868d1ee8b37ee8cb5f5593dda87f9b808c46fd,requirement
 146929,40,"// note, we get a buffer underflow exception instead of an OOME, even though the encoded size
-// would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap",defect
-843337,308,// TODO: remove after SAMZA-2761 fix,multi
-322344,81,// I have put this as it was complaining about systemid,temporary-fix
+// would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap",1ff345e51f59f7c2eb2d20971769d91b025f4296,defect
+843337,308,// TODO: remove after SAMZA-2761 fix,2b779d4b8b2ec2b054c80f2145d8dac81dae037e,multi
+322344,81,// I have put this as it was complaining about systemid,2126102a2472df105a286dec816c46f1a8decc6c,temporary-fix
 137981,40,"// We want to randomize the order of data to test not completely predictable processing order
 // However, values are also use as a timestamp of the record. (TODO: separate data and timestamp)
-// We keep some correlation of time and order. Thus, the shuffling is done with a sliding window",requirement
-380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,multi
-29973,8,// TODO multivalue fields,requirement
-1235632,620,"// The command DROP COLUMN does not remove actual data from the cluster, it's a known and documented limitation.",defect
-1011747,441,// Continuous build environment doesn't support non-blocking IO.,build
-1155491,501,// TODO https://github.com/langchain4j/langchain4j/issues/2219,requirement
+// We keep some correlation of time and order. Thus, the shuffling is done with a sliding window",1db86650f80b986fb6043c07a27f1a3e9b3aaf67,requirement
+380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,multi
+29973,8,// TODO multivalue fields,1c811e3630d5a8ae98fe8b5fb10ef0800ac7be41,requirement
+1235632,620,"// The command DROP COLUMN does not remove actual data from the cluster, it's a known and documented limitation.",c727e94d1fdec600b6c78dc2731d331d2f7921f8,defect
+1011747,441,// Continuous build environment doesn't support non-blocking IO.,841fb3664aebb4190789b415f0835a3a5451145f,build
+1155491,501,// TODO https://github.com/langchain4j/langchain4j/issues/2219,37d7958cb26229b3d2328eca2d8eff51ed2c3c31,requirement
 241437,65,"/* This test is based upon an incomplete / incorrect project implementation
            throwing an uncaught exception.
-           If Jenkins is improved to better handle this error, this test may erroneously fail. */",code
-625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",multi
+           If Jenkins is improved to better handle this error, this test may erroneously fail. */",97c79c9e99587710edf47e878b82ba8b965e7b8d,code
+625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",d381fa0c30301f1a574b4f8799551f750ccfb4b3,multi
 380608,104,"/**
  * Unsupported, but we should test that parsing works
- */",requirement
-625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,multi
-1217684,577,// todo: investigate last packet loss,defect
-1608102,946,// nested doesn't work yet in Geode. Need custom PDX serializer,requirement
+ */",21c80b072804036049f52e1986677ec9dfec4af6,requirement
+625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,6a6b8ba4157248d9312f01e6acf4467d24083bcb,multi
+1217684,577,// todo: investigate last packet loss,f6d03af9a491babedc21c2ade1b1b555602d8e62,defect
+1608102,946,// nested doesn't work yet in Geode. Need custom PDX serializer,ecfcd0d272d11f191e68e4e2666692aec4f39356,requirement
 936582,422,"// Mocks returning mocks is not generally recommended, but the setup of empty SearchResponse is even uglier
-// See org.elasticsearch.action.search.SearchResponse#empty",temporary-fix
-1364912,708,// TODO assert exception message,requirement
+// See org.elasticsearch.action.search.SearchResponse#empty",f91874e7c4bc2630b654f4dded17cc07b7c42a9c,temporary-fix
+1364912,708,// TODO assert exception message,072dcfe7dfb42bc4a2af97b09ba67ef5fe5a619e,requirement
 757427,255,"// Query with cube and arithmetic expr
-// TODO(kks): enable this later if we support cube",temporary-fix
-328146,81,//TODO: correct?,requirement
+// TODO(kks): enable this later if we support cube",993689dfe52aa9caef11401acab216bad74573ab,temporary-fix
+328146,81,//TODO: correct?,4d7311d04df8b9b347b6953de9a2073101b5d2b7,requirement
 854908,315,"// TODO assertTrue(!set.isEmpty());
-// TODO assertTrue(set.isFull());",requirement
-993158,441,"// TODO: Tests when ""while((c=iter.nextCaseMapCP())>=0)"" is false",requirement
+// TODO assertTrue(set.isFull());",34ef302b01ee5fa2d95f7acf1ec7c9b073b84eea,requirement
+993158,441,"// TODO: Tests when ""while((c=iter.nextCaseMapCP())>=0)"" is false",fe6735d5baf6bf1c38e1aac9f6b36197ee0abf69,requirement
 1627992,979,"/* There are a few issues with the test on some platforms as follows:
 		 * 1) VaList on Linux/x86_64 in OpenJDK is unable to handle the va_list with
 		 *    over 8 arguments (confirmed by OpenJDK/Hotspot).
@@ -449,114 +449,114 @@ id,repository,text,label
 		 *    in supporting the struct with only one integral element (confirmed by OpenJDK/Hotspot).
 		 * Thus, the test is disabled on both these platforms for now till these issues
 		 * are fixed in OpenJDK and verified on OpenJDK/Hotspot in the future.
-		 */",skip-test
-82244,12,// not implemented yet,requirement
-833852,308,// I don't think doing this will be safe in parallel,how-to
-392586,119,// TODO: remove this after PR #7987 is landed,temporary-fix
+		 */",fa3f82770e2f672907a45cd44599ea3c4cb047d0,skip-test
+82244,12,// not implemented yet,9803a92225f1d9dea9d0b53fbc23902f3d272c05,requirement
+833852,308,// I don't think doing this will be safe in parallel,ea1279e9ab3b32e06219ae1e6429f10418d4e048,how-to
+392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,temporary-fix
 902858,371,"// TODO(cpovirk): This doesn't look ""positive"" to me.
-// TODO(cpovirk): Also, I *think* the lack of braces on the while() loop is intentional?",how-to
-230424,64,// TODO: b/386384684 - remove Unsafe usage,refactor
+// TODO(cpovirk): Also, I *think* the lack of braces on the while() loop is intentional?",4bbc7736a3df2a9d35e09ab781233128cc2e7139,how-to
+230424,64,// TODO: b/386384684 - remove Unsafe usage,45fb0c89249788312506453a0cd3e60d4f540dff,refactor
 1018802,441,"/* J2ObjC removed: not supported by Junit 4.11 (https://github.com/google/j2objc/issues/1318).
     @DisableResourceLeakageDetection(
             why = ""DeflaterOutputStream.close() does not work properly if finish() throws an""
                     + "" exception; DeflaterOutputStream.finish() throws an exception if the""
                     + "" underlying OutputStream has been closed and the Deflater still has data to""
                     + "" write."",
-            bug = ""31797037"") */",multi
+            bug = ""31797037"") */",dcd610884720c8064bece20600252f696b3371eb,multi
 1100734,482,"/**
  * [ BUG ] We didn't save the old password in the statement. If userA has logged in with
  * session_A. Session_B's alter password operation cannot block session A's alter password
  * operation because we only check the user's password before they log in.
- */",defect
+ */",a1575105f54cdde53cefd59cc25c6501b4fb7a58,defect
 31014,8,"// TODO: Unmute this part
 // https://github.com/elastic/elasticsearch/issues/110827
 // for (int i = 1; i < plans.size(); i++) {
 // assertThat(plans.get(i), equalTo(plans.get(0)));
-// }",skip-test
-17140,8,// main query needs rewriting,refactor
-333625,81,// TODO test that remove(obj) with duplicates removes the right element,requirement
-8949,8,"// TODO: fake errors, check password from terminal, allow tests to make elasticsearch.yml change",requirement
+// }",23133074d5e4ea14303dc8779cdbfea3f02cc927,skip-test
+17140,8,// main query needs rewriting,271200ffc18f60ffa3166b336d7eda827ed23403,refactor
+333625,81,// TODO test that remove(obj) with duplicates removes the right element,b211fa98b67bb4f57200a3bd0205d15ec46a9c48,requirement
+8949,8,"// TODO: fake errors, check password from terminal, allow tests to make elasticsearch.yml change",5f3d7db4eb69d6974acadbec149b1d5c7afae173,requirement
 196421,60,"/**
  * This test only fails eventually.
- */",defect
-586933,167,"//     assertBad(""Ich geht jetzt nach Hause und dort gehe ich sofort unter die Dusche.""); TODO",requirement
+ */",f10a28f572d8645d79c05430eccf934129fbc7af,defect
+586933,167,"//     assertBad(""Ich geht jetzt nach Hause und dort gehe ich sofort unter die Dusche.""); TODO",d130dcdce066d25c3a9a2d23a5e84ae71f819a1d,requirement
 802838,285,"// This is done to ensure that every success type is covered by a test.
-// TODO(cjhopman): add test for failed case.",requirement
+// TODO(cjhopman): add test for failed case.",007c413b5f34e1a31f1eb77191e3e510a74d8494,requirement
 246131,66,"// This is a quirk of the implementation - since same-slot renames use the non-cluster version,
-// the result is a Redis error. This behavior matches other spring-data-redis implementations",temporary-fix
+// the result is a Redis error. This behavior matches other spring-data-redis implementations",419cb0fe9e64f4a7ad25c6db87f97c6af15e4897,temporary-fix
 113406,22,"/**
  * The container_name property of Docker Compose is not currently supported by Testcontainers.
  * The issue can be tracked at https://github.com/testcontainers/testcontainers-java/issues/2472
- */",dependency
-407388,127,// both exceptions are reported to JUnit:,dependency
-746072,238,"// Due to a mockito issue, only spy the object after setting the initial state",dependency
-633951,211,// TODO (https://github.com/trinodb/trino/issues/2392) this should be INNER also when dynamic filtering is off,defect
-638230,211,// TODO: Find the maximum column name length in ClickHouse and enable this test.,skip-test
+ */",991661d6c0e53f12a1be2d75dbb493fbec9306a5,dependency
+407388,127,// both exceptions are reported to JUnit:,d56c821996e97d383aa841f3e7f21c5b8e799510,dependency
+746072,238,"// Due to a mockito issue, only spy the object after setting the initial state",f2e1fdd41d551c5b256fdfac9170e0d8ead2c0f0,dependency
+633951,211,// TODO (https://github.com/trinodb/trino/issues/2392) this should be INNER also when dynamic filtering is off,ddf959ffaa9b85d4105c76db0a2ca4a4c4e4591c,defect
+638230,211,// TODO: Find the maximum column name length in ClickHouse and enable this test.,7922f4df93d3ec0536c686336401916637eeef20,skip-test
 1010409,441,"/**
  * An implementation of {@code OutputStream} that should serve as the
  * underlying stream for classes to be tested.
  * In particular this implementation allows to have IOExecptions thrown on demand.
  * For simplicity of use and understanding all fields are public.
- */",design
-241976,65,"// TODO we can always include the signature, a signature that isn't configured client-side behaves as if unsigned.",requirement
-749692,241,// TODO: is this right (Sunday is a weird day...),how-to
-975274,435,// TODO - seems this explicit case is necessary with JDK 5 (at least on Mac). With Java 6 there is no problem,requirement
-879066,337,// TODO(rishipal): Fix this test. The U should not be reachable to D as D is obscured by redef.,requirement
-873622,337,"// TODO(b/148169932): There should be another mismatch {found: string, required: number}.",superficial-test
+ */",cc2eaa16f89c3e9e9e06ffcc8eb91f4b177c23db,design
+241976,65,"// TODO we can always include the signature, a signature that isn't configured client-side behaves as if unsigned.",fb16e4b13f82d6f7eec6f4eb46aed12297fa4793,requirement
+749692,241,// TODO: is this right (Sunday is a weird day...),e025f0188dd62e791445db5bf1906b835f6842de,how-to
+975274,435,// TODO - seems this explicit case is necessary with JDK 5 (at least on Mac). With Java 6 there is no problem,6556b42d73f0b567c474fa66d7ec6b8044cca06b,requirement
+879066,337,// TODO(rishipal): Fix this test. The U should not be reachable to D as D is obscured by redef.,8283b897de4513a0b788ad6138c42b9e2ba30790,requirement
+873622,337,"// TODO(b/148169932): There should be another mismatch {found: string, required: number}.",c0084bdb51c62c027a455636f1b6255f591ca42a,superficial-test
 496095,135,"// TODO in theory there shouldn't be any ledgers left if we are using readers.
 //  However, trimming of ledgers are piggy packed onto ledger operations.
 //  So if there isn't new data coming in, trimming never occurs.
-//  We need to trigger trimming on a schedule to actually delete all remaining ledgers",impractical-case
-874375,337,// TODO(b/133450410): This should be a visibility violation.,defect
+//  We need to trigger trimming on a schedule to actually delete all remaining ledgers",a862dab8a8164beb6827b9864d13da478d9a7f07,impractical-case
+874375,337,// TODO(b/133450410): This should be a visibility violation.,674e5c6598467ebcb935f3f12d0f540fbb24e2c1,defect
 1409710,762,"/**
  * <p>Tests cluster scenario with two nodes trying to write the installation id property in parallel.</p>
  *
  * <p><b>Note:</b> the test is not executed on H2 because it doesn't support the
  * exclusive lock on table.</p>
- */",skip-test
+ */",02531c04f74c51fe798a51fcc99386b86b601608,skip-test
 504352,140,"/**
  * Tests that the workaround for https://github.com/quarkusio/quarkus/issues/43703 /
  * https://github.com/quarkusio/quarkus/issues/42255
  * is effective.
- */",temporary-fix
+ */",9375a943bf45a4dfd9efd64d5c3e8083c5850641,temporary-fix
 441158,128,"// Copy MRAppJar and make it private. TODO: FIXME. This is a hack to
-// workaround the absent public discache.",temporary-fix
-807968,292,// for some reason Travis CI failed sometimes (unstable) on reading the file,defect
-530844,144,// todo work out why the actual args fails,defect
+// workaround the absent public discache.",8af8c60b7ec1bc96c59dbce7cc1a5e8ec3e50d73,temporary-fix
+807968,292,// for some reason Travis CI failed sometimes (unstable) on reading the file,5c22c892908919868a1a6b20c8a255bb829c233f,defect
+530844,144,// todo work out why the actual args fails,cf01a6ad36d0d01f57207d71c4828f4bbf032bdc,defect
 1400535,762,"// it has enough size to print 3 warnings, but it will only print 2,
-// because it needs to accommodate the suffix too in the max size.",temporary-fix
+// because it needs to accommodate the suffix too in the max size.",739bbb302cc7ecd055eb7dc393db31c5af953cf3,temporary-fix
 781921,269,"// this should return a failed response
 // disable waiting on procol errors as that logic was reverted until we can figure out its 100% safe
 // right now ProtocolException is thrown for fatal and non-fatal issues, so closing the channel
-// on non-fatal issues could cause other issues for the cluster",multi
-1342094,655,//TODO: try tu run it in debug flashplayer (?),how-to
-92846,12,//TODO: Create MDMangVS2015 Specialization,requirement
+// on non-fatal issues could cause other issues for the cluster",1284dadfc7f1684e097141693ebce84f3ddfb766,multi
+1342094,655,//TODO: try tu run it in debug flashplayer (?),f1fa3631eaef6746e88e42e5f100dce35e78b648,how-to
+92846,12,//TODO: Create MDMangVS2015 Specialization,20812eea0e1fd935be254068530958d0490a7b02,requirement
 169363,51,"/**
  * TODO Comment of PersonInfoModel
  *
  * @author tony.chenl
- */",documentation
+ */",ffe32832d1434e07228aae59219adba389a96fe6,documentation
 776547,269,"// TODO This fails with TCM as the constraints regarding concurrent overlapping range movements and
 //      replication factors have moved into the operations themselves. Previously, these were enforced
-//      at the StorageService level.",superficial-test
-1155685,501,"// ""blank-file.xlsx"" TODO",requirement
-757020,255,// TODO(fixme): prune empty nodes,requirement
-1064896,478,// Need to run the mvn clean install to create the test jar file when running it from IDE,build
-54528,11,// doesn't make much sense in the context of a list...,impractical-case
-879560,337,// TODO(bradfordcsmith): Stop normalizing the expected output or document why it is necessary.,multi
+//      at the StorageService level.",fa134eede5d5e0fa864810af6b40e882b6d75ee5,superficial-test
+1155685,501,"// ""blank-file.xlsx"" TODO",6d4a05c5c819cf541f1bda0e2946f15cf4b37466,requirement
+757020,255,// TODO(fixme): prune empty nodes,3a750b3aeea4fd172fb6ea586f594b7d2648f22f,requirement
+1064896,478,// Need to run the mvn clean install to create the test jar file when running it from IDE,6d3ba1d3f4b17173b41755f301a93a4c1bcc5db1,build
+54528,11,// doesn't make much sense in the context of a list...,0f810007d49ef97bab9fc60c37eaf5d64c45c7a4,impractical-case
+879560,337,// TODO(bradfordcsmith): Stop normalizing the expected output or document why it is necessary.,435cc19c1e48448536836d401e282865519543ef,multi
 1321885,638,"// NO list support in JDOQL
-//        testData.listTests(store.products, otherStore.products, p);",dependency
-1326330,642,// TODO location should not be in PATCH,defect
+//        testData.listTests(store.products, otherStore.products, p);",8ca250f194efc9f54e9f3831139643564fac71de,dependency
+1326330,642,// TODO location should not be in PATCH,15217864814d8e05799e5cef7bb64d3a1fb03593,defect
 1633657,979,"/* We want to run this test with and w/o modifying the system property but isHardwareEmulated() caches
 			 * the result. Since OperatingSystemMXBean is a singleton, once the result of isHardwareEmulated() is
 			 * cached, we won't get a different result. As a work-around, I use the local var to switch between the
 			 * types of test I want to run
-			 */",temporary-fix
+			 */",72f8b300a19286553a1ade1498e1c6c9f96549e3,temporary-fix
 1559686,918,"/* 17-Jan-2009, tatus: At this point, we may or may not get an
          *   exception, depending on how underlying parsers work.
          *   Ideally this should be fixed, probably by asking underlying
          *   parsers to disable checking for balanced start/end markers.
-         */",how-to
+         */",f1753f6d8fb7babb81157da3c4987099ab16bfe1,how-to
 1002901,441,"/* No finalization in iOS.
     public void testRandomAccessFileHasCleanupFinalizer() throws Exception {
         // TODO: this always succeeds on the host because our default open file limit is 32Ki.
@@ -568,50 +568,50 @@ id,repository,text,label
             FinalizationTester.induceFinalization();
         }
     }
-    */",subset-test
-542418,145,// TODO: Op definition looks wrong. Compare stack in Nd4j.,requirement
-623556,211,// TODO (https://github.com/trinodb/trino/issues/5315) SQLException,defect
-1468402,805,// ? why does this report 1 off ?,how-to
+    */",c0c9cf87af8943fa64a711069ab1067b61b5baca,subset-test
+542418,145,// TODO: Op definition looks wrong. Compare stack in Nd4j.,1725c7d0bc90f940a36f38c67c9e72e8a6b8f3cc,requirement
+623556,211,// TODO (https://github.com/trinodb/trino/issues/5315) SQLException,5a2a27b92d84718b111634d97add569127720a84,defect
+1468402,805,// ? why does this report 1 off ?,09bca1b785f43abc91d4e4a267b55419b8f646b5,how-to
 388928,114,"// Note that here we're tying ourselves to the implementation details of the
 // internal structure of the NavigationView. Specifically, we're checking the
 // start drawable of the text view with the specific text. If the internal
 // implementation of NavigationView changes, the second Matcher in the lookups
-// below will need to be tweaked.",multi
+// below will need to be tweaked.",11e6a6c0ad832f64e9562d9f0537a2aad09491f4,multi
 98262,15,"// FIXME last cause value is not saved
-//        assertTrue(ts.errors().get(0).getCause().getMessage().contains(""abc""));",defect
-84508,12,// choose My Bar // TODO: I see no reason for a conflict !,how-to
-757316,255,// TODO: fixme,defect
+//        assertTrue(ts.errors().get(0).getCause().getMessage().contains(""abc""));",374e6c2b4c66f022ea9bbda84b96f86a3b785e5e,defect
+84508,12,// choose My Bar // TODO: I see no reason for a conflict !,d952d15298d5dfd4fc9b74ada83b05681a7acc20,how-to
+757316,255,// TODO: fixme,bc46531b9413c3924f2c31995b71cad736ef2460,defect
 977171,435,"/**
  * No documentation
- */",documentation
-841378,308,"// TODO: Java core test failing on windows, https://github.com/apache/beam/issues/20481",defect
+ */",85e7e55a33e504586a90c8de0fdd1aa188e7ff31,documentation
+841378,308,"// TODO: Java core test failing on windows, https://github.com/apache/beam/issues/20481",4ee5c288449317a466c8d8e55864b87d26b17087,defect
 1493791,822,"// (point 4) A 206 response MUST contain Expires, Cache-Control, and/or Vary,
 // if the field-value might differ from that sent in any previous response
 // for the same variant
 
 // TODO: Not sure how to test this condition.
 
-// Test the body sent",how-to
+// Test the body sent",f67ad670595b8816a6fca0eb6b663faee23021e4,how-to
 94334,12,"// TODO: What if already mapped?
-// Not sure I care about tb.setEmuSleigh() out of band",how-to
-845325,308,// TODO: Remove once Distributions has shipped.,multi
-1324500,641,// TODO: is distributed,requirement
+// Not sure I care about tb.setEmuSleigh() out of band",b9fcdf3da670b11ba4bc7f74b4a2a1d25c862e65,how-to
+845325,308,// TODO: Remove once Distributions has shipped.,2d745c404cc478e26af2dd3bf2c646596a599bac,multi
+1324500,641,// TODO: is distributed,b00b60171c9d6f4738fbf857c4be6dc340e33c49,requirement
 24787,8,"// C2ID doesn't have a non JS login page :/, so use their API directly
-// see https://connect2id.com/products/server/docs/guides/login-page",build
+// see https://connect2id.com/products/server/docs/guides/login-page",b133f9b6223a2cf8340eeceb2620c728e0873833,build
 806648,290,"/**
  * Jackson has less insight on how to serialize/deserialize an object that
  * doesn't adhere to the Bean spec. This class needs additional annotations in
  * order to be properly serialized/deserialized.
- */",code
-1133322,489,// TODO(HUDI-3668): Fix this test,requirement
+ */",0d5bd672ab746bc0a5d2b98482b68143260665dc,code
+1133322,489,// TODO(HUDI-3668): Fix this test,63c6e3a89ad2cc3e12e31cc0093fc848afa0df39,requirement
 239117,64,"// Simulate a very slow upload to the remote cache to ensure that the second spawn is
 // deduplicated rather than a cache hit. This is a slight hack, but also avoid introducing
-// concurrency to this test.",temporary-fix
-1037082,445,// TODO replace explicit pre-mockito mock classes with proper mockito mocks wherever possible,temporary-fix
+// concurrency to this test.",8d1a7267d6a096bf45a0c7c1b584ecc25e175660,temporary-fix
+1037082,445,// TODO replace explicit pre-mockito mock classes with proper mockito mocks wherever possible,a369e2628d36bd0d8ced915f50196ba7cb1ec38c,temporary-fix
 510034,142,"/*
          * malformed deviceId -> BadRequest
          * TODO: throwing 500 error
-         */",requirement
+         */",0aebbd694c970ca401c8732e0f25c6522cb99478,requirement
 1501465,822,"/* TODO
         connector.addBean(new HttpChannel.TransientListeners());
         connector.addBean(new HttpChannel.Listener()
@@ -630,56 +630,56 @@ id,repository,text,label
             }
         });
 
-         */",requirement
-20091,8,// TODO: fix test to work with ExtrasFS,requirement
-39956,8,// coerce is unimplemented,requirement
-872644,337,// TODO(b/189993301): this should be logging '1' instead,defect
-876550,337,// TODO(skill): The generator transpilation should not produce any unreachable code,requirement
-879389,337,// TODO(b/130682799): C.p_ should not be collapsed,requirement
+         */",9eff5208d19e2ffe5ea34c4e3d11a5c7c018b2f7,requirement
+20091,8,// TODO: fix test to work with ExtrasFS,c98bf7ac401e312bb9bce6d75ff3f849e9e95b85,requirement
+39956,8,// coerce is unimplemented,b9b0f074ee2524dddc368ff2a90a695dff8fb3b9,requirement
+872644,337,// TODO(b/189993301): this should be logging '1' instead,e453a62c003ffefb1d9ca0b6225fdbdbfc2c2d58,defect
+876550,337,// TODO(skill): The generator transpilation should not produce any unreachable code,cd4ee8b2dee8725c633f6c5ac0c13e90ccde973a,requirement
+879389,337,// TODO(b/130682799): C.p_ should not be collapsed,43a4b50b2f1b6df118c3874298e4923e4c77f587,requirement
 872679,337,"// TODO(b/219588952): if we decide to support this, verify that JSCompiler no longer incorrectly
 // prunes the 'keepMe' module.
-// This might be fixable by just removing module rewriting from the 'checks' phase.",requirement
-104603,19,// TODO assert error log,requirement
-639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",superficial-test
-639634,211,// TODO https://github.com/trinodb/trino/issues/18499,defect
+// This might be fixable by just removing module rewriting from the 'checks' phase.",9e7ab2ea4c82e1446adf928a49f8becc81204e75,requirement
+104603,19,// TODO assert error log,c8b77aeb0d8966d160061d689e38aa27f7048cb6,requirement
+639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",e18bb3027646ebbe1f1c19f83d3a915a2106aae8,superficial-test
+639634,211,// TODO https://github.com/trinodb/trino/issues/18499,f992a50a3e84d7a69070cd27b71c3aa9e36ac169,defect
 1154060,497,"// todo: make this test run also for edge-based CH or otherwise make sure time calculation is tested also for edge-based CH (at the moment it will fail!)
-// todo: make this test run also for ALT or otherwise make sure time calculation is tested also for ALT (at the moment it will fail?!)",superficial-test
+// todo: make this test run also for ALT or otherwise make sure time calculation is tested also for ALT (at the moment it will fail?!)",aa159040a6243ba6b0ce00fc27bbd689d64b8195,superficial-test
 317485,78,"/**
  * Invalid assertion usage: somewhere down the call graph a method is used in an assertion that
  * does not return true on all paths and thus may lead to assertion errors without a message in
  * the caller. Specifically assertSth has a return false path that would fire the error in the
  * caller run without a message.
- */",how-to
+ */",f11e0615d3f5c668f46a1d70f1270c03066eaa5a,how-to
 551282,149,"/*
        * For some reason, Travis build sometimes fails here because of
        * org.apache.zookeeper.KeeperException$NodeExistsException: KeeperErrorCode = NodeExists, though it should never
        * happen because zookeeper should be in a clean state for each run of tests.
        * Address issue: https://github.com/apache/druid/issues/1512
-       */",multi
+       */",b7e1e17b097da5db352d190b3f55d163c9a84f36,multi
 1004573,441,"// read() and closeEntry() must throw IOExceptions to indicate that
 // the stream is corrupt. The bug above reported that they would loop
-// forever.",code
+// forever.",4ad63a32abf4e1c61ce02cc670432cb488c31dbc,code
 879656,337,"// TODO(b/235871861): Compiler should throw warning as it doesn't make sense to deprecate a
-// static block",requirement
-39964,8,// unimplemented,requirement
-1061072,476,"// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.",temporary-fix
+// static block",91c3abb5086d7ac9520be2f13538b0a93693dcc0,requirement
+39964,8,// unimplemented,c22060f23772344720fb007e744e7d550ee8236f,requirement
+1061072,476,"// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.",f1ac885fd9b5f925b07e4dd3f210024675d8ab2e,temporary-fix
 1253640,620,"/**
  * Class is added to mute {@link #testConcurrentRegisterDeregister} test in ZooKeeper suite
  * (see related ticket).
  *
  * When slow down is tracked down and fixed this class can be replaced back with its parent.
- */",temporary-fix
-636499,211,// This connector does not support modifying table rows,skip-test
+ */",3c20be2939c24ba76b9c300ed0688c3db20d0d74,temporary-fix
+636499,211,// This connector does not support modifying table rows,e8a31e1ee24cff578800346206b03231e3414e6d,skip-test
 561114,152,"// KeysetHandle.generateNew is too slow in Tsan.
-// We do not use assume because Theories expects to find something which is not skipped.",code
+// We do not use assume because Theories expects to find something which is not skipped.",b44139972c97cb177c358ffec3866f4b87947f8f,code
 1142736,491,"/* TODO: re-add test case when Iceberg issue https://github.com/apache/iceberg/issues/5507 is resolved.
     shell.executeStatement(""ALTER TABLE "" + identifier.name() + "" EXECUTE ROLLBACK('"" +
         HiveIcebergTestUtils.timestampAfterSnapshot(table, 2) + ""')"");
     Assert.assertEquals(5, shell.executeStatement(""SELECT * FROM "" + identifier.name()).size());
     Assert.assertEquals(3, table.history().size());
-    */",multi
+    */",6dbe4f744e9620e3d7ca433f76af589abb49adea,multi
 208809,60,"// TODO: remove this test when SourceFunction API gets removed together with the deprecated
-//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",multi
+//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",6d287a7e3662b6182e1c1657bb91f82a84d8ff0a,multi
 1022634,441,"//TODO(b/265202484): fix JavaLangClassCastException: Cannot cast object of
 // type OrgApacheHarmonyXmlDomEntityReferenceImpl to OrgW3cDomText
 // public void testSetEntityResolver() {
@@ -716,23 +716,23 @@ id,repository,text,label
 
 //     root = (Element)d.getElementsByTagName(""a"").item(0);
 //     assertEquals(""foo"", ((EntityReference)root.getFirstChild()).getNodeName());
-// }",multi
+// }",4158c0892e674ecbdce6622cf0dc1ade05846ac5,multi
 1463257,805,"// FIXME: this feature type is not yet complete
-// validateGet(path);",requirement
-1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",multi
-177539,56,// TODO Test should fail if there are leftover events,requirement
+// validateGet(path);",805843640451f76d660059caca92e249811fb1aa,requirement
+1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",9e1b99dc5150e2517f5ddabb4ee074e579218845,multi
+177539,56,// TODO Test should fail if there are leftover events,bb75e6888d1cdd23951e599d4fed33f9c99050dd,requirement
 350753,81,"// Work around issue with jtreg summary reporting which truncates
 // the String result of Object.toString to 30 characters, hence
-// the first dummy argument",temporary-fix
+// the first dummy argument",99732455fb6ab835bf304ddd22714a5802b0ac3e,temporary-fix
 1621002,962,"/**
  * test data for the generic messages version: 255.255.255-255 TODO: Hash
  * parsing isn't working with the max hash value of 4294967295
- */",defect
-877654,337,// TODO(user): These should be inlinable.,defect
-122818,34,"// I tried using Mockito, but it didn't work for some reason",how-to
+ */",ca21f498ed86742b5da1ab3e1a1b62730a9a2217,defect
+877654,337,// TODO(user): These should be inlinable.,673b5c08457f13e7be28f74d5a7d9df62359ee25,defect
+122818,34,"// I tried using Mockito, but it didn't work for some reason",8ffb0f9eb09fd1bc314a6176854566ba8739a718,how-to
 1118201,488,"// TODO: Add test to delete broker instance. Currently, stopBroker() does not work correctly.
 
-// Check if '/INSTANCES/<serverName>' has been erased correctly",requirement
+// Check if '/INSTANCES/<serverName>' has been erased correctly",7c066b1ab63208814c9fffd4d6a6a5bf1bf72f11,requirement
 860613,323,"/*
                      * As much as I dislike it, I don't see any easy way around
                      * this hack. The thread is started as the Servlet exits but
@@ -740,13 +740,13 @@ id,repository,text,label
                      * the test to work as intended. In real-world applications
                      * this does mean that there is a real chance of an ISE. We
                      * may need to increase this delay for some CI systems.
-                     */",how-to
-1018301,441,//FIXME This test doesn't pass in Harmony classlib or Sun 5.0_7 RI,defect
-1095935,482,"// TODO: This test case failed, please check the function implementation",defect
+                     */",e21f99afb0e49026dd47e728aa1e09cbcb039935,how-to
+1018301,441,//FIXME This test doesn't pass in Harmony classlib or Sun 5.0_7 RI,9f04646df08f13b4d17cde3e30b296e8d73d20d5,defect
+1095935,482,"// TODO: This test case failed, please check the function implementation",82af758c11b6683094b893b2f1145888a7855823,defect
 839879,308,"/**
  * A test interface missing a setter and a getter.
- */",code
-554185,149,"// Add some constructors for testing maxRowsPerFrame > 1. Later on, we'll add some for maxRowsPerFrame = 1.",requirement
+ */",c732024825ab87b6c982c70616b60d39c31ed802,code
+554185,149,"// Add some constructors for testing maxRowsPerFrame > 1. Later on, we'll add some for maxRowsPerFrame = 1.",b19fc28321079bddda73fe22c2d78bab4541f107,requirement
 996435,441,"//  CLDR No Longer uses complex currency symbols.
 //  Skipping this test.
 //        Locale loc = new Locale(""kn"", ""IN"", """");
@@ -757,23 +757,23 @@ id,repository,text,label
 //        expect2(fmt, 12345678.0, ""Rs.\u00a01,23,45,678.00"");
 //        expect2(fmt, 0.5, ""Rs.\u00a00.50"");
 //        expect2(fmt, -1.0, ""-Re.\u00a01.00"");
-//        expect2(fmt, -10.0, ""-Rs.\u00a010.00"");",skip-test
-479880,129,// TODO: should return count on first table instead,defect
-1146692,491,// TODO: ideally we should have a test for session itself.,requirement
-1034272,445,//TODO Verify content,requirement
+//        expect2(fmt, -10.0, ""-Rs.\u00a010.00"");",b45b0612df71d70b867749af15fc5ec78f2512d9,skip-test
+479880,129,// TODO: should return count on first table instead,bfda989281529ef3f2d8be95f90bb6bb26ff8be6,defect
+1146692,491,// TODO: ideally we should have a test for session itself.,5015dfa99b1b35e3193b3409a46c3c47ce215fb3,requirement
+1034272,445,//TODO Verify content,dec13678af82213a09004fbc82935248e92ed8a2,requirement
 690682,213,"// TODO(b/292141694): build out Ravenwood support for Context
 // Ravenwood doesn't yet provide a Context, but many SysUI tests assume one exists;
 // so here we construct just enough of a Context to be useful; this will be replaced
-// as more of the Ravenwood environment is built out",requirement
-1469202,805,// see [GEOS-7835] WPS execution time limits test randomly breaks builds,skip-test
-107861,22,// TODO: test validations,requirement
+// as more of the Ravenwood environment is built out",4e857167e42a9c9ba8d9374bb4bfd00eec8a87a2,requirement
+1469202,805,// see [GEOS-7835] WPS execution time limits test randomly breaks builds,8d421d0e709a2c5cb7b25ead26750963dc8aef75,skip-test
+107861,22,// TODO: test validations,79f4bab34576d036cd7d221fbc4f385f571b4181,requirement
 547164,149,"// The next test also verifies replace functionality. Now, they are together to save on test execution time
 // due to Travis CI 10 minute default running time (with no output) -- having it separate made it
-// last longer. At some point we should really simplify this file, so it runs faster (splitting, etc.)",temporary-fix
-996052,441,// TODO: revisit toLocalizedPattern,requirement
-1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,multi
+// last longer. At some point we should really simplify this file, so it runs faster (splitting, etc.)",9cb2ca7a781df717b9745bf1b74284333e05a9ca,temporary-fix
+996052,441,// TODO: revisit toLocalizedPattern,429551d1c892017e511639982530acc64c94e8fa,requirement
+1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,multi
 911326,374,"// currently spark session catalog only resolve to v1 functions instead of desired v2 functions
-// https://github.com/apache/spark/blob/branch-3.4/sql/catalyst/src/main/scala/org/apache/spark/sql/catalyst/analysis/Analyzer.scala#L2070-L2083",temporary-fix
+// https://github.com/apache/spark/blob/branch-3.4/sql/catalyst/src/main/scala/org/apache/spark/sql/catalyst/analysis/Analyzer.scala#L2070-L2083",7967f7babd11b95a4e47719f456aabd79808dd97,temporary-fix
 1216384,576,"/* #2 - Inconsistent Forward where a name points to a previously assigned UID
    * THIS SHOULD NOT HAPPEN unless there's a major but or someone was messing with
    * the UID table.
@@ -788,85 +788,85 @@ id,repository,text,label
    * both foo and wtf, the best solution is to just delete the forward maps for
    * foo and wtf, then create a new name map of ""fsck.foo.wtf -> 01"" so that the
    * old time series are still accessible.
-   */",multi
+   */",5ce3a15d5b6b290bb136fc4bed4424ebfb015e82,multi
 565463,154,"// TODO Check CI log
-// logger.debug(""spanChunk dump \noriginal spanChunkBo:{} \ndecode spanChunkBo:{} "", spanChunkBo, decode);",requirement
-1281543,620,// TODO GG-11148.,defect
-1155469,501,"// TODO add ""/v1"" by default?",requirement
-1045427,449,//FIX https://issues.redhat.com/browse/DROOLS-5681,defect
+// logger.debug(""spanChunk dump \noriginal spanChunkBo:{} \ndecode spanChunkBo:{} "", spanChunkBo, decode);",09b3853acfe80de4f7d49efc9a09c8e4a552d167,requirement
+1281543,620,// TODO GG-11148.,a331595e44f81eed8c0ca66e54e6a098a859fd76,defect
+1155469,501,"// TODO add ""/v1"" by default?",c93867dddf9d45ed629dd7e2bee60dc6e854f043,requirement
+1045427,449,//FIX https://issues.redhat.com/browse/DROOLS-5681,185504c145614d08631ff1b3a57fd7d3fc287cdd,defect
 1456216,763,"// This function is a workaround for a Java 8 caching bug. When Java 8 support is dropped it may be removed.
 // This test runs the sync-manifests command, and _without stopping the jvm_ executes a list command.
 // Under normal use, the sync-manifests command is followed immediately by a JVM shutdown, clearing caches.
 // The Java 8 ServiceLoader does not disable the URLConnection caching, so doesn't read some previous writes.
-// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",multi
-636045,211,// we do not check if the offset is in the middle of a code point,superficial-test
+// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",8afd3eb1f40639b2c79e21f497a9a30dd3aef101,multi
+636045,211,// we do not check if the offset is in the middle of a code point,af2c3cba66bbc2bf9bebdb7a193306e5537f7d55,superficial-test
 475313,129,"// we don't support DELETE yet. this test exists as a reminder to check read-only security context is honoured
-// when/if DELETE is implemented.",requirement
-1188159,541,// only secretkeyspec supported for now,requirement
-35869,8,"// At this point we only support functions with 0, 1, or 2 arguments.",temporary-fix
+// when/if DELETE is implemented.",632e660028cfd0ec8332b384f82efa3a25545097,requirement
+1188159,541,// only secretkeyspec supported for now,1c3a9b191b56d6b2e6457ffaa438d16bdec7bbf7,requirement
+35869,8,"// At this point we only support functions with 0, 1, or 2 arguments.",06476ad1bdbd2c29b87da7a931c383c6b8e9792f,temporary-fix
 46895,8,"/*
          * The following two lines assert current behavior that might not be desirable -- we continue to delete expired databases every
          * time that runDownloader runs. This seems unnecessary.
-         */",how-to
-114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,multi
-963450,435,// No idea what Sybase is doing here exactly,how-to
+         */",b0896680f544ea5821b35807134ff448ad15df09,how-to
+114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,3963e75bb0baefb83952e4c976c7a18c5e082743,multi
+963450,435,// No idea what Sybase is doing here exactly,f8f8a517538fb905526be70aed8074212b56a6a9,how-to
 1510121,824,"/**
  * TODO: both solution1 and solution2 are ACCEPTED on OJ, but somehow it's not passing in
  * this unit test.
- */",how-to
-640124,211,// TODO: Empty tables should have NDV as 0 and nulls fraction as 1,defect
-1544848,889,//this is pretty yuck,temporary-fix
-1626927,973,// TODO: input.readBytes,requirement
+ */",0cf23cbfe75a04ed0e97690fbf582520e3bd73ad,how-to
+640124,211,// TODO: Empty tables should have NDV as 0 and nulls fraction as 1,33c149553c4b1cade3637bde9c9ed91d3e1a32f4,defect
+1544848,889,//this is pretty yuck,338a24c5ef17e1a0a76dce0940611385261984f6,temporary-fix
+1626927,973,// TODO: input.readBytes,b9eac6ccb00f8d910f9f109aeacccc8092d36fa2,requirement
 1356261,682,"/*
          * Commenting out this method until the JSON-java code is updated
          * to support XML.toJSONObject(reader)
-         */",multi
+         */",bf6a1cd00594566c292ec5d153b69b82d5a9a1a5,multi
 983742,435,"/**
  * todo: describe Parent
  *
  * @author Steve Ebersole
- */",documentation
+ */",54c11af9f647a7662c41c2b05fed33240060125b,documentation
 41308,8,"// TODO PersistentTasksCustomMetadata is required for jobs other than TrainedModels
-// .customs(Map.of(PersistentTasksCustomMetadata.TYPE, PersistentTasksCustomMetadata.builder().build()))",requirement
+// .customs(Map.of(PersistentTasksCustomMetadata.TYPE, PersistentTasksCustomMetadata.builder().build()))",1ca1153d928beea77d357847aa2647e482966f72,requirement
 1169594,541,"// Can't simply `htu.startMiniCluster(options)` because that method waits for the master to
 // start completely. However, this test's premise is that a partially started master should
 // still respond to a shutdown RPC. So instead, we manage each component lifecycle
 // independently.
-// I think it's not worth refactoring HTU's helper methods just for this class.",refactor
+// I think it's not worth refactoring HTU's helper methods just for this class.",07272e0aded5968377215d52b4f35bdccc9e5b6f,refactor
 357955,81,"// Compact Pattern Data Provider provides test input for both DecimalFormat patterns
 // and the compact patterns. As there is no method to retrieve compact patterns,
-// thus test only against US English locale, and use a hard coded K - 1000",multi
-1138685,491,//TODO: HIVE-28044: Replication tests to run on Tez,requirement
-902798,371,// TODO(b/189535612): this is a bug!,defect
-108103,22,"// This should use System.getProperty(""os.name"") in a real test.",temporary-fix
-75617,12,//writer.putAlign(2); // TODO: Not sure,how-to
-674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,temporary-fix
-1342058,655,//TODO: examinate the data more,requirement
-1230610,613,//FIXME: fix flaky test,defect
-226665,64,// TODO: b/365420093 - Remove this workaround when the bug is fixed.,multi
-843598,308,// TODO: Should test timer firings: see https://github.com/apache/beam/issues/18084,requirement
-611078,198,"// TODO: This is current behavior, but is it what we want?",how-to
-608284,191,// TODO: Waiting a few seconds is not a reliable condition. Figure out a better way for this.,how-to
+// thus test only against US English locale, and use a hard coded K - 1000",fe266dd007359831af77cbe03c9d8780e3ca5ce8,multi
+1138685,491,//TODO: HIVE-28044: Replication tests to run on Tez,69a391e7ae7cdef6a54610d0b4d7e8986ca2a7cd,requirement
+902798,371,// TODO(b/189535612): this is a bug!,16bc6aa5dadd13fa37888508fa683c79a885f59b,defect
+108103,22,"// This should use System.getProperty(""os.name"") in a real test.",9969f7225752fe8d61ddc3adb522f8b284f7cee0,temporary-fix
+75617,12,//writer.putAlign(2); // TODO: Not sure,2d38e1619b71dacbe396306b4bd5eb8559ba05a9,how-to
+674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,0dad5f7c4db3451ff83da3b429e8ef99cda7a0f7,temporary-fix
+1342058,655,//TODO: examinate the data more,66c2e35a9792aa5b903e8e609bb8d3fcbf99afef,requirement
+1230610,613,//FIXME: fix flaky test,41c13785888941316a7dc2bb85980937eb1d918c,defect
+226665,64,// TODO: b/365420093 - Remove this workaround when the bug is fixed.,ee4a0ac70fbe74b77c18d1faea1a79d45de24eb1,multi
+843598,308,// TODO: Should test timer firings: see https://github.com/apache/beam/issues/18084,0ebd63375d756172d4f4f0c40f5d6fbe19019e22,requirement
+611078,198,"// TODO: This is current behavior, but is it what we want?",a20ffee429b8c40eafe66b1bb2e991a1431c1659,how-to
+608284,191,// TODO: Waiting a few seconds is not a reliable condition. Figure out a better way for this.,65af2e2c99e13d2d5822a839ebc3e5d920a6760a,how-to
 46682,8,"// pretend we don't support symlinks (which causes hadoop to want to do crazy things),
-// returning the boolean does not seem to really help, link-related operations are still called.",how-to
+// returning the boolean does not seem to really help, link-related operations are still called.",e14aaba5e06f3a8e6a5268e0a3a4dec07bceddd8,how-to
 668273,213,"// Return a string that identifies a Method.  This is not very efficient but it is not
-// called very often.",temporary-fix
-1624648,972,//  this test is probably running with bytecode manipulation. We ignore synthetic methods.,how-to
-901326,371,// TODO(eaftan): Tests for correctness of suggested fix,requirement
-1652572,984,"// TODO Second, modify the sql, so Flink engineConn can run it successfully.",requirement
-390222,117,// TODO: many more removal methods,requirement
-989114,441,// TODO change in exhaustive,requirement
+// called very often.",d834dca40fd1de694b9afd0949445552a61d09cb,temporary-fix
+1624648,972,//  this test is probably running with bytecode manipulation. We ignore synthetic methods.,bed642bebb4feaab9c59055854a231c5037ca748,how-to
+901326,371,// TODO(eaftan): Tests for correctness of suggested fix,baef5caac4c4e75a843c168ccd81c3a2d8cea6e9,requirement
+1652572,984,"// TODO Second, modify the sql, so Flink engineConn can run it successfully.",edd20864032c842f54385ef53686f6fb3c30c997,requirement
+390222,117,// TODO: many more removal methods,945082344e692e0724f2f0792cabdbb70a6feda6,requirement
+989114,441,// TODO change in exhaustive,e4ecabaee826af2dce780b8757646957c7e5b5ae,requirement
 873011,337,"// TODO(lharker): stop ignoring USE_OF_GOOG_PROVIDE after migrating rules_closure
-// code to suppress useOfGoogProvide instead of lintChecks.",temporary-fix
-237511,64,// TODO b/300201845 - encapsulate parents and childs private attributes,design
-694612,213,// TODO b/64262688 Add Concurrency tests to compare WAL vs DELETE read/write,superficial-test
-1101206,482,// TODO (https://github.com/trinodb/trino/issues/17) change to equals(),requirement
+// code to suppress useOfGoogProvide instead of lintChecks.",f3657339905bc43c3498e7c3f945999241bb4f12,temporary-fix
+237511,64,// TODO b/300201845 - encapsulate parents and childs private attributes,503a8e78ebe54f36f714718143435eed93aeec33,design
+694612,213,// TODO b/64262688 Add Concurrency tests to compare WAL vs DELETE read/write,9e19bcd917161440f5bd32dcfa9a601c197b85a6,superficial-test
+1101206,482,// TODO (https://github.com/trinodb/trino/issues/17) change to equals(),5ad174d4b3ae2250ca8a976fc89cea90ae7ec1f8,requirement
 656744,213,"// TODO(b/121296525): We may want to restore other display settings (not only overscans in
 // testPersistOverscan*test) on mPrimaryDisplay and mSecondaryDisplay back to default
 // values after each test finishes, since we are going to reuse a singleton
 // WindowManagerService instance among all tests that extend {@link WindowTestsBase} class
-// (b/113239988).",requirement
-1197947,567,// TODO: bug with unique ports per listener which should be fixed now in Kafka 2.7.0,defect
+// (b/113239988).",ea1697a7cade1ea523e63c6f228a6f9f831781f9,requirement
+1197947,567,// TODO: bug with unique ports per listener which should be fixed now in Kafka 2.7.0,520e37a68bee4a165388a5d6a8238727614358cd,defect
 73284,12,"/**
  * HACK: There's an unlikely race condition where the layout controller has created
  * the array of layouts but not fully populated it by the time we ask for the
@@ -875,50 +875,50 @@ id,repository,text,label
  * again. As far as I can tell, this is not indicative of a problem in production,
  * because the controller won't issue an updated event until that array is fully
  * populated.
- */",temporary-fix
+ */",4b12265b8c2ab87ddc05a4fbd441e874f0ad5469,temporary-fix
 945539,422,"// Cancellation only works, if there are data on socket. Without data, SocketInputStream.read()
-// blocks indefinitely. The StreamSocketP should be improved to use NIO.",code
+// blocks indefinitely. The StreamSocketP should be improved to use NIO.",7716cfe6ce08dabe755c71305212940b40f56a6c,code
 612491,204,"// assertThat(activity.consumerIrManager).isNotNull(); // TODO API 19
-// assertThat(activity.countryDetector).isNotNull(); // hidden API",requirement
+// assertThat(activity.countryDetector).isNotNull(); // hidden API",50745a1f824496aa3e51aaaa69840df1d4d44685,requirement
 994198,441,"// TODO: Tests when ""if (fRData != other.fRData && (fRData == null || other.fRData == null))"" is true
 
-// Tests when ""if (fText == null || other.fText == null)"" is true",requirement
-889344,360,//hack to reproduce synchronization issue,temporary-fix
-908588,374,// TODO: incoming columns must be ordered according to the table's schema,requirement
-45461,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,defect
-230652,64,// TODO(b/67412276): handle cycles properly.,requirement
+// Tests when ""if (fText == null || other.fText == null)"" is true",0c209b46ca918e3684303e97c14c1a81d6a521c1,requirement
+889344,360,//hack to reproduce synchronization issue,7b20d571f8612f26c1ba92397e28bacc5163e17f,temporary-fix
+908588,374,// TODO: incoming columns must be ordered according to the table's schema,d1e350ec2b045b2e844e64d3ec1d099b707b9867,requirement
+45461,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,defect
+230652,64,// TODO(b/67412276): handle cycles properly.,3379c4b4ac1493d0361045665fb988bd64171f9a,requirement
 89885,12,"// TODO
 //		int sleepyTime = 10;
 //		int totalTime = 0;
 //		while (!window.isShowing() && totalTime < 2000) {
 //			sleep(sleepyTime);
 //			totalTime += sleepyTime;
-//		}",requirement
+//		}",076f2c87015012d83f2233a8d37906770768f18c,requirement
 996987,441,"// TODO: this still passes, but setLenientParseMode should have no effect now.
-// Did it ever test what it was supposed to?",how-to
+// Did it ever test what it was supposed to?",6114bba0a0a83d79d95ef23a05f3ba38f9047934,how-to
 1335652,651,"/**
  * CluelessNumberNegater implements NumberNegater in a very broken fashion;
  * does the right thing for Shorts, but attempts to override visit(Object).
  * This is just here for testing the hierarchyRoot parameter of
  * invokeVisitor.
- */",temporary-fix
-777983,269,"// TODO will revise the non-pk filter condition in MV, see CASSANDRA-11500",requirement
+ */",4cee66f14806907e1f20e8e9728e6790f53808d1,temporary-fix
+777983,269,"// TODO will revise the non-pk filter condition in MV, see CASSANDRA-11500",d119c0f3041ab9e30a62941d34274241ecfb2c43,requirement
 983738,435,"/**
  * todo: describe ChildInfo
  *
  * @author Steve Ebersole
- */",documentation
+ */",f0105c7d3226968afd1c3b01cfa27cc1f839746c,documentation
 1217195,576,"// Maybe this one should throw an exception. Usually this will be used before
-// a UID lookup so it will toss an exception then.",how-to
-285299,73,// TODO(b/264974805): Make export output deterministic and check it against dump file.,requirement
-166311,47,// TODO Auto-generated method stub,requirement
+// a UID lookup so it will toss an exception then.",d86facf78c4402db9df59c73ea1654d4a1976cfa,how-to
+285299,73,// TODO(b/264974805): Make export output deterministic and check it against dump file.,0dfe1f7166bd4fd3e8e44bc38ce6b928bf4b1ae9,requirement
+166311,47,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,requirement
 1502060,822,"// TODO this test is flakey
-// The failure appears associated with the 431 BadMessageException being thrown",defect
-643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,refactor
-1122526,488,"// This test only supports local resource loading (e.g. must be a file), not support JAR test loading.",requirement
+// The failure appears associated with the 431 BadMessageException being thrown",61376decf59e54196a11b6fdea692a724e40aecf,defect
+643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,refactor
+1122526,488,"// This test only supports local resource loading (e.g. must be a file), not support JAR test loading.",d5cfc03efb5fb0aa875c1f13450f206aacea0df2,requirement
 611150,198,"// TODO refactor getEngine to use dependency injection, so a mock Engine
-// object can be used.",refactor
-879397,337,// TODO(b/130829946): Should not collapse obj.p_ and obj.getP,requirement
+// object can be used.",74f13b55a86b4b9d87bee562f61cd848f8da8c9b,refactor
+879397,337,// TODO(b/130829946): Should not collapse obj.p_ and obj.getP,4f77d392aaf0e7989dd209c123032655412881ac,requirement
 1549888,897,"// Note that the JDBC specification says that closing a
 // connection will release ""this Connection object's
 // database and JDBC resources immediately""
@@ -927,11 +927,11 @@ id,repository,text,label
 // either a ""database"" or a ""JDBC resource"" in this
 // context. You would think it would, but H2 does not
 // close open Statements or ResultSets when their creating
-// Connection is closed, and neither does PostgreSQL.",documentation
+// Connection is closed, and neither does PostgreSQL.",bb3601a88f172b3ac7394a5f445ce6f962507815,documentation
 480232,129,"// not yet implemented, taking the non-correlated sub-query out as a join
-// will duplicate column X that optimiser needs to deal with",requirement
+// will duplicate column X that optimiser needs to deal with",2d2a410c8d2ef611be21c8f3908a9c9a0b7cfdc5,requirement
 114214,26,"// TODO(b/20335397): This code was relying on Bitmap equality which Robolectric removed
-// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",multi
+// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",6c252c2b50bcd4f3f835dcfc4b09a104009d63f1,multi
 1019444,441,"/* TODO(tball): enable when display names are supported.
     public void test_getDisplayCountry() {
         // Test for method java.lang.String java.util.Locale.getDisplayCountry()
@@ -943,22 +943,22 @@ id,repository,text,label
         Locale l_countryCD = new Locale("""", ""CD"");
         assertEquals(""Congo (DRC)"",
                 l_countryCD.getDisplayCountry());
-    }*/",multi
+    }*/",514e50db924d9b1f65467083794d00a61b6a61ff,multi
 475220,129,"// Circuit breaker does not work with fragmented buffer
 // TODO: find a solution, Net.peek() always return a byte when the incoming buffer not read fully
-// when executing 'E' (execute) postgres protocol command",how-to
-877036,337,// TODO(bradfordcsmith): Remove Object.defineProperty() like we do Object.defineProperties().,refactor
-754153,255,// TODO: vacuum,requirement
+// when executing 'E' (execute) postgres protocol command",c81f80ad1c135e6f4fbcc8d3a138d0801886fea7,how-to
+877036,337,// TODO(bradfordcsmith): Remove Object.defineProperty() like we do Object.defineProperties().,7599500f7b3877f77145cbf1134cdd4f9db86152,refactor
+754153,255,// TODO: vacuum,cf230188a81acd19f93d86fcb075526013b0fe8b,requirement
 891181,360,"// this is a limitation, we identify config repos by material fingerprint later
 // so there cannot be one repository parsed by 2 plugins.
-// This also does not seem like practical use case anyway",impractical-case
+// This also does not seem like practical use case anyway",cb813024eca952cc11507f86acc1820cffd82450,impractical-case
 1122121,488,"// TODO: it is necessary to produce two values here, the operator only throws on second
-// (see the comment in Aggregate operator)",defect
+// (see the comment in Aggregate operator)",2cb6f1a0914d122805718e5b4380e13e5b8db0db,defect
 1010313,441,"// TODO use generics to detect comparator
-// instead of 'instanceof' for the first element",code
+// instead of 'instanceof' for the first element",28679abd98ff7f4188ecd608fabb0ec96747a81b,code
 575964,159,"/**
  * TODO: enable when window is supported.
- */",multi
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,multi
 229201,64,"/**
  * When using a Native file system, absolute paths will be treated as absolute paths on the unix
  * file system, as opposed to paths relative to the backing temp directory. So for simplicity,
@@ -970,20 +970,20 @@ id,repository,text,label
  *
  * We'd like the invariant that p1.equals(p2) regardless if scratch is in-memory or not, but this
  * does not hold with our usage of Unix filesystems.
- */",design
-990992,441,// TODO: Re-enable this tests after UTC fixes UAX 21,multi
-1494026,822,/*TODO alpn.getProtocol()*/,requirement
-585100,167,//TODO: suggest only verbs,requirement
-327554,81,// TODO: should this check *any* reference to http://download.oracle.com/,how-to
-362060,81,// workaround,temporary-fix
+ */",9982999d4e769aaf2b2298cfdd1c1cb3f90d785b,design
+990992,441,// TODO: Re-enable this tests after UTC fixes UAX 21,17c6d25086c56318e4f5b2d83b8b9e32a079f26d,multi
+1494026,822,/*TODO alpn.getProtocol()*/,47200964416823312e86e3e0d90b00e0b1bd6285,requirement
+585100,167,//TODO: suggest only verbs,9ea3cff5b24c00a2f3985cba16cb91dabe6a9edf,requirement
+327554,81,// TODO: should this check *any* reference to http://download.oracle.com/,bdcb34ea01e849beaa288ca94a136bc0487281a2,how-to
+362060,81,// workaround,b710bfd9aac7fee8e0a8c149d4f79a4b38185686,temporary-fix
 1084835,478,"/**
  * ToString need to deal the array size issue as ToByteArray does
- */",defect
+ */",fdcf7c30451d91f751610d30a2137cf378952314,defect
 1627994,979,"/* 1) Disable the test on Windows given a misaligned access exception coming from
 		 * java.base/java.lang.invoke.MemoryAccessVarHandleBase triggered by CLinker.toCString()
 		 * is also captured on OpenJDK/Hotspot.
 		 * 2) Disable the test on AIX as Valist is not yet implemented in OpenJDK.
-		 */",multi
+		 */",cf649dbb7cd28246bee2b7bbf410db5853af8242,multi
 1046465,449,"/**
  * Tests parsing a large spreadsheet into an in memory ruleset. This doesn't
  * really do anything much at present. Takes a shed-load of memory to dump
@@ -996,75 +996,75 @@ id,repository,text,label
  * temp file).... must be other options.
  *
  * @throws Exception
- */",temporary-fix
-924232,401,// TODO Test other adapter methods.,requirement
-759729,255,// TODO: multi-column partitions cannot prune partitions.,requirement
+ */",3abbe96c09f9453b5e41d5fd708361e3d82a27a0,temporary-fix
+924232,401,// TODO Test other adapter methods.,1458a73bbac2440143d1934f8ef6df1a41154183,requirement
+759729,255,// TODO: multi-column partitions cannot prune partitions.,a9bb07b1ce3724ccb10a7eb52d4a1b18c6ccf84c,requirement
 100481,16,"// TODO: update dependencies?
 // assertThat(aCls.getDependencies()).contains(cCls);
-// assertThat(cCls.getUsedIn()).contains(aCls);",dependency
+// assertThat(cCls.getUsedIn()).contains(aCls);",8d08b95be44d43055bcfc23c70326c954aa95a7b,dependency
 1003713,441,"// This might cause us trouble if Europe/Helsinki changes its rules. See the bug for
-// details of the intent of this test.",how-to
-1561930,918,"// kinda sorta wrong, but for testing's sake...",superficial-test
+// details of the intent of this test.",4cb88e5ad5e0fb4bdb74891e7fe295b517d18804,how-to
+1561930,918,"// kinda sorta wrong, but for testing's sake...",1344a8f862bbfb9d065783457f05b70f911b8412,superficial-test
 1508872,822,"// 4.4 - Server can request valid Content-Length from client if client
 // fails to provide a Content-Length.
 // Server can respond with 400 (Bad Request) or 411 (Length Required).
 
 // NOTE: MSIE breaks this rule
 // TODO: Document which version of MSIE Breaks Rule.
-// TODO: Document which versions of MSIE pass this rule (if any).",documentation
-176427,56,// Ignoring this test on ActiveDirectory (same for rhds) as it's not allowed to have LDAP group referencing nonexistent member. KEYCLOAK-2682 was related to OpenLDAP TODO: Better solution than programmatic...,skip-test
-558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,multi
-368941,85,// TODO zhangcheng make sure the test cases should not empty,code
-36354,8,"// This only tests for calendar ordering, ignoring the other criteria",superficial-test
+// TODO: Document which versions of MSIE pass this rule (if any).",9a3b97594e28916a3f4f71a45ea186937519dee9,documentation
+176427,56,// Ignoring this test on ActiveDirectory (same for rhds) as it's not allowed to have LDAP group referencing nonexistent member. KEYCLOAK-2682 was related to OpenLDAP TODO: Better solution than programmatic...,4d4651e566498ef248229797eb1e12e3f0a33bdc,skip-test
+558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,e9d88dfa65e8fda9b675e3bef55e006606a231be,multi
+368941,85,// TODO zhangcheng make sure the test cases should not empty,01faf2d9c76683a778957a9131266aab788a56d1,code
+36354,8,"// This only tests for calendar ordering, ignoring the other criteria",993dbd9b919b0252807ab8b26504cf0aa4676de5,superficial-test
 242050,65,"// now dismiss
-// submit(getForm(mon),""no""); TODO: figure out why this test is fragile",how-to
-1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",multi
+// submit(getForm(mon),""no""); TODO: figure out why this test is fragile",729ef3bd8e27c39c189c22b8c552e1a3c5bb677c,how-to
+1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",4a76d5b1c75abe1d1dd2eb57f48b25f3a9ec7a6a,multi
 1190123,541,"/**
  * This file has been copied from the Apache ZooKeeper project.
  * @see <a href=
  *      ""https://github.com/apache/zookeeper/blob/master/zookeeper-server/src/test/java/org/apache/zookeeper/common/JKSFileLoaderTest.java"">Base
  *      revision</a>
- */",refactor
-287013,73,// TODO(b/207848601): Switch to using proper tooling for testing against golden data.,requirement
+ */",83da90c3b887ecca1c75de3b081b6eddc7cd9d23,refactor
+287013,73,// TODO(b/207848601): Switch to using proper tooling for testing against golden data.,a7c2cc4b64793264b98afc7784b49276d6c30a9e,requirement
 23264,8,"/*
          * Wait. 3!? The array has length 6. Well, the var handle stuff
          * for arrays just subtracts three - because that's one more than
          * the number of bytes in an int. Get it? I'm not sure I do either....
-         */",how-to
+         */",b6604bd1eb75b76fd3b970e8a175e6af82f46552,how-to
 1231461,618,"// TODO: This test currently makes the whole VM exit with exit code -1, but does not generate a dump file
-// (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",multi
-92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",requirement
-380299,104,// mostly waiting for https://github.com/testcontainers/testcontainers-java/issues/3537,dependency
-1475168,805,// TODO: add ids in the elemnets and check contents using jSoup,requirement
+// (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",47d74efc9142a580c4bd0d5bbcd18d26c38ff7e6,multi
+92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",2e5edbc244eeea719dd76e948babb4124cadabbe,requirement
+380299,104,// mostly waiting for https://github.com/testcontainers/testcontainers-java/issues/3537,b89ba162e043e44dc5f89c8d527d492e39a6cf35,dependency
+1475168,805,// TODO: add ids in the elemnets and check contents using jSoup,a64caf93fe3468e261d8331b01ca5206a1bb9369,requirement
 996427,441,"// additional coverage tests
 
-// sigh, can't have static inner classes, why not?",how-to
-1230417,607,// TODO: Make this work for GLES,requirement
-878705,337,// TODO(nickreid): Add rewriting support for this.,requirement
+// sigh, can't have static inner classes, why not?",4b24725a8f21ec775b151bfb68ed2387d87d07c3,how-to
+1230417,607,// TODO: Make this work for GLES,c4ed3c0547a4fa0f3b04b972ce231ede81f2dd64,requirement
+878705,337,// TODO(nickreid): Add rewriting support for this.,0a222951e567a3af2c546df6eb24730792edbe5d,requirement
 743842,230,"// TODO: Remove this line, and replace 'clusterManagerRole' with CLUSTER_MANAGER_ROLE, after MASTER_ROLE is removed.
-// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",multi
+// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",29032270adefbd5b84683a4f93d7e0f9eb1b36d1,multi
 889989,360,"// unfortunately there is no way to know why revisions would mismatch during manual trigger.
-// We already let all manual triggers to bypass revision match check",how-to
-1475037,805,// TODO: add ids and actual checks in the generated HTML,requirement
+// We already let all manual triggers to bypass revision match check",0285293dd01db266a81154242759290d0a6eda0d,how-to
+1475037,805,// TODO: add ids and actual checks in the generated HTML,6516fca277e96adf4788527ac6820875c4ffc15b,requirement
 1002899,441,"// Don't test on iOS devices, because they often have less than 4G available,
-// especially with a big JRE tests app installed.",skip-test
+// especially with a big JRE tests app installed.",9e27f88b5465d3bde8592162611b339cba391fa4,skip-test
 558646,149,"// Doesn't work in MSQ, although it's not really MSQ's fault. In MSQ, the second field (foo2.dim3) is returned as
 // the string ""[a, b]"" because it gets run through DimensionHandlerUtils.convertObjectToString in
 // IndexedTableDimensionSelector. In native, this doesn't happen, because we don't have as much type information,
 // and we end up using IndexedTableColumnValueSelector instead. This is really a problem with
-// IndexedTableColumnSelectorFactory: it assumes strings are not multi-valued, even though they might be.",defect
+// IndexedTableColumnSelectorFactory: it assumes strings are not multi-valued, even though they might be.",44812b3cbe392a36af3f4d913c1a282142a980eb,defect
 51146,8,"/**
  * Workaround to simulate BwC situation: taking a snapshot without indices here so that we don't create any new version shard
  * generations (the existence of which would short-circuit checks for the repo containing old version snapshots)
- */",temporary-fix
+ */",38e7a98535fce270be81d0726584df1fe0f94c60,temporary-fix
 1225703,593,"// TODO review the generated test code and remove the default call to
 // fail.
-// fail(""The test case is a prototype."");",requirement
-1236775,620,"// TODO https://issues.apache.org/jira/browse/IGNITE-13568 Fix to range(""a"", null, false, true)",defect
+// fail(""The test case is a prototype."");",d7dd00d1c882d60118089fd59a6d60b5dd650bc8,requirement
+1236775,620,"// TODO https://issues.apache.org/jira/browse/IGNITE-13568 Fix to range(""a"", null, false, true)",461646bff002c80619f6bd2e9f0efc48be49013d,defect
 393164,119,"// assert that pipeline 2 will have no more drivers
 // note: One could argue that this should have happened as soon as pipeline 2 driver group 7 is marked as noMoreSplits.
-//       This is not how SqlTaskExecution is currently implemented. And such a delay in closing DriverFactory does not matter much.",impractical-case
-749687,241,// TODO: Check this...,requirement
+//       This is not how SqlTaskExecution is currently implemented. And such a delay in closing DriverFactory does not matter much.",edc1e16c84d64915322604c412b04ba36daafc58,impractical-case
+749687,241,// TODO: Check this...,a6b1ef61b784b26a437d790382e9dba4b70e060b,requirement
 1063158,478,"/**
  * There is a delay 5-10 mins between upload of file and being searchable (probably to update some search indexes,
  * see https://community.box.com/t5/Platform-and-Development-Forum/Box-Search-Delay/td-p/40072). With this delay
@@ -1072,114 +1072,114 @@ id,repository,text,label
  * search results works (and does not end with an exception).
  *
  * To test search of real data, change query string from '*' to real name of file.
- */",impractical-case
-1057086,455,// known bug: time argument is unsigned 32bit in graphics library,defect
+ */",e2be55dce61e635a6bcefee8ca4d51b1729ba5dd,impractical-case
+1057086,455,// known bug: time argument is unsigned 32bit in graphics library,143141afc3ca00f93c3c2144d81d7a3d7f44f8c9,defect
 1171646,541,"// When RegionServer is created in MiniHBaseCluster, it uses HBaseConfiguration.create(conf) of
 // the master Configuration. The create() just copies config params over, it does not do
 // a clone for a historic reason. Properties such as resources are lost during this process.
 // Exposing a new method in HBaseConfiguration causes confusion. Instead, the new hbase-site.xml
-// under test-data directory is added to RegionServer's configuration as a workaround.",temporary-fix
-611532,203,"// disabled, as these soak up build time and the outcome oughtn't change unless we are refactoring the tree builders. manually execute as desired.",skip-test
-831173,303,// Using deprecated constructor for verification of backwards compatibility,temporary-fix
-911842,374,// Currently we can only Snapshot only out of the Spark Session Catalog,requirement
+// under test-data directory is added to RegionServer's configuration as a workaround.",4f25b4a40575994d58925198ff6e6392639e882e,temporary-fix
+611532,203,"// disabled, as these soak up build time and the outcome oughtn't change unless we are refactoring the tree builders. manually execute as desired.",0010faae189fe2743049c45e91fe7c5446b7240c,skip-test
+831173,303,// Using deprecated constructor for verification of backwards compatibility,1aaab87f9c1538be829964cf76e3bafcccfe995b,temporary-fix
+911842,374,// Currently we can only Snapshot only out of the Spark Session Catalog,ba2a0cecccf5b63380ef6a5ab4af9d863a34c4aa,requirement
 1371658,733,"// TODO: Unlike PPGs with 0xBB compression the timestamps are not linear
-// The data also looks different, hmmm....",how-to
+// The data also looks different, hmmm....",823432dd9dc5051f52f2294eb712b9a8287a1dfc,how-to
 872345,337,"// TODO(b/115853720); Should remove getter for onlySetProp, because
-// there is only an assignment to it",requirement
-479761,129,// TODO(puzpuzpuz): enable when we support DDLs for parquet partitions,multi
+// there is only an assignment to it",46b92ca9a9031ae381f4be0d284f8feec3a61817,requirement
+479761,129,// TODO(puzpuzpuz): enable when we support DDLs for parquet partitions,d9b41af92e3b8586770ab04ab1b4a21d2956d245,multi
 363516,81,"// Try to ensure the path to the Java launcher is reasonably short,
 // to work around the mostly undocumented limit of 120 characters
 // for a shebang line.
 // The value of 120 is the typical kernel compile-time buffer limit.
 // The following limit of 80 allows room for arguments to be placed
-// after the path to the launcher on the shebang line.",temporary-fix
+// after the path to the launcher on the shebang line.",247bb4d43fede96ec01e31c125e6dd44c0a1e603,temporary-fix
 433340,128,"/**
  * Known issue: ListStatus operation to folders/files whose name contains '?' will fail.
  * This is because Auto rest client didn't encode '?' in the uri query parameters
- */",multi
-1323576,641,// TODO enable,requirement
-544439,145,"//floormod case is questionable, hard to tell if gradient checkable: skipping for now",multi
-879554,337,// TODO(b/148237949): collapsing breaks `Bar?.double` reference,defect
-1222088,587,"// skip test, as it needs historical time zone info",multi
+ */",0ccd13f0e077f6bda71b1b20ac6288e81b6c3ff7,multi
+1323576,641,// TODO enable,79a124d12a00cbec876778bc4e64eb3891bf031b,requirement
+544439,145,"//floormod case is questionable, hard to tell if gradient checkable: skipping for now",4beace608386c67fde11d7a0c144d5c06ada8e76,multi
+879554,337,// TODO(b/148237949): collapsing breaks `Bar?.double` reference,2f3852eca16651bae7833cc647f962a2c357fdb4,defect
+1222088,587,"// skip test, as it needs historical time zone info",17842cdc6d2eb9fb00c0e336e6aeb83cf0b7a5d2,multi
 668321,213,"// TODO(b/135203078): Update this test with all fields and validate equality. Initial change
-//  was just migrating to new interfaces. Consider adding actual equals() methods.",superficial-test
-1494668,822,// TODO Remove mock request. Use a real one,multi
-28983,8,// TODO: this should not raise an error;,defect
+//  was just migrating to new interfaces. Consider adding actual equals() methods.",02b8c42bf33d344d052dce5fadde4205711ec1c9,superficial-test
+1494668,822,// TODO Remove mock request. Use a real one,4952bfd57268901362543370c89aa0a80191d8de,multi
+28983,8,// TODO: this should not raise an error;,f69036342032212bb640b4a3198ce684d1123956,defect
 668271,213,"// TODO: test that sendApplicationHiddenForUser() actually fills in
-// broadcastUsers",requirement
+// broadcastUsers",16d80bea59f98c3365f42eda39fd0911181ef179,requirement
 977708,435,"// If we get here, children were initialized eagerly.
-// Did ORM actually use subselects?",how-to
-1634981,979,// can't validate easily as it contains a Lookup object,how-to
+// Did ORM actually use subselects?",216782ef2eac9290d2c84f7a53ad5a3b10c3566d,how-to
+1634981,979,// can't validate easily as it contains a Lookup object,74c892d29bb18719de1946d2f161db3cd4e8f6e3,how-to
 460479,128,"/**
  * WebHdfs client Partially supports the Symlink.
  * creation of Symlink is supported, but the getLinkTargetPath() api is not supported currently,
  * Implement the test case once the full support is available.
- */",multi
+ */",f9fc5bfc0796fa1fb40ec392f5247b59a0b25534,multi
 992195,441,"/**
  * @param option TODO
  * @param ratioToMap TODO
  * @param bytes
- */",documentation
+ */",6e31fd2634d16ba6b92765037d876bdc0d235429,documentation
 328852,81,"// this test has been disabled because of timeout issues.
-// see JDK-8006746",multi
-1479367,805,// TODO: check the tiff structure is the one requested,requirement
-647576,213,// this is old test where the flag needs to be disabled,requirement
+// see JDK-8006746",7ea914fe3fc0fba0f112fa8cbaf0179334d09b8a,multi
+1479367,805,// TODO: check the tiff structure is the one requested,ab8e20e539bd6a7ff9a256f1cee9e5b95f7bb523,requirement
+647576,213,// this is old test where the flag needs to be disabled,9f1978afcdbc36f34d748ac6c239877181b84531,requirement
 1045284,449,"// This is a little hack to be able to test unbinding of datasources.
 // It cannot be done normally, because everything is done privately in the RuleUnitDescr, therefore cannot be mocked.
 // This property is visible through getter as a datasource, but upon each call it gets switched
-// It should be called just twice(bind/unbind), so therefore we can test if this was unbound.",temporary-fix
+// It should be called just twice(bind/unbind), so therefore we can test if this was unbound.",5a73e3b7ef4ff7001bbfbb55696e3f81b45c1c60,temporary-fix
 111679,22,"/**
  * This test remains flaky in Jenkins hence making it manual.
- */",defect
-1314723,623,// This test could be broken if multiple tests are running in parallel.,defect
+ */",03ff74af8faac7663f77c326ed431b3811f21b44,defect
+1314723,623,// This test could be broken if multiple tests are running in parallel.,9741a460cf52c332562aa838127d792fe005a624,defect
 1632811,979,"/*
 			 * Loading NodeClass as a hidden class fails due to
 			 *   java.lang.ClassNotFoundException: j9vm.test.invoker.NodeClass.0x0000000000000000
 			 * skip this test for now.
 			 * See https://github.com/eclipse-openj9/openj9/issues/13529
-			 */",skip-test
+			 */",0faac3379ade946e93965cd276d690dd6fddbceb,skip-test
 443779,128,"/**
  * Note that {@link java.net.Socket#setSendBufferSize(int)} is only a hint.
  * If this test is flaky it should be ignored.  See HADOOP-13351.
- */",how-to
+ */",eb264da0fe6cc1280a37ab619e5277bd91203517,how-to
 964186,435,"// todo (6.0) : fix for Oracle see HHH-13432
-//		integrationSettings.put( AvailableSettings.HQL_BULK_ID_STRATEGY, new MultiTableBulkIdStrategyStub() );",defect
-509486,140,// TODO: Maven and Gradle give different return codes,requirement
+//		integrationSettings.put( AvailableSettings.HQL_BULK_ID_STRATEGY, new MultiTableBulkIdStrategyStub() );",b45254b7c47dc0281884bf1fb385db52a0901b83,defect
+509486,140,// TODO: Maven and Gradle give different return codes,edc2be8ccfb6e56ed87f00217aa9594175d6cd7c,requirement
 1455666,763,"// send some records to partition 0
 // Note that the segment 2 gets offloaded for p0, but we cannot expect those events deterministically
-// because the rlm-task-thread runs in background and this framework doesn't support it.",dependency
-703363,213,// TODO: 4-byte sequences are only supported on ART,requirement
-746840,238,// TODO: actually calculate the following parameters and do exact value checks.,requirement
+// because the rlm-task-thread runs in background and this framework doesn't support it.",38cc135c744d13d3b17c6bdd128200dd84533140,dependency
+703363,213,// TODO: 4-byte sequences are only supported on ART,ad261cdf136ec1396bc353e4b379e011a727f151,requirement
+746840,238,// TODO: actually calculate the following parameters and do exact value checks.,b6908362fdcdc9fe50e661dd297b8c77e341fa48,requirement
 977196,435,"/**
  * TODO : javadoc
  *
  * @author Steve Ebersole
- */",documentation
+ */",7419e56d8d2dda1cf97d7dbe2a9ce26f52896b2b,documentation
 734064,230,"// TODO: Ensure that it is impossible to ever decrement the generation id stored in index.latest then assert that
 // it never decrements here. Same goes for the metadata, ensure that we never overwrite newer with older
-// metadata.",requirement
-1027262,445,//Ooooooo this is so ugly,code
+// metadata.",f909ac76f237ecaee4e27fdcbbc27412d1ae228f,requirement
+1027262,445,//Ooooooo this is so ugly,c89a3547957b551e64b58f76a4af98d719f8e0ae,code
 1336503,651,"// Careful of the excluded middle!
 // We cannot simplify ""b <> 1 or b = 1"" to ""true"" because if b is null, the
 // result is unknown.
-// TODO: ""b = b"" would be the best simplification.",requirement
-875651,337,"// TODO(blickly): We should warn for the next two as well, but it's harder to detect.",how-to
-107777,22,// TODO: test name,requirement
+// TODO: ""b = b"" would be the best simplification.",f29518feafcab33b90b45bf236d31a632537f432,requirement
+875651,337,"// TODO(blickly): We should warn for the next two as well, but it's harder to detect.",f5d8bd9a4c4560cbd0300fa6fdb5f0d670372562,how-to
+107777,22,// TODO: test name,25af9fd065ae560a2089b975d736ecc32b833ca2,requirement
 1384345,757,"// BouncyCastle is parsing date objects with the system locale while creating self-signed SSL certs
 // This fails for certain locales, e.g. 'ks'.
 // Until this is fixed, we force the english locale.
-// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",multi
+// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,multi
 86103,12,"// Note: these addresses are *not* found, as we do not search the elements of the array.
 //       This is by design, as it saves a lot of work.
-// addr(""010054ec""), addr(""010054f0""));",design
-58280,11,// TODO: Reactor usually times out on Windows ...,refactor
-68121,12,// not sure what the margin of error is,how-to
+// addr(""010054ec""), addr(""010054f0""));",de0d77d61a67745fa7063eb3da24f7aab5785e01,design
+58280,11,// TODO: Reactor usually times out on Windows ...,9cdc2872414e5f1cc7d290c1568b89294ee46750,refactor
+68121,12,// not sure what the margin of error is,ff4bbd3442389f9b07b6053308d89038131404ad,how-to
 1297115,620,"/**
  * TODO: IGNITE-592.
  *
  * @throws Exception If failed.
- */",requirement
-1053432,455,// todo: port to ResourcesTest,requirement
+ */",9ea0acfa44d7736d2d858ab3d21f6df3caf7d177,requirement
+1053432,455,// todo: port to ResourcesTest,daee6822fa2310486a24886b517c658ee97ca74f,requirement
 365853,84,"// SBMTODO: Move this Spring boot health check
 //    @Rule
 //    public final GrpcCleanupRule grpcCleanup = new GrpcCleanupRule();
@@ -1263,15 +1263,15 @@ id,repository,text,label
 //        // Create a server, add service, start, and register for automatic graceful shutdown.
 //        grpcCleanup.register(InProcessServerBuilder
 //                .forName(name).directExecutor().addService(service).build().start());
-//    }",refactor
-423851,128,// Ignored in automated tests due to flakiness by design,defect
+//    }",db5edf542ee52d1ca2939f864be455207575c3ae,refactor
+423851,128,// Ignored in automated tests due to flakiness by design,410dc6f2dfa5a79ed813ff8e14149c62d4585a0d,defect
 1495785,822,"// Find the async-reset webapp based on common IDE working directories
-// TODO import webapp as maven artifact",build
+// TODO import webapp as maven artifact",1b8b2cc526dec781f4e3367e6714c2710393c244,build
 1216382,576,"/*
    * Max UID row values that are != 8 bytes wide are bizzare.
    * TODO - a fix would be to find the max used ID for the type and store that
    * in the max row.
-   */",defect
+   */",5d6b2ef038012ec1331d3a995662a1e99d9a9256,defect
 703771,213,"// ChooserWrapperActivity inherits from the framework ChooserActivity, so if the framework
 // resources have been updated since the framework was last built/pushed, the inherited behavior
 // (which is the focus of our testing) will still be implemented in terms of the old resource
@@ -1280,7 +1280,7 @@ id,repository,text,label
 // general semantics as Resources#getIdentifier() e.g. `getRuntimeResourceId(""foo"", ""string"")`)
 // to refer to the resource by that name in the runtime chooser, regardless of whether the
 // framework code on the device is up-to-date.
-// TODO: is there a better way to do this? (Other than abandoning inheritance-based DI wrapper?)",how-to
+// TODO: is there a better way to do this? (Other than abandoning inheritance-based DI wrapper?)",8b6a2942e47b7e20a7df7e753fb3f93c5050f75c,how-to
 215850,60,"/**
  * Base class for tests related to unaligned checkpoints.
  *
@@ -1289,36 +1289,36 @@ id,repository,text,label
  * number of expected restarts is reached. The AdaptiveScheduler won't trigger the operator reset
  * resulting in the test running forever. This is why this test suite is disabled for the {@link
  * org.apache.flink.runtime.scheduler.adaptive.AdaptiveScheduler}.
- */",skip-test
-1056188,455,//        abstract void abstractMethod(); todo,requirement
-126659,36,// todo remove this,refactor
-1215583,574,"//FIXME test with just, empty, callable, interval",requirement
+ */",819e77ff6cada75f36f31634906fa1366fb55ee7,skip-test
+1056188,455,//        abstract void abstractMethod(); todo,d7ef13b55e73197c628c72b2e8a32c77875c54e7,requirement
+126659,36,// todo remove this,4bafea92b3849e613f005c2ce2548c7d723d1bd0,refactor
+1215583,574,"//FIXME test with just, empty, callable, interval",1af504ee6a3e9079face0a8f4e647112599a5d41,requirement
 40473,8,"// This test assumes that xpack.ml.max_machine_memory_percent is 30
 // and that xpack.ml.use_auto_machine_memory_percent is false.
 // It also assumes that 30% of RAM on the test machine is sufficient
 // to run a 200MB job but not a 50000MB job. (If we move to 256GB CI
-// workers then it will need to be adjusted.)",temporary-fix
-499770,137,//hacky workaround using the toString method to avoid mocking the Ruby runtime,temporary-fix
+// workers then it will need to be adjusted.)",c2b81c70390e70fe19f903e767ae26401df41f0e,temporary-fix
+499770,137,//hacky workaround using the toString method to avoid mocking the Ruby runtime,a50adb8fb3a4179c582da6f34b27eeff12e4fa94,temporary-fix
 839699,308,"// The order of the following tests matter. The first test publishes some messages in a Solace
 // queue, and those messages are read by the second test. If another writer tests is run before
-// the read test, that will alter the count for the read test and will make it fail.",design
-1477629,805,// TODO pass properties file,requirement
-69363,12,// TODO: these tests are too simple since they only replace undefined components,superficial-test
-853910,315,// hacky solution,temporary-fix
-833325,308,"// Skip, zstd only supported for Avro 1.9+",skip-test
-625301,211,"// TODO test expected message precisely, as in TestFileBasedSystemAccessControl",requirement
-60512,11,// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead,code
-1610889,947,// todo: check that we can load and instantiate class from the returned class name,requirement
-395927,119,// TODO: verify output,requirement
+// the read test, that will alter the count for the read test and will make it fail.",a1ee2aec22c96068e913bae1c02f4ca5ddd54eb4,design
+1477629,805,// TODO pass properties file,7d7f05c1496f553ffbb956f33f1657edeca3ffa2,requirement
+69363,12,// TODO: these tests are too simple since they only replace undefined components,dfaa7db12daf1f64fc5f6e4c9ce6a042d08dc62a,superficial-test
+853910,315,// hacky solution,e17a8390d55fd89cc44536d75ec00f81576fa705,temporary-fix
+833325,308,"// Skip, zstd only supported for Avro 1.9+",fb2d151020c8d51f260b3f4a86bf9d25c762fc08,skip-test
+625301,211,"// TODO test expected message precisely, as in TestFileBasedSystemAccessControl",f727198aef480990acea0e2888344cf238df0ff0,requirement
+60512,11,// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead,a5f44575fbc7fada8638dca9e51db75119702af8,code
+1610889,947,// todo: check that we can load and instantiate class from the returned class name,76bc0115247a0561437f1ceec388ab2f5430e038,requirement
+395927,119,// TODO: verify output,46b43ed4fc7e797bb714cc9e07cb3a9580cbe155,requirement
 396345,119,"// ToDo prestodb/21791: write with 0 length varchar fails in hive
-// See reference - While Presto supports Varchar of length 0 (as discussed in trinodb/trino#1136",dependency
-235306,64,// Deactivated due to https://github.com/bazelbuild/bazel/issues/9380.,multi
-73111,12,"// NB. I don't know what uniques, if any, are involved",how-to
+// See reference - While Presto supports Varchar of length 0 (as discussed in trinodb/trino#1136",cfc888d7af2dbb976ec466065ae0735d9dbff126,dependency
+235306,64,// Deactivated due to https://github.com/bazelbuild/bazel/issues/9380.,ffe134867bbd41725bf26f80ca5d553b5ebfb749,multi
+73111,12,"// NB. I don't know what uniques, if any, are involved",0447a6cba4c80a5e484e88308530848cf01d534e,how-to
 182216,56,"// Raise the priority of the authenticator to position it right before
 // the Username/password authentication
 // TODO find a better, more explicit way to specify the position
-// of authenticator within the flow relative to other authenticators",how-to
-1319572,632,// TODO use the static password and port opt definitions in superclass,requirement
+// of authenticator within the flow relative to other authenticators",3ed8d2f7bdea30eea4496c6a97b3c7328edaae58,how-to
+1319572,632,// TODO use the static password and port opt definitions in superclass,e7af08357c0f8fbc1e55d779cb4805559dc2e074,requirement
 851701,315,"// RepositoryVersionRegistry vReg = repository.getVersionRegistry();
 // assertEquals(0, vReg.getVersions().size());
 // vReg.addVersion(new SimpleObjectVersion(EXP_OBJECT_VERSION_LABEL, null, null, null));
@@ -1326,8 +1326,8 @@ id,repository,text,label
 // assertEquals(""1.0"", versions.get(0).getLabel());
 // assertEquals(""1.1"", versions.get(1).getLabel());
 
-// TODO mlowery finish me",requirement
-755174,255,// TODO: fill expire txn ids,requirement
+// TODO mlowery finish me",11fb10da973536a4def0acdfcd5f22db39db645a,requirement
+755174,255,// TODO: fill expire txn ids,e411cb1338d05a65f35ad5cf69d8932a7fede7e0,requirement
 95324,12,"//	public void testDisassemblerMidBlockOverlapWithProgramAndConflictPreservation()
 //			throws Exception {
 //		// TODO: having difficult time coming up with valid test case
@@ -1339,48 +1339,48 @@ id,repository,text,label
 
 //
 // TEST BAD PARSE CASES
-//",how-to
-1544278,889,"//FIXME UNDERTOW-1862 assertEquals(DONE, latch.getIoFuture().await());",defect
+//",9ecce559c70bdca4fe531a2c946d1d37488b8a70,how-to
+1544278,889,"//FIXME UNDERTOW-1862 assertEquals(DONE, latch.getIoFuture().await());",fe66994c7065538e361e77cd7a49a52617c8ba87,defect
 221816,64,"// A hook for subclasses to alter the created module.
 // Implementations may add to the predeclared environment,
 // and return the module's client data value.
-// TODO(adonovan): only used in StarlarkFlagGuardingTest; move there.",refactor
+// TODO(adonovan): only used in StarlarkFlagGuardingTest; move there.",6e4567db24be0baad631c490ee694d658d970d8b,refactor
 1018374,441,"/* J2ObjC removed: not supported by Junit 4.11 (https://github.com/google/j2objc/issues/1318).
 import libcore.junit.junit3.TestCaseWithRules;
 import libcore.junit.util.ResourceLeakageDetector.DisableResourceLeakageDetection;
-import libcore.junit.util.ResourceLeakageDetector; */",dependency
-652292,213,// It may be paranoia... but let's check if parent's config didn't change after removal.,temporary-fix
-1371704,733,// TODO,requirement
-1249994,620,// TODO FIXME https://issues.apache.org/jira/browse/IGNITE-11793,defect
+import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3b642ad03f0947ce,dependency
+652292,213,// It may be paranoia... but let's check if parent's config didn't change after removal.,937c079b42d6936f7546afdc7aae4b549262148d,temporary-fix
+1371704,733,// TODO,0beb03789824b85a8d7285013ab1651cf48ad764,requirement
+1249994,620,// TODO FIXME https://issues.apache.org/jira/browse/IGNITE-11793,2c9b7fb7365c34b2b8b59b61ecd8ca3c1d926c9d,defect
 1054002,455,"// NOTE: This test diverges from the spec in the MediaPlayer
 // doc, which says that setAudioStreamType() is valid to call
 // from any state other than ERROR. It mentions that
 // unless you call it before prepare it won't be effective.
 // However, by inspection I found that it actually calls onError
 // and moves into the ERROR state unless invoked from IDLE state,
-// so that is what I have emulated.",documentation
+// so that is what I have emulated.",2e30b8aa22f13e05e1710c371106974e9f9cce30,documentation
 985094,435,"//TODO this could be implemented with @BeforeAll, if we move to Junit 5.5 or higher. The way to intercept exceptions in this method, inside
 // the @NotImplementedYet extension would be by harnessing LifecycleMethodExecutionExceptionHandler, or InvocationInterceptor,
-// and both are Junit 5.5 (and experimental)",how-to
+// and both are Junit 5.5 (and experimental)",e775f6cdc75a6ee68f0ef47ada35073727e03c47,how-to
 546934,149,"// This is disabled since OverlordResource.getTaskStatus() is annotated with TaskResourceFilter which is supposed to
 // set authorization token properly, but isn't called in this test.
 // This should be fixed in https://github.com/apache/druid/issues/6685.
-// expectAuthorizationTokenCheck();",multi
-992143,441,// deprecated,code
-1359128,700,"// TODO: easy, try reloadClasses false, or explain why it's needed",multi
+// expectAuthorizationTokenCheck();",58a6769a5ec04262778ed941e2ff041166595337,multi
+992143,441,// deprecated,c25e5634ada9243d416ad2701140d305e086282c,code
+1359128,700,"// TODO: easy, try reloadClasses false, or explain why it's needed",0842ce9a9d118484bea6320f90d891101839d5d3,multi
 892743,368,"// expected
 // TODO(czhu): with the current implementation of prefixes w/o delimiters, there is
-// never a FileDoesNotExistException because we just list the entire bucket recursively",impractical-case
-635000,211,"// TODO use correlated predicate, it requires support for correlated subqueries in plan matchers",requirement
+// never a FileDoesNotExistException because we just list the entire bucket recursively",3ee80351e11317d421b06fdfdd62c4e7d12e6e22,impractical-case
+635000,211,"// TODO use correlated predicate, it requires support for correlated subqueries in plan matchers",da8708bd9bdb49607755357bd68bb1f81ac89a0d,requirement
 216181,60,"// TODO the 'NO_OF_RETRIES' is useless for current RestartPipelinedRegionStrategy,
 // for this ContinuousFileProcessingCheckpointITCase, using
-// RestartPipelinedRegionStrategy would result in endless running.",requirement
+// RestartPipelinedRegionStrategy would result in endless running.",2f909995e22c07741224e9190894f7cf553a09e0,requirement
 333067,81,"/**
  * Reported bug is that a GregorianCalendar with a cutover of Date(Long.MAX_VALUE)
  * doesn't behave as a pure Julian calendar.
  * CANNOT REPRODUCE THIS BUG
- */",defect
+ */",e31b11c1ce764316cc298080b0b63aa70f785007,defect
 229651,64,"// The standard file systems on macOS support extended attributes by default, so we can assume
 // that the test will work on that platform. For other systems, we currently don't have a
-// mechanism to validate this so the tests are skipped unconditionally.",multi
-743376,230,// this is just a temporary thing but it's easier to change if it is encapsulated.,temporary-fix
+// mechanism to validate this so the tests are skipped unconditionally.",65bf06345bf20e48614a94506f5bc0c3d7cf3ca7,multi
+743376,230,// this is just a temporary thing but it's easier to change if it is encapsulated.,4dcb2a7f565ac9e0b857a3d010fe9df3ac01ff1e,temporary-fix
