@@ -241,3 +241,9 @@ class Model:
         else:
             new_result_df.to_csv(merged_file, index=False)
         return None
+
+    def create_model_suffix(self, prompt_template: PromptTemplate, n_shot_size: int = None):
+        if len(prompt_template.name) > 0:
+            return f'{prompt_template.name}-{n_shot_size}-shot'
+        else:
+            return f'{n_shot_size}-shot'
