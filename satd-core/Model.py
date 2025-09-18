@@ -15,12 +15,13 @@ N_SHOT_PROPERTIES = ['text', 'label', 'code_before', 'code_after', 'cot']
 
 class Model:
     def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter,
-                 enable_cache: bool = False):
+                 cache_update_batch_size: int, enable_cache: bool = False):
         self.task_type = task_type
         self.model_uri = model_uri
         self.output_label_converter = output_label_converter
         self.unknown_labels = []
         self.enable_cache = enable_cache
+        self.cache_update_batch_size = cache_update_batch_size
 
     @abstractmethod
     def fit(self, dataset: Dataset):
@@ -172,7 +173,6 @@ class Model:
     def get_output_file_name(self, model_name_suffix):
         return f'{self.task_type}_{self.get_full_model_name(model_name_suffix).split("/")[-1]}.csv'
 
-
     def add_into_batch_job(self, input_file, job_id, job_name, count, status):
         job_file = f'{os.getenv("CACHE_DIRECTORY")}/output/batch/job.csv'
         os.makedirs(os.path.dirname(job_file), exist_ok=True)
@@ -219,15 +219,24 @@ class Model:
         test_output['label_pred_raw'] = raw_label_predictions
         return Dataset.from_dict(test_output).to_pandas()
 
-    def append_into_merged_file(self, model_name_suffix, dataset, text_id, predicted_label, raw_predicted_label):
-        disable_progress_bar()
-        projected_dataset = dataset.filter(lambda row: row['id'] == text_id)
-        enable_progress_bar()
-        new_result_df = self.panda_dataframe_result(projected_dataset, [predicted_label], [raw_predicted_label])
+    def append_into_merged_file(self, model_name_suffix, dataset, ids, predicted_labels, raw_predicted_labels):
+        id_map = dict(zip(ids, list(zip(predicted_labels, raw_predicted_labels))))
+        common_rows = []
+        common_predicted_labels = []
+        common_raw_predicted_labels = []
+        for row in dataset:
+            if row['id'] in id_map:
+                common_rows.append(row)
+                common_predicted_labels.append(id_map[row['id']][0])
+                common_raw_predicted_labels.append(id_map[row['id']][1])
+        if len(common_rows) < len(ids):
+            print('warning .. updating {len(common_rows)} / {len(ids)}')
+        new_result_df = self.panda_dataframe_result(Dataset.from_list(common_rows), common_predicted_labels,
+                                                    common_raw_predicted_labels)
         merged_file = self.get_merged_file(model_name_suffix)
         if os.path.exists(merged_file):
             df = pd.read_csv(merged_file)
-            df = df[df['id'] != text_id]
+            df = df[~df['id'].isin(set(new_result_df['id']))]
             pd.concat([df, new_result_df], ignore_index=True).to_csv(merged_file, index=False)
         else:
             new_result_df.to_csv(merged_file, index=False)
