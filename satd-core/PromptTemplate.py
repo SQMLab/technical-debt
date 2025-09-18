@@ -1,9 +1,11 @@
-from util import get_first_n_line, get_last_n_line
 from jinja2 import Template
+
+from util import get_first_n_line, get_last_n_line
 
 
 class PromptTemplate:
-    def __init__(self, name, definition, instruction, n_shot_template, n_shot_answer_template, line_m_before, line_n_after):
+    def __init__(self, name, definition, instruction, n_shot_template, n_shot_answer_template, line_m_before,
+                 line_n_after, add_question_label: bool = False):
         self._name = name
         self._definition = definition
         self._instruction = instruction
@@ -11,6 +13,7 @@ class PromptTemplate:
         self._n_shot_answer_template = n_shot_answer_template
         self._line_m_before = line_m_before
         self._line_n_after = line_n_after
+        self._add_question_label = add_question_label
 
     @property
     def name(self):
@@ -35,6 +38,9 @@ class PromptTemplate:
     @property
     def shot_template(self):
         return self._n_shot_template
+    @property
+    def add_question_label(self):
+        return self._add_question_label
 
     def create_example(self, args):
         return self.resolve_template(args, self.shot_template)
@@ -42,7 +48,7 @@ class PromptTemplate:
     def create_answer(self, args):
         return self.resolve_template(args, self._n_shot_answer_template)
 
-    def resolve_template(self, args, formula:str):
+    def resolve_template(self, args, formula: str):
         properties = dict(args)
         if 'code_before' in properties:
             properties['code_before'] = get_last_n_line(args['code_before'], self.line_m_before)
