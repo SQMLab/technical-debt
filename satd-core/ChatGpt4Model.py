@@ -21,7 +21,7 @@ class ChatGpt4Model(Model):
         self.train_dataset = dataset
 
     def predict(self, dataset: Dataset, dataset_name: str, prompt_template: PromptTemplate, train_strategy: TrainStrategy, n_shot_size: int, verbose: bool = False):
-        model_name_suffix = f'{n_shot_size}-shot'
+        model_name_suffix = self.create_model_suffix(prompt_template, n_shot_size)
         super().predict_start(dataset, model_name_suffix)
         ids = []
         label_predictions = []
@@ -46,12 +46,12 @@ class ChatGpt4Model(Model):
             if self.enable_cache and ((index + 1) % self.cache_update_batch_size  == 0 or index == dataset.num_rows - 1):
                 start_index = max(0, index + 1 - self.cache_update_batch_size)
                 self.append_into_merged_file(model_name_suffix, dataset, ids[start_index:], label_predictions[start_index:], raw_label_predictions[start_index:])
-        return super().predict_end(dataset, dataset_name, label_predictions, raw_label_predictions, f'{n_shot_size}-shot')
+        return super().predict_end(dataset, dataset_name, label_predictions, raw_label_predictions, self.create_model_suffix(prompt_template, n_shot_size))
 
 
     def submit_batch(self, dataset: Dataset, dataset_name: str, prompt_template: PromptTemplate,
                      train_strategy: TrainStrategy, n_shot_size: int, verbose: bool = False):
-        model_name_suffix = f'{n_shot_size}-shot'
+        model_name_suffix = self.create_model_suffix(prompt_template, n_shot_size)
         super().predict_start(dataset, model_name_suffix)
         display_job_name = self.get_output_file_name(model_name_suffix).replace('.csv', '')
         batch_items = []
