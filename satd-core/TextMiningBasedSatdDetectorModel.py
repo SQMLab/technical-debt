@@ -12,7 +12,7 @@ BASE_SATD_DETECTOR_DIRECTORY = os.getenv('BASE_SATD_DETECTOR_DIRECTORY')
 
 class TextMiningBasedSatdDetectorModel(Model):
     def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter, retrain: bool = False):
-        super().__init__(task_type, model_uri, output_label_converter)
+        super().__init__(task_type, model_uri, output_label_converter, 10000)
         self.retrain = retrain
 
     def fit(self, dataset: Dataset):

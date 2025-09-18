@@ -13,7 +13,7 @@ from util import get_default_JVM_path
 
 class BaselineModel(Model):
     def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter):
-        super().__init__(task_type, model_uri, output_label_converter)
+        super().__init__(task_type, model_uri, output_label_converter, 10000)
 
     def fit(self, dataset: Dataset):
         pass

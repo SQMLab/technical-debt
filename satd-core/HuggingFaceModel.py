@@ -7,7 +7,7 @@ from OutputLabelConverter import OutputLabelConverter
 
 class HuggingFaceModel(Model):
     def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter, enable_cache: bool = False):
-        super().__init__(task_type, model_uri, output_label_converter, enable_cache)
+        super().__init__(task_type, model_uri, output_label_converter, 100, enable_cache)
         self.tokenizer = AutoTokenizer.from_pretrained(model_uri)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_uri, device_map="auto")
         self.train_dataset = None
@@ -21,6 +21,7 @@ class HuggingFaceModel(Model):
                 verbose: bool = False):
         model_name_suffix = f'{n_shot_size}-shot'
         super().predict_start(dataset, model_name_suffix)
+        ids = []
         label_predictions = []
         raw_label_predictions = []
         for index in range(dataset.num_rows):
@@ -34,8 +35,10 @@ class HuggingFaceModel(Model):
                 output = self.model.generate(input_ids, max_new_tokens=128)
                 raw_label = self.tokenizer.decode(output[0], skip_special_tokens=True)
             predicted_label = self.output_label_converter.convert_label(raw_label)
+            ids.append(dataset['id'][index])
             label_predictions.append(predicted_label)
             raw_label_predictions.append(raw_label)
-            if self.enable_cache:
-                self.append_into_merged_file(model_name_suffix, dataset, dataset['id'][index], predicted_label, raw_label)
+            if self.enable_cache and ((index + 1) % self.cache_update_batch_size  == 0 or index == dataset.num_rows - 1):
+                start_index = max(0, index + 1 - self.cache_update_batch_size)
+                self.append_into_merged_file(model_name_suffix, dataset, ids[start_index:], label_predictions[start_index:], raw_label_predictions[start_index:])
         return super().predict_end(dataset, dataset_name, label_predictions, raw_label_predictions, f'{n_shot_size}-shot')

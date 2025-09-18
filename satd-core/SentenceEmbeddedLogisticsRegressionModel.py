@@ -6,7 +6,7 @@ from OutputLabelConverter import OutputLabelConverter
 
 class SentenceEmbeddedLogisticsRegressionModel(Model):
     def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter):
-        super().__init__(task_type, model_uri, output_label_converter)
+        super().__init__(task_type, model_uri, output_label_converter, 10000)
         self.transformer = SentenceTransformer(model_uri)
         self.model = LogisticRegression()
 

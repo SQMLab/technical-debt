@@ -11,7 +11,7 @@ import json
 class ChatGpt4Model(Model):
     def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter, enable_cache: bool,
                  non_batch_cache_required: bool = True):
-        super().__init__(task_type, model_uri, output_label_converter, enable_cache)
+        super().__init__(task_type, model_uri, output_label_converter, 10000, enable_cache)
         self.client = OpenAI(api_key=os.getenv("OPEN_AI_API_KEY"))
         self.train_dataset = None
         self.train_indexes = None
@@ -23,6 +23,7 @@ class ChatGpt4Model(Model):
     def predict(self, dataset: Dataset, dataset_name: str, prompt_template: PromptTemplate, train_strategy: TrainStrategy, n_shot_size: int, verbose: bool = False):
         model_name_suffix = f'{n_shot_size}-shot'
         super().predict_start(dataset, model_name_suffix)
+        ids = []
         label_predictions = []
         raw_label_predictions = []
         for index in range(dataset.num_rows):
@@ -38,11 +39,13 @@ class ChatGpt4Model(Model):
                     store=True,
                     messages=prompt)
                 raw_label = completion.choices[0].message.content
+            ids.append(dataset['id'][index])
             predicted_label = self.output_label_converter.convert_label(raw_label)
             raw_label_predictions.append(raw_label)
             label_predictions.append(predicted_label)
-            if self.enable_cache:
-                self.append_into_merged_file(model_name_suffix, dataset, dataset['id'][index], predicted_label, raw_label)
+            if self.enable_cache and ((index + 1) % self.cache_update_batch_size  == 0 or index == dataset.num_rows - 1):
+                start_index = max(0, index + 1 - self.cache_update_batch_size)
+                self.append_into_merged_file(model_name_suffix, dataset, ids[start_index:], label_predictions[start_index:], raw_label_predictions[start_index:])
         return super().predict_end(dataset, dataset_name, label_predictions, raw_label_predictions, f'{n_shot_size}-shot')
 
 
