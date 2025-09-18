@@ -28,18 +28,19 @@ class ChatGpt4Model(Model):
         raw_label_predictions = []
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
+            sample_id = dataset['id'][index]
             prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index,verbose=verbose)
             raw_label = self.read_from_merged_file(model_name_suffix, dataset['hash'][index]) if self.enable_cache else None
             if raw_label is None:
                 if self.non_batch_cache_required:
-                    raise Exception('Non-batch cache entry missing.')
+                    raise Exception(f'Non-batch cache entry missing ID : {sample_id} hash: {dataset["hash"][index]}')
                 print(f'sending client request for {dataset["id"][index]}')
                 completion = self.client.chat.completions.create(
                     model=self.model_uri,
                     store=True,
                     messages=prompt)
                 raw_label = completion.choices[0].message.content
-            ids.append(dataset['id'][index])
+            ids.append(sample_id)
             predicted_label = self.output_label_converter.convert_label(raw_label)
             raw_label_predictions.append(raw_label)
             label_predictions.append(predicted_label)
