@@ -56,7 +56,7 @@ class GeminiModel(Model):
                 print(f'sending client request for {dataset["id"][index]}')
                 raw_label = predict_with_gemini(self.model, self.model_uri,
                                                 f'{prompt_template.definition}\n{prompt_template.instruction}', prompt)
-
+            ids.append(dataset['id'][index])
             predicted_label = self.output_label_converter.convert_label(raw_label)
             raw_label_predictions.append(raw_label)
             label_predictions.append(predicted_label)
@@ -76,8 +76,6 @@ class GeminiModel(Model):
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
             prompt_msg = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
-
-            # TODO update
             if not self.enable_cache or self.read_from_merged_file(model_name_suffix, dataset['hash'][index]) is None:
                 batch_items.append({'key': str(dataset['id'][index]),
                                     'request': {
