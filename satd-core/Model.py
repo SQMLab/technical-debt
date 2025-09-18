@@ -204,11 +204,11 @@ class Model:
     def get_base_output_directory(self):
         return f'{os.getenv("CACHE_DIRECTORY")}/output'
 
-    def read_from_merged_file(self, model_name_suffix, text):
+    def read_from_merged_file(self, model_name_suffix, text_hash):
         merged_file = self.get_merged_file(model_name_suffix)
         if os.path.exists(merged_file):
             df = pd.read_csv(merged_file)
-            result_df = df[df['text'] == text]
+            result_df = df[df['hash'] == text_hash]
             if not result_df.empty:
                 return result_df.iloc[random.randrange(len(result_df))].to_dict()['label_pred_raw']
         return None

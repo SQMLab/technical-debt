@@ -29,7 +29,7 @@ class ChatGpt4Model(Model):
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
             prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index,verbose=verbose)
-            raw_label = self.read_from_merged_file(model_name_suffix, dataset['text'][index]) if self.enable_cache else None
+            raw_label = self.read_from_merged_file(model_name_suffix, dataset['hash'][index]) if self.enable_cache else None
             if raw_label is None:
                 if self.non_batch_cache_required:
                     raise Exception('Non-batch cache entry missing.')
@@ -59,7 +59,7 @@ class ChatGpt4Model(Model):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
             prompt_msg = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
 
-            if not self.enable_cache or self.read_from_merged_file(model_name_suffix, dataset['text'][index]) is None:
+            if not self.enable_cache or self.read_from_merged_file(model_name_suffix, dataset['hash'][index]) is None:
                 batch_items.append({
                     "custom_id": str(dataset['id'][index]),
                     "method": "POST",
