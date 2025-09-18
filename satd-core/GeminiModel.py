@@ -49,7 +49,7 @@ class GeminiModel(Model):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
             prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
             raw_label = self.read_from_merged_file(model_name_suffix,
-                                                   dataset['text'][index]) if self.enable_cache else None
+                                                   dataset['hash'][index]) if self.enable_cache else None
             if raw_label is None:
                 if self.non_batch_cache_required:
                     raise Exception('Non-batch cache entry missing.')
@@ -78,7 +78,7 @@ class GeminiModel(Model):
             prompt_msg = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
 
             # TODO update
-            if not self.enable_cache or self.read_from_merged_file(model_name_suffix, dataset['text'][index]) is None:
+            if not self.enable_cache or self.read_from_merged_file(model_name_suffix, dataset['hash'][index]) is None:
                 batch_items.append({'key': str(dataset['id'][index]),
                                     'request': {
                                         'contents': prompt_msg,
