@@ -148,6 +148,8 @@ class Model:
         if 'label' in test_properties:
             test_properties['label'] = ''
         input_question = prompt_template.create_example(test_properties)
+        whole_question_part = f'{input_question}\n{prompt_template.create_answer(test_properties)}' if prompt_template.add_question_label else f'{input_question}'
+
         if isGpt:
             message.append({'role': 'user', 'content': input_question})
         elif isGemini:
@@ -156,7 +158,7 @@ class Model:
                 'role': 'user'
             })
         else:
-            message.append(f'{input_question}')
+            message.append(whole_question_part)
 
         if isGpt or isGemini:
             prompt = message
