@@ -47,15 +47,16 @@ class GeminiModel(Model):
         raw_label_predictions = []
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
-            prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
+            input_prompt = self.create_input(prompt_template, self.train_dataset, train_indexes, dataset, index,
+                                             verbose)
             raw_label = self.read_from_merged_file(model_name_suffix,
                                                    dataset['hash'][index]) if self.enable_cache else None
             if raw_label is None:
                 if self.non_batch_cache_required:
                     raise Exception('Non-batch cache entry missing.')
                 print(f'sending client request for {dataset["id"][index]}')
-                raw_label = predict_with_gemini(self.model, self.model_uri,
-                                                f'{prompt_template.definition}\n{prompt_template.instruction}', prompt)
+                raw_label = predict_with_gemini(self.model, self.model_uri, prompt_template.create_full_instruction(),
+                                                input_prompt)
             ids.append(dataset['id'][index])
             predicted_label = self.output_label_converter.convert_label(raw_label)
             raw_label_predictions.append(raw_label)
@@ -75,7 +76,7 @@ class GeminiModel(Model):
         batch_items = []
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
-            prompt_msg = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
+            prompt_msg = self.create_input(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
             if not self.enable_cache or self.read_from_merged_file(model_name_suffix, dataset['hash'][index]) is None:
                 batch_items.append({'key': str(dataset['id'][index]),
                                     'request': {
@@ -98,6 +99,8 @@ class GeminiModel(Model):
                 config={'display_name': display_job_name})
 
             self.add_into_batch_job(batch_input_file, file_batch_job.name, display_job_name, len(batch_items), None)
-            print(f"Created batch job: {file_batch_job.name}")
+            print(f"Created batch job for {len(batch_items)} items: {file_batch_job.name}")
+
         else:
             print('No item left for request')
+        return len(batch_items)

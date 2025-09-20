@@ -115,15 +115,12 @@ class Model:
 
         return properties
 
-    def create_prompt(self, prompt_template: PromptTemplate, train_dataset: Dataset, train_indexes,
-                      test_dataset: Dataset,
-                      test_index: int, verbose: bool = False):
+    def create_input(self, prompt_template: PromptTemplate, train_dataset: Dataset, train_indexes,
+                     test_dataset: Dataset,
+                     test_index: int, verbose: bool = False):
         message = []
         isGpt = 'gpt' in self.model_uri
         isGemini = 'gemini' in self.model_uri
-        if isGpt:
-            message.append(
-                {'role': 'developer', 'content': f'{prompt_template.definition}\n{prompt_template.instruction}'})
 
         for index in train_indexes:
             input_example = prompt_template.create_example(self.project_properties(train_dataset, index))
@@ -131,7 +128,7 @@ class Model:
 
             if isGpt:
                 message.append({'role': 'user', 'content': input_example})
-                message.append({'role': 'assistant', 'content': input_answer})
+                message.append({'role': 'developer', 'content': input_answer})
             elif isGemini:
                 message.append({
                     'parts': [{'text': input_example}],
@@ -164,8 +161,7 @@ class Model:
         if isGpt or isGemini:
             prompt = message
         else:
-            all_example_text = "\n".join(message)
-            prompt = f'{prompt_template.definition}\n{prompt_template.instruction}\n\n{all_example_text}'
+            prompt = "\n".join(message)
         if verbose:
             print(f'{prompt}')
         return prompt
