@@ -22,6 +22,7 @@ class Model:
         self.unknown_labels = []
         self.enable_cache = enable_cache
         self.cache_update_batch_size = cache_update_batch_size
+        self.cache_raw_label = {}
 
     @abstractmethod
     def fit(self, dataset: Dataset):
@@ -206,13 +207,17 @@ class Model:
     def get_base_output_directory(self):
         return f'{os.getenv("CACHE_DIRECTORY")}/output'
 
+    def load_raw_label_if_needed(self, merged_file, reload : bool = False):
+        if reload or  merged_file not in self.cache_raw_label:
+            if os.path.exists(merged_file):
+                df = pd.read_csv(merged_file)
+                self.cache_raw_label[merged_file] = dict(zip(df['hash'], df['label_pred_raw']))
+
     def read_from_merged_file(self, model_name_suffix, text_hash):
         merged_file = self.get_merged_file(model_name_suffix)
-        if os.path.exists(merged_file):
-            df = pd.read_csv(merged_file)
-            result_df = df[df['hash'] == text_hash]
-            if not result_df.empty:
-                return result_df.iloc[random.randrange(len(result_df))].to_dict()['label_pred_raw']
+        self.load_raw_label_if_needed(merged_file, reload=False)
+        if merged_file in self.cache_raw_label and text_hash in self.cache_raw_label[merged_file]:
+            return self.cache_raw_label[merged_file][text_hash]
         return None
 
     def panda_dataframe_result(self, dataset: Dataset, label_predictions, raw_label_predictions):
@@ -242,6 +247,7 @@ class Model:
             pd.concat([df, new_result_df], ignore_index=True).to_csv(merged_file, index=False)
         else:
             new_result_df.to_csv(merged_file, index=False)
+        self.load_raw_label_if_needed(merged_file, reload=True)
         return None
 
     def create_model_suffix(self, prompt_template: PromptTemplate, n_shot_size: int = None):
