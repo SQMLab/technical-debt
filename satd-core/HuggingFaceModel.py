@@ -26,10 +26,10 @@ class HuggingFaceModel(Model):
         raw_label_predictions = []
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
-            prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
+            input_prompt = self.create_input(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
             raw_label = self.read_from_merged_file(model_name_suffix,dataset['hash'][index]) if self.enable_cache else None
             if raw_label is None:
-                tokens = self.tokenizer(prompt, return_tensors="pt")
+                tokens = self.tokenizer(prompt_template.create_full_instruction() + "\n\n" + input_prompt, return_tensors="pt")
                 tokens['input_ids'] = tokens.input_ids.to(self.model.device)
                 input_ids = tokens.input_ids
                 output = self.model.generate(input_ids, max_new_tokens=128)

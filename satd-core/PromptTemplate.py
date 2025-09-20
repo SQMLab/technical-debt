@@ -59,5 +59,8 @@ class PromptTemplate:
     def create_prompt(self, examples: [str]):
         return self.definition + "\n" + self.instruction + "\n" + "\n" + "\n\n".join(examples)
 
+    def create_full_instruction(self):
+        return self.definition + "\n" + self.instruction
+
     def __repr__(self):
         return f"PromptTemplate(name={self.name}, description='{self.definition}', example='{self.shot_template}')"

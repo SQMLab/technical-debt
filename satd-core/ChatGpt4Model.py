@@ -29,17 +29,17 @@ class ChatGpt4Model(Model):
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
             sample_id = dataset['id'][index]
-            prompt = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index,verbose=verbose)
+            input_prompt = self.create_input(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose=verbose)
             raw_label = self.read_from_merged_file(model_name_suffix, dataset['hash'][index]) if self.enable_cache else None
             if raw_label is None:
                 if self.non_batch_cache_required:
                     raise Exception(f'Non-batch cache entry missing ID : {sample_id} hash: {dataset["hash"][index]}')
                 print(f'sending client request for {dataset["id"][index]}')
-                completion = self.client.chat.completions.create(
+                response = self.client.responses.create(
                     model=self.model_uri,
-                    store=True,
-                    messages=prompt)
-                raw_label = completion.choices[0].message.content
+                    instructions= prompt_template.create_full_instruction(),
+                    input=input_prompt)
+                raw_label = response.output_text
             ids.append(sample_id)
             predicted_label = self.output_label_converter.convert_label(raw_label)
             raw_label_predictions.append(raw_label)
@@ -58,14 +58,17 @@ class ChatGpt4Model(Model):
         batch_items = []
         for index in range(dataset.num_rows):
             train_indexes = pick_n_shot(self.train_dataset, dataset, index, n_shot_size, train_strategy)
-            prompt_msg = self.create_prompt(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
+            input_msg = self.create_input(prompt_template, self.train_dataset, train_indexes, dataset, index, verbose)
+            # input_msg.insert(0, {'role': 'developer', 'content': prompt_template.create_full_instruction()})
 
             if not self.enable_cache or self.read_from_merged_file(model_name_suffix, dataset['hash'][index]) is None:
                 batch_items.append({
                     "custom_id": str(dataset['id'][index]),
                     "method": "POST",
-                    "url": "/v1/chat/completions",
-                    "body": {"model": self.model_uri, "messages": prompt_msg},
+                    "url": "/v1/responses",
+                    "body": {"model": self.model_uri,
+                             'instructions': prompt_template.create_full_instruction(),
+                             "input": input_msg},
                 })
         if len(batch_items) > 0:
             batch_input_file = self.create_batch_input_file_name(model_name_suffix)
@@ -79,14 +82,15 @@ class ChatGpt4Model(Model):
             )
             file_batch_job = self.client.batches.create(
                 input_file_id=uploaded_file.id,
-                endpoint="/v1/chat/completions",
+                endpoint="/v1/responses",
                 completion_window="24h",
                 metadata={
                     "description": display_job_name
                 })
 
             self.add_into_batch_job(batch_input_file, file_batch_job.id, display_job_name, len(batch_items), None)
-            print(f"Created batch job for {batch_items} items: {file_batch_job.id}")
+            print(f"Created batch job for {len(batch_items)} items: {file_batch_job.id}")
         else:
             print('No item left for request')
+        return len(batch_items)
 
