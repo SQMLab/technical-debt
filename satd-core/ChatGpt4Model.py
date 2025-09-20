@@ -86,7 +86,7 @@ class ChatGpt4Model(Model):
                 })
 
             self.add_into_batch_job(batch_input_file, file_batch_job.id, display_job_name, len(batch_items), None)
-            print(f"Created batch job: {file_batch_job.id}")
+            print(f"Created batch job for {batch_items} items: {file_batch_job.id}")
         else:
             print('No item left for request')
 
