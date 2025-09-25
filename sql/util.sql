@@ -85,3 +85,38 @@ GROUP BY
     r.id
 ORDER BY
     COUNT(CASE WHEN c.is_random = true THEN 1 END) DESC;
+-- Repository
+select
+	r.id,
+	r.project_id,
+    r.name,
+    r.stars,
+    r.forks,
+    r.watchers,
+    COUNT(c.id) AS comments,
+    COUNT(c.id) FILTER (WHERE c.is_random = true) AS analyzed_comments,
+    COUNT(c.id) FILTER (WHERE c.is_random = true AND c.is_td = true) AS satd_comments,
+    ROUND(
+        100.0 *
+        (COUNT(c.id) FILTER (WHERE c.is_random = true))::numeric
+        / NULLIF(COUNT(c.id), 0),
+        2
+    ) AS percent_analyzed_comments,
+    ROUND(
+        100.0 *
+        (COUNT(c.id) FILTER (WHERE c.is_random = true AND c.is_td = true))::numeric
+        / NULLIF(COUNT(c.id) FILTER (WHERE c.is_random = true), 0),
+        2
+    ) AS percent_satd_comments,
+    r.repo_url,
+    r.commit_hash,
+    r.pushed_at,
+    r.repository_created_at
+
+FROM
+    repository r
+INNER JOIN
+    comment c ON r.id = c.repository_id
+GROUP BY
+    r.id
+order by r.id;
