@@ -220,7 +220,10 @@ class Model:
         test_output = dataset.to_dict()
         test_output['label_pred'] = label_predictions
         test_output['label_pred_raw'] = raw_label_predictions
-        return Dataset.from_dict(test_output).to_pandas()
+        # Avoid empty string to NaN conversion issue in pandas
+        cleaned = {k: ["" if pd.isna(x) else str(x) for x in v] for k, v in test_output.items()}
+        return Dataset.from_dict(cleaned).to_pandas()
+        # return Dataset.from_dict(test_output).to_pandas()
 
     def append_into_merged_file(self, model_name_suffix, dataset, ids, predicted_labels, raw_predicted_labels):
         id_map = dict(zip(ids, list(zip(predicted_labels, raw_predicted_labels))))
