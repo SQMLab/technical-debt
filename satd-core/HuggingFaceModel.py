@@ -12,6 +12,7 @@ class HuggingFaceModel(Model):
         if 'gpt-oss' not in model_uri:
             self.tokenizer = AutoTokenizer.from_pretrained(model_uri)
             self.model = AutoModelForSeq2SeqLM.from_pretrained(model_uri, device_map="auto")
+            self.pipe = None
         else:
             self.pipe = pipeline(
                 "text-generation",
