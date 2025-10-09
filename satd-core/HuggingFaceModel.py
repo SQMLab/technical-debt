@@ -9,7 +9,7 @@ class HuggingFaceModel(Model):
     def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter,
                  enable_cache: bool = False):
         super().__init__(task_type, model_uri, output_label_converter, 100, enable_cache)
-        if 'gpt-oss' in model_uri:
+        if 'gpt-oss' not in model_uri:
             self.tokenizer = AutoTokenizer.from_pretrained(model_uri)
             self.model = AutoModelForSeq2SeqLM.from_pretrained(model_uri, device_map="auto")
         else:
@@ -51,8 +51,10 @@ class HuggingFaceModel(Model):
                 else:
                     msg = [{'role': 'developer', 'content': prompt_template.create_full_instruction()}]
                     msg.extend(input_prompt)
-                    print(msg)
-                    raw_label = self.pipe(msg).outputs[0]["generated_text"][-1]
+                    output = self.pipe(msg)
+                    print(f"Input: {msg}" )
+                    print(f"Output: {output}")
+                    raw_label = output[-1]["generated_text"][-1]["content"]
 
             predicted_label = self.output_label_converter.convert_label(raw_label)
             ids.append(dataset['id'][index])
