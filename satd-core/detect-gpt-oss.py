@@ -51,7 +51,7 @@ output_label_converter = LlmOutputLabelConverter({'yes', 'no'}, DEFAULT_DETECTIO
 # In[ ]:
 
 
-gpt_model = HuggingFaceModel('detect', model_name, , True)
+gpt_model = HuggingFaceModel('detect', model_name, output_label_converter, True)
 gpt_model.fit(detect_n_shot_dataset)
 gpt_model.predict(detect_test_dataset, DATASET_NAME, prompt_template, TrainStrategy.N_SHOT_TOP, shot, verbose=False)
 
