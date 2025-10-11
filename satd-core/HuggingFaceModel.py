@@ -52,7 +52,7 @@ class HuggingFaceModel(Model):
                 else:
                     msg = [{'role': 'developer', 'content': prompt_template.create_full_instruction()}]
                     msg.extend(input_prompt)
-                    output = self.pipe(msg)
+                    output = self.pipe(msg, max_new_tokens=1024)
                     print(f"Input: {msg}" )
                     print(f"Output: {output}")
                     raw_label = output[-1]["generated_text"][-1]["content"]
