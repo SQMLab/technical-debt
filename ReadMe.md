@@ -1,52 +1,70 @@
-mvn clean package assembly:single
+# 🧩 Replication Package: A First Look at the Self-Admitted Technical Debt (SATD) in Test Code
 
-docker exec -i technical-debt-pgsql-1 psql -U satd -d postgres < /home/shahidul/dev/rnd/satd/dump/comment.sql
+> **Authors:** Anonymous (Under Review)  
+> **Artifact Type:** Replication Package  
+> **Version:** 1.0  
 
+---
 
-docker exec -i technical-debt-pgsql-1 psql -U satd -d postgres -At -c "SELECT 'UPDATE comment SET is_td = ' || COALESCE(is_td::TEXT, 'NULL') || ', note = ' || COALESCE(quote_literal(note), 'NULL') || ', td_type = ' || COALESCE(quote_literal(td_type), 'NULL') || ', is_random = ' || COALESCE(is_random::TEXT, 'NULL') || ', pred_td = ' || COALESCE(pred_td::TEXT, 'NULL') || ', updated_at = ' || COALESCE(quote_literal(updated_at::TEXT), 'NULL') || ' WHERE id = ' || id || ';' FROM comment WHERE is_random = TRUE or pred_td IS NOT NULL ORDER BY id;" > update-comment.sql
+## 📖 Abstract
 
+Self-Admitted Technical Debt (SATD) refers to comments in which developers explicitly acknowledge limitations, workarounds, or deferred improvements in code.  
+While prior research has primarily focused on production code, this study presents the **first large-scale empirical investigation of SATD in test code**, introducing a taxonomy of 15 categories and evaluating both traditional detection tools and large language models (LLMs).
 
-# testSATD
+---
 
-### Snakes in Paradise: A First Look at the Self-Admitted Technical Debt in Test code
+## 🧠 Research Questions
 
-## Introduction
-Talk about software maintenance.. Say why, in addition to source code, test code is also important. Now say although SATD has been studied at source code, it's not done at test code.. now talk about your contribution and research questions.. 
+| RQ | Description | Related Files |
+|----|--------------|---------------|
+| **RQ1** | What types of SATD appear in test code? | `satd-core/manual_classification.py` |
+| **RQ2** | Can existing SATD detection tools identify SATD in test code? | `satd-core/detect-mat.ipynb` |
+| **RQ3** | Can open-source LLMs (e.g., Flan-T5) detect SATD in test code? | `satd-core/detect-flan-t5.ipynb`, `satd-core/detect-sadegh-flan-t5.ipynb` |
+| **RQ4** | Can proprietary LLMs (e.g., GPT, Gemini) detect SATD in test code? | `satd-core/detect-gpt.ipynb`, `satd-core/detect-gemini.ipynb` |
 
+---
 
-RQ1: Can we detect test code SATD with the existing approaches?
-RQ2? Can LLM detect SATD in test code?
-RQ3? What are the types of test code SATD?
-RQ4? Given an SATD, can LLM detect its type?
-RQ5? Why do developers write SATD in test code? Manual analysis of all the SATDs under the new type only. 
+## 🗂️ Dataset Description
 
+### 1. Repository Metadata
+- **File:** `data/repository.csv`  
+- **Description:** Metadata of 1,000 open-source Java repositories collected from GitHub, including repository URLs, stars, and size.
 
-## Related Work and Motivation:
+### 2. Comment Data
 
-Talk about the important papers that deal with test code and software quality and maintainability. 
-Then talk about SATD?RQ1: Can we detect test code SATD with the existing approaches?
-RQ2? Can LLM detect SATD in test code?
-RQ3? What are the types of test code SATD?
-RQ4? Given an SATD, can LLM detect its type?
-RQ5? Why do developers write SATD in test code? Manual analysis of all the SATDs under the new
-Now say we are interested about SATD in test code..
+| Dataset | Description | File(s) |
+|----------|--------------|---------|
+| **All Extracted Comments** | Full raw extracted comments (merged from line, block, and Javadoc) | `data/comment.zip` |
+| **Detection Sets (Duplicate)** | 80/20 split preserving natural duplication | `data/duplicate_detect_train.csv`, `data/duplicate_detect_test.csv` |
+| **Detection Sets (Deduplicated)** | 80/20 split after duplicate removal | `data/unique_detect_train.csv`, `data/unique_detect_test.csv` |
+| **Labeled SATD Comments** | Manually classified SATD/non-SATD labels | `data/duplicate_satd_comment.csv`, `data/unique_satd_comment.csv` |
+| **Few-Shot Samples** | Used for n-shot LLM evaluations | `data/detect_n_shot.csv` |
 
-## Methodology
-Project selection: we want to see SATD from diverse projects.. that's why top 1000 projects. 
-How did you make sure test code only.. 
-talk about Java parser and comment extraction.. 
-Talk how you saved the positive and negative example..
-Say that after some time we found most SATD comments are coming from one project only.. Therefore, we discarded that project. Don't delete data from that project.. Just add more data.. Make it at least 700 SATD comments.. 
-Talk how three authors worked together on this.. 
+### 3. Dataset Summary
+- Total comments: **47,994**
+- Projects: **488**
+- SATD comments: **615 (1.28%)**
+- Non-English comments excluded: **943**
+- Auto-generated comments excluded: **1,063**
 
-## Results:
-Discuss the approach and findings of each RQ. 
+## 🧰 Environment Setup
 
-## Discussion:
-What do the results mean, and what is the future work? 
+API tokens, directory paths, and runtime variables are managed through the environment configuration `satd-core/.env`
+### Prerequisites
+- **Python** ≥ 3.10  
+- **Java** ≥ 17  
+- **Maven** ≥ 3.8  
+- **CUDA-enabled GPU** recommended for LLM experiments
 
-##Threats to validity:
+### Python Setup
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+---
+## License
 
-##Conclusion
+This project is licensed under the **MIT License**.
 
-
+For more information, see the [LICENSE](./LICENSE).
