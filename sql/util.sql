@@ -29,7 +29,7 @@ WHERE NOT (text ~* '^[\x00-\x7F]*$')
 AND is_random = TRUE;
 
 
--- 10 Well-Known Projects
+-- Sample 10 Projects
 SELECT
     r.name,
     r.stars,
