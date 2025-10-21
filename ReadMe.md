@@ -23,18 +23,18 @@ While prior research has primarily focused on production code, this study presen
 ## 🗂️ Dataset Description
 
 ### 1. Repository Metadata
-- **File:** [data/repository.csv](./data/repository.csv)  
+- **File:** [repository.csv](./data/repository.csv)  
 - **Description:** Metadata of 1,000 open-source Java repositories collected from GitHub, including repository URLs, stars, and size.
 
 ### 2. Comment Data
 
-| Dataset | Description | File(s) |
-|----------|--------------|---------|
-| **All Extracted Comments** | Full raw extracted comments (merged from line, block, and Javadoc) | [data/comment.zip](./data/comment.zip) |
-| **Detection Sets (Duplicate)** | 80/20 split preserving natural duplication | [data/duplicate_detect_train.csv](./data/duplicate_detect_train.csv), [data/duplicate_detect_test.csv](./data/duplicate_detect_test.csv) |
-| **Detection Sets (Deduplicated)** | 80/20 split after duplicate removal | [data/unique_detect_train.csv](./data/unique_detect_train.csv), [data/unique_detect_test.csv](./data/unique_detect_test.csv) |
-| **Labeled SATD Comments** | Manually classified SATD/non-SATD labels | [data/duplicate_satd_comment.csv](./data/duplicate_satd_comment.csv), [data/unique_satd_comment.csv](./data/unique_satd_comment.csv) |
-| **Few-Shot Samples** | Used for n-shot LLM evaluations | [data/detect_n_shot.csv](./data/detect_n_shot.csv) |
+| Dataset                           | Description | File(s)                                                                                                                  |
+|-----------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------|
+| **All Extracted Comments**        | Full raw extracted comments (merged from line, block, and Javadoc) | [comment.zip](./data/comment.zip)                                                                                        |
+| **Detection Sets (Original)**     | 80/20 split preserving natural duplication | [train.csv](./data/duplicate_detect_train.csv), [test.csv](./data/duplicate_detect_test.csv)                             |
+| **Detection Sets (Deduplicated)** | 80/20 split after duplicate removal | [train.csv](./data/unique_detect_train.csv), [test.csv](./data/unique_detect_test.csv)                                   |
+| **Labeled SATD Comments**         | Manually classified SATD | [satd comments.csv](./data/duplicate_satd_comment.csv), [deduplicated satd comments.csv](./data/unique_satd_comment.csv) |
+| **Few-Shot Samples**              | Used for n-shot | [n-shots.csv](./data/detect_n_shot.csv)                                                                                  |
 
 ### 3. Dataset Summary
 - Total comments: **47,994**  
@@ -48,7 +48,7 @@ While prior research has primarily focused on production code, this study presen
 ## 🧰 Environment Setup
 
 API tokens, directory paths, and runtime variables are managed through the environment configuration file:  
-📄 [satd-core/.env](./satd-core/.env)
+📄 [.env](./satd-core/.env)
 
 ### Prerequisites
 - **Python** ≥ 3.10  
