@@ -1,4 +1,4 @@
-package ca.sqlmlab.comment.scanner;
+package rnd.comment.scanner;
 
 import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.StaticJavaParser;

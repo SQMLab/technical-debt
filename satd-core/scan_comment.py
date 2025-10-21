@@ -16,7 +16,7 @@ jvm_args = ["-Xss512m"]  # Increase stack size to 512MB
 # Start JVM with increased stack size
 jpype.startJVM(jpype.getDefaultJVMPath(), "-ea", *jvm_args, classpath=[jar_path])
 
-CommentScannerServiceImpl = JClass("ca.sqlmlab.comment.scanner.CommentScannerServiceImpl")  # Replace with actual package name
+CommentScannerServiceImpl = JClass("rnd.comment.scanner.CommentScannerServiceImpl")  # Replace with actual package name
 
 # ✅ Create an instance of CommentScannerServiceImpl
 comment_scanner = CommentScannerServiceImpl()
