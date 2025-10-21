@@ -1,4 +1,4 @@
-package ca.sqlmlab.comment.scanner;
+package rnd.comment.scanner;
 
 public interface CommentScannerService {
 

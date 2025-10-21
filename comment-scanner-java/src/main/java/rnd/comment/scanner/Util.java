@@ -1,4 +1,4 @@
-package ca.sqlmlab.comment.scanner;
+package rnd.comment.scanner;
 
 import org.apache.commons.lang3.StringUtils;
 

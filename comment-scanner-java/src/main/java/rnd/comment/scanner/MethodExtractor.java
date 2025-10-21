@@ -1,4 +1,4 @@
-package ca.sqlmlab.comment.scanner;
+package rnd.comment.scanner;
 
 import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.StaticJavaParser;
@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author Shahidul Islam
  * @since 2025-07-16
  */
 public class MethodExtractor {
