@@ -159,7 +159,7 @@ id,repository,text,hash,label
 1342137,655,"//TODO:
 //+ ""a = 59;""",72e37146abb96d5365d7624a33e1196a59b1efa4,requirement
 1095915,482,"// TODO: This test case failed, please check the function implementation",82af758c11b6683094b893b2f1145888a7855823,defect
-641416,211,// TODO remove,ff789c9def9bdcd532882daa6fac82bbe949b16a,requirement
+641416,211,// TODO remove,ff789c9def9bdcd532882daa6fac82bbe949b16a,low-internal-quality
 45461,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,requirement
 44030,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,requirement
 991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,composite
@@ -308,7 +308,7 @@ id,repository,text,hash,label
 //        // Create a server, add service, start, and register for automatic graceful shutdown.
 //        grpcCleanup.register(InProcessServerBuilder
 //                .forName(name).directExecutor().addService(service).build().start());
-//    }",db5edf542ee52d1ca2939f864be455207575c3ae,requirement
+//    }",db5edf542ee52d1ca2939f864be455207575c3ae,design
 203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,d3b33fef2f8d09456a8486124d5086fa77105cf9,workaround
 1634981,979,// can't validate easily as it contains a Lookup object,74c892d29bb18719de1946d2f161db3cd4e8f6e3,how-to
 1179971,541,"// Now a more precise check to see if the false positive rate is not
@@ -646,14 +646,14 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 542418,145,// TODO: Op definition looks wrong. Compare stack in Nd4j.,1725c7d0bc90f940a36f38c67c9e72e8a6b8f3cc,requirement
 107777,22,// TODO: test name,25af9fd065ae560a2089b975d736ecc32b833ca2,requirement
 611078,198,"// TODO: This is current behavior, but is it what we want?",a20ffee429b8c40eafe66b1bb2e991a1431c1659,how-to
-50150,8,// TODO this should be WRAP instead,0f93501048e7fb894f992cc858af230058a7a6c9,requirement
+50150,8,// TODO this should be WRAP instead,0f93501048e7fb894f992cc858af230058a7a6c9,defect
 166380,47,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,requirement
 878705,337,// TODO(nickreid): Add rewriting support for this.,0a222951e567a3af2c546df6eb24730792edbe5d,requirement
 561114,152,"// KeysetHandle.generateNew is too slow in Tsan.
 // We do not use assume because Theories expects to find something which is not skipped.",b44139972c97cb177c358ffec3866f4b87947f8f,low-internal-quality
 73111,12,"// NB. I don't know what uniques, if any, are involved",0447a6cba4c80a5e484e88308530848cf01d534e,how-to
 1529183,874,"// btw, we should also check the ""skip xxx"" log,
-// but the /path/to/job_tmp/job_id/01/meta/execute_output.json.xxx.log not exists in ut env.",04849d33c3125713aa3c2390dd15f686100174dc,requirement
+// but the /path/to/job_tmp/job_id/01/meta/execute_output.json.xxx.log not exists in ut env.",04849d33c3125713aa3c2390dd15f686100174dc,how-to
 977118,435,"/**
  * No Documentation
  */",29463340a6c7b17662213621c91741445a1b2402,documentation
@@ -699,7 +699,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
  */",8c7610604bbd99ee5dee70dababb5e5a64a8f06a,skip-test
 610921,198,// TODO: I'm not sure what record.cells is supposed to return. Returning single valued lists seems weird,6df4d08255ed01bbc036cea8eaf0d550261ceec6,how-to
 1138685,491,//TODO: HIVE-28044: Replication tests to run on Tez,69a391e7ae7cdef6a54610d0b4d7e8986ca2a7cd,requirement
-846310,308,// TODO(https://github.com/apache/beam/issues/20447),1056c54485d81d96bde80a16a3cc8bed6ffd6a96,defect
+846310,308,// TODO(https://github.com/apache/beam/issues/20447),1056c54485d81d96bde80a16a3cc8bed6ffd6a96,requirement
 976347,435,"/**
  * TODO : javadoc
  *
@@ -708,7 +708,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 1314723,623,// This test could be broken if multiple tests are running in parallel.,9741a460cf52c332562aa838127d792fe005a624,defect
 146929,40,"// note, we get a buffer underflow exception instead of an OOME, even though the encoded size
 // would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap",1ff345e51f59f7c2eb2d20971769d91b025f4296,defect
-379136,101,// TODO: migrate to test framework,8596375c0b2062eb740665623fffaa0b823eacde,requirement
+379136,101,// TODO: migrate to test framework,8596375c0b2062eb740665623fffaa0b823eacde,design
 636045,211,// we do not check if the offset is in the middle of a code point,af2c3cba66bbc2bf9bebdb7a193306e5537f7d55,partial-test
 1146692,491,// TODO: ideally we should have a test for session itself.,5015dfa99b1b35e3193b3409a46c3c47ce215fb3,workaround
 1002899,441,"// Don't test on iOS devices, because they often have less than 4G available,
@@ -756,7 +756,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 757427,255,"// Query with cube and arithmetic expr
 // TODO(kks): enable this later if we support cube",993689dfe52aa9caef11401acab216bad74573ab,workaround
 362060,81,// workaround,b710bfd9aac7fee8e0a8c149d4f79a4b38185686,workaround
-607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,workaround
+607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,composite
 831173,303,// Using deprecated constructor for verification of backwards compatibility,1aaab87f9c1538be829964cf76e3bafcccfe995b,workaround
 377440,99,"//IDEA-309792: Check the guess it is something with concurrent release of many buffers
 //             (issue seems to be specific for linux)
@@ -847,7 +847,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 //  was just migrating to new interfaces. Consider adding actual equals() methods.",02b8c42bf33d344d052dce5fadde4205711ec1c9,partial-test
 216327,60,"/**
  * Should be removed along {@link SupportsCommitter}.
- */",f3d16d09ae5983bcc6574353b993dd71b7c1ae76,workaround
+ */",f3d16d09ae5983bcc6574353b993dd71b7c1ae76,low-internal-quality
 1409710,762,"/**
  * <p>Tests cluster scenario with two nodes trying to write the installation id property in parallel.</p>
  *
@@ -1040,7 +1040,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
  * Workaround to simulate BwC situation: taking a snapshot without indices here so that we don't create any new version shard
  * generations (the existence of which would short-circuit checks for the repo containing old version snapshots)
  */",38e7a98535fce270be81d0726584df1fe0f94c60,workaround
-643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,workaround
+643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,composite
 1028704,445,// probably not needed,30d8aa6e1ff85da56649b2b5ed1cc5cebefff261,how-to
 754153,255,// TODO: vacuum,cf230188a81acd19f93d86fcb075526013b0fe8b,requirement
 874375,337,// TODO(b/133450410): This should be a visibility violation.,674e5c6598467ebcb935f3f12d0f540fbb24e2c1,defect
@@ -1064,7 +1064,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 229651,64,"// The standard file systems on macOS support extended attributes by default, so we can assume
 // that the test will work on that platform. For other systems, we currently don't have a
 // mechanism to validate this so the tests are skipped unconditionally.",65bf06345bf20e48614a94506f5bc0c3d7cf3ca7,composite
-880414,337,// TODO(b/123102446): We really like to collapse some of these chained assignments.,5d5372b6cba0aa03e7d3a36fc84c1809f19bd5e5,requirement
+880414,337,// TODO(b/123102446): We really like to collapse some of these chained assignments.,5d5372b6cba0aa03e7d3a36fc84c1809f19bd5e5,design
 107912,22,// TODO: test validations,79f4bab34576d036cd7d221fbc4f385f571b4181,requirement
 35869,8,"// At this point we only support functions with 0, 1, or 2 arguments.",06476ad1bdbd2c29b87da7a931c383c6b8e9792f,workaround
 1159323,501,// TODO implement,972c9937225b691138532a1d4752866c6f5b5f43,requirement
@@ -1285,7 +1285,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 // as more of the Ravenwood environment is built out",4e857167e42a9c9ba8d9374bb4bfd00eec8a87a2,requirement
 166364,47,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,requirement
 204401,60,// TODO: tweak the tests when FLINK-13604 is fixed.,ba047b7bf71fbe0d8b696ef62f7db95fc28aefc2,composite
-1506022,822,// TODO move to core,a5171a9de131558e4c7c8f844664f3e3a74eb158,requirement
+1506022,822,// TODO move to core,a5171a9de131558e4c7c8f844664f3e3a74eb158,design
 1186079,541,// TODO: use sft.load() api here,22ae92f3863823ebb097600561fca7bee24c8781,requirement
 1319572,632,// TODO use the static password and port opt definitions in superclass,e7af08357c0f8fbc1e55d779cb4805559dc2e074,requirement
 1122121,488,"// TODO: it is necessary to produce two values here, the operator only throws on second
@@ -1356,7 +1356,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 // This fails for certain locales, e.g. 'ks'.
 // Until this is fixed, we force the english locale.
 // See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,composite
-126659,36,// todo remove this,4bafea92b3849e613f005c2ce2548c7d723d1bd0,requirement
+126659,36,// todo remove this,4bafea92b3849e613f005c2ce2548c7d723d1bd0,low-internal-quality
 996052,441,// TODO: revisit toLocalizedPattern,429551d1c892017e511639982530acc64c94e8fa,requirement
 235091,64,"// The exceedingly dumb approach: writing all the permutations down manually
 // is simply easier than any way of generating them.",df81aa21d20b4a6ac2055555d9e2001f176300a1,workaround
