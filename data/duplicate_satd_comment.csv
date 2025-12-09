@@ -457,7 +457,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 // consider something better.",899ec0b739046998eec557ac74a54487bfa4b39b,low-internal-quality
 875651,337,"// TODO(blickly): We should warn for the next two as well, but it's harder to detect.",f5d8bd9a4c4560cbd0300fa6fdb5f0d670372562,how-to
 912794,374,// todo add some test case to test NaN,116304168bde14de45dffea1f9d5f4585ddb2930,requirement
-328146,81,//TODO: correct?,4d7311d04df8b9b347b6953de9a2073101b5d2b7,requirement
+328146,81,//TODO: correct?,4d7311d04df8b9b347b6953de9a2073101b5d2b7,how-to
 1061072,476,"// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.",f1ac885fd9b5f925b07e4dd3f210024675d8ab2e,workaround
 1244485,620,"//TODO: Rewrite with dynamic cache creation, and GRID start in #beforeTest after resolve of
 //TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,composite
@@ -581,7 +581,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 503764,140,"// Disabled as it's currently failing - needs investigation
 //                .body(""paths.'/collections/{id}'.get.security[0].SecurityScheme"", Matchers.hasItem(""user""))",982517233e5c5cc138ed0c6dea5b381a96027796,composite
 635000,211,"// TODO use correlated predicate, it requires support for correlated subqueries in plan matchers",da8708bd9bdb49607755357bd68bb1f81ac89a0d,requirement
-20091,8,// TODO: fix test to work with ExtrasFS,c98bf7ac401e312bb9bce6d75ff3f849e9e95b85,requirement
+20091,8,// TODO: fix test to work with ExtrasFS,c98bf7ac401e312bb9bce6d75ff3f849e9e95b85,defect
 206621,60,// TODO align the behavior when receiving single -D within a window after fixing FLINK-33760,2a54176e1a70f8659119c4e69a9798ef335e5525,composite
 333625,81,// TODO test that remove(obj) with duplicates removes the right element,b211fa98b67bb4f57200a3bd0205d15ec46a9c48,requirement
 984495,435,"/**
@@ -710,7 +710,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 // would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap",1ff345e51f59f7c2eb2d20971769d91b025f4296,defect
 379136,101,// TODO: migrate to test framework,8596375c0b2062eb740665623fffaa0b823eacde,requirement
 636045,211,// we do not check if the offset is in the middle of a code point,af2c3cba66bbc2bf9bebdb7a193306e5537f7d55,partial-test
-1146692,491,// TODO: ideally we should have a test for session itself.,5015dfa99b1b35e3193b3409a46c3c47ce215fb3,requirement
+1146692,491,// TODO: ideally we should have a test for session itself.,5015dfa99b1b35e3193b3409a46c3c47ce215fb3,workaround
 1002899,441,"// Don't test on iOS devices, because they often have less than 4G available,
 // especially with a big JRE tests app installed.",9e27f88b5465d3bde8592162611b339cba391fa4,partial-test
 1053432,455,// todo: port to ResourcesTest,daee6822fa2310486a24886b517c658ee97ca74f,requirement
@@ -719,7 +719,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 423851,128,// Ignored in automated tests due to flakiness by design,410dc6f2dfa5a79ed813ff8e14149c62d4585a0d,composite
 1039235,449,"/* Currently we don't support multiple indexable constraints in the ANC, so this test will pass because
         it disables the switch generation and the inlining. See DROOLS-5947
-     */",6ae6560c6df57ea10403e2c26fae371a14492639,requirement
+     */",6ae6560c6df57ea10403e2c26fae371a14492639,composite
 363516,81,"// Try to ensure the path to the Java launcher is reasonably short,
 // to work around the mostly undocumented limit of 120 characters
 // for a shebang line.
@@ -871,7 +871,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 //
 // TEST BAD PARSE CASES
 //",9ecce559c70bdca4fe531a2c946d1d37488b8a70,how-to
-1133322,489,// TODO(HUDI-3668): Fix this test,63c6e3a89ad2cc3e12e31cc0093fc848afa0df39,requirement
+1133322,489,// TODO(HUDI-3668): Fix this test,63c6e3a89ad2cc3e12e31cc0093fc848afa0df39,defect
 475220,129,"// Circuit breaker does not work with fragmented buffer
 // TODO: find a solution, Net.peek() always return a byte when the incoming buffer not read fully
 // when executing 'E' (execute) postgres protocol command",c81f80ad1c135e6f4fbcc8d3a138d0801886fea7,how-to
@@ -918,7 +918,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 241976,65,"// TODO we can always include the signature, a signature that isn't configured client-side behaves as if unsigned.",fb16e4b13f82d6f7eec6f4eb46aed12297fa4793,requirement
 851422,315,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,requirement
 1544278,889,"//FIXME UNDERTOW-1862 assertEquals(DONE, latch.getIoFuture().await());",fe66994c7065538e361e77cd7a49a52617c8ba87,defect
-1215583,574,"//FIXME test with just, empty, callable, interval",1af504ee6a3e9079face0a8f4e647112599a5d41,requirement
+1215583,574,"//FIXME test with just, empty, callable, interval",1af504ee6a3e9079face0a8f4e647112599a5d41,defect
 778176,269,"/**
  * Shadows the same method on the superclass as we don't want to join the ring
  * because this test depends on local ranges being null and has done since its
@@ -1138,7 +1138,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
  * test data for the generic messages version: 255.255.255-255 TODO: Hash
  * parsing isn't working with the max hash value of 4294967295
  */",ca21f498ed86742b5da1ab3e1a1b62730a9a2217,defect
-1095934,482,"// TODO: This test case failed, please check the function implementation",82af758c11b6683094b893b2f1145888a7855823,requirement
+1095934,482,"// TODO: This test case failed, please check the function implementation",82af758c11b6683094b893b2f1145888a7855823,defect
 380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,composite
 107152,22,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,requirement
 734064,230,"// TODO: Ensure that it is impossible to ever decrement the generation id stored in index.latest then assert that
@@ -1252,7 +1252,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 8949,8,"// TODO: fake errors, check password from terminal, allow tests to make elasticsearch.yml change",5f3d7db4eb69d6974acadbec149b1d5c7afae173,requirement
 1118201,488,"// TODO: Add test to delete broker instance. Currently, stopBroker() does not work correctly.
 
-// Check if '/INSTANCES/<serverName>' has been erased correctly",7c066b1ab63208814c9fffd4d6a6a5bf1bf72f11,requirement
+// Check if '/INSTANCES/<serverName>' has been erased correctly",7c066b1ab63208814c9fffd4d6a6a5bf1bf72f11,composite
 166118,47,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,requirement
 1608102,946,// nested doesn't work yet in Geode. Need custom PDX serializer,ecfcd0d272d11f191e68e4e2666692aec4f39356,requirement
 479880,129,// TODO: should return count on first table instead,bfda989281529ef3f2d8be95f90bb6bb26ff8be6,defect
