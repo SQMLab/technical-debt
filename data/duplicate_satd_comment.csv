@@ -367,7 +367,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 // thus test only against US English locale, and use a hard coded K - 1000",fe266dd007359831af77cbe03c9d8780e3ca5ce8,composite
 852702,315,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,requirement
 1342094,655,//TODO: try tu run it in debug flashplayer (?),f1fa3631eaef6746e88e42e5f100dce35e78b648,how-to
-877036,337,// TODO(bradfordcsmith): Remove Object.defineProperty() like we do Object.defineProperties().,7599500f7b3877f77145cbf1134cdd4f9db86152,requirement
+877036,337,// TODO(bradfordcsmith): Remove Object.defineProperty() like we do Object.defineProperties().,7599500f7b3877f77145cbf1134cdd4f9db86152,low-internal-quality
 107861,22,// TODO: test validations,79f4bab34576d036cd7d221fbc4f385f571b4181,requirement
 1475168,805,// TODO: add ids in the elemnets and check contents using jSoup,a64caf93fe3468e261d8331b01ca5206a1bb9369,requirement
 1169594,541,"// Can't simply `htu.startMiniCluster(options)` because that method waits for the master to
@@ -947,7 +947,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 911326,374,"// currently spark session catalog only resolve to v1 functions instead of desired v2 functions
 // https://github.com/apache/spark/blob/branch-3.4/sql/catalyst/src/main/scala/org/apache/spark/sql/catalyst/analysis/Analyzer.scala#L2070-L2083",7967f7babd11b95a4e47719f456aabd79808dd97,workaround
 731180,230,// should we also assert the lucene bugfix version?,281a65f287febb9351bb51b60f75dd222e9c33d5,how-to
-92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",2e5edbc244eeea719dd76e948babb4124cadabbe,requirement
+92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",2e5edbc244eeea719dd76e948babb4124cadabbe,composite
 856789,323,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,requirement
 670509,213,"// TODO Test the ""load from the file"" case where DA will still be loaded even without
 // BIND_DEVICE_ADMIN and target API is N.",7d2857eae77bc736fa869961b35837a3b98228a6,requirement
@@ -1006,7 +1006,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 1323576,641,// TODO enable,79a124d12a00cbec876778bc4e64eb3891bf031b,requirement
 1034272,445,//TODO Verify content,dec13678af82213a09004fbc82935248e92ed8a2,requirement
 990992,441,// TODO: Re-enable this tests after UTC fixes UAX 21,17c6d25086c56318e4f5b2d83b8b9e32a079f26d,composite
-392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,workaround
+392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,composite
 368608,85,"/**
  * TODO On low-performance devices in Github Actions, `TRUNCATE TABLE` related SQLs may throw a `java.sql.SQLException: Table or view 't_address' does not exist.` error under nativeTest.
  *  So that we need to wait for a period of time after executing `CREATE TABLE` related SQLs before executing `TRUNCATE TABLE` related SQLs.
@@ -1027,7 +1027,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 395927,119,// TODO: verify output,46b43ed4fc7e797bb714cc9e07cb3a9580cbe155,requirement
 868979,337,// TODO(sdh): Print a better name (https://github.com/google/closure-compiler/issues/2982),b06c4c7f5f36a14177731527ceefed68f2fb09dc,low-internal-quality
 993158,441,"// TODO: Tests when ""while((c=iter.nextCaseMapCP())>=0)"" is false",fe6735d5baf6bf1c38e1aac9f6b36197ee0abf69,requirement
-877559,337,// TODO(b/139319709): Remove this. static method removal is disabled.,78eeb53ba5a048354dcd2e4796c5493739330aab,workaround
+877559,337,// TODO(b/139319709): Remove this. static method removal is disabled.,78eeb53ba5a048354dcd2e4796c5493739330aab,low-internal-quality
 380596,104,// TODO(adriancole): Find a home for this generic conversion between Call and Java 8.,1356cb9f20c5ac1c01b5e696520b4a0ee2575f5a,how-to
 639634,211,// TODO https://github.com/trinodb/trino/issues/18499,f992a50a3e84d7a69070cd27b71c3aa9e36ac169,defect
 82244,12,// not implemented yet,9803a92225f1d9dea9d0b53fbc23902f3d272c05,requirement
@@ -1107,7 +1107,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,3963e75bb0baefb83952e4c976c7a18c5e082743,composite
 1225703,593,"// TODO review the generated test code and remove the default call to
 // fail.
-// fail(""The test case is a prototype."");",d7dd00d1c882d60118089fd59a6d60b5dd650bc8,requirement
+// fail(""The test case is a prototype."");",d7dd00d1c882d60118089fd59a6d60b5dd650bc8,low-internal-quality
 245580,66,// TODO Auto-generated catch block,fef8aeaa6ec53ffaf9f0c96bd2c3eee8f42c6f60,requirement
 504352,140,"/**
  * Tests that the workaround for https://github.com/quarkusio/quarkus/issues/43703 /
@@ -1116,7 +1116,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
  */",9375a943bf45a4dfd9efd64d5c3e8083c5850641,workaround
 694612,213,// TODO b/64262688 Add Concurrency tests to compare WAL vs DELETE read/write,9e19bcd917161440f5bd32dcfa9a601c197b85a6,requirement
 1122522,488,// TODO: cache this test case generator,48084536d7059e6438301ccffe4d6765ef5a26e1,requirement
-877599,337,// TODO(johnlenz): support this. Unused return can be removed.,1418dde868e495dd28491560afcb17ca04a6b013,workaround
+877599,337,// TODO(johnlenz): support this. Unused return can be removed.,1418dde868e495dd28491560afcb17ca04a6b013,low-internal-quality
 1045570,449,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,requirement
 433340,128,"/**
  * Known issue: ListStatus operation to folders/files whose name contains '?' will fail.
@@ -1149,7 +1149,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 // for (int i = 1; i < plans.size(); i++) {
 // assertThat(plans.get(i), equalTo(plans.get(0)));
 // }",23133074d5e4ea14303dc8779cdbfea3f02cc927,skip-test
-611532,203,"// disabled, as these soak up build time and the outcome oughtn't change unless we are refactoring the tree builders. manually execute as desired.",0010faae189fe2743049c45e91fe7c5446b7240c,skip-test
+611532,203,"// disabled, as these soak up build time and the outcome oughtn't change unless we are refactoring the tree builders. manually execute as desired.",0010faae189fe2743049c45e91fe7c5446b7240c,composite
 1479015,805,// TODO: handle exception,6df3ab5c3506a2ddda10f09d919064f372bc6b7c,low-internal-quality
 122818,34,"// I tried using Mockito, but it didn't work for some reason",8ffb0f9eb09fd1bc314a6176854566ba8739a718,how-to
 977196,435,"/**
@@ -1169,7 +1169,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 837047,308,"/**
  * TODO: Remove tests(getFailureCollector, getLogicalStartTime) if these methods weren't override
  * and were implemented own methods of BatchSourceContextImpl class.
- */",ebb43218f70af27ae675697a65b38bacc320bd47,design
+ */",ebb43218f70af27ae675697a65b38bacc320bd47,low-internal-quality
 1473843,805,// This is an utter hack but is the only way I could,635f6d4ccff2d0ce1526b796bc59ba7103e9e200,workaround
 1010409,441,"/**
  * An implementation of {@code OutputStream} that should serve as the
@@ -1394,7 +1394,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 230424,64,// TODO: b/386384684 - remove Unsafe usage,45fb0c89249788312506453a0cd3e60d4f540dff,low-internal-quality
 1045427,449,//FIX https://issues.redhat.com/browse/DROOLS-5681,185504c145614d08631ff1b3a57fd7d3fc287cdd,defect
 1206419,570,"// Ignore this error, probably a ""table does not exist"" since Derby doesn't yet support DROP IF EXISTS [DERBY-4842]",0538e39b5d2f7c90ae35efad0aef92374553ada2,how-to
-707839,224,// TODO(emcmanus): remove the no-op `& 0xfff_ffff`,63b586d9d4a74958affe8182f4716696823af680,requirement
+707839,224,// TODO(emcmanus): remove the no-op `& 0xfff_ffff`,63b586d9d4a74958affe8182f4716696823af680,low-internal-quality
 1501465,822,"/* TODO
         connector.addBean(new HttpChannel.TransientListeners());
         connector.addBean(new HttpChannel.Listener()
@@ -1437,7 +1437,7 @@ import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3
 1495929,822,"// TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
 //assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());",8df2a09263f3c451c0499684cca21c513b808252,dependency
 872345,337,"// TODO(b/115853720); Should remove getter for onlySetProp, because
-// there is only an assignment to it",46b92ca9a9031ae381f4be0d284f8feec3a61817,requirement
+// there is only an assignment to it",46b92ca9a9031ae381f4be0d284f8feec3a61817,low-internal-quality
 118369,28,"// This test doesn't work on midnight, January 1, 1970 UTC",59c6840c5346706d7ef540f4c7903e07039081f4,defect
 1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,composite
 1561930,918,"// kinda sorta wrong, but for testing's sake...",1344a8f862bbfb9d065783457f05b70f911b8412,superficial-test
