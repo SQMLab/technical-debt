@@ -61,7 +61,7 @@ public void overloadedMultiUsageThreadPoolTest() {
   }"
 1004573,441,"// read() and closeEntry() must throw IOExceptions to indicate that
 // the stream is corrupt. The bug above reported that they would loop
-// forever.",4ad63a32abf4e1c61ce02cc670432cb488c31dbc,code,"private static final byte[] INCOMPLETE_ZIP = new byte[] {
+// forever.",4ad63a32abf4e1c61ce02cc670432cb488c31dbc,defect,"private static final byte[] INCOMPLETE_ZIP = new byte[] {
         0120, 0113, 0003, 0004, 0024, 0000, 0010, 0010, 0010, 0000, 0002, 0035, (byte) 0330,
         0106, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0013,
         0000, 0000, 0000, 0146, 0157, 0157, 0057, 0142, 0141, 0162, 0056, 0160, 0156, 0147 };
@@ -100,7 +100,7 @@ try {
 
         zi.close();
     }"
-423851,128,// Ignored in automated tests due to flakiness by design,410dc6f2dfa5a79ed813ff8e14149c62d4585a0d,defect,"  cgroupMemory = ResourceHandlerModule.getCGroupsHandler()
+423851,128,// Ignored in automated tests due to flakiness by design,410dc6f2dfa5a79ed813ff8e14149c62d4585a0d,composite,"  cgroupMemory = ResourceHandlerModule.getCGroupsHandler()
       .getPathForCGroup(CGroupsHandler.CGroupController.MEMORY, cgroup);
 }
 
@@ -321,7 +321,7 @@ return new PlayQueue(index, streams) {
 673606,213,"/**
  * Tests for FingerprintGestureController.
  * TODO: These tests aren't really for server code, so this isn't their ideal home.
- */",85c025c8f5d76056918250bd9e2c76c4d0750184,impractical-case,"import android.accessibilityservice.FingerprintGestureController.FingerprintGestureCallback;
+ */",85c025c8f5d76056918250bd9e2c76c4d0750184,design,"import android.accessibilityservice.FingerprintGestureController.FingerprintGestureCallback;
 import android.accessibilityservice.IAccessibilityServiceConnection;
 
 import com.android.server.accessibility.test.MessageCapturingHandler;
@@ -340,7 +340,7 @@ import org.mockito.MockitoAnnotations;
         MockitoAnnotations.initMocks(this);
         mFingerprintGestureController =
                 new FingerprintGestureController(mMockAccessibilityServiceConnection);",
-726802,230,// Todo: Move this test to SegmentReplicationIndexShardTests so that it runs for both node-node & remote store,2ca4da5ab08081dd751e414cea3dfad8871fb5e7,refactor,"    assertThat(
+726802,230,// Todo: Move this test to SegmentReplicationIndexShardTests so that it runs for both node-node & remote store,2ca4da5ab08081dd751e414cea3dfad8871fb5e7,design,"    assertThat(
         primaryTarget.getReplicationTracker()
             .getTrackedLocalCheckpointForShard(primaryTarget.routingEntry().allocationId().getId())
             .getLocalCheckpoint(),
@@ -451,7 +451,7 @@ assertXpathEvaluatesTo(
         assertXpathEvaluatesTo(""http://www.opengis.net/def/crs/IAU/0/49900"", vikingPath + ""/ows:BoundingBox/@crs"", dom);
     }"
 1002899,441,"// Don't test on iOS devices, because they often have less than 4G available,
-// especially with a big JRE tests app installed.",9e27f88b5465d3bde8592162611b339cba391fa4,skip-test,"public void testSetLengthTooLarge() throws Exception {
+// especially with a big JRE tests app installed.",9e27f88b5465d3bde8592162611b339cba391fa4,partial-test,"public void testSetLengthTooLarge() throws Exception {
     RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
     try {
         raf.setLength(Long.MAX_VALUE);
@@ -483,7 +483,7 @@ public void testSetLength64() throws Exception {","  if (!System.getProperty(""o
     }"
 571347,159,"// Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
 // which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
-// successfully, but in order to shorten the test time, we chose one million numbers.",5baba5460e6f4c12a7feb225797a047fd7698dcb,subset-test,"import org.junit.Assert;
+// successfully, but in order to shorten the test time, we chose one million numbers.",5baba5460e6f4c12a7feb225797a047fd7698dcb,partial-test,"import org.junit.Assert;
 import org.junit.Test;
 
 // hive hll udf test
@@ -521,7 +521,7 @@ Object evaluateLarge = hllCardinalityUDF","    public void hllCardinalityTest() 
         double relativeError = Math.abs(actualCardinality - largeInputSize) / (double) largeInputSize;
         Assert.assertTrue(""Relative error rate should be less than 2%"", relativeError <= 0.02);
     }"
-639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",e18bb3027646ebbe1f1c19f83d3a915a2106aae8,superficial-test,"{
+639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",e18bb3027646ebbe1f1c19f83d3a915a2106aae8,partial-test,"{
     // Distinct with limit (DistinctLimitNode), should be eligible for pushdown.
     String query = ""SELECT DISTINCT regionkey FROM nation LIMIT 3"";
 
@@ -557,7 +557,7 @@ public void testStatsWithAggregationPushdown()","    public void testStatsWithDi
                         ""('regionkey', 3e0, 0e0, null),"" +
                         ""(null, null, null, 3e0)"");
     }"
-1081500,478,"// this is a bit of a hack, since we don't implement generations.",0e014f065c9088a7fb5156ea690aa7c45e159814,temporary-fix,"String sourceKey = fullname(rewriteRequest.source);
+1081500,478,"// this is a bit of a hack, since we don't implement generations.",0e014f065c9088a7fb5156ea690aa7c45e159814,workaround,"String sourceKey = fullname(rewriteRequest.source);
 
 // a little hackish, just good enough for the tests to work.
 if (!contents.containsKey(sourceKey)) {
@@ -622,7 +622,7 @@ long generation = 1;","    public RewriteResponse openRewrite(RewriteRequest rew
                 ""rewriteToken goes here"",
                 data.length);
     }"
-114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,3963e75bb0baefb83952e4c976c7a18c5e082743,multi,"  Bitmap toRotate = Bitmap.createBitmap(200, 100, Bitmap.Config.ARGB_8888);
+114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,3963e75bb0baefb83952e4c976c7a18c5e082743,composite,"  Bitmap toRotate = Bitmap.createBitmap(200, 100, Bitmap.Config.ARGB_8888);
   toRotate.setColorSpace(ColorSpace.get(ColorSpace.Named.DISPLAY_P3));
 
   Bitmap rotated =

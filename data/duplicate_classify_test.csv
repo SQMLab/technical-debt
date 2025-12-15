@@ -234,7 +234,7 @@ if (commitOnInput) {
  * again. As far as I can tell, this is not indicative of a problem in production,
  * because the controller won't issue an updated event until that array is fully
  * populated.
- */",4b12265b8c2ab87ddc05a4fbd441e874f0ad5469,temporary-fix,"}
+ */",4b12265b8c2ab87ddc05a4fbd441e874f0ad5469,workaround,"}
 
 public static HoverLocation findTokenLocation(DecompilerPanel decompilerPanel,
 		Function function, String tokText, String fieldText) {
@@ -427,7 +427,7 @@ public void captureDialog(String title) {
 496095,135,"// TODO in theory there shouldn't be any ledgers left if we are using readers.
 //  However, trimming of ledgers are piggy packed onto ledger operations.
 //  So if there isn't new data coming in, trimming never occurs.
-//  We need to trigger trimming on a schedule to actually delete all remaining ledgers",a862dab8a8164beb6827b9864d13da478d9a7f07,impractical-case,"try {
+//  We need to trigger trimming on a schedule to actually delete all remaining ledgers",a862dab8a8164beb6827b9864d13da478d9a7f07,superficial-test,"try {
     // try to send over backlog quota and make sure it fails
     for (int i = 0; i < numMsgs; i++) {
         content[0] = (byte) (content[0] + 1);
@@ -638,7 +638,7 @@ buf.close();","    public void testWithJsonParserSequenceSimple() throws IOExcep
 			 * the result. Since OperatingSystemMXBean is a singleton, once the result of isHardwareEmulated() is
 			 * cached, we won't get a different result. As a work-around, I use the local var to switch between the
 			 * types of test I want to run
-			 */",72f8b300a19286553a1ade1498e1c6c9f96549e3,temporary-fix," * platforms
+			 */",72f8b300a19286553a1ade1498e1c6c9f96549e3,workaround," * platforms
  */
 if (!isPlatformZOS()) {
 	try {
@@ -964,7 +964,7 @@ client().performRequest(new Request(""POST"", ""/test/_refresh""));
 
     }"
 544418,145,"//OpValidationSuite.ignoreFailing();  //TODO TEMPORARY DUE TO CRASHES
-//Test reductions: final and only function",9a876b58be7db95a536738d270b22e09e93324b6,temporary-fix,"        if (error != null)
+//Test reductions: final and only function",9a876b58be7db95a536738d270b22e09e93324b6,workaround,"        if (error != null)
             allFailed.add(error);
     }
 
@@ -1146,7 +1146,7 @@ for (int i = 0; i < 21; i++) {
 
         assertEquals(0, failed.size(),failed.toString());
     }"
-46055,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,defect,"    return TrainedModelSizeStats::new;
+46055,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,requirement,"    return TrainedModelSizeStats::new;
 }
 
 @Override
@@ -1277,7 +1277,7 @@ public void testChallengeBadResponse() throws Exception
         assertThat(response.getStatus(), is(HttpStatus.UNAUTHORIZED_401));
         assertThat(response.get(HttpHeader.WWW_AUTHENTICATE), is(HttpHeader.NEGOTIATE.asString()));
     }"
-45388,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,defect,"    int fieldSelectionCount = randomIntBetween(1, 5);
+45388,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,requirement,"    int fieldSelectionCount = randomIntBetween(1, 5);
     List<FieldSelection> fieldSelection = new ArrayList<>(fieldSelectionCount);
     IntStream.of(fieldSelectionCount).forEach(i -> fieldSelection.add(FieldSelectionTests.createRandom()));
     MemoryEstimation memoryEstimation = MemoryEstimationTests.createRandom();
@@ -1398,7 +1398,7 @@ public static void assumeTestDatabaseProviderCanLaunch(TestDatabaseProvider prov
                         H2DatabaseProvider.class
                 );
     }",
-652292,213,// It may be paranoia... but let's check if parent's config didn't change after removal.,937c079b42d6936f7546afdc7aae4b549262148d,temporary-fix,"child.onRequestedOverrideConfigurationChanged(childOverrideConfig);
+652292,213,// It may be paranoia... but let's check if parent's config didn't change after removal.,937c079b42d6936f7546afdc7aae4b549262148d,workaround,"child.onRequestedOverrideConfigurationChanged(childOverrideConfig);
 final Configuration mergedOverrideConfig = new Configuration(root.getConfiguration());
 mergedOverrideConfig.updateFrom(childOverrideConfig);
 
@@ -1558,7 +1558,7 @@ final TIFFImageMetadata metadata = (TIFFImageMetadata) reader.getImageMetadata(0
         // clean up
         reader.dispose();
     }"
-1469202,805,// see [GEOS-7835] WPS execution time limits test randomly breaks builds,8d421d0e709a2c5cb7b25ead26750963dc8aef75,skip-test,"    Document response2 = waitForProcessEnd(statusLocationX2, 10);
+1469202,805,// see [GEOS-7835] WPS execution time limits test randomly breaks builds,8d421d0e709a2c5cb7b25ead26750963dc8aef75,build,"    Document response2 = waitForProcessEnd(statusLocationX2, 10);
     assertXpathExists(""//wps:ProcessSucceeded"", response2);
 
     // Third request should fail as it exceeds the asynchronous total time limit
@@ -1624,7 +1624,7 @@ public void testSyncExecutionLimits() throws Exception {
         assert g.hasUnsafeAccess() : ""ABCD"";",
 575964,159,"/**
  * TODO: enable when window is supported.
- */",68732b70d0e2a008f334649b3651a15a62740ae3,multi,"            + ""PROPERTIES ('replication_num' = '1'); "";
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,composite,"            + ""PROPERTIES ('replication_num' = '1'); "";
     createTable(duplicateTable);
     String createK1K2MV = ""create materialized view k1_k2 as select k1,k2 from "" + TEST_TABLE_NAME + "" group by ""
             + ""k1,k2;"";
@@ -1733,7 +1733,7 @@ private void addContent(IndexWriter iwriter, String text) throws CorruptIndexExc
 		}
 		return null;
 	}"
-46084,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,defect,"    return lenient;
+46084,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,requirement,"    return lenient;
 }
 
 @Override
@@ -1755,7 +1755,7 @@ public static LangNetLayer createRandom() {
         return null;// TODO implement https://github.com/elastic/elasticsearch/issues/25929
     }"
 1154060,497,"// todo: make this test run also for edge-based CH or otherwise make sure time calculation is tested also for edge-based CH (at the moment it will fail!)
-// todo: make this test run also for ALT or otherwise make sure time calculation is tested also for ALT (at the moment it will fail?!)",aa159040a6243ba6b0ce00fc27bbd689d64b8195,superficial-test,"public class EdgeBasedRoutingAlgorithmTest {
+// todo: make this test run also for ALT or otherwise make sure time calculation is tested also for ALT (at the moment it will fail?!)",aa159040a6243ba6b0ce00fc27bbd689d64b8195,defect,"public class EdgeBasedRoutingAlgorithmTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(EdgeBasedRoutingAlgorithmTest.class);
     private DecimalEncodedValue speedEnc;
     private DecimalEncodedValue turnCostEnc;
@@ -1928,7 +1928,7 @@ for (int i = -7; i <= 22; i++) {
       assertEquals(codecFactory.getCodec().toString(), clone.getCodec().toString());
     }
   }"
-625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,1b1618dbf25641fb9a17a0f95b1f7d69c6566556,multi,"onDelta().executeQuery(""UPDATE default."" + clonedTable + "" SET a_int = a_int + 1"");
+625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,1b1618dbf25641fb9a17a0f95b1f7d69c6566556,composite,"onDelta().executeQuery(""UPDATE default."" + clonedTable + "" SET a_int = a_int + 1"");
 List<String> cdfFilesPostOnlyInsertAndUpdate = getFilesFromTableDirectory(directoryName + clonedTable + changeDataPrefix);
 assertThat(cdfFilesPostOnlyInsertAndUpdate).hasSize(2);
 
@@ -2228,7 +2228,7 @@ TestCaseSupplier.forUnaryBoolean(suppliers, evaluatorName.apply(""Boolean""), Da
  * Jackson has less insight on how to serialize/deserialize an object that
  * doesn't adhere to the Bean spec. This class needs additional annotations in
  * order to be properly serialized/deserialized.
- */",0d5bd672ab746bc0a5d2b98482b68143260665dc,code,"package io.dropwizard.jersey.jackson;
+ */",0d5bd672ab746bc0a5d2b98482b68143260665dc,low-internal-quality,"package io.dropwizard.jersey.jackson;
 ","public class NonBeanImplementation {
     public Integer val() {
         return 1;
@@ -2239,7 +2239,7 @@ TestCaseSupplier.forUnaryBoolean(suppliers, evaluatorName.apply(""Boolean""), Da
  * does the right thing for Shorts, but attempts to override visit(Object).
  * This is just here for testing the hierarchyRoot parameter of
  * invokeVisitor.
- */",4cee66f14806907e1f20e8e9728e6790f53808d1,temporary-fix,"  }
+ */",4cee66f14806907e1f20e8e9728e6790f53808d1,workaround,"  }
 
   public void visit(Short s) {
     result = -s;
@@ -2258,7 +2258,7 @@ TestCaseSupplier.forUnaryBoolean(suppliers, evaluatorName.apply(""Boolean""), Da
     assert result instanceof Short;
   }
 }",
-46059,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,defect,"    lenient = randomBoolean();
+46059,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,requirement,"    lenient = randomBoolean();
 }
 
 @Override
@@ -2440,7 +2440,7 @@ if (map != null ? !map.equals(that.map) : that.map != null)
 // and that xpack.ml.use_auto_machine_memory_percent is false.
 // It also assumes that 30% of RAM on the test machine is sufficient
 // to run a 200MB job but not a 50000MB job. (If we move to 256GB CI
-// workers then it will need to be adjusted.)",c2b81c70390e70fe19f903e767ae26401df41f0e,temporary-fix,"}
+// workers then it will need to be adjusted.)",c2b81c70390e70fe19f903e767ae26401df41f0e,workaround,"}
 
 @After
 public void removeSettings() {
@@ -2459,7 +2459,7 @@ public void removeSettings() {
         TEST_REQUEST_TIMEOUT,
         TEST_REQUEST_TIMEOUT,
         ""ml_test"",",
-235306,64,// Deactivated due to https://github.com/bazelbuild/bazel/issues/9380.,ffe134867bbd41725bf26f80ca5d553b5ebfb749,multi,"    }
+235306,64,// Deactivated due to https://github.com/bazelbuild/bazel/issues/9380.,ffe134867bbd41725bf26f80ca5d553b5ebfb749,composite,"    }
   } finally {
     ServerSocket serverSocket = server.get();
 
@@ -2497,7 +2497,7 @@ public class BufferingDoFnRunnerTest {
     assertThat(bufferingDoFnRunner.currentStateIndex, is(0));
     assertThat(bufferingDoFnRunner.numCheckpointBuffers, is(2));
   }",
-322344,81,// I have put this as it was complaining about systemid,2126102a2472df105a286dec816c46f1a8decc6c,temporary-fix,"public void testcase13() throws Exception {
+322344,81,// I have put this as it was complaining about systemid,2126102a2472df105a286dec816c46f1a8decc6c,workaround,"public void testcase13() throws Exception {
     String outputFile = USER_DIR + ""saxtf013.out"";
     String goldFile = GOLDEN_DIR + ""saxtf013GF.out"";
     try(FileInputStream fis = new FileInputStream(XML_FILE)) {
@@ -2621,7 +2621,7 @@ public void trailingSemicolon() {
             ""}"")
         .doTest();
   }"
-845408,308,// TODO: This test needs to be adapted to work with streamingEngine=true.,bbf1742b82d1138a677a2b118bd9e8faf9720ac1,superficial-test,"                DEFAULT_SHARDING_KEY + i,
+845408,308,// TODO: This test needs to be adapted to work with streamingEngine=true.,bbf1742b82d1138a677a2b118bd9e8faf9720ac1,requirement,"                DEFAULT_SHARDING_KEY + i,
                 keyStringForIndex(i) + ""_data"" + (i + 1000))
             .build(),
         removeDynamicFields(result.get((long) i + 1000)));
@@ -2740,7 +2740,7 @@ List<ParallelInstruction> instructions =
   }"
 350753,81,"// Work around issue with jtreg summary reporting which truncates
 // the String result of Object.toString to 30 characters, hence
-// the first dummy argument",99732455fb6ab835bf304ddd22714a5802b0ac3e,temporary-fix,"                if (bbs.s.isDirect()) {
+// the first dummy argument",99732455fb6ab835bf304ddd22714a5802b0ac3e,workaround,"                if (bbs.s.isDirect()) {
                     cases.add(new VarHandleSourceAccessTestCase(
                             ""misaligned access"", bav, vh, h -> testArrayMisalignedAccess(bbs, h),
                             false));
@@ -2848,7 +2848,7 @@ public class AnnotationTestHelper {","public static String detectNewLineSignatur
 private static boolean hasWindowsNewLineSignature(byte[] buffer) {",
 542274,145,"// The test .equals fails on a comparison of row  vs column vector.
 //TODO: possibly figure out what's going on here at some point?
-// - Adam",bc6964441f03693a55ff62959fb77c6991542ba2,multi,"                    log.error(""Error with view"",t);
+// - Adam",bc6964441f03693a55ff62959fb77c6991542ba2,defect,"                    log.error(""Error with view"",t);
                 }
             }
         }
@@ -2987,7 +2987,7 @@ public void testXCorr1() {
       fail(throwable.getMessage());
     }
   }"
-641416,211,// TODO remove,ff789c9def9bdcd532882daa6fac82bbe949b16a,refactor,"import static java.util.stream.Collectors.joining;
+641416,211,// TODO remove,ff789c9def9bdcd532882daa6fac82bbe949b16a,low-internal-quality,"import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.IntStream.range;
 import static org.apache.iceberg.TableMetadata.newTableMetadata;
@@ -3006,7 +3006,7 @@ public abstract class BaseIcebergConnectorTest
     protected final IcebergFileFormat format;
 
     protected TrinoFileSystem fileSystem;",
-45461,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,defect,"
+45461,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,requirement,"
 @Override
 protected Request createTestInstance() {
     Request request = new Request(randomBoolean() ? Metadata.ALL : randomAlphaOfLengthBetween(1, 20));
@@ -3040,7 +3040,7 @@ protected Response mutateInstance(Response instance) {","        return null;// 
 }","    protected Response mutateInstance(Response instance) {
         return null;// TODO implement https://github.com/elastic/elasticsearch/issues/25929
     }"
-991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,dependency,"check(""Currencies"", locale, currencies, currencyFormats, new DisplayNameGetter() {
+991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,composite,"check(""Currencies"", locale, currencies, currencyFormats, new DisplayNameGetter() {
     public String get(ULocale loc, String code, Object context) {
         Currency s = Currency.getInstance(code);
         return s.getName(loc, ((Integer)context).intValue(), new boolean[1]);
@@ -3235,7 +3235,7 @@ public void testDeleteRowsConcurrently()
         //TODO: Fix https://github.com/trinodb/trino/issues/23941
         abort(""Skipped for now due to #23941"");
     }"
-16740,8,// TODO: add support for non-existing docs,7563960189e3946d9bf78d196c51fbaa1f92ea7e,superficial-test,"        result = engine.index(indexWithVersion.apply(conflictingVersion, index));
+16740,8,// TODO: add support for non-existing docs,7563960189e3946d9bf78d196c51fbaa1f92ea7e,documentation,"        result = engine.index(indexWithVersion.apply(conflictingVersion, index));
     }
     assertThat(result.isCreated(), equalTo(false));
     assertThat(result.getVersion(), equalTo(lastOpVersion));
@@ -3479,7 +3479,7 @@ assertThat(result.isCreated(), equalTo(docDeleted));","    private int assertOps
     }"
 839879,308,"/**
  * A test interface missing a setter and a getter.
- */",c732024825ab87b6c982c70616b60d39c31ed802,code,"  expectedException.expect(IllegalArgumentException.class);
+ */",c732024825ab87b6c982c70616b60d39c31ed802,low-internal-quality,"  expectedException.expect(IllegalArgumentException.class);
   expectedException.expectMessage(
       ""missing property methods on [org.apache.beam.sdk.options.""
           + ""PipelineOptionsFactoryTest$MissingMultipleSetters]"");
@@ -3519,7 +3519,7 @@ void discardingTriggeringCheckpointWillExecuteNextCheckpointRequest() throws Exc
                     .setCheckpointCoordinatorConfiguration(
                             CheckpointCoordinatorConfiguration.builder().build())
                     // Since timer thread != main thread we should override the default main",
-876571,337,// TODO(b/142881197): we can't give a more accurate type right now.,5ec609736d2af33870df300108823c76ff2c3a65,temporary-fix,"
+876571,337,// TODO(b/142881197): we can't give a more accurate type right now.,5ec609736d2af33870df300108823c76ff2c3a65,workaround,"
 @Test
 public void testYieldAll_withTypes() {
   Node returnNode =
@@ -3566,7 +3566,7 @@ checkState(yieldedValue.isArrayLit(), yieldedValue);","  public void testYieldAl
     assertNode(zero).hasColorThat().isEqualTo(StandardColors.NUMBER);
   }"
 1452895,763,"// TODO: this test requires rebalance logic which is not yet implemented in the CONSUMER group protocol.
-//       Once it is implemented, this should use both group protocols.",ee47e597408a935b4ba48d79a840b34f4ece0d73,multi,"public void testPollReturnsRecords(GroupProtocol groupProtocol) {
+//       Once it is implemented, this should use both group protocols.",ee47e597408a935b4ba48d79a840b34f4ece0d73,composite,"public void testPollReturnsRecords(GroupProtocol groupProtocol) {
     consumer = setUpConsumerWithRecordsToPoll(groupProtocol, tp0, 5);
 
     ConsumerRecords<String, String> records = (ConsumerRecords<String, String>) consumer.poll(Duration.ZERO);
@@ -3758,7 +3758,7 @@ for (int maxRowsPerFrame : new int[]{Integer.MAX_VALUE, 50}) {
 		 *    in supporting the struct with only one integral element (confirmed by OpenJDK/Hotspot).
 		 * Thus, the test is disabled on both these platforms for now till these issues
 		 * are fixed in OpenJDK and verified on OpenJDK/Hotspot in the future.
-		 */",fa3f82770e2f672907a45cd44599ea3c4cb047d0,skip-test,"
+		 */",fa3f82770e2f672907a45cd44599ea3c4cb047d0,partial-test,"
 		VaList vaList = VaList.make(vaListBuilder -> vaListBuilder.vargFromSegment(structLayout, structSegmt1)
 				.vargFromSegment(structLayout, structSegmt2), scope);
 		short result = (short)mh.invoke(2, vaList);
@@ -3859,7 +3859,7 @@ import static org.springframework.cloud.netflix.eureka.server.EurekaInstanceFixt
  * number of expected restarts is reached. The AdaptiveScheduler won't trigger the operator reset
  * resulting in the test running forever. This is why this test suite is disabled for the {@link
  * org.apache.flink.runtime.scheduler.adaptive.AdaptiveScheduler}.
- */",819e77ff6cada75f36f31634906fa1366fb55ee7,skip-test,"import java.util.Map;
+ */",819e77ff6cada75f36f31634906fa1366fb55ee7,composite,"import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
@@ -3879,7 +3879,7 @@ public abstract class UnalignedCheckpointTestBase extends TestLogger {
     protected static final String NUM_LOST = ""lost"";
 ",
 1010313,441,"// TODO use generics to detect comparator
-// instead of 'instanceof' for the first element",28679abd98ff7f4188ecd608fabb0ec96747a81b,code,"    return (SerializableAssert) test;
+// instead of 'instanceof' for the first element",28679abd98ff7f4188ecd608fabb0ec96747a81b,low-internal-quality,"    return (SerializableAssert) test;
 }
 
 Method m = object.getClass().getMethod(""equals"", new Class[] { Object.class });
@@ -3999,7 +3999,7 @@ scratch.file(
    * both foo and wtf, the best solution is to just delete the forward maps for
    * foo and wtf, then create a new name map of ""fsck.foo.wtf -> 01"" so that the
    * old time series are still accessible.
-   */",5ce3a15d5b6b290bb136fc4bed4424ebfb015e82,multi,"  int errors = (Integer)fsck.invoke(null, client, 
+   */",5ce3a15d5b6b290bb136fc4bed4424ebfb015e82,composite,"  int errors = (Integer)fsck.invoke(null, client, 
       UID_TABLE, true, false);
   assertEquals(1, errors);
   assertArrayEquals(""web01"".getBytes(MockBase.ASCII()), 
@@ -4101,7 +4101,7 @@ public void fsckMetricsInconsistentForward() throws Exception {
 //        // Create a server, add service, start, and register for automatic graceful shutdown.
 //        grpcCleanup.register(InProcessServerBuilder
 //                .forName(name).directExecutor().addService(service).build().start());
-//    }",db5edf542ee52d1ca2939f864be455207575c3ae,refactor," * http://www.apache.org/licenses/LICENSE-2.0
+//    }",db5edf542ee52d1ca2939f864be455207575c3ae,design," * http://www.apache.org/licenses/LICENSE-2.0
  * <p>
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
  * an ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
@@ -4111,7 +4111,7 @@ package com.netflix.conductor.grpc.server.service;
 
 public class HealthServiceImplTest {
 ",},
-203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,d3b33fef2f8d09456a8486124d5086fa77105cf9,refactor,"import java.io.File;
+203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,d3b33fef2f8d09456a8486124d5086fa77105cf9,workaround,"import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.MalformedURLException;
@@ -4163,7 +4163,7 @@ public void test_different_bsm_signatures() {
 1179971,541,"// Now a more precise check to see if the false positive rate is not
 // too high. The reason we use a relaxed restriction for the real-world
 // case as opposed to the ""fake lookup"" case is that our hash functions
-// are not completely independent.",01bdb3d9b0255396344830d544b6ac7adb040b8c,superficial-test,"  }
+// are not completely independent.",01bdb3d9b0255396344830d544b6ac7adb040b8c,workaround,"  }
 }
 double falsePosRate = numFalsePos * 1.0 / nTrials;
 LOG.debug(String.format(testIdMsg + "" False positives: %d out of %d (%f)"", numFalsePos,
@@ -4313,7 +4313,7 @@ try {
     }
   }"
 396345,119,"// ToDo prestodb/21791: write with 0 length varchar fails in hive
-// See reference - While Presto supports Varchar of length 0 (as discussed in trinodb/trino#1136",cfc888d7af2dbb976ec466065ae0735d9dbff126,dependency,"                    ""    (CAST(ROW('example_status', 100) AS ROW(status VARCHAR, amount INTEGER)), 1),"" +
+// See reference - While Presto supports Varchar of length 0 (as discussed in trinodb/trino#1136",cfc888d7af2dbb976ec466065ae0735d9dbff126,defect,"                    ""    (CAST(ROW('example_status', 100) AS ROW(status VARCHAR, amount INTEGER)), 1),"" +
                     ""    (CAST(ROW('another_status', 200) AS ROW(status VARCHAR, amount INTEGER)), 2)"" +
                     ""  ) AS t (order_details, orderkey)"" +
                     "") SELECT * FROM temp"",
@@ -4362,7 +4362,7 @@ public void testDestructuring() {
   }"
 1095050,482,"/**
  * Permission Test: Username currently only serves for connection, no permissions defined.
- */",4d50285a112ad810a865d1590d0cea9cfdd512bc,multi,"import org.apache.tsfile.write.schema.MeasurementSchema;
+ */",4d50285a112ad810a865d1590d0cea9cfdd512bc,composite,"import org.apache.tsfile.write.schema.MeasurementSchema;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.experimental.categories.Category;
@@ -4381,7 +4381,7 @@ public class IoTDBOtherUserConsumerIT extends AbstractSubscriptionRegressionIT {
   private static final String pattern = ""root.**"";
   private static final String userName = ""other_user"";
   private static final String passwd = ""other_user"";",
-58280,11,// TODO: Reactor usually times out on Windows ...,9cdc2872414e5f1cc7d290c1568b89294ee46750,refactor,"try {
+58280,11,// TODO: Reactor usually times out on Windows ...,9cdc2872414e5f1cc7d290c1568b89294ee46750,defect,"try {
 	StepVerifier.create(result)
 			.consumeNextWith(value -> assertThat(value.length()).isEqualTo((64 * 1024)))
 			.expectComplete()
@@ -4664,7 +4664,7 @@ String[][] lists = {
                     + "" exception; DeflaterOutputStream.finish() throws an exception if the""
                     + "" underlying OutputStream has been closed and the Deflater still has data to""
                     + "" write."",
-            bug = ""31797037"") */",dcd610884720c8064bece20600252f696b3371eb,multi,"    dos3.close();
+            bug = ""31797037"") */",dcd610884720c8064bece20600252f696b3371eb,composite,"    dos3.close();
 
     dos.close();
     dos4.close();
@@ -5271,7 +5271,7 @@ public String getContextPath() {
     }"
 891181,360,"// this is a limitation, we identify config repos by material fingerprint later
 // so there cannot be one repository parsed by 2 plugins.
-// This also does not seem like practical use case anyway",cb813024eca952cc11507f86acc1820cffd82450,impractical-case,"    assertThat(repos.isEmpty()).isTrue();
+// This also does not seem like practical use case anyway",cb813024eca952cc11507f86acc1820cffd82450,superficial-test,"    assertThat(repos.isEmpty()).isTrue();
     assertThat(repos.contains(ConfigRepoConfig.createConfigRepoConfig(git(""http://git""), ""myplugin"", ""id""))).isFalse();
 }
 
@@ -5300,7 +5300,7 @@ public void shouldErrorWhenDuplicateIdsExist() {
         repos.validate(null);
         assertThat(repos.errors().on(""material"")).isEqualTo(""You have defined multiple configuration repositories with the same repository."");
     }"
-636499,211,// This connector does not support modifying table rows,e8a31e1ee24cff578800346206b03231e3414e6d,skip-test,"protected void testUpdate()
+636499,211,// This connector does not support modifying table rows,e8a31e1ee24cff578800346206b03231e3414e6d,requirement,"protected void testUpdate()
 {
     // This connector does not support modifying table rows
     abort(""skipped"");
@@ -5317,7 +5317,7 @@ protected void testUpdateWithSubquery()
         // This connector does not support modifying table rows
         abort(""skipped"");
     }"
-638752,211,// TODO (https://github.com/trinodb/trino/issues/18916) should be checked once per query,b010ae75b80031aaf1798b6adbe56eb726efbf0d,code,"{
+638752,211,// TODO (https://github.com/trinodb/trino/issues/18916) should be checked once per query,b010ae75b80031aaf1798b6adbe56eb726efbf0d,low-internal-quality,"{
     String tableName = ""test_multipart_checkpoint_"" + randomNameSuffix();
     Path tableLocation = Files.createTempFile(tableName, null);
     copyDirectoryContents(new File(Resources.getResource(""deltalake/multipart_checkpoint"").toURI()).toPath(), tableLocation);
@@ -5359,7 +5359,7 @@ protected void testUpdateWithSubquery()
 1356261,682,"/*
          * Commenting out this method until the JSON-java code is updated
          * to support XML.toJSONObject(reader)
-         */",bf6a1cd00594566c292ec5d153b69b82d5a9a1a5,multi," * Convenience method, given an input string and expected result, convert to
+         */",bf6a1cd00594566c292ec5d153b69b82d5a9a1a5,composite," * Convenience method, given an input string and expected result, convert to
  * JSONObject via file and compare actual to expected result.
  * 
  * @param xmlStr
@@ -5655,7 +5655,7 @@ protected Number randomNumber() {
     if (randomBoolean()) {",    public void testScriptableTypes() {} // unimplemented
 558618,149,"// This query is expected to fail as we do not support join with constant in the on condition
 // (see issue https://github.com/apache/druid/issues/9942 for more information)
-// TODO: Remove expected Exception when https://github.com/apache/druid/issues/9942 is fixed",1a94fa45ab29d34f036229651375b5177f479ffb,multi,"              .columnTypes(ColumnType.STRING, ColumnType.LONG)
+// TODO: Remove expected Exception when https://github.com/apache/druid/issues/9942 is fixed",1a94fa45ab29d34f036229651375b5177f479ffb,composite,"              .columnTypes(ColumnType.STRING, ColumnType.LONG)
               .context(queryContext)
               .build()
       ),
@@ -5693,7 +5693,7 @@ public void testMVFilteringWithComplexColumn() throws Throwable
     String mv1 = createView(""CREATE MATERIALIZED VIEW %s AS SELECT a,b,c FROM %%s "" +
                             ""WHERE a IS NOT NULL AND b IS NOT NULL AND c IS NOT NULL AND l contains (1) "" +
                             ""AND s contains (1) AND m contains key (1) "" +",
-843337,308,// TODO: remove after SAMZA-2761 fix,2b779d4b8b2ec2b054c80f2145d8dac81dae037e,multi,"public void testPipelineWithAggregation() {
+843337,308,// TODO: remove after SAMZA-2761 fix,2b779d4b8b2ec2b054c80f2145d8dac81dae037e,composite,"public void testPipelineWithAggregation() {
   final List<KV<String, Long>> input =
       new ArrayList<>(
           Arrays.asList(
@@ -5804,7 +5804,7 @@ checkRepresentation(connectedStatement.getStatement(), ""TIME '00:39:07 +01:00'"
             });
         }
     }"
-997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",f1577e042eafab1081f241fcb736129bca6592d4,multi,"
+997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",f1577e042eafab1081f241fcb736129bca6592d4,composite,"
 for (int i = 0; i < locales.length; i++) {
     ICUResourceBundle rb = (ICUResourceBundle)ICUResourceBundle.getBundleInstance(ICUData.ICU_BASE_NAME,locales[i]);
 
@@ -5893,7 +5893,7 @@ DecimalFormat fmt1 = new DecimalFormat(pattern, symbols);
     }"
 357955,81,"// Compact Pattern Data Provider provides test input for both DecimalFormat patterns
 // and the compact patterns. As there is no method to retrieve compact patterns,
-// thus test only against US English locale, and use a hard coded K - 1000",fe266dd007359831af77cbe03c9d8780e3ca5ce8,multi,"private static Stream<Arguments> currencyValidParseStrings() {
+// thus test only against US English locale, and use a hard coded K - 1000",fe266dd007359831af77cbe03c9d8780e3ca5ce8,composite,"private static Stream<Arguments> currencyValidParseStrings() {
     return validParseStrings().map(args -> Arguments.of(
             cFmt.getPositivePrefix() + String.valueOf(args.get()[0])
                     .replace(dfs.getGroupingSeparator(), dfs.getMonetaryGroupingSeparator())
@@ -6044,7 +6044,7 @@ public String[] getTestDataDirs() {
             fail(""Exception during decompilation: "" + filePath + "":"" + ex.getMessage(), ex);
         }
     }"
-877036,337,// TODO(bradfordcsmith): Remove Object.defineProperty() like we do Object.defineProperties().,7599500f7b3877f77145cbf1134cdd4f9db86152,refactor,"}
+877036,337,// TODO(bradfordcsmith): Remove Object.defineProperty() like we do Object.defineProperties().,7599500f7b3877f77145cbf1134cdd4f9db86152,low-internal-quality,"}
 
 @Test
 public void testSingletonGetter3() {
@@ -6126,7 +6126,7 @@ public void getMapTilesMetadata() throws Exception {
 // start completely. However, this test's premise is that a partially started master should
 // still respond to a shutdown RPC. So instead, we manage each component lifecycle
 // independently.
-// I think it's not worth refactoring HTU's helper methods just for this class.",07272e0aded5968377215d52b4f35bdccc9e5b6f,refactor,"LocalHBaseCluster hbaseCluster = null;
+// I think it's not worth refactoring HTU's helper methods just for this class.",07272e0aded5968377215d52b4f35bdccc9e5b6f,workaround,"LocalHBaseCluster hbaseCluster = null;
 try {
   htu = new HBaseTestingUtil(createMasterShutdownBeforeStartingAnyRegionServerConfiguration());
 
@@ -6379,7 +6379,7 @@ String[] filePathsWithBackupsKeyspaceAndTableWithIndices = new String[]{
 
         testKeyspaceTableParsing(counterFiles, ""Keyspace1"", ""counter1"");
     }"
-214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,21cbfd1c664d94fee05c8ba7f22c48ee7bac5c8a,multi,"                        pathToString(savepointDir),
+214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,21cbfd1c664d94fee05c8ba7f22c48ee7bac5c8a,composite,"                        pathToString(savepointDir),
                         testCase.restoreSource == RestoreSource.CANONICAL_SAVEPOINT
                                 ? SavepointFormatType.CANONICAL
                                 : SavepointFormatType.NATIVE)
@@ -6410,7 +6410,7 @@ if (tryRun(jobGraph) != testCase.allowRestore) {
             fail(testCase.describeRestore());
         }
     }"
-290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,87a2822426287bdaae3698504721eb539165601e,multi,"    Assertions.checkState(0x00 <= bytes[i] && bytes[i] <= 0xFF);
+290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,87a2822426287bdaae3698504721eb539165601e,composite,"    Assertions.checkState(0x00 <= bytes[i] && bytes[i] <= 0xFF);
     byteArray[i] = (byte) bytes[i];
   }
   return byteArray;
@@ -6481,7 +6481,7 @@ Pair.makePair(SUTime.FALL, ""2016-09-01/2016-12""),","  public void testThis() {
       resolveAndCheckRange(""This for "" + p.first() + "" ("" + i + ')', rel1, anchorTime, p.second());
     }
   }"
-625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,6a6b8ba4157248d9312f01e6acf4467d24083bcb,multi,"        assertThatThrownBy(() -> onTrino().executeQuery(""UPDATE delta.default."" + tableName + "" SET a = 3""))
+625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,6a6b8ba4157248d9312f01e6acf4467d24083bcb,composite,"        assertThatThrownBy(() -> onTrino().executeQuery(""UPDATE delta.default."" + tableName + "" SET a = 3""))
                 .hasMessageContaining(""Check constraint violation"");
         assertThat(onTrino().executeQuery(""SELECT * FROM delta.default."" + tableName))
                 .containsOnly(row(2));
@@ -6610,7 +6610,7 @@ assertSingleMatchWithSuggestions(""allonsy"", ""allons-y"");","  public void tes
     assertSingleMatchWithSuggestions(""preferes-tu"", ""Préférés"", ""Préfères""); //TODO
     assertSingleMatchWithSuggestions(""àllonsy"", ""allons-y"");
   }"
-992143,441,// deprecated,c25e5634ada9243d416ad2701140d305e086282c,code,"{""OK"", ""en-u-sd-uszzzz""},
+992143,441,// deprecated,c25e5634ada9243d416ad2701140d305e086282c,low-internal-quality,"{""OK"", ""en-u-sd-uszzzz""},
 
 // really long case
 
@@ -6814,7 +6814,7 @@ public void testByteBufferToStringConversion() throws Exception {
        * org.apache.zookeeper.KeeperException$NodeExistsException: KeeperErrorCode = NodeExists, though it should never
        * happen because zookeeper should be in a clean state for each run of tests.
        * Address issue: https://github.com/apache/druid/issues/1512
-       */",b7e1e17b097da5db352d190b3f55d163c9a84f36,multi,"String zkPath = ZKPaths.makePath(announcementsPath, server.getHost());
+       */",b7e1e17b097da5db352d190b3f55d163c9a84f36,composite,"String zkPath = ZKPaths.makePath(announcementsPath, server.getHost());
 try {
   curator.create()
          .creatingParentsIfNeeded()
@@ -6868,7 +6868,7 @@ catch (KeeperException.NodeExistsException e) {","  try {
     }
   }"
 743842,230,"// TODO: Remove this line, and replace 'clusterManagerRole' with CLUSTER_MANAGER_ROLE, after MASTER_ROLE is removed.
-// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",29032270adefbd5b84683a4f93d7e0f9eb1b36d1,multi,"        public Path nodeConfigPath(int nodeOrdinal) {
+// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",29032270adefbd5b84683a4f93d7e0f9eb1b36d1,composite,"        public Path nodeConfigPath(int nodeOrdinal) {
             return null;
         }
     },
@@ -6981,7 +6981,7 @@ cluster.setBootstrapClusterManagerNodeIndex(","    public void testDifferentRole
     }"
 859671,323,"// Takes ~1s on markt's laptop. If this takes more than 5s something
 // probably needs looking at. If this fails repeatedly then we may need
-// to increase this limit.",4db70896e8225a5ed8bc406dbd2e91a3ce4a60c9,temporary-fix,"public void testPerformance() throws Exception {
+// to increase this limit.",4db70896e8225a5ed8bc406dbd2e91a3ce4a60c9,workaround,"public void testPerformance() throws Exception {
     String[] requestedHostNames = new String[] { ""xxxxxxxxxxx"", ""iowejoiejfoiew"", ""iowejoiejfoiex"", ""owefojiwefoi"",
             ""owefojiwefoix"", ""qwerty.net"", ""foo.net"", ""zzz.com"", ""abc.com"" };
 
@@ -7018,7 +7018,7 @@ Assert.assertTrue(String.valueOf(time), time < maxTime);","    private void test
  * Test for advanced push types.
  * Currently only tests METADATA push type.
  * todo: add test for URI push
- */",46c08447b3bf9f7acdec5041f73928e6d90e50a1,superficial-test,"import org.apache.pinot.spi.utils.builder.TableNameBuilder;
+ */",46c08447b3bf9f7acdec5041f73928e6d90e50a1,partial-test,"import org.apache.pinot.spi.utils.builder.TableNameBuilder;
 import org.apache.pinot.util.TestUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -7037,7 +7037,7 @@ import org.testng.annotations.Test;
 
   @Override
   protected String getSortedColumn() {",
-60512,11,// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead,a5f44575fbc7fada8638dca9e51db75119702af8,code,"@Test
+60512,11,// This is not recommended: use publishEvent(new PayloadApplicationEvent(...)) instead,a5f44575fbc7fada8638dca9e51db75119702af8,low-internal-quality,"@Test
 @SuppressWarnings(""resource"")
 void testPayloadObjectWithPayloadTypeOnParentContext() {
 	final NumberHolder<Integer> payload = new NumberHolder<>(42);
@@ -7073,7 +7073,7 @@ void testPayloadObjectWithPayloadTypeOnParentContext() {
 		ac.close();
 		parent.close();
 	}"
-1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",9e1b99dc5150e2517f5ddabb4ee074e579218845,multi,"
+1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",9e1b99dc5150e2517f5ddabb4ee074e579218845,composite,"
 Voyage voyage = new Voyage(new VoyageNumber(""0101""), new Schedule(Collections.singletonList(
         new CarrierMovement(origin, dest, Instant.now(), Instant.now()))));
 List<HandlingEvent> events = Arrays.asList(
@@ -7119,7 +7119,7 @@ assertThat(result).extracting(""trackingId"", ""statusText"", ""destination"", "
                 .extracting(""location"", ""type"", ""voyageNumber"", ""isExpected"", ""description"")
                 .containsExactly(""Stockholm"", ""RECEIVE"", """", true, ""TEST-DESCR""); // TODO test time field once timezone handling has been added
     }"
-674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,0dad5f7c4db3451ff83da3b429e8ef99cda7a0f7,temporary-fix,"    assertThat(
+674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,0dad5f7c4db3451ff83da3b429e8ef99cda7a0f7,composite,"    assertThat(
             Settings.Secure.getInt(
                     mTestableContext.getContentResolver(),
                     Settings.Secure.ACCESSIBILITY_DISPLAY_MAGNIFICATION_ENABLED,
@@ -7214,7 +7214,7 @@ public void runTestForAllSuccessTypes() throws Exception {","for (BuildRuleSucce
     }
   }"
 441158,128,"// Copy MRAppJar and make it private. TODO: FIXME. This is a hack to
-// workaround the absent public discache.",8af8c60b7ec1bc96c59dbce7cc1a5e8ec3e50d73,temporary-fix,"  return;
+// workaround the absent public discache.",8af8c60b7ec1bc96c59dbce7cc1a5e8ec3e50d73,workaround,"  return;
 }
 
 if (mr == null) {
@@ -7260,7 +7260,7 @@ public static void tearDown() {
         HiveIcebergTestUtils.timestampAfterSnapshot(table, 2) + ""')"");
     Assert.assertEquals(5, shell.executeStatement(""SELECT * FROM "" + identifier.name()).size());
     Assert.assertEquals(3, table.history().size());
-    */",6dbe4f744e9620e3d7ca433f76af589abb49adea,multi,"  Assume.assumeTrue(fileFormat == FileFormat.PARQUET && isVectorized &&
+    */",6dbe4f744e9620e3d7ca433f76af589abb49adea,composite,"  Assume.assumeTrue(fileFormat == FileFormat.PARQUET && isVectorized &&
       testTableType == TestTables.TestTableType.HIVE_CATALOG && formatVersion == 2);
 }
 
@@ -7322,7 +7322,7 @@ Assert.assertEquals(5, table.history().size());","  public void testRollbackToTi
 
 /**
  * Returns {@code true} if the operating system supports file creation time modification. Note:",
-1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,6452d041717d453a781fe70bf8fe405281564ee8,multi,"        .logRequests(true) // verifying manually in the logs for now
+1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,6452d041717d453a781fe70bf8fe405281564ee8,composite,"        .logRequests(true) // verifying manually in the logs for now
         .logResponses(true) // verifying manually in the logs for now
         .build();
 
@@ -7608,7 +7608,7 @@ anyTree(
                                                         not(getPlanTester().getPlannerContext().getMetadata(), new IsNull(new Reference(VARCHAR, ""c_name""))),
                                                         tableScan(""customer"", ImmutableMap.of(""c_custkey"", ""custkey"", ""c_name"", ""name""))))))));
     }"
-1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",4a76d5b1c75abe1d1dd2eb57f48b25f3a9ec7a6a,multi,"List<Snap> snaps = createRandomSnaps(f.graph.getBounds(), locationIndex, rnd, numVirtualNodes, false, EdgeFilter.ALL_EDGES);
+1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",4a76d5b1c75abe1d1dd2eb57f48b25f3a9ec7a6a,composite,"List<Snap> snaps = createRandomSnaps(f.graph.getBounds(), locationIndex, rnd, numVirtualNodes, false, EdgeFilter.ALL_EDGES);
 QueryGraph queryGraph = QueryGraph.create(f.graph, snaps);
 
 int numQueries = 100;
@@ -7741,7 +7741,7 @@ if (!rbbi.equals(rbbi1)) {
                     + ""false when comparing to string '0'."");
         }
     }"
-638230,211,// TODO: Find the maximum column name length in ClickHouse and enable this test.,7922f4df93d3ec0536c686336401916637eeef20,skip-test,"public void testAlterTableAddLongColumnName()
+638230,211,// TODO: Find the maximum column name length in ClickHouse and enable this test.,7922f4df93d3ec0536c686336401916637eeef20,composite,"public void testAlterTableAddLongColumnName()
 {
     // TODO: Find the maximum column name length in ClickHouse and enable this test.
     abort(""TODO"");
@@ -7908,7 +7908,7 @@ String[] contents = {
         assertThat(cause.getMaterialRevisions().latestRevision()).isEqualTo(lastPush.get(0).getRevision());
     }"
 229758,64,"// TODO(mschaller): This will ignore any attempt by Blaze modules to provide a filesystem;
-// consider something better.",899ec0b739046998eec557ac74a54487bfa4b39b,code," */
+// consider something better.",899ec0b739046998eec557ac74a54487bfa4b39b,low-internal-quality," */
 @ForOverride
 protected Set<EventKind> additionalEventsToCollect() {
   return ImmutableSet.of();
@@ -8072,7 +8072,7 @@ public void testSqlParseNaN() {","    // todo add some test case to test NaN
 }","  public void testSqlParseNaN() {
     // todo add some test case to test NaN
   }"
-328146,81,//TODO: correct?,4d7311d04df8b9b347b6953de9a2073101b5d2b7,requirement,"        .run()
+328146,81,//TODO: correct?,4d7311d04df8b9b347b6953de9a2073101b5d2b7,how-to,"        .run()
         .writeAll()
         .getOutputLines(Task.OutputKind.DIRECT);
 
@@ -8130,7 +8130,7 @@ public void previewAPI(Path base) throws Exception {
         checkPreviewClassfile(classes.resolve(""test"").resolve(""Outer$R.class""),true);
         checkPreviewClassfile(classes.resolve(""test"").resolve(""Use.class""),false);
     }"
-1061072,476,"// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.",f1ac885fd9b5f925b07e4dd3f210024675d8ab2e,temporary-fix,"    ""class Test {}"",
+1061072,476,"// This test isn't necessarily what we'd want to do, but it's what we do now, and it's OK-ish.",f1ac885fd9b5f925b07e4dd3f210024675d8ab2e,workaround,"    ""class Test {}"",
   };
   String[] expected = {
     ""/** */"", ""class Test {}"",
@@ -8177,7 +8177,7 @@ String[] input = {
     doFormatTest(input, expected);
   }"
 1244485,620,"//TODO: Rewrite with dynamic cache creation, and GRID start in #beforeTest after resolve of
-//TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,multi,"}
+//TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,composite,"}
 
 /**
  * Test collision of table names in different caches, sharing a single SQL schema.
@@ -8283,7 +8283,7 @@ NodeInterface anonInvoker = getAnonInvoker();
 		 * exception is thrown.
 		 */
 	}"
-947405,422,//TODO: fast results still can get lost,85107bcf0ddef5a1206c30e47b477581d171df45,skip-test,"
+947405,422,//TODO: fast results still can get lost,85107bcf0ddef5a1206c30e47b477581d171df45,requirement,"
     //when
     hz().getJet().newJob(pipeline).join();
     //then
@@ -8324,7 +8324,7 @@ public void fastResultsDoNotGetLost_whenUsingIterator() throws Exception {
  * WebHdfs client Partially supports the Symlink.
  * creation of Symlink is supported, but the getLinkTargetPath() api is not supported currently,
  * Implement the test case once the full support is available.
- */",f9fc5bfc0796fa1fb40ec392f5247b59a0b25534,multi,"protected boolean listCorruptedBlocksSupported() {
+ */",f9fc5bfc0796fa1fb40ec392f5247b59a0b25534,composite,"protected boolean listCorruptedBlocksSupported() {
   return false;
 }
 
@@ -8443,7 +8443,7 @@ public TypeDescriptor[] getTypeDescriptorsFromList(String[][] arg0) throws SQLEx
 // internal structure of the NavigationView. Specifically, we're checking the
 // start drawable of the text view with the specific text. If the internal
 // implementation of NavigationView changes, the second Matcher in the lookups
-// below will need to be tweaked.",11e6a6c0ad832f64e9562d9f0537a2aad09491f4,multi,"
+// below will need to be tweaked.",11e6a6c0ad832f64e9562d9f0537a2aad09491f4,composite,"
 // We're allowing a margin of error in checking the color of the items' icons.
 // This is due to the translucent color being used in the icon tinting
 // and off-by-one discrepancies of SRC_IN when it's compositing
@@ -8607,7 +8607,7 @@ public void testGetSecurityProvider() throws Exception {
 
     // TODO mlowery finish me
   }"
-23823,8,// RandomIndexWriter is too slow here:,154498ba0a35977c734c8e9ba611b5631b4c5e02,code,"    IOUtils.close(r, dir);
+23823,8,// RandomIndexWriter is too slow here:,154498ba0a35977c734c8e9ba611b5631b4c5e02,low-internal-quality,"    IOUtils.close(r, dir);
 }
 
 public void testIndexSimpleShapes() throws Exception {
@@ -8673,7 +8673,7 @@ for (int id = 0; id < numDocs; id++) {
         IOUtils.close(r, dir);
     }"
 611150,198,"// TODO refactor getEngine to use dependency injection, so a mock Engine
-// object can be used.",74f13b55a86b4b9d87bee562f61cd848f8da8c9b,refactor,"public void getEngineThrowsOnNullParameter() {
+// object can be used.",74f13b55a86b4b9d87bee562f61cd848f8da8c9b,design,"public void getEngineThrowsOnNullParameter() {
     assertThrows(IllegalArgumentException.class, () -> SUT.wrapGetEngine(null, null));
 
     assertThrows(IllegalArgumentException.class, () -> SUT.wrapGetEngine(null, project));
@@ -8706,7 +8706,7 @@ verify(request, times(1)).getParameter(""engine"");
         // key, so there should be no further action
         // Engine._facets is protected so can't test that it is of zero length.
     }"
-1544848,889,//this is pretty yuck,338a24c5ef17e1a0a76dce0940611385261984f6,temporary-fix,"    if (r <= 0) break;
+1544848,889,//this is pretty yuck,338a24c5ef17e1a0a76dce0940611385261984f6,workaround,"    if (r <= 0) break;
     if (r > 0) {
         read += r;
         sb.append(new String(buf, 0, r));
@@ -9033,7 +9033,7 @@ if (args.length == 1) {
             starRocksAssert.dropMaterializedView(""mv1"");
         });
     }"
-230221,64,// TODO: b/359688989 - clean this up,0f973679224271b2abcd21dce88e300f04586c2a,refactor,"import static com.google.devtools.build.lib.concurrent.PaddedAddresses.getAlignedAddress;
+230221,64,// TODO: b/359688989 - clean this up,0f973679224271b2abcd21dce88e300f04586c2a,low-internal-quality,"import static com.google.devtools.build.lib.concurrent.PaddedAddresses.getAlignedAddress;
 
 import com.google.devtools.build.lib.unsafe.UnsafeProvider;
 
@@ -9268,7 +9268,7 @@ Pair.makePair(SUTime.YEAR, ""2017-01-01/2017-12-31""),
     }
   }"
 114214,26,"// TODO(b/20335397): This code was relying on Bitmap equality which Robolectric removed
-// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",6c252c2b50bcd4f3f835dcfc4b09a104009d63f1,multi,"@Test
+// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",6c252c2b50bcd4f3f835dcfc4b09a104009d63f1,composite,"@Test
 public void testAllocatesABitmapPerSizeInAllocationOrder() {
   PreFillType size = new PreFillType.Builder(100).setConfig(Bitmap.Config.ARGB_8888).build();
   final int toAdd = 3;
@@ -9353,7 +9353,7 @@ public void testErrorHandling() throws Exception {
         assertNull(cause.get());
         client.destroy();
     }"
-1063139,478,//needs https://community.box.com/t5/custom/page/page-id/BoxViewTicketDetail?ticket_id=1895413 to be solved,a59ce8267c11853fc270d7693545aa89ac067be3,dependency,"        if (result != null) {
+1063139,478,//needs https://community.box.com/t5/custom/page/page-id/BoxViewTicketDetail?ticket_id=1895413 to be solved,a59ce8267c11853fc270d7693545aa89ac067be3,defect,"        if (result != null) {
             try {
                 ((BoxTaskAssignment) result.getResource()).delete();
             } catch (Exception t) {
@@ -9389,7 +9389,7 @@ public void testGetTaskAssignments() {
         assertNotNull(result, ""getTaskAssignments result"");
         LOG.debug(""getTaskAssignments: {}"", result);
     }"
-721847,230,// some of the windows test VMs are slow as hell,fbc4241aff06127c8042a312ec563937ac3df412,code," */
+721847,230,// some of the windows test VMs are slow as hell,fbc4241aff06127c8042a312ec563937ac3df412,low-internal-quality," */
 
 package org.opensearch.backwards;
 
@@ -9490,7 +9490,7 @@ try {
         }
     }"
 668273,213,"// Return a string that identifies a Method.  This is not very efficient but it is not
-// called very often.",d834dca40fd1de694b9afd0949445552a61d09cb,temporary-fix,"    Assert.assertEquals(3600000001L, multiPackage[1].timeouts.minTimeUs);
+// called very often.",d834dca40fd1de694b9afd0949445552a61d09cb,workaround,"    Assert.assertEquals(3600000001L, multiPackage[1].timeouts.minTimeUs);
     Assert.assertEquals(3600000002L, multiPackage[1].timeouts.minPendingTimeUs);
     Assert.assertEquals(3600000003L, multiPackage[1].timeouts.maxPendingTimeUs);
 }
@@ -9541,7 +9541,7 @@ memFree(image);","    static void saveScreenShotGL(int w, int h, boolean premult
         stbi_write_png(name, w, h, 4, image, w * 4);
         memFree(image);
     }"
-606076,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,multi,"import org.junit.Test;
+606076,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,composite,"import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
@@ -9560,7 +9560,7 @@ public class ServiceConfigErrorHandlingTest {
   private static final String USER_AGENT = ""userAgent"";
   private static final String TARGET = ""fake://"" + SERVICE_NAME;
   private static final String MOCK_POLICY_NAME = ""mock_lb"";",
-1494668,822,// TODO Remove mock request. Use a real one,4952bfd57268901362543370c89aa0a80191d8de,multi,"                is(""[::192.9.5.5]:12345""), // short form
+1494668,822,// TODO Remove mock request. Use a real one,4952bfd57268901362543370c89aa0a80191d8de,design,"                is(""[::192.9.5.5]:12345""), // short form
                 is(""[0:0:0:0:0:0:c009:505]:12345"") // long form
             ));
     }
@@ -9687,7 +9687,7 @@ public class ShutdownTests extends ESTestCase {
 546934,149,"// This is disabled since OverlordResource.getTaskStatus() is annotated with TaskResourceFilter which is supposed to
 // set authorization token properly, but isn't called in this test.
 // This should be fixed in https://github.com/apache/druid/issues/6685.
-// expectAuthorizationTokenCheck();",58a6769a5ec04262778ed941e2ff041166595337,multi,"  final TaskPayloadResponse taskPayloadResponse2 = TestHelper.makeJsonMapper().readValue(
+// expectAuthorizationTokenCheck();",58a6769a5ec04262778ed941e2ff041166595337,composite,"  final TaskPayloadResponse taskPayloadResponse2 = TestHelper.makeJsonMapper().readValue(
       TestHelper.makeJsonMapper().writeValueAsString(response2.getEntity()),
       TaskPayloadResponse.class
   );
@@ -9904,7 +9904,7 @@ output.write(titleField.getBytes(HTTP_ENCODING));","    /**
         return output.toByteArray();
     }"
 246131,66,"// This is a quirk of the implementation - since same-slot renames use the non-cluster version,
-// the result is a Redis error. This behavior matches other spring-data-redis implementations",419cb0fe9e64f4a7ad25c6db87f97c6af15e4897,temporary-fix,"    });
+// the result is a Redis error. This behavior matches other spring-data-redis implementations",419cb0fe9e64f4a7ad25c6db87f97c6af15e4897,workaround,"    });
 }
 
 @Test
@@ -10030,7 +10030,7 @@ try {
 
         return dest;
     }"
-499770,137,//hacky workaround using the toString method to avoid mocking the Ruby runtime,a50adb8fb3a4179c582da6f34b27eeff12e4fa94,temporary-fix,"@RunWith(MockitoJUnitRunner.class)
+499770,137,//hacky workaround using the toString method to avoid mocking the Ruby runtime,a50adb8fb3a4179c582da6f34b27eeff12e4fa94,workaround,"@RunWith(MockitoJUnitRunner.class)
 public class RubyHashGaugeTest {
 
     @Mock
@@ -10055,7 +10055,7 @@ public void getValue() {
 357465,81,"/**
  * A space as a group separator for localized pattern causes
  * wrong format.  WorkAround : use non-breaking space.
- */",413ce4671b95ed8a3ba29e5cdce367bfb617c205,temporary-fix,"    NumberFormat nf = NumberFormat.getInstance();
+ */",413ce4671b95ed8a3ba29e5cdce367bfb617c205,workaround,"    NumberFormat nf = NumberFormat.getInstance();
     nf.setMaximumFractionDigits(4);
     String out = nf.format(x);
     System.out.println(""0.00159999 formats with 4 fractional digits to "" + out);
@@ -10137,7 +10137,7 @@ try (Transaction tid = tb.startTransaction()) {
 
 		assertEquals(""{\""sleigh\"":\""r0\\u003d0xbeef;\""}"", lb.getProgramBookmark().getComment());
 	}"
-879560,337,// TODO(bradfordcsmith): Stop normalizing the expected output or document why it is necessary.,435cc19c1e48448536836d401e282865519543ef,multi,"      lines(
+879560,337,// TODO(bradfordcsmith): Stop normalizing the expected output or document why it is necessary.,435cc19c1e48448536836d401e282865519543ef,composite,"      lines(
           ""class Baz extends Bar() {"",
           ""  static quadruple(n) {"",
           ""    return 2 * super.double(n);"",
@@ -10470,7 +10470,7 @@ Consumer<byte[]> consumer1 = client.newConsumer().topic(partitionedTopicName).su
         admin.topics().deletePartitionedTopic(partitionedTopicName);
     }"
 1400535,762,"// it has enough size to print 3 warnings, but it will only print 2,
-// because it needs to accommodate the suffix too in the max size.",739bbb302cc7ecd055eb7dc393db31c5af953cf3,temporary-fix,"// has 7 warnings
+// because it needs to accommodate the suffix too in the max size.",739bbb302cc7ecd055eb7dc393db31c5af953cf3,workaround,"// has 7 warnings
 var results1 = modelInstance.validate(List.of(new IsAdultWarner()));
 // has 1 error
 var results2 = modelInstance.validate(List.of(new IllegalBirdValidator(""tweety"")));
@@ -10659,7 +10659,7 @@ public void onFailure(Session session, Throwable failure, Callback callback)
             // TODO
             return true;
         }"
-226665,64,// TODO: b/365420093 - Remove this workaround when the bug is fixed.,ee4a0ac70fbe74b77c18d1faea1a79d45de24eb1,multi,"            .build();
+226665,64,// TODO: b/365420093 - Remove this workaround when the bug is fixed.,ee4a0ac70fbe74b77c18d1faea1a79d45de24eb1,composite,"            .build();
     return ParsedFlagsValue.parseAndCreate(flags);
   }
 }
@@ -10679,7 +10679,7 @@ public void map_noMappings() throws OptionsParsingException {
   PlatformMappingValue mappingValue = builder().build();
 ",
 503764,140,"// Disabled as it's currently failing - needs investigation
-//                .body(""paths.'/collections/{id}'.get.security[0].SecurityScheme"", Matchers.hasItem(""user""))",982517233e5c5cc138ed0c6dea5b381a96027796,multi,".body(""paths.'/collections'.post.tags"", Matchers.hasItem(""CollectionsResource""))
+//                .body(""paths.'/collections/{id}'.get.security[0].SecurityScheme"", Matchers.hasItem(""user""))",982517233e5c5cc138ed0c6dea5b381a96027796,composite,".body(""paths.'/collections'.post.tags"", Matchers.hasItem(""CollectionsResource""))
 .body(""paths.'/collections'.post.requestBody.content.'application/json'.schema.$ref"",
         is(COLLECTIONS_SCHEMA_REF))
 .body(""paths.'/collections'.post.responses.'201'.content.'application/json'.schema.$ref"",
@@ -10789,7 +10789,7 @@ public void rewritesOnSubqueryWithoutProjection()
                                                                 new Comparison(EQUAL, new Constant(INTEGER, 1L), new Reference(INTEGER, ""a"")),
                                                                 values(""a"")))))));
     }"
-20091,8,// TODO: fix test to work with ExtrasFS,c98bf7ac401e312bb9bce6d75ff3f849e9e95b85,requirement,"import java.nio.file.StandardOpenOption;
+20091,8,// TODO: fix test to work with ExtrasFS,c98bf7ac401e312bb9bce6d75ff3f849e9e95b85,defect,"import java.nio.file.StandardOpenOption;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -10808,7 +10808,7 @@ public class MetadataStateFormatTests extends ESTestCase {
     public void testReadClusterStateV2() throws IOException {
         assertReadClusterState(""global-3-V2.st"");
     }",
-206621,60,// TODO align the behavior when receiving single -D within a window after fixing FLINK-33760,2a54176e1a70f8659119c4e69a9798ef335e5525,multi,"
+206621,60,// TODO align the behavior when receiving single -D within a window after fixing FLINK-33760,2a54176e1a70f8659119c4e69a9798ef335e5525,composite,"
 // TODO split the session if necessary when receiving -D after fixing FLINK-34039
 // session window does not re-split correctly as expected when consuming -D, only acc is
 // retracted
@@ -11065,7 +11065,7 @@ public void exitExplicitCacheToActive() throws SQLException {
         // TODO Auto-generated method stub
 
     }"
-1506165,822,// TODO,0beb03789824b85a8d7285013ab1651cf48ad764,skip-test,"import org.junit.jupiter.api.Disabled;
+1506165,822,// TODO,0beb03789824b85a8d7285013ab1651cf48ad764,requirement,"import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -11419,7 +11419,7 @@ else {
         }
         return available;
     }"
-1027262,445,//Ooooooo this is so ugly,c89a3547957b551e64b58f76a4af98d719f8e0ae,code,"    this.stream = getMetaStream(stream);
+1027262,445,//Ooooooo this is so ugly,c89a3547957b551e64b58f76a4af98d719f8e0ae,low-internal-quality,"    this.stream = getMetaStream(stream);
 }
 
 private static MetaStream getMetaStream(InputStream stream) {
@@ -11454,7 +11454,7 @@ private static MetaStream getMetaStream(InputStream stream) {
             throw new IllegalStateException(""Implementation of ByteLimitedInputStream has changed."", e);
         }
     }"
-45386,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,defect,"    List<ModelSnapshot> hits = new ArrayList<>(listSize);
+45386,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,requirement,"    List<ModelSnapshot> hits = new ArrayList<>(listSize);
     for (int j = 0; j < listSize; j++) {
         hits.add(ModelSnapshotTests.createRandomized());
     }
@@ -11542,7 +11542,7 @@ table.refresh();","  public void testBasicWrite() throws IOException {
     }
   }"
 110532,22,"//@Test
-// run this manually as it's dependent on platform encoding, which has to be UTF-8",5fd8d00cd59003997bd82e0417b5f33c08bdf8f3,multi,"    Assert.assertEquals(
+// run this manually as it's dependent on platform encoding, which has to be UTF-8",5fd8d00cd59003997bd82e0417b5f33c08bdf8f3,composite,"    Assert.assertEquals(
       CharacterEncodingExamples.convertToBinary(""語"", ""UTF-32""), 
       ""0 0 10001010 10011110 "");
 }
@@ -11655,7 +11655,7 @@ parseEval(bindings, test3);","    public void joinArray() throws ParsingExceptio
 
         // TODO: Add tests for List<Object> returned from ExpressionUtils.toObjectList()
     }"
-50150,8,// TODO this should be WRAP instead,0f93501048e7fb894f992cc858af230058a7a6c9,requirement,"        assertTrue(i + "": "" + geometry, bbox.isPresent());
+50150,8,// TODO this should be WRAP instead,0f93501048e7fb894f992cc858af230058a7a6c9,defect,"        assertTrue(i + "": "" + geometry, bbox.isPresent());
         var result = bbox.get();
         assertThat(i + "": "" + geometry, result.getMinX(), lessThanOrEqualTo(result.getMaxX()));
         assertThat(i + "": "" + geometry, result.getMinY(), lessThanOrEqualTo(result.getMaxY()));
@@ -11734,7 +11734,7 @@ public void testNoRewrite_nonCallReference_viaGetprop_usingFnApply() {","  publi
             ""o.foo.call(null);""));
   }"
 561114,152,"// KeysetHandle.generateNew is too slow in Tsan.
-// We do not use assume because Theories expects to find something which is not skipped.",b44139972c97cb177c358ffec3866f4b87947f8f,code,"  assertThrows(
+// We do not use assume because Theories expects to find something which is not skipped.",b44139972c97cb177c358ffec3866f4b87947f8f,low-internal-quality,"  assertThrows(
       GeneralSecurityException.class,
       () -> otherVerifier.verifyAndDecode(signedCompact, validator));
 }
@@ -11799,7 +11799,7 @@ public void testCloseCurrentTraceEmpty() throws Exception {","	protected void as
 		// NB. I don't know what uniques, if any, are involved
 	}"
 1529183,874,"// btw, we should also check the ""skip xxx"" log,
-// but the /path/to/job_tmp/job_id/01/meta/execute_output.json.xxx.log not exists in ut env.",04849d33c3125713aa3c2390dd15f686100174dc,requirement,"EnhancedUnitOfWork.doInTransactionWithCheckAndRetry(() -> {
+// but the /path/to/job_tmp/job_id/01/meta/execute_output.json.xxx.log not exists in ut env.",04849d33c3125713aa3c2390dd15f686100174dc,how-to,"EnhancedUnitOfWork.doInTransactionWithCheckAndRetry(() -> {
     ExecutableManager tempExecMgr = ExecutableManager.getInstance(KylinConfig.getInstanceFromEnv(), project);
     tempExecMgr.removeBreakPoints(cubeStep.getId());
     tempExecMgr.resumeJob(job.getId());
@@ -12165,7 +12165,7 @@ assertThat(c.isClosePending(), is(false));
 		 * java.base/java.lang.invoke.MemoryAccessVarHandleBase triggered by CLinker.toCString()
 		 * is also captured on OpenJDK/Hotspot.
 		 * 2) Disable the test on AIX as Valist is not yet implemented in OpenJDK.
-		 */",cf649dbb7cd28246bee2b7bbf410db5853af8242,multi,"
+		 */",cf649dbb7cd28246bee2b7bbf410db5853af8242,composite,"
 		VaList vaList = VaList.make(vaListBuilder -> vaListBuilder.vargFromSegment(structLayout, structSegmt1)
 				.vargFromSegment(structLayout, structSegmt2), scope);
 		double result = (double)mh.invoke(2, vaList);
@@ -12297,7 +12297,7 @@ class ExecutionListenerAdapterTests {
 		var discoveryResult = new LauncherDiscoveryResult(Map.of(mock(), testDescriptor), mock(),
 			dummyOutputDirectoryProvider());
 		var testPlan = InternalTestPlan.from(discoveryResult);",
-1222088,587,"// skip test, as it needs historical time zone info",17842cdc6d2eb9fb00c0e336e6aeb83cf0b7a5d2,multi,"assertSame(g, f);
+1222088,587,"// skip test, as it needs historical time zone info",17842cdc6d2eb9fb00c0e336e6aeb83cf0b7a5d2,composite,"assertSame(g, f);
 DateTime dt = new DateTime(2004, 6, 9, 10, 20, 30, 0);
 String expect = DateFormat.getTimeInstance(DateFormat.SHORT, UK).format(dt.toDate());
 assertEquals(expect, f.print(dt));
@@ -12358,7 +12358,7 @@ public int getMaxRows() throws SQLException {
         return 0;
     }"
 405007,121,"// ExecutionController.ExecutionResponse cannot be deserialized because it didn't have any default constructor.
-// adding it would mean updating the Execution itself, which is too annoying, so for the test we just deserialize to a Map.",12731d0f51030ced8aacf18ada22f39ac5d0226d,temporary-fix,"     // then
+// adding it would mean updating the Execution itself, which is too annoying, so for the test we just deserialize to a Map.",12731d0f51030ced8aacf18ada22f39ac5d0226d,workaround,"     // then
      Assertions.assertNotNull(response);
      Assertions.assertEquals(flowId, response.id());
      Assertions.assertEquals(namespace, response.namespace());
@@ -12389,7 +12389,7 @@ void shouldHaveAnUrlWhenCreated() {","    Map<?, ?> executionResult = client.toB
         assertThat(executionResult, notNullValue());
         assertThat(executionResult.get(""url""), is(""http://localhost:8081/ui/executions/io.kestra.tests/minimal/"" + executionResult.get(""id"")));
     }"
-1634362,979,"// An unlikely exception - if this occurs, we can't proceed with the test.",1fe238b24057c8ef4a3106c7bf9a837a5572f036,impractical-case,"} catch (InvalidAttributeValueException e) {
+1634362,979,"// An unlikely exception - if this occurs, we can't proceed with the test.",1fe238b24057c8ef4a3106c7bf9a837a5572f036,superficial-test,"} catch (InvalidAttributeValueException e) {
 	// An unlikely exception - if this occurs, we can't proceed with the test.
 	Assert.fail(""Unexpected InvalidAttributeValueException "" + e.getMessage());
 } catch (MBeanException e) {
@@ -12661,7 +12661,7 @@ hconf.set(MetastoreConf.ConfVars.TRANSACTIONAL_EVENT_LISTENERS.getHiveName(),","
     MetastoreConf.setTimeVar(hconf, EVENT_DB_LISTENER_CLEAN_STARTUP_WAIT_INTERVAL, 0, TimeUnit.SECONDS);
     MetastoreConf.setTimeVar(hconfMirror, EVENT_DB_LISTENER_CLEAN_STARTUP_WAIT_INTERVAL, 0, TimeUnit.SECONDS);
   }"
-846310,308,// TODO(https://github.com/apache/beam/issues/20447),1056c54485d81d96bde80a16a3cc8bed6ffd6a96,defect,"import org.apache.beam.vendor.guava.v32_1_2_jre.com.google.common.collect.ImmutableList;
+846310,308,// TODO(https://github.com/apache/beam/issues/20447),1056c54485d81d96bde80a16a3cc8bed6ffd6a96,requirement,"import org.apache.beam.vendor.guava.v32_1_2_jre.com.google.common.collect.ImmutableList;
 import org.joda.time.Duration;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12796,7 +12796,7 @@ public void utf8ByteArraySerde() {
         // would be 2,147,483,647 aka 2.1 GB, probably larger than the available heap
         assertThrows(BufferUnderflowException.class, () -> Utils.getNullableSizePrefixedArray(buffer));
     }"
-379136,101,// TODO: migrate to test framework,8596375c0b2062eb740665623fffaa0b823eacde,requirement,"			debug, tempDir);
+379136,101,// TODO: migrate to test framework,8596375c0b2062eb740665623fffaa0b823eacde,design,"			debug, tempDir);
 	assertEquals("""", executedState.output);
 	assertEquals("""", executedState.errors);
 }
@@ -12815,7 +12815,7 @@ public void testImportLeftRecursiveGrammar(@TempDir Path tempDir) {
 		""  | e '=' e\n"" +
 		""  | ID\n"" +
 		""  ;\n"" +",
-636045,211,// we do not check if the offset is in the middle of a code point,af2c3cba66bbc2bf9bebdb7a193306e5537f7d55,superficial-test,"// 2 bytes code points
+636045,211,// we do not check if the offset is in the middle of a code point,af2c3cba66bbc2bf9bebdb7a193306e5537f7d55,partial-test,"// 2 bytes code points
 assertByteCount(""абв"", 0, 0, 1, """");
 assertByteCount(""абв"", 0, 1, 0, """");
 assertByteCount(""абв"", 0, 2, 1, ""а"");
@@ -12884,7 +12884,7 @@ assertByteCount(""\u6000\u6001\u6002\u6003"", 0, 6, 1, ""\u6000"");","    public
         assertByteCount(new byte[] {(byte) 0x81, (byte) 0x81, (byte) 0x81}, 0, 2, 1, new byte[] {(byte) 0x81, (byte) 0x81});
         assertByteCount(new byte[] {(byte) 0x81, (byte) 0x81, (byte) 0x81}, 0, 2, 3, new byte[] {(byte) 0x81, (byte) 0x81});
     }"
-1146692,491,// TODO: ideally we should have a test for session itself.,5015dfa99b1b35e3193b3409a46c3c47ce215fb3,requirement,"final String jarFilePath = ""file:///tmp/foo.jar"";
+1146692,491,// TODO: ideally we should have a test for session itself.,5015dfa99b1b35e3193b3409a46c3c47ce215fb3,workaround,"final String jarFilePath = ""file:///tmp/foo.jar"";
 final String[] inputOutputJars = new String[] {jarFilePath};
 LocalResource res = createResource(inputOutputJars[0]);
 final Map<String, LocalResource> resources = Collections.singletonMap(jarFilePath, res);
@@ -12935,7 +12935,7 @@ public void multiFormatAttributes_stringValue() {
   TypedValue outValue = new TypedValue();
   typedArray.getValue(0, outValue);
   assertThat(outValue.type).isEqualTo(TypedValue.TYPE_STRING);",
-558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,e9d88dfa65e8fda9b675e3bef55e006606a231be,multi,"              .columns(""dim2"")
+558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,e9d88dfa65e8fda9b675e3bef55e006606a231be,composite,"              .columns(""dim2"")
               .columnTypes(ColumnType.STRING)
               .resultFormat(ScanQuery.ResultFormat.RESULT_FORMAT_COMPACTED_LIST)
               .build()
@@ -12978,7 +12978,7 @@ public int getConnectionReleasePriority() throws SQLException {","    public Cal
     }"
 1039235,449,"/* Currently we don't support multiple indexable constraints in the ANC, so this test will pass because
         it disables the switch generation and the inlining. See DROOLS-5947
-     */",6ae6560c6df57ea10403e2c26fae371a14492639,requirement,"import java.util.ArrayList;
+     */",6ae6560c6df57ea10403e2c26fae371a14492639,composite,"import java.util.ArrayList;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -13002,7 +13002,7 @@ public class MultipleIndexableConstraintsTest extends BaseModelTest {
 // for a shebang line.
 // The value of 120 is the typical kernel compile-time buffer limit.
 // The following limit of 80 allows room for arguments to be placed
-// after the path to the launcher on the shebang line.",247bb4d43fede96ec01e31c125e6dd44c0a1e603,temporary-fix,"private static final String thisVersion = System.getProperty(""java.specification.version"");
+// after the path to the launcher on the shebang line.",247bb4d43fede96ec01e31c125e6dd44c0a1e603,workaround,"private static final String thisVersion = System.getProperty(""java.specification.version"");
 
 SourceMode() throws Exception {
     log = System.err;
@@ -13290,7 +13290,7 @@ public void addCookie(Cookie cookie) {","                // TODO Auto-generated 
         };
 
     }"
-176427,56,// Ignoring this test on ActiveDirectory (same for rhds) as it's not allowed to have LDAP group referencing nonexistent member. KEYCLOAK-2682 was related to OpenLDAP TODO: Better solution than programmatic...,4d4651e566498ef248229797eb1e12e3f0a33bdc,skip-test,"    });
+176427,56,// Ignoring this test on ActiveDirectory (same for rhds) as it's not allowed to have LDAP group referencing nonexistent member. KEYCLOAK-2682 was related to OpenLDAP TODO: Better solution than programmatic...,4d4651e566498ef248229797eb1e12e3f0a33bdc,partial-test,"    });
 }
 
 @Test
@@ -13910,7 +13910,7 @@ public void setCharacterEncoding(Charset encoding) {
         };
 
     }"
-201031,60,// Skip this test on Windows as we can not control the Window Driver letters.,f41a40e844e885d9e39e1ea1a5ba89478f43b6c9,skip-test,"@BeforeEach
+201031,60,// Skip this test on Windows as we can not control the Window Driver letters.,f41a40e844e885d9e39e1ea1a5ba89478f43b6c9,partial-test,"@BeforeEach
 void prepareTestEnvironment() {
     File tmpDirFile =
             new File(System.getProperty(""java.io.tmpdir""), ""pyflink_"" + UUID.randomUUID());
@@ -14098,7 +14098,7 @@ for (TableSlice patientTable : patients) {
  * @see <a href=
  *      ""https://github.com/apache/zookeeper/blob/master/zookeeper-server/src/test/java/org/apache/zookeeper/common/JKSFileLoaderTest.java"">Base
  *      revision</a>
- */",83da90c3b887ecca1c75de3b081b6eddc7cd9d23,refactor,"import org.apache.hadoop.hbase.HBaseClassTestRule;
+ */",83da90c3b887ecca1c75de3b081b6eddc7cd9d23,workaround,"import org.apache.hadoop.hbase.HBaseClassTestRule;
 import org.apache.hadoop.hbase.testclassification.SecurityTests;
 import org.apache.hadoop.hbase.testclassification.SmallTests;
 import org.junit.Assert;
@@ -14117,7 +14117,7 @@ public class TestJKSFileLoader extends AbstractTestX509Parameterized {
 
   @Test
   public void testLoadKeyStore() throws Exception {",
-54528,11,// doesn't make much sense in the context of a list...,0f810007d49ef97bab9fc60c37eaf5d64c45c7a4,impractical-case,"void mergeEmptyChild() {
+54528,11,// doesn't make much sense in the context of a list...,0f810007d49ef97bab9fc60c37eaf5d64c45c7a4,superficial-test,"void mergeEmptyChild() {
 	ManagedList parent = ManagedList.of(""one"", ""two"");
 	ManagedList child = new ManagedList();
 	child.setMergeEnabled(true);
@@ -14143,7 +14143,7 @@ void mergedChildValuesDoNotOverrideTheParents() {","		// doesn't make much sense
 		assertThat(mergedList).as(""merge() obviously did not work."").containsExactly(""one"", ""two"", ""one"");
 	}"
 757427,255,"// Query with cube and arithmetic expr
-// TODO(kks): enable this later if we support cube",993689dfe52aa9caef11401acab216bad74573ab,temporary-fix,"// aggregation materialized view.
+// TODO(kks): enable this later if we support cube",993689dfe52aa9caef11401acab216bad74573ab,workaround,"// aggregation materialized view.
 @Test
 public void testGroupingSetQueryOnAggMV() throws Exception {
     String createMVSQL = ""create materialized view "" + EMPS_MV_NAME + "" as select empid, deptno, sum(salary) "" +
@@ -14162,7 +14162,7 @@ public void testAggQueryOnAggMV9() throws Exception {
     starRocksAssert.query(query).explainContains(QUERY_USE_EMPS_MV);
 }
 ",
-362060,81,// workaround,b710bfd9aac7fee8e0a8c149d4f79a4b38185686,temporary-fix,"
+362060,81,// workaround,b710bfd9aac7fee8e0a8c149d4f79a4b38185686,workaround,"
 private void waitForIdle() {
     robot.waitForIdle();
     robot.delay(DELAY);
@@ -14220,7 +14220,7 @@ for (Component c : root.getComponents()) {
             }
         }
     }"
-607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,refactor,"import org.mockito.Captor;
+607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,composite,"import org.mockito.Captor;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
@@ -14239,7 +14239,7 @@ public class ManagedChannelImplTest {
           .setType(MethodType.UNKNOWN)
           .setFullMethodName(""service/method"")
           .setRequestMarshaller(new StringMarshaller())",
-831173,303,// Using deprecated constructor for verification of backwards compatibility,1aaab87f9c1538be829964cf76e3bafcccfe995b,temporary-fix,"        CassandraContainer<?> cassandraContainer = new CassandraContainer<>(
+831173,303,// Using deprecated constructor for verification of backwards compatibility,1aaab87f9c1538be829964cf76e3bafcccfe995b,workaround,"        CassandraContainer<?> cassandraContainer = new CassandraContainer<>(
             DockerImageName.parse(""cassandra:2.2.11"")
         )
             .withInitScript(""initial.cql"")
@@ -14574,7 +14574,7 @@ public void doubleOnSubscribe() {
         // FIXME last cause value is not saved
 //        assertTrue(ts.errors().get(0).getCause().getMessage().contains(""abc""));
     }"
-992157,441,// deprecated,c25e5634ada9243d416ad2701140d305e086282c,code,"{""{u, sd-usnx}"", ""en-u-sd-usnx""},
+992157,441,// deprecated,c25e5634ada9243d416ad2701140d305e086282c,low-internal-quality,"{""{u, sd-usnx}"", ""en-u-sd-usnx""},
 {""{u, tz-adalx}"", ""en-u-tz-adalx""},
 {""{u, va-posit}"", ""en-u-va-posit""},
 
@@ -14939,7 +14939,7 @@ void singlePolicySingleWorkerWithIncreasingParallelism() {
         int workPerSuccess = 6;
         int numberOfWorkers = 1;
         int maximumTasksPerWorker = 100000;",
-1082350,478,// Workaround bug resolving relative references with file URLs in swagger parser,f578dfff451c66c6290c8724ff5bfd34108a3d4f,temporary-fix,"}
+1082350,478,// Workaround bug resolving relative references with file URLs in swagger parser,f578dfff451c66c6290c8724ff5bfd34108a3d4f,workaround,"}
 
 @Override
 protected CamelContext createCamelContext(String componentName) {
@@ -15359,7 +15359,7 @@ testQuery(
         ImmutableList.of(new Object[]{""[\""a\"",\""b\""]"", ""[\""a\"",\""b\""]""})
     );
   }"
-15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,2f641082ccdc7d135a7cea17ab17c3a713dffe54,multi,"
+15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,2f641082ccdc7d135a7cea17ab17c3a713dffe54,composite,"
 public void testRecoverySourceWithSyntheticSource() throws IOException {
     {
         Settings settings = Settings.builder()
@@ -15711,7 +15711,7 @@ public void drawFrame_cropSmaller_matchesGoldenFile() throws Exception {
         getBitmapAveragePixelAbsoluteDifferenceArgb8888(expectedBitmap, actualBitmap, testId);
     assertThat(averagePixelAbsoluteDifference).isAtMost(MAXIMUM_AVERAGE_PIXEL_ABSOLUTE_DIFFERENCE);
   }"
-368941,85,// TODO zhangcheng make sure the test cases should not empty,01faf2d9c76683a778957a9131266aab788a56d1,code,"
+368941,85,// TODO zhangcheng make sure the test cases should not empty,01faf2d9c76683a778957a9131266aab788a56d1,requirement,"
 private Collection<TransactionTestParameter> getTransactionTestParameters(final Class<? extends TransactionBaseE2EIT> testCaseClass) {
     TransactionTestCaseRegistry currentTestCaseInfo = ENV.getTransactionTestCaseRegistryMap().get(testCaseClass.getName());
     Collection<TransactionTestParameter> result = new LinkedList<>();
@@ -15862,7 +15862,7 @@ public FileStatus getFileLinkStatus(org.apache.hadoop.fs.Path path) throws IOExc
             }
         };
     }"
-17140,8,// main query needs rewriting,271200ffc18f60ffa3166b336d7eda827ed23403,refactor,"    }
+17140,8,// main query needs rewriting,271200ffc18f60ffa3166b336d7eda827ed23403,workaround,"    }
     return true;
 }
 
@@ -16105,7 +16105,7 @@ Project expectedProject = createProject(
         verify(options, times(1)).get(""limit"");
         verify(options, times(1)).get(""storeBlankCellsAsNulls"");
     }"
-1191047,542,// FIXME: this test do not cover breaking remark into multiple lines,bae1aa668434e24d1050933256e0163b2af6a2f9,superficial-test,"      IllegalArgumentException.class,
+1191047,542,// FIXME: this test do not cover breaking remark into multiple lines,bae1aa668434e24d1050933256e0163b2af6a2f9,partial-test,"      IllegalArgumentException.class,
       () -> LineBuffer.getBuffer().addRemarkBlock(remark, indent));
 }
 
@@ -16244,7 +16244,7 @@ public InternalAggregation buildEmptyAggregation() {","            // TODO Auto-
             return null;
         }"
 873011,337,"// TODO(lharker): stop ignoring USE_OF_GOOG_PROVIDE after migrating rules_closure
-// code to suppress useOfGoogProvide instead of lintChecks.",f3657339905bc43c3498e7c3f945999241bb4f12,temporary-fix," * belong to other DiagnosticGroups.
+// code to suppress useOfGoogProvide instead of lintChecks.",f3657339905bc43c3498e7c3f945999241bb4f12,workaround," * belong to other DiagnosticGroups.
  *
  * <p>Because all {@link DiagnosticGroup.LINT_CHECKS} run in a single pass, enabling a diagnostic
  * group containing one of the checks causes all of the other checks to run, which is surprising.
@@ -16381,7 +16381,7 @@ PCollection<Row> result =","  public void testDebeziumSchemaTransformMysqlRead()
     monitorThread.join();
   }"
 1231461,618,"// TODO: This test currently makes the whole VM exit with exit code -1, but does not generate a dump file
-// (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",47d74efc9142a580c4bd0d5bbcd18d26c38ff7e6,multi,"    if (getDatabase() == null) {
+// (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",47d74efc9142a580c4bd0d5bbcd18d26c38ff7e6,composite,"    if (getDatabase() == null) {
         return;
     }
 
@@ -16451,7 +16451,7 @@ assertEquals(3, res.get(0).size());","    // The command DROP COLUMN does not re
     }"
 241437,65,"/* This test is based upon an incomplete / incorrect project implementation
            throwing an uncaught exception.
-           If Jenkins is improved to better handle this error, this test may erroneously fail. */",97c79c9e99587710edf47e878b82ba8b965e7b8d,code,"       If Stapler is improved to better handle this error, this test may erroneously fail. */
+           If Jenkins is improved to better handle this error, this test may erroneously fail. */",97c79c9e99587710edf47e878b82ba8b965e7b8d,low-internal-quality,"       If Stapler is improved to better handle this error, this test may erroneously fail. */
     String relativePath = ""adjuncts/40331c1bldu3i%3b//'%3b//\""%3b//%25>%3f>uezm3<script>alert(1)</script>foo/org/kohsuke/stapler/jquery/jquery.full.js"";
     String detailString = ""AdjunctManager.doDynamic"";
     SuspiciousRequestFilter.allowSemicolonsInPath = true;
@@ -16479,7 +16479,7 @@ public void exceptionShowsTrace() throws Exception {
         String detailString = ""JellyTagException"";
         checkSuppressedStack(relativePath, detailString);
     }"
-479761,129,// TODO(puzpuzpuz): enable when we support DDLs for parquet partitions,d9b41af92e3b8586770ab04ab1b4a21d2956d245,multi,"
+479761,129,// TODO(puzpuzpuz): enable when we support DDLs for parquet partitions,d9b41af92e3b8586770ab04ab1b4a21d2956d245,composite,"
         execute(""alter table x convert partition to parquet where ts >= 0"");
         execute(""alter table x alter column id drop index;"");
         assertSql(expected, query);
@@ -16679,7 +16679,7 @@ Bitmap fullRotationBrightnessIncreaseAndCenterCropResultBitmap =
     assertThat(averagePixelAbsoluteDifference).isAtMost(MAXIMUM_AVERAGE_PIXEL_ABSOLUTE_DIFFERENCE);
   }"
 668321,213,"// TODO(b/135203078): Update this test with all fields and validate equality. Initial change
-//  was just migrating to new interfaces. Consider adding actual equals() methods.",02b8c42bf33d344d052dce5fadde4205711ec1c9,superficial-test,"import java.util.HashSet;
+//  was just migrating to new interfaces. Consider adding actual equals() methods.",02b8c42bf33d344d052dce5fadde4205711ec1c9,partial-test,"import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -16700,7 +16700,7 @@ private static final File FRAMEWORK = new File(""/system/framework/framework-res
 private static final String TEST_APP1_APK = ""PackageParserTestApp1.apk"";",
 216327,60,"/**
  * Should be removed along {@link SupportsCommitter}.
- */",f3d16d09ae5983bcc6574353b993dd71b7c1ae76,refactor,"                    return InstantiationUtil.deserializeObject(
+ */",f3d16d09ae5983bcc6574353b993dd71b7c1ae76,low-internal-quality,"                    return InstantiationUtil.deserializeObject(
                             serialized, Thread.currentThread().getContextClassLoader());
                 } catch (ClassNotFoundException e) {
                     throw new RuntimeException(e);
@@ -16724,7 +16724,7 @@ private static class DummyPrecommittingSinkWriter
  *
  * <p><b>Note:</b> the test is not executed on H2 because it doesn't support the
  * exclusive lock on table.</p>
- */",02531c04f74c51fe798a51fcc99386b86b601608,skip-test,"
+ */",02531c04f74c51fe798a51fcc99386b86b601608,composite,"
 import org.camunda.bpm.engine.impl.BootstrapEngineCommand;
 import org.camunda.bpm.engine.impl.db.sql.DbSqlSessionFactory;
 import org.camunda.bpm.engine.impl.interceptor.CommandContext;
@@ -16796,7 +16796,7 @@ public void testPutxIfAbsentTxOptimistic() throws Exception {
  * 
  */
 @Test",
-1133322,489,// TODO(HUDI-3668): Fix this test,63c6e3a89ad2cc3e12e31cc0093fc848afa0df39,requirement,"  when(mockIterator.hasNext()).thenReturn(true, true, true, false);
+1133322,489,// TODO(HUDI-3668): Fix this test,63c6e3a89ad2cc3e12e31cc0093fc848afa0df39,defect,"  when(mockIterator.hasNext()).thenReturn(true, true, true, false);
 
   dfsDeltaWriterAdapter.write(mockIterator);
   Mockito.verify(mockFileSinkWriter, times(2)).canWrite();
@@ -16978,7 +16978,7 @@ Thread.sleep(5000);","  // TODO same data accessed as Hive Table or Path URI ??
 
 //     root = (Element)d.getElementsByTagName(""a"").item(0);
 //     assertEquals(""foo"", ((EntityReference)root.getFirstChild()).getNodeName());
-// }",4158c0892e674ecbdce6622cf0dc1ade05846ac5,multi,"        db = dbf.newDocumentBuilder();
+// }",4158c0892e674ecbdce6622cf0dc1ade05846ac5,composite,"        db = dbf.newDocumentBuilder();
         db.setErrorHandler(null);
         db.parse(source);
     } catch (SAXParseException e) {
@@ -17144,7 +17144,7 @@ public void testTextUsingWriter() throws Exception {
         assertNull(cause.get());
         client.destroy();
     }"
-1215583,574,"//FIXME test with just, empty, callable, interval",1af504ee6a3e9079face0a8f4e647112599a5d41,requirement,"	assertThat(onNextDropped).isEmpty();
+1215583,574,"//FIXME test with just, empty, callable, interval",1af504ee6a3e9079face0a8f4e647112599a5d41,defect,"	assertThat(onNextDropped).isEmpty();
 	assertThat(onErrorDropped).isEmpty();
 	assertThat(onSchedulerHandleError).isEmpty();
 	assertThat(onOperatorError)
@@ -17972,7 +17972,7 @@ void testInvokeExceptoin() {
 }
 
 @Test",
-1561777,918,"//  bit ugly, but can't think of cleaner simple way to check this...",69e9aefcd805726269086e4e2f3a28a4b8380d1e,temporary-fix,"/* Unit tests
+1561777,918,"//  bit ugly, but can't think of cleaner simple way to check this...",69e9aefcd805726269086e4e2f3a28a4b8380d1e,workaround,"/* Unit tests
 /**********************************************************************
  */
 
@@ -18110,7 +18110,7 @@ public void testIf4b() {
     testSame(""var e = [], f;if(f=e);f[0] = 1;"");
   }"
 911326,374,"// currently spark session catalog only resolve to v1 functions instead of desired v2 functions
-// https://github.com/apache/spark/blob/branch-3.4/sql/catalyst/src/main/scala/org/apache/spark/sql/catalyst/analysis/Analyzer.scala#L2070-L2083",7967f7babd11b95a4e47719f456aabd79808dd97,temporary-fix,"  assertThat(output.get(0)[2])
+// https://github.com/apache/spark/blob/branch-3.4/sql/catalyst/src/main/scala/org/apache/spark/sql/catalyst/analysis/Analyzer.scala#L2070-L2083",7967f7babd11b95a4e47719f456aabd79808dd97,workaround,"  assertThat(output.get(0)[2])
       .isInstanceOf(Long.class)
       .isEqualTo(Long.valueOf(snapshotSummary().get(SnapshotSummary.REMOVED_FILE_SIZE_PROP)));
 
@@ -18193,7 +18193,7 @@ public static void assertUnknownVersion(Version version) {
             }
         }
     }"
-92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",2e5edbc244eeea719dd76e948babb4124cadabbe,requirement,"	msTruth = mdTruth;
+92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",2e5edbc244eeea719dd76e948babb4124cadabbe,composite,"	msTruth = mdTruth;
 	demangleAndTest();
 }
 
@@ -18289,7 +18289,7 @@ public void testRemoveActiveAdmin_SecurityException() {
  * The @Override annotation is intentionally removed for this method to align with the
  * production codes' assumption that this interface may not be available for the given hadoop
  * version.
- */",02978a0b72dc55776ade6fe10db6396b57ce0c0c,impractical-case,"public class TestingRegisterApplicationMasterResponse
+ */",02978a0b72dc55776ade6fe10db6396b57ce0c0c,workaround,"public class TestingRegisterApplicationMasterResponse
         extends RegisterApplicationMasterResponsePBImpl {
     private static final Resource MAX_CAPABILITY = Resource.newInstance(1024 * 10000, 10000);
     private final Supplier<List<Container>> getContainersFromPreviousAttemptsSupplier;
@@ -18330,7 +18330,7 @@ public void openProxySession(int arg0, Properties arg1) throws SQLException {","
         // TODO Auto-generated method stub
         return false;
     }"
-795183,284,// Disabled due to in progress Bug 61071,9e4cdebf531dc8536fcdee2eeab1c6406c989336,multi,"    calc.addValue(21);
+795183,284,// Disabled due to in progress Bug 61071,9e4cdebf531dc8536fcdee2eeab1c6406c989336,composite,"    calc.addValue(21);
     assertEquals(16, (int) calc.getMean());
     assertEquals(8.062258F, (float) calc.getStandardDeviation(), 0F);
     assertEquals(30, calc.getMax().intValue());
@@ -18381,7 +18381,7 @@ public void removeTables() {
 public void testSnapshot() throws IOException {",
 776547,269,"// TODO This fails with TCM as the constraints regarding concurrent overlapping range movements and
 //      replication factors have moved into the operations themselves. Previously, these were enforced
-//      at the StorageService level.",fa134eede5d5e0fa864810af6b40e882b6d75ee5,superficial-test,"    assertRangesAtEndpoint(RangesAtEndpoint.of(new Replica(node3, new Range<>(token3, newToken), true),
+//      at the StorageService level.",fa134eede5d5e0fa864810af6b40e882b6d75ee5,defect,"    assertRangesAtEndpoint(RangesAtEndpoint.of(new Replica(node3, new Range<>(token3, newToken), true),
                                                new Replica(node3, new Range<>(token4, token5), true)),
                            pendingByEndpoint.get(node3));
     assertRangesAtEndpoint(RangesAtEndpoint.empty(node4), pendingByEndpoint.get(node4));
@@ -18893,7 +18893,7 @@ checkSimplifyFilter(
         ""true"");
   }"
 24787,8,"// C2ID doesn't have a non JS login page :/, so use their API directly
-// see https://connect2id.com/products/server/docs/guides/login-page",b133f9b6223a2cf8340eeceb2620c728e0873833,build,"protected Settings restAdminSettings() {
+// see https://connect2id.com/products/server/docs/guides/login-page",b133f9b6223a2cf8340eeceb2620c728e0873833,dependency,"protected Settings restAdminSettings() {
     String token = basicAuthHeaderValue(""x_pack_rest_user"", new SecureString(""x-pack-test-password"".toCharArray()));
     return Settings.builder()
         .put(ThreadContext.PREFIX + "".Authorization"", token)
@@ -19003,7 +19003,7 @@ static final class PI extends Number {
 1045284,449,"// This is a little hack to be able to test unbinding of datasources.
 // It cannot be done normally, because everything is done privately in the RuleUnitDescr, therefore cannot be mocked.
 // This property is visible through getter as a datasource, but upon each call it gets switched
-// It should be called just twice(bind/unbind), so therefore we can test if this was unbound.",5a73e3b7ef4ff7001bbfbb55696e3f81b45c1c60,temporary-fix,"public class TestRuleUnit implements RuleUnitData {
+// It should be called just twice(bind/unbind), so therefore we can test if this was unbound.",5a73e3b7ef4ff7001bbfbb55696e3f81b45c1c60,workaround,"public class TestRuleUnit implements RuleUnitData {
 
     private final Integer[] numbersArray;
 
@@ -19261,7 +19261,7 @@ public void setUsers( List<IUser> arg0 ) throws KettleException {","  public voi
   }"
 100481,16,"// TODO: update dependencies?
 // assertThat(aCls.getDependencies()).contains(cCls);
-// assertThat(cCls.getUsedIn()).contains(aCls);",8d08b95be44d43055bcfc23c70326c954aa95a7b,dependency,"public void test() {
+// assertThat(cCls.getUsedIn()).contains(aCls);",8d08b95be44d43055bcfc23c70326c954aa95a7b,requirement,"public void test() {
 	List<ClassNode> classes = loadFromSmaliFiles();
 	ClassNode aCls = searchCls(classes, ""inline.A"");
 	ClassNode bCls = searchCls(classes, ""inline.other.B"");
@@ -19307,7 +19307,7 @@ static {
 781921,269,"// this should return a failed response
 // disable waiting on procol errors as that logic was reverted until we can figure out its 100% safe
 // right now ProtocolException is thrown for fatal and non-fatal issues, so closing the channel
-// on non-fatal issues could cause other issues for the cluster",1284dadfc7f1684e097141693ebce84f3ddfb766,multi,"// make sure everything is fine at the start
+// on non-fatal issues could cause other issues for the cluster",1284dadfc7f1684e097141693ebce84f3ddfb766,composite,"// make sure everything is fine at the start
 Assertions.assertThat(node.metrics().getCounter(""org.apache.cassandra.metrics.Client.ProtocolException"")).isEqualTo(0);
 Assertions.assertThat(node.metrics().getCounter(""org.apache.cassandra.metrics.Client.UnknownException"")).isEqualTo(0);
 
@@ -19400,7 +19400,7 @@ public class ParDoLifecycleTest implements Serializable {
 430481,128,"/**
  * Try and recreate the test bucket.
  * Third party stores may allow this, so skip test on them.
- */",cf7ee4c127b56c23a81826534089174b66ae5852,skip-test,"        && !ex.getMessage().contains(INVALID_LOCATION)) {
+ */",cf7ee4c127b56c23a81826534089174b66ae5852,partial-test,"        && !ex.getMessage().contains(INVALID_LOCATION)) {
       throw ex;
     }
   } else if (ex instanceof UnknownHostException) {
@@ -19543,7 +19543,7 @@ t.assertMatch(new HitsAggregationResult()
                     .setExpression(new ConstantNode(new IntegerResultNode(5))));
         }
     }"
-990992,441,// TODO: Re-enable this tests after UTC fixes UAX 21,17c6d25086c56318e4f5b2d83b8b9e32a079f26d,multi,"                +Utility.hex(s1) + "" s2: "" + Utility.hex(s2));
+990992,441,// TODO: Re-enable this tests after UTC fixes UAX 21,17c6d25086c56318e4f5b2d83b8b9e32a079f26d,composite,"                +Utility.hex(s1) + "" s2: "" + Utility.hex(s2));
     }    
 }
 if(s1.length()==1 && s2.length()>1){
@@ -19582,7 +19582,7 @@ private void cross(String s1, String s2,Normalizer.Mode mode){
             }    
         }    
     }"
-392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,temporary-fix,"{
+392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,composite,"{
     return new DataSize(BUFFERED_PAGE_SIZE.toBytes() * count, BYTE);
 }
 
@@ -19608,7 +19608,7 @@ static ListenableFuture<?> enqueuePage(OutputBuffer buffer, Page page)
  *
  * @see org.apache.shardingsphere.mode.repository.cluster.etcd.EtcdRepository
  * @throws SQLException SQL exception
- */",a1c48a086b626da00276038ce1d2e32f6c9672c1,code,"
+ */",a1c48a086b626da00276038ce1d2e32f6c9672c1,low-internal-quality,"
 @Test
 void assertShardingInLocalTransactions() throws SQLException {
     logicDataSource = createDataSource(CLUSTER.clientEndpoints());
@@ -19628,7 +19628,7 @@ void assertShardingInLocalTransactions() throws SQLException {
 }
 ",
 945539,422,"// Cancellation only works, if there are data on socket. Without data, SocketInputStream.read()
-// blocks indefinitely. The StreamSocketP should be improved to use NIO.",7716cfe6ce08dabe755c71305212940b40f56a6c,code,"    }
+// blocks indefinitely. The StreamSocketP should be improved to use NIO.",7716cfe6ce08dabe755c71305212940b40f56a6c,low-internal-quality,"    }
 }
 
 @Test
@@ -20016,7 +20016,7 @@ public void testGroupByWithRowExpression()
         // TODO: verify output
         analyze(""SELECT * FROM t1 GROUP BY t1.a, t1.b, t1.c, t1.d"");
     }"
-868979,337,// TODO(sdh): Print a better name (https://github.com/google/closure-compiler/issues/2982),b06c4c7f5f36a14177731527ceefed68f2fb09dc,code,"        ""    CTOR:;"",
+868979,337,// TODO(sdh): Print a better name (https://github.com/google/closure-compiler/issues/2982),b06c4c7f5f36a14177731527ceefed68f2fb09dc,low-internal-quality,"        ""    CTOR:;"",
         ""  }"",
         ""});""));
 TypedScope ctorBlockScope = getLabeledStatement(""CTOR"").enclosingScope;
@@ -20075,7 +20075,7 @@ public void TestToLowerCase(){
     // Test when locale is null","    public void TestToUpperCase(){
         // TODO: Tests when ""while((c=iter.nextCaseMapCP())>=0)"" is false
     }"
-877559,337,// TODO(b/139319709): Remove this. static method removal is disabled.,78eeb53ba5a048354dcd2e4796c5493739330aab,refactor,"    ""    this.x = 1;"",
+877559,337,// TODO(b/139319709): Remove this. static method removal is disabled.,78eeb53ba5a048354dcd2e4796c5493739330aab,low-internal-quality,"    ""    this.x = 1;"",
     ""  }"",
     ""  static foo() {}"",
     ""}"",
@@ -20333,7 +20333,7 @@ waitForCompletion();
 221816,64,"// A hook for subclasses to alter the created module.
 // Implementations may add to the predeclared environment,
 // and return the module's client data value.
-// TODO(adonovan): only used in StarlarkFlagGuardingTest; move there.",6e4567db24be0baad631c490ee694d658d970d8b,refactor,"  return Starlark.eval(input, FileOptions.DEFAULT, getModule(), getStarlarkThread());
+// TODO(adonovan): only used in StarlarkFlagGuardingTest; move there.",6e4567db24be0baad631c490ee694d658d970d8b,design,"  return Starlark.eval(input, FileOptions.DEFAULT, getModule(), getStarlarkThread());
 }
 
 /** Joins the lines, parses them as a file, and executes it. */
@@ -20355,7 +20355,7 @@ StarlarkThread getStarlarkThread() {
 51146,8,"/**
  * Workaround to simulate BwC situation: taking a snapshot without indices here so that we don't create any new version shard
  * generations (the existence of which would short-circuit checks for the repo containing old version snapshots)
- */",38e7a98535fce270be81d0726584df1fe0f94c60,temporary-fix,"protected void maybeInitWithOldSnapshotVersion(String repoName, Path repoPath) throws Exception {
+ */",38e7a98535fce270be81d0726584df1fe0f94c60,workaround,"protected void maybeInitWithOldSnapshotVersion(String repoName, Path repoPath) throws Exception {
     if (randomBoolean() && randomBoolean()) {
         initWithSnapshotVersion(
             repoName,
@@ -20374,7 +20374,7 @@ StarlarkThread getStarlarkThread() {
     ).setIndices(""does-not-exist-for-sure-*"").setWaitForCompletion(true).get();
     final SnapshotInfo snapshotInfo = createSnapshotResponse.getSnapshotInfo();
     assertThat(snapshotInfo.totalShards(), is(0));",
-643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,refactor,"    assertUpdate(""CREATE TABLE "" + tableName + "" (a bigint WITH (primary_key=true)) COMMENT 'test comment' "" +
+643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,composite,"    assertUpdate(""CREATE TABLE "" + tableName + "" (a bigint WITH (primary_key=true)) COMMENT 'test comment' "" +
             ""WITH (partition_by_hash_columns = ARRAY['a'], partition_by_hash_buckets = 2)"");
     assertThat(getTableComment(tableName)).isEqualTo(""test comment"");
 
@@ -20542,7 +20542,7 @@ testNoWarning(
         Locale l_countryCD = new Locale("""", ""CD"");
         assertEquals(""Congo (DRC)"",
                 l_countryCD.getDisplayCountry());
-    }*/",514e50db924d9b1f65467083794d00a61b6a61ff,multi,"    Locale org = Locale.getDefault();
+    }*/",514e50db924d9b1f65467083794d00a61b6a61ff,composite,"    Locale org = Locale.getDefault();
     Locale.setDefault(l);
     Locale x = Locale.getDefault();
     Locale.setDefault(org);
@@ -20601,7 +20601,7 @@ protected boolean assertFinishReason() {","        return false; // TODO impleme
 }","    protected boolean assertFinishReason() {
         return false; // TODO implement
     }"
-222092,64,// deprecated,c25e5634ada9243d416ad2701140d305e086282c,code,"}
+222092,64,// deprecated,c25e5634ada9243d416ad2701140d305e086282c,low-internal-quality,"}
 
 @Test
 public void testFail() throws Exception {
@@ -20814,7 +20814,7 @@ public void updateClob(String columnLabel, Clob x) throws SQLException {
     }"
 229651,64,"// The standard file systems on macOS support extended attributes by default, so we can assume
 // that the test will work on that platform. For other systems, we currently don't have a
-// mechanism to validate this so the tests are skipped unconditionally.",65bf06345bf20e48614a94506f5bc0c3d7cf3ca7,multi,"  } catch (FilePermissionException e) {
+// mechanism to validate this so the tests are skipped unconditionally.",65bf06345bf20e48614a94506f5bc0c3d7cf3ca7,composite,"  } catch (FilePermissionException e) {
     assertThat(e).hasMessageThat().isEqualTo(foo + "" (Operation not permitted)"");
   } catch (IOException e) {
     // When running in a sandbox, /bin might actually be a read-only file system.
@@ -20839,7 +20839,7 @@ public void testGetxattr_attributeFound() throws Exception {
     // mechanism to validate this so the tests are skipped unconditionally.
     assumeTrue(OS.getCurrent() == OS.DARWIN);
   }"
-880414,337,// TODO(b/123102446): We really like to collapse some of these chained assignments.,5d5372b6cba0aa03e7d3a36fc84c1809f19bd5e5,requirement,"@Test
+880414,337,// TODO(b/123102446): We really like to collapse some of these chained assignments.,5d5372b6cba0aa03e7d3a36fc84c1809f19bd5e5,design,"@Test
 public void testDestructuringLhs_array_idealBehaviours() {
   testSame(""a => { ([a] = a); return a; }""); // `a` is being reassigned.
   testSame(""a => { ([b] = a); return a; }""); // Evaluating `b` could side-effect `a`.
@@ -20899,7 +20899,7 @@ public void addPetTest() {
 
         // TODO: test validations
     }"
-35869,8,"// At this point we only support functions with 0, 1, or 2 arguments.",06476ad1bdbd2c29b87da7a931c383c6b8e9792f,temporary-fix,"private static List<FunctionResolutionStrategy> resolutionStrategies() {
+35869,8,"// At this point we only support functions with 0, 1, or 2 arguments.",06476ad1bdbd2c29b87da7a931c383c6b8e9792f,workaround,"private static List<FunctionResolutionStrategy> resolutionStrategies() {
     return asList(FunctionResolutionStrategy.DEFAULT, new FunctionResolutionStrategy() {
     });
 }
@@ -21123,7 +21123,7 @@ public void testDrag() {
         // TODO: actually calculate the following parameters and do exact value checks.
         verify(mMockListener).onDragStart(anyBoolean(), anyFloat());
     }"
-625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",d381fa0c30301f1a574b4f8799551f750ccfb4b3,multi,"""c_timestamp_seconds_since_epoch, "" +
+625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",d381fa0c30301f1a574b4f8799551f750ccfb4b3,composite,"""c_timestamp_seconds_since_epoch, "" +
 ""c_timestamp_iso8601, "" +
 ""c_timestamp_rfc2822, "" +
 ""c_timestamp_custom, "" +
@@ -21411,7 +21411,7 @@ assertFalse(Ansi.forceDisabled());","    public void testAnsiAutoEnabledIfNotWin
 
         assertTrue(""If have TTY, enabled on non-Windows"", Ansi.AUTO.enabled());
     }"
-743376,230,// this is just a temporary thing but it's easier to change if it is encapsulated.,4dcb2a7f565ac9e0b857a3d010fe9df3ac01ff1e,temporary-fix,"            );
+743376,230,// this is just a temporary thing but it's easier to change if it is encapsulated.,4dcb2a7f565ac9e0b857a3d010fe9df3ac01ff1e,workaround,"            );
         }
     }
 }
@@ -21661,7 +21661,7 @@ public static class TestingLanguageEnginePlugin
                 """"""))
                 .failure().hasMessage(""line 1:6: Recursive language functions are not supported: a(integer):integer"");
     }"
-892121,368,// stop test and ignore if FuseFileSystem fails to create due to missing libfuse library,b1ef6f1d304a220bcd4e3777efbfb8a97ae01e3e,skip-test,"        PropertyKey.FUSE_USER_GROUP_TRANSLATION_ENABLED, true,
+892121,368,// stop test and ignore if FuseFileSystem fails to create due to missing libfuse library,b1ef6f1d304a220bcd4e3777efbfb8a97ae01e3e,partial-test,"        PropertyKey.FUSE_USER_GROUP_TRANSLATION_ENABLED, true,
         PropertyKey.FUSE_MOUNT_ALLUXIO_PATH, TEST_ROOT_PATH,
         PropertyKey.FUSE_MOUNT_POINT, MOUNT_POINT), mConf);
 
@@ -21780,7 +21780,7 @@ if (it.hasNext()) {","    /**
     assertThat(id, greaterThan(0));
 ",
 936582,422,"// Mocks returning mocks is not generally recommended, but the setup of empty SearchResponse is even uglier
-// See org.elasticsearch.action.search.SearchResponse#empty",f91874e7c4bc2630b654f4dded17cc07b7c42a9c,temporary-fix,"private static final String KEEP_ALIVE = ""42m"";
+// See org.elasticsearch.action.search.SearchResponse#empty",f91874e7c4bc2630b654f4dded17cc07b7c42a9c,workaround,"private static final String KEEP_ALIVE = ""42m"";
 
 private ElasticSourceP<String> processor;
 private SerializableRestClient mockClient;
@@ -21808,7 +21808,7 @@ private TestSupport runProcessor(FunctionEx<ActionRequest, RequestOptions> optio
     }"
 1225703,593,"// TODO review the generated test code and remove the default call to
 // fail.
-// fail(""The test case is a prototype."");",d7dd00d1c882d60118089fd59a6d60b5dd650bc8,requirement,"
+// fail(""The test case is a prototype."");",d7dd00d1c882d60118089fd59a6d60b5dd650bc8,low-internal-quality,"
 /**
  * Test of setDriverClass method, of class DBURI.
  */
@@ -21891,7 +21891,7 @@ t.join(400);","    public void testUnlockFail() {
  * Tests that the workaround for https://github.com/quarkusio/quarkus/issues/43703 /
  * https://github.com/quarkusio/quarkus/issues/42255
  * is effective.
- */",9375a943bf45a4dfd9efd64d5c3e8083c5850641,temporary-fix,"import org.hibernate.SessionFactory;
+ */",9375a943bf45a4dfd9efd64d5c3e8083c5850641,workaround,"import org.hibernate.SessionFactory;
 import org.hibernate.engine.spi.SessionFactoryImplementor;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
@@ -21910,7 +21910,7 @@ public class DbVersionCheckDisabledExplicitlyTest {
     private static final String CONFIGURED_DB_VERSION = ""999.999.0"";
     static {
         assertThat(ACTUAL_H2_VERSION)",
-694612,213,// TODO b/64262688 Add Concurrency tests to compare WAL vs DELETE read/write,9e19bcd917161440f5bd32dcfa9a601c197b85a6,superficial-test,"import org.junit.runner.RunWith;
+694612,213,// TODO b/64262688 Add Concurrency tests to compare WAL vs DELETE read/write,9e19bcd917161440f5bd32dcfa9a601c197b85a6,requirement,"import org.junit.runner.RunWith;
 
 /**
  * Performance tests for typical CRUD operations and loading rows into the Cursor
@@ -21948,7 +21948,7 @@ private Map<String, QueryTestCase> getTestCases()
   try (InputStream in = classLoader.getResourceAsStream(QUERY_TEST_RESOURCE_FOLDER);
       BufferedReader br = new BufferedReader(new InputStreamReader(in))) {
     String resource;",
-877599,337,// TODO(johnlenz): support this. Unused return can be removed.,1418dde868e495dd28491560afcb17ca04a6b013,temporary-fix,"
+877599,337,// TODO(johnlenz): support this. Unused return can be removed.,1418dde868e495dd28491560afcb17ca04a6b013,low-internal-quality,"
 @Test
 public void testNoRewriteDestructuredObject4() {
   String source =
@@ -21996,7 +21996,7 @@ public boolean isQueued() {
 433340,128,"/**
  * Known issue: ListStatus operation to folders/files whose name contains '?' will fail.
  * This is because Auto rest client didn't encode '?' in the uri query parameters
- */",0ccd13f0e077f6bda71b1b20ac6288e81b6c3ff7,multi,"              ""/A~`!@#$%^&*()-_+={};:'>,<B"",
+ */",0ccd13f0e077f6bda71b1b20ac6288e81b6c3ff7,composite,"              ""/A~`!@#$%^&*()-_+={};:'>,<B"",
               ""/B~`!@#$%^&*()-_+={};:'>,<C"",
               ""C~`!@#$%^&*()-_+={};:'>,<D""
           }
@@ -22017,7 +22017,7 @@ public void testRenameFileUsingUnicode() throws Exception {
 ",
 547164,149,"// The next test also verifies replace functionality. Now, they are together to save on test execution time
 // due to Travis CI 10 minute default running time (with no output) -- having it separate made it
-// last longer. At some point we should really simplify this file, so it runs faster (splitting, etc.)",9cb2ca7a781df717b9745bf1b74284333e05a9ca,temporary-fix,"    try (final Writer writer =
+// last longer. At some point we should really simplify this file, so it runs faster (splitting, etc.)",9cb2ca7a781df717b9745bf1b74284333e05a9ca,workaround,"    try (final Writer writer =
              Files.newBufferedWriter(new File(inputDir, ""filtered_"" + i).toPath(), StandardCharsets.UTF_8)) {
       writer.write(StringUtils.format(""2017-12-%d,%d,%d th test file\n"", i + 1, i + 10, i));
     }
@@ -22114,7 +22114,7 @@ public void testGenericVersionMax() {
     assertEquals(""Patch"", 255, ((DecimalType) values.get(2)).intValue());
     assertEquals(""Hash"", 255, ((DecimalType) values.get(3)).intValue());
 }",
-1095934,482,"// TODO: This test case failed, please check the function implementation",82af758c11b6683094b893b2f1145888a7855823,requirement,"
+1095934,482,"// TODO: This test case failed, please check the function implementation",82af758c11b6683094b893b2f1145888a7855823,defect,"
     timeStamp = resultSet.getLong(1);
     value = resultSet.getInt(2);
     Assert.assertEquals(timeStamp, 1577809500000L);
@@ -22163,7 +22163,7 @@ public void testConsecutiveWindows2() {
       fail(throwable.getMessage());
     }
   }"
-380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,multi," * This code ensures you can setup SSL. Look at {@link ArmeriaSettings} for property names.
+380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,composite," * This code ensures you can setup SSL. Look at {@link ArmeriaSettings} for property names.
  *
  * <p>This is inspired by com.linecorp.armeria.spring.ArmeriaSslConfigurationTest
  */
@@ -22577,7 +22577,7 @@ public void testRateInStats() {
         // assertThat(plans.get(i), equalTo(plans.get(0)));
         // }
     }"
-611532,203,"// disabled, as these soak up build time and the outcome oughtn't change unless we are refactoring the tree builders. manually execute as desired.",0010faae189fe2743049c45e91fe7c5446b7240c,skip-test,"    long completeBy = startTime + timeout * 1000L;
+611532,203,"// disabled, as these soak up build time and the outcome oughtn't change unless we are refactoring the tree builders. manually execute as desired.",0010faae189fe2743049c45e91fe7c5446b7240c,composite,"    long completeBy = startTime + timeout * 1000L;
 
     for (int i = 0; i < numIters; i++) {
         Document doc = Jsoup.parse(file, ""UTF-8"", ""https://example.com/"");
@@ -22606,7 +22606,7 @@ void testXmlParse(File file) throws IOException {
                 Assertions.fail(String.format(""Timeout: only completed %d iters of [%s] in %d seconds"", i, file.getName(), timeout));
         }
     }"
-1479015,805,// TODO: handle exception,6df3ab5c3506a2ddda10f09d919064f372bc6b7c,code,"    assertEnvelopeEquals(expectedEnvelope, scale, (GeneralBounds) targetCoverage.getEnvelope(), scale);
+1479015,805,// TODO: handle exception,6df3ab5c3506a2ddda10f09d919064f372bc6b7c,low-internal-quality,"    assertEnvelopeEquals(expectedEnvelope, scale, (GeneralBounds) targetCoverage.getEnvelope(), scale);
     assertTrue(CRS.equalsIgnoreMetadata(
             targetCoverage.getCoordinateReferenceSystem(), expectedEnvelope.getCoordinateReferenceSystem()));
     assertEquals(gridRange.getSpan(1), 1);
@@ -22702,7 +22702,7 @@ public void testNotWhereMatch() {
         assertThat(error.getMessage(), containsString(""[:] operator cannot be used after LIMIT""));
     }"
 26142,8,"// Uncomment next line after https://github.com/elastic/elasticsearch/issues/96705 is fixed
-// expectedILMSummary.put(""downsample"", 0);",968d8f7e1fbd5422ad66d5a74aa2bfaeb5448d67,multi,"var indexName = randomAlphaOfLength(10);
+// expectedILMSummary.put(""downsample"", 0);",968d8f7e1fbd5422ad66d5a74aa2bfaeb5448d67,composite,"var indexName = randomAlphaOfLength(10);
 var stagnatingIndicesFinder = mockedStagnatingIndicesFinder(List.of(indexMetadata(indexName, policyName, action)));
 var service = createIlmHealthIndicatorService(clusterState, stagnatingIndicesFinder);
 
@@ -22805,7 +22805,7 @@ public class NonOverridingEqualsTest {
 
   @Test
   public void flagsSimpleCovariantEqualsMethod() {",
-840235,308,// TODO(https://github.com/apache/beam/issues/20447),1056c54485d81d96bde80a16a3cc8bed6ffd6a96,defect,"import org.junit.Rule;
+840235,308,// TODO(https://github.com/apache/beam/issues/20447),1056c54485d81d96bde80a16a3cc8bed6ffd6a96,requirement,"import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
@@ -22919,7 +22919,7 @@ class OllamaOpenAiChatModelIT extends AbstractOllamaLanguageModelInfrastructure 
 @Test
 void should_generate_response() {
 ",
-1281543,620,// TODO GG-11148.,a331595e44f81eed8c0ca66e54e6a098a859fd76,defect,"    else if (aff.backupByPartition(ctx.localNode(), part, topVer))
+1281543,620,// TODO GG-11148.,a331595e44f81eed8c0ca66e54e6a098a859fd76,requirement,"    else if (aff.backupByPartition(ctx.localNode(), part, topVer))
         backupCnt = cnt;
     return new T2<>(primaryCnt, backupCnt);
 }
@@ -23061,7 +23061,7 @@ try {
 837047,308,"/**
  * TODO: Remove tests(getFailureCollector, getLogicalStartTime) if these methods weren't override
  * and were implemented own methods of BatchSourceContextImpl class.
- */",ebb43218f70af27ae675697a65b38bacc320bd47,multi,".put(""sObjectName"", ""sObject"")
+ */",ebb43218f70af27ae675697a65b38bacc320bd47,low-internal-quality,".put(""sObjectName"", ""sObject"")
 .put(""datetimeAfter"", ""datetime"")
 .put(""consumerKey"", ""key"")
 .put(""consumerSecret"", ""secret"")
@@ -23080,7 +23080,7 @@ public void getFailureCollector() {
       new ConfigWrapper<>(SalesforceSourceConfig.class)
           .withParams(TEST_SALESFORCE_PARAMS_MAP)
           .setParam(""referenceName"", newReferenceName)",
-1473843,805,// This is an utter hack but is the only way I could,635f6d4ccff2d0ce1526b796bc59ba7103e9e200,temporary-fix,"FormTester formTester = tester.newFormTester(""form"");
+1473843,805,// This is an utter hack but is the only way I could,635f6d4ccff2d0ce1526b796bc59ba7103e9e200,workaround,"FormTester formTester = tester.newFormTester(""form"");
 formTester.setValue(""panel:tileLayerEditor:createTileLayer"", false);
 
 tester.executeAjaxEvent(""form:panel:tileLayerEditor:createTileLayer"", ""change"");
@@ -23183,7 +23183,7 @@ import java.io.Writer;
 ",
 871388,337,"// `a[b]` could trigger a getter or setter, and have side effects. However, we always assume it
 // does not (even though it's unsound) because the code size cost of assuming all GETELEM nodes
-// have side effects is unacceptable.",e63ffef7ee58f015514a790adcb0b846b47351e4,impractical-case,"      ""outer: {""
+// have side effects is unacceptable.",e63ffef7ee58f015514a790adcb0b846b47351e4,superficial-test,"      ""outer: {""
           + ""  switch (2) {\n""
           + ""    case 2:\n""
           + ""      f();\n""
@@ -23260,7 +23260,7 @@ assertEquals(
 		tx.rollback();
 		s.close();
 	}"
-36354,8,"// This only tests for calendar ordering, ignoring the other criteria",993dbd9b919b0252807ab8b26504cf0aa4676de5,superficial-test,"for (int i = 0; i < numCaps; i++) {
+36354,8,"// This only tests for calendar ordering, ignoring the other criteria",993dbd9b919b0252807ab8b26504cf0aa4676de5,partial-test,"for (int i = 0; i < numCaps; i++) {
     DateHistogramInterval interval = getRandomCalendarInterval();
     GroupConfig group = new GroupConfig(new DateHistogramGroupConfig.CalendarInterval(""foo"", interval));
     RollupJobConfig job = new RollupJobConfig(""foo"", ""index"", ""rollup"", ""*/5 * * * * ?"", 10, group, emptyList(), null);
@@ -23317,7 +23317,7 @@ for (int i = 1; i < numCaps; i++) {
 //                    }
 //
 //                });
-//    }",3fd7b1e942e250572e7a43ad2a4f5492fd48dc01,multi,"package liquibase.sqlgenerator.core;
+//    }",3fd7b1e942e250572e7a43ad2a4f5492fd48dc01,composite,"package liquibase.sqlgenerator.core;
 
 public abstract class DropUniqueConstraintGeneratorTest {","
 }",
@@ -23586,7 +23586,7 @@ System.out.println(""thread "" + threadCount + "" druid millis : ""
 
         executor.submit(task);
     }"
-861450,323,"// Yes, a static variable is a hack.",d21d9e33938348c50dee16ffb4f611a82923cd49,temporary-fix,"
+861450,323,"// Yes, a static variable is a hack.",d21d9e33938348c50dee16ffb4f611a82923cd49,workaround,"
     @Override
     protected ServerEndpointConfig getServerEndpointConfig() {
         return ServerEndpointConfig.Builder.create(getEndpointClass(), PATH).build();
@@ -23709,7 +23709,7 @@ public void testCount() throws Exception {","    public void testCorrelatedSubQu
 // the master Configuration. The create() just copies config params over, it does not do
 // a clone for a historic reason. Properties such as resources are lost during this process.
 // Exposing a new method in HBaseConfiguration causes confusion. Instead, the new hbase-site.xml
-// under test-data directory is added to RegionServer's configuration as a workaround.",4f25b4a40575994d58925198ff6e6392639e882e,temporary-fix,"  overrideConfigFileUnderTestDataDir = Paths.get(absoluteDataPath, OVERRIDE_SERVER_CONFIG);
+// under test-data directory is added to RegionServer's configuration as a workaround.",4f25b4a40575994d58925198ff6e6392639e882e,workaround,"  overrideConfigFileUnderTestDataDir = Paths.get(absoluteDataPath, OVERRIDE_SERVER_CONFIG);
   Files.copy(overrideConfigFile, overrideConfigFileUnderTestDataDir);
 
   backupConfigFileUnderTestDataDir = Paths.get(absoluteDataPath, BACKUP_SERVER_CONFIG);
@@ -23769,7 +23769,7 @@ public void testNoWarningInClassStaticBlock() {","  test(
                 ""  }"",
                 ""}"")));
   }"
-1359128,700,"// TODO: easy, try reloadClasses false, or explain why it's needed",0842ce9a9d118484bea6320f90d891101839d5d3,multi,"    Class<?> exceptionClass = NullPointerException.class;
+1359128,700,"// TODO: easy, try reloadClasses false, or explain why it's needed",0842ce9a9d118484bea6320f90d891101839d5d3,composite,"    Class<?> exceptionClass = NullPointerException.class;
     assertEquals(exceptionClass, item.getValue().getClass());
     assertEquals(ClassNameUtils.toInternal(exceptionClass), item.getType());
 
@@ -23934,7 +23934,7 @@ package org.hibernate.orm.test.jpa.cascade2;
 ","  //        abstract void abstractMethod(); todo
 }",
 208809,60,"// TODO: remove this test when SourceFunction API gets removed together with the deprecated
-//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",6d287a7e3662b6182e1c1657bb91f82a84d8ff0a,multi,"                .as(""Parallelism of parallel collection source must be 4."")
+//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",6d287a7e3662b6182e1c1657bb91f82a84d8ff0a,composite,"                .as(""Parallelism of parallel collection source must be 4."")
                 .isEqualTo(4);
     } catch (Exception e) {
         e.printStackTrace();
@@ -24036,7 +24036,7 @@ private File downloadComposeFile() throws IOException {
     }
 
 }",
-108103,22,"// This should use System.getProperty(""os.name"") in a real test.",9969f7225752fe8d61ddc3adb522f8b284f7cee0,temporary-fix,"    } catch (NullPointerException npe) {
+108103,22,"// This should use System.getProperty(""os.name"") in a real test.",9969f7225752fe8d61ddc3adb522f8b284f7cee0,workaround,"    } catch (NullPointerException npe) {
       assumeNoException(npe);
     }
     assertEquals(""run"", ""RUN"".toLowerCase());
@@ -24095,7 +24095,7 @@ g[0] = input.readShort();","    public void readExternal(IDataInput input) {
     }"
 892743,368,"// expected
 // TODO(czhu): with the current implementation of prefixes w/o delimiters, there is
-// never a FileDoesNotExistException because we just list the entire bucket recursively",3ee80351e11317d421b06fdfdd62c4e7d12e6e22,impractical-case,"new TestCase(mHostname, mPort, mBaseUri,
+// never a FileDoesNotExistException because we just list the entire bucket recursively",3ee80351e11317d421b06fdfdd62c4e7d12e6e22,superficial-test,"new TestCase(mHostname, mPort, mBaseUri,
     ""bucket"", parameters, HttpMethod.GET,
     getDefaultOptionsWithAuth().setContentType(TestCaseOptions.XML_CONTENT_TYPE))
     .runAndCheckResult(expected);
@@ -24282,7 +24282,7 @@ private class MockSyncPluginsCli extends EnvironmentAwareCommand {
         }"
 1118201,488,"// TODO: Add test to delete broker instance. Currently, stopBroker() does not work correctly.
 
-// Check if '/INSTANCES/<serverName>' has been erased correctly",7c066b1ab63208814c9fffd4d6a6a5bf1bf72f11,requirement,"  deleteInstanceRequest = _controllerRequestURLBuilder.forInstance(brokerName);
+// Check if '/INSTANCES/<serverName>' has been erased correctly",7c066b1ab63208814c9fffd4d6a6a5bf1bf72f11,composite,"  deleteInstanceRequest = _controllerRequestURLBuilder.forInstance(brokerName);
   sendDeleteRequest(deleteInstanceRequest);
   fail(""Delete should have returned a failure status (409)"");
 } catch (IOException e) {
@@ -24456,7 +24456,7 @@ public void testSelectCount12() throws Exception {
                         ""                Frame forward scan on: a\n""
         );
     }"
-853910,315,// hacky solution,e17a8390d55fd89cc44536d75ec00f81576fa705,temporary-fix,"  return db;
+853910,315,// hacky solution,e17a8390d55fd89cc44536d75ec00f81576fa705,workaround,"  return db;
 }
 
 @SuppressWarnings( ""unchecked"" )
@@ -24570,7 +24570,7 @@ if (count >= expected.size()) {
 // This test runs the sync-manifests command, and _without stopping the jvm_ executes a list command.
 // Under normal use, the sync-manifests command is followed immediately by a JVM shutdown, clearing caches.
 // The Java 8 ServiceLoader does not disable the URLConnection caching, so doesn't read some previous writes.
-// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",8afd3eb1f40639b2c79e21f497a9a30dd3aef101,multi,"            }
+// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",8afd3eb1f40639b2c79e21f497a9a30dd3aef101,composite,"            }
             default:
                 throw new IllegalArgumentException(""Unknown PluginLocationType"");
         }
@@ -24596,7 +24596,7 @@ private static class PluginPathElement {
         // Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)
         path.toUri().toURL().openConnection().setDefaultUseCaches(false);
     }"
-639477,211,// TODO throw new UnsupportedOperationException();,ef974e7aa71d86968cd942af7434aba39a017f7d,code,"        assertQuery(""SELECT one, three FROM "" + testTable.getName(), ""SELECT 123, 'test'"");
+639477,211,// TODO throw new UnsupportedOperationException();,ef974e7aa71d86968cd942af7434aba39a017f7d,low-internal-quality,"        assertQuery(""SELECT one, three FROM "" + testTable.getName(), ""SELECT 123, 'test'"");
     }
 }
 
@@ -24623,7 +24623,7 @@ public void testCharTrailingSpace()
         // TODO throw new UnsupportedOperationException();
         return abort(""Not implemented"");
     }"
-873622,337,"// TODO(b/148169932): There should be another mismatch {found: string, required: number}.",c0084bdb51c62c027a455636f1b6255f591ca42a,superficial-test,"    ""  constructor() {"",
+873622,337,"// TODO(b/148169932): There should be another mismatch {found: string, required: number}.",c0084bdb51c62c027a455636f1b6255f591ca42a,requirement,"    ""  constructor() {"",
     ""    /** @type {number} */ this.x;"",
     ""  }"",
     ""}"",
@@ -24975,7 +24975,7 @@ public void setORADataAtName(String arg0, ORAData arg1) throws SQLException {
         // TODO Auto-generated method stub
 
     }"
-204401,60,// TODO: tweak the tests when FLINK-13604 is fixed.,ba047b7bf71fbe0d8b696ef62f7db95fc28aefc2,multi,"
+204401,60,// TODO: tweak the tests when FLINK-13604 is fixed.,ba047b7bf71fbe0d8b696ef62f7db95fc28aefc2,composite,"
     assertThatThrownBy(() -> parseAndConvert(sql))
             .isInstanceOf(ValidationException.class)
             .hasMessageContaining(
@@ -25145,7 +25145,7 @@ public void testCreateTableWithFullDataTypes() {
         Object[] expectedDataTypes = testItems.stream().map(item -> item.expectedType).toArray();
         assertThat(schema.getFieldDataTypes()).isEqualTo(expectedDataTypes);
     }"
-1506022,822,// TODO move to core,a5171a9de131558e4c7c8f844664f3e3a74eb158,requirement,"import org.eclipse.jetty.util.component.LifeCycle;
+1506022,822,// TODO move to core,a5171a9de131558e4c7c8f844664f3e3a74eb158,design,"import org.eclipse.jetty.util.component.LifeCycle;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -25274,7 +25274,7 @@ assertTrue(block.isErrorBlock(), ""expected ERROR block from invalid computation
 725433,230,"// Added in 2.0 temporarily, validate the MASTER_ROLE is in the list of known roles.
 // MASTER_ROLE was removed from BUILT_IN_ROLES and is imported by setDeprecatedMasterRole(),
 // as a workaround for making the new CLUSTER_MANAGER_ROLE has got the same abbreviation 'm'.
-// The test validate this behavior.",e07176474f1a4cd03481d149b8f79afc2d82a99f,temporary-fix,"}
+// The test validate this behavior.",e07176474f1a4cd03481d149b8f79afc2d82a99f,workaround,"}
 
 public void testDiscoveryNodeIsSearchSet() {
     runTestDiscoveryNodeIsSearch(searchNode(), true);
@@ -25293,7 +25293,7 @@ private void runTestDiscoveryNodeIsRemoteClusterClient(final Settings settings, 
     assertThat(node.isRemoteClusterClient(), equalTo(expected));
     if (expected) {
         assertThat(node.getRoles(), hasItem(DiscoveryNodeRole.REMOTE_CLUSTER_CLIENT_ROLE));",
-889344,360,//hack to reproduce synchronization issue,7b20d571f8612f26c1ba92397e28bacc5163e17f,temporary-fix,"    List<String> folders = gitWithSubmodule.submoduleFolders();
+889344,360,//hack to reproduce synchronization issue,7b20d571f8612f26c1ba92397e28bacc5163e17f,workaround,"    List<String> folders = gitWithSubmodule.submoduleFolders();
     assertEquals(1, folders.size());
     assertEquals(""sub1"", folders.get(0));
 }
@@ -25328,7 +25328,7 @@ gitWithSubmodule.updateSubmoduleWithInit(outputStreamConsumer, false);","    voi
 
     }"
 1360339,703,"// Second time will update some tables. This is only for testing purpose and
-// obviously we wouldn't set things up this way.",1828b39021de5c5fd826e89109da18cc8ddd5e3e,temporary-fix,"final File dbDir = this.temp.newFolder(""h2dbtest"");
+// obviously we wouldn't set things up this way.",1828b39021de5c5fd826e89109da18cc8ddd5e3e,workaround,"final File dbDir = this.temp.newFolder(""h2dbtest"");
 final Props h2Props = getH2Props(dbDir.getCanonicalPath(), sqlScriptsDir);
 final AzkabanDatabaseSetup setup = new AzkabanDatabaseSetup(h2Props);
 
@@ -25370,7 +25370,7 @@ assertTrue(setup.needsUpdating());
     assertFalse(setup.needsUpdating());
   }"
 328852,81,"// this test has been disabled because of timeout issues.
-// see JDK-8006746",7ea914fe3fc0fba0f112fa8cbaf0179334d09b8a,multi,"*
+// see JDK-8006746",7ea914fe3fc0fba0f112fa8cbaf0179334d09b8a,composite,"*
 * You should have received a copy of the GNU General Public License version
 * 2 along with this work; if not, write to the Free Software Foundation,
 * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
@@ -25395,7 +25395,7 @@ import org.testng.annotations.AfterSuite;",
  * warnings there, and these are more common in containers where permissions and resources are
  * more restricted. Thus, we add some commands here to disable the features that commonly cause
  * these warnings: Leave ASLR alone, and don't try to display source code.
- */",d40e26668f3167cdd13e6884d6f8040897c06e51,temporary-fix,"import ghidra.pty.testutil.DummyProc;
+ */",d40e26668f3167cdd13e6884d6f8040897c06e51,workaround,"import ghidra.pty.testutil.DummyProc;
 import ghidra.trace.model.TraceExecutionState;
 import ghidra.trace.model.breakpoint.TraceBreakpointKind;
 import ghidra.trace.model.breakpoint.TraceBreakpointKind.TraceBreakpointKindSet;
@@ -25446,7 +25446,7 @@ rewriteGeneratorBody(
             ""return GEN_CONTEXT$0.jumpTo(0);"",
             ""return GEN_CONTEXT$0.jumpTo(1);""));
   }"
-544439,145,"//floormod case is questionable, hard to tell if gradient checkable: skipping for now",4beace608386c67fde11d7a0c144d5c06ada8e76,multi,"Nd4j.getRandom().setSeed(12345);
+544439,145,"//floormod case is questionable, hard to tell if gradient checkable: skipping for now",4beace608386c67fde11d7a0c144d5c06ada8e76,composite,"Nd4j.getRandom().setSeed(12345);
 
 List<String> failed = new ArrayList<>();
 
@@ -25582,7 +25582,7 @@ public void Test4149677() {
             FinalizationTester.induceFinalization();
         }
     }
-    */",c0c9cf87af8943fa64a711069ab1067b61b5baca,subset-test,"    RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
+    */",c0c9cf87af8943fa64a711069ab1067b61b5baca,partial-test,"    RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
     raf.setLength(0);
     assertEquals(0, file.length());
     long moreThanFourGig = ((long) Integer.MAX_VALUE) + 1L;
@@ -25601,7 +25601,7 @@ public void testDirectories() throws Exception {
     try {
         new RandomAccessFile(""."", ""r"");
         fail();",
-845325,308,// TODO: Remove once Distributions has shipped.,2d745c404cc478e26af2dd3bf2c646596a599bac,multi,"public class SimpleParDoFnTest {
+845325,308,// TODO: Remove once Distributions has shipped.,2d745c404cc478e26af2dd3bf2c646596a599bac,composite,"public class SimpleParDoFnTest {
   @Rule public ExpectedException thrown = ExpectedException.none();
 
   private PipelineOptions options;
@@ -25668,7 +25668,7 @@ public void noAccessForNonAdmin() throws Exception {","    public void flow() th
         // and make sure it's gone
         assertThrows(ElementNotFoundException.class, () -> getForm(mon));
     }"
-1371991,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,multi,"
+1371991,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,composite,"
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -25730,7 +25730,7 @@ Criteria<TimeSeriesData, Forecast> criteria =
         }
     }"
 1134218,491,"// TODO: Should be checked on server side. On Embedded metastore it throws MetaException,
-// on Remote metastore it throws TProtocolException",e928a70ceb4f629ad8a3cb0fde62bae72b1d031b,dependency,"      table.getDbName().toUpperCase(), table.getTableName().toUpperCase()));
+// on Remote metastore it throws TProtocolException",e928a70ceb4f629ad8a3cb0fde62bae72b1d031b,composite,"      table.getDbName().toUpperCase(), table.getTableName().toUpperCase()));
 
   // Test in mixed case
   Assert.assertTrue(""Table exists"", client.tableExists(""hIVe"", ""DeFaUlt"", ""tEsT_TabLE""));
@@ -25971,7 +25971,7 @@ case INTERNAL:","    /**
  * (see related ticket).
  *
  * When slow down is tracked down and fixed this class can be replaced back with its parent.
- */",3c20be2939c24ba76b9c300ed0688c3db20d0d74,temporary-fix," * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ */",3c20be2939c24ba76b9c300ed0688c3db20d0d74,workaround," * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
@@ -26039,7 +26039,7 @@ public void testHivePartitionPruner2() {
 1384345,757,"// BouncyCastle is parsing date objects with the system locale while creating self-signed SSL certs
 // This fails for certain locales, e.g. 'ks'.
 // Until this is fixed, we force the english locale.
-// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,multi,"private static final char[] EMPTY_PASS = new char[]{};
+// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,composite,"private static final char[] EMPTY_PASS = new char[]{};
 
 private static SelfSignedCertificate trustedCert;
 private static File keyStoreFile;
@@ -26064,7 +26064,7 @@ public static void beforeTest() throws Exception {
         // See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)
         Locale.setDefault(Locale.ENGLISH);
     }"
-126659,36,// todo remove this,4bafea92b3849e613f005c2ce2548c7d723d1bd0,refactor,"import org.springframework.core.env.ConfigurableEnvironment;
+126659,36,// todo remove this,4bafea92b3849e613f005c2ce2548c7d723d1bd0,low-internal-quality,"import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.mock.env.MockEnvironment;
 
 import java.util.Properties;
@@ -26522,7 +26522,7 @@ if (false) {
         }
     }"
 235091,64,"// The exceedingly dumb approach: writing all the permutations down manually
-// is simply easier than any way of generating them.",df81aa21d20b4a6ac2055555d9e2001f176300a1,temporary-fix,"}
+// is simply easier than any way of generating them.",df81aa21d20b4a6ac2055555d9e2001f176300a1,workaround,"}
 
 @Test
 public void testTestCaseNamesOrdered() throws Exception {
@@ -26662,7 +26662,7 @@ String sql =
 // Due to a race condition in object destruction, it can happen that the sync operation takes place
 // while a map is being destroyed which can result in a memory leak. This will be overhauled as part of
 // object lifecycle revamp.
-// For more details, see: https://github.com/hazelcast/hazelcast/issues/7132",77d253f3ffb24f9a9f45fbe25d4f3a30b00eeee1,code,"public boolean hashIndex;
+// For more details, see: https://github.com/hazelcast/hazelcast/issues/7132",77d253f3ffb24f9a9f45fbe25d4f3a30b00eeee1,low-internal-quality,"public boolean hashIndex;
 
 protected HazelcastInstance instance1;
 protected HazelcastInstance instance2;
@@ -26717,7 +26717,7 @@ public ObjectId[] getDatabaseIDs( boolean includeDeleted ) throws KettleExceptio
   }"
 393164,119,"// assert that pipeline 2 will have no more drivers
 // note: One could argue that this should have happened as soon as pipeline 2 driver group 7 is marked as noMoreSplits.
-//       This is not how SqlTaskExecution is currently implemented. And such a delay in closing DriverFactory does not matter much.",edc1e16c84d64915322604c412b04ba36daafc58,impractical-case,"waitUntilEquals(scanOperatorFactory0::isOverallNoMoreOperators, true, ASSERT_WAIT_TIMEOUT);
+//       This is not how SqlTaskExecution is currently implemented. And such a delay in closing DriverFactory does not matter much.",edc1e16c84d64915322604c412b04ba36daafc58,workaround,"waitUntilEquals(scanOperatorFactory0::isOverallNoMoreOperators, true, ASSERT_WAIT_TIMEOUT);
 waitUntilEquals(joinOperatorFactoryA::isOverallNoMoreOperators, true, ASSERT_WAIT_TIMEOUT);
 waitUntilEquals(joinOperatorFactoryC::isOverallNoMoreOperators, true, ASSERT_WAIT_TIMEOUT);
 // assert that pipeline 1 driver group [3, 7] will have no more drivers
@@ -27718,7 +27718,7 @@ switch (t++) {
             }
         }
     }"
-1037082,445,// TODO replace explicit pre-mockito mock classes with proper mockito mocks wherever possible,a369e2628d36bd0d8ced915f50196ba7cb1ec38c,temporary-fix,"import java.util.concurrent.CyclicBarrier;
+1037082,445,// TODO replace explicit pre-mockito mock classes with proper mockito mocks wherever possible,a369e2628d36bd0d8ced915f50196ba7cb1ec38c,workaround,"import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -27737,7 +27737,7 @@ public class MessageBusVisitorSessionTestCase {
         private ReplyHandler replyHandler = null;
         private boolean destroyed = false;
         private RuntimeException exceptionOnSend = null;",
-230424,64,// TODO: b/386384684 - remove Unsafe usage,45fb0c89249788312506453a0cd3e60d4f540dff,refactor,"
+230424,64,// TODO: b/386384684 - remove Unsafe usage,45fb0c89249788312506453a0cd3e60d4f540dff,low-internal-quality,"
   private StartingAddressParameter(int value) {
     this.value = value;
   }
@@ -27877,7 +27877,7 @@ runner.setIncomingConnection(false);","    public void testAddedRowsTimestampRig
         assertFalse(resultSet.next());
         runner.clearTransferState();
     }"
-707839,224,// TODO(emcmanus): remove the no-op `& 0xfff_ffff`,63b586d9d4a74958affe8182f4716696823af680,requirement,"    .isEqualTo(""(~set$0 & 1) != 0"");
+707839,224,// TODO(emcmanus): remove the no-op `& 0xfff_ffff`,63b586d9d4a74958affe8182f4716696823af680,low-internal-quality,"    .isEqualTo(""(~set$0 & 1) != 0"");
 assertThat(builderRequiredPropertiesWithDefaults(1).getAnyMissing())
     .isEqualTo(""(~set$0 & 3) != 0"");
 assertThat(builderRequiredPropertiesWithDefaults(15).getAnyMissing())
@@ -28145,7 +28145,7 @@ ValueList(final int min, final int max) {
     }
 }
 ",
-559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,8556fa3d9435dc708edc20c230c906e8cbea8575,multi,"              .context(QUERY_CONTEXT_DEFAULT)
+559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,8556fa3d9435dc708edc20c230c906e8cbea8575,composite,"              .context(QUERY_CONTEXT_DEFAULT)
               .build()
       ),
       expected
@@ -28467,7 +28467,7 @@ List<Object[]> expected = ImmutableList.of(
         assertNotNull(process.checkOrWaitForEvent(ProcessState.PROCESS_STATE.STOPPED));
     }"
 872345,337,"// TODO(b/115853720); Should remove getter for onlySetProp, because
-// there is only an assignment to it",46b92ca9a9031ae381f4be0d284f8feec3a61817,requirement,"options,
+// there is only an assignment to it",46b92ca9a9031ae381f4be0d284f8feec3a61817,low-internal-quality,"options,
 lines(
     ""/** @constructor */"",
     ""function ES5Class() {"",
@@ -28605,7 +28605,7 @@ assertFalse(headers.contains(of(""name""), of(""value1"")));","    public void t
         assertTrue(headers.contains(of(""name""), of(""value"")));
         assertFalse(headers.contains(of(""name""), of(""value1"")));
     }"
-1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,multi,"import org.testng.annotations.Test;
+1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,composite,"import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -28658,7 +28658,7 @@ static class LcEnumIntrospector extends JacksonAnnotationIntrospector
 // Read a line from the input stream, swallowing the final
 // \r\n sequence. Stops at the first \n, doesn't complain
 // if it wasn't preceded by '\r'.
-//",b8d94a8eea24adeb3908d6f27360e871407e19c2,temporary-fix,"final ServerSocket ss;
+//",b8d94a8eea24adeb3908d6f27360e871407e19c2,workaround,"final ServerSocket ss;
 final boolean secure;
 ConcurrentLinkedQueue<Socket> connections = new ConcurrentLinkedQueue<>();
 volatile boolean stopped;
@@ -28689,7 +28689,7 @@ DummyServer(ServerSocket ss, boolean secure) {
  * temp file).... must be other options.
  *
  * @throws Exception
- */",3abbe96c09f9453b5e41d5fd708361e3d82a27a0,temporary-fix,"/**
+ */",3abbe96c09f9453b5e41d5fd708361e3d82a27a0,workaround,"/**
  *
  * A special test for parsing a large workbook, to see how it scales.
  */
@@ -28710,7 +28710,7 @@ public void testLargeWorkSheetParseToRuleset() throws Exception {
 ",
 239117,64,"// Simulate a very slow upload to the remote cache to ensure that the second spawn is
 // deduplicated rather than a cache hit. This is a slight hack, but also avoid introducing
-// concurrency to this test.",8d1a7267d6a096bf45a0c7c1b584ecc25e175660,temporary-fix,"    createSpawnExecutionContext(firstSpawn, execRoot, firstFakeFileCache, outErr);
+// concurrency to this test.",8d1a7267d6a096bf45a0c7c1b584ecc25e175660,workaround,"    createSpawnExecutionContext(firstSpawn, execRoot, firstFakeFileCache, outErr);
 
 SimpleSpawn secondSpawn = simplePathMappedSpawn(""k8-opt"");
 FakeActionInputFileCache secondFakeFileCache = new FakeActionInputFileCache(execRoot);
@@ -29224,7 +29224,7 @@ public static ImmutableList<String> requiredObjcCrosstoolFlagsNoXcodeConfig(Stri
         .add(""--crosstool_top="" + MockObjcSupport.DEFAULT_OSX_CROSSTOOL);
     return argsBuilder.build();
   }"
-21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dab5f51472984392d7758aa196ca6407592df619,dependency,"    int numPromotableReplicas,
+21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dab5f51472984392d7758aa196ca6407592df619,composite,"    int numPromotableReplicas,
     int numSearchReplicas
 ) {
     return getReplicaRolesWithRandomStates(numPromotableReplicas, numSearchReplicas, ShardRoutingState.values());
@@ -29272,7 +29272,7 @@ public static RoutingInfoUpdate randomInstance() {
         return null;// TODO implement https://github.com/elastic/elasticsearch/issues/25929
     }"
 855188,315,"// Simple hack to prevent duplication of code. Checking the case of supported boolean type
-// both supported and unsupported. Should return BOOLEAN if supported, or CHAR(1) if not.",4d74a9806ef875f521cc80701d63a17efb34e1d8,temporary-fix,"  assertNull( nativeMeta.getSQLUnlockTables( new String[] { ""FOO"", ""BAR"" } ) );
+// both supported and unsupported. Should return BOOLEAN if supported, or CHAR(1) if not.",4d74a9806ef875f521cc80701d63a17efb34e1d8,workaround,"  assertNull( nativeMeta.getSQLUnlockTables( new String[] { ""FOO"", ""BAR"" } ) );
 }
 
 @Test
@@ -29348,7 +29348,7 @@ assertEquals( ""INTEGER PRIMARY KEY"",","  public void testGetFieldDefinition() 
  * search results works (and does not end with an exception).
  *
  * To test search of real data, change query string from '*' to real name of file.
- */",e2be55dce61e635a6bcefee8ca4d51b1729ba5dd,impractical-case," * Test class for {@link BoxSearchManager} APIs.
+ */",e2be55dce61e635a6bcefee8ca4d51b1729ba5dd,superficial-test," * Test class for {@link BoxSearchManager} APIs.
  */
 @EnabledIf(value = ""org.apache.camel.component.box.AbstractBoxITSupport#hasCredentials"",
            disabledReason = ""Box credentials were not provided"")
@@ -29435,7 +29435,7 @@ try (ResultSet rs = statement.executeQuery()) {
  * Also <code>DumpstateListener<code/> violate the policy when onScreenshotTaken is called.
  *
  * TODO(b/161201609) Remove this class once violations fixed.
- */",0acc08edd9eda81ccb108eb83eca123058d71cc7,multi,"    }
+ */",0acc08edd9eda81ccb108eb83eca123058d71cc7,composite,"    }
 
     public void waitForBugreportFinished() throws Exception {
         if (!mLatch.await(BUGREPORT_TIMEOUT_MS, TimeUnit.MILLISECONDS)) {
