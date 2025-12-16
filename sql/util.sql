@@ -86,9 +86,9 @@ GROUP BY
 ORDER BY
     COUNT(CASE WHEN c.is_random = true THEN 1 END) DESC;
 -- Repository
-select
-	r.id,
-	r.project_id,
+SELECT
+    r.id,
+    r.project_id,
     r.name,
     r.stars,
     r.forks,
@@ -112,11 +112,12 @@ select
     r.commit_hash,
     r.pushed_at,
     r.repository_created_at
-
 FROM
     repository r
-INNER JOIN
-    comment c ON r.id = c.repository_id
+LEFT OUTER JOIN
+    comment c
+    ON r.id = c.repository_id
 GROUP BY
     r.id
-order by r.id;
+ORDER BY
+    r.id;
