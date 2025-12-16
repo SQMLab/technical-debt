@@ -5,7 +5,7 @@
 ## 📖 Abstract
 
 Self-Admitted Technical Debt (SATD) refers to comments in which developers explicitly acknowledge limitations, workarounds, or deferred improvements in code.  
-While prior research has primarily focused on production code, this study presents the **first large-scale empirical investigation of SATD in test code**, introducing a taxonomy of 15 categories and evaluating both traditional detection tools and large language models (LLMs).
+While prior research has primarily focused on production code, this study presents the **first large-scale empirical investigation of SATD in test code**, introducing a taxonomy of 14 categories and evaluating both traditional detection tools and large language models (LLMs).
 
 ---
 
