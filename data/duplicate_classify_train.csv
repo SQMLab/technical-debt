@@ -1,4 +1,4 @@
-id,repository,text,hash,label,code_before,code_after,code_method
+id,repository,text,hash,label,code_before,code_after,code_method,url
 584484,167,//Could fail if CI is to slow and will slow down the CI build; test local,c0a66cbbc7e8f24e954ef957ba8515526ab80ef3,build,"  long startTime = System.currentTimeMillis();
   await().until(() -> myThreadPool.getActiveCount() == 0);
   long endTime = System.currentTimeMillis();
@@ -58,7 +58,7 @@ public void overloadedMultiUsageThreadPoolTest() {
     assertThat(endTime - startTime, allOf(greaterThan(6000l), lessThan(7000l)));
     assertEquals(0, myThreadPool.getActiveCount());
     assertTrue(myThreadPool.getQueue().isEmpty());
-  }"
+  }",https://github.com/languagetool-org/languagetool/blob/a611c39ca0e3ee34ceb4f95bfc387aa9755566c8/languagetool-core/src/test/java/org/languagetool/tools/LtThreadPoolFactoryTest.java#L227
 1004573,441,"// read() and closeEntry() must throw IOExceptions to indicate that
 // the stream is corrupt. The bug above reported that they would loop
 // forever.",4ad63a32abf4e1c61ce02cc670432cb488c31dbc,defect,"private static final byte[] INCOMPLETE_ZIP = new byte[] {
@@ -99,7 +99,7 @@ try {
         }
 
         zi.close();
-    }"
+    }",https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/luni/src/test/java/libcore/java/util/zip/ZipInputStreamTest.java#L98
 423851,128,// Ignored in automated tests due to flakiness by design,410dc6f2dfa5a79ed813ff8e14149c62d4585a0d,composite,"  cgroupMemory = ResourceHandlerModule.getCGroupsHandler()
       .getPathForCGroup(CGroupsHandler.CGroupController.MEMORY, cgroup);
 }
@@ -118,7 +118,7 @@ public void testCompareResults()
   startTestProcess();
 
   ProcfsBasedProcessTree legacyCalculator =
-      new ProcfsBasedProcessTree(Long.toString(getPid()));",
+      new ProcfsBasedProcessTree(Long.toString(getPid()));",,https://github.com/apache/hadoop/blob/8424c155f11049e2d5a92b7f8d63d4c67d2eaaa6/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/linux/resources/TestCompareResourceCalculators.java#L89
 86103,12,"// Note: these addresses are *not* found, as we do not search the elements of the array.
 //       This is by design, as it saves a lot of work.
 // addr(""010054ec""), addr(""010054f0""));",de0d77d61a67745fa7063eb3da24f7aab5785e01,design,"
@@ -181,7 +181,7 @@ public void testArrayReferences_MnemonicField_Offcuts() {
 		// addr(""010054ec""), addr(""010054f0""));
 
 		assertNoOffcuts(results);
-	}"
+	}",https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Features/Base/src/test.slow/java/ghidra/app/plugin/core/navigation/locationreferences/ArrayLocationReferencesTest.java#L85
 1495929,822,"// TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
 //assertThat(servletContext.getResource(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""), notNullValue());",8df2a09263f3c451c0499684cca21c513b808252,dependency,"assertThat(resourcePaths.size(), is(2));
 assertThat(resourcePaths, containsInAnyOrder(expected));
@@ -262,7 +262,7 @@ assertThat(response1.getContent(), containsString(""/WEB-INF""));","    public v
         assertThat(response2.getContent(), containsString(""/WEB-INF/lib/odd-resource.jar""));
         // TODO the following assertion fails because of a bug in the JDK (see JDK-8311079 and MountedPathResourceTest.testJarFileResourceAccessBackSlash())
         //assertThat(response2.getContent(), containsString(""/nested-reserved-!#\\\\$%&()*+,:=?@[]-meta-inf-resource.txt""));
-    }"
+    }",https://github.com/jetty/jetty.project/blob/12d16112fc65062f8d8de144a131b9f99dcae246/jetty-ee9/jetty-ee9-webapp/src/test/java/org/eclipse/jetty/ee9/webapp/WebAppContextTest.java#L688
 976347,435,"/**
  * TODO : javadoc
  *
@@ -285,7 +285,7 @@ public class PersonName extends Name {
 	}
 
 	public PersonName(String first, String last) {
-		super( first, last );",
+		super( first, last );",,https://github.com/hibernate/hibernate-orm/blob/ff5fa10867d82d78002746faba4665e1a420bf0f/hibernate-core/src/test/java/org/hibernate/orm/test/annotations/embedded/one2many/PersonName.java#L15
 122818,34,"// I tried using Mockito, but it didn't work for some reason",8ffb0f9eb09fd1bc314a6176854566ba8739a718,how-to,"import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
@@ -317,7 +317,7 @@ return new PlayQueue(index, streams) {
                 throw new UnsupportedOperationException();
             }
         };
-    }"
+    }",https://github.com/TeamNewPipe/NewPipe/blob/c6e17218843e59f264f39d9cd719c1173a95abfd/app/src/test/java/org/schabi/newpipe/player/playqueue/PlayQueueTest.java#L25
 673606,213,"/**
  * Tests for FingerprintGestureController.
  * TODO: These tests aren't really for server code, so this isn't their ideal home.
@@ -339,7 +339,7 @@ import org.mockito.MockitoAnnotations;
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         mFingerprintGestureController =
-                new FingerprintGestureController(mMockAccessibilityServiceConnection);",
+                new FingerprintGestureController(mMockAccessibilityServiceConnection);",,https://github.com/aosp-mirror/platform_frameworks_base/blob/58d256e4c9d5c0eabe880e84ac05f0374c910163/services/tests/servicestests/src/com/android/server/accessibility/FingerprintGestureControllerTest.java#L41
 726802,230,// Todo: Move this test to SegmentReplicationIndexShardTests so that it runs for both node-node & remote store,2ca4da5ab08081dd751e414cea3dfad8871fb5e7,design,"    assertThat(
         primaryTarget.getReplicationTracker()
             .getTrackedLocalCheckpointForShard(primaryTarget.routingEntry().allocationId().getId())
@@ -358,7 +358,7 @@ public void testNRTReplicaPromotedAsPrimary() throws Exception {
         final IndexShard replica = shards.getReplicas().get(1);
 
         // 1. Create ops that are in the index and xlog of both shards but not yet part of a commit point.
-        final int numDocs = shards.indexDocs(randomInt(10));",
+        final int numDocs = shards.indexDocs(randomInt(10));",,https://github.com/opensearch-project/OpenSearch/blob/c82fffe8e333a8fff600dc22fa2e1aed7276d180/server/src/test/java/org/opensearch/index/shard/SegmentReplicationWithNodeToNodeIndexShardTests.java#L530
 1479085,805,"// TODO: check all the layers are here, the profiles, and so on
 
 // check that we have the crs extension",d29e12c3a6fa3eca9bcd935f1bf2a91f211c46ba,requirement,"    for (GridCoverage coverage : coverages) {
@@ -449,7 +449,7 @@ assertXpathEvaluatesTo(
         // check the viking raster is there with its CRS
         String vikingPath = ""//wcs:Contents/wcs:CoverageSummary[wcs:CoverageId='iau__Viking']"";
         assertXpathEvaluatesTo(""http://www.opengis.net/def/crs/IAU/0/49900"", vikingPath + ""/ows:BoundingBox/@crs"", dom);
-    }"
+    }",https://github.com/geoserver/geoserver/blob/8871198a41d255de8c964263f0a6f15d44d15d62/src/wcs2_0/src/test/java/org/geoserver/wcs2_0/WCSTestSupport.java#L319
 1002899,441,"// Don't test on iOS devices, because they often have less than 4G available,
 // especially with a big JRE tests app installed.",9e27f88b5465d3bde8592162611b339cba391fa4,partial-test,"public void testSetLengthTooLarge() throws Exception {
     RandomAccessFile raf = new RandomAccessFile(file, ""rw"");
@@ -480,7 +480,7 @@ public void testSetLength64() throws Exception {","  if (!System.getProperty(""o
         raf.setLength(moreThanFourGig);
         assertEquals(moreThanFourGig, file.length());
       }
-    }"
+    }",https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/luni/src/test/java/libcore/java/io/RandomAccessFileTest.java#L56
 571347,159,"// Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
 // which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
 // successfully, but in order to shorten the test time, we chose one million numbers.",5baba5460e6f4c12a7feb225797a047fd7698dcb,partial-test,"import org.junit.Assert;
@@ -520,7 +520,7 @@ Object evaluateLarge = hllCardinalityUDF","    public void hllCardinalityTest() 
 
         double relativeError = Math.abs(actualCardinality - largeInputSize) / (double) largeInputSize;
         Assert.assertTrue(""Relative error rate should be less than 2%"", relativeError <= 0.02);
-    }"
+    }",https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/hive-udf/src/test/java/org/apache/doris/HllUDFTest.java#L44
 639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",e18bb3027646ebbe1f1c19f83d3a915a2106aae8,partial-test,"{
     // Distinct with limit (DistinctLimitNode), should be eligible for pushdown.
     String query = ""SELECT DISTINCT regionkey FROM nation LIMIT 3"";
@@ -556,7 +556,7 @@ public void testStatsWithAggregationPushdown()","    public void testStatsWithDi
                 .matches(""VALUES "" +
                         ""('regionkey', 3e0, 0e0, null),"" +
                         ""(null, null, null, 3e0)"");
-    }"
+    }",https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/plugin/trino-base-jdbc/src/test/java/io/trino/plugin/jdbc/BaseJdbcTableStatisticsTest.java#L293
 1081500,478,"// this is a bit of a hack, since we don't implement generations.",0e014f065c9088a7fb5156ea690aa7c45e159814,workaround,"String sourceKey = fullname(rewriteRequest.source);
 
 // a little hackish, just good enough for the tests to work.
@@ -621,7 +621,7 @@ long generation = 1;","    public RewriteResponse openRewrite(RewriteRequest rew
                 true,
                 ""rewriteToken goes here"",
                 data.length);
-    }"
+    }",https://github.com/apache/camel/blob/0f00efcd0e3ad9149092e315faea2ed4f2b2dde5/components/camel-google/camel-google-storage/src/test/java/org/apache/camel/component/google/storage/localstorage/FakeStorageRpc.java#L487
 114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,3963e75bb0baefb83952e4c976c7a18c5e082743,composite,"  Bitmap toRotate = Bitmap.createBitmap(200, 100, Bitmap.Config.ARGB_8888);
   toRotate.setColorSpace(ColorSpace.get(ColorSpace.Named.DISPLAY_P3));
 
@@ -640,4 +640,4 @@ public void testInitializeMatrixSetsScaleIfFlipHorizontal() {
       ExifInterface.ORIENTATION_FLIP_HORIZONTAL, matrix);
   verify(matrix).setScale(-1, 1);
 }
-",
+",,https://github.com/bumptech/glide/blob/9c9f56f29e63114c409184dd1e82b42b3f0063f7/library/test/src/test/java/com/bumptech/glide/load/resource/bitmap/TransformationUtilsTest.java#L428

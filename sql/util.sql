@@ -1,15 +1,22 @@
 -- Export Dataset
-SELECT id,
-       repository_id                                   as repository,
-       text                                            as comment,
-       CASE WHEN is_td = TRUE THEN 'yes' ELSE 'no' END AS satd,
-       td_type                                         as type,
-       code_before,
-       code_after,
-       code_method
-from comment
-where is_random = TRUE
-order by id;
+SELECT
+       c.id,
+       c.repository_id                                   AS repository,
+       c.text                                            AS comment,
+       CASE WHEN c.is_td = TRUE THEN 'yes' ELSE 'no' END AS satd,
+       c.td_type                                         AS type,
+       c.code_before,
+       c.code_after,
+       c.code_method,
+       r.repo_url || '/blob/' || r.commit_hash || '/' ||
+       c.file || '#L' || c.start_line          AS url
+
+FROM comment c
+JOIN repository r
+     ON c.repository_id = r.id
+
+WHERE c.is_random = TRUE
+ORDER BY c.id;
 
 -- Classified SATD Count
 select td_type, count(id)
