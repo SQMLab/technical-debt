@@ -1,4 +1,4 @@
-id,repository,text,hash,label,code_before,code_after,cot
+id,repository,text,hash,label,code_before,code_after,cot,url
 876542,337,// TODO(b/73762053): Avoid generating unreachable statements.,bd58d2abf2501eec8f23cb94202154d95254c5c4,yes,"@Test
 public void testUnreachableCodeGeneration() {
   rewriteGeneratorBody(
@@ -17,7 +17,7 @@ public void testReturnGenerator() {
   rewriteGeneratorsTest(
       srcs(""function f() { return function *g() {yield 1;} }""),
       expected(
-          lines(",This comment includes keyword TODO that indicate Self-admitted technical debt.
+          lines(",This comment includes keyword TODO that indicate Self-admitted technical debt.,https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/Es6RewriteGeneratorsTest.java#L492
 176603,56,// Add some role mappings directly in LDAP,3d27ca79dec28538ece8a3669df1fd32b54b1b6e,no,"    UserModel johnRoleMapper = session.users().getUserByUsername(appRealm, ""johnrolemapper"");
     Assert.assertNotNull(johnRoleMapper);
     Assert.assertEquals(0, johnRoleMapper.getRealmRoleMappingsStream().count());
@@ -36,7 +36,7 @@ LDAPObject johnLdap = ldapProvider.loadLDAPUserByUsername(appRealm, ""johnrolema
 roleMapper.addRoleMappingInLDAP(""realmRole1"", johnLdap);
 roleMapper.addRoleMappingInLDAP(""realmRole2"", johnLdap);
 
-// Get user and check that he has requested roles from LDAP",This comment describes the purpose of code that follows comment and does not indicate any future action is needed.
+// Get user and check that he has requested roles from LDAP",This comment describes the purpose of code that follows comment and does not indicate any future action is needed.,https://github.com/keycloak/keycloak/blob/7e5540896bbbafc02234b6ea2b15215dc24cb972/testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/federation/ldap/LDAPRoleMappingsTest.java#L365
 398677,119,// Alpha does not support DML yet,cf334a26e69e02dc55dae634ec3e31c4a52ebdf8,yes,"    assertUpdate(""CREATE TABLE test_alpha_ddl_partitioned_table (col1 bigint, ds VARCHAR) WITH (format = 'ALPHA', partitioned_by = ARRAY['ds'])"");
     assertUpdate(""ALTER TABLE test_alpha_ddl_partitioned_table ADD COLUMN col2 bigint"");
     assertUpdate(""ALTER TABLE test_alpha_ddl_partitioned_table DROP COLUMN col2"");
@@ -55,7 +55,7 @@ public void testAlphaFormatDml()
 public void testInvokedFunctionNamesLog()
 {
     QueryRunner queryRunner = getQueryRunner();
-    Session logFunctionNamesEnabledSession = Session.builder(getSession())",Suggest that application does not support DML feature at this point which implicitly suggest in future this feature support need to be added.
+    Session logFunctionNamesEnabledSession = Session.builder(getSession())",Suggest that application does not support DML feature at this point which implicitly suggest in future this feature support need to be added.,https://github.com/prestodb/presto/blob/e84e4d21c8a1429095a180f5152de0b988b998d2/presto-hive/src/test/java/com/facebook/presto/hive/TestHiveIntegrationSmokeTest.java#L6133
 909809,374,// check copied position delete row,478ef32a94236f4062458978996539c7c3ffafac,no,"        .rewriteLocationPrefix(table.location(), targetTableLocation())
         .execute();
 
@@ -74,7 +74,7 @@ copyTableFiles(result);
   assertThat(spark.read().format(""iceberg"").load(targetTableLocation()).count()).isEqualTo(1);
 }
 
-@Test",Describes expected behavior of output of test code that follows the comment.
+@Test",Describes expected behavior of output of test code that follows the comment.,https://github.com/apache/iceberg/blob/31e9dc768cef47df5eb007577f25ef3bbff86f61/spark/v3.5/spark/src/test/java/org/apache/iceberg/spark/actions/TestRewriteTablePathsAction.java#L429
 1512588,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,25f399a80a38c70853f9ee13c3297af9ca4c5126,yes,"
 @Override
 public boolean equals(Object o) {
@@ -93,7 +93,7 @@ if (!Arrays.equals(jobs, that.jobs))
 if (list != null ? !list.equals(that.list) : that.list != null)
     return false;
 if (map != null ? !map.equals(that.map) : that.map != null)
-    return false;","Explicitly indicates the developer's uncertainty about the correctness, implicitly suggesting potential future work."
+    return false;","Explicitly indicates the developer's uncertainty about the correctness, implicitly suggesting potential future work.",https://github.com/sofastack/sofa-rpc/blob/be93251f7ac754178811dd04d826ebe8f0967a1a/test/test-integration/src/test/java/com/alipay/sofa/rpc/test/generic/bean/ComplexBean.java#L84
 1197422,567,// Endless loop,cb6986c5b47c9f153c5e82b80fe459cfec66d7a2,no,"
 this.topicOperatorMetricsGatherer = new TopicOperatorMetricsCollectionScheduler(this.topicOperatorCollector, ""strimzi.io/cluster="" + this.testStorage.getClusterName());
 this.topicOperatorMetricsGatherer.startCollecting();
@@ -112,7 +112,7 @@ final int minInSyncReplicas = 2;
         KafkaTopicScalabilityUtils.createTopicsViaK8s(testStorage.getNamespaceName(), testStorage.getClusterName(),
             testStorage.getTopicName(), start, end, topicPartitions, topicReplicas, minInSyncReplicas);
         KafkaTopicScalabilityUtils.waitForTopicStatus(testStorage.getNamespaceName(), testStorage.getTopicName(),
-            start, end, CustomResourceStatus.Ready, ConditionStatus.True);",Describes code that the comment follows.
+            start, end, CustomResourceStatus.Ready, ConditionStatus.True);",Describes code that the comment follows.,https://github.com/strimzi/strimzi-kafka-operator/blob/340268b3c0db9d66e621264f239807456d07eaff/systemtest/src/test/java/io/strimzi/systemtest/performance/TopicOperatorPerformance.java#L169
 203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,d3b33fef2f8d09456a8486124d5086fa77105cf9,yes,"import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
@@ -131,7 +131,7 @@ import java.util.Map;
  * a log file containing the actual output.
  *
  * <p>Typical usage is as follows. A test case class defines a method
- *",It indicates a code duplication issue where a file has been copied rather than properly integrated as a dependency.
+ *",It indicates a code duplication issue where a file has been copied rather than properly integrated as a dependency.,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-table/flink-table-planner/src/test/java/org/apache/flink/table/planner/utils/DiffRepository.java#L51
 1134559,491,// Ignore exceptions,7bca75192d6b9400bbcc2d0814037df389e1cd09,no,"  notificationLog = insertTxnWriteNotificationLog(TXN_ID, WRITE_ID, DB_NAME, TABLE_NAME);
 }
 
@@ -150,7 +150,7 @@ try {
     objectStore.getPersistenceManager().deletePersistent(notificationLog);
   }
 } catch (Exception e) {
-  // Ignore exceptions",This is bad because the exception is ignored without explanation that may lead to hidden failures so need to handle this.
+  // Ignore exceptions",This is bad because the exception is ignored without explanation that may lead to hidden failures so need to handle this.,https://github.com/apache/hive/blob/b914b6a29ba0b1fab5e64034ee289e2deaa1a844/standalone-metastore/metastore-server/src/test/java/org/apache/hadoop/hive/metastore/client/TestGetAllWriteEventInfo.java#L88
 499770,137,//hacky workaround using the toString method to avoid mocking the Ruby runtime,a50adb8fb3a4179c582da6f34b27eeff12e4fa94,yes,"@RunWith(MockitoJUnitRunner.class)
 public class RubyHashGaugeTest {
 
@@ -169,7 +169,7 @@ public void getValue() {
     RubyHashGauge gauge = new RubyHashGauge(""bar"", rubyHash);
     assertThat(gauge.getValue().toString()).isEqualTo(RUBY_HASH_AS_STRING);
     assertThat(gauge.getType()).isEqualTo(MetricType.GAUGE_RUBYHASH);
-",Contains the phrase hacky workaround which matches frequently appeared typical keywords indicating SATD.
+",Contains the phrase hacky workaround which matches frequently appeared typical keywords indicating SATD.,https://github.com/elastic/logstash/blob/5573b5ad777eef7a4204f2376bd601090d7866bc/logstash-core/src/test/java/org/logstash/instrument/metrics/gauge/RubyHashGaugeTest.java#L49
 149266,40,"// Should have 6 total fetches, 3 fetches for topic foo (though 4 partitions but 3 fetches) and 3
 // fetches for topic bar (though 3 partitions but 3 fetches).",0a5a56e2ecb01db96e61f3acc949b79386c50359,no,");
 expectedMetrics.put(
@@ -189,7 +189,7 @@ expectedMetrics.forEach((metric, test) -> {
 
 @Test
 public void testMultipleConcurrentShareFetches() throws InterruptedException {
-",Describes expected result of test code that follows this comments.
+",Describes expected result of test code that follows this comments.,https://github.com/apache/kafka/blob/a6ec7584888a4202542eb2d8debbe1a924784aa2/core/src/test/java/kafka/server/share/SharePartitionManagerTest.java#L1115
 571347,159,"// Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
 // which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
 // successfully, but in order to shorten the test time, we chose one million numbers.",5baba5460e6f4c12a7feb225797a047fd7698dcb,yes,"import org.junit.Assert;
@@ -210,7 +210,7 @@ for (long i = 1; i <= largeInputSize; i++) {
 }
 byte[] hllLargeBytes = HllUtil.serializeToBytes(hll);
 hllCardinalityUDF.initialize(new ObjectInspector[] { inputOI0 });
-Object evaluateLarge = hllCardinalityUDF",It acknowledges a trade-off between accuracy and test efficiency which could impact the reliability of the test.
+Object evaluateLarge = hllCardinalityUDF",It acknowledges a trade-off between accuracy and test efficiency which could impact the reliability of the test.,https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/hive-udf/src/test/java/org/apache/doris/HllUDFTest.java#L44
 148864,40,"// After records are acquired, the initialReadGapOffset should be updated",a44b8534af35dd1eeec1e1452294568831483648,no,"assertEquals(SharePartitionState.ACTIVE, sharePartition.partitionState());
 assertFalse(sharePartition.cachedState().isEmpty());
 assertEquals(11, sharePartition.startOffset());
@@ -229,7 +229,7 @@ assertNotNull(initialReadGapOffset);
 public void testAcquireGapAtBeginningAndFetchedRecordsOverlapInFlightBatches() {
     Persister persister = Mockito.mock(Persister.class);
     ReadShareGroupStateResult readShareGroupStateResult = Mockito.mock(ReadShareGroupStateResult.class);
-    Mockito.when(readShareGroupStateResult.topicsData()).thenReturn(List.of(",Describes expected result of test code that follows this comments.
+    Mockito.when(readShareGroupStateResult.topicsData()).thenReturn(List.of(",Describes expected result of test code that follows this comments.,https://github.com/apache/kafka/blob/a6ec7584888a4202542eb2d8debbe1a924784aa2/core/src/test/java/kafka/server/share/SharePartitionTest.java#L2315
 1004573,441,"// read() and closeEntry() must throw IOExceptions to indicate that
 // the stream is corrupt. The bug above reported that they would loop
 // forever.",4ad63a32abf4e1c61ce02cc670432cb488c31dbc,yes,"private static final byte[] INCOMPLETE_ZIP = new byte[] {
@@ -250,7 +250,7 @@ public void testReadOnIncompleteStream() throws Exception {
 try {
     zi.closeEntry();
     fail();
-} catch (IOException expected) {",This is a know bug that is reported already and implicitly suggest that it need to be fixed.
+} catch (IOException expected) {",This is a know bug that is reported already and implicitly suggest that it need to be fixed.,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/luni/src/test/java/libcore/java/util/zip/ZipInputStreamTest.java#L98
 776498,269,// make host1 a little worse,9d1264b569f16c4486e10ee9721393f92983e3a9,no,"InetAddressAndPort host2 = InetAddressAndPort.getByName(""127.0.0.3"");
 InetAddressAndPort host3 = InetAddressAndPort.getByName(""127.0.0.4"");
 InetAddressAndPort host4 = InetAddressAndPort.getByName(""127.0.0.5"");
@@ -269,4 +269,4 @@ Util.assertRCEquals(order, dsnitch.sortedByProximity(self, full(host1, host2, ho
 setScores(dsnitch, 2, hosts, 15, 20, 10);
 order = full(host3, host1, host2);
 Util.assertRCEquals(order, dsnitch.sortedByProximity(self, full(host1, host2, host3)));
-",Describes a deliberate modification to the test setup for testing purpose.
+",Describes a deliberate modification to the test setup for testing purpose.,https://github.com/apache/cassandra/blob/511bd203144a71bf0a72876a393d186a9778407e/test/unit/org/apache/cassandra/locator/DynamicEndpointSnitchTest.java#L104
