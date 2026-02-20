@@ -7,6 +7,9 @@ from util import report_mismatch
 import PromptTemplate
 import pandas as pd
 from OutputLabelConverter import OutputLabelConverter
+from sklearn.metrics import roc_auc_score
+from sklearn.metrics import matthews_corrcoef
+
 import random
 from datasets.utils.logging import set_verbosity, disable_progress_bar, enable_progress_bar
 
@@ -50,7 +53,7 @@ class Model:
         self.unknown_labels.clear()
 
     def predict_end(self, dataset: Dataset, dataset_name, label_predictions, raw_label_predictions,
-                    model_name_suffix: str = None):
+                    model_name_suffix: str = None, label_probabilities: list = None):
         full_model_name = self.get_full_model_name(model_name_suffix)
         output_file_name = self.get_output_file_name(full_model_name)
         timestamp = datetime.now().strftime("%B %d, %Y, %H:%M:%S")
@@ -85,12 +88,22 @@ class Model:
                     "f1-score": round(values.get("f1-score", 0), 3),
                     "support": int(values.get("support", 0))
                 }
+            if metric == "yes":
+                row["mcc"] =  round(matthews_corrcoef(self.label_to_probability(dataset['label']),self.label_to_probability(label_predictions)), 3)
+                if label_probabilities:
+                    row["auc"] = round(roc_auc_score(self.label_to_probability(dataset['label']), label_probabilities), 3)
+                else:
+                    row["auc"] = None
+            else:
+                row["mcc"] = None
+                row["auc"] = None
+
             row["model"] = full_model_name
             row["dataset"] = dataset_name
             rows.append(row)
 
         report_df = pd.DataFrame(rows)
-        report_df = report_df[["model", "dataset", "metric", "precision", "recall", "f1-score", "support"]]
+        report_df = report_df[["model", "dataset", "metric", "precision", "recall", "f1-score", "mcc", "auc", "support"]]
         output_metrics_file = f'{self.get_base_output_directory()}/{self.task_type}_output_metrics.csv'
         os.makedirs(os.path.dirname(output_metrics_file), exist_ok=True)
         if os.path.exists(output_metrics_file):
@@ -254,3 +267,58 @@ class Model:
             return f'{prompt_template.name}-{n_shot_size}-shot'
         else:
             return f'{n_shot_size}-shot'
+
+    def label_to_probability(self, labels):
+        return [1 if x.lower() == "yes" else 0 for x in labels]
+
+    def inject_mcc_auc(self, dataset: Dataset, dataset_name, label_predictions, raw_label_predictions,
+                    full_model_name: str = None, label_probabilities: list = None):
+
+        report_dict = classification_report(dataset['label'], label_predictions, zero_division=0, digits=3,
+                                            output_dict=True)
+        rows = []
+        total_support = int(report_dict['macro avg']['support'])
+        for metric, values in report_dict.items():
+            if metric == "accuracy":
+                row = {
+                    "metric": metric,
+                    "precision": None,
+                    "recall": None,
+                    "f1-score": round(values, 3),
+                    "support": total_support
+                }
+            else:
+                row = {
+                    "metric": metric,
+                    "precision": round(values.get("precision", 0), 3),
+                    "recall": round(values.get("recall", 0), 3),
+                    "f1-score": round(values.get("f1-score", 0), 3),
+                    "support": int(values.get("support", 0))
+                }
+            if metric == "yes":
+                row["mcc"] =  round(matthews_corrcoef(self.label_to_probability(dataset['label']),self.label_to_probability(label_predictions)), 3)
+                if label_probabilities:
+                    row["auc"] = round(roc_auc_score(self.label_to_probability(dataset['label']), label_probabilities), 3)
+                else:
+                    row["auc"] = None
+            else:
+                row["mcc"] = None
+                row["auc"] = None
+
+            row["model"] = full_model_name
+            row["dataset"] = dataset_name
+            rows.append(row)
+
+        report_df = pd.DataFrame(rows)
+        report_df = report_df[["model", "dataset", "metric", "precision", "recall", "f1-score", "mcc", "auc", "support"]]
+        output_metrics_file = f'{self.get_base_output_directory()}/{self.task_type}_output_metrics.csv'
+        os.makedirs(os.path.dirname(output_metrics_file), exist_ok=True)
+        if os.path.exists(output_metrics_file):
+            output_metric_df = pd.read_csv(output_metrics_file)
+            output_metric_df = output_metric_df[
+                ~((output_metric_df["model"] == full_model_name) &
+                  (output_metric_df["dataset"] == dataset_name))
+            ]
+            pd.concat([output_metric_df, report_df], ignore_index=True).to_csv(output_metrics_file, index=False)
+        else:
+            report_df.to_csv(output_metrics_file, index=False)
