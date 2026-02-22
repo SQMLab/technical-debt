@@ -274,7 +274,7 @@ def plot_five_subplots(
         x = arrays[m]
         bp = ax.boxplot(
             [x],
-            labels=[m],
+            tick_labels=[m],
             showfliers=True,
             patch_artist=True,
             widths=box_width,
