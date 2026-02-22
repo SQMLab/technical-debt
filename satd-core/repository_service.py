@@ -35,3 +35,20 @@ def clone_and_checkout_commit(repo_url, repository_directory, commit_hash):
         raise Exception(f"❌ Git command failed: {repository_directory} {str(e)}")
     except Exception as e:
         raise Exception(f"❌ Error: {str(e)}")
+
+
+def get_all_commit_info(repo_path, branch="HEAD"):
+    repo = Repo(repo_path)
+    commits = []
+
+    for c in repo.iter_commits(branch):
+        commits.append({
+            "hash": c.hexsha,
+            "author": c.author.name,
+            "email": c.author.email,
+            "date": c.committed_datetime,
+            "message": c.message.strip(),
+            "parents": [p.hexsha for p in c.parents],
+        })
+
+    return commits
