@@ -8,12 +8,15 @@ from datasets import Dataset
 import pandas as pd
 from OutputLabelConverter import OutputLabelConverter
 load_dotenv()
-BASE_MAT_DIRECTORY = os.getenv('BASE_MAT_DIRECTORY')
 from util import get_default_JVM_path
 
 class BaselineModel(Model):
-    def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter):
+    def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter, mode, algorithm,
+                 data_directory: str):
         super().__init__(task_type, model_uri, output_label_converter, 10000)
+        self.data_directory = data_directory
+        self.mode = mode
+        self.algorithm = algorithm
 
     def fit(self, dataset: Dataset):
         pass
@@ -36,17 +39,16 @@ class BaselineModel(Model):
 
         Settings.projectNames = JArray(JString)(["train", "test"])
 
-        mode,*_, algorithm = self.model_uri.split('-')
         args = [
-            "-p", os.path.join(f'{BASE_MAT_DIRECTORY}/{mode}/input', ''),
-            "-o", os.path.join(f'{BASE_MAT_DIRECTORY}/{mode}/output', ''),
-            "-m", algorithm,
+            "-p", os.path.join(f'{self.data_directory}/{self.mode}/input', ''),
+            "-o", os.path.join(f'{self.data_directory}/{self.mode}/output', ''),
+            "-m", self.algorithm,
             "-s", "MTO"
         ]
         Main.main(JArray(JString)(args))
         #jpype.shutdownJVM()
 
-        predicted_label_df = pd.read_csv(os.path.join(f'{BASE_MAT_DIRECTORY}/{mode}/output', f'MTO_{algorithm}/result--test.txt'), header=None, names=['label'])
+        predicted_label_df = pd.read_csv(os.path.join(f'{self.data_directory}/{self.mode}/output', f'MTO_{self.algorithm}/result--test.txt'), header=None, names=['label'])
         assert len(predicted_label_df) == len(dataset)
         label_predictions = predicted_label_df['label'].map({0: 'no', 1: 'yes'}).tolist()
         raw_label_predictions = predicted_label_df['label'].map({0: '0', 1: '1'}).tolist()
