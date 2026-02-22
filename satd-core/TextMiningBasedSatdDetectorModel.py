@@ -8,11 +8,12 @@ from OutputLabelConverter import OutputLabelConverter
 from util import get_default_JVM_path
 load_dotenv()
 
-BASE_SATD_DETECTOR_DIRECTORY = os.getenv('BASE_SATD_DETECTOR_DIRECTORY')
 
 class TextMiningBasedSatdDetectorModel(Model):
-    def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter, retrain: bool = False):
+    def __init__(self, task_type: str, model_uri: str, output_label_converter: OutputLabelConverter, data_directory,
+                 retrain: bool = False):
         super().__init__(task_type, model_uri, output_label_converter, 10000)
+        self.data_directory = data_directory
         self.retrain = retrain
 
     def fit(self, dataset: Dataset):
@@ -24,7 +25,7 @@ class TextMiningBasedSatdDetectorModel(Model):
         if self.retrain:
             from satd_detector.core.train import Train
             try:
-                Train.buildModels(os.path.join(BASE_SATD_DETECTOR_DIRECTORY, 'comments.txt'), os.path.join(BASE_SATD_DETECTOR_DIRECTORY, 'labels.txt'), os.path.join(BASE_SATD_DETECTOR_DIRECTORY, 'projects.txt'), f'{BASE_SATD_DETECTOR_DIRECTORY}/models/')
+                Train.buildModels(os.path.join(self.data_directory, 'comments.txt'), os.path.join(self.data_directory, 'labels.txt'), os.path.join(self.data_directory, 'projects.txt'), f'{self.data_directory}/models/')
             except Exception as e:
                 print("Error:", e)
 
@@ -33,7 +34,7 @@ class TextMiningBasedSatdDetectorModel(Model):
         label_predictions = []
         raw_label_predictions = []
         from satd_detector.core.utils import SATDDetector
-        detector1 =  SATDDetector(f'{BASE_SATD_DETECTOR_DIRECTORY}/models/') if self.retrain else SATDDetector()
+        detector1 =  SATDDetector(f'{self.data_directory}/models/') if self.retrain else SATDDetector()
         for index in range(dataset.num_rows):
             label_pred = 'yes' if detector1.isSATD(dataset['text'][index]) else 'no'
             raw_label_predictions.append(label_pred)
