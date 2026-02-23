@@ -262,14 +262,14 @@ def plot_five_subplots(
     hatches: Dict,
     yscale: Optional[str] = None,
     yscale_kwargs: Optional[Dict] = None,
-    box_width: float = 0.10,  # thinner boxes (requested)
+    box_width: float = 0.50,  # thinner boxes (requested)
 ) -> None:
     """
     Always produces 1x5 subplots (primary requirement).
     No titles, no per-axis ε text.
     """
     fig, axes = plt.subplots(1, 5, figsize=figsize, sharey=False)
-
+    fig.subplots_adjust(wspace=0.6)
     for ax, m in zip(axes, METRICS):
         x = arrays[m]
         bp = ax.boxplot(
@@ -288,12 +288,14 @@ def plot_five_subplots(
         ax.grid(True, axis="y", linestyle=":", linewidth=0.5)
 
         # Tight horizontal padding + median annotation (right of median line).
-        tighten_horizontal_padding(ax, bp, widths=box_width)
+        # tighten_horizontal_padding(ax, bp, widths=box_width)
         annotate_median_right_of_line(ax, bp)
 
     # Tighten subplot spacing (requested minimal whitespace).
     os.makedirs(Path(out_path).parent, exist_ok=True)
-    fig.tight_layout(pad=0.3, w_pad=0.25, h_pad=0.2)
+    # fig.tight_layout(pad=0.3, w_pad=0.25, h_pad=0.2)
+    # fig.tight_layout(...)   # remove
+    # fig.subplots_adjust(wspace=0.8, left=0.04, right=0.99)
     fig.savefig(out_path, dpi=dpi, bbox_inches="tight")
     print(f"Saved: {out_path}")
     plt.show()
@@ -353,7 +355,7 @@ def main(
         hatches=hatches,
         yscale=None,
         yscale_kwargs=None,
-        box_width=0.10,
+        box_width=0.25,
     )
 
     if show_log:
@@ -375,7 +377,7 @@ def main(
             hatches=hatches,
             yscale="log",
             yscale_kwargs={"base": 10, "nonpositive": "clip"},
-            box_width=0.10,
+            box_width=0.25,
         )
 
 
