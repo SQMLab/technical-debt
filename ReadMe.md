@@ -1,12 +1,12 @@
 
-# 🧩 Replication Package: A First Look at the Self-Admitted Technical Debt (SATD) in Test Code
+# 🧩 Replication Package: A First Look at the Self-Admitted Technical Debt in Test Code: Taxonomy and Detection
 
 ---
 
 ## 📖 Abstract
 
 Self-Admitted Technical Debt (SATD) refers to comments in which developers explicitly acknowledge limitations, workarounds, or deferred improvements in code.  
-While prior research has primarily focused on production code, this study presents the **first large-scale empirical investigation of SATD in test code**, introducing a taxonomy of 14 categories and evaluating both traditional detection tools and large language models (LLMs).
+While prior research has primarily focused on production code, this study presents the **first large-scale empirical investigation of SATD in test code**, introducing a taxonomy of 14 categories and evaluating both traditional approaches and large language models (LLMs).
 
 ---
 
@@ -60,9 +60,9 @@ result/
 
 ---
 
-## RQ2 – Traditional SATD Detection Tools
+## RQ2 – Existing SATD Detection Approaches
 
-RQ2 evaluates **existing SATD detection tools** on SATD comments extracted from test code.
+RQ2 evaluates **existing SATD detection approaches** on SATD comments extracted from test code.
 
 ```
 result/rq2/
