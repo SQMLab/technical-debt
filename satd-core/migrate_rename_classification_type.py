@@ -1,5 +1,5 @@
 """
-migrate_upsrt_classification_type.py
+migrate_rename_classification_type.py
 ----------------------
 Renames atomic label/type tokens across ALL classification CSVs — including
 the ground-truth source files.
@@ -15,9 +15,9 @@ HOW TO USE
      to rename.  The left-hand side (key) is the current token; the
      right-hand side (value) is what it becomes.
   2. Run a preview first:
-       python3 migrate_upsrt_classification_type.py --dry-run
+       python3 migrate_rename_classification_type.py --dry-run
   3. Apply when happy:
-       python3 migrate_upsrt_classification_type.py
+       python3 migrate_rename_classification_type.py
 """
 
 import csv
