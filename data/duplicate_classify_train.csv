@@ -100,7 +100,7 @@ try {
 
         zi.close();
     }",https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/luni/src/test/java/libcore/java/util/zip/ZipInputStreamTest.java#L98
-423851,128,// Ignored in automated tests due to flakiness by design,410dc6f2dfa5a79ed813ff8e14149c62d4585a0d,composite,"  cgroupMemory = ResourceHandlerModule.getCGroupsHandler()
+423851,128,// Ignored in automated tests due to flakiness by design,410dc6f2dfa5a79ed813ff8e14149c62d4585a0d,design skip-test,"  cgroupMemory = ResourceHandlerModule.getCGroupsHandler()
       .getPathForCGroup(CGroupsHandler.CGroupController.MEMORY, cgroup);
 }
 
@@ -622,7 +622,7 @@ long generation = 1;","    public RewriteResponse openRewrite(RewriteRequest rew
                 ""rewriteToken goes here"",
                 data.length);
     }",https://github.com/apache/camel/blob/0f00efcd0e3ad9149092e315faea2ed4f2b2dde5/components/camel-google/camel-google-storage/src/test/java/org/apache/camel/component/google/storage/localstorage/FakeStorageRpc.java#L487
-114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,3963e75bb0baefb83952e4c976c7a18c5e082743,composite,"  Bitmap toRotate = Bitmap.createBitmap(200, 100, Bitmap.Config.ARGB_8888);
+114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,3963e75bb0baefb83952e4c976c7a18c5e082743,dependency,"  Bitmap toRotate = Bitmap.createBitmap(200, 100, Bitmap.Config.ARGB_8888);
   toRotate.setColorSpace(ColorSpace.get(ColorSpace.Named.DISPLAY_P3));
 
   Bitmap rotated =
