@@ -1,23 +1,24 @@
 """
 migrate_update_classification_type.py
-----------------------
-Renames atomic label/type tokens across ALL classification CSVs — including
-the ground-truth source files.
+-----------------
+Migrates classification labels from the latest ground-truth files into all
+downstream CSV files.
 
-HOW IT WORKS
-  Each cell value may be a single token ("defect") or multiple space-separated
-  tokens ("defect skip-test").  The script splits every value into its atomic
-  tokens, applies the LABEL_MAP rename to each token individually, then
-  re-joins them.  Tokens not present in LABEL_MAP are left unchanged.
+Source of truth  (column: label):
+    data/duplicate_classify_test.csv
+    data/duplicate_classify_train.csv
 
-HOW TO USE
-  1. Edit LABEL_MAP below — change the right-hand side of any entry you want
-     to rename.  The left-hand side (key) is the current token; the
-     right-hand side (value) is what it becomes.
-  2. Run a preview first:
-       python3 migrate_update_classification_type.py --dry-run
-  3. Apply when happy:
-       python3 migrate_update_classification_type.py
+Targets to update:
+    data/comment.csv              → column: type
+    data/duplicate_satd_comment.csv  → column: label
+    data/unique_satd_comment.csv     → column: label
+    data/unique_classify_test.csv    → column: label
+    data/unique_classify_train.csv   → column: label
+    data/classify_n_shot.csv         → column: label
+
+Integrity rule:
+    Any two rows (across all files) that share the same hash value must be
+    assigned the same label.  Violations are reported but do NOT abort the run.
 """
 
 import csv
@@ -25,40 +26,22 @@ import os
 import sys
 from collections import defaultdict
 
+# Some rows contain large code snippets — raise the field-size limit to max.
 csv.field_size_limit(sys.maxsize)
 
 # ---------------------------------------------------------------------------
-# ★  EDIT THIS MAP  ★
-#    key   = current atomic token (as it appears in the CSV today)
-#    value = the token it should become  (keep identical to do nothing)
+# Configuration
 # ---------------------------------------------------------------------------
-LABEL_MAP: dict[str, str] = {
-    "build":               "build",
-    "composite":           "composite",
-    "defect":              "defect",
-    "dependency":          "dependency",
-    "design":              "design",
-    "documentation":       "documentation",
-    "how-to":              "how-to",
-    "low-internal-quality":"low-internal-quality",
-    "partial-test":        "partial-test",
-    "requirement":         "requirement",
-    "skip-test":           "skip-test",
-    "superficial-test":    "superficial-test",
-    "workaround":          "workaround",
-}
 
-# ---------------------------------------------------------------------------
-# Files and the column to patch
-# (source ground-truth files are included this time)
-# ---------------------------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-ALL_FILES: list[tuple[str, str]] = [
-    # ── ground-truth sources ────────────────────────────────────────────
-    (os.path.join(BASE_DIR, "../data", "duplicate_classify_test.csv"), "label"),
-    (os.path.join(BASE_DIR, "../data", "duplicate_classify_train.csv"), "label"),
-    # ── downstream targets ──────────────────────────────────────────────
+SOURCE_FILES = [
+    os.path.join(BASE_DIR, "../data", "duplicate_classify_test.csv"),
+    os.path.join(BASE_DIR, "../data", "duplicate_classify_train.csv"),
+]
+
+# (file path, column to update)
+TARGET_FILES = [
     (os.path.join(BASE_DIR, "../data", "comment.csv"), "type"),
     (os.path.join(BASE_DIR, "../data", "duplicate_satd_comment.csv"), "label"),
     (os.path.join(BASE_DIR, "../data", "unique_classify_test.csv"), "label"),
@@ -67,70 +50,143 @@ ALL_FILES: list[tuple[str, str]] = [
     (os.path.join(BASE_DIR, "../data", "classify_n_shot.csv"), "label"),
 ]
 
+# ---------------------------------------------------------------------------
+# Step 1 – Load source labels
+# ---------------------------------------------------------------------------
+
+def load_source_labels():
+    """
+    Read both source files and return:
+        id_to_label : dict  str(id) -> str(label)
+        id_to_hash  : dict  str(id) -> str(hash)
+
+    Emits a WARNING when the same id appears in both source files with a
+    different label (last-writer wins so the caller sees the conflict).
+    """
+    id_to_label: dict[str, str] = {}
+    id_to_hash:  dict[str, str] = {}
+
+    for filepath in SOURCE_FILES:
+        filename = os.path.basename(filepath)
+        if not os.path.exists(filepath):
+            print(f"  [WARN] Source file not found, skipping: {filename}")
+            continue
+
+        with open(filepath, newline="", encoding="utf-8") as fh:
+            reader = csv.DictReader(fh)
+            _require_cols(reader.fieldnames or [], ["id", "hash", "label"], filename)
+            for row in reader:
+                row_id   = row["id"].strip()
+                label    = row["label"].strip()
+                hash_val = row["hash"].strip()
+
+                if row_id in id_to_label and id_to_label[row_id] != label:
+                    print(
+                        f"  [WARN] ID {row_id!r} has conflicting labels across source files: "
+                        f"'{id_to_label[row_id]}' (previous) vs '{label}' (in {filename}). "
+                        f"Using '{label}'."
+                    )
+
+                id_to_label[row_id] = label
+                id_to_hash[row_id]  = hash_val
+
+    return id_to_label, id_to_hash
+
 
 # ---------------------------------------------------------------------------
-# Core helpers
+# Step 2 – Integrity checks
 # ---------------------------------------------------------------------------
 
-def remap_value(raw: str) -> str:
+def check_source_integrity(id_to_label: dict, id_to_hash: dict) -> bool:
     """
-    Split a (possibly multi-token) label value on whitespace, remap each
-    token via LABEL_MAP, and rejoin with the original separator.
-
-    Example:
-        "defect skip-test"
-         → tokens: ["defect", "skip-test"]
-         → remapped: [LABEL_MAP["defect"], LABEL_MAP["skip-test"]]
-         → result: "<new_defect> <new_skip-test>"
+    Within the source mapping: every id that shares a hash value must map to
+    the same label.  Returns True if clean.
     """
-    tokens = raw.split()
-    remapped = [LABEL_MAP.get(tok, tok) for tok in tokens]
-    return " ".join(remapped)
+    hash_to_ids: dict[str, list[str]] = defaultdict(list)
+    for row_id, hash_val in id_to_hash.items():
+        hash_to_ids[hash_val].append(row_id)
+
+    violations_found = False
+    for hash_val, ids in hash_to_ids.items():
+        labels = {id_to_label[i] for i in ids}
+        if len(labels) > 1:
+            violations_found = True
+            print(f"    [VIOLATION] hash={hash_val!r}")
+            for i in ids:
+                print(f"      ID {i!r} → label '{id_to_label[i]}'")
+
+    return not violations_found
 
 
-def collect_unknowns(filepath: str, col: str) -> set[str]:
-    """Return atomic tokens present in the file that are not in LABEL_MAP."""
-    unknown: set[str] = set()
+def check_target_integrity(
+    filepath: str,
+    label_col: str,
+    id_to_label: dict,
+) -> bool:
+    """
+    Within a target file: for each unique hash value, every row whose id maps
+    to a source label must receive the same label.  Returns True if clean.
+    """
+    filename = os.path.basename(filepath)
+
     with open(filepath, newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh)
+        fieldnames = reader.fieldnames or []
+        if "hash" not in fieldnames:
+            print(f"    [SKIP] {filename} has no 'hash' column — integrity not checkable.")
+            return True
+
+        hash_to_mapped: dict[str, dict[str, str]] = defaultdict(dict)  # hash -> {id: new_label}
         for row in reader:
-            val = row.get(col, "").strip()
-            if val:
-                for tok in val.split():
-                    if tok not in LABEL_MAP:
-                        unknown.add(tok)
-    return unknown
+            row_id   = row["id"].strip()
+            hash_val = row["hash"].strip()
+            if row_id in id_to_label:
+                hash_to_mapped[hash_val][row_id] = id_to_label[row_id]
+
+    clean = True
+    for hash_val, id_label_map in hash_to_mapped.items():
+        unique_labels = set(id_label_map.values())
+        if len(unique_labels) > 1:
+            clean = False
+            print(f"    [VIOLATION] {filename}  hash={hash_val!r}")
+            for vid, vlabel in id_label_map.items():
+                print(f"      ID {vid!r} → label '{vlabel}'")
+
+    return clean
 
 
-def process_file(
+# ---------------------------------------------------------------------------
+# Step 3 – Update a target file in-place
+# ---------------------------------------------------------------------------
+
+def update_file(
     filepath: str,
-    col: str,
-    dry_run: bool,
-) -> tuple[int, int]:
+    label_col: str,
+    id_to_label: dict,
+    dry_run: bool = False,
+) -> tuple[int, int, int]:
     """
-    Remap every cell in `col` using LABEL_MAP.
-    Returns (rows_changed, total_rows).
+    Overwrite label_col for every row whose id is present in id_to_label.
+    Returns (rows_updated, ids_not_in_source, total_rows).
     """
     with open(filepath, newline="", encoding="utf-8") as fh:
         reader    = csv.DictReader(fh)
         fieldnames = list(reader.fieldnames or [])
+        _require_cols(fieldnames, ["id", label_col], os.path.basename(filepath))
         rows = list(reader)
 
-    if col not in fieldnames:
-        raise ValueError(
-            f"Column '{col}' not found in {os.path.basename(filepath)}. "
-            f"Available: {fieldnames}"
-        )
+    updated     = 0
+    not_in_src  = 0
 
-    changed = 0
     for row in rows:
-        old_val = row.get(col, "").strip()
-        if not old_val:
-            continue
-        new_val = remap_value(old_val)
-        if new_val != old_val:
-            row[col] = new_val
-            changed += 1
+        row_id = row["id"].strip()
+        if row_id in id_to_label:
+            new_label = id_to_label[row_id]
+            if row.get(label_col, "").strip() != new_label:
+                row[label_col] = new_label
+                updated += 1
+        else:
+            not_in_src += 1
 
     if not dry_run:
         with open(filepath, "w", newline="", encoding="utf-8") as fh:
@@ -138,20 +194,24 @@ def process_file(
             writer.writeheader()
             writer.writerows(rows)
 
-    return changed, len(rows)
+    return updated, not_in_src, len(rows)
 
 
 # ---------------------------------------------------------------------------
-# Reporting helpers
+# Helpers
 # ---------------------------------------------------------------------------
 
-def effective_renames() -> dict[str, str]:
-    """Return only entries where the value actually differs from the key."""
-    return {k: v for k, v in LABEL_MAP.items() if k != v}
+def _require_cols(fieldnames: list, required: list, filename: str) -> None:
+    missing = [c for c in required if c not in fieldnames]
+    if missing:
+        raise ValueError(
+            f"File '{filename}' is missing required column(s): {missing}. "
+            f"Found: {fieldnames}"
+        )
 
 
 def _sep(title: str = "") -> None:
-    width = 68
+    width = 64
     if title:
         pad = width - len(title) - 4
         print(f"\n{'─' * 2} {title} {'─' * max(pad, 2)}")
@@ -160,59 +220,69 @@ def _sep(title: str = "") -> None:
 
 
 # ---------------------------------------------------------------------------
-# Main
+# Entry point
 # ---------------------------------------------------------------------------
 
 def main(dry_run: bool = False) -> None:
     if dry_run:
-        print("*** DRY RUN — no files will be modified ***\n")
+        print("*** DRY RUN — no files will be modified ***")
 
-    # ── Show active renames ────────────────────────────────────────────────
-    _sep("Active renames in LABEL_MAP")
-    renames = effective_renames()
-    if renames:
-        for old, new in sorted(renames.items()):
-            print(f"  '{old}'  →  '{new}'")
+    _sep("1. Loading source labels")
+    id_to_label, id_to_hash = load_source_labels()
+    print(f"  Loaded {len(id_to_label)} unique ID → label mappings from source files.")
+
+    # ── integrity: source ──────────────────────────────────────────────────
+    _sep("2. Source integrity  (same hash ⇒ same label)")
+    src_clean = check_source_integrity(id_to_label, id_to_hash)
+    if src_clean:
+        print("  ✓  No violations in source files.")
     else:
-        print("  (none — all keys map to themselves; edit LABEL_MAP to rename)")
+        print("  ✗  Integrity violations found in source files (see above).")
 
-    # ── Warn about unknown tokens ──────────────────────────────────────────
-    _sep("Unknown tokens (not in LABEL_MAP)")
-    any_unknown = False
-    for filepath, col in ALL_FILES:
+    # ── integrity: targets ─────────────────────────────────────────────────
+    _sep("3. Target-file integrity")
+    all_targets_clean = True
+    for filepath, label_col in TARGET_FILES:
         filename = os.path.basename(filepath)
         if not os.path.exists(filepath):
+            print(f"  [SKIP] {filename} — file not found")
             continue
-        unknowns = collect_unknowns(filepath, col)
-        if unknowns:
-            any_unknown = True
-            print(f"  {filename!s:<40}  col={col!r}  unknown: {sorted(unknowns)}")
-    if not any_unknown:
-        print("  ✓  All tokens are covered by LABEL_MAP.")
+        clean = check_target_integrity(filepath, label_col, id_to_label)
+        status = "✓" if clean else "✗"
+        if clean:
+            print(f"  {status}  {filename}")
+        else:
+            all_targets_clean = False
 
-    # ── Process files ──────────────────────────────────────────────────────
-    _sep("Processing files")
-    total_changed = 0
-    for filepath, col in ALL_FILES:
+    if all_targets_clean:
+        print("  ✓  All target files passed integrity checks.")
+
+    # ── update ─────────────────────────────────────────────────────────────
+    _sep("4. Updating target files")
+    total_updated = 0
+    for filepath, label_col in TARGET_FILES:
         filename = os.path.basename(filepath)
         if not os.path.exists(filepath):
             print(f"  SKIP  {filename} — file not found")
             continue
+
         try:
-            changed, total = process_file(filepath, col, dry_run=dry_run)
-            total_changed += changed
-            tag = "(DRY RUN)" if dry_run else "✓"
+            updated, not_in_src, total = update_file(
+                filepath, label_col, id_to_label, dry_run=dry_run
+            )
+            total_updated += updated
+            flag = "(DRY RUN)" if dry_run else ""
             print(
-                f"  {tag}  {filename!s:<42} col={col!r:<8} "
-                f"rows={total:>6}  changed={changed:>5}"
+                f"  {filename!s:<40} col={label_col!r:<8} "
+                f"rows={total:>6}  updated={updated:>5}  "
+                f"no_src={not_in_src:>5}  {flag}"
             )
         except ValueError as exc:
-            print(f"  [ERROR]  {filename}: {exc}")
+            print(f"  [ERROR] {filename}: {exc}")
 
-    # ── Summary ───────────────────────────────────────────────────────────
     _sep()
-    action = "Would change" if dry_run else "Changed"
-    print(f"  {action} {total_changed} cell(s) across all files.")
+    action = "Would update" if dry_run else "Updated"
+    print(f"  {action} {total_updated} cell(s) across all target files.")
     print("  Done.\n")
 
 
