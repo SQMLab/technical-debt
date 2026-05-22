@@ -1,6 +1,6 @@
 id,repository,text,hash,label,code_before,code_after,code_method,url
 99249,15,"// FIXME fusion mode causes hangs
-//.assertFusionMode(QueueFuseable.ASYNC)",50e563e9e39bacc9cb08b633ee296088994eb090,defect,"})
+//.assertFusionMode(QueueFuseable.ASYNC)",50e563e9e39bacc9cb08b633ee296088994eb090,defect skip-test,"})
 .doOnNext(new Consumer<GroupedFlowable<Integer, Integer>>() {
     @Override
     public void accept(GroupedFlowable<Integer, Integer> g) {
@@ -1624,7 +1624,7 @@ public void testSyncExecutionLimits() throws Exception {
         assert g.hasUnsafeAccess() : ""ABCD"";",,https://github.com/oracle/graal/blob/009a6f93e563afb1d110b42dc5951b3d6b4156f8/compiler/src/jdk.graal.compiler.test/src/jdk/graal/compiler/core/test/VerifyAssertionUsageTest.java#L251
 575964,159,"/**
  * TODO: enable when window is supported.
- */",68732b70d0e2a008f334649b3651a15a62740ae3,composite,"            + ""PROPERTIES ('replication_num' = '1'); "";
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,dependency,"            + ""PROPERTIES ('replication_num' = '1'); "";
     createTable(duplicateTable);
     String createK1K2MV = ""create materialized view k1_k2 as select k1,k2 from "" + TEST_TABLE_NAME + "" group by ""
             + ""k1,k2;"";
@@ -1928,7 +1928,7 @@ for (int i = -7; i <= 22; i++) {
       assertEquals(codecFactory.getCodec().toString(), clone.getCodec().toString());
     }
   }",https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/sdks/java/extensions/avro/src/test/java/org/apache/beam/sdk/extensions/avro/io/SerializableAvroCodecFactoryTest.java#L107
-625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,1b1618dbf25641fb9a17a0f95b1f7d69c6566556,composite,"onDelta().executeQuery(""UPDATE default."" + clonedTable + "" SET a_int = a_int + 1"");
+625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,1b1618dbf25641fb9a17a0f95b1f7d69c6566556,defect dependency,"onDelta().executeQuery(""UPDATE default."" + clonedTable + "" SET a_int = a_int + 1"");
 List<String> cdfFilesPostOnlyInsertAndUpdate = getFilesFromTableDirectory(directoryName + clonedTable + changeDataPrefix);
 assertThat(cdfFilesPostOnlyInsertAndUpdate).hasSize(2);
 
@@ -2459,7 +2459,7 @@ public void removeSettings() {
         TEST_REQUEST_TIMEOUT,
         TEST_REQUEST_TIMEOUT,
         ""ml_test"",",,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/ml/qa/native-multi-node-tests/src/javaRestTest/java/org/elasticsearch/xpack/ml/integration/AutoscalingIT.java#L78
-235306,64,// Deactivated due to https://github.com/bazelbuild/bazel/issues/9380.,ffe134867bbd41725bf26f80ca5d553b5ebfb749,composite,"    }
+235306,64,// Deactivated due to https://github.com/bazelbuild/bazel/issues/9380.,ffe134867bbd41725bf26f80ca5d553b5ebfb749,defect skip-test,"    }
   } finally {
     ServerSocket serverSocket = server.get();
 
@@ -3040,7 +3040,7 @@ protected Response mutateInstance(Response instance) {","        return null;// 
 }","    protected Response mutateInstance(Response instance) {
         return null;// TODO implement https://github.com/elastic/elasticsearch/issues/25929
     }",https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/core/src/test/java/org/elasticsearch/xpack/core/transform/action/UpgradeTransformsActionResponseTests.java#L31
-991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,composite,"check(""Currencies"", locale, currencies, currencyFormats, new DisplayNameGetter() {
+991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,dependency,"check(""Currencies"", locale, currencies, currencyFormats, new DisplayNameGetter() {
     public String get(ULocale loc, String code, Object context) {
         Currency s = Currency.getInstance(code);
         return s.getName(loc, ((Integer)context).intValue(), new boolean[1]);
@@ -3566,7 +3566,7 @@ checkState(yieldedValue.isArrayLit(), yieldedValue);","  public void testYieldAl
     assertNode(zero).hasColorThat().isEqualTo(StandardColors.NUMBER);
   }",https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/Es6RewriteGeneratorsTest.java#L1608
 1452895,763,"// TODO: this test requires rebalance logic which is not yet implemented in the CONSUMER group protocol.
-//       Once it is implemented, this should use both group protocols.",ee47e597408a935b4ba48d79a840b34f4ece0d73,composite,"public void testPollReturnsRecords(GroupProtocol groupProtocol) {
+//       Once it is implemented, this should use both group protocols.",ee47e597408a935b4ba48d79a840b34f4ece0d73,dependency,"public void testPollReturnsRecords(GroupProtocol groupProtocol) {
     consumer = setUpConsumerWithRecordsToPoll(groupProtocol, tp0, 5);
 
     ConsumerRecords<String, String> records = (ConsumerRecords<String, String>) consumer.poll(Duration.ZERO);
@@ -3859,7 +3859,7 @@ import static org.springframework.cloud.netflix.eureka.server.EurekaInstanceFixt
  * number of expected restarts is reached. The AdaptiveScheduler won't trigger the operator reset
  * resulting in the test running forever. This is why this test suite is disabled for the {@link
  * org.apache.flink.runtime.scheduler.adaptive.AdaptiveScheduler}.
- */",819e77ff6cada75f36f31634906fa1366fb55ee7,composite,"import java.util.Map;
+ */",819e77ff6cada75f36f31634906fa1366fb55ee7,skip-test,"import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
@@ -3999,7 +3999,7 @@ scratch.file(
    * both foo and wtf, the best solution is to just delete the forward maps for
    * foo and wtf, then create a new name map of ""fsck.foo.wtf -> 01"" so that the
    * old time series are still accessible.
-   */",5ce3a15d5b6b290bb136fc4bed4424ebfb015e82,composite,"  int errors = (Integer)fsck.invoke(null, client, 
+   */",5ce3a15d5b6b290bb136fc4bed4424ebfb015e82,defect,"  int errors = (Integer)fsck.invoke(null, client,
       UID_TABLE, true, false);
   assertEquals(1, errors);
   assertArrayEquals(""web01"".getBytes(MockBase.ASCII()), 
@@ -4362,7 +4362,7 @@ public void testDestructuring() {
   }",https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/MaybeReachingVariableUseTest.java#L231
 1095050,482,"/**
  * Permission Test: Username currently only serves for connection, no permissions defined.
- */",4d50285a112ad810a865d1590d0cea9cfdd512bc,composite,"import org.apache.tsfile.write.schema.MeasurementSchema;
+ */",4d50285a112ad810a865d1590d0cea9cfdd512bc,workaround,"import org.apache.tsfile.write.schema.MeasurementSchema;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.experimental.categories.Category;
@@ -4664,7 +4664,7 @@ String[][] lists = {
                     + "" exception; DeflaterOutputStream.finish() throws an exception if the""
                     + "" underlying OutputStream has been closed and the Deflater still has data to""
                     + "" write."",
-            bug = ""31797037"") */",dcd610884720c8064bece20600252f696b3371eb,composite,"    dos3.close();
+            bug = ""31797037"") */",dcd610884720c8064bece20600252f696b3371eb,low-internal-quality,"    dos3.close();
 
     dos.close();
     dos4.close();
@@ -4686,7 +4686,7 @@ String[][] lists = {
 1018374,441,"/* J2ObjC removed: not supported by Junit 4.11 (https://github.com/google/j2objc/issues/1318).
 import libcore.junit.junit3.TestCaseWithRules;
 import libcore.junit.util.ResourceLeakageDetector.DisableResourceLeakageDetection;
-import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3b642ad03f0947ce,dependency,"import java.lang.reflect.Field;
+import libcore.junit.util.ResourceLeakageDetector; */",04a73f14fdae30fc5eec7a3d3b642ad03f0947ce,low-internal-quality,"import java.lang.reflect.Field;
 import java.nio.file.attribute.FileTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -5359,7 +5359,7 @@ protected void testUpdateWithSubquery()
 1356261,682,"/*
          * Commenting out this method until the JSON-java code is updated
          * to support XML.toJSONObject(reader)
-         */",bf6a1cd00594566c292ec5d153b69b82d5a9a1a5,composite," * Convenience method, given an input string and expected result, convert to
+         */",bf6a1cd00594566c292ec5d153b69b82d5a9a1a5,dependency," * Convenience method, given an input string and expected result, convert to
  * JSONObject via file and compare actual to expected result.
  * 
  * @param xmlStr
@@ -5655,7 +5655,7 @@ protected Number randomNumber() {
     if (randomBoolean()) {",    public void testScriptableTypes() {} // unimplemented,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/mapper-unsigned-long/src/test/java/org/elasticsearch/xpack/unsignedlong/UnsignedLongFieldMapperTests.java#L402
 558618,149,"// This query is expected to fail as we do not support join with constant in the on condition
 // (see issue https://github.com/apache/druid/issues/9942 for more information)
-// TODO: Remove expected Exception when https://github.com/apache/druid/issues/9942 is fixed",1a94fa45ab29d34f036229651375b5177f479ffb,composite,"              .columnTypes(ColumnType.STRING, ColumnType.LONG)
+// TODO: Remove expected Exception when https://github.com/apache/druid/issues/9942 is fixed",1a94fa45ab29d34f036229651375b5177f479ffb,defect,"              .columnTypes(ColumnType.STRING, ColumnType.LONG)
               .context(queryContext)
               .build()
       ),
@@ -5693,7 +5693,7 @@ public void testMVFilteringWithComplexColumn() throws Throwable
     String mv1 = createView(""CREATE MATERIALIZED VIEW %s AS SELECT a,b,c FROM %%s "" +
                             ""WHERE a IS NOT NULL AND b IS NOT NULL AND c IS NOT NULL AND l contains (1) "" +
                             ""AND s contains (1) AND m contains key (1) "" +",,https://github.com/apache/cassandra/blob/511bd203144a71bf0a72876a393d186a9778407e/test/unit/org/apache/cassandra/cql3/ViewFiltering1Test.java#L273
-843337,308,// TODO: remove after SAMZA-2761 fix,2b779d4b8b2ec2b054c80f2145d8dac81dae037e,composite,"public void testPipelineWithAggregation() {
+843337,308,// TODO: remove after SAMZA-2761 fix,2b779d4b8b2ec2b054c80f2145d8dac81dae037e,defect low-internal-quality,"public void testPipelineWithAggregation() {
   final List<KV<String, Long>> input =
       new ArrayList<>(
           Arrays.asList(
@@ -5804,7 +5804,7 @@ checkRepresentation(connectedStatement.getStatement(), ""TIME '00:39:07 +01:00'"
             });
         }
     }",https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/client/trino-jdbc/src/test/java/io/trino/jdbc/BaseTestJdbcResultSet.java#L438
-997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",f1577e042eafab1081f241fcb736129bca6592d4,composite,"
+997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",f1577e042eafab1081f241fcb736129bca6592d4,dependency workaround,"
 for (int i = 0; i < locales.length; i++) {
     ICUResourceBundle rb = (ICUResourceBundle)ICUResourceBundle.getBundleInstance(ICUData.ICU_BASE_NAME,locales[i]);
 
@@ -5893,7 +5893,7 @@ DecimalFormat fmt1 = new DecimalFormat(pattern, symbols);
     }",https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/format/NumberRegressionTests.java#L1014
 357955,81,"// Compact Pattern Data Provider provides test input for both DecimalFormat patterns
 // and the compact patterns. As there is no method to retrieve compact patterns,
-// thus test only against US English locale, and use a hard coded K - 1000",fe266dd007359831af77cbe03c9d8780e3ca5ce8,composite,"private static Stream<Arguments> currencyValidParseStrings() {
+// thus test only against US English locale, and use a hard coded K - 1000",fe266dd007359831af77cbe03c9d8780e3ca5ce8,partial-test,"private static Stream<Arguments> currencyValidParseStrings() {
     return validParseStrings().map(args -> Arguments.of(
             cFmt.getPositivePrefix() + String.valueOf(args.get()[0])
                     .replace(dfs.getGroupingSeparator(), dfs.getMonetaryGroupingSeparator())
@@ -6379,7 +6379,7 @@ String[] filePathsWithBackupsKeyspaceAndTableWithIndices = new String[]{
 
         testKeyspaceTableParsing(counterFiles, ""Keyspace1"", ""counter1"");
     }",https://github.com/apache/cassandra/blob/511bd203144a71bf0a72876a393d186a9778407e/test/unit/org/apache/cassandra/io/sstable/DescriptorTest.java#L235
-214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,21cbfd1c664d94fee05c8ba7f22c48ee7bac5c8a,composite,"                        pathToString(savepointDir),
+214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,21cbfd1c664d94fee05c8ba7f22c48ee7bac5c8a,dependency low-internal-quality,"                        pathToString(savepointDir),
                         testCase.restoreSource == RestoreSource.CANONICAL_SAVEPOINT
                                 ? SavepointFormatType.CANONICAL
                                 : SavepointFormatType.NATIVE)
@@ -6410,7 +6410,7 @@ if (tryRun(jobGraph) != testCase.allowRestore) {
             fail(testCase.describeRestore());
         }
     }",https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-tests/src/test/java/org/apache/flink/test/state/ChangelogCompatibilityITCase.java#L186
-290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,87a2822426287bdaae3698504721eb539165601e,composite,"    Assertions.checkState(0x00 <= bytes[i] && bytes[i] <= 0xFF);
+290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,87a2822426287bdaae3698504721eb539165601e,dependency,"    Assertions.checkState(0x00 <= bytes[i] && bytes[i] <= 0xFF);
     byteArray[i] = (byte) bytes[i];
   }
   return byteArray;
@@ -6481,7 +6481,7 @@ Pair.makePair(SUTime.FALL, ""2016-09-01/2016-12""),","  public void testThis() {
       resolveAndCheckRange(""This for "" + p.first() + "" ("" + i + ')', rel1, anchorTime, p.second());
     }
   }",https://github.com/stanfordnlp/CoreNLP/blob/59706394c28474bc21198eb6f4fff98939453dee/test/src/edu/stanford/nlp/time/SUTimeTest.java#L94
-625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,6a6b8ba4157248d9312f01e6acf4467d24083bcb,composite,"        assertThatThrownBy(() -> onTrino().executeQuery(""UPDATE delta.default."" + tableName + "" SET a = 3""))
+625831,211,// TODO: Add DELTA_LAKE_DATABRICKS groups once flakiness on Databricks is resolved,6a6b8ba4157248d9312f01e6acf4467d24083bcb,defect,"        assertThatThrownBy(() -> onTrino().executeQuery(""UPDATE delta.default."" + tableName + "" SET a = 3""))
                 .hasMessageContaining(""Check constraint violation"");
         assertThat(onTrino().executeQuery(""SELECT * FROM delta.default."" + tableName))
                 .containsOnly(row(2));
@@ -6814,7 +6814,7 @@ public void testByteBufferToStringConversion() throws Exception {
        * org.apache.zookeeper.KeeperException$NodeExistsException: KeeperErrorCode = NodeExists, though it should never
        * happen because zookeeper should be in a clean state for each run of tests.
        * Address issue: https://github.com/apache/druid/issues/1512
-       */",b7e1e17b097da5db352d190b3f55d163c9a84f36,composite,"String zkPath = ZKPaths.makePath(announcementsPath, server.getHost());
+       */",b7e1e17b097da5db352d190b3f55d163c9a84f36,defect,"String zkPath = ZKPaths.makePath(announcementsPath, server.getHost());
 try {
   curator.create()
          .creatingParentsIfNeeded()
@@ -6868,7 +6868,7 @@ catch (KeeperException.NodeExistsException e) {","  try {
     }
   }",https://github.com/apache/druid/blob/58f31b821fe9802ba73f7bbc3234c629ad73f299/server/src/test/java/org/apache/druid/curator/CuratorTestBase.java#L79
 743842,230,"// TODO: Remove this line, and replace 'clusterManagerRole' with CLUSTER_MANAGER_ROLE, after MASTER_ROLE is removed.
-// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",29032270adefbd5b84683a4f93d7e0f9eb1b36d1,composite,"        public Path nodeConfigPath(int nodeOrdinal) {
+// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",29032270adefbd5b84683a4f93d7e0f9eb1b36d1,dependency low-internal-quality,"        public Path nodeConfigPath(int nodeOrdinal) {
             return null;
         }
     },
@@ -7073,7 +7073,7 @@ void testPayloadObjectWithPayloadTypeOnParentContext() {
 		ac.close();
 		parent.close();
 	}",https://github.com/spring-projects/spring-framework/blob/6ded25ba28b11a1237c1a9053ddc1c91bfd31d71/spring-context/src/test/java/org/springframework/context/event/PayloadApplicationEventTests.java#L127
-1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",9e1b99dc5150e2517f5ddabb4ee074e579218845,composite,"
+1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",9e1b99dc5150e2517f5ddabb4ee074e579218845,dependency skip-test,"
 Voyage voyage = new Voyage(new VoyageNumber(""0101""), new Schedule(Collections.singletonList(
         new CarrierMovement(origin, dest, Instant.now(), Instant.now()))));
 List<HandlingEvent> events = Arrays.asList(
@@ -7119,7 +7119,7 @@ assertThat(result).extracting(""trackingId"", ""statusText"", ""destination"", "
                 .extracting(""location"", ""type"", ""voyageNumber"", ""isExpected"", ""description"")
                 .containsExactly(""Stockholm"", ""RECEIVE"", """", true, ""TEST-DESCR""); // TODO test time field once timezone handling has been added
     }",https://github.com/citerus/dddsample-core/blob/2f09a00d09785e35e196ae4dc0ed7c0bb13d39ff/src/test/java/se/citerus/dddsample/interfaces/tracking/ws/CargoTrackingDTOConverterTest.java#L94
-674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,0dad5f7c4db3451ff83da3b429e8ef99cda7a0f7,composite,"    assertThat(
+674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,0dad5f7c4db3451ff83da3b429e8ef99cda7a0f7,dependency low-internal-quality,"    assertThat(
             Settings.Secure.getInt(
                     mTestableContext.getContentResolver(),
                     Settings.Secure.ACCESSIBILITY_DISPLAY_MAGNIFICATION_ENABLED,
@@ -7260,7 +7260,7 @@ public static void tearDown() {
         HiveIcebergTestUtils.timestampAfterSnapshot(table, 2) + ""')"");
     Assert.assertEquals(5, shell.executeStatement(""SELECT * FROM "" + identifier.name()).size());
     Assert.assertEquals(3, table.history().size());
-    */",6dbe4f744e9620e3d7ca433f76af589abb49adea,composite,"  Assume.assumeTrue(fileFormat == FileFormat.PARQUET && isVectorized &&
+    */",6dbe4f744e9620e3d7ca433f76af589abb49adea,defect skip-test,"  Assume.assumeTrue(fileFormat == FileFormat.PARQUET && isVectorized &&
       testTableType == TestTables.TestTableType.HIVE_CATALOG && formatVersion == 2);
 }
 
@@ -7322,7 +7322,7 @@ Assert.assertEquals(5, table.history().size());","  public void testRollbackToTi
 
 /**
  * Returns {@code true} if the operating system supports file creation time modification. Note:",,https://github.com/oracle/graal/blob/009a6f93e563afb1d110b42dc5951b3d6b4156f8/truffle/src/com.oracle.truffle.api.test/src/com/oracle/truffle/api/test/polyglot/FileSystemsTest.java#L2175
-1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,6452d041717d453a781fe70bf8fe405281564ee8,composite,"        .logRequests(true) // verifying manually in the logs for now
+1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,6452d041717d453a781fe70bf8fe405281564ee8,dependency,"        .logRequests(true) // verifying manually in the logs for now
         .logResponses(true) // verifying manually in the logs for now
         .build();
 
@@ -7608,7 +7608,7 @@ anyTree(
                                                         not(getPlanTester().getPlannerContext().getMetadata(), new IsNull(new Reference(VARCHAR, ""c_name""))),
                                                         tableScan(""customer"", ImmutableMap.of(""c_custkey"", ""custkey"", ""c_name"", ""name""))))))));
     }",https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/core/trino-main/src/test/java/io/trino/sql/planner/TestPredicatePushdownWithoutDynamicFilter.java#L151
-1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",4a76d5b1c75abe1d1dd2eb57f48b25f3a9ec7a6a,composite,"List<Snap> snaps = createRandomSnaps(f.graph.getBounds(), locationIndex, rnd, numVirtualNodes, false, EdgeFilter.ALL_EDGES);
+1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",4a76d5b1c75abe1d1dd2eb57f48b25f3a9ec7a6a,dependency workaround,"List<Snap> snaps = createRandomSnaps(f.graph.getBounds(), locationIndex, rnd, numVirtualNodes, false, EdgeFilter.ALL_EDGES);
 QueryGraph queryGraph = QueryGraph.create(f.graph, snaps);
 
 int numQueries = 100;
@@ -7741,7 +7741,7 @@ if (!rbbi.equals(rbbi1)) {
                     + ""false when comparing to string '0'."");
         }
     }",https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/rbbi/RBBITest.java#L723
-638230,211,// TODO: Find the maximum column name length in ClickHouse and enable this test.,7922f4df93d3ec0536c686336401916637eeef20,composite,"public void testAlterTableAddLongColumnName()
+638230,211,// TODO: Find the maximum column name length in ClickHouse and enable this test.,7922f4df93d3ec0536c686336401916637eeef20,skip-test,"public void testAlterTableAddLongColumnName()
 {
     // TODO: Find the maximum column name length in ClickHouse and enable this test.
     abort(""TODO"");
@@ -8177,7 +8177,7 @@ String[] input = {
     doFormatTest(input, expected);
   }",https://github.com/google/google-java-format/blob/eb0b7682f15ec6a2bd03d12b53bdf951dd924266/core/src/test/java/com/google/googlejavaformat/java/JavadocFormattingTest.java#L85
 1244485,620,"//TODO: Rewrite with dynamic cache creation, and GRID start in #beforeTest after resolve of
-//TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,composite,"}
+//TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,dependency,"}
 
 /**
  * Test collision of table names in different caches, sharing a single SQL schema.
@@ -8324,7 +8324,7 @@ public void fastResultsDoNotGetLost_whenUsingIterator() throws Exception {
  * WebHdfs client Partially supports the Symlink.
  * creation of Symlink is supported, but the getLinkTargetPath() api is not supported currently,
  * Implement the test case once the full support is available.
- */",f9fc5bfc0796fa1fb40ec392f5247b59a0b25534,composite,"protected boolean listCorruptedBlocksSupported() {
+ */",f9fc5bfc0796fa1fb40ec392f5247b59a0b25534,dependency,"protected boolean listCorruptedBlocksSupported() {
   return false;
 }
 
@@ -8443,7 +8443,7 @@ public TypeDescriptor[] getTypeDescriptorsFromList(String[][] arg0) throws SQLEx
 // internal structure of the NavigationView. Specifically, we're checking the
 // start drawable of the text view with the specific text. If the internal
 // implementation of NavigationView changes, the second Matcher in the lookups
-// below will need to be tweaked.",11e6a6c0ad832f64e9562d9f0537a2aad09491f4,composite,"
+// below will need to be tweaked.",11e6a6c0ad832f64e9562d9f0537a2aad09491f4,dependency,"
 // We're allowing a margin of error in checking the color of the items' icons.
 // This is due to the translucent color being used in the icon tinting
 // and off-by-one discrepancies of SRC_IN when it's compositing
@@ -9268,7 +9268,7 @@ Pair.makePair(SUTime.YEAR, ""2017-01-01/2017-12-31""),
     }
   }",https://github.com/stanfordnlp/CoreNLP/blob/59706394c28474bc21198eb6f4fff98939453dee/test/src/edu/stanford/nlp/time/SUTimeTest.java#L52
 114214,26,"// TODO(b/20335397): This code was relying on Bitmap equality which Robolectric removed
-// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",6c252c2b50bcd4f3f835dcfc4b09a104009d63f1,composite,"@Test
+// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",6c252c2b50bcd4f3f835dcfc4b09a104009d63f1,dependency skip-test,"@Test
 public void testAllocatesABitmapPerSizeInAllocationOrder() {
   PreFillType size = new PreFillType.Builder(100).setConfig(Bitmap.Config.ARGB_8888).build();
   final int toAdd = 3;
@@ -9541,7 +9541,7 @@ memFree(image);","    static void saveScreenShotGL(int w, int h, boolean premult
         stbi_write_png(name, w, h, 4, image, w * 4);
         memFree(image);
     }",https://github.com/LWJGL/lwjgl3/blob/e7008a878ca8065db6b5cffb53594659344de300/modules/samples/src/test/java/org/lwjgl/demo/nanovg/NanoVGUtils.java#L88
-606076,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,composite,"import org.junit.Test;
+606076,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,dependency low-internal-quality,"import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
@@ -9687,7 +9687,7 @@ public class ShutdownTests extends ESTestCase {
 546934,149,"// This is disabled since OverlordResource.getTaskStatus() is annotated with TaskResourceFilter which is supposed to
 // set authorization token properly, but isn't called in this test.
 // This should be fixed in https://github.com/apache/druid/issues/6685.
-// expectAuthorizationTokenCheck();",58a6769a5ec04262778ed941e2ff041166595337,composite,"  final TaskPayloadResponse taskPayloadResponse2 = TestHelper.makeJsonMapper().readValue(
+// expectAuthorizationTokenCheck();",58a6769a5ec04262778ed941e2ff041166595337,defect skip-test,"  final TaskPayloadResponse taskPayloadResponse2 = TestHelper.makeJsonMapper().readValue(
       TestHelper.makeJsonMapper().writeValueAsString(response2.getEntity()),
       TaskPayloadResponse.class
   );
@@ -10137,7 +10137,7 @@ try (Transaction tid = tb.startTransaction()) {
 
 		assertEquals(""{\""sleigh\"":\""r0\\u003d0xbeef;\""}"", lb.getProgramBookmark().getComment());
 	}",https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Test/DebuggerIntegrationTest/src/test/java/ghidra/app/plugin/core/debug/service/breakpoint/AbstractDebuggerLogicalBreakpointServiceTest.java#L1533
-879560,337,// TODO(bradfordcsmith): Stop normalizing the expected output or document why it is necessary.,435cc19c1e48448536836d401e282865519543ef,composite,"      lines(
+879560,337,// TODO(bradfordcsmith): Stop normalizing the expected output or document why it is necessary.,435cc19c1e48448536836d401e282865519543ef,how-to,"      lines(
           ""class Baz extends Bar() {"",
           ""  static quadruple(n) {"",
           ""    return 2 * super.double(n);"",
@@ -10659,7 +10659,7 @@ public void onFailure(Session session, Throwable failure, Callback callback)
             // TODO
             return true;
         }",https://github.com/jetty/jetty.project/blob/12d16112fc65062f8d8de144a131b9f99dcae246/jetty-core/jetty-http2/jetty-http2-tests/src/test/java/org/eclipse/jetty/http2/tests/RawHTTP2ProxyTest.java#L592
-226665,64,// TODO: b/365420093 - Remove this workaround when the bug is fixed.,ee4a0ac70fbe74b77c18d1faea1a79d45de24eb1,composite,"            .build();
+226665,64,// TODO: b/365420093 - Remove this workaround when the bug is fixed.,ee4a0ac70fbe74b77c18d1faea1a79d45de24eb1,defect workaround,"            .build();
     return ParsedFlagsValue.parseAndCreate(flags);
   }
 }
@@ -10679,7 +10679,7 @@ public void map_noMappings() throws OptionsParsingException {
   PlatformMappingValue mappingValue = builder().build();
 ",,https://github.com/bazelbuild/bazel/blob/d7c71fa286b84a5dce8c60f1e8fb48295703fc61/src/test/java/com/google/devtools/build/lib/skyframe/config/PlatformMappingValueTest.java#L140
 503764,140,"// Disabled as it's currently failing - needs investigation
-//                .body(""paths.'/collections/{id}'.get.security[0].SecurityScheme"", Matchers.hasItem(""user""))",982517233e5c5cc138ed0c6dea5b381a96027796,composite,".body(""paths.'/collections'.post.tags"", Matchers.hasItem(""CollectionsResource""))
+//                .body(""paths.'/collections/{id}'.get.security[0].SecurityScheme"", Matchers.hasItem(""user""))",982517233e5c5cc138ed0c6dea5b381a96027796,skip-test,".body(""paths.'/collections'.post.tags"", Matchers.hasItem(""CollectionsResource""))
 .body(""paths.'/collections'.post.requestBody.content.'application/json'.schema.$ref"",
         is(COLLECTIONS_SCHEMA_REF))
 .body(""paths.'/collections'.post.responses.'201'.content.'application/json'.schema.$ref"",
@@ -10808,7 +10808,7 @@ public class MetadataStateFormatTests extends ESTestCase {
     public void testReadClusterStateV2() throws IOException {
         assertReadClusterState(""global-3-V2.st"");
     }",,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/server/src/test/java/org/elasticsearch/gateway/MetadataStateFormatTests.java#L47
-206621,60,// TODO align the behavior when receiving single -D within a window after fixing FLINK-33760,2a54176e1a70f8659119c4e69a9798ef335e5525,composite,"
+206621,60,// TODO align the behavior when receiving single -D within a window after fixing FLINK-33760,2a54176e1a70f8659119c4e69a9798ef335e5525,defect,"
 // TODO split the session if necessary when receiving -D after fixing FLINK-34039
 // session window does not re-split correctly as expected when consuming -D, only acc is
 // retracted
@@ -11542,7 +11542,7 @@ table.refresh();","  public void testBasicWrite() throws IOException {
     }
   }",https://github.com/apache/iceberg/blob/31e9dc768cef47df5eb007577f25ef3bbff86f61/spark/v3.4/spark/src/test/java/org/apache/iceberg/spark/source/TestSparkDataWrite.java#L127
 110532,22,"//@Test
-// run this manually as it's dependent on platform encoding, which has to be UTF-8",5fd8d00cd59003997bd82e0417b5f33c08bdf8f3,composite,"    Assert.assertEquals(
+// run this manually as it's dependent on platform encoding, which has to be UTF-8",5fd8d00cd59003997bd82e0417b5f33c08bdf8f3,skip-test,"    Assert.assertEquals(
       CharacterEncodingExamples.convertToBinary(""語"", ""UTF-32""), 
       ""0 0 10001010 10011110 "");
 }
@@ -12165,7 +12165,7 @@ assertThat(c.isClosePending(), is(false));
 		 * java.base/java.lang.invoke.MemoryAccessVarHandleBase triggered by CLinker.toCString()
 		 * is also captured on OpenJDK/Hotspot.
 		 * 2) Disable the test on AIX as Valist is not yet implemented in OpenJDK.
-		 */",cf649dbb7cd28246bee2b7bbf410db5853af8242,composite,"
+		 */",cf649dbb7cd28246bee2b7bbf410db5853af8242,skip-test,"
 		VaList vaList = VaList.make(vaListBuilder -> vaListBuilder.vargFromSegment(structLayout, structSegmt1)
 				.vargFromSegment(structLayout, structSegmt2), scope);
 		double result = (double)mh.invoke(2, vaList);
@@ -12297,7 +12297,7 @@ class ExecutionListenerAdapterTests {
 		var discoveryResult = new LauncherDiscoveryResult(Map.of(mock(), testDescriptor), mock(),
 			dummyOutputDirectoryProvider());
 		var testPlan = InternalTestPlan.from(discoveryResult);",,https://github.com/junit-team/junit5/blob/35d1d981f97a18a3d42eeb97e49ae04d21eb4c97/platform-tests/src/test/java/org/junit/platform/launcher/core/ExecutionListenerAdapterTests.java#L31
-1222088,587,"// skip test, as it needs historical time zone info",17842cdc6d2eb9fb00c0e336e6aeb83cf0b7a5d2,composite,"assertSame(g, f);
+1222088,587,"// skip test, as it needs historical time zone info",17842cdc6d2eb9fb00c0e336e6aeb83cf0b7a5d2,dependency skip-test,"assertSame(g, f);
 DateTime dt = new DateTime(2004, 6, 9, 10, 20, 30, 0);
 String expect = DateFormat.getTimeInstance(DateFormat.SHORT, UK).format(dt.toDate());
 assertEquals(expect, f.print(dt));
@@ -12935,7 +12935,7 @@ public void multiFormatAttributes_stringValue() {
   TypedValue outValue = new TypedValue();
   typedArray.getValue(0, outValue);
   assertThat(outValue.type).isEqualTo(TypedValue.TYPE_STRING);",,https://github.com/robolectric/robolectric/blob/d86ffdced16b5835a3135b156d651f1ae4b25819/robolectric/src/test/java/org/robolectric/shadows/ShadowAssetManagerTest.java#L92
-558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,e9d88dfa65e8fda9b675e3bef55e006606a231be,composite,"              .columns(""dim2"")
+558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,e9d88dfa65e8fda9b675e3bef55e006606a231be,dependency skip-test,"              .columns(""dim2"")
               .columnTypes(ColumnType.STRING)
               .resultFormat(ScanQuery.ResultFormat.RESULT_FORMAT_COMPACTED_LIST)
               .build()
@@ -12978,7 +12978,7 @@ public int getConnectionReleasePriority() throws SQLException {","    public Cal
     }",https://github.com/alibaba/druid/blob/b043fd17d6ee8de16dd395e2476620fbd66a31e8/core/src/test/java/com/alibaba/druid/test/util/OracleMockConnection.java#L448
 1039235,449,"/* Currently we don't support multiple indexable constraints in the ANC, so this test will pass because
         it disables the switch generation and the inlining. See DROOLS-5947
-     */",6ae6560c6df57ea10403e2c26fae371a14492639,composite,"import java.util.ArrayList;
+     */",6ae6560c6df57ea10403e2c26fae371a14492639,skip-test,"import java.util.ArrayList;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -14220,7 +14220,7 @@ for (Component c : root.getComponents()) {
             }
         }
     }",https://github.com/openjdk/jdk/blob/642816538fbaa5b74c6beb8a14d1738cdde28c10/test/jdk/jdk/editpad/EditPadTest.java#L282
-607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,composite,"import org.mockito.Captor;
+607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,dependency low-internal-quality,"import org.mockito.Captor;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
@@ -15359,7 +15359,7 @@ testQuery(
         ImmutableList.of(new Object[]{""[\""a\"",\""b\""]"", ""[\""a\"",\""b\""]""})
     );
   }",https://github.com/apache/druid/blob/58f31b821fe9802ba73f7bbc3234c629ad73f299/sql/src/test/java/org/apache/druid/sql/calcite/CalciteJoinQueryTest.java#L5190
-15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,2f641082ccdc7d135a7cea17ab17c3a713dffe54,composite,"
+15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,2f641082ccdc7d135a7cea17ab17c3a713dffe54,dependency low-internal-quality,"
 public void testRecoverySourceWithSyntheticSource() throws IOException {
     {
         Settings settings = Settings.builder()
@@ -16381,7 +16381,7 @@ PCollection<Row> result =","  public void testDebeziumSchemaTransformMysqlRead()
     monitorThread.join();
   }",https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/sdks/java/io/debezium/src/test/java/org/apache/beam/io/debezium/DebeziumIOMySqlConnectorIT.java#L138
 1231461,618,"// TODO: This test currently makes the whole VM exit with exit code -1, but does not generate a dump file
-// (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",47d74efc9142a580c4bd0d5bbcd18d26c38ff7e6,composite,"    if (getDatabase() == null) {
+// (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",47d74efc9142a580c4bd0d5bbcd18d26c38ff7e6,how-to skip-test,"    if (getDatabase() == null) {
         return;
     }
 
@@ -16479,7 +16479,7 @@ public void exceptionShowsTrace() throws Exception {
         String detailString = ""JellyTagException"";
         checkSuppressedStack(relativePath, detailString);
     }",https://github.com/jenkinsci/jenkins/blob/c9ce21013bef4e2148c53b9af36ac0945f2eb271/test/src/test/java/jenkins/security/StackTraceSuppressionTest.java#L108
-479761,129,// TODO(puzpuzpuz): enable when we support DDLs for parquet partitions,d9b41af92e3b8586770ab04ab1b4a21d2956d245,composite,"
+479761,129,// TODO(puzpuzpuz): enable when we support DDLs for parquet partitions,d9b41af92e3b8586770ab04ab1b4a21d2956d245,skip-test,"
         execute(""alter table x convert partition to parquet where ts >= 0"");
         execute(""alter table x alter column id drop index;"");
         assertSql(expected, query);
@@ -16724,7 +16724,7 @@ private static class DummyPrecommittingSinkWriter
  *
  * <p><b>Note:</b> the test is not executed on H2 because it doesn't support the
  * exclusive lock on table.</p>
- */",02531c04f74c51fe798a51fcc99386b86b601608,composite,"
+ */",02531c04f74c51fe798a51fcc99386b86b601608,skip-test,"
 import org.camunda.bpm.engine.impl.BootstrapEngineCommand;
 import org.camunda.bpm.engine.impl.db.sql.DbSqlSessionFactory;
 import org.camunda.bpm.engine.impl.interceptor.CommandContext;
@@ -16978,7 +16978,7 @@ Thread.sleep(5000);","  // TODO same data accessed as Hive Table or Path URI ??
 
 //     root = (Element)d.getElementsByTagName(""a"").item(0);
 //     assertEquals(""foo"", ((EntityReference)root.getFirstChild()).getNodeName());
-// }",4158c0892e674ecbdce6622cf0dc1ade05846ac5,composite,"        db = dbf.newDocumentBuilder();
+// }",4158c0892e674ecbdce6622cf0dc1ade05846ac5,defect skip-test,"        db = dbf.newDocumentBuilder();
         db.setErrorHandler(null);
         db.parse(source);
     } catch (SAXParseException e) {
@@ -18193,7 +18193,7 @@ public static void assertUnknownVersion(Version version) {
             }
         }
     }",https://github.com/opensearch-project/OpenSearch/blob/c82fffe8e333a8fff600dc22fa2e1aed7276d180/server/src/test/java/org/opensearch/VersionTests.java#L401
-92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",2e5edbc244eeea719dd76e948babb4124cadabbe,composite,"	msTruth = mdTruth;
+92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",2e5edbc244eeea719dd76e948babb4124cadabbe,low-internal-quality,"	msTruth = mdTruth;
 	demangleAndTest();
 }
 
@@ -18330,7 +18330,7 @@ public void openProxySession(int arg0, Properties arg1) throws SQLException {","
         // TODO Auto-generated method stub
         return false;
     }",https://github.com/alibaba/druid/blob/b043fd17d6ee8de16dd395e2476620fbd66a31e8/core/src/test/java/com/alibaba/druid/test/util/OracleMockConnection.java#L617
-795183,284,// Disabled due to in progress Bug 61071,9e4cdebf531dc8536fcdee2eeab1c6406c989336,composite,"    calc.addValue(21);
+795183,284,// Disabled due to in progress Bug 61071,9e4cdebf531dc8536fcdee2eeab1c6406c989336,defect skip-test,"    calc.addValue(21);
     assertEquals(16, (int) calc.getMean());
     assertEquals(8.062258F, (float) calc.getStandardDeviation(), 0F);
     assertEquals(30, calc.getMax().intValue());
@@ -19307,7 +19307,7 @@ static {
 781921,269,"// this should return a failed response
 // disable waiting on procol errors as that logic was reverted until we can figure out its 100% safe
 // right now ProtocolException is thrown for fatal and non-fatal issues, so closing the channel
-// on non-fatal issues could cause other issues for the cluster",1284dadfc7f1684e097141693ebce84f3ddfb766,composite,"// make sure everything is fine at the start
+// on non-fatal issues could cause other issues for the cluster",1284dadfc7f1684e097141693ebce84f3ddfb766,workaround,"// make sure everything is fine at the start
 Assertions.assertThat(node.metrics().getCounter(""org.apache.cassandra.metrics.Client.ProtocolException"")).isEqualTo(0);
 Assertions.assertThat(node.metrics().getCounter(""org.apache.cassandra.metrics.Client.UnknownException"")).isEqualTo(0);
 
@@ -19543,7 +19543,7 @@ t.assertMatch(new HitsAggregationResult()
                     .setExpression(new ConstantNode(new IntegerResultNode(5))));
         }
     }",https://github.com/vespa-engine/vespa/blob/6782a126f815ab896e6c379caaf9e9e909aa5d09/searchlib/src/test/java/com/yahoo/searchlib/aggregation/GroupingSerializationTest.java#L227
-990992,441,// TODO: Re-enable this tests after UTC fixes UAX 21,17c6d25086c56318e4f5b2d83b8b9e32a079f26d,composite,"                +Utility.hex(s1) + "" s2: "" + Utility.hex(s2));
+990992,441,// TODO: Re-enable this tests after UTC fixes UAX 21,17c6d25086c56318e4f5b2d83b8b9e32a079f26d,defect skip-test,"                +Utility.hex(s1) + "" s2: "" + Utility.hex(s2));
     }    
 }
 if(s1.length()==1 && s2.length()>1){
@@ -19582,7 +19582,7 @@ private void cross(String s1, String s2,Normalizer.Mode mode){
             }    
         }    
     }",https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/normalizer/ConformanceTest.java#L352
-392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,composite,"{
+392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,dependency low-internal-quality,"{
     return new DataSize(BUFFERED_PAGE_SIZE.toBytes() * count, BYTE);
 }
 
@@ -20374,7 +20374,7 @@ StarlarkThread getStarlarkThread() {
     ).setIndices(""does-not-exist-for-sure-*"").setWaitForCompletion(true).get();
     final SnapshotInfo snapshotInfo = createSnapshotResponse.getSnapshotInfo();
     assertThat(snapshotInfo.totalShards(), is(0));",,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/test/framework/src/main/java/org/elasticsearch/snapshots/AbstractSnapshotIntegTestCase.java#L379
-643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,composite,"    assertUpdate(""CREATE TABLE "" + tableName + "" (a bigint WITH (primary_key=true)) COMMENT 'test comment' "" +
+643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,dependency low-internal-quality,"    assertUpdate(""CREATE TABLE "" + tableName + "" (a bigint WITH (primary_key=true)) COMMENT 'test comment' "" +
             ""WITH (partition_by_hash_columns = ARRAY['a'], partition_by_hash_buckets = 2)"");
     assertThat(getTableComment(tableName)).isEqualTo(""test comment"");
 
@@ -20542,7 +20542,7 @@ testNoWarning(
         Locale l_countryCD = new Locale("""", ""CD"");
         assertEquals(""Congo (DRC)"",
                 l_countryCD.getDisplayCountry());
-    }*/",514e50db924d9b1f65467083794d00a61b6a61ff,composite,"    Locale org = Locale.getDefault();
+    }*/",514e50db924d9b1f65467083794d00a61b6a61ff,dependency skip-test,"    Locale org = Locale.getDefault();
     Locale.setDefault(l);
     Locale x = Locale.getDefault();
     Locale.setDefault(org);
@@ -20814,7 +20814,7 @@ public void updateClob(String columnLabel, Clob x) throws SQLException {
     }",https://github.com/apache/tomcat/blob/3d58c3ac70beb21588b120d21ff5c075801ca31e/modules/jdbc-pool/src/test/java/org/apache/tomcat/jdbc/test/driver/ResultSet.java#L886
 229651,64,"// The standard file systems on macOS support extended attributes by default, so we can assume
 // that the test will work on that platform. For other systems, we currently don't have a
-// mechanism to validate this so the tests are skipped unconditionally.",65bf06345bf20e48614a94506f5bc0c3d7cf3ca7,composite,"  } catch (FilePermissionException e) {
+// mechanism to validate this so the tests are skipped unconditionally.",65bf06345bf20e48614a94506f5bc0c3d7cf3ca7,skip-test,"  } catch (FilePermissionException e) {
     assertThat(e).hasMessageThat().isEqualTo(foo + "" (Operation not permitted)"");
   } catch (IOException e) {
     // When running in a sandbox, /bin might actually be a read-only file system.
@@ -21123,7 +21123,7 @@ public void testDrag() {
         // TODO: actually calculate the following parameters and do exact value checks.
         verify(mMockListener).onDragStart(anyBoolean(), anyFloat());
     }",https://github.com/LawnchairLauncher/lawnchair/blob/3e2b001c9e4604f02c79e63c4ee31c80f36eb8b7/tests/src/com/android/launcher3/touch/SingleAxisSwipeDetectorTest.java#L162
-625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",d381fa0c30301f1a574b4f8799551f750ccfb4b3,composite,"""c_timestamp_seconds_since_epoch, "" +
+625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",d381fa0c30301f1a574b4f8799551f750ccfb4b3,dependency,"""c_timestamp_seconds_since_epoch, "" +
 ""c_timestamp_iso8601, "" +
 ""c_timestamp_rfc2822, "" +
 ""c_timestamp_custom, "" +
@@ -21996,7 +21996,7 @@ public boolean isQueued() {
 433340,128,"/**
  * Known issue: ListStatus operation to folders/files whose name contains '?' will fail.
  * This is because Auto rest client didn't encode '?' in the uri query parameters
- */",0ccd13f0e077f6bda71b1b20ac6288e81b6c3ff7,composite,"              ""/A~`!@#$%^&*()-_+={};:'>,<B"",
+ */",0ccd13f0e077f6bda71b1b20ac6288e81b6c3ff7,defect,"              ""/A~`!@#$%^&*()-_+={};:'>,<B"",
               ""/B~`!@#$%^&*()-_+={};:'>,<C"",
               ""C~`!@#$%^&*()-_+={};:'>,<D""
           }
@@ -22163,7 +22163,7 @@ public void testConsecutiveWindows2() {
       fail(throwable.getMessage());
     }
   }",https://github.com/apache/iotdb/blob/e5dacc08fcfe5b153405212996212eda2230f840/integration-test/src/test/java/org/apache/iotdb/libudf/it/series/SeriesIT.java#L365
-380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,composite," * This code ensures you can setup SSL. Look at {@link ArmeriaSettings} for property names.
+380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,dependency," * This code ensures you can setup SSL. Look at {@link ArmeriaSettings} for property names.
  *
  * <p>This is inspired by com.linecorp.armeria.spring.ArmeriaSslConfigurationTest
  */
@@ -22577,7 +22577,7 @@ public void testRateInStats() {
         // assertThat(plans.get(i), equalTo(plans.get(0)));
         // }
     }",https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/esql/src/test/java/org/elasticsearch/xpack/esql/optimizer/LogicalPlanOptimizerTests.java#L7000
-611532,203,"// disabled, as these soak up build time and the outcome oughtn't change unless we are refactoring the tree builders. manually execute as desired.",0010faae189fe2743049c45e91fe7c5446b7240c,composite,"    long completeBy = startTime + timeout * 1000L;
+611532,203,"// disabled, as these soak up build time and the outcome oughtn't change unless we are refactoring the tree builders. manually execute as desired.",0010faae189fe2743049c45e91fe7c5446b7240c,skip-test,"    long completeBy = startTime + timeout * 1000L;
 
     for (int i = 0; i < numIters; i++) {
         Document doc = Jsoup.parse(file, ""UTF-8"", ""https://example.com/"");
@@ -22702,7 +22702,7 @@ public void testNotWhereMatch() {
         assertThat(error.getMessage(), containsString(""[:] operator cannot be used after LIMIT""));
     }",https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/esql/src/internalClusterTest/java/org/elasticsearch/xpack/esql/plugin/MatchOperatorIT.java#L87
 26142,8,"// Uncomment next line after https://github.com/elastic/elasticsearch/issues/96705 is fixed
-// expectedILMSummary.put(""downsample"", 0);",968d8f7e1fbd5422ad66d5a74aa2bfaeb5448d67,composite,"var indexName = randomAlphaOfLength(10);
+// expectedILMSummary.put(""downsample"", 0);",968d8f7e1fbd5422ad66d5a74aa2bfaeb5448d67,defect,"var indexName = randomAlphaOfLength(10);
 var stagnatingIndicesFinder = mockedStagnatingIndicesFinder(List.of(indexMetadata(indexName, policyName, action)));
 var service = createIlmHealthIndicatorService(clusterState, stagnatingIndicesFinder);
 
@@ -23317,7 +23317,7 @@ for (int i = 1; i < numCaps; i++) {
 //                    }
 //
 //                });
-//    }",3fd7b1e942e250572e7a43ad2a4f5492fd48dc01,composite,"package liquibase.sqlgenerator.core;
+//    }",3fd7b1e942e250572e7a43ad2a4f5492fd48dc01,skip-test,"package liquibase.sqlgenerator.core;
 
 public abstract class DropUniqueConstraintGeneratorTest {","
 }",,https://github.com/liquibase/liquibase/blob/0be7a64bd78c92abfafbe359403dfcf2129bef34/liquibase-standard/src/test/java/liquibase/sqlgenerator/core/DropUniqueConstraintGeneratorTest.java#L4
@@ -23769,7 +23769,7 @@ public void testNoWarningInClassStaticBlock() {","  test(
                 ""  }"",
                 ""}"")));
   }",https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/CheckAccessControlsTest.java#L483
-1359128,700,"// TODO: easy, try reloadClasses false, or explain why it's needed",0842ce9a9d118484bea6320f90d891101839d5d3,composite,"    Class<?> exceptionClass = NullPointerException.class;
+1359128,700,"// TODO: easy, try reloadClasses false, or explain why it's needed",0842ce9a9d118484bea6320f90d891101839d5d3,documentation,"    Class<?> exceptionClass = NullPointerException.class;
     assertEquals(exceptionClass, item.getValue().getClass());
     assertEquals(ClassNameUtils.toInternal(exceptionClass), item.getType());
 
@@ -23934,7 +23934,7 @@ package org.hibernate.orm.test.jpa.cascade2;
 ","  //        abstract void abstractMethod(); todo
 }",,https://github.com/robolectric/robolectric/blob/d86ffdced16b5835a3135b156d651f1ae4b25819/sandbox/src/test/java/org/robolectric/testing/AnExampleClass.java#L17
 208809,60,"// TODO: remove this test when SourceFunction API gets removed together with the deprecated
-//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",6d287a7e3662b6182e1c1657bb91f82a84d8ff0a,composite,"                .as(""Parallelism of parallel collection source must be 4."")
+//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",6d287a7e3662b6182e1c1657bb91f82a84d8ff0a,dependency low-internal-quality,"                .as(""Parallelism of parallel collection source must be 4."")
                 .isEqualTo(4);
     } catch (Exception e) {
         e.printStackTrace();
@@ -24282,7 +24282,7 @@ private class MockSyncPluginsCli extends EnvironmentAwareCommand {
         }",https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/distribution/tools/server-cli/src/test/java/org/elasticsearch/server/cli/ServerCliTests.java#L492
 1118201,488,"// TODO: Add test to delete broker instance. Currently, stopBroker() does not work correctly.
 
-// Check if '/INSTANCES/<serverName>' has been erased correctly",7c066b1ab63208814c9fffd4d6a6a5bf1bf72f11,composite,"  deleteInstanceRequest = _controllerRequestURLBuilder.forInstance(brokerName);
+// Check if '/INSTANCES/<serverName>' has been erased correctly",7c066b1ab63208814c9fffd4d6a6a5bf1bf72f11,defect,"  deleteInstanceRequest = _controllerRequestURLBuilder.forInstance(brokerName);
   sendDeleteRequest(deleteInstanceRequest);
   fail(""Delete should have returned a failure status (409)"");
 } catch (IOException e) {
@@ -24570,7 +24570,7 @@ if (count >= expected.size()) {
 // This test runs the sync-manifests command, and _without stopping the jvm_ executes a list command.
 // Under normal use, the sync-manifests command is followed immediately by a JVM shutdown, clearing caches.
 // The Java 8 ServiceLoader does not disable the URLConnection caching, so doesn't read some previous writes.
-// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",8afd3eb1f40639b2c79e21f497a9a30dd3aef101,composite,"            }
+// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",8afd3eb1f40639b2c79e21f497a9a30dd3aef101,dependency workaround,"            }
             default:
                 throw new IllegalArgumentException(""Unknown PluginLocationType"");
         }
@@ -24975,7 +24975,7 @@ public void setORADataAtName(String arg0, ORAData arg1) throws SQLException {
         // TODO Auto-generated method stub
 
     }",https://github.com/alibaba/druid/blob/b043fd17d6ee8de16dd395e2476620fbd66a31e8/core/src/test/java/com/alibaba/druid/test/util/OracleMockPreparedStatement.java#L470
-204401,60,// TODO: tweak the tests when FLINK-13604 is fixed.,ba047b7bf71fbe0d8b696ef62f7db95fc28aefc2,composite,"
+204401,60,// TODO: tweak the tests when FLINK-13604 is fixed.,ba047b7bf71fbe0d8b696ef62f7db95fc28aefc2,defect,"
     assertThatThrownBy(() -> parseAndConvert(sql))
             .isInstanceOf(ValidationException.class)
             .hasMessageContaining(
@@ -25370,7 +25370,7 @@ assertTrue(setup.needsUpdating());
     assertFalse(setup.needsUpdating());
   }",https://github.com/azkaban/azkaban/blob/6db750049f6fdf7842e18b8d533a3b736429bdf4/azkaban-common/src/test/java/azkaban/database/AzkabanDatabaseSetupTest.java#L111
 328852,81,"// this test has been disabled because of timeout issues.
-// see JDK-8006746",7ea914fe3fc0fba0f112fa8cbaf0179334d09b8a,composite,"*
+// see JDK-8006746",7ea914fe3fc0fba0f112fa8cbaf0179334d09b8a,skip-test,"*
 * You should have received a copy of the GNU General Public License version
 * 2 along with this work; if not, write to the Free Software Foundation,
 * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
@@ -25446,7 +25446,7 @@ rewriteGeneratorBody(
             ""return GEN_CONTEXT$0.jumpTo(0);"",
             ""return GEN_CONTEXT$0.jumpTo(1);""));
   }",https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/Es6RewriteGeneratorsTest.java#L829
-544439,145,"//floormod case is questionable, hard to tell if gradient checkable: skipping for now",4beace608386c67fde11d7a0c144d5c06ada8e76,composite,"Nd4j.getRandom().setSeed(12345);
+544439,145,"//floormod case is questionable, hard to tell if gradient checkable: skipping for now",4beace608386c67fde11d7a0c144d5c06ada8e76,skip-test,"Nd4j.getRandom().setSeed(12345);
 
 List<String> failed = new ArrayList<>();
 
@@ -25601,7 +25601,7 @@ public void testDirectories() throws Exception {
     try {
         new RandomAccessFile(""."", ""r"");
         fail();",,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/luni/src/test/java/libcore/java/io/RandomAccessFileTest.java#L69
-845325,308,// TODO: Remove once Distributions has shipped.,2d745c404cc478e26af2dd3bf2c646596a599bac,composite,"public class SimpleParDoFnTest {
+845325,308,// TODO: Remove once Distributions has shipped.,2d745c404cc478e26af2dd3bf2c646596a599bac,dependency low-internal-quality,"public class SimpleParDoFnTest {
   @Rule public ExpectedException thrown = ExpectedException.none();
 
   private PipelineOptions options;
@@ -25668,7 +25668,7 @@ public void noAccessForNonAdmin() throws Exception {","    public void flow() th
         // and make sure it's gone
         assertThrows(ElementNotFoundException.class, () -> getForm(mon));
     }",https://github.com/jenkinsci/jenkins/blob/c9ce21013bef4e2148c53b9af36ac0945f2eb271/test/src/test/java/hudson/diagnosis/HudsonHomeDiskUsageMonitorTest.java#L46
-1371991,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,composite,"
+1371991,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,dependency low-internal-quality,"
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -25730,7 +25730,7 @@ Criteria<TimeSeriesData, Forecast> criteria =
         }
     }",https://github.com/deepjavalibrary/djl/blob/a9a0c1275fdb11a2d9cc7480abb39e57a6fbfec1/extensions/timeseries/src/test/java/ai/djl/timeseries/translator/DeepARTranslatorTest.java#L40
 1134218,491,"// TODO: Should be checked on server side. On Embedded metastore it throws MetaException,
-// on Remote metastore it throws TProtocolException",e928a70ceb4f629ad8a3cb0fde62bae72b1d031b,composite,"      table.getDbName().toUpperCase(), table.getTableName().toUpperCase()));
+// on Remote metastore it throws TProtocolException",e928a70ceb4f629ad8a3cb0fde62bae72b1d031b,dependency,"      table.getDbName().toUpperCase(), table.getTableName().toUpperCase()));
 
   // Test in mixed case
   Assert.assertTrue(""Table exists"", client.tableExists(""hIVe"", ""DeFaUlt"", ""tEsT_TabLE""));
@@ -26039,7 +26039,7 @@ public void testHivePartitionPruner2() {
 1384345,757,"// BouncyCastle is parsing date objects with the system locale while creating self-signed SSL certs
 // This fails for certain locales, e.g. 'ks'.
 // Until this is fixed, we force the english locale.
-// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,composite,"private static final char[] EMPTY_PASS = new char[]{};
+// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,dependency workaround,"private static final char[] EMPTY_PASS = new char[]{};
 
 private static SelfSignedCertificate trustedCert;
 private static File keyStoreFile;
@@ -28145,7 +28145,7 @@ ValueList(final int min, final int max) {
     }
 }
 ",,https://github.com/apache/kafka/blob/a6ec7584888a4202542eb2d8debbe1a924784aa2/streams/upgrade-system-tests-30/src/test/java/org/apache/kafka/streams/tests/SmokeTestDriver.java#L99
-559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,8556fa3d9435dc708edc20c230c906e8cbea8575,composite,"              .context(QUERY_CONTEXT_DEFAULT)
+559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,8556fa3d9435dc708edc20c230c906e8cbea8575,dependency skip-test,"              .context(QUERY_CONTEXT_DEFAULT)
               .build()
       ),
       expected
@@ -28605,7 +28605,7 @@ assertFalse(headers.contains(of(""name""), of(""value1"")));","    public void t
         assertTrue(headers.contains(of(""name""), of(""value"")));
         assertFalse(headers.contains(of(""name""), of(""value1"")));
     }",https://github.com/netty/netty/blob/f3311e5db4c9d9559fac96bb2f48295d63f58b67/codec/src/test/java/io/netty/handler/codec/DefaultHeadersTest.java#L264
-1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,composite,"import org.testng.annotations.Test;
+1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,dependency low-internal-quality,"import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -29224,7 +29224,7 @@ public static ImmutableList<String> requiredObjcCrosstoolFlagsNoXcodeConfig(Stri
         .add(""--crosstool_top="" + MockObjcSupport.DEFAULT_OSX_CROSSTOOL);
     return argsBuilder.build();
   }",https://github.com/bazelbuild/bazel/blob/d7c71fa286b84a5dce8c60f1e8fb48295703fc61/src/test/java/com/google/devtools/build/lib/packages/util/MockObjcSupport.java#L128
-21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dab5f51472984392d7758aa196ca6407592df619,composite,"    int numPromotableReplicas,
+21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dab5f51472984392d7758aa196ca6407592df619,dependency,"    int numPromotableReplicas,
     int numSearchReplicas
 ) {
     return getReplicaRolesWithRandomStates(numPromotableReplicas, numSearchReplicas, ShardRoutingState.values());
@@ -29435,7 +29435,7 @@ try (ResultSet rs = statement.executeQuery()) {
  * Also <code>DumpstateListener<code/> violate the policy when onScreenshotTaken is called.
  *
  * TODO(b/161201609) Remove this class once violations fixed.
- */",0acc08edd9eda81ccb108eb83eca123058d71cc7,composite,"    }
+ */",0acc08edd9eda81ccb108eb83eca123058d71cc7,defect low-internal-quality,"    }
 
     public void waitForBugreportFinished() throws Exception {
         if (!mLatch.await(BUGREPORT_TIMEOUT_MS, TimeUnit.MILLISECONDS)) {
