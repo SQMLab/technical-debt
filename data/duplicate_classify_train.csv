@@ -286,7 +286,7 @@ public class PersonName extends Name {
 
 	public PersonName(String first, String last) {
 		super( first, last );",,https://github.com/hibernate/hibernate-orm/blob/ff5fa10867d82d78002746faba4665e1a420bf0f/hibernate-core/src/test/java/org/hibernate/orm/test/annotations/embedded/one2many/PersonName.java#L15
-122818,34,"// I tried using Mockito, but it didn't work for some reason",8ffb0f9eb09fd1bc314a6176854566ba8739a718,how-to,"import static org.junit.Assert.assertFalse;
+122818,34,"// I tried using Mockito, but it didn't work for some reason",8ffb0f9eb09fd1bc314a6176854566ba8739a718,uncertainty,"import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
@@ -361,7 +361,7 @@ public void testNRTReplicaPromotedAsPrimary() throws Exception {
         final int numDocs = shards.indexDocs(randomInt(10));",,https://github.com/opensearch-project/OpenSearch/blob/c82fffe8e333a8fff600dc22fa2e1aed7276d180/server/src/test/java/org/opensearch/index/shard/SegmentReplicationWithNodeToNodeIndexShardTests.java#L530
 1479085,805,"// TODO: check all the layers are here, the profiles, and so on
 
-// check that we have the crs extension",d29e12c3a6fa3eca9bcd935f1bf2a91f211c46ba,requirement,"    for (GridCoverage coverage : coverages) {
+// check that we have the crs extension",d29e12c3a6fa3eca9bcd935f1bf2a91f211c46ba,unspecified,"    for (GridCoverage coverage : coverages) {
         if (coverage != null) {
             CoverageCleanerCallback.disposeCoverage(coverage);
         }
