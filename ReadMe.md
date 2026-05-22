@@ -81,6 +81,7 @@ Evaluated tools include:
 - Text Mining (TM)
 - Liu detector
 - BERT-based classifier
+- DebtHunter
 
 Example result files:
 
