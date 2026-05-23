@@ -12,7 +12,7 @@ id,repository,text,hash,label,url
 379136,101,// TODO: migrate to test framework,8596375c0b2062eb740665623fffaa0b823eacde,design,https://github.com/antlr/antlr4/blob/dee6265e1be89962e6e3d37b26a8cadeba2cc346/tool-testsuite/test/org/antlr/v4/test/tool/TestCompositeGrammars.java#L664
 490738,135,"// TODO: for non-persistent topics, the subscription doesn't exist",6c2f1183587c42e9e141ddd6497dabdd1a1be5c5,unspecified,https://github.com/apache/pulsar/blob/367faefc2e61c68e587626d07f9d98163d3cd935/pulsar-broker/src/test/java/org/apache/pulsar/broker/admin/AdminApiTest.java#L1243
 1244485,620,"//TODO: Rewrite with dynamic cache creation, and GRID start in #beforeTest after resolve of
-//TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,dependency,https://github.com/apache/ignite/blob/8346282218210e64720c149fc60809550efd4d03/modules/indexing/src/test/java/org/apache/ignite/internal/processors/query/IgniteSqlSchemaIndexingTest.java#L110
+//TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,on-hold,https://github.com/apache/ignite/blob/8346282218210e64720c149fc60809550efd4d03/modules/indexing/src/test/java/org/apache/ignite/internal/processors/query/IgniteSqlSchemaIndexingTest.java#L110
 851672,315,// TODO mlowery other transLogTable fields could be set for testing here,14de2bf08a4e7b7b04dd35d568dfe50bfe816427,unspecified,https://github.com/pentaho/pentaho-kettle/blob/db5f39cc7d9f6223ef20e6da5102d5910e91af27/plugins/pur/core/src/test/java/org/pentaho/di/repository/RepositoryTestBase.java#L885
 1547822,896,"// Create a list of patient sub-tables to work with TODO(lwhite): Build the copy-on-write to
 // ViewGroups to avoid",a618f8938d9c88dc505c9e4acc3b8003aaea3feb,unspecified,https://github.com/jtablesaw/tablesaw/blob/d4e0bf5413aa4676755af3fd921e82e0ccb0e9fe/core/src/test/java/tech/tablesaw/perf/TimeDependentFilteringTest.java#L89
@@ -23,7 +23,7 @@ id,repository,text,hash,label,url
 306665,78,"/**
  * Setting file last access time does not work on JDK-20 on macOS with the hfs file system,
  * issue JDK-8298187.
- */",1a2e1d97c1fbbe3fdbd10468f336a7fbbf95e1ce,dependency,https://github.com/oracle/graal/blob/009a6f93e563afb1d110b42dc5951b3d6b4156f8/truffle/src/com.oracle.truffle.api.test/src/com/oracle/truffle/api/test/polyglot/FileSystemsTest.java#L2175
+ */",1a2e1d97c1fbbe3fdbd10468f336a7fbbf95e1ce,on-hold,https://github.com/oracle/graal/blob/009a6f93e563afb1d110b42dc5951b3d6b4156f8/truffle/src/com.oracle.truffle.api.test/src/com/oracle/truffle/api/test/polyglot/FileSystemsTest.java#L2175
 50150,8,// TODO this should be WRAP instead,0f93501048e7fb894f992cc858af230058a7a6c9,defect,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/libs/geo/src/test/java/org/elasticsearch/geometry/utils/SpatialEnvelopeVisitorTests.java#L52
 845408,308,// TODO: This test needs to be adapted to work with streamingEngine=true.,bbf1742b82d1138a677a2b118bd9e8faf9720ac1,unspecified,https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/runners/google-cloud-dataflow-java/worker/src/test/java/org/apache/beam/runners/dataflow/worker/StreamingDataflowWorkerTest.java#L1436
 444648,128,"/**
@@ -44,7 +44,7 @@ id,repository,text,hash,label,url
 201031,60,// Skip this test on Windows as we can not control the Window Driver letters.,f41a40e844e885d9e39e1ea1a5ba89478f43b6c9,partial-test,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-python/src/test/java/org/apache/flink/client/python/PythonEnvUtilsTest.java#L73
 892121,368,// stop test and ignore if FuseFileSystem fails to create due to missing libfuse library,b1ef6f1d304a220bcd4e3777efbfb8a97ae01e3e,partial-test,https://github.com/Alluxio/alluxio/blob/e1f4443bb4ef24bb12d2f7013c94edc36961da31/integration/fuse/src/test/java/alluxio/fuse/AlluxioJnrFuseFileSystemTest.java#L105
 881269,337,// TODO(tjgq): Consider rewriting to const even when already sorted.,377f7dc9ef1648c18bd606694674e5f82aa9560f,unspecified,https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/refactoring/ErrorToFixMapperTest.java#L1137
-607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,dependency low-internal-quality,https://github.com/grpc/grpc-java/blob/302342cfce50361bc1b12a37a3627d34c25dbf88/core/src/test/java/io/grpc/internal/ManagedChannelImplTest.java#L176
+607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,on-hold low-internal-quality,https://github.com/grpc/grpc-java/blob/302342cfce50361bc1b12a37a3627d34c25dbf88/core/src/test/java/io/grpc/internal/ManagedChannelImplTest.java#L176
 236089,64,"// TODO(b/68751876): Set --apple_crosstool_top and --crosstool_top using the
 // AppleCrosstoolTransition",b30b9a55e31c07d66801c2396ab54e79c04c2c7c,unspecified,https://github.com/bazelbuild/bazel/blob/d7c71fa286b84a5dce8c60f1e8fb48295703fc61/src/test/java/com/google/devtools/build/lib/packages/util/MockObjcSupport.java#L128
 110532,22,"//@Test
@@ -67,13 +67,13 @@ id,repository,text,hash,label,url
 380596,104,// TODO(adriancole): Find a home for this generic conversion between Call and Java 8.,1356cb9f20c5ac1c01b5e696520b4a0ee2575f5a,uncertainty,https://github.com/openzipkin/zipkin/blob/e151986db4d1de1aea53618f18e4ee3acaa9ed3a/zipkin-storage/elasticsearch/src/test/java/zipkin2/elasticsearch/internal/client/HttpCallTest.java#L268
 1157836,501,// TODO implement,972c9937225b691138532a1d4752866c6f5b5f43,unspecified,https://github.com/langchain4j/langchain4j/blob/0e5b1ece9cb22f52dfe9846885a35ec906e0cdd6/langchain4j-bedrock/src/test/java/dev/langchain4j/model/bedrock/common/BedrockChatModelIT.java#L77
 981147,435,//TODO: upsert() with IDENTITY not working on SQL Server,eb8a76a47e178bde290bd205085a52f3152925ff,defect,https://github.com/hibernate/hibernate-orm/blob/ff5fa10867d82d78002746faba4665e1a420bf0f/hibernate-core/src/test/java/org/hibernate/orm/test/stateless/StatelessSessionVersioningTest.java#L40
-1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,6452d041717d453a781fe70bf8fe405281564ee8,dependency,https://github.com/langchain4j/langchain4j/blob/0e5b1ece9cb22f52dfe9846885a35ec906e0cdd6/langchain4j/src/test/java/dev/langchain4j/service/common/openai/OpenAiChatModelIT.java#L188
+1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,6452d041717d453a781fe70bf8fe405281564ee8,on-hold,https://github.com/langchain4j/langchain4j/blob/0e5b1ece9cb22f52dfe9846885a35ec906e0cdd6/langchain4j/src/test/java/dev/langchain4j/service/common/openai/OpenAiChatModelIT.java#L188
 940066,422,"// Set Max Parallel Replications to max value, so that the initial partitions can sync as soon possible.
 // Due to a race condition in object destruction, it can happen that the sync operation takes place
 // while a map is being destroyed which can result in a memory leak. This will be overhauled as part of
 // object lifecycle revamp.
 // For more details, see: https://github.com/hazelcast/hazelcast/issues/7132",77d253f3ffb24f9a9f45fbe25d4f3a30b00eeee1,low-internal-quality,https://github.com/hazelcast/hazelcast/blob/3ab656fb125603ccc9d01036cb6d362d06b7c974/hazelcast/src/test/java/com/hazelcast/map/MapDestroyTest.java#L81
-559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,8556fa3d9435dc708edc20c230c906e8cbea8575,dependency skip-test,https://github.com/apache/druid/blob/58f31b821fe9802ba73f7bbc3234c629ad73f299/sql/src/test/java/org/apache/druid/sql/calcite/CalciteQueryTest.java#L2057
+559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,8556fa3d9435dc708edc20c230c906e8cbea8575,on-hold skip-test,https://github.com/apache/druid/blob/58f31b821fe9802ba73f7bbc3234c629ad73f299/sql/src/test/java/org/apache/druid/sql/calcite/CalciteQueryTest.java#L2057
 976929,435,"//FIXME mke it work in unambigious cases
 //		assertNotNull(c.id.parent.id);
 //		assertEquals(p.id.getFirstName(), c.id.parent.id.getFirstName());",6cad3db522e053232153d5691a0f27cf988f5f5b,defect,https://github.com/hibernate/hibernate-orm/blob/ff5fa10867d82d78002746faba4665e1a420bf0f/hibernate-core/src/test/java/org/hibernate/orm/test/annotations/cid/CompositeIdTest.java#L229
@@ -107,7 +107,7 @@ id,repository,text,hash,label,url
  */",6c2a55a4e4a96610ac24ea10baf7b3298966c9da,defect,https://github.com/apache/kylin/blob/5f3ef471b47768cf00e9ce31abb3bd8db640065d/src/kylin-it/src/test/java/org/apache/kylin/auto/CorruptSqlTest.java#L82
 586331,167,//TODO:,80a9e90ae4b488ec34d780f7b7b01c89d22d0db5,unspecified,https://github.com/languagetool-org/languagetool/blob/a611c39ca0e3ee34ceb4f95bfc387aa9755566c8/languagetool-language-modules/uk/src/test/java/org/languagetool/rules/uk/TokenAgreementVerbNounRuleTest.java#L512
 726817,230,// Todo: Move this test to SegmentReplicationIndexShardTests so that it runs for both node-node & remote store,2ca4da5ab08081dd751e414cea3dfad8871fb5e7,design,https://github.com/opensearch-project/OpenSearch/blob/c82fffe8e333a8fff600dc22fa2e1aed7276d180/server/src/test/java/org/opensearch/index/shard/SegmentReplicationWithNodeToNodeIndexShardTests.java#L664
-991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,dependency,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/util/DisplayNameTest.java#L130
+991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,on-hold,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/util/DisplayNameTest.java#L130
 1561777,918,"//  bit ugly, but can't think of cleaner simple way to check this...",69e9aefcd805726269086e4e2f3a28a4b8380d1e,workaround,https://github.com/FasterXML/jackson-databind/blob/cfef132dbacbc6ed612051f81e88fb37c5632154/src/test/java/com/fasterxml/jackson/databind/FormatSchemaTest.java#L251
 235091,64,"// The exceedingly dumb approach: writing all the permutations down manually
 // is simply easier than any way of generating them.",df81aa21d20b4a6ac2055555d9e2001f176300a1,workaround,https://github.com/bazelbuild/bazel/blob/d7c71fa286b84a5dce8c60f1e8fb48295703fc61/src/test/java/com/google/devtools/build/lib/runtime/TestSummaryTest.java#L480
@@ -127,7 +127,7 @@ id,repository,text,hash,label,url
 // (not mock) file system store. These tests don't work on the mock.",76719fe8b779167267e8a6392e541114c4e1dbf6,skip-test,https://github.com/apache/hadoop/blob/8424c155f11049e2d5a92b7f8d63d4c67d2eaaa6/hadoop-tools/hadoop-azure/src/test/java/org/apache/hadoop/fs/azure/TestNativeAzureFileSystemMocked.java#L36
 1332240,648,"// TODO - ugly, fragile",aafd6c4bd278cdfa673d56bb8f819990637a0e22,unspecified,https://github.com/killbill/killbill/blob/b5eff868b0b4cf0a72ec58072d16b7fd256b4530/junction/src/test/java/org/killbill/billing/junction/plumbing/billing/TestBlockingCalculator.java#L673
 1081500,478,"// this is a bit of a hack, since we don't implement generations.",0e014f065c9088a7fb5156ea690aa7c45e159814,workaround,https://github.com/apache/camel/blob/0f00efcd0e3ad9149092e315faea2ed4f2b2dde5/components/camel-google/camel-google-storage/src/test/java/org/apache/camel/component/google/storage/localstorage/FakeStorageRpc.java#L487
-290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,87a2822426287bdaae3698504721eb539165601e,dependency,https://github.com/google/ExoPlayer/blob/dd430f7053a1a3958deea3ead6a0565150c06bfc/library/extractor/src/test/java/com/google/android/exoplayer2/metadata/emsg/EventMessageDecoderTest.java#L99
+290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,87a2822426287bdaae3698504721eb539165601e,on-hold,https://github.com/google/ExoPlayer/blob/dd430f7053a1a3958deea3ead6a0565150c06bfc/library/extractor/src/test/java/com/google/android/exoplayer2/metadata/emsg/EventMessageDecoderTest.java#L99
 1573591,945,// TODO extend for new properties,2a954da715ff56ff8f919a90b8baa448799781ef,unspecified,https://github.com/camunda/camunda/blob/fe3a40c25bf5b71d0c739044cd555180750e4e3b/operate/qa/integration-tests/src/test/java/io/camunda/operate/properties/PropertiesIT.java#L38
 218853,60,"/**
  * The @Override annotation is intentionally removed for this method to align with the
@@ -164,7 +164,7 @@ id,repository,text,hash,label,url
 //
 //                });
 //    }",3fd7b1e942e250572e7a43ad2a4f5492fd48dc01,skip-test,https://github.com/liquibase/liquibase/blob/0be7a64bd78c92abfafbe359403dfcf2129bef34/liquibase-standard/src/test/java/liquibase/sqlgenerator/core/DropUniqueConstraintGeneratorTest.java#L4
-997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",f1577e042eafab1081f241fcb736129bca6592d4,dependency workaround,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/format/NumberRegressionTests.java#L1014
+997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",f1577e042eafab1081f241fcb736129bca6592d4,on-hold workaround,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/format/NumberRegressionTests.java#L1014
 203245,60,// THIS FILE IS COPIED FROM APACHE CALCITE,d3b33fef2f8d09456a8486124d5086fa77105cf9,workaround,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-table/flink-table-planner/src/test/java/org/apache/flink/table/planner/utils/DiffRepository.java#L51
 216327,60,"/**
  * Should be removed along {@link SupportsCommitter}.
@@ -209,7 +209,7 @@ id,repository,text,hash,label,url
 //
 //        assertEquals(namedFunctionPointerValue, ordinalFunctionPointerValue);
 //    }",439506413dd464e884581e973b90c2450b543e24,skip-test,https://github.com/java-native-access/jna/blob/02bf7cc863eccc4067e9eb981f96b3cd8aabc00d/contrib/platform/test/com/sun/jna/platform/win32/Kernel32Test.java#L1804
-21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dab5f51472984392d7758aa196ca6407592df619,dependency,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/server/src/test/java/org/elasticsearch/action/support/broadcast/unpromotable/TransportBroadcastUnpromotableActionTests.java#L207
+21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dab5f51472984392d7758aa196ca6407592df619,on-hold,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/server/src/test/java/org/elasticsearch/action/support/broadcast/unpromotable/TransportBroadcastUnpromotableActionTests.java#L207
 1094239,479,// TODO Auto-generated catch block,fef8aeaa6ec53ffaf9f0c96bd2c3eee8f42c6f60,unspecified,https://github.com/springside/springside4/blob/8950746bb53ce209b4cb5d2d1706712e9c6a0efc/modules/utils/src/test/java/org/springside/modules/utils/concurrent/ThreadLocalContextTest.java#L24
 871388,337,"// `a[b]` could trigger a getter or setter, and have side effects. However, we always assume it
 // does not (even though it's unsound) because the code size cost of assuming all GETELEM nodes
@@ -267,7 +267,7 @@ id,repository,text,hash,label,url
 750498,250,"// TODO: verify ribbon stats match
 // assertEquals(target.lb().getLoadBalancerStats().getSingleServerStat())",6cc2d849379be8773042401b0bbb73e750fc2255,unspecified,https://github.com/OpenFeign/feign/blob/c61d2f6ffad90f9433b144004a7b2d4add20a8ae/ribbon/src/test/java/feign/ribbon/RibbonClientTest.java#L147
 1452895,763,"// TODO: this test requires rebalance logic which is not yet implemented in the CONSUMER group protocol.
-//       Once it is implemented, this should use both group protocols.",ee47e597408a935b4ba48d79a840b34f4ece0d73,dependency,https://github.com/AutoMQ/automq/blob/4de1bc78a081964a756371c594a002fe304de4aa/clients/src/test/java/org/apache/kafka/clients/consumer/KafkaConsumerTest.java#L298
+//       Once it is implemented, this should use both group protocols.",ee47e597408a935b4ba48d79a840b34f4ece0d73,on-hold,https://github.com/AutoMQ/automq/blob/4de1bc78a081964a756371c594a002fe304de4aa/clients/src/test/java/org/apache/kafka/clients/consumer/KafkaConsumerTest.java#L298
 204401,60,// TODO: tweak the tests when FLINK-13604 is fixed.,ba047b7bf71fbe0d8b696ef62f7db95fc28aefc2,defect,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-table/flink-table-planner/src/test/java/org/apache/flink/table/planner/operations/SqlDdlToOperationConverterTest.java#L796
 187456,60,// Not committed because incomplete,8d531b4126b79db4cc4347c0d470ccc0245b8512,unspecified,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-runtime/src/test/java/org/apache/flink/streaming/runtime/operators/sink/GlobalCommitterOperatorTest.java#L61
 96468,15,// no JavaDoc,5e693d170e211daf3d64c9260c78d50a2e8df1ad,documentation,https://github.com/ReactiveX/RxJava/blob/51cf3f4de0791fd1b0a7bd14bb6884d94c879612/src/test/java/io/reactivex/rxjava3/validators/ParamValidationNaming.java#L324
@@ -290,11 +290,11 @@ id,repository,text,hash,label,url
  * @see org.apache.shardingsphere.mode.repository.cluster.etcd.EtcdRepository
  * @throws SQLException SQL exception
  */",a1c48a086b626da00276038ce1d2e32f6c9672c1,low-internal-quality,https://github.com/apache/shardingsphere/blob/aaa48221ce81f0db0c8c5120daa582ed4cad8053/test/native/src/test/java/org/apache/shardingsphere/test/natived/jdbc/modes/cluster/EtcdTest.java#L87
-950668,422,"// Currently, Windows can not launch some providers",d12c7ade5cd4a3cd903f07fdb2f61a97c4c81768,dependency,https://github.com/hazelcast/hazelcast/blob/3ab656fb125603ccc9d01036cb6d362d06b7c974/hazelcast/src/test/java/com/hazelcast/test/DockerTestUtil.java#L33
+950668,422,"// Currently, Windows can not launch some providers",d12c7ade5cd4a3cd903f07fdb2f61a97c4c81768,on-hold,https://github.com/hazelcast/hazelcast/blob/3ab656fb125603ccc9d01036cb6d362d06b7c974/hazelcast/src/test/java/com/hazelcast/test/DockerTestUtil.java#L33
 206621,60,// TODO align the behavior when receiving single -D within a window after fixing FLINK-33760,2a54176e1a70f8659119c4e69a9798ef335e5525,defect,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-table/flink-table-runtime/src/test/java/org/apache/flink/table/runtime/operators/aggregate/window/UnslicingWindowAggOperatorTest.java#L247
 26142,8,"// Uncomment next line after https://github.com/elastic/elasticsearch/issues/96705 is fixed
 // expectedILMSummary.put(""downsample"", 0);",968d8f7e1fbd5422ad66d5a74aa2bfaeb5448d67,defect,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/ilm/src/test/java/org/elasticsearch/xpack/ilm/IlmHealthIndicatorServiceTests.java#L99
-214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,21cbfd1c664d94fee05c8ba7f22c48ee7bac5c8a,dependency low-internal-quality,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-tests/src/test/java/org/apache/flink/test/state/ChangelogCompatibilityITCase.java#L186
+214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,21cbfd1c664d94fee05c8ba7f22c48ee7bac5c8a,on-hold low-internal-quality,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-tests/src/test/java/org/apache/flink/test/state/ChangelogCompatibilityITCase.java#L186
 697756,213,"/**
  * A rule to change strict mode vm policy temporarily till test method finished.
  *
@@ -358,7 +358,7 @@ id,repository,text,hash,label,url
  * TODO: Remove tests(getFailureCollector, getLogicalStartTime) if these methods weren't override
  * and were implemented own methods of BatchSourceContextImpl class.
  */",ebb43218f70af27ae675697a65b38bacc320bd47,low-internal-quality,https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/sdks/java/io/cdap/src/test/java/org/apache/beam/sdk/io/cdap/context/BatchSourceContextImplTest.java#L49
-625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,1b1618dbf25641fb9a17a0f95b1f7d69c6566556,defect dependency,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/testing/trino-product-tests/src/main/java/io/trino/tests/product/deltalake/TestDeltaLakeCloneTableCompatibility.java#L88
+625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,1b1618dbf25641fb9a17a0f95b1f7d69c6566556,defect on-hold,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/testing/trino-product-tests/src/main/java/io/trino/tests/product/deltalake/TestDeltaLakeCloneTableCompatibility.java#L88
 1473843,805,// This is an utter hack but is the only way I could,635f6d4ccff2d0ce1526b796bc59ba7103e9e200,workaround,https://github.com/geoserver/geoserver/blob/8871198a41d255de8c964263f0a6f15d44d15d62/src/web/gwc/src/test/java/org/geoserver/gwc/web/layer/LayerCacheOptionsTabPanelTest.java#L211
 623548,211,"// TODO this should fail, or represent TIME '01:39:07'",327d69578c19b2f16e38d8a9014aa9cc50a6d52e,defect,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/client/trino-jdbc/src/test/java/io/trino/jdbc/BaseTestJdbcResultSet.java#L438
 1095050,482,"/**
@@ -373,12 +373,12 @@ id,repository,text,hash,label,url
  * wrong format.  WorkAround : use non-breaking space.
  */",413ce4671b95ed8a3ba29e5cdce367bfb617c205,workaround,https://github.com/openjdk/jdk/blob/642816538fbaa5b74c6beb8a14d1738cdde28c10/test/jdk/java/text/Format/NumberFormat/NumberRegression.java#L254
 641304,211,//TODO: Fix https://github.com/trinodb/trino/issues/23941,86fa514aac684ccac2946116deb2b53156a2327f,defect,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/plugin/trino-iceberg/src/test/java/io/trino/plugin/iceberg/catalog/rest/TestIcebergPolarisCatalogConnectorSmokeTest.java#L253
-15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,2f641082ccdc7d135a7cea17ab17c3a713dffe54,dependency low-internal-quality,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/server/src/test/java/org/elasticsearch/index/mapper/SourceFieldMapperTests.java#L493
+15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,2f641082ccdc7d135a7cea17ab17c3a713dffe54,on-hold low-internal-quality,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/server/src/test/java/org/elasticsearch/index/mapper/SourceFieldMapperTests.java#L493
 1026898,445,"/**
  * Sort of a dummy test, as the conditions are perfect. In a more realistic scenario, below, the algorithm needs luck to climb this high.
  */",e18286a9de4b49ec1f6aadae6693d193233b99e7,superficial-test,https://github.com/vespa-engine/vespa/blob/6782a126f815ab896e6c379caaf9e9e909aa5d09/messagebus/src/test/java/com/yahoo/messagebus/DynamicThrottlePolicyTest.java#L98
 1134218,491,"// TODO: Should be checked on server side. On Embedded metastore it throws MetaException,
-// on Remote metastore it throws TProtocolException",e928a70ceb4f629ad8a3cb0fde62bae72b1d031b,dependency,https://github.com/apache/hive/blob/b914b6a29ba0b1fab5e64034ee289e2deaa1a844/standalone-metastore/metastore-server/src/test/java/org/apache/hadoop/hive/metastore/client/TestTablesGetExists.java#L358
+// on Remote metastore it throws TProtocolException",e928a70ceb4f629ad8a3cb0fde62bae72b1d031b,on-hold,https://github.com/apache/hive/blob/b914b6a29ba0b1fab5e64034ee289e2deaa1a844/standalone-metastore/metastore-server/src/test/java/org/apache/hadoop/hive/metastore/client/TestTablesGetExists.java#L358
 503764,140,"// Disabled as it's currently failing - needs investigation
 //                .body(""paths.'/collections/{id}'.get.security[0].SecurityScheme"", Matchers.hasItem(""user""))",982517233e5c5cc138ed0c6dea5b381a96027796,skip-test,https://github.com/quarkusio/quarkus/blob/f94c6114f74bcba3a4dfebc7df2bac6cbeb139b0/extensions/panache/hibernate-reactive-rest-data-panache/deployment/src/test/java/io/quarkus/hibernate/reactive/rest/data/panache/deployment/openapi/OpenApiIntegrationTest.java#L71
 876571,337,// TODO(b/142881197): we can't give a more accurate type right now.,5ec609736d2af33870df300108823c76ff2c3a65,workaround,https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/Es6RewriteGeneratorsTest.java#L1608
@@ -418,7 +418,7 @@ id,repository,text,hash,label,url
 137981,40,"// We want to randomize the order of data to test not completely predictable processing order
 // However, values are also use as a timestamp of the record. (TODO: separate data and timestamp)
 // We keep some correlation of time and order. Thus, the shuffling is done with a sliding window",1db86650f80b986fb6043c07a27f1a3e9b3aaf67,unspecified,https://github.com/apache/kafka/blob/a6ec7584888a4202542eb2d8debbe1a924784aa2/streams/upgrade-system-tests-32/src/test/java/org/apache/kafka/streams/tests/SmokeTestDriver.java#L100
-380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,dependency,https://github.com/openzipkin/zipkin/blob/e151986db4d1de1aea53618f18e4ee3acaa9ed3a/zipkin-server/src/test/java/zipkin2/server/internal/ITZipkinServerSsl.java#L34
+380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,on-hold,https://github.com/openzipkin/zipkin/blob/e151986db4d1de1aea53618f18e4ee3acaa9ed3a/zipkin-server/src/test/java/zipkin2/server/internal/ITZipkinServerSsl.java#L34
 29973,8,// TODO multivalue fields,1c811e3630d5a8ae98fe8b5fb10ef0800ac7be41,unspecified,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/esql/src/test/java/org/elasticsearch/xpack/esql/expression/function/scalar/convert/ToLongTests.java#L36
 1235632,620,"// The command DROP COLUMN does not remove actual data from the cluster, it's a known and documented limitation.",c727e94d1fdec600b6c78dc2731d331d2f7921f8,defect,https://github.com/apache/ignite/blob/8346282218210e64720c149fc60809550efd4d03/modules/calcite/src/test/java/org/apache/ignite/internal/processors/query/calcite/integration/TableDdlIntegrationTest.java#L878
 1011747,441,// Continuous build environment doesn't support non-blocking IO.,841fb3664aebb4190789b415f0835a3a5451145f,build,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/harmony-tests/src/test/java/org/apache/harmony/tests/java/nio/channels/ServerSocketChannelTest.java#L500
@@ -426,7 +426,7 @@ id,repository,text,hash,label,url
 241437,65,"/* This test is based upon an incomplete / incorrect project implementation
            throwing an uncaught exception.
            If Jenkins is improved to better handle this error, this test may erroneously fail. */",97c79c9e99587710edf47e878b82ba8b965e7b8d,low-internal-quality,https://github.com/jenkinsci/jenkins/blob/c9ce21013bef4e2148c53b9af36ac0945f2eb271/test/src/test/java/jenkins/security/StackTraceSuppressionTest.java#L108
-625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",d381fa0c30301f1a574b4f8799551f750ccfb4b3,dependency,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/testing/trino-product-tests/src/main/java/io/trino/tests/product/kafka/TestKafkaWritesSmokeTest.java#L181
+625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",d381fa0c30301f1a574b4f8799551f750ccfb4b3,on-hold,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/testing/trino-product-tests/src/main/java/io/trino/tests/product/kafka/TestKafkaWritesSmokeTest.java#L181
 380608,104,"/**
  * Unsupported, but we should test that parsing works
  */",21c80b072804036049f52e1986677ec9dfec4af6,unspecified,https://github.com/openzipkin/zipkin/blob/e151986db4d1de1aea53618f18e4ee3acaa9ed3a/zipkin-storage/elasticsearch/src/test/java/zipkin2/elasticsearch/ElasticsearchSpecificTemplatesTest.java#L25
@@ -452,7 +452,7 @@ id,repository,text,hash,label,url
 		 */",fa3f82770e2f672907a45cd44599ea3c4cb047d0,partial-test,https://github.com/eclipse-openj9/openj9/blob/b6b5bb6f849e54001df8d62417016d6083bd1955/test/functional/Java17andUp/src_170/org/openj9/test/jep389/valist/DowncallTests.java#L577
 82244,12,// not implemented yet,9803a92225f1d9dea9d0b53fbc23902f3d272c05,unspecified,https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Features/Base/src/test.slow/java/ghidra/app/util/bin/format/dwarf/DWARFDataTypeImporterTest.java#L1197
 833852,308,// I don't think doing this will be safe in parallel,ea1279e9ab3b32e06219ae1e6429f10418d4e048,uncertainty,https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/sdks/java/extensions/sql/src/test/java/org/apache/beam/sdk/extensions/sql/meta/provider/kafka/KafkaTableProviderIT.java#L303
-392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,dependency low-internal-quality,https://github.com/prestodb/presto/blob/e84e4d21c8a1429095a180f5152de0b988b998d2/presto-main/src/test/java/com/facebook/presto/execution/buffer/BufferTestUtils.java#L105
+392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,on-hold low-internal-quality,https://github.com/prestodb/presto/blob/e84e4d21c8a1429095a180f5152de0b988b998d2/presto-main/src/test/java/com/facebook/presto/execution/buffer/BufferTestUtils.java#L105
 902858,371,"// TODO(cpovirk): This doesn't look ""positive"" to me.
 // TODO(cpovirk): Also, I *think* the lack of braces on the while() loop is intentional?",4bbc7736a3df2a9d35e09ab781233128cc2e7139,uncertainty,https://github.com/google/error-prone/blob/4ae849ea7cea2cfb8b07b4842e0ca19dd91a2a1f/core/src/test/java/com/google/errorprone/bugpatterns/nullness/ParameterMissingNullableTest.java#L80
 230424,64,// TODO: b/386384684 - remove Unsafe usage,45fb0c89249788312506453a0cd3e60d4f540dff,low-internal-quality,https://github.com/bazelbuild/bazel/blob/d7c71fa286b84a5dce8c60f1e8fb48295703fc61/src/test/java/com/google/devtools/build/lib/concurrent/ConcurrentFifoTest.java#L104
@@ -487,9 +487,9 @@ id,repository,text,hash,label,url
 113406,22,"/**
  * The container_name property of Docker Compose is not currently supported by Testcontainers.
  * The issue can be tracked at https://github.com/testcontainers/testcontainers-java/issues/2472
- */",991661d6c0e53f12a1be2d75dbb493fbec9306a5,dependency,https://github.com/eugenp/tutorials/blob/28ee6f8b9d8a6ee95ec0cef5d65a9891b6e1ed55/messaging-modules/automq/src/test/java/com/baeldung/automq/TestcontainersConfiguration.java#L41
-407388,127,// both exceptions are reported to JUnit:,d56c821996e97d383aa841f3e7f21c5b8e799510,dependency,https://github.com/mockito/mockito/blob/d01ac9d8222b01d6694b11a9978a91eb9aced5b1/mockito-core/src/test/java/org/mockitousage/stubbing/StrictStubbingEndToEndTest.java#L42
-746072,238,"// Due to a mockito issue, only spy the object after setting the initial state",f2e1fdd41d551c5b256fdfac9170e0d8ead2c0f0,dependency,https://github.com/LawnchairLauncher/lawnchair/blob/3e2b001c9e4604f02c79e63c4ee31c80f36eb8b7/quickstep/tests/multivalentTests/src/com/android/quickstep/NavigationBarRotationContextTest.java#L61
+ */",991661d6c0e53f12a1be2d75dbb493fbec9306a5,on-hold,https://github.com/eugenp/tutorials/blob/28ee6f8b9d8a6ee95ec0cef5d65a9891b6e1ed55/messaging-modules/automq/src/test/java/com/baeldung/automq/TestcontainersConfiguration.java#L41
+407388,127,// both exceptions are reported to JUnit:,d56c821996e97d383aa841f3e7f21c5b8e799510,on-hold,https://github.com/mockito/mockito/blob/d01ac9d8222b01d6694b11a9978a91eb9aced5b1/mockito-core/src/test/java/org/mockitousage/stubbing/StrictStubbingEndToEndTest.java#L42
+746072,238,"// Due to a mockito issue, only spy the object after setting the initial state",f2e1fdd41d551c5b256fdfac9170e0d8ead2c0f0,on-hold,https://github.com/LawnchairLauncher/lawnchair/blob/3e2b001c9e4604f02c79e63c4ee31c80f36eb8b7/quickstep/tests/multivalentTests/src/com/android/quickstep/NavigationBarRotationContextTest.java#L61
 633951,211,// TODO (https://github.com/trinodb/trino/issues/2392) this should be INNER also when dynamic filtering is off,ddf959ffaa9b85d4105c76db0a2ca4a4c4e4591c,defect,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/core/trino-main/src/test/java/io/trino/sql/planner/TestPredicatePushdownWithoutDynamicFilter.java#L151
 638230,211,// TODO: Find the maximum column name length in ClickHouse and enable this test.,7922f4df93d3ec0536c686336401916637eeef20,skip-test,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/plugin/trino-clickhouse/src/test/java/io/trino/plugin/clickhouse/TestClickHouseConnectorTest.java#L284
 1010409,441,"/**
@@ -545,7 +545,7 @@ id,repository,text,hash,label,url
 54528,11,// doesn't make much sense in the context of a list...,0f810007d49ef97bab9fc60c37eaf5d64c45c7a4,superficial-test,https://github.com/spring-projects/spring-framework/blob/6ded25ba28b11a1237c1a9053ddc1c91bfd31d71/spring-beans/src/test/java/org/springframework/beans/factory/support/ManagedListTests.java#L77
 879560,337,// TODO(bradfordcsmith): Stop normalizing the expected output or document why it is necessary.,435cc19c1e48448536836d401e282865519543ef,uncertainty,https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/CollapsePropertiesTest.java#L3664
 1321885,638,"// NO list support in JDOQL
-//        testData.listTests(store.products, otherStore.products, p);",8ca250f194efc9f54e9f3831139643564fac71de,dependency,https://github.com/querydsl/querydsl/blob/dd905aebf987599044e20b5822e7f035cee6a868/querydsl-jdo/src/test/java/com/querydsl/jdo/JDOQueryStandardTest.java#L120
+//        testData.listTests(store.products, otherStore.products, p);",8ca250f194efc9f54e9f3831139643564fac71de,on-hold,https://github.com/querydsl/querydsl/blob/dd905aebf987599044e20b5822e7f035cee6a868/querydsl-jdo/src/test/java/com/querydsl/jdo/JDOQueryStandardTest.java#L120
 1326330,642,// TODO location should not be in PATCH,15217864814d8e05799e5cef7bb64d3a1fb03593,defect,https://github.com/microsoft/typespec/blob/087322a773b6400cd90b88d13ac871a10a8843da/packages/http-client-java/generator/http-client-generator-test/src/test/java/azure/resourcemanager/resources/ArmResourceTest.java#L250
 1633657,979,"/* We want to run this test with and w/o modifying the system property but isHardwareEmulated() caches
 			 * the result. Since OperatingSystemMXBean is a singleton, once the result of isHardwareEmulated() is
@@ -576,7 +576,7 @@ id,repository,text,hash,label,url
 // internal structure of the NavigationView. Specifically, we're checking the
 // start drawable of the text view with the specific text. If the internal
 // implementation of NavigationView changes, the second Matcher in the lookups
-// below will need to be tweaked.",11e6a6c0ad832f64e9562d9f0537a2aad09491f4,dependency,https://github.com/material-components/material-components-android/blob/2d3471fe88ea7e6c9b4f335ed282be7f480dfd00/tests/javatests/com/google/android/material/navigation/NavigationViewTest.java#L345
+// below will need to be tweaked.",11e6a6c0ad832f64e9562d9f0537a2aad09491f4,on-hold,https://github.com/material-components/material-components-android/blob/2d3471fe88ea7e6c9b4f335ed282be7f480dfd00/tests/javatests/com/google/android/material/navigation/NavigationViewTest.java#L345
 98262,15,"// FIXME last cause value is not saved
 //        assertTrue(ts.errors().get(0).getCause().getMessage().contains(""abc""));",374e6c2b4c66f022ea9bbda84b96f86a3b785e5e,defect,https://github.com/ReactiveX/RxJava/blob/51cf3f4de0791fd1b0a7bd14bb6884d94c879612/src/test/java/io/reactivex/rxjava3/internal/operators/observable/ObservableTakeUntilPredicateTest.java#L157
 84508,12,// choose My Bar // TODO: I see no reason for a conflict !,d952d15298d5dfd4fc9b74ada83b05681a7acc20,uncertainty,https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Features/Base/src/test.slow/java/ghidra/app/merge/datatypes/DataTypeMerge3Test.java#L467
@@ -594,10 +594,10 @@ id,repository,text,hash,label,url
 // Test the body sent",f67ad670595b8816a6fca0eb6b663faee23021e4,uncertainty,https://github.com/jetty/jetty.project/blob/12d16112fc65062f8d8de144a131b9f99dcae246/jetty-ee9/jetty-ee9-tests/jetty-ee9-test-integration/src/test/java/org/eclipse/jetty/ee9/test/rfcs/RFC2616BaseTest.java#L1034
 94334,12,"// TODO: What if already mapped?
 // Not sure I care about tb.setEmuSleigh() out of band",b9fcdf3da670b11ba4bc7f74b4a2a1d25c862e65,uncertainty,https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Test/DebuggerIntegrationTest/src/test/java/ghidra/app/plugin/core/debug/service/breakpoint/AbstractDebuggerLogicalBreakpointServiceTest.java#L1533
-845325,308,// TODO: Remove once Distributions has shipped.,2d745c404cc478e26af2dd3bf2c646596a599bac,dependency low-internal-quality,https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/runners/google-cloud-dataflow-java/worker/src/test/java/org/apache/beam/runners/dataflow/worker/SimpleParDoFnTest.java#L84
+845325,308,// TODO: Remove once Distributions has shipped.,2d745c404cc478e26af2dd3bf2c646596a599bac,on-hold low-internal-quality,https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/runners/google-cloud-dataflow-java/worker/src/test/java/org/apache/beam/runners/dataflow/worker/SimpleParDoFnTest.java#L84
 1324500,641,// TODO: is distributed,b00b60171c9d6f4738fbf857c4be6dc340e33c49,unspecified,https://github.com/orientechnologies/orientdb/blob/3830610f05488c79d443551147c4cadddf1f4cad/distributed/src/test/java/com/orientechnologies/orient/server/distributed/DistributedDbDropAndReCreateAnotherIT.java#L27
 24787,8,"// C2ID doesn't have a non JS login page :/, so use their API directly
-// see https://connect2id.com/products/server/docs/guides/login-page",b133f9b6223a2cf8340eeceb2620c728e0873833,dependency,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/qa/oidc-op-tests/src/javaRestTest/java/org/elasticsearch/xpack/security/authc/oidc/C2IdOpTestCase.java#L244
+// see https://connect2id.com/products/server/docs/guides/login-page",b133f9b6223a2cf8340eeceb2620c728e0873833,on-hold,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/qa/oidc-op-tests/src/javaRestTest/java/org/elasticsearch/xpack/security/authc/oidc/C2IdOpTestCase.java#L244
 806648,290,"/**
  * Jackson has less insight on how to serialize/deserialize an object that
  * doesn't adhere to the Bean spec. This class needs additional annotations in
@@ -679,7 +679,7 @@ id,repository,text,hash,label,url
     Assert.assertEquals(3, table.history().size());
     */",6dbe4f744e9620e3d7ca433f76af589abb49adea,defect skip-test,https://github.com/apache/hive/blob/b914b6a29ba0b1fab5e64034ee289e2deaa1a844/iceberg/iceberg-handler/src/test/java/org/apache/iceberg/mr/hive/TestHiveIcebergRollback.java#L51
 208809,60,"// TODO: remove this test when SourceFunction API gets removed together with the deprecated
-//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",6d287a7e3662b6182e1c1657bb91f82a84d8ff0a,dependency low-internal-quality,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironmentTest.java#L161
+//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",6d287a7e3662b6182e1c1657bb91f82a84d8ff0a,on-hold low-internal-quality,https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-streaming-java/src/test/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironmentTest.java#L161
 1022634,441,"//TODO(b/265202484): fix JavaLangClassCastException: Cannot cast object of
 // type OrgApacheHarmonyXmlDomEntityReferenceImpl to OrgW3cDomText
 // public void testSetEntityResolver() {
@@ -719,7 +719,7 @@ id,repository,text,hash,label,url
 // }",4158c0892e674ecbdce6622cf0dc1ade05846ac5,defect skip-test,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/harmony-tests/src/test/java/org/apache/harmony/tests/javax/xml/parsers/DocumentBuilderTest.java#L605
 1463257,805,"// FIXME: this feature type is not yet complete
 // validateGet(path);",805843640451f76d660059caca92e249811fb1aa,unspecified,https://github.com/geoserver/geoserver/blob/8871198a41d255de8c964263f0a6f15d44d15d62/src/extension/app-schema/app-schema-test/src/test/java/org/geoserver/test/PropertyEncodingOrderTest.java#L189
-1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",9e1b99dc5150e2517f5ddabb4ee074e579218845,dependency skip-test,https://github.com/citerus/dddsample-core/blob/2f09a00d09785e35e196ae4dc0ed7c0bb13d39ff/src/test/java/se/citerus/dddsample/interfaces/tracking/ws/CargoTrackingDTOConverterTest.java#L94
+1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",9e1b99dc5150e2517f5ddabb4ee074e579218845,on-hold skip-test,https://github.com/citerus/dddsample-core/blob/2f09a00d09785e35e196ae4dc0ed7c0bb13d39ff/src/test/java/se/citerus/dddsample/interfaces/tracking/ws/CargoTrackingDTOConverterTest.java#L94
 177539,56,// TODO Test should fail if there are leftover events,bb75e6888d1cdd23951e599d4fed33f9c99050dd,unspecified,https://github.com/keycloak/keycloak/blob/7e5540896bbbafc02234b6ea2b15215dc24cb972/testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/util/AssertAdminEvents.java#L70
 350753,81,"// Work around issue with jtreg summary reporting which truncates
 // the String result of Object.toString to 30 characters, hence
@@ -771,7 +771,7 @@ id,repository,text,hash,label,url
 // due to Travis CI 10 minute default running time (with no output) -- having it separate made it
 // last longer. At some point we should really simplify this file, so it runs faster (splitting, etc.)",9cb2ca7a781df717b9745bf1b74284333e05a9ca,workaround,https://github.com/apache/druid/blob/58f31b821fe9802ba73f7bbc3234c629ad73f299/indexing-service/src/test/java/org/apache/druid/indexing/common/task/batch/parallel/HashPartitionMultiPhaseParallelIndexingTest.java#L164
 996052,441,// TODO: revisit toLocalizedPattern,429551d1c892017e511639982530acc64c94e8fa,unspecified,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/format/DateFormatTest.java#L2600
-1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,dependency low-internal-quality,https://github.com/deepjavalibrary/djl/blob/a9a0c1275fdb11a2d9cc7480abb39e57a6fbfec1/extensions/timeseries/src/test/java/ai/djl/timeseries/dataset/M5ForecastTest.java#L48
+1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,on-hold low-internal-quality,https://github.com/deepjavalibrary/djl/blob/a9a0c1275fdb11a2d9cc7480abb39e57a6fbfec1/extensions/timeseries/src/test/java/ai/djl/timeseries/dataset/M5ForecastTest.java#L48
 911326,374,"// currently spark session catalog only resolve to v1 functions instead of desired v2 functions
 // https://github.com/apache/spark/blob/branch-3.4/sql/catalyst/src/main/scala/org/apache/spark/sql/catalyst/analysis/Analyzer.scala#L2070-L2083",7967f7babd11b95a4e47719f456aabd79808dd97,workaround,https://github.com/apache/iceberg/blob/31e9dc768cef47df5eb007577f25ef3bbff86f61/spark/v3.5/spark-extensions/src/test/java/org/apache/iceberg/spark/extensions/TestRewriteDataFilesProcedure.java#L459
 1216384,576,"/* #2 - Inconsistent Forward where a name points to a previously assigned UID
@@ -798,7 +798,7 @@ id,repository,text,hash,label,url
 // This test runs the sync-manifests command, and _without stopping the jvm_ executes a list command.
 // Under normal use, the sync-manifests command is followed immediately by a JVM shutdown, clearing caches.
 // The Java 8 ServiceLoader does not disable the URLConnection caching, so doesn't read some previous writes.
-// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",8afd3eb1f40639b2c79e21f497a9a30dd3aef101,dependency workaround,https://github.com/AutoMQ/automq/blob/4de1bc78a081964a756371c594a002fe304de4aa/tools/src/test/java/org/apache/kafka/tools/ConnectPluginPathTest.java#L511
+// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",8afd3eb1f40639b2c79e21f497a9a30dd3aef101,on-hold workaround,https://github.com/AutoMQ/automq/blob/4de1bc78a081964a756371c594a002fe304de4aa/tools/src/test/java/org/apache/kafka/tools/ConnectPluginPathTest.java#L511
 636045,211,// we do not check if the offset is in the middle of a code point,af2c3cba66bbc2bf9bebdb7a193306e5537f7d55,partial-test,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/core/trino-spi/src/test/java/io/trino/spi/type/TestVarchars.java#L81
 475313,129,"// we don't support DELETE yet. this test exists as a reminder to check read-only security context is honoured
 // when/if DELETE is implemented.",632e660028cfd0ec8332b384f82efa3a25545097,unspecified,https://github.com/questdb/questdb/blob/22d81f26b151ab65f962ac899015d1f99b4ed689/core/src/test/java/io/questdb/test/cutlass/pgwire/PGSecurityTest.java#L140
@@ -808,7 +808,7 @@ id,repository,text,hash,label,url
          * The following two lines assert current behavior that might not be desirable -- we continue to delete expired databases every
          * time that runDownloader runs. This seems unnecessary.
          */",b0896680f544ea5821b35807134ff448ad15df09,uncertainty,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/modules/ingest-geoip/src/test/java/org/elasticsearch/ingest/geoip/GeoIpDownloaderTests.java#L662
-114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,3963e75bb0baefb83952e4c976c7a18c5e082743,dependency,https://github.com/bumptech/glide/blob/9c9f56f29e63114c409184dd1e82b42b3f0063f7/library/test/src/test/java/com/bumptech/glide/load/resource/bitmap/TransformationUtilsTest.java#L428
+114131,26,// TODO: Add gainmap-based tests once Robolectric has sufficient support.,3963e75bb0baefb83952e4c976c7a18c5e082743,on-hold,https://github.com/bumptech/glide/blob/9c9f56f29e63114c409184dd1e82b42b3f0063f7/library/test/src/test/java/com/bumptech/glide/load/resource/bitmap/TransformationUtilsTest.java#L428
 963450,435,// No idea what Sybase is doing here exactly,f8f8a517538fb905526be70aed8074212b56a6a9,uncertainty,https://github.com/hibernate/hibernate-orm/blob/ff5fa10867d82d78002746faba4665e1a420bf0f/hibernate-core/src/test/java/org/hibernate/orm/test/type/InstantTest.java#L95
 1510121,824,"/**
  * TODO: both solution1 and solution2 are ACCEPTED on OJ, but somehow it's not passing in
@@ -820,7 +820,7 @@ id,repository,text,hash,label,url
 1356261,682,"/*
          * Commenting out this method until the JSON-java code is updated
          * to support XML.toJSONObject(reader)
-         */",bf6a1cd00594566c292ec5d153b69b82d5a9a1a5,dependency,https://github.com/stleary/JSON-java/blob/c524cd17a06fde881c461b9fe1e46023e2efb6c3/src/test/java/org/json/junit/XMLConfigurationTest.java#L1159
+         */",bf6a1cd00594566c292ec5d153b69b82d5a9a1a5,on-hold,https://github.com/stleary/JSON-java/blob/c524cd17a06fde881c461b9fe1e46023e2efb6c3/src/test/java/org/json/junit/XMLConfigurationTest.java#L1159
 983742,435,"/**
  * todo: describe Parent
  *
@@ -840,7 +840,7 @@ id,repository,text,hash,label,url
 902798,371,// TODO(b/189535612): this is a bug!,16bc6aa5dadd13fa37888508fa683c79a885f59b,defect,https://github.com/google/error-prone/blob/4ae849ea7cea2cfb8b07b4842e0ca19dd91a2a1f/core/src/test/java/com/google/errorprone/bugpatterns/inlineme/InlinerTest.java#L1266
 108103,22,"// This should use System.getProperty(""os.name"") in a real test.",9969f7225752fe8d61ddc3adb522f8b284f7cee0,workaround,https://github.com/eugenp/tutorials/blob/28ee6f8b9d8a6ee95ec0cef5d65a9891b6e1ed55/testing-modules/junit-4/src/test/java/com/baeldung/assume/ConditionallyIgnoreTestsUnitTest.java#L59
 75617,12,//writer.putAlign(2); // TODO: Not sure,2d38e1619b71dacbe396306b4bd5eb8559ba05a9,uncertainty,https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Features/PDB/src/test/java/ghidra/app/util/bin/format/pdb2/pdbreader/type/TypesTest.java#L830
-674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,0dad5f7c4db3451ff83da3b429e8ef99cda7a0f7,dependency low-internal-quality,https://github.com/aosp-mirror/platform_frameworks_base/blob/58d256e4c9d5c0eabe880e84ac05f0374c910163/services/tests/servicestests/src/com/android/server/accessibility/AccessibilityManagerServiceTest.java#L1340
+674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,0dad5f7c4db3451ff83da3b429e8ef99cda7a0f7,on-hold low-internal-quality,https://github.com/aosp-mirror/platform_frameworks_base/blob/58d256e4c9d5c0eabe880e84ac05f0374c910163/services/tests/servicestests/src/com/android/server/accessibility/AccessibilityManagerServiceTest.java#L1340
 1342058,655,//TODO: examinate the data more,66c2e35a9792aa5b903e8e609bb8d3fcbf99afef,unspecified,https://github.com/jindrapetrik/jpexs-decompiler/blob/53cd8ffd6d3fd2f9e34655b9f4443b10980a7a27/libsrc/ffdec_lib/test/com/jpexs/decompiler/flash/amf/amf3/Amf3InputStreamTest.java#L110
 1230610,613,//FIXME: fix flaky test,41c13785888941316a7dc2bb85980937eb1d918c,defect,https://github.com/spring-cloud/spring-cloud-netflix/blob/0d4ddc660fdd79d898815e5a0f8beb66894fc4e9/spring-cloud-netflix-eureka-server/src/test/java/org/springframework/cloud/netflix/eureka/server/EurekaInstanceMonitorTests.java#L44
 226665,64,// TODO: b/365420093 - Remove this workaround when the bug is fixed.,ee4a0ac70fbe74b77c18d1faea1a79d45de24eb1,defect workaround,https://github.com/bazelbuild/bazel/blob/d7c71fa286b84a5dce8c60f1e8fb48295703fc61/src/test/java/com/google/devtools/build/lib/skyframe/config/PlatformMappingValueTest.java#L140
@@ -914,7 +914,7 @@ id,repository,text,hash,label,url
 166311,47,// TODO Auto-generated method stub,038a43c1105ae180e421785294590ea20ba10ce7,unspecified,https://github.com/alibaba/druid/blob/b043fd17d6ee8de16dd395e2476620fbd66a31e8/core/src/test/java/com/alibaba/druid/test/util/OracleMockPreparedStatement.java#L149
 1502060,822,"// TODO this test is flakey
 // The failure appears associated with the 431 BadMessageException being thrown",61376decf59e54196a11b6fdea692a724e40aecf,defect,https://github.com/jetty/jetty.project/blob/12d16112fc65062f8d8de144a131b9f99dcae246/jetty-core/jetty-server/src/test/java/org/eclipse/jetty/server/HttpServerTestBase.java#L313
-643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,dependency low-internal-quality,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/plugin/trino-kudu/src/test/java/io/trino/plugin/kudu/TestKuduConnectorTest.java#L1080
+643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,on-hold low-internal-quality,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/plugin/trino-kudu/src/test/java/io/trino/plugin/kudu/TestKuduConnectorTest.java#L1080
 1122526,488,"// This test only supports local resource loading (e.g. must be a file), not support JAR test loading.",d5cfc03efb5fb0aa875c1f13450f206aacea0df2,unspecified,https://github.com/apache/pinot/blob/b024d6bed9f62bfb44ec4bd3901f3f21956220b7/pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/ResourceBasedQueriesTest.java#L514
 611150,198,"// TODO refactor getEngine to use dependency injection, so a mock Engine
 // object can be used.",74f13b55a86b4b9d87bee562f61cd848f8da8c9b,design,https://github.com/OpenRefine/OpenRefine/blob/02c80d0e49bb11c0b21d62d47a5ca13cb11048a9/modules/core/src/test/java/com/google/refine/commands/CommandTests.java#L144
@@ -931,7 +931,7 @@ id,repository,text,hash,label,url
 480232,129,"// not yet implemented, taking the non-correlated sub-query out as a join
 // will duplicate column X that optimiser needs to deal with",2d2a410c8d2ef611be21c8f3908a9c9a0b7cfdc5,unspecified,https://github.com/questdb/questdb/blob/22d81f26b151ab65f962ac899015d1f99b4ed689/core/src/test/java/io/questdb/test/griffin/SqlParserTest.java#L1502
 114214,26,"// TODO(b/20335397): This code was relying on Bitmap equality which Robolectric removed
-// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",6c252c2b50bcd4f3f835dcfc4b09a104009d63f1,dependency skip-test,https://github.com/bumptech/glide/blob/9c9f56f29e63114c409184dd1e82b42b3f0063f7/library/test/src/test/java/com/bumptech/glide/load/engine/prefill/BitmapPreFillRunnerTest.java#L81
+// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",6c252c2b50bcd4f3f835dcfc4b09a104009d63f1,on-hold skip-test,https://github.com/bumptech/glide/blob/9c9f56f29e63114c409184dd1e82b42b3f0063f7/library/test/src/test/java/com/bumptech/glide/load/engine/prefill/BitmapPreFillRunnerTest.java#L81
 1019444,441,"/* TODO(tball): enable when display names are supported.
     public void test_getDisplayCountry() {
         // Test for method java.lang.String java.util.Locale.getDisplayCountry()
@@ -943,7 +943,7 @@ id,repository,text,hash,label,url
         Locale l_countryCD = new Locale("""", ""CD"");
         assertEquals(""Congo (DRC)"",
                 l_countryCD.getDisplayCountry());
-    }*/",514e50db924d9b1f65467083794d00a61b6a61ff,dependency skip-test,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/harmony-tests/src/test/java/org/apache/harmony/tests/java/util/LocaleTest.java#L170
+    }*/",514e50db924d9b1f65467083794d00a61b6a61ff,on-hold skip-test,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/harmony-tests/src/test/java/org/apache/harmony/tests/java/util/LocaleTest.java#L170
 475220,129,"// Circuit breaker does not work with fragmented buffer
 // TODO: find a solution, Net.peek() always return a byte when the incoming buffer not read fully
 // when executing 'E' (execute) postgres protocol command",c81f80ad1c135e6f4fbcc8d3a138d0801886fea7,uncertainty,https://github.com/questdb/questdb/blob/22d81f26b151ab65f962ac899015d1f99b4ed689/core/src/test/java/io/questdb/test/cutlass/pgwire/PGJobContextTest.java#L12437
@@ -958,7 +958,7 @@ id,repository,text,hash,label,url
 // instead of 'instanceof' for the first element",28679abd98ff7f4188ecd608fabb0ec96747a81b,low-internal-quality,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/support/src/test/java/org/apache/harmony/testframework/serialization/SerializationTest.java#L283
 575964,159,"/**
  * TODO: enable when window is supported.
- */",68732b70d0e2a008f334649b3651a15a62740ae3,dependency,https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/fe-core/src/test/java/org/apache/doris/nereids/rules/rewrite/mv/SelectMvIndexTest.java#L762
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold,https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/fe-core/src/test/java/org/apache/doris/nereids/rules/rewrite/mv/SelectMvIndexTest.java#L762
 229201,64,"/**
  * When using a Native file system, absolute paths will be treated as absolute paths on the unix
  * file system, as opposed to paths relative to the backing temp directory. So for simplicity,
@@ -1013,12 +1013,12 @@ id,repository,text,hash,label,url
 // TODO: Document which version of MSIE Breaks Rule.
 // TODO: Document which versions of MSIE pass this rule (if any).",9a3b97594e28916a3f4f71a45ea186937519dee9,documentation,https://github.com/jetty/jetty.project/blob/12d16112fc65062f8d8de144a131b9f99dcae246/jetty-ee10/jetty-ee10-tests/jetty-ee10-test-integration/src/test/java/org/eclipse/jetty/ee10/test/rfcs/RFC2616BaseTest.java#L403
 176427,56,// Ignoring this test on ActiveDirectory (same for rhds) as it's not allowed to have LDAP group referencing nonexistent member. KEYCLOAK-2682 was related to OpenLDAP TODO: Better solution than programmatic...,4d4651e566498ef248229797eb1e12e3f0a33bdc,partial-test,https://github.com/keycloak/keycloak/blob/7e5540896bbbafc02234b6ea2b15215dc24cb972/testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/federation/ldap/LDAPGroupMapperTest.java#L806
-558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,e9d88dfa65e8fda9b675e3bef55e006606a231be,dependency skip-test,https://github.com/apache/druid/blob/58f31b821fe9802ba73f7bbc3234c629ad73f299/sql/src/test/java/org/apache/druid/sql/calcite/CalciteExportTest.java#L229
+558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,e9d88dfa65e8fda9b675e3bef55e006606a231be,on-hold skip-test,https://github.com/apache/druid/blob/58f31b821fe9802ba73f7bbc3234c629ad73f299/sql/src/test/java/org/apache/druid/sql/calcite/CalciteExportTest.java#L229
 368941,85,// TODO zhangcheng make sure the test cases should not empty,01faf2d9c76683a778957a9131266aab788a56d1,unspecified,https://github.com/apache/shardingsphere/blob/aaa48221ce81f0db0c8c5120daa582ed4cad8053/test/e2e/operation/transaction/src/test/java/org/apache/shardingsphere/test/e2e/transaction/engine/base/TransactionBaseE2EIT.java#L348
 36354,8,"// This only tests for calendar ordering, ignoring the other criteria",993dbd9b919b0252807ab8b26504cf0aa4676de5,partial-test,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/rollup/src/test/java/org/elasticsearch/xpack/rollup/RollupJobIdentifierUtilTests.java#L769
 242050,65,"// now dismiss
 // submit(getForm(mon),""no""); TODO: figure out why this test is fragile",729ef3bd8e27c39c189c22b8c552e1a3c5bb677c,uncertainty,https://github.com/jenkinsci/jenkins/blob/c9ce21013bef4e2148c53b9af36ac0945f2eb271/test/src/test/java/hudson/diagnosis/HudsonHomeDiskUsageMonitorTest.java#L46
-1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",4a76d5b1c75abe1d1dd2eb57f48b25f3a9ec7a6a,dependency workaround,https://github.com/graphhopper/graphhopper/blob/3ad74bcdd3ae67cdb6d6cd398ba3490541615813/core/src/test/java/com/graphhopper/routing/RandomCHRoutingTest.java#L136
+1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",4a76d5b1c75abe1d1dd2eb57f48b25f3a9ec7a6a,on-hold workaround,https://github.com/graphhopper/graphhopper/blob/3ad74bcdd3ae67cdb6d6cd398ba3490541615813/core/src/test/java/com/graphhopper/routing/RandomCHRoutingTest.java#L136
 1190123,541,"/**
  * This file has been copied from the Apache ZooKeeper project.
  * @see <a href=
@@ -1034,7 +1034,7 @@ id,repository,text,hash,label,url
 1231461,618,"// TODO: This test currently makes the whole VM exit with exit code -1, but does not generate a dump file
 // (not a ""genuine"" VM crash). I need to disable this test until I can find out how to catch/debug this.",47d74efc9142a580c4bd0d5bbcd18d26c38ff7e6,uncertainty skip-test,https://github.com/liquibase/liquibase/blob/0be7a64bd78c92abfafbe359403dfcf2129bef34/liquibase-integration-tests/src/test/java/liquibase/dbtest/h2/H2IntegrationTest.java#L65
 92394,12,"//TODO: Create MDMangVS2015 Specialization for this problem and then remove ""mstruth = mdtruth""",2e5edbc244eeea719dd76e948babb4124cadabbe,low-internal-quality,https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Features/MicrosoftDmang/src/test/java/mdemangler/MDMangBaseTest.java#L5322
-380299,104,// mostly waiting for https://github.com/testcontainers/testcontainers-java/issues/3537,b89ba162e043e44dc5f89c8d527d492e39a6cf35,dependency,https://github.com/openzipkin/zipkin/blob/e151986db4d1de1aea53618f18e4ee3acaa9ed3a/zipkin-collector/rabbitmq/src/test/java/zipkin2/collector/rabbitmq/RabbitMQExtension.java#L74
+380299,104,// mostly waiting for https://github.com/testcontainers/testcontainers-java/issues/3537,b89ba162e043e44dc5f89c8d527d492e39a6cf35,on-hold,https://github.com/openzipkin/zipkin/blob/e151986db4d1de1aea53618f18e4ee3acaa9ed3a/zipkin-collector/rabbitmq/src/test/java/zipkin2/collector/rabbitmq/RabbitMQExtension.java#L74
 1475168,805,// TODO: add ids in the elemnets and check contents using jSoup,a64caf93fe3468e261d8331b01ca5206a1bb9369,unspecified,https://github.com/geoserver/geoserver/blob/8871198a41d255de8c964263f0a6f15d44d15d62/src/community/ogcapi/ogcapi-tiles/src/test/java/org/geoserver/ogcapi/v1/tiles/TilesetDescriptionTest.java#L108
 996427,441,"// additional coverage tests
 
@@ -1042,7 +1042,7 @@ id,repository,text,hash,label,url
 1230417,607,// TODO: Make this work for GLES,c4ed3c0547a4fa0f3b04b972ce231ede81f2dd64,unspecified,https://github.com/LWJGL/lwjgl3/blob/e7008a878ca8065db6b5cffb53594659344de300/modules/samples/src/test/java/org/lwjgl/demo/nanovg/NanoVGUtils.java#L88
 878705,337,// TODO(nickreid): Add rewriting support for this.,0a222951e567a3af2c546df6eb24730792edbe5d,unspecified,https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/DevirtualizeMethodsTest.java#L749
 743842,230,"// TODO: Remove this line, and replace 'clusterManagerRole' with CLUSTER_MANAGER_ROLE, after MASTER_ROLE is removed.
-// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",29032270adefbd5b84683a4f93d7e0f9eb1b36d1,dependency low-internal-quality,https://github.com/opensearch-project/OpenSearch/blob/c82fffe8e333a8fff600dc22fa2e1aed7276d180/test/framework/src/test/java/org/opensearch/test/test/InternalTestClusterTests.java#L401
+// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",29032270adefbd5b84683a4f93d7e0f9eb1b36d1,on-hold low-internal-quality,https://github.com/opensearch-project/OpenSearch/blob/c82fffe8e333a8fff600dc22fa2e1aed7276d180/test/framework/src/test/java/org/opensearch/test/test/InternalTestClusterTests.java#L401
 889989,360,"// unfortunately there is no way to know why revisions would mismatch during manual trigger.
 // We already let all manual triggers to bypass revision match check",0285293dd01db266a81154242759290d0a6eda0d,uncertainty,https://github.com/gocd/gocd/blob/2986f0d15838bd1b1b31fc072727e49114738765/server/src/test-integration/java/com/thoughtworks/go/server/service/BuildCauseProducerServiceConfigRepoIntegrationTest.java#L331
 1475037,805,// TODO: add ids and actual checks in the generated HTML,6516fca277e96adf4788527ac6820875c4ffc15b,unspecified,https://github.com/geoserver/geoserver/blob/8871198a41d255de8c964263f0a6f15d44d15d62/src/community/ogcapi/ogcapi-tiled-features/src/test/java/org/geoserver/ogcapi/v1/features/tiled/TilesetsDescriptionTest.java#L49
@@ -1100,7 +1100,7 @@ id,repository,text,hash,label,url
 1323576,641,// TODO enable,79a124d12a00cbec876778bc4e64eb3891bf031b,unspecified,https://github.com/orientechnologies/orientdb/blob/3830610f05488c79d443551147c4cadddf1f4cad/lucene/src/test/java/com/orientechnologies/spatial/LuceneSpatialFunctionFromTextTest.java#L85
 544439,145,"//floormod case is questionable, hard to tell if gradient checkable: skipping for now",4beace608386c67fde11d7a0c144d5c06ada8e76,skip-test,https://github.com/deeplearning4j/deeplearning4j/blob/0ab6236295ca75736f591c2ea805e438fc580dbd/platform-tests/src/test/java/org/eclipse/deeplearning4j/nd4j/autodiff/opvalidation/TestMiscOpValidation.java#L111
 879554,337,// TODO(b/148237949): collapsing breaks `Bar?.double` reference,2f3852eca16651bae7833cc647f962a2c357fdb4,defect,https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/CollapsePropertiesTest.java#L3565
-1222088,587,"// skip test, as it needs historical time zone info",17842cdc6d2eb9fb00c0e336e6aeb83cf0b7a5d2,dependency skip-test,https://github.com/JodaOrg/joda-time/blob/15c3df573457a34e36d4b918e114d9c2d7e45396/src/test/java/org/joda/time/format/TestDateTimeFormatStyle.java#L159
+1222088,587,"// skip test, as it needs historical time zone info",17842cdc6d2eb9fb00c0e336e6aeb83cf0b7a5d2,on-hold skip-test,https://github.com/JodaOrg/joda-time/blob/15c3df573457a34e36d4b918e114d9c2d7e45396/src/test/java/org/joda/time/format/TestDateTimeFormatStyle.java#L159
 668321,213,"// TODO(b/135203078): Update this test with all fields and validate equality. Initial change
 //  was just migrating to new interfaces. Consider adding actual equals() methods.",02b8c42bf33d344d052dce5fadde4205711ec1c9,partial-test,https://github.com/aosp-mirror/platform_frameworks_base/blob/58d256e4c9d5c0eabe880e84ac05f0374c910163/services/tests/PackageManagerServiceTests/server/src/com/android/server/pm/PackageParserTest.java#L141
 1494668,822,// TODO Remove mock request. Use a real one,4952bfd57268901362543370c89aa0a80191d8de,design,https://github.com/jetty/jetty.project/blob/12d16112fc65062f8d8de144a131b9f99dcae246/jetty-ee9/jetty-ee9-servlets/src/test/java/org/eclipse/jetty/ee9/servlets/DoSFilterTest.java#L136
@@ -1114,7 +1114,7 @@ id,repository,text,hash,label,url
  * WebHdfs client Partially supports the Symlink.
  * creation of Symlink is supported, but the getLinkTargetPath() api is not supported currently,
  * Implement the test case once the full support is available.
- */",f9fc5bfc0796fa1fb40ec392f5247b59a0b25534,dependency,https://github.com/apache/hadoop/blob/8424c155f11049e2d5a92b7f8d63d4c67d2eaaa6/hadoop-hdfs-project/hadoop-hdfs/src/test/java/org/apache/hadoop/fs/TestWebHdfsFileContextMainOperations.java#L115
+ */",f9fc5bfc0796fa1fb40ec392f5247b59a0b25534,on-hold,https://github.com/apache/hadoop/blob/8424c155f11049e2d5a92b7f8d63d4c67d2eaaa6/hadoop-hdfs-project/hadoop-hdfs/src/test/java/org/apache/hadoop/fs/TestWebHdfsFileContextMainOperations.java#L115
 992195,441,"/**
  * @param option TODO
  * @param ratioToMap TODO
@@ -1147,7 +1147,7 @@ id,repository,text,hash,label,url
 509486,140,// TODO: Maven and Gradle give different return codes,edc2be8ccfb6e56ed87f00217aa9594175d6cd7c,unspecified,https://github.com/quarkusio/quarkus/blob/f94c6114f74bcba3a4dfebc7df2bac6cbeb139b0/devtools/cli/src/test/java/io/quarkus/cli/CliProjectGradleTest.java#L238
 1455666,763,"// send some records to partition 0
 // Note that the segment 2 gets offloaded for p0, but we cannot expect those events deterministically
-// because the rlm-task-thread runs in background and this framework doesn't support it.",38cc135c744d13d3b17c6bdd128200dd84533140,dependency,https://github.com/AutoMQ/automq/blob/4de1bc78a081964a756371c594a002fe304de4aa/storage/src/test/java/org/apache/kafka/tiered/storage/integration/FetchFromLeaderWithCorruptedCheckpointTest.java#L75
+// because the rlm-task-thread runs in background and this framework doesn't support it.",38cc135c744d13d3b17c6bdd128200dd84533140,on-hold,https://github.com/AutoMQ/automq/blob/4de1bc78a081964a756371c594a002fe304de4aa/storage/src/test/java/org/apache/kafka/tiered/storage/integration/FetchFromLeaderWithCorruptedCheckpointTest.java#L75
 703363,213,// TODO: 4-byte sequences are only supported on ART,ad261cdf136ec1396bc353e4b379e011a727f151,unspecified,https://github.com/aosp-mirror/platform_frameworks_base/blob/58d256e4c9d5c0eabe880e84ac05f0374c910163/core/tests/coretests/src/com/android/internal/util/FastDataTest.java#L68
 746840,238,// TODO: actually calculate the following parameters and do exact value checks.,b6908362fdcdc9fe50e661dd297b8c77e341fa48,unspecified,https://github.com/LawnchairLauncher/lawnchair/blob/3e2b001c9e4604f02c79e63c4ee31c80f36eb8b7/tests/src/com/android/launcher3/touch/SingleAxisSwipeDetectorTest.java#L162
 977196,435,"/**
@@ -1168,7 +1168,7 @@ id,repository,text,hash,label,url
 1384345,757,"// BouncyCastle is parsing date objects with the system locale while creating self-signed SSL certs
 // This fails for certain locales, e.g. 'ks'.
 // Until this is fixed, we force the english locale.
-// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,dependency workaround,https://github.com/crate/crate/blob/b472e5fe26f4a88ced42c8528423319b567035cf/server/src/test/java/io/crate/protocols/postgres/SslReqHandlerIntegrationTest.java#L61
+// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,on-hold workaround,https://github.com/crate/crate/blob/b472e5fe26f4a88ced42c8528423319b567035cf/server/src/test/java/io/crate/protocols/postgres/SslReqHandlerIntegrationTest.java#L61
 86103,12,"// Note: these addresses are *not* found, as we do not search the elements of the array.
 //       This is by design, as it saves a lot of work.
 // addr(""010054ec""), addr(""010054f0""));",de0d77d61a67745fa7063eb3da24f7aab5785e01,design,https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Features/Base/src/test.slow/java/ghidra/app/plugin/core/navigation/locationreferences/ArrayLocationReferencesTest.java#L85
