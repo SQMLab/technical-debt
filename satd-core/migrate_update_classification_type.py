@@ -48,6 +48,7 @@ TARGET_FILES = [
     (os.path.join(BASE_DIR, "../data", "unique_classify_train.csv"), "label"),
     (os.path.join(BASE_DIR, "../data", "unique_satd_comment.csv"), "label"),
     (os.path.join(BASE_DIR, "../data", "classify_n_shot.csv"), "label"),
+    (os.path.join(BASE_DIR, "../data", "satd_comment_example.csv"), "label"),
 ]
 
 # ---------------------------------------------------------------------------

@@ -1624,7 +1624,7 @@ public void testSyncExecutionLimits() throws Exception {
         assert g.hasUnsafeAccess() : ""ABCD"";",,https://github.com/oracle/graal/blob/009a6f93e563afb1d110b42dc5951b3d6b4156f8/compiler/src/jdk.graal.compiler.test/src/jdk/graal/compiler/core/test/VerifyAssertionUsageTest.java#L251
 575964,159,"/**
  * TODO: enable when window is supported.
- */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold,"            + ""PROPERTIES ('replication_num' = '1'); "";
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold skip-test,"            + ""PROPERTIES ('replication_num' = '1'); "";
     createTable(duplicateTable);
     String createK1K2MV = ""create materialized view k1_k2 as select k1,k2 from "" + TEST_TABLE_NAME + "" group by ""
             + ""k1,k2;"";

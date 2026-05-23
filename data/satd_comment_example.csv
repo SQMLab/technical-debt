@@ -1,0 +1,123 @@
+id,repository,text,hash,label,url,paper_category
+1505640,822,// TODO this test needs a lot of work,c90111c466c1114f85e65eedfef4d56cbbc4f1c2,unspecified,https://github.com/jetty/jetty.project/blob/12d16112fc65062f8d8de144a131b9f99dcae246/jetty-core/jetty-security/src/test/java/org/eclipse/jetty/security/SPNEGOAuthenticatorTest.java#L98,unspecified
+1157836,501,// TODO implement,972c9937225b691138532a1d4752866c6f5b5f43,unspecified,https://github.com/langchain4j/langchain4j/blob/0e5b1ece9cb22f52dfe9846885a35ec906e0cdd6/langchain4j-bedrock/src/test/java/dev/langchain4j/model/bedrock/common/BedrockChatModelIT.java#L77,unspecified
+45461,8,// TODO implement https://github.com/elastic/elasticsearch/issues/25929,47cbe543f77922946ee9ea2a82f9b9edb18583e6,unspecified,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/core/src/test/java/org/elasticsearch/xpack/core/ml/action/GetDatafeedsActionRequestTests.java#L25,unspecified
+82244,12,// not implemented yet,9803a92225f1d9dea9d0b53fbc23902f3d272c05,unspecified,https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Features/Base/src/test.slow/java/ghidra/app/util/bin/format/dwarf/DWARFDataTypeImporterTest.java#L1197,unspecified
+499770,137,//hacky workaround using the toString method to avoid mocking the Ruby runtime,a50adb8fb3a4179c582da6f34b27eeff12e4fa94,workaround,https://github.com/elastic/logstash/blob/5573b5ad777eef7a4204f2376bd601090d7866bc/logstash-core/src/test/java/org/logstash/instrument/metrics/gauge/RubyHashGaugeTest.java#L49,workaround
+1473843,805,// This is an utter hack but is the only way I could,635f6d4ccff2d0ce1526b796bc59ba7103e9e200,workaround,https://github.com/geoserver/geoserver/blob/8871198a41d255de8c964263f0a6f15d44d15d62/src/web/gwc/src/test/java/org/geoserver/gwc/web/layer/LayerCacheOptionsTabPanelTest.java#L211,workaround
+743376,230,// this is just a temporary thing but it's easier to change if it is encapsulated.,4dcb2a7f565ac9e0b857a3d010fe9df3ac01ff1e,workaround,https://github.com/opensearch-project/OpenSearch/blob/c82fffe8e333a8fff600dc22fa2e1aed7276d180/test/framework/src/main/java/org/opensearch/test/OpenSearchIntegTestCase.java#L1278,workaround
+861450,323,"// Yes, a static variable is a hack.",d21d9e33938348c50dee16ffb4f611a82923cd49,workaround,https://github.com/apache/tomcat/blob/3d58c3ac70beb21588b120d21ff5c075801ca31e/test/org/apache/tomcat/websocket/TestWsSessionSuspendResume.java#L198,workaround
+108103,22,"// This should use System.getProperty(""os.name"") in a real test.",9969f7225752fe8d61ddc3adb522f8b284f7cee0,workaround,https://github.com/eugenp/tutorials/blob/28ee6f8b9d8a6ee95ec0cef5d65a9891b6e1ed55/testing-modules/junit-4/src/test/java/com/baeldung/assume/ConditionallyIgnoreTestsUnitTest.java#L59,workaround
+868979,337,// TODO(sdh): Print a better name (https://github.com/google/closure-compiler/issues/2982),b06c4c7f5f36a14177731527ceefed68f2fb09dc,low-internal-quality,https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/TypedScopeCreatorTest.java#L3689,low-internal-quality
+23823,8,// RandomIndexWriter is too slow here:,154498ba0a35977c734c8e9ba611b5631b4c5e02,low-internal-quality,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/server/src/test/java/org/elasticsearch/lucene/spatial/CartesianShapeDocValuesQueryTests.java#L101,low-internal-quality
+230221,64,// TODO: b/359688989 - clean this up,0f973679224271b2abcd21dce88e300f04586c2a,low-internal-quality,https://github.com/bazelbuild/bazel/blob/d7c71fa286b84a5dce8c60f1e8fb48295703fc61/src/test/java/com/google/devtools/build/lib/concurrent/PaddedAddressesTest.java#L29,low-internal-quality
+1027262,445,//Ooooooo this is so ugly,c89a3547957b551e64b58f76a4af98d719f8e0ae,low-internal-quality,https://github.com/vespa-engine/vespa/blob/6782a126f815ab896e6c379caaf9e9e909aa5d09/vespaclient-container-plugin/src/test/java/com/yahoo/vespaxmlparser/MockReader.java#L37,low-internal-quality
+1057086,455,// known bug: time argument is unsigned 32bit in graphics library,143141afc3ca00f93c3c2144d81d7a3d7f44f8c9,defect,https://github.com/robolectric/robolectric/blob/d86ffdced16b5835a3135b156d651f1ae4b25819/integration_tests/nativegraphics/src/test/java/org/robolectric/shadows/ShadowNativeInterpolatorTest.java#L63,defect
+902798,371,// TODO(b/189535612): this is a bug!,16bc6aa5dadd13fa37888508fa683c79a885f59b,defect,https://github.com/google/error-prone/blob/4ae849ea7cea2cfb8b07b4842e0ca19dd91a2a1f/core/src/test/java/com/google/errorprone/bugpatterns/inlineme/InlinerTest.java#L1266,defect
+1230610,613,//FIXME: fix flaky test,41c13785888941316a7dc2bb85980937eb1d918c,defect,https://github.com/spring-cloud/spring-cloud-netflix/blob/0d4ddc660fdd79d898815e5a0f8beb66894fc4e9/spring-cloud-netflix-eureka-server/src/test/java/org/springframework/cloud/netflix/eureka/server/EurekaInstanceMonitorTests.java#L44,defect
+118369,28,"// This test doesn't work on midnight, January 1, 1970 UTC",59c6840c5346706d7ef540f4c7903e07039081f4,defect,https://github.com/netty/netty/blob/f3311e5db4c9d9559fac96bb2f48295d63f58b67/codec/src/test/java/io/netty/handler/codec/DefaultHeadersTest.java#L264,defect
+1512588,829,// Probably incorrect - comparing Object[] arrays with Arrays.equals,25f399a80a38c70853f9ee13c3297af9ca4c5126,uncertainty,https://github.com/sofastack/sofa-rpc/blob/be93251f7ac754178811dd04d826ebe8f0967a1a/test/test-integration/src/test/java/com/alipay/sofa/rpc/test/generic/bean/ComplexBean.java#L84,uncertainty
+833852,308,// I don't think doing this will be safe in parallel,ea1279e9ab3b32e06219ae1e6429f10418d4e048,uncertainty,https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/sdks/java/extensions/sql/src/test/java/org/apache/beam/sdk/extensions/sql/meta/provider/kafka/KafkaTableProviderIT.java#L303,uncertainty
+1354969,679,// TODO: figure out why I need these,c3d6ebb63b09591f2b29e310413066c6e7a7ad2c,uncertainty,https://github.com/spring-cloud/spring-cloud-gateway/blob/73185358b23df378e7f388a6fcd1e39b2f12007f/spring-cloud-gateway-server/src/test/java/org/springframework/cloud/gateway/config/GatewayRedisAutoConfigurationTests.java#L41,uncertainty
+849284,315,// TODO: Is it correct?,195140d7a904f3fe2171fb3230ee823534bc752f,uncertainty,https://github.com/pentaho/pentaho-kettle/blob/db5f39cc7d9f6223ef20e6da5102d5910e91af27/integration/src/it/java/org/pentaho/di/trans/steps/formula/Formula2IT.java#L162,uncertainty
+611078,198,"// TODO: This is current behavior, but is it what we want?",a20ffee429b8c40eafe66b1bb2e991a1431c1659,uncertainty,https://github.com/OpenRefine/OpenRefine/blob/02c80d0e49bb11c0b21d62d47a5ca13cb11048a9/modules/grel/src/test/java/com/google/refine/expr/functions/arrays/JoinTests.java#L42,uncertainty
+306665,78,"/**
+ * Setting file last access time does not work on JDK-20 on macOS with the hfs file system,
+ * issue JDK-8298187.
+ */",1a2e1d97c1fbbe3fdbd10468f336a7fbbf95e1ce,on-hold,https://github.com/oracle/graal/blob/009a6f93e563afb1d110b42dc5951b3d6b4156f8/truffle/src/com.oracle.truffle.api.test/src/com/oracle/truffle/api/test/polyglot/FileSystemsTest.java#L2175,on-hold
+1321885,638,"// NO list support in JDOQL
+//        testData.listTests(store.products, otherStore.products, p);",8ca250f194efc9f54e9f3831139643564fac71de,on-hold,https://github.com/querydsl/querydsl/blob/dd905aebf987599044e20b5822e7f035cee6a868/querydsl-jdo/src/test/java/com/querydsl/jdo/JDOQueryStandardTest.java#L120,on-hold
+24787,8,"// C2ID doesn't have a non JS login page :/, so use their API directly
+// see https://connect2id.com/products/server/docs/guides/login-page",b133f9b6223a2cf8340eeceb2620c728e0873833,on-hold,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/qa/oidc-op-tests/src/javaRestTest/java/org/elasticsearch/xpack/security/authc/oidc/C2IdOpTestCase.java#L244,on-hold
+380299,104,// mostly waiting for https://github.com/testcontainers/testcontainers-java/issues/3537,b89ba162e043e44dc5f89c8d527d492e39a6cf35,on-hold,https://github.com/openzipkin/zipkin/blob/e151986db4d1de1aea53618f18e4ee3acaa9ed3a/zipkin-collector/rabbitmq/src/test/java/zipkin2/collector/rabbitmq/RabbitMQExtension.java#L74,on-hold
+575964,159,"/**
+ * TODO: enable when window is supported.
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold skip-test,https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/fe-core/src/test/java/org/apache/doris/nereids/rules/rewrite/mv/SelectMvIndexTest.java#L762,skip-test
+833325,308,"// Skip, zstd only supported for Avro 1.9+",fb2d151020c8d51f260b3f4a86bf9d25c762fc08,skip-test,https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/sdks/java/extensions/avro/src/test/java/org/apache/beam/sdk/extensions/avro/io/SerializableAvroCodecFactoryTest.java#L107,skip-test
+435141,128,"// Ignore the following tests because taking a lease requires a real
+// (not mock) file system store. These tests don't work on the mock.",76719fe8b779167267e8a6392e541114c4e1dbf6,skip-test,https://github.com/apache/hadoop/blob/8424c155f11049e2d5a92b7f8d63d4c67d2eaaa6/hadoop-tools/hadoop-azure/src/test/java/org/apache/hadoop/fs/azure/TestNativeAzureFileSystemMocked.java#L36,skip-test
+794729,281,"// Testcase is disabled, as kernel32 ordinal values are not stable.
+// a library with a stable function <-> ordinal value is needed.
+//
+//    /**
+//     * Test that a named function on win32 can be equally resolved by its ordinal
+//     * value.
+//     *
+//     * From link.exe /dump /exports c:\\Windows\\System32\\kernel32.dll
+//     *
+//     *  746  2E9 0004FA20 GetTapeStatus
+//     *  747  2EA 0002DB20 GetTempFileNameA
+//     *  748  2EB 0002DB30 GetTempFileNameW
+//     *  749  2EC 0002DB40 GetTempPathA
+//     *  750  2ED 0002DB50 GetTempPathW
+//     *  751  2EE 00026780 GetThreadContext
+//     *
+//     * The tested function is GetTempPathW which is mapped to the ordinal 750.
+//     */
+//    public void testGetProcAddress() {
+//        NativeLibrary kernel32Library = NativeLibrary.getInstance(""kernel32"");
+//        // get module handle needed to resolve function pointer via GetProcAddress
+//        HMODULE kernel32Module = Kernel32.INSTANCE.GetModuleHandle(""kernel32"");
+//
+//        Function namedFunction = kernel32Library.getFunction(""GetTempPathW"");
+//        long namedFunctionPointerValue = Pointer.nativeValue(namedFunction);
+//
+//        Pointer ordinalFunction = Kernel32.INSTANCE.GetProcAddress(kernel32Module, 750);
+//        long ordinalFunctionPointerValue = Pointer.nativeValue(ordinalFunction);
+//
+//        assertEquals(namedFunctionPointerValue, ordinalFunctionPointerValue);
+//    }",439506413dd464e884581e973b90c2450b543e24,skip-test,https://github.com/java-native-access/jna/blob/02bf7cc863eccc4067e9eb981f96b3cd8aabc00d/contrib/platform/test/com/sun/jna/platform/win32/Kernel32Test.java#L1804,skip-test
+996435,441,"//  CLDR No Longer uses complex currency symbols.
+//  Skipping this test.
+//        Locale loc = new Locale(""kn"", ""IN"", """");
+//        NumberFormat fmt = NumberFormat.getCurrencyInstance(loc);
+
+//        expect2(fmt, 1.0, ""Re.\u00a01.00"");
+//        expect(fmt, 1.001, ""Re.\u00a01.00""); // tricky
+//        expect2(fmt, 12345678.0, ""Rs.\u00a01,23,45,678.00"");
+//        expect2(fmt, 0.5, ""Rs.\u00a00.50"");
+//        expect2(fmt, -1.0, ""-Re.\u00a01.00"");
+//        expect2(fmt, -10.0, ""-Rs.\u00a010.00"");",b45b0612df71d70b867749af15fc5ec78f2512d9,skip-test,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/format/NumberFormatTest.java#L1942,skip-test
+36354,8,"// This only tests for calendar ordering, ignoring the other criteria",993dbd9b919b0252807ab8b26504cf0aa4676de5,partial-test,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/rollup/src/test/java/org/elasticsearch/xpack/rollup/RollupJobIdentifierUtilTests.java#L769,partial-test
+639441,211,"// Not testing average length and min/max, as this would make the test less reusable and is not that important to test.",e18bb3027646ebbe1f1c19f83d3a915a2106aae8,partial-test,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/plugin/trino-base-jdbc/src/test/java/io/trino/plugin/jdbc/BaseJdbcTableStatisticsTest.java#L293,partial-test
+636045,211,// we do not check if the offset is in the middle of a code point,af2c3cba66bbc2bf9bebdb7a193306e5537f7d55,partial-test,https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/core/trino-spi/src/test/java/io/trino/spi/type/TestVarchars.java#L81,partial-test
+1191047,542,// FIXME: this test do not cover breaking remark into multiple lines,bae1aa668434e24d1050933256e0163b2af6a2f9,partial-test,https://github.com/logisim-evolution/logisim-evolution/blob/4be1d129854cb333226464f994eac6da6e268dc8/src/test/java/com/cburch/logisim/LineBufferTest.java#L455,partial-test
+571347,159,"// Theoretically, the HLL algorithm can count very large cardinality with little relative error rate,
+// which is less than 2% in Doris. We cost about 5 minutes to test with one billion input numbers here
+// successfully, but in order to shorten the test time, we chose one million numbers.",5baba5460e6f4c12a7feb225797a047fd7698dcb,partial-test,https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/hive-udf/src/test/java/org/apache/doris/HllUDFTest.java#L44,partial-test
+69363,12,// TODO: these tests are too simple since they only replace undefined components,dfaa7db12daf1f64fc5f6e4c9ce6a042d08dc62a,superficial-test,https://github.com/NationalSecurityAgency/ghidra/blob/db1b6860c9bbe8b659704cb3909c0bf54359fb7d/Ghidra/Framework/SoftwareModeling/src/test/java/ghidra/program/database/data/StructureDBTest.java#L2087,superficial-test
+1026898,445,"/**
+ * Sort of a dummy test, as the conditions are perfect. In a more realistic scenario, below, the algorithm needs luck to climb this high.
+ */",e18286a9de4b49ec1f6aadae6693d193233b99e7,superficial-test,https://github.com/vespa-engine/vespa/blob/6782a126f815ab896e6c379caaf9e9e909aa5d09/messagebus/src/test/java/com/yahoo/messagebus/DynamicThrottlePolicyTest.java#L98,superficial-test
+1561930,918,"// kinda sorta wrong, but for testing's sake...",1344a8f862bbfb9d065783457f05b70f911b8412,superficial-test,https://github.com/FasterXML/jackson-databind/blob/cfef132dbacbc6ed612051f81e88fb37c5632154/src/test/java/com/fasterxml/jackson/databind/introspect/JacksonAnnotationIntrospectorTest.java#L146,superficial-test
+54528,11,// doesn't make much sense in the context of a list...,0f810007d49ef97bab9fc60c37eaf5d64c45c7a4,superficial-test,https://github.com/spring-projects/spring-framework/blob/6ded25ba28b11a1237c1a9053ddc1c91bfd31d71/spring-beans/src/test/java/org/springframework/beans/factory/support/ManagedListTests.java#L77,superficial-test
+977171,435,"/**
+ * No documentation
+ */",85e7e55a33e504586a90c8de0fdd1aa188e7ff31,documentation,https://github.com/hibernate/hibernate-orm/blob/ff5fa10867d82d78002746faba4665e1a420bf0f/hibernate-core/src/test/java/org/hibernate/orm/test/annotations/cascade/circle/sequence/B.java#L22,documentation
+96468,15,// no JavaDoc,5e693d170e211daf3d64c9260c78d50a2e8df1ad,documentation,https://github.com/ReactiveX/RxJava/blob/51cf3f4de0791fd1b0a7bd14bb6884d94c879612/src/test/java/io/reactivex/rxjava3/validators/ParamValidationNaming.java#L324,documentation
+16740,8,// TODO: add support for non-existing docs,7563960189e3946d9bf78d196c51fbaa1f92ea7e,documentation,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/server/src/test/java/org/elasticsearch/index/engine/InternalEngineTests.java#L2175,documentation
+983738,435,"/**
+ * todo: describe ChildInfo
+ *
+ * @author Steve Ebersole
+ */",f0105c7d3226968afd1c3b01cfa27cc1f839746c,documentation,https://github.com/hibernate/hibernate-orm/blob/ff5fa10867d82d78002746faba4665e1a420bf0f/hibernate-core/src/test/java/org/hibernate/orm/test/jpa/cascade2/ParentInfoAssigned.java#L8,documentation
+983742,435,"/**
+ * todo: describe Parent
+ *
+ * @author Steve Ebersole
+ */",54c11af9f647a7662c41c2b05fed33240060125b,documentation,https://github.com/hibernate/hibernate-orm/blob/ff5fa10867d82d78002746faba4665e1a420bf0f/hibernate-core/src/test/java/org/hibernate/orm/test/jpa/cascade2/Parent.java#L8,documentation
+237511,64,// TODO b/300201845 - encapsulate parents and childs private attributes,503a8e78ebe54f36f714718143435eed93aeec33,design,https://github.com/bazelbuild/bazel/blob/d7c71fa286b84a5dce8c60f1e8fb48295703fc61/src/test/java/com/google/devtools/build/lib/starlark/StarlarkRuleClassFunctionsTest.java#L5441,design
+880414,337,// TODO(b/123102446): We really like to collapse some of these chained assignments.,5d5372b6cba0aa03e7d3a36fc84c1809f19bd5e5,design,https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/ExploitAssignsTest.java#L223,design
+1506022,822,// TODO move to core,a5171a9de131558e4c7c8f844664f3e3a74eb158,design,https://github.com/jetty/jetty.project/blob/12d16112fc65062f8d8de144a131b9f99dcae246/jetty-ee10/jetty-ee10-servlets/src/test/java/org/eclipse/jetty/ee10/servlets/GzipHandlerTest.java#L42,design
+726817,230,// Todo: Move this test to SegmentReplicationIndexShardTests so that it runs for both node-node & remote store,2ca4da5ab08081dd751e414cea3dfad8871fb5e7,design,https://github.com/opensearch-project/OpenSearch/blob/c82fffe8e333a8fff600dc22fa2e1aed7276d180/server/src/test/java/org/opensearch/index/shard/SegmentReplicationWithNodeToNodeIndexShardTests.java#L664,design
+1010409,441,"/**
+ * An implementation of {@code OutputStream} that should serve as the
+ * underlying stream for classes to be tested.
+ * In particular this implementation allows to have IOExecptions thrown on demand.
+ * For simplicity of use and understanding all fields are public.
+ */",cc2eaa16f89c3e9e9e06ffcc8eb91f4b177c23db,design,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/support/src/test/java/tests/support/Support_ASimpleWriter.java#L6,design
+584484,167,//Could fail if CI is to slow and will slow down the CI build; test local,c0a66cbbc7e8f24e954ef957ba8515526ab80ef3,build,https://github.com/languagetool-org/languagetool/blob/a611c39ca0e3ee34ceb4f95bfc387aa9755566c8/languagetool-core/src/test/java/org/languagetool/tools/LtThreadPoolFactoryTest.java#L227,build
+1011747,441,// Continuous build environment doesn't support non-blocking IO.,841fb3664aebb4190789b415f0835a3a5451145f,build,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/harmony-tests/src/test/java/org/apache/harmony/tests/java/nio/channels/ServerSocketChannelTest.java#L500,build
+1469202,805,// see [GEOS-7835] WPS execution time limits test randomly breaks builds,8d421d0e709a2c5cb7b25ead26750963dc8aef75,build,https://github.com/geoserver/geoserver/blob/8871198a41d255de8c964263f0a6f15d44d15d62/src/extension/wps/wps-core/src/test/java/org/geoserver/wps/InputLimitsTest.java#L611,build
+1495785,822,"// Find the async-reset webapp based on common IDE working directories
+// TODO import webapp as maven artifact",1b8b2cc526dec781f4e3367e6714c2710393c244,build,https://github.com/jetty/jetty.project/blob/12d16112fc65062f8d8de144a131b9f99dcae246/jetty-ee9/jetty-ee9-demos/jetty-ee9-demo-async-rest/jetty-ee9-demo-async-rest-server/src/test/java/org/eclipse/jetty/ee9/demos/AsyncRestServer.java#L28,build
