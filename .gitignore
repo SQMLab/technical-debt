@@ -47,3 +47,4 @@ satd-core/cache
 ./satd-core/playground.ipynb
 satd-core/.ipynb_checkpoints/
 .env
+\latex-overleaf
