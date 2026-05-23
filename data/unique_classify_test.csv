@@ -18793,7 +18793,7 @@ if (m.getDeclaringClass() != Object.class) {
     }",https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/support/src/test/java/org/apache/harmony/testframework/serialization/SerializationTest.java#L283
 575964,159,"/**
  * TODO: enable when window is supported.
- */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold,"            + ""PROPERTIES ('replication_num' = '1'); "";
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold skip-test,"            + ""PROPERTIES ('replication_num' = '1'); "";
     createTable(duplicateTable);
     String createK1K2MV = ""create materialized view k1_k2 as select k1,k2 from "" + TEST_TABLE_NAME + "" group by ""
             + ""k1,k2;"";

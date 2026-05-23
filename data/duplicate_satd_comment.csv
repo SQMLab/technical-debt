@@ -77,7 +77,7 @@ id,repository,text,hash,label,url
  */",f11e0615d3f5c668f46a1d70f1270c03066eaa5a,uncertainty,https://github.com/oracle/graal/blob/009a6f93e563afb1d110b42dc5951b3d6b4156f8/compiler/src/jdk.graal.compiler.test/src/jdk/graal/compiler/core/test/VerifyAssertionUsageTest.java#L251
 575964,159,"/**
  * TODO: enable when window is supported.
- */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold,https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/fe-core/src/test/java/org/apache/doris/nereids/rules/rewrite/mv/SelectMvIndexTest.java#L762
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold skip-test,https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/fe-core/src/test/java/org/apache/doris/nereids/rules/rewrite/mv/SelectMvIndexTest.java#L762
 1100734,482,"/**
  * [ BUG ] We didn't save the old password in the statement. If userA has logged in with
  * session_A. Session_B's alter password operation cannot block session A's alter password

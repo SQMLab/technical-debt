@@ -958,7 +958,7 @@ id,repository,text,hash,label,url
 // instead of 'instanceof' for the first element",28679abd98ff7f4188ecd608fabb0ec96747a81b,low-internal-quality,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/support/src/test/java/org/apache/harmony/testframework/serialization/SerializationTest.java#L283
 575964,159,"/**
  * TODO: enable when window is supported.
- */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold,https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/fe-core/src/test/java/org/apache/doris/nereids/rules/rewrite/mv/SelectMvIndexTest.java#L762
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold skip-test,https://github.com/apache/doris/blob/3c1d7d27269cab0022bc5b293da45dbb6013dff0/fe/fe-core/src/test/java/org/apache/doris/nereids/rules/rewrite/mv/SelectMvIndexTest.java#L762
 229201,64,"/**
  * When using a Native file system, absolute paths will be treated as absolute paths on the unix
  * file system, as opposed to paths relative to the backing temp directory. So for simplicity,
