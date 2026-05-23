@@ -6,7 +6,7 @@
 ## 📖 Abstract
 
 Self-Admitted Technical Debt (SATD) refers to comments in which developers explicitly acknowledge limitations, workarounds, or deferred improvements in code.  
-While prior research has primarily focused on production code, this study presents the **first large-scale empirical investigation of SATD in test code**, introducing a taxonomy of 14 categories and evaluating both traditional approaches and large language models (LLMs).
+While prior research has primarily focused on production code, this study presents the **first large-scale empirical investigation of SATD in test code**, introducing a taxonomy of 12 categories and evaluating both traditional approaches and large language models (LLMs).
 
 ---
 
@@ -35,6 +35,7 @@ While prior research has primarily focused on production code, this study presen
 | **Detection Sets (Original)**     | 80/20 split preserving natural duplication | [train.csv](./data/duplicate_detect_train.csv), [test.csv](./data/duplicate_detect_test.csv) |
 | **Detection Sets (Deduplicated)** | 80/20 split after duplicate removal | [train.csv](./data/unique_detect_train.csv), [test.csv](./data/unique_detect_test.csv) |
 | **Labeled SATD Comments**         | Manually classified SATD | [satd comments.csv](./data/duplicate_satd_comment.csv), [deduplicated satd comments.csv](./data/unique_satd_comment.csv) |
+| **SATD Comment Examples**         | Illustrative examples of SATD comments with taxonomy labels | [satd_comment_example.csv](./data/satd_comment_example.csv) |
 | **Few-Shot Samples**              | Used for n-shot prompting | [n-shots.csv](./data/detect_n_shot.csv) |
 
 ### 3. Dataset Summary
