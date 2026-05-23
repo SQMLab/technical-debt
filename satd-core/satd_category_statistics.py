@@ -17,7 +17,7 @@ Prints three frequency statistics for every classification CSV:
 After all per-file tables, a LaTeX \\def block is printed for the
 ``unique_satd_comment.csv`` dataset (the canonical labelled set).
 If a count has changed from the previous hardcoded baseline, the value
-is wrapped with \\rev{…} so the paper diff is visible at a glance.
+is wrapped with \\added{…} so the paper diff is visible at a glance.
 
 Usage:
     python3 satd_category_statistics.py
@@ -40,7 +40,7 @@ GROUPS: dict[str, list[str]] = {
     "limited-test": ["partial-test", "superficial-test"],
     "new-type-debt": ["uncertainty", "partial-test", "skip-test", "superficial-test"],
     "all-debt":     [
-        "build", "defect", "dependency", "design", "documentation",
+        "build", "defect", "on-hold", "design", "documentation",
         "uncertainty", "low-internal-quality", "partial-test",
         "skip-test", "superficial-test", "workaround",
     ],
@@ -51,7 +51,7 @@ GROUPS: dict[str, list[str]] = {
 LATEX_BASELINE: dict[str, int] = {
     "build":               5,
     "defect":              70,
-    "dependency":          11,
+    "on-hold":          11,
     "design":              15,
     "documentation":       19,
     "uncertainty":         67,
@@ -73,7 +73,7 @@ LATEX_BASELINE: dict[str, int] = {
 LATEX_CMD: dict[str, str] = {
     "build":               "buildCount",
     "defect":              "defectCount",
-    "dependency":          "dependencyCount",
+    "on-hold":             "onHoldCount",
     "design":              "designCount",
     "documentation":       "documentationCount",
     "uncertainty":         "uncertaintyCount",
@@ -99,10 +99,10 @@ def _group_count(values: list[str], members: list[str]) -> int:
 
 
 def _latex_def(key: str, count: int, baseline: Optional[int]) -> str:
-    """Return a single \\def line, wrapping with \\rev{} when count changed."""
+    """Return a single \\def line, wrapping with \\added{} when count changed."""
     cmd = LATEX_CMD.get(key, key + "Count")
     if baseline is not None and count != baseline:
-        value_str = r"\rev{" + str(count) + "}"
+        value_str = r"\added{" + str(count) + "}"
     else:
         value_str = str(count)
     return rf"\def\{cmd}{{{value_str}}}"
@@ -197,13 +197,13 @@ def generate_latex(filepath: str, col: str) -> None:
     width = 56
     print("═" * width)
     print(f"  LaTeX \\def block  ({filename}, rows={total})")
-    print("  Values wrapped in \\rev{{}} have changed from baseline.")
+    print("  Values wrapped in \\added{{}} have changed from baseline.")
     print("═" * width)
     print()
 
     # Atomic types (ordered as in the paper)
     ordered_atomic = [
-        "build", "defect", "dependency", "design", "documentation",
+        "build", "defect", "on-hold", "design", "documentation",
         "uncertainty", "low-internal-quality", "partial-test",
         "unspecified", "skip-test", "superficial-test", "workaround",
     ]

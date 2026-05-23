@@ -1379,7 +1379,7 @@ assertEquals(HasMetadata.getPlural(ClusteredCR.class), info.plural());","  void 
     assertTrue(info.storage());
     assertEquals(HasMetadata.getKind(ClusteredCR.class), info.kind());
   }",https://github.com/fabric8io/kubernetes-client/blob/f7f83c8ee7bdb637443f076aadc39d9ff38a9559/crd-generator/api-v2/src/test/java/io/fabric8/crdv2/generator/CustomResourceInfoTest.java#L101
-950668,422,"// Currently, Windows can not launch some providers",d12c7ade5cd4a3cd903f07fdb2f61a97c4c81768,dependency,"
+950668,422,"// Currently, Windows can not launch some providers",d12c7ade5cd4a3cd903f07fdb2f61a97c4c81768,on-hold,"
 public class DockerTestUtil {
     public static boolean dockerEnabled() {
         return !System.getProperties().containsKey(""hazelcast.disable.docker.tests"");
@@ -1624,7 +1624,7 @@ public void testSyncExecutionLimits() throws Exception {
         assert g.hasUnsafeAccess() : ""ABCD"";",,https://github.com/oracle/graal/blob/009a6f93e563afb1d110b42dc5951b3d6b4156f8/compiler/src/jdk.graal.compiler.test/src/jdk/graal/compiler/core/test/VerifyAssertionUsageTest.java#L251
 575964,159,"/**
  * TODO: enable when window is supported.
- */",68732b70d0e2a008f334649b3651a15a62740ae3,dependency,"            + ""PROPERTIES ('replication_num' = '1'); "";
+ */",68732b70d0e2a008f334649b3651a15a62740ae3,on-hold,"            + ""PROPERTIES ('replication_num' = '1'); "";
     createTable(duplicateTable);
     String createK1K2MV = ""create materialized view k1_k2 as select k1,k2 from "" + TEST_TABLE_NAME + "" group by ""
             + ""k1,k2;"";
@@ -1928,7 +1928,7 @@ for (int i = -7; i <= 22; i++) {
       assertEquals(codecFactory.getCodec().toString(), clone.getCodec().toString());
     }
   }",https://github.com/apache/beam/blob/2b18c28132630689639a308dcc30da1441fd65ae/sdks/java/extensions/avro/src/test/java/org/apache/beam/sdk/extensions/avro/io/SerializableAvroCodecFactoryTest.java#L107
-625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,1b1618dbf25641fb9a17a0f95b1f7d69c6566556,defect dependency,"onDelta().executeQuery(""UPDATE default."" + clonedTable + "" SET a_int = a_int + 1"");
+625850,211,// TODO https://github.com/trinodb/trino/issues/21183 Fix below assertion when Trino is able to infer `base table inserts on shallow cloned table`,1b1618dbf25641fb9a17a0f95b1f7d69c6566556,defect on-hold,"onDelta().executeQuery(""UPDATE default."" + clonedTable + "" SET a_int = a_int + 1"");
 List<String> cdfFilesPostOnlyInsertAndUpdate = getFilesFromTableDirectory(directoryName + clonedTable + changeDataPrefix);
 assertThat(cdfFilesPostOnlyInsertAndUpdate).hasSize(2);
 
@@ -3040,7 +3040,7 @@ protected Response mutateInstance(Response instance) {","        return null;// 
 }","    protected Response mutateInstance(Response instance) {
         return null;// TODO implement https://github.com/elastic/elasticsearch/issues/25929
     }",https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/x-pack/plugin/core/src/test/java/org/elasticsearch/xpack/core/transform/action/UpgradeTransformsActionResponseTests.java#L31
-991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,dependency,"check(""Currencies"", locale, currencies, currencyFormats, new DisplayNameGetter() {
+991643,441,// TODO replace once we have real API,c49fd4c5d15785dea601f27e852c31b62d47035d,on-hold,"check(""Currencies"", locale, currencies, currencyFormats, new DisplayNameGetter() {
     public String get(ULocale loc, String code, Object context) {
         Currency s = Currency.getInstance(code);
         return s.getName(loc, ((Integer)context).intValue(), new boolean[1]);
@@ -3566,7 +3566,7 @@ checkState(yieldedValue.isArrayLit(), yieldedValue);","  public void testYieldAl
     assertNode(zero).hasColorThat().isEqualTo(StandardColors.NUMBER);
   }",https://github.com/google/closure-compiler/blob/c86e4dd27ef48f9aa49261b1391274023ce7b658/test/com/google/javascript/jscomp/Es6RewriteGeneratorsTest.java#L1608
 1452895,763,"// TODO: this test requires rebalance logic which is not yet implemented in the CONSUMER group protocol.
-//       Once it is implemented, this should use both group protocols.",ee47e597408a935b4ba48d79a840b34f4ece0d73,dependency,"public void testPollReturnsRecords(GroupProtocol groupProtocol) {
+//       Once it is implemented, this should use both group protocols.",ee47e597408a935b4ba48d79a840b34f4ece0d73,on-hold,"public void testPollReturnsRecords(GroupProtocol groupProtocol) {
     consumer = setUpConsumerWithRecordsToPoll(groupProtocol, tp0, 5);
 
     ConsumerRecords<String, String> records = (ConsumerRecords<String, String>) consumer.poll(Duration.ZERO);
@@ -5359,7 +5359,7 @@ protected void testUpdateWithSubquery()
 1356261,682,"/*
          * Commenting out this method until the JSON-java code is updated
          * to support XML.toJSONObject(reader)
-         */",bf6a1cd00594566c292ec5d153b69b82d5a9a1a5,dependency," * Convenience method, given an input string and expected result, convert to
+         */",bf6a1cd00594566c292ec5d153b69b82d5a9a1a5,on-hold," * Convenience method, given an input string and expected result, convert to
  * JSONObject via file and compare actual to expected result.
  * 
  * @param xmlStr
@@ -5804,7 +5804,7 @@ checkRepresentation(connectedStatement.getStatement(), ""TIME '00:39:07 +01:00'"
             });
         }
     }",https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/client/trino-jdbc/src/test/java/io/trino/jdbc/BaseTestJdbcResultSet.java#L438
-997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",f1577e042eafab1081f241fcb736129bca6592d4,dependency workaround,"
+997190,441,"// 'x' not ""x"" -- workaround bug in IBM JDK 1.4.1",f1577e042eafab1081f241fcb736129bca6592d4,on-hold workaround,"
 for (int i = 0; i < locales.length; i++) {
     ICUResourceBundle rb = (ICUResourceBundle)ICUResourceBundle.getBundleInstance(ICUData.ICU_BASE_NAME,locales[i]);
 
@@ -6379,7 +6379,7 @@ String[] filePathsWithBackupsKeyspaceAndTableWithIndices = new String[]{
 
         testKeyspaceTableParsing(counterFiles, ""Keyspace1"", ""counter1"");
     }",https://github.com/apache/cassandra/blob/511bd203144a71bf0a72876a393d186a9778407e/test/unit/org/apache/cassandra/io/sstable/DescriptorTest.java#L235
-214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,21cbfd1c664d94fee05c8ba7f22c48ee7bac5c8a,dependency low-internal-quality,"                        pathToString(savepointDir),
+214511,60,// TODO:remove file-merging setting after FLINK-32085 & FLINK-32081 are resolved.,21cbfd1c664d94fee05c8ba7f22c48ee7bac5c8a,on-hold low-internal-quality,"                        pathToString(savepointDir),
                         testCase.restoreSource == RestoreSource.CANONICAL_SAVEPOINT
                                 ? SavepointFormatType.CANONICAL
                                 : SavepointFormatType.NATIVE)
@@ -6410,7 +6410,7 @@ if (tryRun(jobGraph) != testCase.allowRestore) {
             fail(testCase.describeRestore());
         }
     }",https://github.com/apache/flink/blob/24f18975c7205ec3b58e2fb8dca048fa2b6a4721/flink-tests/src/test/java/org/apache/flink/test/state/ChangelogCompatibilityITCase.java#L186
-290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,87a2822426287bdaae3698504721eb539165601e,dependency,"    Assertions.checkState(0x00 <= bytes[i] && bytes[i] <= 0xFF);
+290211,73,// TODO(internal b/161804035): Use TestUtils when it's available in a dependency we can use here.,87a2822426287bdaae3698504721eb539165601e,on-hold,"    Assertions.checkState(0x00 <= bytes[i] && bytes[i] <= 0xFF);
     byteArray[i] = (byte) bytes[i];
   }
   return byteArray;
@@ -6868,7 +6868,7 @@ catch (KeeperException.NodeExistsException e) {","  try {
     }
   }",https://github.com/apache/druid/blob/58f31b821fe9802ba73f7bbc3234c629ad73f299/server/src/test/java/org/apache/druid/curator/CuratorTestBase.java#L79
 743842,230,"// TODO: Remove this line, and replace 'clusterManagerRole' with CLUSTER_MANAGER_ROLE, after MASTER_ROLE is removed.
-// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",29032270adefbd5b84683a4f93d7e0f9eb1b36d1,dependency low-internal-quality,"        public Path nodeConfigPath(int nodeOrdinal) {
+// It is added in 2.0, along with the introduction of CLUSTER_MANAGER_ROLE, aims to test the 2 roles have the same effect.",29032270adefbd5b84683a4f93d7e0f9eb1b36d1,on-hold low-internal-quality,"        public Path nodeConfigPath(int nodeOrdinal) {
             return null;
         }
     },
@@ -7073,7 +7073,7 @@ void testPayloadObjectWithPayloadTypeOnParentContext() {
 		ac.close();
 		parent.close();
 	}",https://github.com/spring-projects/spring-framework/blob/6ded25ba28b11a1237c1a9053ddc1c91bfd31d71/spring-context/src/test/java/org/springframework/context/event/PayloadApplicationEventTests.java#L127
-1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",9e1b99dc5150e2517f5ddabb4ee074e579218845,dependency skip-test,"
+1202037,569,"// assertThat(result.getEta()).isEqualTo(""1970-01-01 00:00""); // TODO test this once timezone handling has been added",9e1b99dc5150e2517f5ddabb4ee074e579218845,on-hold skip-test,"
 Voyage voyage = new Voyage(new VoyageNumber(""0101""), new Schedule(Collections.singletonList(
         new CarrierMovement(origin, dest, Instant.now(), Instant.now()))));
 List<HandlingEvent> events = Arrays.asList(
@@ -7119,7 +7119,7 @@ assertThat(result).extracting(""trackingId"", ""statusText"", ""destination"", "
                 .extracting(""location"", ""type"", ""voyageNumber"", ""isExpected"", ""description"")
                 .containsExactly(""Stockholm"", ""RECEIVE"", """", true, ""TEST-DESCR""); // TODO test time field once timezone handling has been added
     }",https://github.com/citerus/dddsample-core/blob/2f09a00d09785e35e196ae4dc0ed7c0bb13d39ff/src/test/java/se/citerus/dddsample/interfaces/tracking/ws/CargoTrackingDTOConverterTest.java#L94
-674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,0dad5f7c4db3451ff83da3b429e8ef99cda7a0f7,dependency low-internal-quality,"    assertThat(
+674360,213,// TODO(b/111889696): Remove the user 0 assumption once we support multi-user,0dad5f7c4db3451ff83da3b429e8ef99cda7a0f7,on-hold low-internal-quality,"    assertThat(
             Settings.Secure.getInt(
                     mTestableContext.getContentResolver(),
                     Settings.Secure.ACCESSIBILITY_DISPLAY_MAGNIFICATION_ENABLED,
@@ -7303,7 +7303,7 @@ Assert.assertEquals(5, table.history().size());","  public void testRollbackToTi
 306665,78,"/**
  * Setting file last access time does not work on JDK-20 on macOS with the hfs file system,
  * issue JDK-8298187.
- */",1a2e1d97c1fbbe3fdbd10468f336a7fbbf95e1ce,dependency,"            throw new AssertionError(formatErrorMessage(ioe.getMessage(), configurationName, path), ioe);
+ */",1a2e1d97c1fbbe3fdbd10468f336a7fbbf95e1ce,on-hold,"            throw new AssertionError(formatErrorMessage(ioe.getMessage(), configurationName, path), ioe);
         } catch (UnsupportedOperationException e) {
             if (supportsUnixAttributes) {
                 throw e;
@@ -7322,7 +7322,7 @@ Assert.assertEquals(5, table.history().size());","  public void testRollbackToTi
 
 /**
  * Returns {@code true} if the operating system supports file creation time modification. Note:",,https://github.com/oracle/graal/blob/009a6f93e563afb1d110b42dc5951b3d6b4156f8/truffle/src/com.oracle.truffle.api.test/src/com/oracle/truffle/api/test/polyglot/FileSystemsTest.java#L2175
-1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,6452d041717d453a781fe70bf8fe405281564ee8,dependency,"        .logRequests(true) // verifying manually in the logs for now
+1158656,501,// TODO verify that parameters are propagated after https://github.com/langchain4j/langchain4j/issues/1044,6452d041717d453a781fe70bf8fe405281564ee8,on-hold,"        .logRequests(true) // verifying manually in the logs for now
         .logResponses(true) // verifying manually in the logs for now
         .build();
 
@@ -7608,7 +7608,7 @@ anyTree(
                                                         not(getPlanTester().getPlannerContext().getMetadata(), new IsNull(new Reference(VARCHAR, ""c_name""))),
                                                         tableScan(""customer"", ImmutableMap.of(""c_custkey"", ""custkey"", ""c_name"", ""name""))))))));
     }",https://github.com/trinodb/trino/blob/b89da7e651fea169443b1aaedb0c406744fe2cff/core/trino-main/src/test/java/io/trino/sql/planner/TestPredicatePushdownWithoutDynamicFilter.java#L151
-1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",4a76d5b1c75abe1d1dd2eb57f48b25f3a9ec7a6a,dependency workaround,"List<Snap> snaps = createRandomSnaps(f.graph.getBounds(), locationIndex, rnd, numVirtualNodes, false, EdgeFilter.ALL_EDGES);
+1155102,497,"// using plain dijkstra instead of bidirectional, because of #1592",4a76d5b1c75abe1d1dd2eb57f48b25f3a9ec7a6a,on-hold workaround,"List<Snap> snaps = createRandomSnaps(f.graph.getBounds(), locationIndex, rnd, numVirtualNodes, false, EdgeFilter.ALL_EDGES);
 QueryGraph queryGraph = QueryGraph.create(f.graph, snaps);
 
 int numQueries = 100;
@@ -8177,7 +8177,7 @@ String[] input = {
     doFormatTest(input, expected);
   }",https://github.com/google/google-java-format/blob/eb0b7682f15ec6a2bd03d12b53bdf951dd924266/core/src/test/java/com/google/googlejavaformat/java/JavadocFormattingTest.java#L85
 1244485,620,"//TODO: Rewrite with dynamic cache creation, and GRID start in #beforeTest after resolve of
-//TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,dependency,"}
+//TODO: IGNITE-1094",bd04a3616673003885780c2ae5d34d50d954b47e,on-hold,"}
 
 /**
  * Test collision of table names in different caches, sharing a single SQL schema.
@@ -8324,7 +8324,7 @@ public void fastResultsDoNotGetLost_whenUsingIterator() throws Exception {
  * WebHdfs client Partially supports the Symlink.
  * creation of Symlink is supported, but the getLinkTargetPath() api is not supported currently,
  * Implement the test case once the full support is available.
- */",f9fc5bfc0796fa1fb40ec392f5247b59a0b25534,dependency,"protected boolean listCorruptedBlocksSupported() {
+ */",f9fc5bfc0796fa1fb40ec392f5247b59a0b25534,on-hold,"protected boolean listCorruptedBlocksSupported() {
   return false;
 }
 
@@ -8443,7 +8443,7 @@ public TypeDescriptor[] getTypeDescriptorsFromList(String[][] arg0) throws SQLEx
 // internal structure of the NavigationView. Specifically, we're checking the
 // start drawable of the text view with the specific text. If the internal
 // implementation of NavigationView changes, the second Matcher in the lookups
-// below will need to be tweaked.",11e6a6c0ad832f64e9562d9f0537a2aad09491f4,dependency,"
+// below will need to be tweaked.",11e6a6c0ad832f64e9562d9f0537a2aad09491f4,on-hold,"
 // We're allowing a margin of error in checking the color of the items' icons.
 // This is due to the translucent color being used in the icon tinting
 // and off-by-one discrepancies of SRC_IN when it's compositing
@@ -9268,7 +9268,7 @@ Pair.makePair(SUTime.YEAR, ""2017-01-01/2017-12-31""),
     }
   }",https://github.com/stanfordnlp/CoreNLP/blob/59706394c28474bc21198eb6f4fff98939453dee/test/src/edu/stanford/nlp/time/SUTimeTest.java#L52
 114214,26,"// TODO(b/20335397): This code was relying on Bitmap equality which Robolectric removed
-// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",6c252c2b50bcd4f3f835dcfc4b09a104009d63f1,dependency skip-test,"@Test
+// assertThat(addedBitmaps).containsExactly(expected, expected, expected);",6c252c2b50bcd4f3f835dcfc4b09a104009d63f1,on-hold skip-test,"@Test
 public void testAllocatesABitmapPerSizeInAllocationOrder() {
   PreFillType size = new PreFillType.Builder(100).setConfig(Bitmap.Config.ARGB_8888).build();
   final int toAdd = 3;
@@ -9541,7 +9541,7 @@ memFree(image);","    static void saveScreenShotGL(int w, int h, boolean premult
         stbi_write_png(name, w, h, 4, image, w * 4);
         memFree(image);
     }",https://github.com/LWJGL/lwjgl3/blob/e7008a878ca8065db6b5cffb53594659344de300/modules/samples/src/test/java/org/lwjgl/demo/nanovg/NanoVGUtils.java#L88
-606076,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,dependency low-internal-quality,"import org.junit.Test;
+606076,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,on-hold low-internal-quality,"import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
@@ -12297,7 +12297,7 @@ class ExecutionListenerAdapterTests {
 		var discoveryResult = new LauncherDiscoveryResult(Map.of(mock(), testDescriptor), mock(),
 			dummyOutputDirectoryProvider());
 		var testPlan = InternalTestPlan.from(discoveryResult);",,https://github.com/junit-team/junit5/blob/35d1d981f97a18a3d42eeb97e49ae04d21eb4c97/platform-tests/src/test/java/org/junit/platform/launcher/core/ExecutionListenerAdapterTests.java#L31
-1222088,587,"// skip test, as it needs historical time zone info",17842cdc6d2eb9fb00c0e336e6aeb83cf0b7a5d2,dependency skip-test,"assertSame(g, f);
+1222088,587,"// skip test, as it needs historical time zone info",17842cdc6d2eb9fb00c0e336e6aeb83cf0b7a5d2,on-hold skip-test,"assertSame(g, f);
 DateTime dt = new DateTime(2004, 6, 9, 10, 20, 30, 0);
 String expect = DateFormat.getTimeInstance(DateFormat.SHORT, UK).format(dt.toDate());
 assertEquals(expect, f.print(dt));
@@ -12935,7 +12935,7 @@ public void multiFormatAttributes_stringValue() {
   TypedValue outValue = new TypedValue();
   typedArray.getValue(0, outValue);
   assertThat(outValue.type).isEqualTo(TypedValue.TYPE_STRING);",,https://github.com/robolectric/robolectric/blob/d86ffdced16b5835a3135b156d651f1ae4b25819/robolectric/src/test/java/org/robolectric/shadows/ShadowAssetManagerTest.java#L92
-558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,e9d88dfa65e8fda9b675e3bef55e006606a231be,dependency skip-test,"              .columns(""dim2"")
+558542,149,// Disabled until replace supports external destinations. To be enabled after that point.,e9d88dfa65e8fda9b675e3bef55e006606a231be,on-hold skip-test,"              .columns(""dim2"")
               .columnTypes(ColumnType.STRING)
               .resultFormat(ScanQuery.ResultFormat.RESULT_FORMAT_COMPACTED_LIST)
               .build()
@@ -14220,7 +14220,7 @@ for (Component c : root.getComponents()) {
             }
         }
     }",https://github.com/openjdk/jdk/blob/642816538fbaa5b74c6beb8a14d1738cdde28c10/test/jdk/jdk/editpad/EditPadTest.java#L282
-607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,dependency low-internal-quality,"import org.mockito.Captor;
+607243,189,// TODO(creamsoup) remove backward compatible check when fully migrated,a55ae3b9bed73ea4dff5da33ad0676ba223dcda1,on-hold low-internal-quality,"import org.mockito.Captor;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
@@ -14880,7 +14880,7 @@ assertThat(InstallUtils.isOnlyInstalledForUser(TestApp.A,","    /**
         }
     }",https://github.com/aosp-mirror/platform_frameworks_base/blob/58d256e4c9d5c0eabe880e84ac05f0374c910163/tests/RollbackTest/RollbackTest/src/com/android/tests/rollback/RollbackTest.java#L162
 1321885,638,"// NO list support in JDOQL
-//        testData.listTests(store.products, otherStore.products, p);",8ca250f194efc9f54e9f3831139643564fac71de,dependency,"public void standardTest() {
+//        testData.listTests(store.products, otherStore.products, p);",8ca250f194efc9f54e9f3831139643564fac71de,on-hold,"public void standardTest() {
     Product p = query().from(product).where(product.name.eq(productName)).limit(1).select(product).fetchOne();
     Product p2 = query().from(product).where(product.name.startsWith(otherName)).limit(1).select(product).fetchOne();
     standardTest.noProjections();
@@ -15359,7 +15359,7 @@ testQuery(
         ImmutableList.of(new Object[]{""[\""a\"",\""b\""]"", ""[\""a\"",\""b\""]""})
     );
   }",https://github.com/apache/druid/blob/58f31b821fe9802ba73f7bbc3234c629ad73f299/sql/src/test/java/org/apache/druid/sql/calcite/CalciteJoinQueryTest.java#L5190
-15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,2f641082ccdc7d135a7cea17ab17c3a713dffe54,dependency low-internal-quality,"
+15995,8,// TODO: remove this if branch when removing the 'index_recovery_use_synthetic_source' feature flag,2f641082ccdc7d135a7cea17ab17c3a713dffe54,on-hold low-internal-quality,"
 public void testRecoverySourceWithSyntheticSource() throws IOException {
     {
         Settings settings = Settings.builder()
@@ -16536,7 +16536,7 @@ public void positiveDespiteWhileLoop() {","aggressiveHelper
   }",https://github.com/google/error-prone/blob/4ae849ea7cea2cfb8b07b4842e0ca19dd91a2a1f/core/src/test/java/com/google/errorprone/bugpatterns/nullness/ParameterMissingNullableTest.java#L80
 1455666,763,"// send some records to partition 0
 // Note that the segment 2 gets offloaded for p0, but we cannot expect those events deterministically
-// because the rlm-task-thread runs in background and this framework doesn't support it.",38cc135c744d13d3b17c6bdd128200dd84533140,dependency,".expectFetchFromTieredStorage(broker0, topicA, p0, 2)
+// because the rlm-task-thread runs in background and this framework doesn't support it.",38cc135c744d13d3b17c6bdd128200dd84533140,on-hold,".expectFetchFromTieredStorage(broker0, topicA, p0, 2)
 .consume(topicA, p0, 0L, 3, 2)
 // shutdown the brokers
 .stop(broker1)
@@ -18893,7 +18893,7 @@ checkSimplifyFilter(
         ""true"");
   }",https://github.com/apache/calcite/blob/4fedf95c24d05e1ca71fb7a576c4a704846a7c75/core/src/test/java/org/apache/calcite/rex/RexProgramTest.java#L1561
 24787,8,"// C2ID doesn't have a non JS login page :/, so use their API directly
-// see https://connect2id.com/products/server/docs/guides/login-page",b133f9b6223a2cf8340eeceb2620c728e0873833,dependency,"protected Settings restAdminSettings() {
+// see https://connect2id.com/products/server/docs/guides/login-page",b133f9b6223a2cf8340eeceb2620c728e0873833,on-hold,"protected Settings restAdminSettings() {
     String token = basicAuthHeaderValue(""x_pack_rest_user"", new SecureString(""x-pack-test-password"".toCharArray()));
     return Settings.builder()
         .put(ThreadContext.PREFIX + "".Authorization"", token)
@@ -19022,7 +19022,7 @@ public TestRuleUnit(final Integer[] numbersArray, final BigDecimal number) {
     this.numbersArray = numbersArray;
     this.number = number;
     this.stringList = new ArrayList<>();",,https://github.com/apache/incubator-kie-drools/blob/58926c31641530b7706ad71eddc7b0332c01aab5/drools-ruleunits/drools-ruleunits-impl/src/test/java/org/drools/ruleunits/impl/TestRuleUnit.java#L46
-380299,104,// mostly waiting for https://github.com/testcontainers/testcontainers-java/issues/3537,b89ba162e043e44dc5f89c8d527d492e39a6cf35,dependency,"}
+380299,104,// mostly waiting for https://github.com/testcontainers/testcontainers-java/issues/3537,b89ba162e043e44dc5f89c8d527d492e39a6cf35,on-hold,"}
 
 String host() {
   return container.getHost();
@@ -19582,7 +19582,7 @@ private void cross(String s1, String s2,Normalizer.Mode mode){
             }    
         }    
     }",https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/external/icu/android_icu4j/src/main/tests/android/icu/dev/test/normalizer/ConformanceTest.java#L352
-392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,dependency low-internal-quality,"{
+392586,119,// TODO: remove this after PR #7987 is landed,f3cd55665ddfb8e6ecfe7b1519cc17f2ac91bf9a,on-hold low-internal-quality,"{
     return new DataSize(BUFFERED_PAGE_SIZE.toBytes() * count, BYTE);
 }
 
@@ -20374,7 +20374,7 @@ StarlarkThread getStarlarkThread() {
     ).setIndices(""does-not-exist-for-sure-*"").setWaitForCompletion(true).get();
     final SnapshotInfo snapshotInfo = createSnapshotResponse.getSnapshotInfo();
     assertThat(snapshotInfo.totalShards(), is(0));",,https://github.com/elastic/elasticsearch/blob/3d457ef84ebf5d3ee0fd09339fbc3373ed5beb3c/test/framework/src/main/java/org/elasticsearch/snapshots/AbstractSnapshotIntegTestCase.java#L379
-643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,dependency low-internal-quality,"    assertUpdate(""CREATE TABLE "" + tableName + "" (a bigint WITH (primary_key=true)) COMMENT 'test comment' "" +
+643426,211,// TODO Remove this overriding test once kudu connector can create tables with default partitions,59d3d2b41c2247d8f1197b5380dfcfd69bd31873,on-hold low-internal-quality,"    assertUpdate(""CREATE TABLE "" + tableName + "" (a bigint WITH (primary_key=true)) COMMENT 'test comment' "" +
             ""WITH (partition_by_hash_columns = ARRAY['a'], partition_by_hash_buckets = 2)"");
     assertThat(getTableComment(tableName)).isEqualTo(""test comment"");
 
@@ -20542,7 +20542,7 @@ testNoWarning(
         Locale l_countryCD = new Locale("""", ""CD"");
         assertEquals(""Congo (DRC)"",
                 l_countryCD.getDisplayCountry());
-    }*/",514e50db924d9b1f65467083794d00a61b6a61ff,dependency skip-test,"    Locale org = Locale.getDefault();
+    }*/",514e50db924d9b1f65467083794d00a61b6a61ff,on-hold skip-test,"    Locale org = Locale.getDefault();
     Locale.setDefault(l);
     Locale x = Locale.getDefault();
     Locale.setDefault(org);
@@ -21123,7 +21123,7 @@ public void testDrag() {
         // TODO: actually calculate the following parameters and do exact value checks.
         verify(mMockListener).onDragStart(anyBoolean(), anyFloat());
     }",https://github.com/LawnchairLauncher/lawnchair/blob/3e2b001c9e4604f02c79e63c4ee31c80f36eb8b7/tests/src/com/android/launcher3/touch/SingleAxisSwipeDetectorTest.java#L162
-625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",d381fa0c30301f1a574b4f8799551f750ccfb4b3,dependency,"""c_timestamp_seconds_since_epoch, "" +
+625872,211,"// TODO Until https://github.com/trinodb/trino/pull/307 is done, comparing string representation is more resilient against JVM timezone differences",d381fa0c30301f1a574b4f8799551f750ccfb4b3,on-hold,"""c_timestamp_seconds_since_epoch, "" +
 ""c_timestamp_iso8601, "" +
 ""c_timestamp_rfc2822, "" +
 ""c_timestamp_custom, "" +
@@ -22163,7 +22163,7 @@ public void testConsecutiveWindows2() {
       fail(throwable.getMessage());
     }
   }",https://github.com/apache/iotdb/blob/e5dacc08fcfe5b153405212996212eda2230f840/integration-test/src/test/java/org/apache/iotdb/libudf/it/series/SeriesIT.java#L365
-380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,dependency," * This code ensures you can setup SSL. Look at {@link ArmeriaSettings} for property names.
+380117,104,// TODO: use normal spring.server properties after https://github.com/line/armeria/issues/1834,22f17bafaf69a5b48f1e1ee4053ffc40df343940,on-hold," * This code ensures you can setup SSL. Look at {@link ArmeriaSettings} for property names.
  *
  * <p>This is inspired by com.linecorp.armeria.spring.ArmeriaSslConfigurationTest
  */
@@ -23605,7 +23605,7 @@ public void onOpen(Session session, EndpointConfig epc) {
     serverSession.getUserProperties().put(
             org.apache.tomcat.websocket.Constants.SESSION_CLOSE_TIMEOUT_PROPERTY, Long.valueOf(2000));
     // Any message will trigger the suspend then close",,https://github.com/apache/tomcat/blob/3d58c3ac70beb21588b120d21ff5c075801ca31e/test/org/apache/tomcat/websocket/TestWsSessionSuspendResume.java#L198
-746072,238,"// Due to a mockito issue, only spy the object after setting the initial state",f2e1fdd41d551c5b256fdfac9170e0d8ead2c0f0,dependency,"
+746072,238,"// Due to a mockito issue, only spy the object after setting the initial state",f2e1fdd41d551c5b256fdfac9170e0d8ead2c0f0,on-hold,"
 @Before
 public void setup() {
     MockitoAnnotations.initMocks(this);
@@ -23934,7 +23934,7 @@ package org.hibernate.orm.test.jpa.cascade2;
 ","  //        abstract void abstractMethod(); todo
 }",,https://github.com/robolectric/robolectric/blob/d86ffdced16b5835a3135b156d651f1ae4b25819/sandbox/src/test/java/org/robolectric/testing/AnExampleClass.java#L17
 208809,60,"// TODO: remove this test when SourceFunction API gets removed together with the deprecated
-//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",6d287a7e3662b6182e1c1657bb91f82a84d8ff0a,dependency low-internal-quality,"                .as(""Parallelism of parallel collection source must be 4."")
+//  StreamExecutionEnvironment generateSequence() and fromCollection() methods",6d287a7e3662b6182e1c1657bb91f82a84d8ff0a,on-hold low-internal-quality,"                .as(""Parallelism of parallel collection source must be 4."")
                 .isEqualTo(4);
     } catch (Exception e) {
         e.printStackTrace();
@@ -24017,7 +24017,7 @@ public void testIllegalMappedType() throws Exception {
 113406,22,"/**
  * The container_name property of Docker Compose is not currently supported by Testcontainers.
  * The issue can be tracked at https://github.com/testcontainers/testcontainers-java/issues/2472
- */",991661d6c0e53f12a1be2d75dbb493fbec9306a5,dependency,"    };
+ */",991661d6c0e53f12a1be2d75dbb493fbec9306a5,on-hold,"    };
 }
 
 private File downloadComposeFile() throws IOException {
@@ -24570,7 +24570,7 @@ if (count >= expected.size()) {
 // This test runs the sync-manifests command, and _without stopping the jvm_ executes a list command.
 // Under normal use, the sync-manifests command is followed immediately by a JVM shutdown, clearing caches.
 // The Java 8 ServiceLoader does not disable the URLConnection caching, so doesn't read some previous writes.
-// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",8afd3eb1f40639b2c79e21f497a9a30dd3aef101,dependency workaround,"            }
+// Java 9+ ServiceLoaders disable the URLConnection caching, so don't need this patch (it becomes a no-op)",8afd3eb1f40639b2c79e21f497a9a30dd3aef101,on-hold workaround,"            }
             default:
                 throw new IllegalArgumentException(""Unknown PluginLocationType"");
         }
@@ -25601,7 +25601,7 @@ public void testDirectories() throws Exception {
     try {
         new RandomAccessFile(""."", ""r"");
         fail();",,https://github.com/google/j2objc/blob/3664859a54dbe07905b2789cf06318c5b390e92f/jre_emul/android/platform/libcore/luni/src/test/java/libcore/java/io/RandomAccessFileTest.java#L69
-845325,308,// TODO: Remove once Distributions has shipped.,2d745c404cc478e26af2dd3bf2c646596a599bac,dependency low-internal-quality,"public class SimpleParDoFnTest {
+845325,308,// TODO: Remove once Distributions has shipped.,2d745c404cc478e26af2dd3bf2c646596a599bac,on-hold low-internal-quality,"public class SimpleParDoFnTest {
   @Rule public ExpectedException thrown = ExpectedException.none();
 
   private PipelineOptions options;
@@ -25668,7 +25668,7 @@ public void noAccessForNonAdmin() throws Exception {","    public void flow() th
         // and make sure it's gone
         assertThrows(ElementNotFoundException.class, () -> getForm(mon));
     }",https://github.com/jenkinsci/jenkins/blob/c9ce21013bef4e2148c53b9af36ac0945f2eb271/test/src/test/java/hudson/diagnosis/HudsonHomeDiskUsageMonitorTest.java#L46
-1371991,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,dependency low-internal-quality,"
+1371991,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,on-hold low-internal-quality,"
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -25730,7 +25730,7 @@ Criteria<TimeSeriesData, Forecast> criteria =
         }
     }",https://github.com/deepjavalibrary/djl/blob/a9a0c1275fdb11a2d9cc7480abb39e57a6fbfec1/extensions/timeseries/src/test/java/ai/djl/timeseries/translator/DeepARTranslatorTest.java#L40
 1134218,491,"// TODO: Should be checked on server side. On Embedded metastore it throws MetaException,
-// on Remote metastore it throws TProtocolException",e928a70ceb4f629ad8a3cb0fde62bae72b1d031b,dependency,"      table.getDbName().toUpperCase(), table.getTableName().toUpperCase()));
+// on Remote metastore it throws TProtocolException",e928a70ceb4f629ad8a3cb0fde62bae72b1d031b,on-hold,"      table.getDbName().toUpperCase(), table.getTableName().toUpperCase()));
 
   // Test in mixed case
   Assert.assertTrue(""Table exists"", client.tableExists(""hIVe"", ""DeFaUlt"", ""tEsT_TabLE""));
@@ -26039,7 +26039,7 @@ public void testHivePartitionPruner2() {
 1384345,757,"// BouncyCastle is parsing date objects with the system locale while creating self-signed SSL certs
 // This fails for certain locales, e.g. 'ks'.
 // Until this is fixed, we force the english locale.
-// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,dependency workaround,"private static final char[] EMPTY_PASS = new char[]{};
+// See also https://github.com/bcgit/bc-java/issues/405 (different topic, but same root cause)",c524dad6e2445fc418f11aeb620878c6d9b6fabb,on-hold workaround,"private static final char[] EMPTY_PASS = new char[]{};
 
 private static SelfSignedCertificate trustedCert;
 private static File keyStoreFile;
@@ -27041,7 +27041,7 @@ outputBufferConsumer.assertBufferComplete(ASSERT_WAIT_TIMEOUT);
             driverYieldExecutor.shutdown();
         }
     }",https://github.com/prestodb/presto/blob/e84e4d21c8a1429095a180f5152de0b988b998d2/presto-main/src/test/java/com/facebook/presto/execution/TestSqlTaskExecution.java#L588
-407388,127,// both exceptions are reported to JUnit:,d56c821996e97d383aa841f3e7f21c5b8e799510,dependency,"
+407388,127,// both exceptions are reported to JUnit:,d56c821996e97d383aa841f3e7f21c5b8e799510,on-hold,"
 @After
 public void after() {
     new StateMaster().clearMockitoListeners();
@@ -28145,7 +28145,7 @@ ValueList(final int min, final int max) {
     }
 }
 ",,https://github.com/apache/kafka/blob/a6ec7584888a4202542eb2d8debbe1a924784aa2/streams/upgrade-system-tests-30/src/test/java/org/apache/kafka/streams/tests/SmokeTestDriver.java#L99
-559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,8556fa3d9435dc708edc20c230c906e8cbea8575,dependency skip-test,"              .context(QUERY_CONTEXT_DEFAULT)
+559309,149,// Disabled test in MSQ with SQL-compatible mode till https://github.com/apache/druid/issues/13951 is resolved,8556fa3d9435dc708edc20c230c906e8cbea8575,on-hold skip-test,"              .context(QUERY_CONTEXT_DEFAULT)
               .build()
       ),
       expected
@@ -28605,7 +28605,7 @@ assertFalse(headers.contains(of(""name""), of(""value1"")));","    public void t
         assertTrue(headers.contains(of(""name""), of(""value"")));
         assertFalse(headers.contains(of(""name""), of(""value1"")));
     }",https://github.com/netty/netty/blob/f3311e5db4c9d9559fac96bb2f48295d63f58b67/codec/src/test/java/io/netty/handler/codec/DefaultHeadersTest.java#L264
-1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,dependency low-internal-quality,"import org.testng.annotations.Test;
+1371965,734,// TODO: Remove this once we support PyTorch support for timeseries extension,c0402228b095b031b9500c5a87b38fa06ccfa344,on-hold low-internal-quality,"import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -29224,7 +29224,7 @@ public static ImmutableList<String> requiredObjcCrosstoolFlagsNoXcodeConfig(Stri
         .add(""--crosstool_top="" + MockObjcSupport.DEFAULT_OSX_CROSSTOOL);
     return argsBuilder.build();
   }",https://github.com/bazelbuild/bazel/blob/d7c71fa286b84a5dce8c60f1e8fb48295703fc61/src/test/java/com/google/devtools/build/lib/packages/util/MockObjcSupport.java#L128
-21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dab5f51472984392d7758aa196ca6407592df619,dependency,"    int numPromotableReplicas,
+21914,8,// relocation is not possible for unserchable shards until ES-4677 is implemented,dab5f51472984392d7758aa196ca6407592df619,on-hold,"    int numPromotableReplicas,
     int numSearchReplicas
 ) {
     return getReplicaRolesWithRandomStates(numPromotableReplicas, numSearchReplicas, ShardRoutingState.values());

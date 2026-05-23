@@ -35,7 +35,7 @@ csv.field_size_limit(sys.maxsize)
 LABEL_MAP: dict[str, str] = {
     "build":               "build",
     "defect":              "defect",
-    "dependency":          "dependency",
+    "dependency":          "on-hold",
     "design":              "design",
     "documentation":       "documentation",
     "how-to":              "uncertainty",
