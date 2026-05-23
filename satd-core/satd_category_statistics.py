@@ -98,14 +98,34 @@ def _group_count(values: list[str], members: list[str]) -> int:
     return sum(1 for v in values if member_set.intersection(v.split()))
 
 
-def _latex_def(key: str, count: int, baseline: Optional[int]) -> str:
-    """Return a single \\def line, wrapping with \\added{} when count changed."""
-    cmd = LATEX_CMD.get(key, key + "Count")
+def _latex_def(key: str, count: int, baseline: Optional[int], variant: str = "") -> str:
+    """Return a single \\def line.
+
+    When *count* differs from *baseline* the value is wrapped:
+      variant=""  → \\added{count}
+      variant="B" → \\addedB{count}
+    When unchanged the raw number is used (no wrapper, variant ignored).
+    """
+    cmd = LATEX_CMD.get(key, key + "Count") + variant
     if baseline is not None and count != baseline:
-        value_str = r"\added{" + str(count) + "}"
+        macro = r"\addedB{" if variant == "B" else r"\added{"
+        value_str = macro + str(count) + "}"
     else:
         value_str = str(count)
     return rf"\def\{cmd}{{{value_str}}}"
+
+
+def _latex_defs(key: str, count: int, baseline: Optional[int]) -> list[str]:
+    """Return the \\def line(s) for *key*.
+
+    If the count is unchanged: one line with the plain number.
+    If the count changed: two lines — the normal \\added variant followed
+    by the \\addedB companion (command name suffixed with 'B').
+    """
+    lines = [_latex_def(key, count, baseline)]
+    if baseline is not None and count != baseline:
+        lines.append(_latex_def(key, count, baseline, variant="B"))
+    return lines
 
 
 # ── Per-file statistics ────────────────────────────────────────────────────────
@@ -197,7 +217,7 @@ def generate_latex(filepath: str, col: str) -> None:
     width = 56
     print("═" * width)
     print(f"  LaTeX \\def block  ({filename}, rows={total})")
-    print("  Values wrapped in \\added{{}} have changed from baseline.")
+    print("  Changed values: \\added{} + companion \\addedB{} line printed.")
     print("═" * width)
     print()
 
@@ -210,7 +230,8 @@ def generate_latex(filepath: str, col: str) -> None:
     for key in ordered_atomic:
         count = atomic_counter.get(key, 0)
         baseline = LATEX_BASELINE.get(key)
-        print(_latex_def(key, count, baseline))
+        for line in _latex_defs(key, count, baseline):
+            print(line)
 
     print()
 
@@ -218,13 +239,15 @@ def generate_latex(filepath: str, col: str) -> None:
     for group_key in ("code-debt", "new-type-debt", "limited-test"):
         count = group_counts[group_key]
         baseline = LATEX_BASELINE.get(group_key)
-        print(_latex_def(group_key, count, baseline))
+        for line in _latex_defs(group_key, count, baseline):
+            print(line)
 
     print()
 
     # Grand total
     baseline_total = LATEX_BASELINE.get("total")
-    print(_latex_def("total", total, baseline_total))
+    for line in _latex_defs("total", total, baseline_total):
+        print(line)
     print()
 
 
