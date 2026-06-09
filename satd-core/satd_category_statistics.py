@@ -12,7 +12,7 @@ Prints three frequency statistics for every classification CSV:
                     limited-test    : partial-test, superficial-test
                     new-type-debt   : uncertainty, partial-test, skip-test,
                                       superficial-test
-                    all-debt        : all SATD types (i.e. not unspecified)
+                    all-debt        : all SATD types (i.e. not other)
 
 After all per-file tables, a LaTeX \\def block is printed for the
 ``unique_satd_comment.csv`` dataset (the canonical labelled set).
@@ -57,7 +57,7 @@ LATEX_BASELINE: dict[str, int] = {
     "uncertainty":         67,
     "low-internal-quality": 32,
     "partial-test":        14,
-    "unspecified":         225,
+    "other":         225,
     "skip-test":           9,
     "superficial-test":    11,
     "workaround":          59,
@@ -79,7 +79,7 @@ LATEX_CMD: dict[str, str] = {
     "uncertainty":         "uncertaintyCount",
     "low-internal-quality": "lowInternalQualityCount",
     "partial-test":        "partialTestCount",
-    "unspecified":         "unspecifiedCount",
+    "other":         "otherCount",
     "skip-test":           "skipTestCount",
     "superficial-test":    "superficialTestCount",
     "workaround":          "workaroundCount",
@@ -225,7 +225,7 @@ def generate_latex(filepath: str, col: str) -> None:
     ordered_atomic = [
         "build", "defect", "on-hold", "design", "documentation",
         "uncertainty", "low-internal-quality", "partial-test",
-        "unspecified", "skip-test", "superficial-test", "workaround",
+        "other", "skip-test", "superficial-test", "workaround",
     ]
     for key in ordered_atomic:
         count = atomic_counter.get(key, 0)

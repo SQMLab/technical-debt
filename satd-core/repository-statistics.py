@@ -22,7 +22,7 @@ Key requirements implemented:
 - No subplot titles and no per-axis epsilon text (epsilon is only printed).
 - Thinner boxes + reduced horizontal whitespace via widths, x-limits, and tight layout.
 
-Unspecified details:
+other details:
 - Colour palette and hatch patterns are unspecified by user; defaults are provided but overrideable
   by calling main(..., facecolours=..., hatches=...).
 """

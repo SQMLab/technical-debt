@@ -361,7 +361,7 @@ public void testNRTReplicaPromotedAsPrimary() throws Exception {
         final int numDocs = shards.indexDocs(randomInt(10));",,https://github.com/opensearch-project/OpenSearch/blob/c82fffe8e333a8fff600dc22fa2e1aed7276d180/server/src/test/java/org/opensearch/index/shard/SegmentReplicationWithNodeToNodeIndexShardTests.java#L530
 1479085,805,"// TODO: check all the layers are here, the profiles, and so on
 
-// check that we have the crs extension",d29e12c3a6fa3eca9bcd935f1bf2a91f211c46ba,unspecified,"    for (GridCoverage coverage : coverages) {
+// check that we have the crs extension",d29e12c3a6fa3eca9bcd935f1bf2a91f211c46ba,other,"    for (GridCoverage coverage : coverages) {
         if (coverage != null) {
             CoverageCleanerCallback.disposeCoverage(coverage);
         }

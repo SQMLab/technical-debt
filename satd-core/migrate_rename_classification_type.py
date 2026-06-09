@@ -41,7 +41,7 @@ LABEL_MAP: dict[str, str] = {
     "how-to":              "uncertainty",
     "low-internal-quality":"low-internal-quality",
     "partial-test":        "partial-test",
-    "requirement":         "unspecified",
+    "unspecified":         "other",
     "skip-test":           "skip-test",
     "superficial-test":    "superficial-test",
     "workaround":          "workaround",

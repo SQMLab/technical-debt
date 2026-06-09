@@ -29,7 +29,7 @@ for comment in comments:
         #     1  Des: Design              8   Pe: People
         #     2  Co: Code                 9   Pr: Process
         #     3  Te: Test                 10  Se: Service
-        #     4  Re: Requirement          11  Au: Automation
+        #     4  Re: other          11  Au: Automation
         #     5  Ar: Architecture         12  Do: Documentation
         #     6  Bu: Build                13  In: Infrastructure
         #     7  Def: Defect              14  Un: Unknown

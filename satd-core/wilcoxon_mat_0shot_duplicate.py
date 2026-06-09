@@ -105,7 +105,7 @@ def compute_comparison(other_df: pd.DataFrame, xl_df: pd.DataFrame) -> list:
     for m in METRICS:
         x, y = other_df[m].values, xl_df[m].values
         diff  = x - y
-        if (diff != 0).sum() < 10:
+        if (diff != 0).sum() == 0:
             raw_p.append(1.0)
         else:
             _, p = wilcoxon(x, y, alternative="two-sided", zero_method="wilcox")
