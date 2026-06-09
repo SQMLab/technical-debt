@@ -55,6 +55,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 ALL_FILES: list[tuple[str, str]] = [
     # ── ground-truth sources ────────────────────────────────────────────
+    (os.path.join(BASE_DIR, "../data", "satd_comment_example.csv"), "label"),
+    (os.path.join(BASE_DIR, "../data", "satd_comment_example.csv"), "paper_category"),
     (os.path.join(BASE_DIR, "../data", "duplicate_classify_test.csv"), "label"),
     (os.path.join(BASE_DIR, "../data", "duplicate_classify_train.csv"), "label"),
     # ── downstream targets ──────────────────────────────────────────────
