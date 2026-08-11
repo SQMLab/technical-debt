@@ -23,6 +23,12 @@ export HF_HOME=$SLURM_TMPDIR/hf_cache
 mkdir -p $HF_HOME
 MODEL_NAME=${1:-"google/flan-t5-small"}
 SHOT=${2:-"0"}
+TEMPLATE=${3:-"default"}
+DATASET_NAME=${4:-"unique"}
 
-srun python detect-flan-t5.py  --shot $SHOT""
+srun python detect-flan-t5.py \
+    --template "$TEMPLATE" \
+    --model-name "$MODEL_NAME" \
+    --dataset-name "$DATASET_NAME" \
+    --shot "$SHOT"
 echo "Job finished at $(date)"
