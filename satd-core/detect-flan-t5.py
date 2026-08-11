@@ -1,7 +1,9 @@
 import argparse
 import torch
+import pandas as pd
 from dotenv import load_dotenv
 from accelerate import Accelerator
+from datasets import Dataset
 from HuggingFaceModel import HuggingFaceModel
 from TrainStrategy import TrainStrategy
 from constant import *
@@ -43,6 +45,9 @@ def main():
     accelerator = Accelerator()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+    test_df = pd.read_csv(f'../data/{args.dataset_name}_detect_test.csv')
+    test_dataset = Dataset.from_pandas(test_df)
+
 
     prompt_template = PromptTemplate(
         name=args.template,
@@ -56,7 +61,7 @@ def main():
 
     flan_t5_detection_model = HuggingFaceModel('detect',  args.model_name, output_label_converter, False)
     flan_t5_detection_model.fit(detect_n_shot_dataset)
-    flan_t5_detection_model.predict(detect_test_dataset, args.dataset_name, prompt_template, TrainStrategy.N_SHOT_TOP, args.shot, verbose=False)
+    flan_t5_detection_model.predict(test_dataset, args.dataset_name, prompt_template, TrainStrategy.N_SHOT_TOP, args.shot, verbose=False)
 
 if __name__ == "__main__":
     main()

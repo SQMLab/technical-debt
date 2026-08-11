@@ -3,7 +3,7 @@
 #SBATCH --output=logs/%x.%j.out
 #SBATCH --error=logs/%x.%j.err
 #SBATCH --mail-user=islams32@myumanitoba.ca
-#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --time=6:00:00
 #SBATCH --gres=gpu:h100:2
 #SBATCH --cpus-per-task=1
